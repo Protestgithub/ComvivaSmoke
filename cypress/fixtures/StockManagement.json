@@ -1,0 +1,45 @@
+{
+    "stockInitiation":
+    {
+        "provider": "MFS1",
+        "referenceNumber": "123456789",
+        "requestedAmount": "1000",
+        "requestedAmount1": "20000",
+        "stockFrom": "DUBAI ISLAMIC BANK"
+    },
+    
+        "trasanctionid": {
+            "id1": "XX220506.1239.A22484"
+        },
+        "msisdn": {
+            "subscribermsisdn": "7786113685"
+        },
+        "date": {
+            "fromdate": "10/05/2022",
+            "todate": "01/06/2022"
+        },
+        "stocktypeA": {
+            "value": "Stock Creation"
+        },
+        "stockEnq_loadDetails_status": {
+            "value": "Approved-1"
+        },
+        "usertype": {
+            "value": "Subscriber"
+        },
+        "wallettype": {
+            "value": "Normal"
+        },
+        "selectBank": {
+            "bankname": "FIRST BANK"
+        },
+        "bankaccnumber": {
+            "number": "XXX6387457845187"
+        },
+        "stockwithdrawerrormessage": "Transfer Amount should be less than the Available balance",
+        "stockwithdrawerrormessage2": "Transfer Amount should be numeric",
+        "stockInitErrorMessage": "Please enter a valid Requested Amount",
+        "stockEAInitiated": "Stock initiated with Transaction ID",
+        "reimbursementinitiated": "Reimbursement is successfully initiated for user  for transactionId",
+        "stockReimbursementApproval": "Stock Reimbursement for user Network for currency"
+    }

@@ -1,0 +1,23 @@
+{
+    "testFiles": "**/*.feature",
+    "defaultCommandTimeout": 15000,
+    "pageLoadTimeout": 15000,
+    "viewportWidth": 1200,
+    "viewportHeight": 900,
+    "env": {
+      "Adminurl": "http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/dfscontainer/#/",
+      "Businessurl": "http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/dfscontainer/#/business",
+      "Subscriberurl": "http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/dfscontainer/#/subscriber"
+    },
+    "api":{
+       "getOtpMob": "http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/mobiquitypay/v2/otp/generate",
+       "getOtpMobUrl": "http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/otpservice/internal/genotp/"
+    },
+    "projectId": "yizpik",
+    "chromeWebSecurity": false,
+  
+    "retries": {
+      "runMode": 0,
+      "openMode": 0
+    }
+  }

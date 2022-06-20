@@ -1,0 +1,1507 @@
+[
+  {
+    "description": "    This feature includes registering, Modifying and Approval of Business Admin and\n    Customer Support Admin Users by System Admin",
+    "keyword": "Feature",
+    "name": "User Management : Subscriber",
+    "line": 1,
+    "id": "user-management-:-subscriber",
+    "tags": [],
+    "uri": "Subscriber.feature",
+    "elements": [
+      {
+        "id": "user-management-:-subscriber;to-verify-that-proper-error-message-should--be-displayed-when-email-id/contact-number-is-not-verified.",
+        "keyword": "Scenario",
+        "line": 335,
+        "name": "To verify that proper error message should  be displayed when email id/contact number is not verified.",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 336,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 9545000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 337,
+            "name": "Navigate to User Management and Click on register",
+            "result": {
+              "status": "passed",
+              "duration": 1172000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 338,
+            "name": "Select User type as Business and Select Corporate",
+            "result": {
+              "status": "passed",
+              "duration": 5890000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 339,
+            "name": "Enter the basic details and do not verify contact number",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `input[data-test-id=\"user-search-details\"]`, but never found it. Queried from element: <body>\n    at manageUsers.getSearchUser (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\Usermanagement\\Subscriber.feature:2994:26)\n    at Context.eval (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\Usermanagement\\Subscriber.feature:4238:19)"
+            },
+            "embeddings": [
+              {
+                "mime_type": "image/png"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 340,
+            "name": "Verify that error button of contact number should be visible",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-management-:-subscriber;to-verify-that-immidiate-error-message-should-be-displayed-whne-any-invalid-value-is-entered-by-the-user.",
+        "keyword": "Scenario",
+        "line": 26,
+        "name": "To verify that immidiate error message should be displayed whne any invalid value is entered by the user.",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 27,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 8593000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 28,
+            "name": "Navigate to User Management and Click on register",
+            "result": {
+              "status": "passed",
+              "duration": 575000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 29,
+            "name": "Select User type as Subscriber and click on Subscriber",
+            "result": {
+              "status": "passed",
+              "duration": 4383000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 30,
+            "name": "Fill all required details and Enter Invalid value and confirm Error message",
+            "result": {
+              "status": "passed",
+              "duration": 8271000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-management-:-subscriber;to-verify-that-proper-error-message-should--be-displayed-when-email-id/contact-number-is-not-verified",
+        "keyword": "Scenario",
+        "line": 39,
+        "name": "To verify that proper error message should  be displayed when Email id/contact number is not verified",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 40,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 8642000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 41,
+            "name": "Navigate to User Management and Click on register",
+            "result": {
+              "status": "passed",
+              "duration": 710000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 42,
+            "name": "Select User type as Subscriber and click on Subscriber",
+            "result": {
+              "status": "passed",
+              "duration": 4296000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 43,
+            "name": "Fill all required details and Enter Email and Contact Number which are not verified and confirm Error message",
+            "result": {
+              "status": "passed",
+              "duration": 9007000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 44,
+            "name": "Enter all the mandatory KYC details and click on next",
+            "result": {
+              "status": "passed",
+              "duration": 3084000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 45,
+            "name": "Enter all the marketing ,regulatory, authorization profile details and click on next",
+            "result": {
+              "status": "passed",
+              "duration": 3315000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-management-:-subscriber;to-verify-that-immidiate-error-message-should-be-displayed-whne-any-invalid-value-is-entered-by-the-user.",
+        "keyword": "Scenario",
+        "line": 54,
+        "name": "To verify that immidiate Error Message should be displayed whne any invalid value is Entered by the user.",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 55,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 8050000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 56,
+            "name": "Navigate to User Management and Click on register",
+            "result": {
+              "status": "passed",
+              "duration": 482000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 57,
+            "name": "Select User type as Subscriber and click on Subscriber",
+            "result": {
+              "status": "passed",
+              "duration": 4447000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 58,
+            "name": "Fill all required details and Enter Invalid value and confirm Error message",
+            "result": {
+              "status": "passed",
+              "duration": 9854000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 59,
+            "name": "Enter all the mandatory KYC details and click on next",
+            "result": {
+              "status": "passed",
+              "duration": 3394000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 60,
+            "name": "Enter all the marketing ,regulatory, authorization profile details and click on next",
+            "result": {
+              "status": "passed",
+              "duration": 2636000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-management-:-subscriber;to-verify-that-proper-error-message-should-be-when-contact-number/-email--is-registered-in-the-system",
+        "keyword": "Scenario",
+        "line": 69,
+        "name": "To verify that Proper error message should be When contact Number/ Email  is registered in the system",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 70,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 8735000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 71,
+            "name": "Navigate to User Management and Click on register",
+            "result": {
+              "status": "passed",
+              "duration": 965000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 72,
+            "name": "Select User type as Subscriber and click on Subscriber",
+            "result": {
+              "status": "passed",
+              "duration": 3868000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 73,
+            "name": "Fill all required details and enter registered EmailID and confirm Error message",
+            "result": {
+              "status": "passed",
+              "duration": 8345000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 74,
+            "name": "Enter all the mandatory KYC details and click on next",
+            "result": {
+              "status": "passed",
+              "duration": 3592000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 75,
+            "name": "Enter all the marketing ,regulatory, authorization profile details and click on next",
+            "result": {
+              "status": "passed",
+              "duration": 3880000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-management-:-subscriber;to-verify-that-valid-systemadmin/businsess-user-is-able-to-initiate-subscriber-creation.",
+        "keyword": "Scenario",
+        "line": 88,
+        "name": "To verify that valid SystemAdmin/businsess User is able to initiate Subscriber creation.",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 89,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 8300000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 90,
+            "name": "Navigate to User Management and Click on register",
+            "result": {
+              "status": "passed",
+              "duration": 774000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 91,
+            "name": "Select User type as Subscriber and click on Subscriber",
+            "result": {
+              "status": "passed",
+              "duration": 4067000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 92,
+            "name": "Enter all the required subscriber details",
+            "result": {
+              "status": "passed",
+              "duration": 22869000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 93,
+            "name": "SubscrigReg Confirmation message is displayed",
+            "result": {
+              "status": "passed",
+              "duration": 2621000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-management-:-subscriber;to-verify-that-another-system-admin/businsess-user-is-able-to-approve-the-initiated-subscriber-creation.",
+        "keyword": "Scenario",
+        "line": 101,
+        "name": "To verify that another System Admin/businsess User is able to approve the initiated Subscriber creation.",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 102,
+            "name": "Login into Mobiquity Portal as System admin User2",
+            "result": {
+              "status": "passed",
+              "duration": 8733000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 103,
+            "name": "Navigate to Approvals and filter by Submitted status",
+            "result": {
+              "status": "passed",
+              "duration": 12477000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 104,
+            "name": "User click on submitted user data",
+            "result": {
+              "status": "passed",
+              "duration": 1283000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 105,
+            "name": "Approve the Users",
+            "result": {
+              "status": "passed",
+              "duration": 3605000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 106,
+            "name": "Added User status is approved",
+            "result": {
+              "status": "passed",
+              "duration": 2521000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-management-:-subscriber;to-verify-that-system-admin/businsess-user-is-able-to-modify-subscriber-successfully.",
+        "keyword": "Scenario",
+        "line": 114,
+        "name": "To verify that System Admin/businsess user is able to modify Subscriber successfully.",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 115,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 8412000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 116,
+            "name": "Navigate to User Management and Click on manage user",
+            "result": {
+              "status": "passed",
+              "duration": 661000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 117,
+            "name": "enter user mobile number and search the user",
+            "result": {
+              "status": "passed",
+              "duration": 4081000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 118,
+            "name": "System Admin is able to view details",
+            "result": {
+              "status": "passed",
+              "duration": 4080000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 119,
+            "name": "System Admin is able to edit subscriber details",
+            "result": {
+              "status": "passed",
+              "duration": 5767000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 120,
+            "name": "Confirm the edit details",
+            "result": {
+              "status": "passed",
+              "duration": 1790000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-management-:-subscriber;to-verify-that-another-system-admin/businsess-user-is-able-to-approve-the-modified-subscriber-data.",
+        "keyword": "Scenario",
+        "line": 128,
+        "name": "To verify that another System Admin/businsess User is able to approve the Modified Subscriber Data.",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 129,
+            "name": "Login into Mobiquity Portal as System admin User2",
+            "result": {
+              "status": "passed",
+              "duration": 8773000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 130,
+            "name": "Navigate to Approvals and filter by Modification of user status",
+            "result": {
+              "status": "passed",
+              "duration": 4180000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 131,
+            "name": "User click on submitted user data",
+            "result": {
+              "status": "passed",
+              "duration": 1790000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 132,
+            "name": "Approve the Users",
+            "result": {
+              "status": "passed",
+              "duration": 430000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 133,
+            "name": "Edited User status is approved",
+            "result": {
+              "status": "passed",
+              "duration": 2261000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-management-:-subscriber;to-verify-that-modification-message-is-sent-to-subscriber-successfully.",
+        "keyword": "Scenario",
+        "line": 143,
+        "name": "To verify that modification message is sent to Subscriber successfully.",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 144,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 9266000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 145,
+            "name": "Navigate to User Management and Click on manage user",
+            "result": {
+              "status": "passed",
+              "duration": 655000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 146,
+            "name": "enter user mobile number and search the user",
+            "result": {
+              "status": "passed",
+              "duration": 1521000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 147,
+            "name": "System Admin is able to view details",
+            "result": {
+              "status": "passed",
+              "duration": 4014000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 148,
+            "name": "System Admin is able to edit KYC details",
+            "result": {
+              "status": "passed",
+              "duration": 18680000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 149,
+            "name": "Confirm the edit details",
+            "result": {
+              "status": "passed",
+              "duration": 2166000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 150,
+            "name": "Logout",
+            "result": {
+              "status": "passed",
+              "duration": 3558000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 151,
+            "name": "Login into Mobiquity Portal as another System admin User after Logout",
+            "result": {
+              "status": "passed",
+              "duration": 11103000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 152,
+            "name": "Navigate to Approvals and filter by Submitted status",
+            "result": {
+              "status": "passed",
+              "duration": 5746000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 153,
+            "name": "User click on submitted user data",
+            "result": {
+              "status": "passed",
+              "duration": 434000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 154,
+            "name": "verify message sent to user",
+            "result": {
+              "status": "passed",
+              "duration": 4839000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-management-:-subscriber;to-verify-that-the-system-admin-is-able-to-suspend-a-subscriber-successfully-through-web.",
+        "keyword": "Scenario",
+        "line": 165,
+        "name": "To verify that the System Admin is able to suspend a subscriber successfully through web.",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 166,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 8662000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 167,
+            "name": "Navigate to User Management and Click on manage user",
+            "result": {
+              "status": "passed",
+              "duration": 724000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 168,
+            "name": "enter user mobile number and search the SuspendResume user",
+            "result": {
+              "status": "passed",
+              "duration": 1703000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 169,
+            "name": "System Admin is able to view details",
+            "result": {
+              "status": "passed",
+              "duration": 4044000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 170,
+            "name": "Suspend the user by giving the comment",
+            "result": {
+              "status": "passed",
+              "duration": 1092000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 171,
+            "name": "Verify the user suspend Confirmation message",
+            "result": {
+              "status": "passed",
+              "duration": 23000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 172,
+            "name": "Logout",
+            "result": {
+              "status": "passed",
+              "duration": 3394000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 173,
+            "name": "Login into Mobiquity Portal as another System admin User after Logout",
+            "result": {
+              "status": "passed",
+              "duration": 10383000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 174,
+            "name": "Navigate to Approvals",
+            "result": {
+              "status": "passed",
+              "duration": 1434000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 175,
+            "name": "Admin click on Suspended user data",
+            "result": {
+              "status": "passed",
+              "duration": 9155000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 176,
+            "name": "Approve to suspended the Users",
+            "result": {
+              "status": "passed",
+              "duration": 756000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 177,
+            "name": "Verify the user Suspended approval message",
+            "result": {
+              "status": "passed",
+              "duration": 41000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-management-:-subscriber;to-verify-that-the-system-admin-is-able-to-resume-a-suspend-subscriber-successfully-through-web.",
+        "keyword": "Scenario",
+        "line": 185,
+        "name": "To verify that the System Admin is able to resume a suspend subscriber successfully through web.",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 186,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 8562000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 187,
+            "name": "Navigate to User Management and Click on manage user",
+            "result": {
+              "status": "passed",
+              "duration": 790000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 188,
+            "name": "enter user mobile number and search the SuspendResume user",
+            "result": {
+              "status": "passed",
+              "duration": 2114000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 189,
+            "name": "Resume the user by giving the comment",
+            "result": {
+              "status": "passed",
+              "duration": 1972000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 190,
+            "name": "Verify the user resume Confirmation message",
+            "result": {
+              "status": "passed",
+              "duration": 689000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 191,
+            "name": "Logout",
+            "result": {
+              "status": "passed",
+              "duration": 3722000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 192,
+            "name": "Login into Mobiquity Portal as another System admin User after Logout",
+            "result": {
+              "status": "passed",
+              "duration": 10059000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 193,
+            "name": "Navigate to Approvals",
+            "result": {
+              "status": "passed",
+              "duration": 585000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 194,
+            "name": "Admin click on Resumeded user data",
+            "result": {
+              "status": "passed",
+              "duration": 8864000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 195,
+            "name": "Approve the Resumed User",
+            "result": {
+              "status": "passed",
+              "duration": 1026000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 196,
+            "name": "Verify the user Resumed approval message",
+            "result": {
+              "status": "passed",
+              "duration": 1718000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-management-:-subscriber;to-verify-that-proper-error-message-should--be-displayed-when-contact-number-is-not-verified.",
+        "keyword": "Scenario",
+        "line": 204,
+        "name": "To verify that proper error message should  be displayed when contact number is not verified.",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 205,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 8771000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 206,
+            "name": "Navigate to User Management and Click on register",
+            "result": {
+              "status": "passed",
+              "duration": 762000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 207,
+            "name": "Select User type as Subscriber and click on Subscriber",
+            "result": {
+              "status": "passed",
+              "duration": 4783000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 208,
+            "name": "Enter all basic details and do not verify contact number",
+            "result": {
+              "status": "passed",
+              "duration": 5254000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 209,
+            "name": "Verify that error button should be visible",
+            "result": {
+              "status": "passed",
+              "duration": 378000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-management-:-subscriber;to-verify-that-proper-error-message-should--be-displayed-when-an-invalid-value-entered",
+        "keyword": "Scenario",
+        "line": 218,
+        "name": "To verify that proper error message should  be displayed when An Invalid Value Entered",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 219,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 8622000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 220,
+            "name": "Navigate to User Management and Click on register",
+            "result": {
+              "status": "passed",
+              "duration": 547000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 221,
+            "name": "Select User type as Subscriber and click on Subscriber",
+            "result": {
+              "status": "passed",
+              "duration": 4450000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 222,
+            "name": "Enter any invalid vlue to get the error message",
+            "result": {
+              "status": "passed",
+              "duration": 1643000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 223,
+            "name": "Confirm the Error message",
+            "result": {
+              "status": "passed",
+              "duration": 137000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-management-:-subscriber;to-verify-that-proper-error-message-should--be-displayed-when-mobile-number-is-not-verified.",
+        "keyword": "Scenario",
+        "line": 231,
+        "name": "To verify that proper error message should  be displayed when Mobile number is not verified.",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 232,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 8193000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 233,
+            "name": "Navigate to User Management and Click on register",
+            "result": {
+              "status": "passed",
+              "duration": 438000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 234,
+            "name": "Select User type as Subscriber and click on Subscriber",
+            "result": {
+              "status": "passed",
+              "duration": 4198000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 235,
+            "name": "Enter Subscriber MobileNumber Already Registered",
+            "result": {
+              "status": "passed",
+              "duration": 2583000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 236,
+            "name": "confirm mobile number error message",
+            "result": {
+              "status": "passed",
+              "duration": 20000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-management-:-subscriber;to-verify-that-business-admin-is-able-to--view-lower_hierarchy-details",
+        "keyword": "Scenario",
+        "line": 249,
+        "name": "To verify that Business admin is able to  view Lower_Hierarchy details",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 250,
+            "name": "Login into Mobiquity Portal as Business admin User",
+            "result": {
+              "status": "failed",
+              "error_message": "CypressError: Timed out retrying after 15050ms: `cy.click()` failed because this element is not visible:\n\n`<button class=\"fd-shellbar__button fd-button fd-identifier fd-identifier--xs fd-identifier--circle svelte-1jh0v0i\" style=\"background-image: url('./default_profile_pic.png');background-size:30px;background-repeat: no-repeat;background-position: center;\" aria-expanded=\"false\" aria-haspopup=\"true\" title=\"ZPpbH Bwpqi\"></button>`\n\nThis element `<button.fd-shellbar__button.fd-button.fd-identifier.fd-identifier--xs.fd-identifier--circle.svelte-1jh0v0i>` is not visible because its parent `<div.fd-shellbar.hideNavComponent.svelte-1jh0v0i>` has CSS property: `display: none`\n\nFix this problem, or use `{force: true}` to disable error checking.\n    at runVisibilityCheck (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:163892:76)\n    at $Cy.ensureStrictVisibility (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:163908:12)\n    at runAllChecks (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:150566:14)\n    at retryActionability (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:150621:16)\nFrom previous event:\n    at whenStable (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:168785:63)\n    at http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:168282:14\nFrom previous event:\n    at $Cy.retry (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:168262:76)\n    at retryActionability (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:150624:19)\n    at http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:150628:12\nFrom previous event:\n    at Object.verify (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:150533:61)\n    at perform (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:152661:77)\nFrom previous event:\n    at mouseAction (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:152699:60)\n    at Context.click (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:152718:14)\n    at Context.<anonymous> (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:173242:19)\nFrom Your Spec Code:\n    at Context.eval (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\Usermanagement\\Subscriber.feature:1405:29)"
+            },
+            "embeddings": [
+              {
+                "mime_type": "image/png"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 251,
+            "name": "Navigate to User Management and Click on manage user",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 252,
+            "name": "Enter Mobile number or KYC number in Search",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 253,
+            "name": "User Click on eye button",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 254,
+            "name": "Verify View Details Page",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-management-:-subscriber;to-verify-that-business-admin-able-to-view-subscriber-details",
+        "keyword": "Scenario",
+        "line": 263,
+        "name": "To verify that Business admin able to view subscriber details",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 264,
+            "name": "Login into Mobiquity Portal as Business admin User",
+            "result": {
+              "status": "failed",
+              "error_message": "CypressError: Timed out retrying after 15050ms: `cy.click()` failed because this element is not visible:\n\n`<button class=\"fd-shellbar__button fd-button fd-identifier fd-identifier--xs fd-identifier--circle svelte-1jh0v0i\" style=\"background-image: url('./default_profile_pic.png');background-size:30px;background-repeat: no-repeat;background-position: center;\" aria-expanded=\"false\" aria-haspopup=\"true\" title=\"ZPpbH Bwpqi\"></button>`\n\nThis element `<button.fd-shellbar__button.fd-button.fd-identifier.fd-identifier--xs.fd-identifier--circle.svelte-1jh0v0i>` is not visible because its parent `<div.fd-shellbar.hideNavComponent.svelte-1jh0v0i>` has CSS property: `display: none`\n\nFix this problem, or use `{force: true}` to disable error checking.\n    at runVisibilityCheck (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:163892:76)\n    at $Cy.ensureStrictVisibility (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:163908:12)\n    at runAllChecks (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:150566:14)\n    at retryActionability (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:150621:16)\nFrom previous event:\n    at whenStable (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:168785:63)\n    at http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:168282:14\nFrom previous event:\n    at $Cy.retry (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:168262:76)\n    at retryActionability (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:150624:19)\n    at http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:150628:12\nFrom previous event:\n    at Object.verify (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:150533:61)\n    at perform (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:152661:77)\nFrom previous event:\n    at mouseAction (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:152699:60)\n    at Context.click (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:152718:14)\n    at Context.<anonymous> (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:173242:19)\nFrom Your Spec Code:\n    at Context.eval (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\Usermanagement\\Subscriber.feature:1405:29)"
+            },
+            "embeddings": [
+              {
+                "mime_type": "image/png"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 265,
+            "name": "Navigate to User Management and Click on manage user",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 266,
+            "name": "Enter Mobile number or KYC number in Search",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 267,
+            "name": "User Click on eye button",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 268,
+            "name": "Verify View Details Page",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-management-:-subscriber;to-verify-that-system-admin-able-to-view-subscriber-details",
+        "keyword": "Scenario",
+        "line": 277,
+        "name": "To verify that System admin able to view subscriber details",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 278,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 9145000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 279,
+            "name": "Navigate to User Management and Click on manage user",
+            "result": {
+              "status": "passed",
+              "duration": 887000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 280,
+            "name": "Enter Mobile number or KYC number in Search",
+            "result": {
+              "status": "passed",
+              "duration": 1999000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 281,
+            "name": "User Click on eye button",
+            "result": {
+              "status": "passed",
+              "duration": 922000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 282,
+            "name": "Verify View Details Page",
+            "result": {
+              "status": "passed",
+              "duration": 158000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-management-:-subscriber;to-verify-that-proper-error-message-should-be-displayed-when-login-id-is-already-registered-in-the-system.",
+        "keyword": "Scenario",
+        "line": 295,
+        "name": "To verify that proper error message should be displayed when login id is already registered in the system.",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 296,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 8946000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 297,
+            "name": "Navigate to User Management and Click on register",
+            "result": {
+              "status": "passed",
+              "duration": 753000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 298,
+            "name": "Select User type as Business and Select Corporate",
+            "result": {
+              "status": "passed",
+              "duration": 4696000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 299,
+            "name": "Enter registered login id value",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `input[data-test-id=\"user-search-details\"]`, but never found it. Queried from element: <body>\n    at manageUsers.getSearchUser (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\Usermanagement\\Subscriber.feature:2994:26)\n    at Context.eval (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\Usermanagement\\Subscriber.feature:4238:19)"
+            },
+            "embeddings": [
+              {
+                "mime_type": "image/png"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 300,
+            "name": "Login id Error message is displayed",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-management-:-subscriber;to-verify-that-proper-error-message-should-be-displayed-when-email-id--is-registered-in-the-system.",
+        "keyword": "Scenario",
+        "line": 309,
+        "name": "To verify that proper error message should be displayed when Email Id  is registered in the system.",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 310,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 9912000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 311,
+            "name": "Navigate to User Management and Click on register",
+            "result": {
+              "status": "passed",
+              "duration": 777000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 312,
+            "name": "Select User type as Business and Select Corporate",
+            "result": {
+              "status": "passed",
+              "duration": 5841000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 313,
+            "name": "Enter registered email id value",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `input[data-test-id=\"user-search-details\"]`, but never found it. Queried from element: <body>\n    at manageUsers.getSearchUser (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\Usermanagement\\Subscriber.feature:2994:26)\n    at Context.eval (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\Usermanagement\\Subscriber.feature:4238:19)"
+            },
+            "embeddings": [
+              {
+                "mime_type": "image/png"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 314,
+            "name": "Email Error message is displayed",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-management-:-subscriber;to-verify-that-immidiate-error-message-should-be-displayed-whne-any-invalid-value-is-entered-by-the-user.",
+        "keyword": "Scenario",
+        "line": 322,
+        "name": "TO verify that immidiate error message should be displayed whne any invalid value is entered by the user.",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 323,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 9951000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 324,
+            "name": "Navigate to User Management and Click on register",
+            "result": {
+              "status": "passed",
+              "duration": 1230000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 325,
+            "name": "Select User type as Business and Select Corporate",
+            "result": {
+              "status": "passed",
+              "duration": 6440000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 326,
+            "name": "Enter Invalid Login id value details",
+            "result": {
+              "status": "passed",
+              "duration": 5570000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 327,
+            "name": "invalid value message is displayed",
+            "result": {
+              "status": "passed",
+              "duration": 716000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,1202 @@
+[
+  {
+    "description": "    This feature includes registering, Modifying and Approval of Business Admin and\n    Customer Support Admin Users by System Admin",
+    "keyword": "Feature",
+    "name": "User Management : Administrator",
+    "line": 1,
+    "id": "user-management-:-administrator",
+    "tags": [],
+    "uri": "Administrator.feature",
+    "elements": [
+      {
+        "id": "user-management-:-administrator;registration-of-business-administrator",
+        "keyword": "Scenario",
+        "line": 14,
+        "name": "Registration of Business Administrator",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 15,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 13897000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 16,
+            "name": "Navigate to User Management and Click on register",
+            "result": {
+              "status": "passed",
+              "duration": 494000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 17,
+            "name": "Select User type as Adminstrator and click on BusinessAdmin",
+            "result": {
+              "status": "passed",
+              "duration": 12261000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "Enter all the required details",
+            "result": {
+              "status": "passed",
+              "duration": 10634000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 19,
+            "name": "Confirmation message is displayed",
+            "result": {
+              "status": "passed",
+              "duration": 1363000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-management-:-administrator;approval-of-registered-business-administrator",
+        "keyword": "Scenario",
+        "line": 29,
+        "name": "Approval of registered Business Administrator",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 30,
+            "name": "Login into Mobiquity Portal as another System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 6490000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 31,
+            "name": "Navigate to Approvals and filter by Submitted status",
+            "result": {
+              "status": "passed",
+              "duration": 10376000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 32,
+            "name": "User click on submitted user data",
+            "result": {
+              "status": "passed",
+              "duration": 1346000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 33,
+            "name": "Approve the Users",
+            "result": {
+              "status": "passed",
+              "duration": 1973000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 34,
+            "name": "User status is approved",
+            "result": {
+              "status": "passed",
+              "duration": 1198000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-management-:-administrator;system-admin-is-able-to-initiate-modification-request-of-business-admin",
+        "keyword": "Scenario",
+        "line": 43,
+        "name": "System Admin is able to initiate modification request of Business Admin",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 44,
+            "name": "Login into Mobiquity Portal as another System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 6022000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 45,
+            "name": "Navigate to Manage User, and search Business Admin",
+            "result": {
+              "status": "passed",
+              "duration": 1442000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 46,
+            "name": "Search Business Admin",
+            "result": {
+              "status": "passed",
+              "duration": 2720000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 47,
+            "name": "System Admin is able to view details",
+            "result": {
+              "status": "passed",
+              "duration": 3795000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 48,
+            "name": "System Admin is able to edit details",
+            "result": {
+              "status": "passed",
+              "duration": 5037000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 49,
+            "name": "Confirm the edit details",
+            "result": {
+              "status": "passed",
+              "duration": 1529000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-management-:-administrator;system-admin-is-able-to-approve-of-modification-request-of-business-admin",
+        "keyword": "Scenario",
+        "line": 58,
+        "name": "System Admin is able to approve of modification request of Business Admin",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 59,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 7882000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 60,
+            "name": "Navigate to Approvals and filter by Submitted status",
+            "result": {
+              "status": "passed",
+              "duration": 3899000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 61,
+            "name": "User click on submitted user data",
+            "result": {
+              "status": "passed",
+              "duration": 3694000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 62,
+            "name": "Approve the Users",
+            "result": {
+              "status": "passed",
+              "duration": 411000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 63,
+            "name": "User modified is approved",
+            "result": {
+              "status": "passed",
+              "duration": 882000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-management-:-administrator;registration-of-business-administrator-as-customer-care-admin",
+        "keyword": "Scenario",
+        "line": 72,
+        "name": "Registration of Business Administrator as Customer care Admin",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 73,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 8280000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 74,
+            "name": "Navigate to User Management and Click on register",
+            "result": {
+              "status": "passed",
+              "duration": 438000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 75,
+            "name": "Select User type as Adminstrator and click on Customer care Admin",
+            "result": {
+              "status": "passed",
+              "duration": 5256000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 76,
+            "name": "Enter all the details",
+            "result": {
+              "status": "passed",
+              "duration": 6795000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 77,
+            "name": "Confirmation message is displayed",
+            "result": {
+              "status": "passed",
+              "duration": 1088000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-management-:-administrator;approval--to-create-customer-care-admin",
+        "keyword": "Scenario",
+        "line": 85,
+        "name": "Approval  to create Customer Care Admin",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 86,
+            "name": "Login into Mobiquity Portal as another System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 6606000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 87,
+            "name": "Navigate to Approvals and filter by Submitted status",
+            "result": {
+              "status": "passed",
+              "duration": 3974000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 88,
+            "name": "User click on submitted user data",
+            "result": {
+              "status": "passed",
+              "duration": 2903000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 89,
+            "name": "Approve the Users",
+            "result": {
+              "status": "passed",
+              "duration": 438000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 90,
+            "name": "User status is approved",
+            "result": {
+              "status": "passed",
+              "duration": 1013000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-management-:-administrator;system-admin-should-be-able-to-initite-modification-searching-with-all-values-(mobile,email-and-login)",
+        "keyword": "Scenario",
+        "line": 99,
+        "name": "System admin should be able to Initite modification searching with all values (Mobile,Email and Login)",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 100,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 59375000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 101,
+            "name": "Navigate to Manage User, and search Business Admin",
+            "result": {
+              "status": "passed",
+              "duration": 3361000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 102,
+            "name": "Search with Mobile Number",
+            "result": {
+              "status": "passed",
+              "duration": 4648000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 103,
+            "name": "System Admin is able to view details",
+            "result": {
+              "status": "passed",
+              "duration": 4217000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 104,
+            "name": "System Admin is able to edit details of the user",
+            "result": {
+              "status": "passed",
+              "duration": 11088000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 105,
+            "name": "Confirm the edit details Of the User",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 15000ms: expected '[ <h2.text-center.text-danger>, 1 more... ]' to have text ' SUCCESS Service is successfully paused. Kindly contact admin for approval', but the text was ' ERROR unable to create workflow record as same record already under process'\n    + expected - actual\n\n    -' ERROR unable to create workflow record as same record already under process'\n    +' SUCCESS Service is successfully paused. Kindly contact admin for approval'\n\n    at Context.eval (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\Usermanagement\\Administrator.feature:434:39)\n    at Context.resolveAndRunStepDefinition (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\Usermanagement\\Administrator.feature:14070:29)\n    at Context.eval (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\Usermanagement\\Administrator.feature:13391:35)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 106,
+            "name": "Logout",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 107,
+            "name": "Login into Mobiquity Portal as another System admin User after Logout",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 108,
+            "name": "Navigate to Approvals and filter by Submitted status",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 109,
+            "name": "User click on submitted user data",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 110,
+            "name": "Approve the Users",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 111,
+            "name": "User modified is approved",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 113,
+            "name": "Logout",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 114,
+            "name": "Login into Mobiquity Portal as System admin User after Logout",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 115,
+            "name": "Navigate to Manage User, and search Business Admin",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 116,
+            "name": "Search with EmailID",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 117,
+            "name": "System Admin is able to view details",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 118,
+            "name": "System Admin is able to edit details of the user",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 119,
+            "name": "Confirm the edit details Of the User",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 120,
+            "name": "Logout",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 121,
+            "name": "Login into Mobiquity Portal as another System admin User after Logout",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 122,
+            "name": "Navigate to Approvals and filter by Submitted status",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 123,
+            "name": "User click on submitted user data",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 124,
+            "name": "Approve the Users",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 125,
+            "name": "User modified is approved",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 127,
+            "name": "Logout",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 128,
+            "name": "Login into Mobiquity Portal as System admin User after Logout",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 129,
+            "name": "Navigate to Manage User, and search Business Admin",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 130,
+            "name": "Search with LoginID",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 131,
+            "name": "System Admin is able to view details",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 132,
+            "name": "System Admin is able to edit details of the user",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 133,
+            "name": "Confirm the edit details Of the User",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 134,
+            "name": "Logout",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 135,
+            "name": "Login into Mobiquity Portal as another System admin User after Logout",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 136,
+            "name": "Navigate to Approvals and filter by Submitted status",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 137,
+            "name": "User click on submitted user data",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 138,
+            "name": "Approve the Users",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 139,
+            "name": "User modified is approved",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-management-:-administrator;to-verify-that-the-proper-sms-notification-&-e>>mail-should-be-sent-to-users-after-addition/modification/deletion-in-system.-(if-configured)",
+        "keyword": "Scenario",
+        "line": 148,
+        "name": "To verify that the Proper SMS Notification & E>>mail should be sent to users after addition/modification/deletion in system. (If configured)",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 149,
+            "name": "Login into Mobiquity Portal as another System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 7549000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 150,
+            "name": "Navigate to Manage User, and search Business Admin",
+            "result": {
+              "status": "passed",
+              "duration": 668000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 151,
+            "name": "Search Business Admin",
+            "result": {
+              "status": "passed",
+              "duration": 3021000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 152,
+            "name": "System Admin is able to view details",
+            "result": {
+              "status": "passed",
+              "duration": 4018000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 153,
+            "name": "System Admin is able to edit details",
+            "result": {
+              "status": "passed",
+              "duration": 16169000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 154,
+            "name": "Confirm the edit details",
+            "result": {
+              "status": "passed",
+              "duration": 2604000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 155,
+            "name": "Logout",
+            "result": {
+              "status": "passed",
+              "duration": 3626000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 156,
+            "name": "Login into Mobiquity Portal as System admin User after Logout",
+            "result": {
+              "status": "passed",
+              "duration": 17430000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 157,
+            "name": "Navigate to Approvals and filter by Submitted status",
+            "result": {
+              "status": "passed",
+              "duration": 8362000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 158,
+            "name": "User click on submitted user data",
+            "result": {
+              "status": "passed",
+              "duration": 1223000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 159,
+            "name": "Approve the Users and Check for SMS Notification sent to user",
+            "result": {
+              "status": "passed",
+              "duration": 10251000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-management-:-administrator;system-admin-should-be-able-to-initiate-deletion-of-an-existing-business-admin/customer-care-admin.",
+        "keyword": "Scenario",
+        "line": 167,
+        "name": "System admin should be able to initiate deletion of an existing Business Admin/Customer Care Admin.",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 168,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 16562000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 169,
+            "name": "Navigate to Manage User, and search Business Admin",
+            "result": {
+              "status": "passed",
+              "duration": 1884000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 170,
+            "name": "Search Business or Customer care Admin",
+            "result": {
+              "status": "passed",
+              "duration": 4825000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 171,
+            "name": "System Admin is able to Delete the User",
+            "result": {
+              "status": "passed",
+              "duration": 15547000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-management-:-administrator;approve/reject-delete-initiation-of-an-existing-business-admin/customer-care-admin.",
+        "keyword": "Scenario",
+        "line": 180,
+        "name": "Approve/Reject delete initiation of an existing Business Admin/Customer Care Admin.",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 181,
+            "name": "Login into Mobiquity Portal as another System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 8689000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 182,
+            "name": "Navigate to the Approvals",
+            "result": {
+              "status": "passed",
+              "duration": 3389000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 183,
+            "name": "User click on submitted user data",
+            "result": {
+              "status": "passed",
+              "duration": 7523000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 184,
+            "name": "Reject the Users",
+            "result": {
+              "status": "passed",
+              "duration": 5530000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-management-:-administrator;to-verify-that-system-admin-can-approve-modification-request-of-an-existing-business-admin/customer-care-admin",
+        "keyword": "Scenario",
+        "line": 192,
+        "name": "To verify that System admin can approve modification request of an existing Business Admin/Customer Care Admin",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 193,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 11113000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 194,
+            "name": "Navigate to Manage User, and search Business Admin",
+            "result": {
+              "status": "passed",
+              "duration": 2040000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 195,
+            "name": "Search with Mobile Number",
+            "result": {
+              "status": "passed",
+              "duration": 6055000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 196,
+            "name": "System Admin is able to view details",
+            "result": {
+              "status": "passed",
+              "duration": 4409000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 197,
+            "name": "System Admin is able to edit details of the user",
+            "result": {
+              "status": "passed",
+              "duration": 12513000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 198,
+            "name": "Confirm the edit details Of the User",
+            "result": {
+              "status": "passed",
+              "duration": 4842000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 199,
+            "name": "Logout",
+            "result": {
+              "status": "passed",
+              "duration": 2493000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 200,
+            "name": "Login into Mobiquity Portal as another System admin User after Logout",
+            "result": {
+              "status": "passed",
+              "duration": 15698000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 201,
+            "name": "Navigate to Approvals and filter by Submitted status",
+            "result": {
+              "status": "passed",
+              "duration": 9684000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 202,
+            "name": "User click on submitted user data",
+            "result": {
+              "status": "passed",
+              "duration": 1117000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 203,
+            "name": "Approve the Users",
+            "result": {
+              "status": "passed",
+              "duration": 2201000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 204,
+            "name": "User modified is approved",
+            "result": {
+              "status": "passed",
+              "duration": 3412000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-management-:-administrator;to-verify-that-business-admin-is-able-to--view-self-details",
+        "keyword": "Scenario",
+        "line": 212,
+        "name": "To verify that Business admin is able to  view Self details",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 213,
+            "name": "Login into Mobiquity Portal as Business admin User1",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 214,
+            "name": "Navigate to User Management and Click on manage user",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 215,
+            "name": "Enter Mobile number or KYC number in search",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 216,
+            "name": "User Click on eye button",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 217,
+            "name": "Verify View Details Page",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-management-:-administrator;to-verify-that-system-admin-is-able-to--lower-hierarchy-details",
+        "keyword": "Scenario",
+        "line": 225,
+        "name": "To verify that System admin is able to  Lower Hierarchy details",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 226,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 14434000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 227,
+            "name": "Navigate to User Management and Click on manage user",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 228,
+            "name": "Enter Mobile number or KYC number in search",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 229,
+            "name": "User Click on eye button",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 230,
+            "name": "Verify View Details Page",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

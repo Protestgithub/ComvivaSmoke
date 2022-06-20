@@ -1,0 +1,187 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Session Management",
+    "line": 1,
+    "id": "session-management",
+    "tags": [],
+    "uri": "SessionManagement.feature",
+    "elements": [
+      {
+        "id": "session-management;login-as-subscriber",
+        "keyword": "Scenario",
+        "line": 11,
+        "name": "Login as Subscriber",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 12,
+            "name": "Login into Mobiquity Portal as Subscriber",
+            "result": {
+              "status": "passed",
+              "duration": 15426000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "Change Password",
+            "result": {
+              "status": "failed",
+              "duration": 15702000000,
+              "error_message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `button[class=\"change-password-btn\"]`, but never found it. Queried from element: <body>\n    at loginPage.getchangepassword (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\SessionManagement\\SessionManagement.feature:3136:26)\n    at Context.eval (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\SessionManagement\\SessionManagement.feature:86:9)\n    at Context.resolveAndRunStepDefinition (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\SessionManagement\\SessionManagement.feature:13592:29)\n    at Context.eval (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\SessionManagement\\SessionManagement.feature:12913:35)"
+            },
+            "embeddings": [
+              {
+                "mime_type": "image/png"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "Login into Mobiquity Portal as Subscriber1",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "session-management;to-verify-that-master-admin/network-admin-can-check-details-of-all-his-own-session-through-session-management-.",
+        "keyword": "Scenario",
+        "line": 23,
+        "name": "To verify that Master Admin/Network Admin can check details of all his own session through session management .",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 24,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 7785000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 25,
+            "name": "Navigate to SessionManagement",
+            "result": {
+              "status": "passed",
+              "duration": 252000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 26,
+            "name": "Click On My Sessions",
+            "result": {
+              "status": "passed",
+              "duration": 3239000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "session-management;to-verify-that-master-admin/network-admin-can-check-other-user's-session-details-successfully.",
+        "keyword": "Scenario",
+        "line": 35,
+        "name": "To verify that Master Admin/Network Admin can check other user's session details successfully.",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 36,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 7382000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 37,
+            "name": "Navigate to SessionManagement",
+            "result": {
+              "status": "passed",
+              "duration": 244000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 38,
+            "name": "Click On All Session and Enter Number to search",
+            "result": {
+              "status": "passed",
+              "duration": 7298000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "session-management;to-verify-that-master-admin/network-admin-can-delete-all-the-session-details-of-a-selected-user-successfully.",
+        "keyword": "Scenario",
+        "line": 47,
+        "name": "To verify that Master Admin/Network Admin can delete all the session details of a selected user successfully.",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 48,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 7967000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 49,
+            "name": "Navigate to SessionManagement",
+            "result": {
+              "status": "passed",
+              "duration": 247000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 50,
+            "name": "Click On All Session and Enter Number to search",
+            "result": {
+              "status": "passed",
+              "duration": 2168000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 51,
+            "name": "Delete Devices",
+            "result": {
+              "status": "passed",
+              "duration": 1634000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

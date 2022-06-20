@@ -1,0 +1,215 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Exchange Rate Management",
+    "line": 1,
+    "id": "exchange-rate-management",
+    "tags": [],
+    "uri": "ExchangeRate.feature",
+    "elements": [
+      {
+        "id": "exchange-rate-management;to-verify-that-system-admin-can-initiate-add-exchange-rate-.",
+        "keyword": "Scenario",
+        "line": 13,
+        "name": "To verify that system admin can initiate Add Exchange Rate .",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 14,
+            "name": "Login into Mobiquity Portal as System admin User1",
+            "result": {
+              "status": "passed",
+              "duration": 12343000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 15,
+            "name": "Navigate to Exchange Rate Management and Click on Add Exchange Rate",
+            "result": {
+              "status": "passed",
+              "duration": 339000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "Enter all the required details and click on Submit",
+            "result": {
+              "status": "passed",
+              "duration": 10761000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 17,
+            "name": "System Admin can initiate Add Exchange Rate",
+            "result": {
+              "status": "passed",
+              "duration": 94000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "exchange-rate-management;approve-exchange-rate-management",
+        "keyword": "Scenario",
+        "line": 25,
+        "name": "Approve Exchange Rate Management",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 26,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 7249000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 27,
+            "name": "Navigate to Exchange Rate Management and Click Approve or Reject ER",
+            "result": {
+              "status": "passed",
+              "duration": 353000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 28,
+            "name": "Approve Or Reject ER",
+            "result": {
+              "status": "passed",
+              "duration": 7107000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "exchange-rate-management;to-verify-that-system-admin-can-modify-the-exchange-rate-in-the-system-susccessfully.",
+        "keyword": "Scenario",
+        "line": 38,
+        "name": "To verify that system admin can Modify the Exchange Rate in the system susccessfully.",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 39,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 7214000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 40,
+            "name": "Navigate to Exchange Rate Management and Click Update Exchange Rate",
+            "result": {
+              "status": "passed",
+              "duration": 357000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 41,
+            "name": "Enter all details and click on Submit",
+            "result": {
+              "status": "passed",
+              "duration": 8142000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 42,
+            "name": "Logout",
+            "result": {
+              "status": "passed",
+              "duration": 843000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 43,
+            "name": "Login into Mobiquity Portal as another System admin User after Logout",
+            "result": {
+              "status": "failed",
+              "error_message": "TypeError: Cannot read properties of undefined (reading 'sysAdminUser1')\n    at Context.eval (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\ExchangeRateManagement\\ExchangeRate.feature:86:38)\n    at Context.resolveAndRunStepDefinition (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\ExchangeRateManagement\\ExchangeRate.feature:13880:29)\n    at Context.eval (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\ExchangeRateManagement\\ExchangeRate.feature:13201:35)"
+            },
+            "embeddings": [
+              {
+                "mime_type": "image/png"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 44,
+            "name": "Navigate to Exchange Rate Management and Click Approve or Reject Updated Exchange Rate",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 45,
+            "name": "Click on Approve to Approve Exchange Rate",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "exchange-rate-management;to-verify-that-systen-admin-can-view-modification-exchange-history-successfully.",
+        "keyword": "Scenario",
+        "line": 55,
+        "name": "To verify that systen admin can View Modification exchange History successfully.",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 56,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 8965000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 57,
+            "name": "Navigate to Exchange Rate Management and Click Show Modification History",
+            "result": {
+              "status": "passed",
+              "duration": 547000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

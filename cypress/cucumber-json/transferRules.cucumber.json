@@ -1,0 +1,665 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Transfer rules",
+    "line": 1,
+    "id": "transfer-rules",
+    "tags": [],
+    "uri": "transferRules.feature",
+    "elements": [
+      {
+        "id": "transfer-rules;to-verify-that-system-admin-should-be-able-to-modify-transfer-rule-successfully.",
+        "keyword": "Scenario",
+        "line": 9,
+        "name": "To verify that System admin should be able to Modify Transfer Rule successfully.",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 10,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 15141000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 11,
+            "name": "User Click on Transfer Rule.",
+            "result": {
+              "status": "passed",
+              "duration": 6537000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "Select the Service Name and from details.",
+            "result": {
+              "status": "passed",
+              "duration": 9845000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "Select the To details.",
+            "result": {
+              "status": "passed",
+              "duration": 6179000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "Select the From & To category.",
+            "result": {
+              "status": "passed",
+              "duration": 3191000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 15,
+            "name": "User clicks on edit option.",
+            "result": {
+              "status": "passed",
+              "duration": 402000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 16,
+            "name": "Click on submit button.",
+            "result": {
+              "status": "passed",
+              "duration": 2317000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 17,
+            "name": "Click on confirm button.",
+            "result": {
+              "status": "passed",
+              "duration": 2297000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "transfer-rules;to-verify-that-system-admin-should-be-able-to-add-approve-transfer-rule-successfully.",
+        "keyword": "Scenario",
+        "line": 26,
+        "name": "To verify that System admin should be able to add approve Transfer Rule successfully.",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 27,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 8340000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 28,
+            "name": "User clicks on transfer rule approval",
+            "result": {
+              "status": "failed",
+              "error_message": "TypeError: transferruleapprovalpage.getTransferRule is not a function\n    at Context.eval (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\TransferRules\\transferRules.feature:438:28)\n    at Context.resolveAndRunStepDefinition (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\TransferRules\\transferRules.feature:14606:29)\n    at Context.eval (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\TransferRules\\transferRules.feature:13927:35)\nFrom previous event:\n    at Context.thenFn (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:156310:63)\n    at Context.then (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:156762:21)\n    at Context.<anonymous> (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:173242:19)\n    at http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:172098:15\nFrom previous event:\n    at CommandQueue.runCommand (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:172077:8)\n    at next (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:172220:19)\n    at http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:172249:16"
+            },
+            "embeddings": [
+              {
+                "mime_type": "image/png"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 29,
+            "name": "Select rule and approve",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 30,
+            "name": "click on submit",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "transfer-rules;to-verify-that-system-admin-should-be-able-to-add-initiate-transfer-rule-successfully.",
+        "keyword": "Scenario",
+        "line": 126,
+        "name": "To verify that System admin should be able to add initiate Transfer Rule successfully.",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 127,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 38142000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 128,
+            "name": "User Click on Transfer Rule.",
+            "result": {
+              "status": "passed",
+              "duration": 7687000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 129,
+            "name": "Select the Service Name and from details.",
+            "result": {
+              "status": "passed",
+              "duration": 8908000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 130,
+            "name": "Select the To details.",
+            "result": {
+              "status": "passed",
+              "duration": 8674000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 131,
+            "name": "Select the From & To category.",
+            "result": {
+              "status": "passed",
+              "duration": 5011000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 132,
+            "name": "Click on Add Transfer Rule button.",
+            "result": {
+              "status": "passed",
+              "duration": 3008000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 133,
+            "name": "Confirm the Error Message",
+            "result": {
+              "status": "failed",
+              "error_message": "TypeError: transferrulepage.getErrorMessage is not a function\n    at Context.eval (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\TransferRules\\transferRules.feature:490:20)\n    at Context.resolveAndRunStepDefinition (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\TransferRules\\transferRules.feature:14606:29)\n    at Context.eval (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\TransferRules\\transferRules.feature:13927:35)\nFrom previous event:\n    at Context.thenFn (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:156310:63)\n    at Context.then (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:156762:21)\n    at Context.<anonymous> (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:173242:19)\n    at http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:172098:15\nFrom previous event:\n    at CommandQueue.runCommand (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:172077:8)\n    at next (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:172220:19)\n    at http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:172249:16"
+            },
+            "embeddings": [
+              {
+                "mime_type": "image/png"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "transfer-rules;to-verify-that-system-admin-should-be-able-to-view-transfer-rule-successfully.",
+        "keyword": "Scenario",
+        "line": 58,
+        "name": "To verify that System admin should be able to View Transfer Rule successfully.",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 59,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 8632000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 60,
+            "name": "User Click on Transfer Rule.",
+            "result": {
+              "status": "passed",
+              "duration": 6668000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 61,
+            "name": "Select the Service Name and from details.",
+            "result": {
+              "status": "passed",
+              "duration": 8843000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 62,
+            "name": "Select the To details.",
+            "result": {
+              "status": "passed",
+              "duration": 6979000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 63,
+            "name": "Select the From & To category.",
+            "result": {
+              "status": "passed",
+              "duration": 4161000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 64,
+            "name": "User clicks on view option.",
+            "result": {
+              "status": "passed",
+              "duration": 3243000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "transfer-rules;to-verify-that-system-admin-should-be-able-to-delete-transfer-rule-successfully.",
+        "keyword": "Scenario",
+        "line": 74,
+        "name": "To verify that System admin should be able to Delete Transfer Rule successfully.",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 75,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 11193000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 76,
+            "name": "User Click on Transfer Rule.",
+            "result": {
+              "status": "passed",
+              "duration": 6854000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 77,
+            "name": "Select the Service Name and from details.",
+            "result": {
+              "status": "failed",
+              "error_message": "CypressError: Timed out retrying after 15000ms: `cy.select()` failed because it could not find a single `<option>` with value, index, or text matching: `MFS3`\n    at getOptions (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:153753:80)\nFrom previous event:\n    at retryOptions (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:153791:67)\n    at whenStable (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:168785:63)\n    at http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:168282:14\nFrom Your Spec Code:\n    at Context.eval (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\TransferRules\\transferRules.feature:203:41)\n    at Context.resolveAndRunStepDefinition (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\TransferRules\\transferRules.feature:14606:29)\n    at Context.eval (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\TransferRules\\transferRules.feature:13927:35)"
+            },
+            "embeddings": [
+              {
+                "mime_type": "image/png"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 78,
+            "name": "Select the To details.",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 79,
+            "name": "Select the From & To category.",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 80,
+            "name": "User clicks on Delete option.",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "transfer-rules;to-verify-that-system-admin-should-be-able-to-suspend-transfer-rule-successfully.",
+        "keyword": "Scenario",
+        "line": 88,
+        "name": "To verify that System admin should be able to Suspend Transfer Rule successfully.",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 89,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 14081000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 90,
+            "name": "User Click on Transfer Rule.",
+            "result": {
+              "status": "passed",
+              "duration": 7258000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 91,
+            "name": "Select the Service Name and from details.",
+            "result": {
+              "status": "passed",
+              "duration": 11083000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 92,
+            "name": "Select the To details.",
+            "result": {
+              "status": "passed",
+              "duration": 11073000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 93,
+            "name": "Select the From & To category.",
+            "result": {
+              "status": "passed",
+              "duration": 5650000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 94,
+            "name": "Click on Add Transfer Rule button.",
+            "result": {
+              "status": "passed",
+              "duration": 3233000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 95,
+            "name": "Suspend the status in transfer rule",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `select[id=\"trRule_confirmCoU_statusId\"]`, but never found it. Queried from element: <body#page-home>\n    at TransferRulePage.getStatus (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\TransferRules\\transferRules.feature:2373:26)\n    at Context.eval (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\TransferRules\\transferRules.feature:422:20)\n    at Context.resolveAndRunStepDefinition (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\TransferRules\\transferRules.feature:14606:29)\n    at Context.eval (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\TransferRules\\transferRules.feature:13927:35)"
+            },
+            "embeddings": [
+              {
+                "mime_type": "image/png"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 96,
+            "name": "Click on submit button.",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 97,
+            "name": "Click on confirm button.",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "transfer-rules;to-verify-that-system-admin-is-able-to-add-o2c-transfer-rule-successfully.",
+        "keyword": "Scenario",
+        "line": 106,
+        "name": "To verify that System admin is able to add O2C Transfer Rule successfully.",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 107,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 10387000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 108,
+            "name": "User clicks on O2C transfer rules",
+            "result": {
+              "status": "passed",
+              "duration": 3126000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 109,
+            "name": "Select Domain Name.",
+            "result": {
+              "status": "passed",
+              "duration": 4943000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 110,
+            "name": "Select Category Name.",
+            "result": {
+              "status": "passed",
+              "duration": 1031000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 111,
+            "name": "Select MFS Provider,Payment Instrument.",
+            "result": {
+              "status": "passed",
+              "duration": 3750000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 112,
+            "name": "Enter First Approval Limit.",
+            "result": {
+              "status": "passed",
+              "duration": 1734000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 113,
+            "name": "Click on submit.",
+            "result": {
+              "status": "passed",
+              "duration": 1289000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 114,
+            "name": "Click on confirm.",
+            "result": {
+              "status": "passed",
+              "duration": 2861000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "transfer-rules;to-verify-that-proper-error-message-should-be-displayed-when-invalid-character-is-entered-in-the-amount.",
+        "keyword": "Scenario",
+        "line": 142,
+        "name": "To verify that proper error message should be displayed when invalid character is entered in the amount.",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 143,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 18283000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 144,
+            "name": "User clicks on O2C transfer rules",
+            "result": {
+              "status": "passed",
+              "duration": 5302000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 145,
+            "name": "Select Domain Name.",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `Select[id=\"domainCode\"]`, but never found it. Queried from element: <body>\n    at O2C.getDomainName (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\TransferRules\\transferRules.feature:2217:26)\n    at Context.eval (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\TransferRules\\transferRules.feature:454:23)\n    at Context.resolveAndRunStepDefinition (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\TransferRules\\transferRules.feature:14606:29)\n    at Context.eval (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\TransferRules\\transferRules.feature:13927:35)"
+            },
+            "embeddings": [
+              {
+                "mime_type": "image/png"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 146,
+            "name": "Select Category Name.",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 147,
+            "name": "Select MFS Provider,Payment Instrument.",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 148,
+            "name": "Enter First Approval Limit",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 149,
+            "name": "Click on submit.",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 150,
+            "name": "confirm the displayed Error Message",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

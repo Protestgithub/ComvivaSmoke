@@ -1,0 +1,16 @@
+{
+
+    "O2CTransferInitiate" : 
+    {
+        "msisdn": "7786948280",
+        "msisdn1": "7786848641",
+        "payeeProvider" : "MFS1",
+        "payeeWalletType": "Commission",
+        "type": "Cash",
+        "errorMessage": "Receiver has been suspended",
+        "ErrorMessage":  "Please enter a valid Transfer Amount",
+        "ErrorMessage1":  "Amount is greater than payee per txn amount"
+    }
+
+
+}

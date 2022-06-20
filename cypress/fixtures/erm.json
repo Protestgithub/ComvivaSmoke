@@ -1,0 +1,17 @@
+{
+    "erm":{
+        "frombasecurrency" : "Indian Rupee",
+        "fromTargetCurrecny" : "US Dollar",
+        "Error":"An exchange rate is already within the range.",
+        "Approve":"approved",
+        "UError":"no forex registered between from and to currencies",
+        "forexRate" : "123"
+    },
+    "updateder":{
+        "frombasecurrency1" : "Indian Rupee",
+        "fromTargetCurrecny1" : "US Dollar",
+        "validFrom1" : "12/12/2026",
+        "validTo1" : "17/12/2026",
+        "forexRate1" : "90"
+    }
+}

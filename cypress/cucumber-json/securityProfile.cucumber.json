@@ -1,0 +1,112 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "SecurityProfile",
+    "line": 1,
+    "id": "securityprofile",
+    "tags": [],
+    "uri": "securityProfile.feature",
+    "elements": [
+      {
+        "id": "securityprofile;to-verify-that-for-each-workspace-there-will-be-one-default-security-profile",
+        "keyword": "Scenario",
+        "line": 9,
+        "name": "To verify that for each workspace there will be one default security profile",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 10,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 12731000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 11,
+            "name": "Navigate to Security and click to select security profile",
+            "result": {
+              "status": "passed",
+              "duration": 5153000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "Filter by slecting Default",
+            "result": {
+              "status": "passed",
+              "duration": 11461000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 13,
+            "name": "Assert each workspace have one default Profile",
+            "result": {
+              "status": "passed",
+              "duration": 6399000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "securityprofile;security-profile-should-be-associated-with-the-user-at-the-time-of-on-boarding",
+        "keyword": "Scenario",
+        "line": 21,
+        "name": "Security profile should be associated with the user at the time of on-boarding",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 22,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 10201000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 23,
+            "name": "Navigate to User Management and Click on register",
+            "result": {
+              "status": "passed",
+              "duration": 1006000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 24,
+            "name": "Select User type as Subscriber and click on Subscriber",
+            "result": {
+              "status": "passed",
+              "duration": 11301000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 25,
+            "name": "Verify User registration have security profile",
+            "result": {
+              "status": "passed",
+              "duration": 154000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

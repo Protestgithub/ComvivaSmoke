@@ -1,0 +1,610 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Operator To Channel",
+    "line": 1,
+    "id": "operator-to-channel",
+    "tags": [],
+    "uri": "O2Cinitiation.feature",
+    "elements": [
+      {
+        "id": "operator-to-channel;to-verify-that-proper-error-message-should-be-displayed-when-business-user-is-suspended-in-the-system",
+        "keyword": "Scenario",
+        "line": 11,
+        "name": "To verify that proper error message should be displayed when business user is suspended in the system",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 12,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 8253000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 13,
+            "name": "Navigate to Operator to channel and click on O2C transfer initiate",
+            "result": {
+              "status": "passed",
+              "duration": 418000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "Enter All the Mandatory details",
+            "result": {
+              "status": "passed",
+              "duration": 4755000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "Click on submit and Confirm",
+            "result": {
+              "status": "passed",
+              "duration": 3444000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 16,
+            "name": "Confirm the Error message",
+            "result": {
+              "status": "passed",
+              "duration": 2167000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "operator-to-channel;to-verify-that-proper-error-message-should-be-displayed-when-amount-field-contains-any-invalid-character",
+        "keyword": "Scenario",
+        "line": 24,
+        "name": "To verify that proper error message should be displayed when amount field contains any invalid character",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 25,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 8014000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 26,
+            "name": "Navigate to Operator to channel and click on O2C transfer initiate",
+            "result": {
+              "status": "passed",
+              "duration": 446000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 27,
+            "name": "Enter All the Mandatory details and type Invalid Character in Transfer amount",
+            "result": {
+              "status": "passed",
+              "duration": 4809000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 28,
+            "name": "Click on submit and Confirm Error Message",
+            "result": {
+              "status": "passed",
+              "duration": 2264000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "operator-to-channel;to-verify-that-proper-error-message-should-be-displayed-when-no-stock-is-present-in-the-ind01-wallet.",
+        "keyword": "Scenario",
+        "line": 36,
+        "name": "To verify that proper error message should be displayed when no stock is present in the IND01 wallet.",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 37,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 7995000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 38,
+            "name": "Navigate to Operator to channel and click on O2C transfer initiate",
+            "result": {
+              "status": "passed",
+              "duration": 452000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 39,
+            "name": "Enter All the Details",
+            "result": {
+              "status": "passed",
+              "duration": 4753000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 40,
+            "name": "Click on submit and Confirm",
+            "result": {
+              "status": "passed",
+              "duration": 3384000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 41,
+            "name": "logout the user",
+            "result": {
+              "status": "passed",
+              "duration": 4645000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 42,
+            "name": "Login into Mobiquity Portal as System admin User2",
+            "result": {
+              "status": "passed",
+              "duration": 9330000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 43,
+            "name": "Navigate to Operator to channel and click on O2C transfer Approval1",
+            "result": {
+              "status": "passed",
+              "duration": 10532000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 44,
+            "name": "logout the user",
+            "result": {
+              "status": "passed",
+              "duration": 5339000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 45,
+            "name": "Login into Mobiquity Portal as System admin User3",
+            "result": {
+              "status": "passed",
+              "duration": 9114000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 46,
+            "name": "Navigate to Operator to channel and click on O2C transfer Approval2",
+            "result": {
+              "status": "passed",
+              "duration": 10491000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 47,
+            "name": "Confirm the displayed Error Message",
+            "result": {
+              "status": "passed",
+              "duration": 4333000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "operator-to-channel;to-verify-that-system-admin-can-initiate-the-o2c-successfully-if-valid-details-are-entered.",
+        "keyword": "Scenario",
+        "line": 61,
+        "name": "To verify that System admin can initiate the O2C successfully if valid details are entered.",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 62,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 8381000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 63,
+            "name": "Navigate to Operator to channel and click on O2C transfer initiate",
+            "result": {
+              "status": "passed",
+              "duration": 483000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 64,
+            "name": "Enter All the Mandatory Details",
+            "result": {
+              "status": "passed",
+              "duration": 4580000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 65,
+            "name": "Click on submit and Confirm",
+            "result": {
+              "status": "passed",
+              "duration": 3268000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "operator-to-channel;to-verify-that-o2c-transfer-after-initiation-for-amount-transfer-should-go-for-approval-1.",
+        "keyword": "Scenario",
+        "line": 76,
+        "name": "To verify that O2C transfer after initiation for amount transfer should go for Approval 1.",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 77,
+            "name": "Login into Mobiquity Portal as System admin User2",
+            "result": {
+              "status": "passed",
+              "duration": 11039000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 78,
+            "name": "Navigate to Operator to channel and click on O2C transfer Approval1",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `#o2cApproval1_displayTransactionDetails .wwFormTableC>tbody>tr>td, {force:true}`, but never found it. Queried from element: <body.px-4>\n    at O2CTransferInitiate.getRecentDatainO2C (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\OperatorToChannel\\O2Cinitiation.feature:1215:26)\n    at Context.eval (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\OperatorToChannel\\O2Cinitiation.feature:283:27)\n    at Context.resolveAndRunStepDefinition (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\OperatorToChannel\\O2Cinitiation.feature:13951:29)\n    at Context.eval (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\OperatorToChannel\\O2Cinitiation.feature:13272:35)"
+            },
+            "embeddings": [
+              {
+                "mime_type": "image/png"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "operator-to-channel;to-verify-that-if-approval-1-current-status-should-be-'passed'-then-,-it-go-for-next-approval-as-'o2c-transfer-approval-2'.",
+        "keyword": "Scenario",
+        "line": 87,
+        "name": "To verify that if Approval 1 current status should be 'Passed' then , it go for next Approval as 'O2C transfer Approval 2'.",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 88,
+            "name": "Login into Mobiquity Portal as System admin User3",
+            "result": {
+              "status": "passed",
+              "duration": 10087000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 89,
+            "name": "Navigate to Operator to channel and click on O2C transfer Approval2",
+            "result": {
+              "status": "passed",
+              "duration": 9571000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "operator-to-channel;to-verify-that-channel-admin-can-do-o2c-enquiry.",
+        "keyword": "Scenario",
+        "line": 97,
+        "name": "To Verify that Channel admin can do O2C Enquiry.",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 98,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 9593000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 99,
+            "name": "Navigate to User Management and Click on manage user",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 100,
+            "name": "enter user mobile number and search",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 101,
+            "name": "User Click on eye button",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 102,
+            "name": "click wallet Payment history.",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 103,
+            "name": "Enter TransactionID and check",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "operator-to-channel;to-verify-that-the-o2c-transaction-should-go-for-approval-2-only-if-transaction-amount-is-greater-than-the-o2c-limit.",
+        "keyword": "Scenario",
+        "line": 111,
+        "name": "To verify that the O2C transaction should go for approval 2 only if transaction amount is greater than the O2C limit.",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 112,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 13792000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 113,
+            "name": "Navigate to Operator to channel and click on O2C transfer initiate",
+            "result": {
+              "status": "passed",
+              "duration": 1729000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 114,
+            "name": "Enter All the Mandatory details",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `input[name=\"msisdn\"]`, but never found it. Queried from element: <body.px-4>\n    at O2CTransferInitiate.getMSISDN (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\OperatorToChannel\\O2Cinitiation.feature:1165:26)\n    at Context.eval (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\OperatorToChannel\\O2Cinitiation.feature:131:27)\n    at Context.resolveAndRunStepDefinition (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\OperatorToChannel\\O2Cinitiation.feature:13951:29)\n    at Context.eval (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\OperatorToChannel\\O2Cinitiation.feature:13272:35)"
+            },
+            "embeddings": [
+              {
+                "mime_type": "image/png"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 115,
+            "name": "Click on submit and Confirm",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 116,
+            "name": "logout the user",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 117,
+            "name": "Login into Mobiquity Portal as System admin User2",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 118,
+            "name": "Navigate to Operator to channel and click on O2C transfer Approval1",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 119,
+            "name": "logout the user",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 120,
+            "name": "Login into Mobiquity Portal as System admin User3",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 121,
+            "name": "Navigate to Operator to channel and click on O2C transfer Approval2",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "operator-to-channel;to-verify-that-the-o2c-transaction-should-go-for-approval-1-only-if-transaction-amount-is-less-than-the-o2c-limit.",
+        "keyword": "Scenario",
+        "line": 129,
+        "name": "To verify that the O2C transaction should go for approval 1 only if transaction amount is less than the O2C limit.",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 130,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 9690000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 131,
+            "name": "Navigate to Operator to channel and click on O2C transfer initiate",
+            "result": {
+              "status": "passed",
+              "duration": 1238000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 132,
+            "name": "Enter All the Mandatory details",
+            "result": {
+              "status": "passed",
+              "duration": 7545000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 133,
+            "name": "Click on submit and Confirm",
+            "result": {
+              "status": "passed",
+              "duration": 4119000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 134,
+            "name": "logout the user",
+            "result": {
+              "status": "passed",
+              "duration": 5484000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 135,
+            "name": "Login into Mobiquity Portal as System admin User2",
+            "result": {
+              "status": "passed",
+              "duration": 12641000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 136,
+            "name": "Navigate to Operator to channel and click on O2C transfer Approval1",
+            "result": {
+              "status": "passed",
+              "duration": 13101000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

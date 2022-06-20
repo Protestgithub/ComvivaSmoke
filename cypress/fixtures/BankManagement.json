@@ -1,0 +1,12 @@
+{
+  "BankName": "SCXOH",
+  "bankMaster": {
+    "Provider": "MFS1",
+    "BankType": "Trust",
+    "PoolAccountType": "Saving Account",
+    "CBSType": "Flex",
+    "Assert": "Bank Mapping Modified Successfully",
+    "ErrorMessage": "Bank Name is mandatory",
+    "assert": "0 Branches Added Successfully and 1 branches found duplicate"
+  }
+}

@@ -1,0 +1,471 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Transfer Control Profile",
+    "line": 1,
+    "id": "transfer-control-profile",
+    "tags": [],
+    "uri": "TransferControlProfile.feature",
+    "elements": [
+      {
+        "id": "transfer-control-profile;to-verify-the-error-message-when-instrument-level-tcp-added-with-same-profile-name.",
+        "keyword": "Scenario",
+        "line": 11,
+        "name": "To verify the error message when instrument level TCP added with same Profile Name.",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 12,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 15800000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 13,
+            "name": "Navigate to Transfer Control Profile and Click on Manage Transfer Level TCP",
+            "result": {
+              "status": "passed",
+              "duration": 6727000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "Click on Add New Button",
+            "result": {
+              "status": "passed",
+              "duration": 8491000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 15,
+            "name": "Enter required Fields for error message",
+            "result": {
+              "status": "passed",
+              "duration": 6549000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "Click on Create Button",
+            "result": {
+              "status": "passed",
+              "duration": 334000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 17,
+            "name": "Verify Error Message",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 15000ms: expected '<div#add_modal_error_msg.error_message>' to contain 'Please select another profile name as this profile name is being used by an active profile'\n    at Context.eval (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\Usermanagement\\TransferControlProfile.feature:358:29)\n    at Context.resolveAndRunStepDefinition (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\Usermanagement\\TransferControlProfile.feature:13859:29)\n    at Context.eval (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\Usermanagement\\TransferControlProfile.feature:13180:35)"
+            }
+          }
+        ]
+      },
+      {
+        "id": "transfer-control-profile;to-verify-the-error-message-when-provider-is-empty.",
+        "keyword": "Scenario",
+        "line": 25,
+        "name": "To verify the error message when Provider is empty.",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 26,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 9063000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 27,
+            "name": "Navigate to Transfer Control Profile and Click on Manage Transfer Level TCP",
+            "result": {
+              "status": "passed",
+              "duration": 7819000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 28,
+            "name": "Click on Add New Button",
+            "result": {
+              "status": "passed",
+              "duration": 5053000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 29,
+            "name": "Click on Create Button",
+            "result": {
+              "status": "passed",
+              "duration": 530000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 30,
+            "name": "Verify Error Message for Provider",
+            "result": {
+              "status": "passed",
+              "duration": 316000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "transfer-control-profile;to-verify-the-error-message-when-domain-is-empty.",
+        "keyword": "Scenario",
+        "line": 38,
+        "name": "To verify the error message when Domain is empty.",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 39,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 8281000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 40,
+            "name": "Navigate to Transfer Control Profile and Click on Manage Transfer Level TCP",
+            "result": {
+              "status": "passed",
+              "duration": 6871000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 41,
+            "name": "Click on Add New Button",
+            "result": {
+              "status": "passed",
+              "duration": 7679000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 42,
+            "name": "Click on Create Button",
+            "result": {
+              "status": "passed",
+              "duration": 636000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 43,
+            "name": "Verify Error Message for Domain",
+            "result": {
+              "status": "passed",
+              "duration": 139000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "transfer-control-profile;to-verify-that-the-instrument-level-tcp-cannot-be-deleted-if-any-user-is-associated-with-it.",
+        "keyword": "Scenario",
+        "line": 52,
+        "name": "To verify that the instrument level TCP cannot be deleted if any user is associated with it.",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 53,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 34070000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 54,
+            "name": "Navigate to User Management and Click on Marketing Profile",
+            "result": {
+              "status": "passed",
+              "duration": 1038000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 55,
+            "name": "Click on Edit Marketing Profile and associate the created TCP with Marketing Profile",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 15000ms: Expected to find content: 'fEzaV' within the element: <ul.MuiList-root.MuiMenu-list.MuiList-padding> but never did.\n    at Context.eval (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\Usermanagement\\TransferControlProfile.feature:475:59)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 56,
+            "name": "Navigate to Transfer Control Profile and Click on Manage Transfer Level TCP",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 57,
+            "name": "Click on delete icon",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 58,
+            "name": "Verify Error Message for deletion",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "transfer-control-profile;to-verify-that-system-admin-should-be-able-to-add-regulatory-profile-in-the-system",
+        "keyword": "Scenario",
+        "line": 61,
+        "name": "To verify that system admin should be able to add regulatory profile in the system",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 62,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 8724000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 63,
+            "name": "Navigate to UserManagement And Click on Regulatory Profile",
+            "result": {
+              "status": "passed",
+              "duration": 3651000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 64,
+            "name": "click on Add Regulatory Profile and Enter Profile Code and Profile Name",
+            "result": {
+              "status": "passed",
+              "duration": 1356000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 65,
+            "name": "Click On Save Regulatory Profile",
+            "result": {
+              "status": "passed",
+              "duration": 3933000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "transfer-control-profile;to-verify-that-master-is-able-to-view-customer-level-tcp..",
+        "keyword": "Scenario",
+        "line": 75,
+        "name": "To verify that master is able to View customer level TCP..",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 76,
+            "name": "Login into Mobiquity Portal as Super admin Maker",
+            "result": {
+              "status": "failed",
+              "error_message": "TypeError: Cannot read properties of undefined (reading 'superadminmaker')\n    at Context.eval (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\Usermanagement\\TransferControlProfile.feature:116:46)\n    at Context.resolveAndRunStepDefinition (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\Usermanagement\\TransferControlProfile.feature:13859:29)\n    at Context.eval (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\Usermanagement\\TransferControlProfile.feature:13180:35)\nFrom previous event:\n    at Context.thenFn (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:156310:63)\n    at Context.then (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:156762:21)\n    at Context.<anonymous> (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:173242:19)\n    at http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:172098:15\nFrom previous event:\n    at CommandQueue.runCommand (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:172077:8)\n    at next (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:172220:19)\n    at http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:172249:16\nFrom previous event:\n    at next (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:172220:39)\nFrom previous event:\n    at http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:186643:77\nFrom previous event:\n    at CommandQueue.run (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:186638:21)\n    at CommandQueue.run (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:172283:15)\n    at cy.<computed> [as then] (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:173281:18)\n    at runnable.fn (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:173499:19)\n    at callFn (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:125619:21)\n    at ../driver/node_modules/mocha/lib/runnable.js.Runnable.run (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:125606:7)\n    at http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:180412:30\nFrom previous event:\n    at Object.onRunnableRun (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:180397:19)\n    at $Cypress.action (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:169769:28)\n    at Runnable.run (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:178076:13)\n    at ../driver/node_modules/mocha/lib/runner.js.Runner.runTest (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:126278:10)\n    at http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:126404:12\n    at next (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:126187:14)\n    at http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:126197:7\n    at next (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:126099:14)\n    at Hook.<anonymous> (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:126160:7)\n    at next (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:180310:24)\n    at http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:180339:13\nFrom previous event:\n    at onNext (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:180336:59)\n    at done (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:125559:5)\n    at callFn (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:125642:7)\n    at ../driver/node_modules/mocha/lib/runnable.js.Runnable.run (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:125606:7)\n    at http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:180412:30\nFrom previous event:\n    at Object.onRunnableRun (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:180397:19)\n    at $Cypress.action (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:169769:28)\n    at Runnable.run (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:178076:13)\n    at next (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:126121:10)\n    at http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:126165:5\n    at timeslice (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:120091:27)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 77,
+            "name": "Navigate to Transfer Control Profile to View Details",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "transfer-control-profile;to-verify-that-master-is-able-to-edit-customer-level-tcp..",
+        "keyword": "Scenario",
+        "line": 85,
+        "name": "To verify that master is able to edit customer level TCP..",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 86,
+            "name": "Login into Mobiquity Portal as Super admin Maker",
+            "result": {
+              "status": "failed",
+              "error_message": "TypeError: Cannot read properties of undefined (reading 'superadminmaker')\n    at Context.eval (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\Usermanagement\\TransferControlProfile.feature:116:46)\n    at Context.resolveAndRunStepDefinition (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\Usermanagement\\TransferControlProfile.feature:13859:29)\n    at Context.eval (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\Usermanagement\\TransferControlProfile.feature:13180:35)\nFrom previous event:\n    at Context.thenFn (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:156310:63)\n    at Context.then (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:156762:21)\n    at Context.<anonymous> (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:173242:19)\n    at http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:172098:15\nFrom previous event:\n    at CommandQueue.runCommand (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:172077:8)\n    at next (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:172220:19)\n    at http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:172249:16\nFrom previous event:\n    at next (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:172220:39)\nFrom previous event:\n    at http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:186643:77\nFrom previous event:\n    at CommandQueue.run (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:186638:21)\n    at CommandQueue.run (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:172283:15)\n    at cy.<computed> [as then] (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:173281:18)\n    at runnable.fn (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:173499:19)\n    at callFn (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:125619:21)\n    at ../driver/node_modules/mocha/lib/runnable.js.Runnable.run (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:125606:7)\n    at http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:180412:30\nFrom previous event:\n    at Object.onRunnableRun (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:180397:19)\n    at $Cypress.action (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:169769:28)\n    at Runnable.run (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:178076:13)\n    at ../driver/node_modules/mocha/lib/runner.js.Runner.runTest (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:126278:10)\n    at http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:126404:12\n    at next (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:126187:14)\n    at http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:126197:7\n    at next (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:126099:14)\n    at Hook.<anonymous> (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:126160:7)\n    at next (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:180310:24)\n    at http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:180339:13\nFrom previous event:\n    at onNext (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:180336:59)\n    at done (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:125559:5)\n    at callFn (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:125642:7)\n    at ../driver/node_modules/mocha/lib/runnable.js.Runnable.run (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:125606:7)\n    at http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:180412:30\nFrom previous event:\n    at Object.onRunnableRun (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:180397:19)\n    at $Cypress.action (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:169769:28)\n    at Runnable.run (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:178076:13)\n    at next (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:126121:10)\n    at http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:126165:5\n    at timeslice (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:120091:27)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 87,
+            "name": "Navigate to Transfer Control Profile to Edit Details",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 88,
+            "name": "Verify Success Message for Edit",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "transfer-control-profile;to-verify-that-master-admin-is-able-to-approve-the--modified-customer-level-tcp..",
+        "keyword": "Scenario",
+        "line": 90,
+        "name": "To verify that master admin is able to Approve the  modified customer level TCP..",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 91,
+            "name": "Login into Mobiquity Portal as Super admin Checker",
+            "result": {
+              "status": "failed",
+              "error_message": "TypeError: Cannot read properties of undefined (reading 'superadminchecker')\n    at Context.eval (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\Usermanagement\\TransferControlProfile.feature:123:46)\n    at Context.resolveAndRunStepDefinition (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\Usermanagement\\TransferControlProfile.feature:13859:29)\n    at Context.eval (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\Usermanagement\\TransferControlProfile.feature:13180:35)\nFrom previous event:\n    at Context.thenFn (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:156310:63)\n    at Context.then (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:156762:21)\n    at Context.<anonymous> (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:173242:19)\n    at http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:172098:15\nFrom previous event:\n    at CommandQueue.runCommand (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:172077:8)\n    at next (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:172220:19)\n    at http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:172249:16\nFrom previous event:\n    at next (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:172220:39)\nFrom previous event:\n    at http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:186643:77\nFrom previous event:\n    at CommandQueue.run (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:186638:21)\n    at CommandQueue.run (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:172283:15)\n    at cy.<computed> [as then] (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:173281:18)\n    at runnable.fn (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:173499:19)\n    at callFn (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:125619:21)\n    at ../driver/node_modules/mocha/lib/runnable.js.Runnable.run (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:125606:7)\n    at http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:180412:30\nFrom previous event:\n    at Object.onRunnableRun (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:180397:19)\n    at $Cypress.action (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:169769:28)\n    at Runnable.run (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:178076:13)\n    at ../driver/node_modules/mocha/lib/runner.js.Runner.runTest (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:126278:10)\n    at http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:126404:12\n    at next (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:126187:14)\n    at http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:126197:7\n    at next (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:126099:14)\n    at Hook.<anonymous> (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:126160:7)\n    at next (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:180310:24)\n    at http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:180339:13\nFrom previous event:\n    at onNext (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:180336:59)\n    at done (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:125559:5)\n    at callFn (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:125642:7)\n    at ../driver/node_modules/mocha/lib/runnable.js.Runnable.run (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:125606:7)\n    at http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:180412:30\nFrom previous event:\n    at Object.onRunnableRun (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:180397:19)\n    at $Cypress.action (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:169769:28)\n    at Runnable.run (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:178076:13)\n    at next (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:126121:10)\n    at http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:126165:5\n    at timeslice (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:120091:27)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 92,
+            "name": "Navigate to Transfer Control Profile",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 93,
+            "name": "Approve the TCP",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 94,
+            "name": "Verify the Modification Request message",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "transfer-control-profile;to-verify-that-master-is-able-to-delete-customer-level-tcp-if-any-user-is-not-associated-with-it.",
+        "keyword": "Scenario",
+        "line": 102,
+        "name": "To verify that master is able to delete customer level TCP if any user is not associated with it.",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 103,
+            "name": "Login into Mobiquity Portal as Super admin Maker",
+            "result": {
+              "status": "failed",
+              "error_message": "TypeError: Cannot read properties of undefined (reading 'superadminmaker')\n    at Context.eval (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\Usermanagement\\TransferControlProfile.feature:116:46)\n    at Context.resolveAndRunStepDefinition (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\Usermanagement\\TransferControlProfile.feature:13859:29)\n    at Context.eval (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\Usermanagement\\TransferControlProfile.feature:13180:35)\nFrom previous event:\n    at Context.thenFn (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:156310:63)\n    at Context.then (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:156762:21)\n    at Context.<anonymous> (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:173242:19)\n    at http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:172098:15\nFrom previous event:\n    at CommandQueue.runCommand (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:172077:8)\n    at next (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:172220:19)\n    at http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:172249:16\nFrom previous event:\n    at next (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:172220:39)\nFrom previous event:\n    at http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:186643:77\nFrom previous event:\n    at CommandQueue.run (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:186638:21)\n    at CommandQueue.run (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:172283:15)\n    at cy.<computed> [as then] (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:173281:18)\n    at runnable.fn (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:173499:19)\n    at callFn (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:125619:21)\n    at ../driver/node_modules/mocha/lib/runnable.js.Runnable.run (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:125606:7)\n    at http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:180412:30\nFrom previous event:\n    at Object.onRunnableRun (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:180397:19)\n    at $Cypress.action (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:169769:28)\n    at Runnable.run (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:178076:13)\n    at ../driver/node_modules/mocha/lib/runner.js.Runner.runTest (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:126278:10)\n    at http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:126404:12\n    at next (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:126187:14)\n    at http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:126197:7\n    at next (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:126099:14)\n    at Hook.<anonymous> (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:126160:7)\n    at next (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:180310:24)\n    at http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:180339:13\nFrom previous event:\n    at onNext (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:180336:59)\n    at done (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:125559:5)\n    at callFn (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:125642:7)\n    at ../driver/node_modules/mocha/lib/runnable.js.Runnable.run (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:125606:7)\n    at http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:180412:30\nFrom previous event:\n    at Object.onRunnableRun (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:180397:19)\n    at $Cypress.action (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:169769:28)\n    at Runnable.run (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:178076:13)\n    at next (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:126121:10)\n    at http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:126165:5\n    at timeslice (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/runner/cypress_runner.js:120091:27)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 104,
+            "name": "Navigate to Transfer Control Profile to Delete Details",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 105,
+            "name": "Verify Success Message for deletion",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

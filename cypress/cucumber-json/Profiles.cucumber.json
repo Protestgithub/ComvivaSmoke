@@ -1,0 +1,263 @@
+[
+  {
+    "description": "    This feature includes Modifying of Profiles by System Admin",
+    "keyword": "Feature",
+    "name": "User Management :Profiles",
+    "line": 1,
+    "id": "user-management-:profiles",
+    "tags": [],
+    "uri": "Profiles.feature",
+    "elements": [
+      {
+        "id": "user-management-:profiles;to-verify-that-system-admin-should-be-able-to-add-regulatory-profile-in-the-system",
+        "keyword": "Scenario",
+        "line": 14,
+        "name": "To verify that system admin should be able to add regulatory profile in the system",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 15,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 12414000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 16,
+            "name": "Navigate to UserManagement And Click on Regulatory Profile",
+            "result": {
+              "status": "passed",
+              "duration": 3497000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 17,
+            "name": "click on Add Regulatory Profile and Enter Profile Code and Profile Name",
+            "result": {
+              "status": "passed",
+              "duration": 2587000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 18,
+            "name": "Click On Save Regulatory Profile",
+            "result": {
+              "status": "passed",
+              "duration": 3647000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-management-:profiles;to-verify-that-system-admin-user-can-view-the-list-of-profiles",
+        "keyword": "Scenario",
+        "line": 27,
+        "name": "To verify that system admin user can view the list of profiles",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 28,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 7870000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 29,
+            "name": "Navigate to UserManagement And Click on Regulatory Profile",
+            "result": {
+              "status": "passed",
+              "duration": 3503000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-management-:profiles;to-verify-that-system-admin-user-can-modify-the-name-of-the-regulatory-profile-only.",
+        "keyword": "Scenario",
+        "line": 38,
+        "name": "To verify that system admin user can modify the name of the regulatory profile only.",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 39,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 8096000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 40,
+            "name": "Navigate to UserManagement And Click on Regulatory Profile",
+            "result": {
+              "status": "passed",
+              "duration": 3468000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 41,
+            "name": "Under Actions tab click on Modify Regulatory Profile icon and Enter Profile Name",
+            "result": {
+              "status": "passed",
+              "duration": 4427000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 42,
+            "name": "Click On Save Modified Regulatory Profile",
+            "result": {
+              "status": "passed",
+              "duration": 3455000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-management-:profiles;to-verify-that-system-admin-user-can-to-search-the-regulatory-profile-by-using-the-profile-code-or-profile-name.",
+        "keyword": "Scenario",
+        "line": 51,
+        "name": "To verify that system admin user can to search the regulatory profile by using the profile code or profile name.",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 52,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 8243000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 53,
+            "name": "Navigate to UserManagement And Click on Regulatory Profile",
+            "result": {
+              "status": "passed",
+              "duration": 3483000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 54,
+            "name": "Enter detail to seach in textbox and click search",
+            "result": {
+              "status": "passed",
+              "duration": 722000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-management-:profiles;to-verify-that-system-admin-user-can-add-marketing-profile.",
+        "keyword": "Scenario",
+        "line": 64,
+        "name": "To verify that system admin user can Add Marketing Profile.",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 65,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 7996000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 66,
+            "name": "Navigate to UserManagement And Click on Marketing Profile",
+            "result": {
+              "status": "passed",
+              "duration": 3484000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 67,
+            "name": "Add Marketing Profile",
+            "result": {
+              "status": "passed",
+              "duration": 9098000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-management-:profiles;to-verify-that-that-system-admin-user-will-be-able-to-search-the-marketing-profile",
+        "keyword": "Scenario",
+        "line": 76,
+        "name": "To verify that That system admin user will be able to search the marketing profile",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 77,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 8216000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 78,
+            "name": "Navigate to UserManagement And Click on Marketing Profile",
+            "result": {
+              "status": "passed",
+              "duration": 3490000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 79,
+            "name": "Enter detail to search in textbox and click search",
+            "result": {
+              "status": "passed",
+              "duration": 589000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

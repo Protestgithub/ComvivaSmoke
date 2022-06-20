@@ -1,0 +1,892 @@
+[
+  {
+    "description": "    This feature includes Stock initiation,StockApproval1 and StockApproval2 by System Admin",
+    "keyword": "Feature",
+    "name": "Stock Management",
+    "line": 1,
+    "id": "stock-management",
+    "tags": [],
+    "uri": "stockManagement.feature",
+    "elements": [
+      {
+        "id": "stock-management;to-verify-that-system-admin-can-initiate-the-stock-successfully",
+        "keyword": "Scenario",
+        "line": 13,
+        "name": "To verify that System admin can initiate the stock successfully",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 14,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 15450000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 15,
+            "name": "Navigate to Stock Management and Click on Stock initiation",
+            "result": {
+              "status": "passed",
+              "duration": 2505000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "Select MFS provider and Enter Reference number and Amount",
+            "result": {
+              "status": "passed",
+              "duration": 4617000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 17,
+            "name": "click on Submit and Confirm button",
+            "result": {
+              "status": "passed",
+              "duration": 2564000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "stock-management;to-verify-that-system-admin-can-successfully-approve-the-stock-at-level>>1",
+        "keyword": "Scenario",
+        "line": 25,
+        "name": "To verify that System admin can successfully approve the stock at level>>1",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 26,
+            "name": "Login into Mobiquity Portal as another System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 7159000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 27,
+            "name": "Navigate to Stock Management and Click on Stock Approval 1",
+            "result": {
+              "status": "passed",
+              "duration": 491000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 28,
+            "name": "Click on Submit Button",
+            "result": {
+              "status": "passed",
+              "duration": 5414000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 29,
+            "name": "Click on Approve button",
+            "result": {
+              "status": "passed",
+              "duration": 3315000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "stock-management;to-verify-that-system-admin-can-successfully-approve-the-stock-at-level-2.",
+        "keyword": "Scenario",
+        "line": 37,
+        "name": "To verify that System admin can successfully approve the stock at level 2.",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 38,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 9569000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 39,
+            "name": "Navigate to Stock Management and Click on Stock initiation",
+            "result": {
+              "status": "passed",
+              "duration": 2552000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 40,
+            "name": "Select MFS provider and Enter reference number and amount",
+            "result": {
+              "status": "passed",
+              "duration": 4081000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 41,
+            "name": "click on Submit and Confirm button",
+            "result": {
+              "status": "passed",
+              "duration": 2551000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 42,
+            "name": "Logout",
+            "result": {
+              "status": "passed",
+              "duration": 1463000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 43,
+            "name": "Login into Mobiquity Portal as another System admin User after Logout",
+            "result": {
+              "status": "passed",
+              "duration": 8903000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 44,
+            "name": "Navigate to Stock Management and Click on Stock Approval 1",
+            "result": {
+              "status": "passed",
+              "duration": 1317000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 45,
+            "name": "Click on Submit Button",
+            "result": {
+              "status": "passed",
+              "duration": 5278000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 46,
+            "name": "Click on Approve button",
+            "result": {
+              "status": "passed",
+              "duration": 3442000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 47,
+            "name": "Logout",
+            "result": {
+              "status": "passed",
+              "duration": 1420000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 48,
+            "name": "Login into Mobiquity Portal as another System admin User after Logout for Approval-2",
+            "result": {
+              "status": "passed",
+              "duration": 11506000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 49,
+            "name": "Navigate to Stock Management and Click on Stock Approval 2",
+            "result": {
+              "status": "passed",
+              "duration": 842000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 50,
+            "name": "Click on Submit and Approve the Stock at level 2",
+            "result": {
+              "status": "passed",
+              "duration": 8878000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "stock-management;to-verify-that-system-admin-is-able-to-initiate-stock-transfer-to-ea-through-web.",
+        "keyword": "Scenario",
+        "line": 61,
+        "name": "To verify that System admin is able to Initiate Stock Transfer to EA through web.",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 62,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 28526000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 63,
+            "name": "Navigate to Stock Management and Stock Transfer to EA",
+            "result": {
+              "status": "passed",
+              "duration": 612000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 64,
+            "name": "User Select MFS Provider",
+            "result": {
+              "status": "passed",
+              "duration": 3431000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 65,
+            "name": "User Should Enter Reference number",
+            "result": {
+              "status": "passed",
+              "duration": 3539000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 66,
+            "name": "User Should Enter Amount",
+            "result": {
+              "status": "passed",
+              "duration": 3582000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 67,
+            "name": "User Click on Submit button",
+            "result": {
+              "status": "passed",
+              "duration": 3725000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 68,
+            "name": "User Click on Confirm button",
+            "result": {
+              "status": "passed",
+              "duration": 3372000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "stock-management;to-verify-that-system-admin-is-able-to-initiate-stock-transfer-to-ra-through-web.",
+        "keyword": "Scenario",
+        "line": 76,
+        "name": "To verify that System admin is able to Initiate Stock Transfer to RA through web.",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 77,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 9260000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 78,
+            "name": "Navigate to Stock Management and Stock Transfer to RA",
+            "result": {
+              "status": "passed",
+              "duration": 507000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 79,
+            "name": "Select MFS Provider",
+            "result": {
+              "status": "passed",
+              "duration": 3286000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 80,
+            "name": "Enter Reference number",
+            "result": {
+              "status": "passed",
+              "duration": 440000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 81,
+            "name": "Enter Amount",
+            "result": {
+              "status": "passed",
+              "duration": 454000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 82,
+            "name": "Click on Submit button",
+            "result": {
+              "status": "passed",
+              "duration": 306000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 83,
+            "name": "Click on Confirm button",
+            "result": {
+              "status": "passed",
+              "duration": 3265000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "stock-management;to-verify-that-system-admin-can-enquire-the-stocks-through-stock-enquiry.",
+        "keyword": "Scenario",
+        "line": 91,
+        "name": "To verify that System admin can enquire the Stocks through stock enquiry.",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 92,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 27804000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 93,
+            "name": "Navigate to Stock Management and Stock Enquiry",
+            "result": {
+              "status": "passed",
+              "duration": 1471000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 96,
+            "name": "Select any Transaction ID from the displayed list",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `input[name=\"txnId\"]`, but never found it. Queried from element: <body>\n    at stockManagement.getTrasanctionID (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\StockManagement\\stockManagement.feature:1895:26)\n    at Context.eval (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\StockManagement\\stockManagement.feature:295:23)\n    at Context.resolveAndRunStepDefinition (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\StockManagement\\stockManagement.feature:14299:29)\n    at Context.eval (http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/__cypress/tests?p=cypress\\integration\\BDD\\StockManagement\\stockManagement.feature:13620:35)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 97,
+            "name": "Click on Enquiry Submit button",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "stock-management;to-verify-that-system-admin-can-enquire-the-details-of-stock-transfer-to-ea",
+        "keyword": "Scenario",
+        "line": 105,
+        "name": "To verify that System admin can enquire the details of stock Transfer to EA",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 106,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 28789000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 107,
+            "name": "Navigate to Stock Management and Stock Transfer EA Enquiry",
+            "result": {
+              "status": "passed",
+              "duration": 1496000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 108,
+            "name": "Select the From & To Dates and Transaction Status",
+            "result": {
+              "status": "passed",
+              "duration": 4889000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 109,
+            "name": "Click on Submit",
+            "result": {
+              "status": "passed",
+              "duration": 3405000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 110,
+            "name": "Select any Transaction ID from displayed list",
+            "result": {
+              "status": "passed",
+              "duration": 3663000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 111,
+            "name": "Click on View Submit button",
+            "result": {
+              "status": "passed",
+              "duration": 3518000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "stock-management;to-verify-that-the-system-admin-is-able-to-initiate-the-reimbursement-through-web",
+        "keyword": "Scenario",
+        "line": 119,
+        "name": "To verify that the System admin is able to initiate the reimbursement through web",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 120,
+            "name": "Login into Mobiquity Portal as System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 9423000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 121,
+            "name": "Click on Stock Management and Reimbursement",
+            "result": {
+              "status": "passed",
+              "duration": 2704000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 122,
+            "name": "Select User type",
+            "result": {
+              "status": "passed",
+              "duration": 3356000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 123,
+            "name": "Enter MSISDN,Provider,Wallet Type,Reference Number and Remarks",
+            "result": {
+              "status": "passed",
+              "duration": 5623000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 124,
+            "name": "Select Reference Date",
+            "result": {
+              "status": "passed",
+              "duration": 4061000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 125,
+            "name": "Click on reimbursement submit",
+            "result": {
+              "status": "passed",
+              "duration": 3419000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 126,
+            "name": "Enter amount and click on confirm",
+            "result": {
+              "status": "passed",
+              "duration": 3820000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "stock-management;to-verify-that-system-admin-can-approve-any-stock-reimbursement-initiation-request",
+        "keyword": "Scenario",
+        "line": 134,
+        "name": "To verify that System admin can approve any stock reimbursement initiation request",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 135,
+            "name": "Login into Mobiquity Portal as another System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 29993000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 136,
+            "name": "Click on Stock management and stock reimbursement approval",
+            "result": {
+              "status": "passed",
+              "duration": 712000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 137,
+            "name": "Select the initiated stock reimbursement request",
+            "result": {
+              "status": "passed",
+              "duration": 3400000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 138,
+            "name": "Click on approve submit",
+            "result": {
+              "status": "passed",
+              "duration": 3550000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 139,
+            "name": "click on approve button",
+            "result": {
+              "status": "passed",
+              "duration": 3581000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "stock-management;to-verify-that-proper-error-message-should-be-displayed-when-no-stock-is-present-in-wallet",
+        "keyword": "Scenario",
+        "line": 151,
+        "name": "To verify that proper error message should be displayed when no stock is present in wallet",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 152,
+            "name": "Login into Mobiquity Portal as another System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 8346000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 153,
+            "name": "Navigate to Stock Management and Stock Withdrawal",
+            "result": {
+              "status": "passed",
+              "duration": 1106000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 154,
+            "name": "User Select Stock Withdraw Wallet Type",
+            "result": {
+              "status": "passed",
+              "duration": 3369000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 156,
+            "name": "User Should select Stock Withdraw Bank",
+            "result": {
+              "status": "passed",
+              "duration": 3682000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 157,
+            "name": "User Should Enter Stock Withdraw Bank Account Number",
+            "result": {
+              "status": "passed",
+              "duration": 3881000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 158,
+            "name": "User Should Enter Stock Withdraw Amount",
+            "result": {
+              "status": "passed",
+              "duration": 3576000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 159,
+            "name": "User Click on Stock Withdraw Submit button",
+            "result": {
+              "status": "passed",
+              "duration": 3534000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "stock-management;to-verify-that-proper-error-message-should-be-displayed-when-amount-field-contains-any-invalid-character",
+        "keyword": "Scenario",
+        "line": 168,
+        "name": "To verify that proper error message should be displayed when amount field contains any invalid character",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 169,
+            "name": "Login into Mobiquity Portal as another System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 7806000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 170,
+            "name": "Navigate to Stock Management and Stock Withdrawal",
+            "result": {
+              "status": "passed",
+              "duration": 1017000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 171,
+            "name": "User Select Stock Withdraw Wallet Type",
+            "result": {
+              "status": "passed",
+              "duration": 3353000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 173,
+            "name": "User Should select Stock Withdraw Bank",
+            "result": {
+              "status": "passed",
+              "duration": 3610000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 174,
+            "name": "User Should Enter Stock Withdraw Bank Account Number",
+            "result": {
+              "status": "passed",
+              "duration": 3504000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 175,
+            "name": "User Should Enter Stock Withdraw invalid Amount",
+            "result": {
+              "status": "passed",
+              "duration": 3530000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 176,
+            "name": "User Click on Stock Withdraw invalid Amount Submit button",
+            "result": {
+              "status": "passed",
+              "duration": 3529000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "stock-management;to-verify-that-proper-error-message-should-be-displayed-when-amount-field-contains-any-invalid-characte",
+        "keyword": "Scenario",
+        "line": 185,
+        "name": "To verify that proper error message should be displayed when amount field contains any invalid characte",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 186,
+            "name": "Login into Mobiquity Portal as another System admin User",
+            "result": {
+              "status": "passed",
+              "duration": 7938000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 187,
+            "name": "Navigate to Stock Management and Stock Initiation",
+            "result": {
+              "status": "passed",
+              "duration": 541000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 189,
+            "name": "User Should Enter Stock Initiation Reference number",
+            "result": {
+              "status": "passed",
+              "duration": 3514000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 190,
+            "name": "User Should Enter Stock Initiation Amount",
+            "result": {
+              "status": "passed",
+              "duration": 3428000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 191,
+            "name": "User Click on Stock Initiation Submit button",
+            "result": {
+              "status": "passed",
+              "duration": 3396000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

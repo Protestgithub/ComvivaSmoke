@@ -1,0 +1,9 @@
+{
+    "authorizationprofilesuccess": "Your request for authorization profile creation has been initiated, and is now pending confirmation",
+    "modifysuccessmessage": " Your request for authorization profile modification has been initiated, and is now pending confirmation ",
+    "deletemessagesuccess": " Your request for authorization profile deletion has been initiated, and is now pending confirmation ",
+    "viewprofile": " Authorization Profile  > View Profile ",
+    "userSubscriber": "Subscriber",
+    "addconfirmationMessage": "Authorization profile created",
+    "modifyconfirmationMessage": "Authorization profile modified"
+}

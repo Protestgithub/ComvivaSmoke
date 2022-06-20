@@ -1,0 +1,220 @@
+{
+  "personalInfo": {
+    "firstName": "Beta",
+    "lastName": "Mobiquity",
+    "emailID": "randy@gmail.com",
+    "preferredLang": "English",
+    "country": "India",
+    "securityProfile": "BCU49100",
+    "authProfile": "BUAdmin",
+    "successConfirmationMessage": " SUCCESS User registration is successfully initiated. Kindly contact admin for approval",
+    "successConfirm": " SUCCESS Service is successfully paused. Kindly contact admin for approval",
+    "title": "Mr",
+    "InterfaceId": "9959676595",
+    "regulatory": "abc123",
+    "marketing": "TELOPTDefaultMP",
+    "smscid": "Pretups Smsc",
+    "topupid": "PretupsTOPUP",
+    "recharge": "Denominations",
+    "state": "Karnataka",
+    "city": "Bangalore",
+    "typeComment": "Reject",
+    "reasonForClosure": "Others",
+    "Title": "Ms",
+    "addressLine1": "peenya",
+    "online": "Yes",
+    "Latitude": "78",
+    "Longitude": "88",
+    "Parent": "DIST7777316210",
+    "securityProfile8": "axs51s",
+    "authProfile8": "RetailerDefault Profile",
+    "ReguProfile": "FKYC",
+    "MarketProfile": "RTDefaultMP",
+    "securityProfile1": "autoLogoutTime",
+    "authProfile1": "FKYC",
+    "modifyMob": "7788789756",
+    "suspendResumeMob": "7772227722",
+    "ViewdetailsOfUser": " > View Details",
+    "invalidFirstName": "ldsnv3lllC LLL42# A",
+    "invalidInputMessage": " Only alphabets and space is allowed ",
+    "RegisteredMobile": "7788789756",
+    "notUnique": " Value is not unique ",
+    "securityProfile2": "NWADM44550",
+    "authProfile2": "NetadminDefault Profile"
+  },
+  "mobilenumber": {
+    "mobile": "7786113685"
+  },
+  "transactionid": {
+    "validid": "WB220511.1435.A00471{enter}"
+  },
+  "usercalender": {
+    "month": "May",
+    "year": "2022",
+    "startday": "11",
+    "endday": "12"
+  },
+  "transanctionvalue": {
+    "value": " 7774992569 "
+  },
+  "subPersonalInfo1": {
+    "subUserType": "Subscriber",
+    "subUserRole": "Subscriber",
+    "firstName": "1234",
+    "state": "Karnataka",
+    "city": "Bangalore",
+    "addressLine1": "Area",
+    "KYCIDType": "PAN Card",
+    "KYCValue": "AXOPC8329c",
+    "KYCGracePeriod": "40",
+    "securityProfile": "subscriberSecurityProfile__clone",
+    "authProfile": "SubsDefault Profile",
+    "ReguProfile": "Demo Profile",
+    "MarketProfile": "SUBSDefaultMP",
+    "errorMessage": " Only alphabets and space is allowed "
+  },
+  "networkAdminWelcomeText": "Network NWADM Admin",
+  "SuperAdminChecker": "superadmin checker",
+  "registerPageTitle": "Register",
+  "userType2": "Business",
+  "userRole1": "Customer care Admin",
+  "userRole2": "Telco Operator",
+  "userRole3": "AtmMachine",
+  "userRole4": "System Admin",
+  "registrationMode": "Single User",
+  "mob70": "7782356712",
+  "mob": "7718797551",
+  "mob1": "7774992569",
+  "mob2": "7778426936",
+  "mob3": "7779064594",
+  "mob4": "superadminm ",
+  "mob5": "7779050504",
+  "mob6": "7779050504",
+  "mob7": "7786113685",
+  "comment":"Testing Purpose",
+  "Reason": "Not getting benefits",
+  "dailogbox": "NIL",
+  "business": {
+    "distributerUser": "Distributeruser Usertest",
+    "userType": "Others",
+    "ErrorLoginId": "278912"
+  },
+
+  "confirmationMessage": {
+    "addUser": "User Registration has been completed successfully with the mobileNumber",
+    "editUser": "User Modification has been completed successfully",
+    "editUser1": " SUCCESS Service is successfully paused. Kindly contact admin for approval",
+    "successMessage": " SUCCESS ",
+    "viewDetails": " View Details",
+    "EdituserSys":"Service is successfully paused. Kindly contact admin for approval"
+  },
+  "subPersonalInfo": {
+    "subUserType": "Subscriber",
+    "subUserRole": "Subscriber",
+    "firstName": "1234",
+    "state": "Karnataka",
+    "city": "Bangalore",
+    "addressLine1": "Area",
+    "KYCIDType": "Passport",
+    "KYCValue": "AXOPC8329c",
+    "KYCGracePeriod": "40",
+    "securityProfile0": "ATMMachineDefaultSecurityProfile",
+    "authProfile": "SubsDefault Profile",
+    "ReguProfile0": "TestSh",
+    "MarketProfile0": "ATMDefaultMP"
+  },
+  "ccaInfo": {
+    "securityProfile": "CustomerCareAdminSecurityProfile",
+    "authProfile": "CCEDefault Profile",
+    "mobileNumber": "7765409890"
+  },
+  "manageUserInfo": {
+    "mobile": "7778426936",
+    "mobileNumber": "7778426936",
+    "emailID": "SUBS7779671175@comviva.com",
+    "loginID": "randy1234",
+    "KYCNumber": "bskpn5564r"
+  },
+  "modifyPersonalInfo": {
+    "firstName": "Testing",
+    "lastName": "Mobiquity",
+    "preferredLang": "English",
+    "country": "India",
+    "securityProfile": "BCU49100",
+    "authProfile": "BUAdmin"
+  },
+  "suspendResumeConfirmationMessage": {
+    "suspendResumeUser": "Your transaction request has been initiated, and is now pending confirmation",
+    "userSuspended": "User Suspended Successfully",
+    "userResumed": "User Resumed Successfully"
+  },
+  "KycInfo": {
+    "KycIDType": "SSN",
+    "KycValue": "AXOPC8329c",
+    "KycGracePeriod": "50",
+    "ReguProfile": "FKYC",
+    "MarketProfile": "SubscriberSingleCurrency6166"
+  },
+  "ModifyKycInfo": {
+    "KycIDType": "National ID",
+    "KycValue": "AVND2345HSDF",
+    "KycGracePeriod": "20",
+    "ReguProfile": "FKYC",
+    "MarketProfile": "PKYC"
+  },
+  "userRole8": "Agent",
+  "userType": "Administrator",
+  "userRole": "Business Admin",
+  "modifyPersonalInfo8": {
+    "firstName": "Testinghellouser",
+    "lastName": "Mobiquityusertestingg",
+    "preferredLang": "English",
+    "country": "India",
+    "securityProfile": "BCU49100",
+    "authProfile": "BUAdmin",
+    "comments": "update KYC"
+  },
+  "manageUserInfo8": {
+    "mobileNumber": "7762040843",
+    "emailID": "firstlast0@yopmail.com",
+    "loginID": "firstlast2965",
+    "KYCNumber": "bskpm7893g"
+  },
+  "KycInfo8": {
+    "KycIDType": "PAN Card",
+    "KycValue": "TYU9882176",
+    "KycGracePeriod": "40"
+  },
+  "regulatoryprofile": {
+    "RProfilecode": "Test92",
+    "RProfileName": "Testing92",
+    "RModifyProfileName": "Testing12"
+  },
+  "marketingprofile": {
+    "MProfilecode": "34567",
+    "MProfileName": "MP1",
+    "DomainName": "External Companies",
+    "MProfilecode1": "3456"
+  },
+  "errorMessage":{
+    "Lname1":"12",
+    "LoginId":"123",
+    "LoginId1":"987",
+    "emailid1":"test@ymail.com",
+    "email1":"re@yopmail.com",
+    "testemail":"test",
+    "loginerror":" Value is not unique ",
+    "emailerror":" Value is not unique ",
+    "invaildemail":" Please provide a valid email id ",
+    "invalidlname":" Only alphabets and space are allowed "
+  },
+  "ErrorLoginId": "278912",
+  "MchLoginID": "776937810",
+  "UserLoginId": "Corporate",
+  "ErrorEmail": "testiuser@gmail.com",
+  "InvalidLoginId": "!@#$%^&*()",
+  "Sucess": "Success",
+  "Marketing": "Marketing profile added successfully",
+  "LockOutgoing":"All Outgoing Payments locked successfully",
+  "UnlockOutgoing":"All Outgoing Payments unlocked successfully"
+}

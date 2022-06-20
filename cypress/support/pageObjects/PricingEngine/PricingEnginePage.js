@@ -1,0 +1,188 @@
+class PricingEnginePage{
+    
+    getCommissionTab()
+
+    {
+
+        return cy.iframe().find('#main-menu-commission-service-selector')
+
+    }
+    getServiceChargeHeader()
+    {
+       return cy.iframe().find('h5.page-heading')
+    }
+   
+    getSubmitPolicy()
+    {
+       return cy.iframe().find('a.btn-floating.modal-trigger.cta-background-color.submit-rules')
+    }
+
+    getSubmitBtn()
+    {
+       return cy.iframe().find('a.modal-action.modal-close.center-align.submit-for-approval-btn')
+    }
+
+getServiceChargeTab()
+   {
+       return cy.iframe().find('#main-menu-service-charge-service-selector')
+   }
+    getPricingCalculator(){
+        return cy.iframe().find('#policy-calculator-serviceSelector')
+    }
+    getFundTransfer(){
+        return cy.iframe().find('[title="Fund Transfer"]')
+    }
+    getSenderBankName(){
+        return cy.iframe().find('[data-bind="with: senderSelector"] [class="col s5 input-select"] [class="browser-default control"]').eq(0)
+    }
+    getSenderSVAType(){
+        return cy.iframe().find('[data-bind="with: senderSelector"] [class="col s5 input-select"] [class="browser-default control"]').eq(1)
+    }
+    getSenderRole(){
+        return cy.iframe().find('[data-bind="with: senderSelector"] [class="col s5 input-select required"] [class="browser-default control"]').eq(0)
+    }
+    getSenderHierarchy(){
+        return cy.iframe().find('[data-bind="with: senderSelector"] [class="col s5 input-select required"] [class="browser-default control"]').eq(1)
+    }
+    getSenderGrade(){
+        return cy.iframe().find('[data-bind="with: senderSelector"] [class="col s5 input-select required"] [class="browser-default control"]').eq(2)
+    }
+    getReceiverBankName(){
+        return cy.iframe().find('[data-bind="with: receiverSelector"] [class="col s5 input-select"] [class="browser-default control"]').eq(0)
+    }
+    getReceiverSVAType(){
+        return cy.iframe().find('[data-bind="with: receiverSelector"] [class="col s5 input-select"] [class="browser-default control"]').eq(1)
+    }
+    getReceiverRole(){
+        return cy.iframe().find('[data-bind="with: receiverSelector"] [class="col s5 input-select required"] [class="browser-default control"]').eq(0)
+    }
+    getReceiverHierarchy(){
+        return cy.iframe().find('[data-bind="with: receiverSelector"] [class="col s5 input-select required"] [class="browser-default control"]').eq(1)
+    }
+    getReceiverGrade(){
+        return cy.iframe().find('[data-bind="with: receiverSelector"] [class="col s5 input-select required"] [class="browser-default control"]').eq(2)
+    }
+    getCurrencyType(){
+        return cy.iframe().find('[id="currencyType"]')
+    }
+    getTransactionAmt(){
+        return cy.iframe().find('[id="calculator-transactionAmount"]')
+    }
+    getTransactionDateTime(){
+        return cy.iframe().find('[id="calculator-transactionDateTime"]')
+    }
+    getBearerCode(){
+        return cy.iframe().find('[id="bearerCode"]')
+    }
+    getCalculate(){
+        return cy.iframe().find('[class="btn calculator-btn"]')
+    }
+    getCashIN(){
+        return cy.iframe().find('[title="Cash In"]')
+    }
+    getActiveOrInactive(){
+        return cy.iframe().find('[class="switch-label"]').eq(1)
+    }
+    getActiveOrInactive1(){
+        return cy.iframe().find('[class="switch-label"]').eq(2)
+    }
+    getSearchTab(){
+        return cy.iframe().find('[class="search-placeholder"]')
+    }
+    getSearchButton(){
+        return cy.iframe().find('[type="submit"]')
+    }
+    getRule(){
+        return cy.iframe().find('[class="truncate rule-policy-name"]')
+    }
+    getPolicy(){
+        return cy.iframe().find('[class="truncate rule-policy-type"]')
+    }
+    getStatus(){
+        return cy.iframe().find('[class="rule-status"]')
+    }
+    getValidity(){
+        return cy.iframe().find('[class="validity-details"]')
+    }
+    getPolicyVersionLink(){
+        return cy.iframe().find('[class="version-button"]')
+    }
+    getPolicyVersionInPut(){
+        return cy.iframe().find('#policy-version')
+    }
+    getProceedButton(){
+        return cy.iframe().find('#open-policy-version')
+    }
+    getAddNewRuleBtn(){
+        return cy.iframe().find('div.row:nth-child(5) div.col.l10.m9.float:nth-child(2) div.policy-list div.col.l12.m12:nth-child(3) form:nth-child(27) section.rules-container.charge-rules:nth-child(8) div.row.add-new-charge-rule:nth-child(5) a.btn.add-new-rule-btn.waves-effect.waves-cta.add-new-charge-rule-btn > i.material-icons')
+    }
+    getRuleName(){
+        return cy.iframe().find('.rule-name')
+    }
+    getMinCharge(){
+        return cy.iframe().find('[for="ruleBased-min-charge"]')
+    }
+    getMaxCharge(){
+        return cy.iframe().find('[for="ruleBased-max-charge"]')
+    }
+    //----------------------------------Calander Objects--------------------------------------
+    getDatePickerStart(){
+        return cy.iframe().find('#charge-rule-0-start-date')
+    }
+    getDatePickerEnd(){
+        return cy.iframe().find('#charge-rule-0-end-date')
+    }
+    getCurrentDateSelect(){
+        return cy.iframe().find('.xdsoft_date.xdsoft_current').filter(':visible')
+    }   
+    getCalanderStart(){
+        return cy.iframe().find('.xdsoft_datepicker.active:nth-child(1)')
+    }
+    getNavigateForwardStart(){
+        return cy.iframe().find('.xdsoft_next').eq(2)
+    }
+    getNavigateBackStart(){
+        return cy.iframe().find('.xdsoft_prev').eq(2)
+    }
+    getMonthNamerStart(){
+        return cy.iframe().find('.xdsoft_label.xdsoft_month').eq(1).click().find('.xdsoft_option')
+    }
+    getYearNameStart(){
+        return cy.iframe().find('.xdsoft_label.xdsoft_year').eq(1).click().find('.xdsoft_option')
+    }
+    getCalanderDaysStart(){
+        return cy.iframe().find('.xdsoft_date')
+    }
+    //------------------------------------------------------------------------------------------
+    getSaveDraftBtn(){
+        return cy.iframe().find('[class="fixed-action-btn horizontal"]')
+    }
+    getWhoPays(){
+        return cy.iframe().find('[id="charge-rule-0-charge-statement-0-charge-payer"]')
+    }
+    getSVAType(){
+        return cy.iframe().find('[id="charge-rule-0-charge-statement-0-charge-payer-product"]') 
+    }
+    getWhomeToPay(){
+        return cy.iframe().find('[id="charge-rule-0-charge-statement-0-charge-receiver"]') 
+    }
+    getChargeStatmentPricing(){
+        return cy.iframe().find('[id="charge-statement-0-flat"]') 
+    }
+    getPricingPercntage(){
+        return cy.iframe().find('div.col.s6.input-field.no-margin.no-padding') 
+    }
+    getPricingFixedAmt(){
+        return cy.iframe().find('div.col.input-field.no-margin.s6').eq(1) 
+    }
+    getPolicyName(){
+        return cy.iframe().find('span.truncate') 
+    }   
+    getCloneButton(){
+        return cy.iframe().find('.rule-header').contains(this.data5.RuleName1).find('.btn.waves-effect.waves-cta.clone-rule-button.modal-trigger"]') 
+    }   
+
+
+    
+}
+export default PricingEnginePage
