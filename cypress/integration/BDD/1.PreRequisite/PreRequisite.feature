@@ -278,6 +278,7 @@ And Fill the details-AuthRestrictions
 And Fill the details-loginRestrictions
 Then Click on add and confirm
 
+
 #Business -- TelcoOperator --(pin Present)
 When Navigate to Security and click to select security profile
 And Click on add profile select user type as TelcoOperator and fill the details
