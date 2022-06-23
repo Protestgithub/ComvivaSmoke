@@ -94,15 +94,15 @@ When('User Click on eye button for WalletHistory', function () {
   manageUsersPage.getwallet().click({ force: true })
   manageUsersPage.getFilter().click({force:true})
   manageUsersPage.getradiostatus().contains(this.data6.Status).click({force:true})
-  manageUsersPage.getcheckbox1().contains(this.data6.ServiceType1).click({force:true})
-  manageUsersPage.getcheckbox1().contains(this.data6.ServiceType2).click({force:true})
-  manageUsersPage.getcheckbox1().contains(this.data6.ServiceType3).click({force:true})
-  manageUsersPage.getservice().type('T')
+  //manageUsersPage.getcheckbox1().contains(this.data6.ServiceType1).click({force:true})
+ // manageUsersPage.getcheckbox1().contains(this.data6.ServiceType2).click({force:true})
+//  manageUsersPage.getcheckbox1().contains(this.data6.ServiceType3).click({force:true})
+//  manageUsersPage.getservice().type('T')
   cy.wait(3000)
-  manageUsersPage.getTransactionCorrection().contains(this.data6.ServiceType4).click({force:true})
+ // manageUsersPage.getTransactionCorrection().contains(this.data6.ServiceType4).click({force:true})
   manageUsersPage.getApplyFilterButton().click({force:true})
-  //manageUsersPage.getSearchTransactionId().type('CI220531.1431.A13419')
- // manageUsersPage.getserachicon().click({force:true})
+  manageUsersPage.getSearchTransactionId().type(this.data6.TransactionId1)
+  manageUsersPage.getserachicon().click({force:true})
   cy.wait(3000)
   manageUsersPage.getreversetransaction().eq(0).click()
   manageUsersPage.getreason().type('NIL')
@@ -112,13 +112,13 @@ When('User Click on eye button for WalletHistory', function () {
   cy.wait(2000)
   manageUsersPage.getReverYes().click({ force: true })
   cy.wait(3000)  
-  manageUsersPage.gettransactionId().eq(1).then((data=>{
+ /* manageUsersPage.gettransactionId().eq(1).then((data=>{
     
      var transid = data.text()
      cy.writeFile(TransactionFile,{TransactionId : transid })
      cy.log(transid)   
     
-    }))  
+    }))  */
   
 })
 When('User Click on eye button for WalletHistory1', function () {
@@ -127,15 +127,15 @@ When('User Click on eye button for WalletHistory1', function () {
   manageUsersPage.getwallet().click({ force: true })
   manageUsersPage.getFilter().click({force:true})
   manageUsersPage.getradiostatus().contains(this.data6.Status).click({force:true})
-  manageUsersPage.getcheckbox1().contains(this.data6.ServiceType1).click({force:true})
+ /* manageUsersPage.getcheckbox1().contains(this.data6.ServiceType1).click({force:true})
   manageUsersPage.getcheckbox1().contains(this.data6.ServiceType2).click({force:true})
   manageUsersPage.getcheckbox1().contains(this.data6.ServiceType3).click({force:true})
   manageUsersPage.getservice().type('T')
   cy.wait(3000)
-  manageUsersPage.getTransactionCorrection().contains(this.data6.ServiceType4).click({force:true})
+  manageUsersPage.getTransactionCorrection().contains(this.data6.ServiceType4).click({force:true})*/
   manageUsersPage.getApplyFilterButton().click({force:true})
-  //manageUsersPage.getSearchTransactionId().type('CI220531.1431.A13419')
- // manageUsersPage.getserachicon().click({force:true})
+  manageUsersPage.getSearchTransactionId().type(this.data6.TransactionId2)
+  manageUsersPage.getserachicon().click({force:true})
   cy.wait(3000)
   manageUsersPage.getreversetransaction().eq(0).click()
   manageUsersPage.getreason().type('NIL')
@@ -143,13 +143,13 @@ When('User Click on eye button for WalletHistory1', function () {
   cy.wait(2000)
   manageUsersPage.getReverYes().click({ force: true })
   cy.wait(3000)
-  manageUsersPage.gettransactionId().eq(1).then((data=>{
+ /* manageUsersPage.gettransactionId().eq(1).then((data=>{
     
     var transid = data.text()
     cy.writeFile(TransactionFile,{TransactionId : transid })
     cy.log(transid)   
    
-   }))  
+   }))*/  
 })
 When('User Click on eye button for WalletHistory2', function () {
   manageUsersPage.getEyeIcon().click({ force: true })
@@ -157,15 +157,15 @@ When('User Click on eye button for WalletHistory2', function () {
   manageUsersPage.getwallet().click({ force: true })
   manageUsersPage.getFilter().click({force:true})
   manageUsersPage.getradiostatus().contains(this.data6.Status).click({force:true})
-  manageUsersPage.getcheckbox1().contains(this.data6.ServiceType1).click({force:true})
+ /* manageUsersPage.getcheckbox1().contains(this.data6.ServiceType1).click({force:true})
   manageUsersPage.getcheckbox1().contains(this.data6.ServiceType2).click({force:true})
   manageUsersPage.getcheckbox1().contains(this.data6.ServiceType3).click({force:true})
   manageUsersPage.getservice().type('T')
   cy.wait(3000)
-  manageUsersPage.getTransactionCorrection().contains(this.data6.ServiceType4).click({force:true})
+  manageUsersPage.getTransactionCorrection().contains(this.data6.ServiceType4).click({force:true})*/
   manageUsersPage.getApplyFilterButton().click({force:true})
-  //manageUsersPage.getSearchTransactionId().type('CI220531.1431.A13419')
- // manageUsersPage.getserachicon().click({force:true})
+  manageUsersPage.getSearchTransactionId().type(this.data6.TransactionId3)
+  manageUsersPage.getserachicon().click({force:true})
   cy.wait(3000)
   manageUsersPage.getreversetransaction().eq(0).click()
   manageUsersPage.getreason().type('NIL')
@@ -173,15 +173,14 @@ When('User Click on eye button for WalletHistory2', function () {
   cy.wait(2000)
   manageUsersPage.getreversecommission().click({ force: true })
   cy.wait(2000)
-
   manageUsersPage.getReverYes().click({ force: true })
   cy.wait(3000)
-  manageUsersPage.gettransactionId().eq(1).then((data=>{    
+ /* manageUsersPage.gettransactionId().eq(1).then((data=>{    
     var transid = data.text()
     cy.writeFile(TransactionFile,{TransactionId : transid })
     cy.log(transid)   
    
-   }))  
+   })) */ 
 })
 
 When('Navigate to Transaction Correction and click on Transaction Approval', function () {
@@ -190,13 +189,60 @@ When('Navigate to Transaction Correction and click on Transaction Approval', fun
   cy.wait(3000)
   tranCorrPage.getcolumn().within(function(){
     cy.wait(3000)    
-    cy.readFile(TransactionFile).then((data) => {
+    /*cy.readFile(TransactionFile).then((data) => {
       var transID = data.TransactionId
-      cy.log(transID)
-        cy.get('td').contains(transID)
+      cy.log(transID)*/
+        cy.get('td').contains(this.data6.TransactionId1)
       
-          //tranCorrPage.getradiobutton().check()
-          tranCorrPage.getsubmit().click({force:true})})
+          tranCorrPage.getradiobutton().check()
+          tranCorrPage.getsubmit().click({force:true})
+        //})
+          cy.wait(3000)
+           
+         })
+  tranCorrPage.getcolumn().within(function(){
+  cy.get('td').within(function(){
+    tranCorrPage.getapprove().click({force:true})
+  })
+  })
+})
+When('Navigate to Transaction Correction and click on Transaction Approval1', function () {
+  welcomePage.getTransactionCorrection().click()
+  welcomePage.getTransactionCorrectionApproval().click()
+  cy.wait(3000)
+  tranCorrPage.getcolumn().within(function(){
+    cy.wait(3000)    
+    /*cy.readFile(TransactionFile).then((data) => {
+      var transID = data.TransactionId
+      cy.log(transID)*/
+        cy.get('td').contains(this.data6.TransactionId2)
+      
+          tranCorrPage.getradiobutton().check()
+          tranCorrPage.getsubmit().click({force:true})
+        //})
+          cy.wait(3000)
+           
+         })
+  tranCorrPage.getcolumn().within(function(){
+  cy.get('td').within(function(){
+    tranCorrPage.getapprove().click({force:true})
+  })
+  })
+})
+When('Navigate to Transaction Correction and click on Transaction Approval2', function () {
+  welcomePage.getTransactionCorrection().click()
+  welcomePage.getTransactionCorrectionApproval().click()
+  cy.wait(3000)
+  tranCorrPage.getcolumn().within(function(){
+    cy.wait(3000)    
+    /*cy.readFile(TransactionFile).then((data) => {
+      var transID = data.TransactionId
+      cy.log(transID)*/
+        cy.get('td').contains(this.data6.TransactionId3)
+      
+          tranCorrPage.getradiobutton().check()
+          tranCorrPage.getsubmit().click({force:true})
+        //})
           cy.wait(3000)
            
          })

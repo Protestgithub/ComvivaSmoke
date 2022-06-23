@@ -200,7 +200,9 @@ class manageUsers {
     getViewMoreDetailsButton() {
         return cy.iframe().find('[id="view-more-details"]')
     }
-
+    getFilter() {
+        return cy.iframe().find('.mat-button-wrapper > mat-icon[data-mat-icon-name="filter"]')
+    }
     getFilterStatementButton() {
         return cy.iframe().find('[id="filter-statement"]')
     }

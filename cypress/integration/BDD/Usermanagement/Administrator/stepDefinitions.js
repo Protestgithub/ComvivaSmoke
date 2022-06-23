@@ -13,6 +13,8 @@ import approvals from '../../../../support/pageObjects/UserManagement/approvals'
 import manageUsers from '../../../../support/pageObjects/UserManagement/manageUsers';
 import myActivity from '../../../../support/pageObjects/MyActivity/myActivity';
 import { recurse } from 'cypress-recurse';
+import API from '../../../../support/pageObjects/API';
+
 
 
 //----------------Object Declaration-----------------------------------------------------------------
@@ -22,6 +24,7 @@ const welcomePage = new homePage()
 const registerPage = new register()
 const approvalPage = new approvals()
 const manageUsersPage = new manageUsers()
+const APIPage = new API()
 const myActivityPage = new myActivity()
 const uuid = () => Cypress._.random(1e8)
 mobile = "77" + uuid()
@@ -382,7 +385,7 @@ Then('Reject the Users', function () {
 })
 
 
-//---------------------------------Kalyani-------------------------------------------------------
+//---------------------------------Kalyani_BA Login-------------------------------------------------------
 
 Given('Login into Mobiquity Portal as Business admin User1', function () {
   cy.launchURL(Cypress.env('Adminurl'))
@@ -396,7 +399,35 @@ Given('Login into Mobiquity Portal as Business admin User1', function () {
     cy.Passwordchange(this.data1.UserCreationSuccessMessage)
     pageLogin.getloginbtn1().click({force:true})
     cy.wait(8000)
+    cy.intercept('http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/mobiquitypay/ums/v3/user/auth/web/login').as('getPwd')
     cy.login(BALogin, this.data1.BAPassword)
+    cy.wait(2000)
+    cy.wait('@getPwd').then((interception) => {
+    let response = interception.response.body
+    const resValues = Object.values(response)
+    const serviceRequestID = resValues[0]
+    cy.log(serviceRequestID)
+    let url1 = 'http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/otpservice/internal/genotp/'
+    let getURL = url1.concat(serviceRequestID)
+    cy.request({
+      url: getURL,
+      headers: {
+        'Authorization': 'Basic YWRtaW46c2VjcmV0',
+        'Content-Type': 'application/json'
+      }
+    }).then((res) => {
+      let res1 = res.body
+      const res3 = Object.values(res1)
+      let OTP = res3[4]
+      var OTPArr = Array.from({ length: 6 }, (v, k) => k + 1)
+      cy.wrap(OTPArr).each((index) => {
+      APIPage.getOTPDailogbox1().eq(index - 1).type(OTP[index - 1])
+      })
+      APIPage.getVerifybttn1().click()
+    })
+  })
+  cy.wait(10000)
+   
 })
     cy.checkWelcomeText(this.data1.BAAdminText)
 

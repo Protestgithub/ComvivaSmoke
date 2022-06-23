@@ -29,7 +29,7 @@ And Enter Mobile number or KYC number of subscriber user
 When User Click on eye button for WalletHistory1
 Scenario:Approve Transaction  with another Business User
 Given Login into Mobiquity Portal as System admin User2
-When Navigate to Transaction Correction and click on Transaction Approval
+When Navigate to Transaction Correction and click on Transaction Approval1
 
 # Author: Kalyani M
 # Last Updated:
@@ -44,4 +44,4 @@ And Enter Mobile number or KYC number of subscriber user
 When User Click on eye button for WalletHistory2
 Scenario:Approve Transaction with another Business User
 Given Login into Mobiquity Portal as System admin User2
-When Navigate to Transaction Correction and click on Transaction Approval
+When Navigate to Transaction Correction and click on Transaction Approval2

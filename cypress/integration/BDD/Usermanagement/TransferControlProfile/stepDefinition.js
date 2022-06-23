@@ -24,7 +24,7 @@ const uuid = () => Cypress._.random(0, 1e6)
 const id = uuid()
 const filenameTCP = 'userData/TCPdata.json'
 const CustTCPdata = 'userData/CustTCPdata.json'
-const fileRegulatoryProfile = 'userData/RegulatoryProfile.json'
+const fileRegulatoryProfile = 'userData/Regulatory&MarketingProfile.json'
 var Tcpname
 var Tcpname1
 var RName
@@ -41,12 +41,10 @@ Before(() => {
   cy.fixture('TransferControlProfile').then(function (data5) {
     this.data5 = data5;
   })
-  cy.fixture('userData/RegulatoryProfile').then(function (data8) {
+  cy.fixture('userData/Regulatory&MarketingProfile.json').then(function (data8) {
     this.data8 = data8;
   })
-  cy.fixture('userData/RegulatoryProfile').then(function (data8) {
-    this.data8 = data8;
-  })
+  
 
 
 });
@@ -79,7 +77,6 @@ Given('Login into Mobiquity Portal as Super admin Checker', function () {
   cy.checkWelcomeText(this.data1.superadminc.superadminchecker)
 })
 
-
 When('Navigate to Transfer Control Profile and Click on Manage Transfer Level TCP', function () {
   welcomePage.getTransferControlProfile().click()
   cy.wait(3000)
@@ -93,94 +90,23 @@ When('Navigate to Transfer Control Profile', function () {
 And('Click on Create Button', function () {
   tcpPage.getCreate().click({ force: true })
 })
-And('Click on New Button', function () {
-
-  tcpPage.getNew().click({ force: true })
-  tcpPage.getprovider().select(this.data5.TransferControlProfile.Provider, { force: true })
-  tcpPage.getdomain().select(this.data5.TransferControlProfile.Domain, { force: true })
-  tcpPage.getcategory().select(this.data5.TransferControlProfile.Category, { force: true })
-  cy.fixture(fileRegulatoryProfile).then((user) => {
-    RName = user.RegulatoryProfileName
-    cy.log(RName)
-    tcpPage.getregulatorytype().select(RName, { force: true })
-  })
-  //cy.TCPMasRandomName()
-  tcpPage.getprofilename.type(getRandomName(),{force:true})
-  tcpPage.getdescription().type(this.data5.TransferControlProfile.Description)
-  /* recurse( 
-     ()=> getRandomName(), 
-     ()=>tcpPage.getdescription().type(this.data5.TransferControlProfile.Description, { force: true }), 
-     ()=>cy.wait(200),   
-     (uniqueness) => (uniqueness) == tcpPage.getErrorMessage().contains 
-     ('Please select another profile name as this profile name is being used by an active profile').should('be.visible'), 
-     tcpPage.getdescription().type(this.data5.TransferControlProfile.Description, { force: true })    
-    )*/
-  tcpPage.getadd().click({ force: true })
-  cy.wait(3000)
-  const uuid = () => Cypress._.random(1e3)
-  number = uuid()
-  tcpPage.getAmount().each((e1, index, list) => {
-    cy.wrap(e1).type(number)
-  })
-  tcpPage.getcountmaster().each((e1, index, list) => {
-    cy.wrap(e1).type(number)
-  })
-  tcpPage.getusermaxbalanceMaster().type(this.data5.TransferControlProfile.UserMaxBal)
-  tcpPage.getNextEdit().click({ force: true })
-  tcpPage.getConfirmEdit().click({ force: true })
-
-})
-
-And('Verify Success Message for creation of TCP through Master admin', function () {
-  cy.fixture(CustTCPdata).then((user) => {
-    Tcpname1 = user.CustTCPProfileName
-    cy.wait(2000)
-    cy.log(Tcpname1)
-    tcpPage.getReqtoAddMaster().should("have.text", this.data5.confimationMessage.addIntiationPart1Master + Tcpname1 + this.data5.confimationMessage.addIntiationPart2Master)
-  })
-})
-
 
 When('Navigate to Transfer Control Profile to View Details', function () {
 
   welcomePage.getTransferControlProfileSA().click()
   cy.wait(3000)
   cy.TcpName1()
-  tcpPage.getViewDetails().each(($row => {
-
-    cy.wrap($row).within(function () {
-
-      cy.get('td.name').each(($el => {
-
-        if ($el.text() == Tcpname1) {
-          cy.get('span.glyphicon.glyphicon-info-sign').click({ force: true })
-
-        }
-      }))
-    })
-  }))
+  cy.ViewDetails(Tcpname1)
+  cy.log(Tcpname1)
   tcpPage.getback().contains("Back").click({ force: true })
 })
+
 When('Navigate to Transfer Control Profile to Edit Details', function () {
 
   welcomePage.getTransferControlProfileSA().click()
   cy.wait(3000)
   cy.TcpName1()
-  tcpPage.getViewDetails().each(($row => {
-
-    cy.wrap($row).within(function () {
-
-
-      cy.get('td.name').each(($el => {
-
-        if ($el.text() == Tcpname1) {
-          cy.get('span.glyphicon.glyphicon-edit').click({ force: true })
-
-        }
-      }))
-    })
-  }))
-
+  cy.EditDetails(Tcpname1)
   tcpPage.getEditbutton().click({ force: true })
   cy.wait(3000)
   tcpPage.getNextEdit().click({ force: true })
@@ -195,34 +121,24 @@ Then('Verify Success Message for Edit', function () {
     tcpPage.getSuccess().should("contain", this.data5.confimationMessage.editSucesspart1 + Tcpname1 + this.data5.confimationMessage.editSucesspart2)
   })
 })
+
 Then('Verify the Modification Request message', function () {
   cy.TcpName1()
   tcpPage.getSuccess().should("contain", this.data5.confimationMessage.editapproval1 + Tcpname1 + this.data5.confimationMessage.editapproval2)
 })
+
 Then('Verify Success Message for deletion', function () {
 
   tcpPage.getMarketingError().should("contain", this.data5.confimationMessage.DeletionError)
 
 })
+
 When('Navigate to Transfer Control Profile to Delete Details', function () {
 
   welcomePage.getTransferControlProfileSA().click()
   cy.wait(3000)
   cy.TcpName1()
-  tcpPage.getViewDetails().each(($row => {
-
-    cy.wrap($row).within(function () {
-
-      cy.get('td.name').each(($el => {
-
-        if ($el.text() == Tcpname1) {
-          cy.get('span.glyphicon.glyphicon-trash').click({ force: true })
-
-        }
-      }))
-    })
-  }))
-
+  cy.DeleteDetails(Tcpname1)
 })
 
 Then('Verify Error Message for deletion', function () {
@@ -230,6 +146,7 @@ Then('Verify Error Message for deletion', function () {
   tcpPage.getMarketingError().should("contain", this.data5.confimationMessage.ErrorMessMarketing)
 
 })
+
 And('Click on Add New Button', function () {
   pageLogin.getiFrame()
   cy.wait(3000)
@@ -237,26 +154,7 @@ And('Click on Add New Button', function () {
 
 })
 
-Then('Enter required Fields', function () {
 
-  tcpPage.getprovider().select(this.data5.TransferControlProfile.Provider, { force: true })
-  tcpPage.getdomain().select(this.data5.TransferControlProfile.Domain, { force: true })
-  tcpPage.getcategory().select(this.data5.TransferControlProfile.Category, { force: true })
-  tcpPage.getgrade().select(this.data5.TransferControlProfile.Grade, { force: true })
-  tcpPage.getpaymentinstrument().select(this.data5.TransferControlProfile.PaymentInstrument, { force: true })
-  tcpPage.getwallettype().select(this.data5.TransferControlProfile.Wallet, { force: true })
-  //cy.TCPRandomName()
-  tcpPage.getprofilename().type(getRandomName(), { force: true })
-  tcpPage.getdescription().type(this.data5.TransferControlProfile.Description, { force: true })
-  /* recurse( 
-     ()=> getRandomName(), 
-     ()=>tcpPage.getdescription().type(this.data5.TransferControlProfile.Description, { force: true }), 
-     ()=>cy.wait(200),  
-     (uniqueness) => (uniqueness) == tcpPage.getErrorMessage().contains 
-     ('Please select another profile name as this profile name is being used by an active profile').should('be.visible'), 
-     tcpPage.getdescription().type(this.data5.TransferControlProfile.Description, { force: true })    
-   )*/
-})
 Then('Enter required Fields for error message', function () {
 
   tcpPage.getprovider().select(this.data5.TransferControlProfile.Provider, { force: true })
@@ -278,67 +176,13 @@ Then('Verify Error Message', function () {
 
   tcpPage.getErrorMessage().should("contain", this.data5.confimationMessage.ErrorMessageApproval)
 })
+
 Then('Verify Error Message for Provider', function () {
   tcpPage.geterror().should("contain", this.data5.confimationMessage.Providererror)
 })
+
 Then('Verify Error Message for Domain', function () {
   tcpPage.geterror().should("contain", this.data5.confimationMessage.Domainerror)
-})
-Then('Verify Error Message for Category', function () {
-  tcpPage.geterror().should("contain", this.data5.confimationMessage.Categoryerror)
-})
-Then('Verify Error Message for Grade', function () {
-  tcpPage.geterror().should("contain", this.data5.confimationMessage.Gradeerror)
-})
-
-Then('Verify Success Message', function () {
-  cy.fixture(filenameTCP).then((user) => {
-    Tcpname = user.TcpProfileName
-    cy.log(Tcpname)
-    tcpPage.getsucessmessage().should("contain", this.data5.confimationMessage.successfulTcpIntiation + Tcpname + this.data5.confimationMessage.successpart2)
-  })
-})
-Then('Verify the Approval message', function () {
-  tcpPage.getsucessmessage().should("contain", this.data5.confimationMessage.SuccessTCP + profile)
-})
-
-
-Then('Enter all required amount and count', function () {
-  pageLogin.getiFrame()
-  cy.wait(3000)
-  const uuid = () => Cypress._.random(1e3)
-  number = uuid()
-  tcpPage.getcount().each((e1, index, list) => {
-    cy.wrap(e1).type(number)
-  })
-  tcpPage.getLoadServiceReq().type(number)
-  tcpPage.getLoadServiceReq2().type(number)
-  tcpPage.getUserminbalance().type(this.data5.TransferControlProfile.UserMinBal)
-  tcpPage.getUsermaximumbalance().type(this.data5.TransferControlProfile.UserMaxBal)
-  tcpPage.getUserMinTransactionAmount().type(this.data5.TransferControlProfile.MinTranAmount)
-  tcpPage.getUserMaxTransactionAmount().type(this.data5.TransferControlProfile.MaxTranAmount)
-  tcpPage.getMaxPercentageTransferAllowed().type(this.data5.TransferControlProfile.MaxPerAllowed)
-  tcpPage.getNext().click({ force: true })
-  cy.wait(3000)
-  tcpPage.getNext().click({ force: true })
-  cy.wait(3000)
-  welcomePage.getTransferControlProfile()
-    .scrollIntoView()
-})
-
-And('Click on Instrument Level TCP', function () {
-  welcomePage.getTransferControlProfile().click()
-  welcomePage.getInstrumentLevelTCPApproval().click()
-  cy.wait(4000)
-  tcpPage.getinstrumentlevelTCP().within(function () {
-    cy.fixture(filenameTCP).then((user) => {
-      Tcpname = user.TcpProfileName
-      cy.log(Tcpname)
-      cy.get("td").eq(1)
-      cy.get("a").contains(Tcpname).click({ force: true })
-    })
-  })
-  tcpPage.getApproveTCP().click({ force: true })
 })
 
 Then('Approve the TCP', function () {
@@ -359,13 +203,7 @@ Then('Approve the TCP', function () {
   }))
   tcpPage.getApproveTCP1().click({ force: true })
 })
-
-When('Navigate to User Management and Click on manage user', function () {
-  welcomePage.getUserManagementOption().scrollIntoView()
-  welcomePage.getUserManagementOption().click()
-  welcomePage.getManageUsersLink().click()
-
-})
+//-----------------------Editing TCP value for existing Marketing Profile--------/////
 When('Navigate to User Management and Click on Marketing Profile', function () {
   welcomePage.getUserManagementOption().scrollIntoView()
   welcomePage.getUserManagementOption().click()
@@ -390,6 +228,8 @@ Then('Click on Edit Marketing Profile and associate the created TCP with Marketi
   MarketingProfile1.getsave().click({ force: true })
 
 })
+//-----------------------------End of MarketingProfile----------------------------//
+
 Then('Click on delete icon', function () {
 
   cy.wait(3000)
@@ -401,6 +241,7 @@ Then('Click on delete icon', function () {
 
   })
 })
+//------------------------Regulatory Profile Creation ----------------------//
 When('Navigate to UserManagement And Click on Regulatory Profile', function () {
 
   welcomePage.getUserManagementOption().scrollIntoView()
@@ -422,16 +263,4 @@ Then('Click On Save Regulatory Profile', function () {
   cy.wait(3000)
 
 })
-And('Verify Add Intiation Message', function () {
-  cy.TcpName()
-  tcpPage.getReqtoAdd().should("contain", this.data5.confimationMessage.addIntiationPart1 + Tcpname + this.data5.confimationMessage.addIntiationPart2)
-  cy.wait(3000)
-})
-And('Verify Add Intiation Message for Master', function () {
-  cy.fixture(CustTCPdata).then((user) => {
-    Tcpname1 = user.CustTCPProfileName
-    cy.log(Tcpname1)
-    tcpPage.getReqtoAddIntiationMaster().should("contain", this.data5.confimationMessage.sucessMasterTcpIntiation + Tcpname1 + this.data5.confimationMessage.successpart2Master)
-    cy.wait(3000)
-  })
-})
+//-----------------------End Regulatory Profile--------------------//

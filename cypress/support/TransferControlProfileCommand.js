@@ -47,18 +47,20 @@ const APIPage = new API()
 var pricingEnginePage = new PricingEnginePage()
 var dateUtils = new DateUtils()
 var name
-var RegulatoryFile = 'cypress/fixtures/userData/RegulatoryProfile.json'
+var RegulatoryFile = 'cypress/fixtures/userData/Regulatory&MarketingProfile.json'
 var MarketingFile = 'cypress/fixtures/userData/MarketingProfile.json'
 const RegulatoryProfile1 = new RegulatoryProfile()
 const MarketingProfile1 = new MarketingProfile()
 const manageUsersPage = new manageUsers()
 const filenameTCP = 'userData/TCPdata.json'
 const CustTCPdata = 'userData/CustTCPdata.json'
+const fileRegulatoryProfile = 'userData/Regulatory&MarketingProfile.json'
 var Tcpname, Tcpname1
 const Password1 = 'Com@135'
 var name
 let Sysfilelogin = 'cypress/fixtures/userData/SystemAdminLogin.json'
 let loginId, mobile, Password
+const timestamp = (new Date).getMilliseconds()
 
 
 function getRandomName() {
@@ -86,7 +88,7 @@ Cypress.Commands.add('TcpName1', (Text) => {
 
 })
 Cypress.Commands.add('TCPRandomName', () => {
-    let hi = getRandomName()
+    let hi ="InstTCP" +"" +getRandomName() + timestamp
     tcpPage.getprofilename().type(hi, { force: true })
     cy.writeFile('cypress/fixtures/userData/TCPdata.json', { TcpProfileName: hi })
     function getRandomName() {
@@ -99,7 +101,7 @@ Cypress.Commands.add('TCPRandomName', () => {
 
 })
 Cypress.Commands.add('TCPMasRandomName', () => {
-    let hi = getRandomName()
+    let hi = "CustTCP" +"" +getRandomName() + timestamp
     tcpPage.getprofilename().type(hi, { force: true })
     cy.writeFile('cypress/fixtures/userData/CustTCPdata.json', { CustTCPProfileName: hi })
     function getRandomName() {
