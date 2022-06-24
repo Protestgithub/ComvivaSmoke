@@ -14,66 +14,19 @@ import "../../../../support/TransferControlProfileCommand";
 import BankManagement from '../../../../support/pageObjects/BankManagement';
 import 'cypress-file-upload'
 import register from '../../../../support/pageObjects/UserManagement/register';
-import approvals from '../../../../support/pageObjects/UserManagement/approvals';
-import manageUsers from '../../../../support/pageObjects/UserManagement/manageUsers';
-import DomainFieldspage from '../../../../support/pageObjects/DomainManagement/DomainFieldspage';
-import CircularJSON from 'circular-json';
-import Flatted from 'flatted';
-import TransferRulePage from '../../../../support/pageObjects/TransferRules/TransferRulePage';
-import TransferControlProfile from '../../../../support/pageObjects/TransferControlProfile';
-import TransactionCorrection from '../../../../support/pageObjects/TransactionCorrection';
-import ErrorMessage from '../../../../support/pageObjects/UserManagement/ErrorMessage';
-import walletManagement from '../../../../support/pageObjects/WalletManagement/walletManagement';
-import AddGrades from '../../../../support/pageObjects/GradeManagement/AddGrades';
-import ModifyGrades from '../../../../support/pageObjects/GradeManagement/ModifyGrades';
-import DeleteGrades from '../../../../support/pageObjects/GradeManagement/DeleteGrades';
-import AddCategory from '../../../../support/pageObjects/CategoryManagement/AddCategory';
-import SecurityProfilePage from '../../../../support/pageObjects/SecurityProfile/SecurityProfilePage';
-import "../../../../support/authourizationcommands"
-import authorizationManagement from '../../../../support/pageObjects/AuthorizationProfileManagement/authorizationManagement';
-import RegulatoryProfile from '../../../../support/pageObjects/UserManagement/RegulatoryProfile';
-import MarketingProfile from '../../../../support/pageObjects/UserManagement/MarketingProfile';
 
 
 
 
 //----------------Object Declaration----------------------------------------------------------
 
-const pageLogin = new loginPage()
-const welcomePage = new homePage()
-const registerPage = new register()
-const approvalPage = new approvals()
-const manageUsersPage = new manageUsers()
-const ErrorM=new ErrorMessage()
-const AddCategoryPage = new AddCategory()
 const BankManagementPage = new BankManagement()
-const WalletManagementPage = new walletManagement()
-const domainPage = new DomainFieldspage()
-const AddGradePage = new AddGrades()
-const tcpPage = new TransferControlProfile()
-const securityProfilePage = new SecurityProfilePage()
-const authorizationProfilePage = new authorizationManagement()
 const uid1 = () => Cypress._.random(1e2)
-const Id = uid1()
-const profilename = `testname${id}`
-var RegulatoryFile = 'cypress/fixtures/userData/Regulatory&MarketingProfile.json'
-var SubProfileName = 'cypress/fixtures/profileData/Profile.json'
-const MarketingProfile1 = new MarketingProfile()
-const RegulatoryProfile1 = new RegulatoryProfile()
-var mobile
-var number
 const uid = () => Cypress._.random(0, 1e6)
 const id = uid()
-const filenameTCP = 'userData/TCPdata.json'
-const CustTCPdata = 'userData/CustTCPdata.json'
-const fileRegulatoryProfile = 'userData/Regulatory&MarketingProfile.json'
-var Tcpname
-var Tcpname1
-var RName
 
 
 
-var filename1 = 'cypress/fixtures/WalletManagementdata.json'
 const uuid = () => Cypress._.random(1e10)
 const uud = () => Cypress._.random(1e3)
 PoolAccountNo =  uuid()
@@ -84,16 +37,9 @@ var PoolAccountNo
 var BankID
 var Priority
 var filename = 'cypress/fixtures/BankManagement.json'
-let Sysfilelogin = 'cypress/fixtures/userData/SystemAdminLogin.json'
-var mobile
-var name
 var LoginId1
 const uuid12 = () => Cypress._.random(1e8)
 LoginId1= uuid12()
-const Password='000000'
-const Password1 = 'Com@135'
-var loginId
-let GradeCode
 function getbankName() {
   name = "";
   var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
