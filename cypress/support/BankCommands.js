@@ -54,15 +54,51 @@ cy.readFile(filename1).then((user)  => {
 })
 )
 
-Cypress.Commands.add('getprovider', () => {
-    BankManagementPage.getProvider1().then(listing => {
-        const randomNumber = getRandomInt(0, listing.length - 1);
-        BankManagementPage.getProvider1().eq(randomNumber).then(($select) => {
-            const text = $select.index()
-            cy.wait(5000)
-            BankManagementPage.getProvider().select(text, { force: true })
-        });
-    })
+Cypress.Commands.add('getCSVfile', () => {
+    cy.wait(3000)
+    BankManagementPage.getDownloadFileTemplate().click({ force: true })
+   cy.wait(2000)
+   cy.readFile('cypress/downloads/ChurnUserInitiation.csv')
+   .then((data) => {
+   cy.writeFile('cypress/fixtures/ChurnUserInitiation.csv', data)
+   })
+   let result = [];
+   cy.readFile('cypress/fixtures/ChurnUserInitiation.csv')
+   .then((data) => {
+    var lines = data.split("\n")
+    var headers = lines[0].split(",")
+    for(var i=1;i<lines.length;i++){
+     var obj = {};
+     var currentline=lines[i].split(",");
+       cy.log(currentline[0])
+       for(var j=0;j<headers.length;j++){
+           if(headers[j].includes("*")){
+               let removeLastChar = headers[j].slice(0, headers[j].length - 1);
+               cy.log(removeLastChar)
+               obj[removeLastChar] = currentline[j];
+              }
+           else{
+             obj[headers[j]] = currentline[j];
+         }       
+     }
+     result.push(obj);
+     cy.log(obj)
+   }
+   cy.writeFile('cypress/fixtures/ChurnUserInitiation.json', obj)
+   })
+   
+   cy.readFile("cypress/fixtures/ChurnUserInitiation.json", (data) => {
+
+}).then((data) => {
+
+    data.BranchCode  = "Y"
+    data.CHURN_CHANNEL_USER = "N"
+
+    cy.writeFile("cypress/fixtures/ChurnUserInitiation.json", data)
+
+})
+
+
 })
 
 
