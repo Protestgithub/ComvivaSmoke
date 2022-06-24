@@ -6,7 +6,16 @@ const pageLogin = new loginPage()
 const BankManagementPage = new BankManagement
 var filename = 'cypress/fixtures/BankManagement.json'
 var filename1 = 'cypress/fixtures/WalletManagementdata.json'
-
+var name
+const uuid = () => Cypress._.random(1e4)
+var Code = uuid()
+function getRandomName() {
+    name = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    for (var i=0; i<5; i++)
+    name += possible.charAt(Math.floor(Math.random() * possible.length));
+    return name;
+    }
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -54,15 +63,46 @@ cy.readFile(filename1).then((user)  => {
 })
 )
 
-Cypress.Commands.add('getprovider', () => {
-    BankManagementPage.getProvider1().then(listing => {
-        const randomNumber = getRandomInt(0, listing.length - 1);
-        BankManagementPage.getProvider1().eq(randomNumber).then(($select) => {
-            const text = $select.index()
-            cy.wait(5000)
-            BankManagementPage.getProvider().select(text, { force: true })
-        });
-    })
+Cypress.Commands.add('getCSVfile', () => {
+    cy.wait(3000)
+    BankManagementPage.getDownloadFileTemplate().click({ force: true })
+   cy.wait(2000)
+   cy.readFile('cypress/downloads/AddBranches.csv')
+   .then((data) => {
+   cy.writeFile('cypress/fixtures/AddBranches.csv', data)
+   })
+   let result = [];
+   cy.readFile('cypress/fixtures/AddBranches.csv')
+   .then((data) => {
+    var lines = data.split("\n")
+    var headers = lines[0].split(",")
+    for(var i=1;i<lines.length;i++){
+     var obj = {};
+     var currentline=lines[i].split(",");
+       cy.log(currentline[0])
+       for(var j=0;j<headers.length;j++){
+           if(headers[j].includes("*")){
+               let removeLastChar = headers[j].slice(0, headers[j].length - 1);
+               cy.log(removeLastChar)
+               obj[removeLastChar] = currentline[j];
+              }
+           else{
+             obj[headers[j]] = currentline[j];
+         }       
+     }
+     result.push(obj);
+     cy.log(obj)
+   }
+   cy.writeFile('cypress/fixtures/AddBranches.json', obj)
+   })
+   
+   cy.readFile("cypress/fixtures/AddBranches.json", (data) => {
+
+}).then((data) => {
+    data.BranchCode  = Code
+    data.BranchName = getRandomName()
+    cy.writeFile("cypress/fixtures/AddBranches.json", data)
+})
 })
 
 
