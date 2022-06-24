@@ -3,6 +3,9 @@ class BankManagement{
     {
         return cy.get('[title="Bank Master"]')
     }
+    getDownloadFileTemplate() {
+        return cy.iframe().find('a[href*="javaScript:openSheet()"]')
+    }
     getProvider()
     {
         return cy.iframe().find('#fileUploadForm_providerId')

@@ -6,7 +6,16 @@ const pageLogin = new loginPage()
 const BankManagementPage = new BankManagement
 var filename = 'cypress/fixtures/BankManagement.json'
 var filename1 = 'cypress/fixtures/WalletManagementdata.json'
-
+var name
+const uuid = () => Cypress._.random(1e4)
+var Code = uuid()
+function getRandomName() {
+    name = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    for (var i=0; i<5; i++)
+    name += possible.charAt(Math.floor(Math.random() * possible.length));
+    return name;
+    }
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -58,12 +67,12 @@ Cypress.Commands.add('getCSVfile', () => {
     cy.wait(3000)
     BankManagementPage.getDownloadFileTemplate().click({ force: true })
    cy.wait(2000)
-   cy.readFile('cypress/downloads/ChurnUserInitiation.csv')
+   cy.readFile('cypress/downloads/AddBranches.csv')
    .then((data) => {
-   cy.writeFile('cypress/fixtures/ChurnUserInitiation.csv', data)
+   cy.writeFile('cypress/fixtures/AddBranches.csv', data)
    })
    let result = [];
-   cy.readFile('cypress/fixtures/ChurnUserInitiation.csv')
+   cy.readFile('cypress/fixtures/AddBranches.csv')
    .then((data) => {
     var lines = data.split("\n")
     var headers = lines[0].split(",")
@@ -84,21 +93,16 @@ Cypress.Commands.add('getCSVfile', () => {
      result.push(obj);
      cy.log(obj)
    }
-   cy.writeFile('cypress/fixtures/ChurnUserInitiation.json', obj)
+   cy.writeFile('cypress/fixtures/AddBranches.json', obj)
    })
    
-   cy.readFile("cypress/fixtures/ChurnUserInitiation.json", (data) => {
+   cy.readFile("cypress/fixtures/AddBranches.json", (data) => {
 
 }).then((data) => {
-
-    data.BranchCode  = "Y"
-    data.CHURN_CHANNEL_USER = "N"
-
-    cy.writeFile("cypress/fixtures/ChurnUserInitiation.json", data)
-
+    data.BranchCode  = Code
+    data.BranchName = getRandomName()
+    cy.writeFile("cypress/fixtures/AddBranches.json", data)
 })
-
-
 })
 
 

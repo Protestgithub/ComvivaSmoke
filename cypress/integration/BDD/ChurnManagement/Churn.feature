@@ -1,6 +1,5 @@
 Feature: Churn Management
 
-
     # # # Author:Chetan.S
     # # # Last Updated:
     # # # Comments :Subscriber Creation to Churn
@@ -24,13 +23,15 @@ Feature: Churn Management
     # # # Last Updated:11-06-2022
     # # # Comments :
     # # # Scenario_ID :TC_102
-    
+  
     Scenario: To verify that the System admin can initiated churn process and approve.
         Given Login into Mobiquity Portal as System admin User
         When  Click on Churn Management and Churn Initiation
         And  Download a File template 
-        And Convert .csv file to json file
-        And Upload .csv file with valid details
+        And Convert csv To JSON file
+        And update the json data
+        And convert json to csv
+        And Upload csv file with valid details
         Then Logout
         Given Login into Mobiquity Portal as another System admin User after logout
         When Click on Churn Management and Churn Approval
@@ -66,14 +67,14 @@ Feature: Churn Management
         Given Login into Mobiquity Portal as System admin User
         When  Click on Churn Management and Churn Initiation
         And  Download a File template
-        And Upload Bulk .csv file with valid details
+        And Upload Bulk csv file with valid details
         Then Logout
         Given Login into Mobiquity Portal as another System admin User after logout
         When Click on Churn Management and Churn Approval
         And Click on Churn Management > Churn Approval
         Then  Select the initiated churn request and Then click on Approve/Reject by Selection
 
-        # # # Author: Sudheer Baraker
+    # # # Author: Sudheer Baraker
     # # # Last Updated: 19/05/2022
     # # # Comments :
     # # # Scenario_ID : TC_107
@@ -81,8 +82,11 @@ Feature: Churn Management
     Scenario: To verify that the System admin can approve the initiated churn process as Batch Reject
         Given Login into Mobiquity Portal as System admin User
         When  Click on Churn Management and Churn Initiation
-        And  Download a File template
-        And Upload .csv file with valid details
+        And  Download a File template 
+        And Convert csv To JSON file
+        And update the json data
+        And convert json to csv
+        And Upload csv file with valid details
         Then Logout
         Given Login into Mobiquity Portal as another System admin User after logout
         When Click on Churn Management and Churn Approval
@@ -95,13 +99,15 @@ Feature: Churn Management
     Scenario: To verify that the System admin can approve the initiated churn process as Approve/Reject by Selection
         Given Login into Mobiquity Portal as System admin User
         When  Click on Churn Management and Churn Initiation
-        And  Download a File template
-        And Upload .csv file with valid details
+        And  Download a File template 
+        And Convert csv To JSON file
+        And update the json data
+        And convert json to csv
+        And Upload csv file with valid details
         Then Logout
         Given Login into Mobiquity Portal as another System admin User after logout
         When Click on Churn Management and Churn Approval
-        Then Select the initiated churn request and
-
+        Then Select the initiated churn request and Then click on Approve and Reject by Selection
 
 
 

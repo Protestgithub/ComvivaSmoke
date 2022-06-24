@@ -24,9 +24,6 @@ const BankManagementPage = new BankManagement()
 const uid1 = () => Cypress._.random(1e2)
 const uid = () => Cypress._.random(0, 1e6)
 const id = uid()
-
-
-
 const uuid = () => Cypress._.random(1e10)
 const uud = () => Cypress._.random(1e3)
 PoolAccountNo =  uuid()
@@ -63,30 +60,9 @@ Before(() => {
   cy.fixture('login').then(function (data1) {
     this.data1 = data1;
   })
-  cy.fixture('UserManagement').then(function (data2) {
-    this.data2 = data2;
-  })
   cy.fixture('BankManagement').then(function(data03)
   {
      this.data03 = data03;
-  })
-  cy.fixture('Domain&CategoryManagement').then(function(data4)
-  {
-      this.data4 = data4;
-  })
-  cy.fixture('TransferControlProfile').then(function (data5) {
-    this.data5 = data5;
-  })
-
-  cy.fixture('GradeManagement').then(function(data01)
-  {
-      this.data01 = data01;
-  })
-  cy.fixture('SecurityProfile').then(function (data6) {
-    this.data6 = data6;
-  })
-  cy.fixture('authorizationProfile').then(function (data7) {
-    this.data7 = data7;
   })
 
 }); 
@@ -169,6 +145,7 @@ When ('Navigate to Bank Master and Click on it', function(){
   })
     
   And ('Enter All the Required Details', function(){
+  cy.getCSVfile()
   BankManagementPage.getProvider().select(this.data03.bankMaster.Provider, {force:true})
   BankManagementPage.getBankName().type(getbankName(), {force:true})
   cy.readFile(filename).then((data) => {

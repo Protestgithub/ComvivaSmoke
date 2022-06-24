@@ -61,6 +61,7 @@ When ('Navigate to Bank Master and Click on it', function(){
 })
   
 And ('Enter All the Required Details', function(){
+cy.getCSVfile()
 BankManagementPage.getProvider().select(this.data2.bankMaster.Provider, {force:true})
 BankManagementPage.getBankName().type(getbankName(), {force:true})
 cy.readFile(filename).then((data) => {
@@ -110,7 +111,7 @@ When ('Click on Bank Master', function(){
   //--------------------------------------------TC_06-----------------------------------------------------
 
 And ('Enter all the details Except Bank Name', function(){
-  const uuid = () => Cypress._.random(1e10)
+  cy.getCSVfile()
   BankManagementPage.getProvider().select(this.data2.bankMaster.Provider, {force:true})
   PoolAccountNo =  uuid()
   BankID = uuid()
