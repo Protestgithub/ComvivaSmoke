@@ -38,9 +38,12 @@ Given('Login into Mobiquity Portal as Subscriber', function () {
   cy.visit("http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/dfscontainer/#/subscriber")
   cy.visit("http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/dfscontainer/#/subscriber")
   cy.wait(3000)
-  cy.login(this.data.subscriber.sub1, this.data.subscriber.subpwd)
+  cy.readFile('cypress/fixtures/userData/subscriberReg.json').then((data)=>{
+  var SubLogin
+  SubLogin = data.subscriberLoginId
+  cy.login(SubLogin, this.data.subscriber.subpwd)
   cy.wait(2000)
-
+  })
 })
 And('Change Password', function () {
   login.getInputForm().eq(0).type(this.data.subscriber.subpwd1)
@@ -53,7 +56,11 @@ And('Login into Mobiquity Portal as Subscriber1', function () {
   cy.visit("http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/dfscontainer/#/subscriber")
   cy.wait(3000)
   cy.intercept('http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/mobiquitypay/ums/v3/user/auth/web/login').as('getPwd')
-  cy.login(this.data.subscriber.sub1, this.data.subscriber.subpwd1)
+  cy.readFile('cypress/fixtures/userData/subscriberReg.json').then((data)=>{
+    var SubLogin
+    SubLogin = data.subscriberLoginId
+    cy.login(SubLogin, this.data.subscriber.subpwd)  
+  
   cy.wait(2000)
   cy.wait('@getPwd').then((interception) => {
     let response = interception.response.body
@@ -81,7 +88,7 @@ And('Login into Mobiquity Portal as Subscriber1', function () {
   })
   cy.wait(10000)
 })
-
+})
 When('Navigate to SessionManagement', function () {
   welcomePage.getSessionManagementOption().scrollIntoView()
   welcomePage.getSessionManagementOption().click()
