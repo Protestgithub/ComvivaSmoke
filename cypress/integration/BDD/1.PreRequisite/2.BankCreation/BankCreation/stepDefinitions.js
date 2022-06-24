@@ -85,10 +85,6 @@ Given('Login into Mobiquity Portal as System admin User', function () {
     cy.checkWelcomeText(this.data1.networkAdminWelcomeText)
   
   })
- /* Given('Login into Mobiquity Portal as another System admin User after logout', function () {
-    cy.SysAdminlogin2Again()
-    cy.checkWelcomeText(this.data1.networkAdminWelcomeText)
-  })*/
   Given('Login into Mobiquity Portal as System admin Maker', function () {
     cy.launchURL(Cypress.env('Adminurl'))
     cy.SysAdminlogin()
@@ -100,16 +96,12 @@ Given('Login into Mobiquity Portal as System admin User', function () {
     cy.launchURL(Cypress.env('Adminurl'))
     cy.login(this.data1.masterAdmin2.masterchckr1, this.data1.masterAdmin2.mstAdminPwd1)
     cy.wait(2000)
-   // cy.checkWelcomeText(this.data2.SuperAdminChecker)
   })  
-//superadminm
 Given('Login into Mobiquity Portal as Super admin Maker', function () {
   cy.launchURL(Cypress.env('Adminurl'))
   cy.login(this.data1.masteradminmaker.sysAdminUser1, this.data1.masteradminmaker.sysAdminPwd1)
   cy.wait(2000)
-  //cy.checkWelcomeText(this.data1.superadminm.superadminmaker)
 })
-//superadminc
 Given('Login into Mobiquity Portal as Super admin Checker', function () {
   cy.launchURL(Cypress.env('Adminurl'))
   cy.login(this.data1.masteradminchecker.sysAdminUser1, this.data1.masteradminchecker.sysAdminPwd1)
