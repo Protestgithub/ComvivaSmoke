@@ -28,6 +28,7 @@ var ReferenceNumber = uuid()
 var number = uuid()
 var Amount =uid()
 var name
+var filename="cypress/fixtures/userData/O2CBulkData.json"
 function getRandomName() {
   name = "";
   var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
@@ -162,6 +163,9 @@ And ('Confirm the displayed Error Message', function(){
         O2CTransferInitiatePage.getType().select(this.data5.O2CTransferInitiate.type, {force: true})
         O2CTransferInitiatePage.getNumber().type(number, {force: true})
         O2CTransferInitiatePage.getRemarks().type(getRandomName(), {force: true})
+        cy.writeFile(filename,{ msidnValue:this.data5.O2CTransferInitiate1.msisdn1,TransferAmt:TransferAmount, RefNum:ReferenceNumber} )
+
+
       
       })
       
