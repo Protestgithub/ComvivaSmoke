@@ -168,6 +168,48 @@ Cypress.Commands.add('SysAdminlogin3', () => {
     })
 })
 
+Cypress.Commands.add('csvToJSON', (CsvFile,JsonFile) => {
+    let result = [];
+    cy.readFile('cypress/fixtures/input/BULK_O2C-template.csv')
+    .then((data) => {
+     var lines = data.split("\n")
+     var headers = lines[0].split(",")
+     
+     for(var i=0;i<lines.length;i++){
+      var obj = {};
+      var currentline=lines[i].split(",");
+      
+      for(var j=0;j<headers.length;j++){
+        obj[headers[j]] = '';
+        
+    }
+   cy.log(obj)
+
+      }
+      cy.writeFile('cypress/fixtures/input/BULK_O2C-template.json', obj)
+      
+  })
+  // console.log(result
+
+})
+  Cypress.Commands.add('jsonToCSV', (JsonFile, CsvFile)=>{
+    cy.readFile('cypress/fixtures/input/BULK_O2C-template.json').then((data)=>{
+        var fields =  Object.keys(data)
+        var values = Object.values(data)
+        var csv1 = fields.map(function() {})
+        csv1.unshift(fields.join(','))   // add header column
+        let str1 = csv1;
+        let sl2 = str1.slice(0, 1)        
+        var csv = values.map(function() {})
+        csv.unshift(values.join(',')) // add header column
+        let str2 = csv;
+        let sl3 = str2.slice(0, 1)
+        cy.writeFile('cypress/fixtures/input/BULK_O2C-template.csv', sl2 + '\n' + sl3)
+        })
+        
+    })
+
+
 
 
 Cypress.Commands.add('Passwordchange', (Text) => {

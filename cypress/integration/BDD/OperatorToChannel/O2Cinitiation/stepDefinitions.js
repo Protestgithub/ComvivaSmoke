@@ -28,6 +28,7 @@ var ReferenceNumber = uuid()
 var number = uuid()
 var Amount = uid()
 var name
+var filename="cypress/fixtures/userData/O2CBulkData.json"
 function getRandomName() {
   name = "";
   var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
@@ -230,3 +231,88 @@ When('Navigate to Operator to channel and click on O2C transfer Approval2', func
   transferruleapprovalpage.getApprovalTransferrule().click({ force: true })
 })
 
+<<<<<<< HEAD
+=======
+      welcomePage.getOperatorToChannelOption().scrollIntoView()
+      
+      welcomePage.getOperatorToChannelOption().click()
+      
+      welcomePage.getO2CTransferInitiateOption().click()
+      
+      
+      
+      })
+      
+      And('Enter All the Mandatory Details', function(){
+        cy.wait(3000)
+        O2CTransferInitiatePage.getMSISDN().type(this.data5.O2CTransferInitiate.msisdn1, {force: true})  
+        O2CTransferInitiatePage.getTransferAmount().type(TransferAmount, {force: true})
+        O2CTransferInitiatePage.getReferenceNumber().type(ReferenceNumber, {force: true})
+        O2CTransferInitiatePage.getType().select(this.data5.O2CTransferInitiate.type, {force: true})
+        O2CTransferInitiatePage.getNumber().type(number, {force: true})
+        O2CTransferInitiatePage.getRemarks().type(getRandomName(), {force: true})
+        cy.writeFile(filename,{ msidnValue:this.data5.O2CTransferInitiate1.msisdn1,TransferAmt:TransferAmount, RefNum:ReferenceNumber} )
+
+
+      
+      })
+      
+      Then('Click on submit and Confirm', function(){
+      
+        O2CTransferInitiatePage.getSubmitButton().click({force: true})
+      
+        cy.wait(2000)
+      
+        O2CTransferInitiatePage.getConfirmButton().click({force: true})
+        cy.wait(3000)
+       cy.O2CTransactionWriteData()
+      })
+      And('click wallet Payment history.',function(){
+        manageUsersPage.getWalletHistory().contains("Wallet Payment History").click({force:true})
+      })
+    And('Enter TransactionID and check',function(){
+      cy.O2CTransactionReadData()
+        
+    
+      })
+      And('logout the user',function(){
+    
+        welcomePage.getProfileIcon().click()
+        cy.wait(2000)
+        welcomePage.getLogOutbttn().click()
+        cy.wait(2000)
+          welcomePage.getLogOutYesbttn().click()
+      })
+      When('Navigate to Operator to channel and click on O2C transfer Approval1', function(){
+    
+        welcomePage.getOperatorToChannelOption().scrollIntoView()
+        
+        welcomePage.getOperatorToChannelOption().click()
+        
+        welcomePage.getOperatorToChannelApproval1().click()
+        cy.wait(4000)
+        
+        O2CTransferInitiatePage.getRecentDatainO2C()
+        TransferRuleApproval.getsubmitbttnTransferrule().click({force:true})
+        cy.wait(2000)
+         transferruleapprovalpage.getApprovalTransferrule().click({force:true})
+          })
+          
+     //-------------------------O2C approal2------------------------------------
+     When('Navigate to Operator to channel and click on O2C transfer Approval2', function(){
+    
+      welcomePage.getOperatorToChannelOption().scrollIntoView()
+      
+      welcomePage.getOperatorToChannelOption().click()
+      
+      welcomePage.getOperatorToChannelApproval2().click()
+      cy.wait(4000)
+      
+      O2CTransferInitiatePage.getRecentDatainO2C()
+      TransferRuleApproval.getsubmitbttnTransferrule().click({force:true})
+      cy.wait(2000)
+       transferruleapprovalpage.getApprovalTransferrule().click({force:true})
+        })  
+      
+        
+>>>>>>> 1a3cb14f5b66c6a72c653c140ea10d730c6c0e42
