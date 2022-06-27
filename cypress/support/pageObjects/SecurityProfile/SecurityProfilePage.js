@@ -175,7 +175,11 @@ class SecurityProfilePage{
     getIpGroupRadioButton(){
         return cy.iframe().find('.font-weight-700.form-label.label-text').eq(0)
     }
+    getGeoLocation(){
 
+        return cy.iframe().find('.mat-checkbox-inner-container').eq(3)
+
+    }
  
 }
 export default SecurityProfilePage 

@@ -22,7 +22,7 @@
     "authSystem":"Internal",
     "minQuestions":"2",
     "maxQuestions":"4",
-    "autoLogoutTime":"2",
+    "autoLogoutTime":"9000",
     "minSecurityQuestionToResetCredentials":"2",
     "maxSecurityQuestionToResetCredentials":"4",
     "getAutoLogoutTime":"2",

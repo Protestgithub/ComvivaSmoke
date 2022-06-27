@@ -4,37 +4,35 @@
 //----------------Imports---------------------------------------------------------------------
 import 'cypress-iframe'
 import { Given, When, Then, And, Before } from "cypress-cucumber-preprocessor/steps";
-import loginPage from '../../../../support/pageObjects/loginPage';
-import homePage from '../../../../support/pageObjects/homePage';
+import loginPage from '../../../../../support/pageObjects/loginPage';
+import homePage from '../../../../../support/pageObjects/homePage';
 import { recurse } from 'cypress-recurse';
 
-import "../../../../support/commands";
-import "../../../../support/securityCommands";
-import "../../../../support/TransferControlProfileCommand";
-import BankManagement from '../../../../support/pageObjects/BankManagement';
+import "../../../../../support/commands";
+import "../../../../../support/securityCommands";
+import "../../../../../support/TransferControlProfileCommand";
+import BankManagement from '../../../../../support/pageObjects/BankManagement';
 import 'cypress-file-upload'
-import register from '../../../../support/pageObjects/UserManagement/register';
-import approvals from '../../../../support/pageObjects/UserManagement/approvals';
-import manageUsers from '../../../../support/pageObjects/UserManagement/manageUsers';
-import DomainFieldspage from '../../../../support/pageObjects/DomainManagement/DomainFieldspage';
+import register from '../../../../../support/pageObjects/UserManagement/register';
+import approvals from '../../../../../support/pageObjects/UserManagement/approvals';
+import manageUsers from '../../../../../support/pageObjects/UserManagement/manageUsers';
+import DomainFieldspage from '../../../../../support/pageObjects/DomainManagement/DomainFieldspage';
 import CircularJSON from 'circular-json';
 import Flatted from 'flatted';
-import TransferRulePage from '../../../../support/pageObjects/TransferRules/TransferRulePage';
-import TransferControlProfile from '../../../../support/pageObjects/TransferControlProfile';
-import TransactionCorrection from '../../../../support/pageObjects/TransactionCorrection';
-import ErrorMessage from '../../../../support/pageObjects/UserManagement/ErrorMessage';
-import walletManagement from '../../../../support/pageObjects/WalletManagement/walletManagement';
-import AddGrades from '../../../../support/pageObjects/GradeManagement/AddGrades';
-import ModifyGrades from '../../../../support/pageObjects/GradeManagement/ModifyGrades';
-import DeleteGrades from '../../../../support/pageObjects/GradeManagement/DeleteGrades';
-import AddCategory from '../../../../support/pageObjects/CategoryManagement/AddCategory';
-import SecurityProfilePage from '../../../../support/pageObjects/SecurityProfile/SecurityProfilePage';
-import "../../../../support/authourizationcommands"
-import authorizationManagement from '../../../../support/pageObjects/AuthorizationProfileManagement/authorizationManagement';
-import RegulatoryProfile from '../../../../support/pageObjects/UserManagement/RegulatoryProfile';
-import MarketingProfile from '../../../../support/pageObjects/UserManagement/MarketingProfile';
-
-
+import TransferRulePage from '../../../../../support/pageObjects/TransferRules/TransferRulePage';
+import TransferControlProfile from '../../../../../support/pageObjects/TransferControlProfile';
+import TransactionCorrection from '../../../../../support/pageObjects/TransactionCorrection';
+import ErrorMessage from '../../../../../support/pageObjects/UserManagement/ErrorMessage';
+import walletManagement from '../../../../../support/pageObjects/WalletManagement/walletManagement';
+import AddGrades from '../../../../../support/pageObjects/GradeManagement/AddGrades';
+import ModifyGrades from '../../../../../support/pageObjects/GradeManagement/ModifyGrades';
+import DeleteGrades from '../../../../../support/pageObjects/GradeManagement/DeleteGrades';
+import AddCategory from '../../../../../support/pageObjects/CategoryManagement/AddCategory';
+import SecurityProfilePage from '../../../../../support/pageObjects/SecurityProfile/SecurityProfilePage';
+import "../../../../../support/authourizationcommands"
+import authorizationManagement from '../../../../../support/pageObjects/AuthorizationProfileManagement/authorizationManagement';
+import RegulatoryProfile from '../../../../../support/pageObjects/UserManagement/RegulatoryProfile';
+import MarketingProfile from '../../../../../support/pageObjects/UserManagement/MarketingProfile';
 
 
 //----------------Object Declaration----------------------------------------------------------

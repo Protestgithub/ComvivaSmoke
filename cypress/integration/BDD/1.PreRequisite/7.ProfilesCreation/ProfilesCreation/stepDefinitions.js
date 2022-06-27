@@ -4,19 +4,35 @@
 //----------------Imports---------------------------------------------------------------------
 import 'cypress-iframe'
 import { Given, When, Then, And, Before } from "cypress-cucumber-preprocessor/steps";
-import loginPage from '../../../../support/pageObjects/loginPage';
-import homePage from '../../../../support/pageObjects/homePage';
+import loginPage from '../../../../../support/pageObjects/loginPage';
+import homePage from '../../../../../support/pageObjects/homePage';
 import { recurse } from 'cypress-recurse';
 
-import "../../../../support/commands";
-import "../../../../support/securityCommands";
-import "../../../../support/TransferControlProfileCommand";
+import "../../../../../support/commands";
+import "../../../../../support/securityCommands";
+import "../../../../../support/TransferControlProfileCommand";
+import BankManagement from '../../../../../support/pageObjects/BankManagement';
 import 'cypress-file-upload'
-import SecurityProfilePage from '../../../../support/pageObjects/SecurityProfile/SecurityProfilePage';
-import "../../../../support/authourizationcommands"
-import authorizationManagement from '../../../../support/pageObjects/AuthorizationProfileManagement/authorizationManagement';
-import RegulatoryProfile from '../../../../support/pageObjects/UserManagement/RegulatoryProfile';
-import MarketingProfile from '../../../../support/pageObjects/UserManagement/MarketingProfile';
+import register from '../../../../../support/pageObjects/UserManagement/register';
+import approvals from '../../../../../support/pageObjects/UserManagement/approvals';
+import manageUsers from '../../../../../support/pageObjects/UserManagement/manageUsers';
+import DomainFieldspage from '../../../../../support/pageObjects/DomainManagement/DomainFieldspage';
+import CircularJSON from 'circular-json';
+import Flatted from 'flatted';
+import TransferRulePage from '../../../../../support/pageObjects/TransferRules/TransferRulePage';
+import TransferControlProfile from '../../../../../support/pageObjects/TransferControlProfile';
+import TransactionCorrection from '../../../../../support/pageObjects/TransactionCorrection';
+import ErrorMessage from '../../../../../support/pageObjects/UserManagement/ErrorMessage';
+import walletManagement from '../../../../../support/pageObjects/WalletManagement/walletManagement';
+import AddGrades from '../../../../../support/pageObjects/GradeManagement/AddGrades';
+import ModifyGrades from '../../../../../support/pageObjects/GradeManagement/ModifyGrades';
+import DeleteGrades from '../../../../../support/pageObjects/GradeManagement/DeleteGrades';
+import AddCategory from '../../../../../support/pageObjects/CategoryManagement/AddCategory';
+import SecurityProfilePage from '../../../../../support/pageObjects/SecurityProfile/SecurityProfilePage';
+import "../../../../../support/authourizationcommands"
+import authorizationManagement from '../../../../../support/pageObjects/AuthorizationProfileManagement/authorizationManagement';
+import RegulatoryProfile from '../../../../../support/pageObjects/UserManagement/RegulatoryProfile';
+import MarketingProfile from '../../../../../support/pageObjects/UserManagement/MarketingProfile';
 
 
 
@@ -221,13 +237,9 @@ And('Fill the details-PinRestrictions', function () {
   securityProfilePage.getNonRepeatingLastPins().type(this.data6.lastNonRepeatingPin)
   securityProfilePage.getSelectAllorClearLink().click({ force: true })
 })
-/*And('Fill the details-AuthRestrictions', function () {
-  securityProfilePage.getTwoFactorAuth().click({ force: true })
-  securityProfilePage.getGeoLocation().click({ force: true })
-})*/
 And('Fill the details-AuthRestrictions', function () {
   securityProfilePage.getTwoFactorAuth().click({ force: true })
-  securityProfilePage.getEverytime().click({ force: true })
+  securityProfilePage.getGeoLocation().click({ force: true })
 })
 And('Fill the details-loginRestrictions', function () {
   securityProfilePage.getLoginRestrictions().click({ force: true })
@@ -599,7 +611,7 @@ cy.readFile(SubProfileName).then((data) => {
   data.SubscriberProfileName1 = name
   cy.writeFile(SubProfileName, data)
 })
-cy.selectModule().click({ force: true })
+cy.selectModule()
 cy.wait(3000)
 authorizationProfilePage.getUserServicePreferences().contains('ALL').click({ force: true })
 authorizationProfilePage.getAdd().click({ force: true })
@@ -648,7 +660,7 @@ cy.readFile(SubProfileName).then((data) => {
   cy.writeFile(SubProfileName, data)
 })
 // cy.wait(3000)
-cy.selectModule().click({ force: true })
+cy.selectModule()
 cy.wait(3000)
 authorizationProfilePage.getUserServicePreferences().contains('ALL').click({ force: true })
 authorizationProfilePage.getAdd().click({ force: true })
@@ -684,7 +696,7 @@ cy.readFile(SubProfileName).then((data) => {
   cy.writeFile(SubProfileName, data)
 })
 
-cy.selectModule().click({ force: true })
+cy.selectModule()
 cy.wait(3000)
 authorizationProfilePage.getUserServicePreferences().contains('ALL').click({ force: true })
 authorizationProfilePage.getAdd().click({ force: true })
@@ -723,7 +735,7 @@ cy.readFile(SubProfileName).then((data) => {
   cy.writeFile(SubProfileName, data)
 })
 
-cy.selectModule().click({ force: true })
+cy.selectModule()
 cy.wait(3000)
 authorizationProfilePage.getUserServicePreferences().contains('ALL').click({ force: true })
 authorizationProfilePage.getAdd().click({ force: true })
@@ -761,7 +773,7 @@ cy.readFile(SubProfileName).then((data) => {
   data.BusinessAgent1 = name
   cy.writeFile(SubProfileName, data)
 })
-cy.selectModule().click({ force: true })
+cy.selectModule()
 cy.wait(3000)
 authorizationProfilePage.getUserServicePreferences().contains('ALL').click({ force: true })
 authorizationProfilePage.getAdd().click({ force: true })
