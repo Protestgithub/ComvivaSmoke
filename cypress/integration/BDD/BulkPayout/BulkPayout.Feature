@@ -6,9 +6,9 @@ Feature: Bulk Payout
 # Comments 
 # Test Case_ID :88 
 # 
-@focus
+
 Scenario:To verify that system should generate unique Batch Id on every transaction/service performed through Bulk payout tool.
-Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
 When Click on BulkPayout tool
 And Click on Bulk Payout Initiate
 Then update the json data
@@ -21,9 +21,9 @@ Then Logout
 # Test Case_ID : 89
 # 
 
-@focus
+
 Scenario:To verify that system should be able to perform the commission disbursement through Bulk payout tool.
-Given Login into Mobiquity Portal as another System admin User after Logout
+Given Login into Mobiquity Portal as System admin Checker1
 When Click on BulkPayout tool
 And Click on Bulk Payout Approval link.
 And Select initiated service.

@@ -230,18 +230,6 @@ When('Navigate to Operator to channel and click on O2C transfer Approval2', func
   cy.wait(2000)
   transferruleapprovalpage.getApprovalTransferrule().click({ force: true })
 })
-
-<<<<<<< HEAD
-=======
-      welcomePage.getOperatorToChannelOption().scrollIntoView()
-      
-      welcomePage.getOperatorToChannelOption().click()
-      
-      welcomePage.getO2CTransferInitiateOption().click()
-      
-      
-      
-      })
       
       And('Enter All the Mandatory Details', function(){
         cy.wait(3000)
@@ -315,4 +303,3 @@ When('Navigate to Operator to channel and click on O2C transfer Approval2', func
         })  
       
         
->>>>>>> 1a3cb14f5b66c6a72c653c140ea10d730c6c0e42
