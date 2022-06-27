@@ -7,6 +7,7 @@ Feature: Bank Creation
 # Comments 
 # Scenario_ID : 
 # TestCase_ID : TC_04
+@prerequisite
 
 Scenario: To verify that master is able to Add Bank successfully
 Given Login with Master Admin Checker

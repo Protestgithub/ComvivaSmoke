@@ -9,6 +9,7 @@ Feature: User Management : Subscriber
 # Comments 
 # Scenario_ID : 
 # TestCase_ID : TC_182
+@test
 
 Scenario:To verify that proper error message should  be displayed when email id/contact number is not verified.
 Given Login into Mobiquity Portal as System admin Maker
@@ -22,6 +23,7 @@ Then Fill all required details and Enter Email and Contact Number which are not 
 # Comments 
 # Scenario_ID : 
 # TestCase_ID : TC_183
+@test
 
 Scenario: To verify that immidiate error message should be displayed whne any invalid value is entered by the user.
 Given Login into Mobiquity Portal as System admin Maker
@@ -35,6 +37,7 @@ Then Fill all required details and Enter Invalid value and confirm Error message
 # Comments 
 # Scenario_ID : 
 # TestCase_ID : TC_184
+@test
 
 Scenario: To verify that proper error message should  be displayed when Email id/contact number is not verified
 Given Login into Mobiquity Portal as System admin Maker
@@ -50,6 +53,7 @@ Then Enter all the marketing ,regulatory, authorization profile details and clic
 # Comments 
 # Scenario_ID : 
 # TestCase_ID : TC_185
+@test
 
 Scenario: To verify that immidiate Error Message should be displayed whne any invalid value is Entered by the user.
 Given Login into Mobiquity Portal as System admin Maker
@@ -65,6 +69,7 @@ Then Enter all the marketing ,regulatory, authorization profile details and clic
 # Comments 
 # Scenario_ID : 
 # TestCase_ID : TC_187
+@test
 
 Scenario: To verify that Proper error message should be When contact Number/ Email  is registered in the system
 Given Login into Mobiquity Portal as System admin Maker
@@ -84,6 +89,7 @@ Then Enter all the marketing ,regulatory, authorization profile details and clic
 # Comments 
 # Scenario_ID :
 # TC_68
+@test
 
 Scenario:To verify that valid SystemAdmin/businsess User is able to initiate Subscriber creation.
 Given Login into Mobiquity Portal as System admin Maker
@@ -97,6 +103,7 @@ Then SubscrigReg Confirmation message is displayed
 # Comments 
 # Scenario_ID :
 # TC_69
+@test
 
 Scenario:To verify that another System Admin/businsess User is able to approve the initiated Subscriber creation.
 Given Login into Mobiquity Portal as System admin Checker1
@@ -110,6 +117,7 @@ Then Added User status is approved
 # Comments 
 # Scenario_ID :
 # TC_70
+@test
 
 Scenario:To verify that System Admin/businsess user is able to modify Subscriber successfully.
 Given Login into Mobiquity Portal as System admin Maker
@@ -124,6 +132,7 @@ Then Confirm the edit details
 # Comments 
 # Scenario_ID :
 # TC_71
+@test
 
 Scenario:To verify that another System Admin/businsess User is able to approve the Modified Subscriber Data.
 Given Login into Mobiquity Portal as System admin Checker1
@@ -138,6 +147,7 @@ Then Edited User status is approved
 # Comments 
 # Scenario_ID :
 # TC_72
+@test
 
 
 Scenario:To verify that modification message is sent to Subscriber successfully.
@@ -160,6 +170,7 @@ Then verify message sent to user
 # Comments 
 # Scenario_ID :
 # TC_73
+@test
 
 
 Scenario:To verify that the System Admin is able to suspend a subscriber successfully through web.
@@ -181,6 +192,7 @@ Then Verify the user Suspended approval message
 # Comments 
 # Scenario_ID :
 # TC_74
+@test
 
 Scenario:To verify that the System Admin is able to resume a suspend subscriber successfully through web.
 Given Login into Mobiquity Portal as System admin Maker
@@ -205,6 +217,7 @@ Then Verify the user Resumed approval message
 # Comments 
 # Test Case_ID : TC_52_Business admin_LowerHierarchy
 # 
+@test
 
 Scenario: To verify that Business admin is able to  view Lower_Hierarchy details 
 Given Login into Mobiquity Portal as Business admin User
@@ -218,6 +231,7 @@ Then Verify View Details Page
 # Comments  :Business admin able to  View Subscriber Details
 # Test Case_ID : TC_90
 # 
+@test
 
 
 Scenario:To verify that Business admin able to view subscriber details
@@ -232,6 +246,7 @@ Then Verify View Details Page
 # Comments   :
 # Test Case_ID : TC_90
 # 
+@test
 
 
 Scenario:To verify that System admin able to view subscriber details
@@ -250,6 +265,7 @@ Then Verify View Details Page
 # Comments : 
 # Scenario_ID : SC_169 
 
+@test
 
 
 Scenario:To verify that proper error message should be displayed when login id is already registered in the system.
@@ -263,7 +279,7 @@ Then Login id Error message is displayed
 # Last Updated: 26/05/2022
 # Comments : 
 # Scenario_ID : SC_170 
-
+@test
 
 
 Scenario:To verify that proper error message should be displayed when Email Id  is registered in the system.

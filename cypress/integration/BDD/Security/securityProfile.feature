@@ -5,6 +5,7 @@ Feature:SecurityProfile
 # Comments 
 # Scenario_ID :
 # TC_110
+@test
 
 Scenario:To verify that for each workspace there will be one default security profile
 Given Login into Mobiquity Portal as System admin Maker
@@ -18,6 +19,8 @@ Then Assert each workspace have one default Profile
 # Comments 
 # Scenario_ID :
 # TC_111
+@test
+
 Scenario:Security profile should be associated with the user at the time of on-boarding
 Given Login into Mobiquity Portal as System admin Maker
 When Navigate to User Management and Click on register

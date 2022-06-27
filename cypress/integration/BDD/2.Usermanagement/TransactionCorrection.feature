@@ -5,6 +5,7 @@ Feature:Transaction Correction
 # Comments 
 # Test Case_ID : TC_91
 # 
+@test
 
 Scenario:To verify that the Valid User should able to perform Transaction correction for CASHIN,CASHOUT,P2P,MERCHANT PAYMENT. 
 Given Login into Mobiquity Portal as System admin Maker
@@ -21,6 +22,7 @@ When Navigate to Transaction Correction and click on Transaction Approval
 # Comments 
 # Test Case_ID : TC_92
 # 
+@test
 
 Scenario:To verify that when the Roll Back Service charge option is selected, then along with service charge, the applicable tax should also be rolled back
 Given Login into Mobiquity Portal as System admin Maker
@@ -36,6 +38,7 @@ When Navigate to Transaction Correction and click on Transaction Approval1
 # Comments 
 # Test Case_ID : TC_93
 # 
+@test
 
 Scenario:To verify that when the Roll Back Commission option is selected, then along with commission, the applicable tax should also be rolled back
 Given Login into Mobiquity Portal as System admin Maker

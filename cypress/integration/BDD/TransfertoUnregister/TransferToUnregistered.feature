@@ -1,6 +1,7 @@
 Feature: Transfer to Unregistered
 
    
+@test
 
     Scenario: To verify that system admin should able to do enquiry of transaction for un registred subscibers Subscribers who doesn't exists in system
         Given Login into Mobiquity Portal as System admin Maker

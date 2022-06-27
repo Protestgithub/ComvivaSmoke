@@ -8,6 +8,7 @@ Feature: Domain Creation
 # Comments 
 # Test Case_ID : TC_08
 # 
+@prerequisite
 
 Scenario:To verify that System admin should be able to add domain in the system.
 Given Login into Mobiquity Portal as System admin Maker

@@ -4,7 +4,8 @@ Feature: Churn Management
     # # # Last Updated:
     # # # Comments :Subscriber Creation to Churn
     # # # Scenario_ID :Pre Requisit
-    
+    @test
+
     Scenario:To verify that valid SystemAdmin/businsess User is able to initiate Subscriber creation.
         Given Login into Mobiquity Portal as System admin Maker
         When Navigate to User Management and Click on register
@@ -23,6 +24,7 @@ Feature: Churn Management
     # # # Last Updated:11-06-2022
     # # # Comments :
     # # # Scenario_ID :TC_102
+@test
   
     Scenario: To verify that the System admin can initiated churn process and approve.
         Given Login into Mobiquity Portal as System admin Maker
@@ -42,6 +44,7 @@ Feature: Churn Management
     # # # Last Updated:
     # # # Comments :
     # # # Scenario_ID :TC_104
+@test
     
     Scenario:To verify that valid SystemAdmin is able to initiate Subscriber creation using Churned MSISDN.
         Given Login into Mobiquity Portal as System admin Maker
@@ -63,6 +66,8 @@ Feature: Churn Management
     # # # Last Updated:11-06-2022
     # # # Comments : Bulk Upload
     # # # Scenario_ID :TC_105
+@test
+
     Scenario: To verify that the System admin can approve the initiated churn process with Bulk Upload and Approve
         Given Login into Mobiquity Portal as System admin Maker
         When  Click on Churn Management and Churn Initiation
@@ -79,6 +84,8 @@ Feature: Churn Management
     # # # Comments :
     # # # Scenario_ID : TC_107
     # # #
+@test
+
     Scenario: To verify that the System admin can approve the initiated churn process as Batch Reject
         Given Login into Mobiquity Portal as System admin Maker
         When  Click on Churn Management and Churn Initiation
@@ -96,6 +103,8 @@ Feature: Churn Management
     # # # Comments :
     # # # Scenario_ID : TC_108
     # # #
+@test
+
     Scenario: To verify that the System admin can approve the initiated churn process as Approve/Reject by Selection
         Given Login into Mobiquity Portal as System admin Maker
         When  Click on Churn Management and Churn Initiation

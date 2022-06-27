@@ -8,6 +8,8 @@ Feature: Security
     # # Comments :
     # # Scenario_ID : TC_112
     # #
+    @test
+
     Scenario: To verify that master/network Admin can add security questions in the mobiquity System
         Given Login into Mobiquity Portal as System admin Maker
         When Navigate to security and click on security questions
@@ -20,6 +22,7 @@ Feature: Security
     # # # Comments :
     # # # Scenario_ID : TC_113
     # # #
+@test
 
     Scenario: To verify that master/network Admin is not able to add duplicate question
         Given Login into Mobiquity Portal as System admin Maker
@@ -34,6 +37,7 @@ Feature: Security
     # # # Comments :
     # # # Scenario_ID : TC_114
     # # #
+@test
 
     Scenario: To verify that security question which are added by the user will be added in default system language
         Given Login into Mobiquity Portal as System admin Maker
@@ -48,6 +52,7 @@ Feature: Security
     # # # Comments :
     # # # Scenario_ID : TC_115
     # # #
+@test
 
     Scenario: To verify that if other language is selected while adding the security question then it is mandatory to add question in other language also
         Given Login into Mobiquity Portal as System admin Maker

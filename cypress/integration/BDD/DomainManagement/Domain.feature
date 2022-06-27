@@ -6,6 +6,7 @@ Feature: Domain Management
 # Comments 
 # Test Case_ID : TC_175
 # 
+@test
 
 Scenario:To verify that proper error message should be displayed when domain code and domain name is not unique in the system
 Given Login into Mobiquity Portal as System admin Maker

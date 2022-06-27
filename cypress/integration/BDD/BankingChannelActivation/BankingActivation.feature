@@ -5,6 +5,7 @@ Feature: BankingActivation
 # Comments 
 # Scenario_ID : 
 # TestCase_ID : TC_156
+@test
 
 Scenario: To verify that System Admin is able to activate Internet banking if CIF number exist.
 Given Login into Mobiquity Portal as System admin Maker
@@ -18,6 +19,7 @@ Then Confirm and Verify the Internet Banking Activtion Message sent to user
 # Comments 
 # Scenario_ID : 
 # TestCase_ID : TC_155
+@test
 
 Scenario: To verify that System Admin is able to activate mobile banking if CIF number exist.
 Given Login into Mobiquity Portal as System admin Maker
@@ -31,6 +33,7 @@ Then Confirm and Verify the Mob Banking Activtion Message sent to user
 # Comments 
 # Scenario_ID : 
 # TestCase_ID : TC_156
+@test
 
 Scenario: To verify that System Admin is able to activate Internet banking if CIF number exist.
 Given Login into Mobiquity Portal as System admin Maker
@@ -44,6 +47,7 @@ Then Confirm and Verify the Internet Banking Activtion Message sent to user
 # Comments 
 # Scenario_ID : 
 # TestCase_ID : TC_157
+@test
 
 Scenario: To verify that System Admin is able to verify admin is able to see the Activated Message.
 Given Login into Mobiquity Portal as System admin Maker

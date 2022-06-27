@@ -7,7 +7,8 @@ Feature: Commission Disbursement
     # # # Scenario_ID : TC_154
     # # #
 
-   
+   @test
+
     Scenario: To verify that system admin should able to disburse commisson to channel users
         Given Login into Mobiquity Portal as System admin Maker
         When  Commission Disbursement Process and Commission Disbursement

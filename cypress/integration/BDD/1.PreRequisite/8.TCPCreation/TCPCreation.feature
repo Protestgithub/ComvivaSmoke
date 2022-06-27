@@ -7,6 +7,7 @@ Feature: TCP Creation
 # Last Updated:
 # Comments : View
 # Test Case_ID : TC_23
+@prerequisite
 
 Scenario:To verify that master is able to add initiate and  customer level TCP.
 Given Login into Mobiquity Portal as Super admin Maker
@@ -19,6 +20,7 @@ And Verify Add Intiation Message for Master
 # Comments : View
 # Test Case_ID : TC_23
 #
+@prerequisite
 
 Scenario:To verify that master admin is able to Approve the customer level TCP..
 Given Login into Mobiquity Portal as Super admin Checker
@@ -31,6 +33,7 @@ Then Verify Success Message for creation of TCP through Master admin
 # Comments  :
 # Test Case_ID : TC_24
 # 
+@prerequisite
 
 Scenario:To verify that System admin is able to add initiate and approve instrument level TCP.
 Given Login into Mobiquity Portal as System admin Maker

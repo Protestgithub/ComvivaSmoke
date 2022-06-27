@@ -5,6 +5,7 @@ Feature: User Management : Super admin
 # Comments 
 # Test Case_ID : TC_51_SuperadminMaker_selfdetails
 # 
+@test
 
 Scenario: To verify that Super admin is able to  view Self details 
 Given Login into Mobiquity Portal as Super admin Maker
@@ -18,6 +19,7 @@ When User Click on eye button
 # Comments 
 # Test Case_ID : TC_52_SuperadminChecker_LowerHierarchyDetails
 # 
+@test
 
 Scenario: To verify that Super admin is able to  view Lower_Hierarchy details 
 Given Login into Mobiquity Portal as Super admin Maker
@@ -29,6 +31,7 @@ When User Click on eye button
 # Last Updated:
 # Comments    :
 # Test Case_ID : TC_44_sysadmin
+@test
 
 Scenario: To verify that master admin can initiate and approve modification request of an System admin/ Bank admin.
 Given Login into Mobiquity Portal as Super admin Maker
@@ -49,6 +52,7 @@ And Approve the modification/Deletion Request
 # Last Updated:
 # Comments    :
 # Test Case_ID : TC_47_sysadmin
+@test
 
 Scenario: To verify that Master user is able to initiate deletion of an existing System admin.
 Given Login into Mobiquity Portal as Super admin Maker
@@ -73,6 +77,7 @@ And Approve the modification/Deletion Request
 # Comments 
 # Scenario_ID : TC_167
 # 
+@test
 
 Scenario:To verify that proper error message should be when login id is already present in the system.
 Given Login into Mobiquity Portal as Super admin Maker
@@ -87,6 +92,7 @@ Then Error Message Should be displayed
 # Comments 
 # Scenario_ID : TC_168
 # 
+@test
 
 Scenario:To verify that proper error message should be display when contact number/ email  is registered in the system.
 Given Login into Mobiquity Portal as Super admin Maker
@@ -100,6 +106,7 @@ Then Email Id Error Message Should be dispalyed
 # Comments 
 # Scenario_ID : TC_180
 # 
+@test
 
 Scenario:To verify that proper error message should  be displayed when email id/contact number is not verified.
 Given Login into Mobiquity Portal as Super admin Maker
@@ -114,6 +121,7 @@ Then Not Registered EmailId Error Message
 # Scenario_ID : TC_181
 # 
 
+@test
 
 Scenario:TO verify that immidiate error message should be displayed whne any invalid value is entered by the user.
 Given Login into Mobiquity Portal as Super admin Maker

@@ -12,6 +12,7 @@ Feature: User Management : Buissness
 # Test Case_ID : TC_64
 #
 
+@test
 
 Scenario:To verify that System admin/Business Admin should be able to Add businsess user for unregistered Mobile number only.
 Given Login into Mobiquity Portal as System admin Maker
@@ -34,6 +35,7 @@ Then Approve the Users
 # Comments
 # Test Case_ID : TC_99
 #
+@test
 
 Scenario: To verify that System admin is able to reset password of another system user of the lower hierarchy.
 Given Login into Mobiquity Portal as System admin Maker
@@ -48,6 +50,7 @@ And Click on reset icon to reset password
 # Comments
 # Test Case_ID : TC_65
 #
+@test
 
 
 Scenario: To Verify that System Admin/Business Admin can initiate Barring of the businsess user.
@@ -65,6 +68,7 @@ And click on yes
 # Comments
 # Test Case_ID : TC_63
 #
+@test
 
 Scenario: To verify that the Proper error message should get displayed on WEB if user trying to modify businsess user for which request is already in approval stage.
 Given Login into Mobiquity Portal as System admin Maker
@@ -82,6 +86,7 @@ And Click on save
 # Comments
 # Test Case_ID : TC_66
 #
+@test
 
 
 Scenario: To verify that the System admin is able to Add telco operator through user management module.
@@ -105,6 +110,7 @@ And Approve the Users
 # Test Case_ID : Tc_67
 #
 
+@test
 
 Scenario:To verify that the System admin is able to Modify  telco operator through user management module.
 Given Login into Mobiquity Portal as System admin Maker
@@ -133,6 +139,7 @@ Then Approve the Users
 # Scenario_ID :
 # TC_53
 
+@test
 
 Scenario:To verify that valid System admin/Business Admin is able to initiate businsess user creation.
 Given Login into Mobiquity Portal as System admin Maker
@@ -147,6 +154,7 @@ Then Confirmation message is displayed
 # Scenario_ID :
 # TC_54
 
+@test
 
 Scenario:To verify that another System Admin/businsess User  is able to approve the initiated business user creation.
 Given Login into Mobiquity Portal as System admin Checker1
@@ -159,6 +167,7 @@ Then User status is approved
 # Last Updated: 25/04/2022
 # Comments : refered here is narendra 
 # Scenario_ID : TC_55
+@test
 
 Scenario:To verify that after successful creation of the businsess user, notification should be sent to the user
 Given Login into Mobiquity Portal as System admin Maker
@@ -179,6 +188,7 @@ Then User status is approved
 # Last Updated: 25/04/2022
 # Comments : refered here is narendra 
 # Scenario_ID : TC_56 
+@test
 
 Scenario: System admin should be able to Initite modification searching with all values (Mobile, KYC, Email and Login)
 Given Login into Mobiquity Portal as System admin Maker
@@ -210,6 +220,7 @@ Then Confirm the edit details
 # Comments : 
 # Scenario_ID : SC_57 
 
+@test
 
 Scenario:To verify that another System Admin/Business Admin User is able to approve the modified  businsess user deatails.
 Given Login into Mobiquity Portal as System admin Checker1
@@ -225,6 +236,7 @@ Then User modified is approved
 # Comments : 
 # Scenario_ID : SC_58 
 
+@test
 
 Scenario:To verify that System Admin/Business Admin is able to view the businsess user details.
 Given Login into Mobiquity Portal as System admin Maker
@@ -244,6 +256,7 @@ And System Admin is able to view details
 # Comments 
 # Scenario_ID : TC_136
 # 
+@test
 
 Scenario:To verify that user can view details of all wallets associated with the user along with their corresponding balances and status successfully.
 Given Login into Mobiquity Portal as System admin Maker
@@ -257,6 +270,7 @@ Then Check All Wallet Details
 # Comments 
 # Scenario_ID :TC_137
 # 
+@test
 
 Scenario:To verify that Admin user can lock user’s wallet as sender or receiver or both.
 Given Login into Mobiquity Portal as System admin Maker
@@ -271,6 +285,7 @@ Then Click On lock all
 # Comments 
 # Scenario_ID : TC_142
 # 
+@test
 
 Scenario:To verify that admin user can reset the credentials of Business user and customer's successfully.
 Given Login into Mobiquity Portal as System admin Maker
@@ -284,6 +299,7 @@ And Click on refresh icon corresponding to the respective authentication factor
 # Comments 
 # Scenario_ID : TC_140
 # 
+@test
 
 Scenario:To Verify that Admin user can unlock user’s wallet as sender or receiver or both.
 Given Login into Mobiquity Portal as System admin Maker
@@ -302,6 +318,7 @@ Then Click On UNLock
     # # # Comments :
     # # # Scenario_ID : TC_129
     # # #
+@test
 
     Scenario: To verify that Admin user can view all the transaction details under Order details menu.
     Given Login into Mobiquity Portal as System admin Maker
@@ -315,6 +332,7 @@ Then Click On UNLock
     # # # Comments :
     # # # Scenario_ID : TC_130
     # # #
+@test
 
     Scenario: To verify that Admin user can check all the Order Details of a customer/ business users successfully.
     Given Login into Mobiquity Portal as System admin Maker
@@ -328,6 +346,7 @@ Then Click On UNLock
     # # # Comments :
     # # # Scenario_ID : TC_131
     # # #
+@test
 
     Scenario: To verify that latest order transactions will be displayed on the first page of Order details screen.
     Given Login into Mobiquity Portal as System admin Maker
@@ -342,6 +361,7 @@ Then Click On UNLock
     # # # Comments :
     # # # Scenario_ID : TC_132
     # # #
+@test
 
     Scenario: To verify that all the wallet transactions are displayed in statement screen sucessfully.
     Given Login into Mobiquity Portal as System admin Maker
@@ -351,12 +371,14 @@ Then Click On UNLock
         And Click on Wallet Payment History
         And Click on expand button
         Then Click on wallet view Details
+@test
 
     # # # Author: Sudheer Baraker
     # # # Last Updated: 11/05/2022
     # # # Comments :
     # # # Scenario_ID : TC_133
     # # #
+@test
 
     Scenario: To verify that user can able to view all the wallet transactions by entering valid transaction id.
     Given Login into Mobiquity Portal as System admin Maker
@@ -372,6 +394,7 @@ Then Click On UNLock
     # # # Comments :
     # # # Scenario_ID : TC_134
     # # #
+@test
 
     Scenario: To verify that user can able to fetch the Statement based on the transaction type (success, fail etc.)
     Given Login into Mobiquity Portal as System admin Maker
@@ -388,6 +411,7 @@ Then Click On UNLock
     # # # Comments :
     # # # Scenario_ID : TC_135
     # # #
+@test
 
     Scenario: To verify that user can able to fetch the Statement based on the Date range.
     Given Login into Mobiquity Portal as System admin Maker
@@ -409,6 +433,7 @@ Then Click On UNLock
 # Test Case_ID : TC_59
 # 
 
+@test
 
 Scenario: To Verify that System Admin/Business Admin can initiate suspension of the businsess user.
 Given Login into Mobiquity Portal as System admin Maker
@@ -439,6 +464,7 @@ Then Verify the user resume Confirmation message
 # Test Case_ID : TC_60
 # 
 
+@test
 
 Scenario: To verify that SystemAdmin/Business Admin can initiate resumption of an suspended businsess user.
 Given Login into Mobiquity Portal as System admin Checker1
@@ -454,6 +480,7 @@ Then User status is Suspended
 # Test Case_ID : TC_61
 # 
 
+@test
 
 Scenario: To verify that System admin is able to  Resume the details of searched user
 Given Login into Mobiquity Portal as System admin Maker
@@ -471,6 +498,7 @@ Then Verify the user resume Confirmation message
 # Comments  : Approval
 # Test Case_ID : TC_62
 # 
+@test
 
 Scenario: System Admin/Business Admin can approve resumption initiate of an suspended businsess user.
 Given Login into Mobiquity Portal as System admin Checker1
@@ -484,6 +512,7 @@ Then User status is Resumed
 # Comments 
 # Test Case_ID : TC_52_SuperadminMaker_LowerHierarchyDetails
 # 
+@test
 
 Scenario: To verify that Super admin is able to  view Lower_Hierarchy details 
 Given Login into Mobiquity Portal as System admin Maker

@@ -6,6 +6,7 @@ Feature: Grade Management
 # Comments 
 # Test Case_ID : TC_13
 # 
+@test
 
 Scenario:To verify that master can not modify the grade code only the name of the grade can be modified
 Given Login into Mobiquity Portal as masteradmin Maker
@@ -19,6 +20,7 @@ And Click on confirm button.
 # Comments 
 # Test Case_ID : TC_177
 # 
+@test
 
 Scenario:To verify that master can not modify the grade code only the name of the grade can be modified
 Given Login into Mobiquity Portal as masteradmin Maker

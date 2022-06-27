@@ -5,6 +5,7 @@ Feature: Transfer rules
 # Comments 
 # Test Case_ID : TC_15
 # 
+@test
 
 Scenario: To verify that System admin should be able to Modify Transfer Rule successfully.
 Given Login into Mobiquity Portal as System admin Maker
@@ -22,6 +23,7 @@ Then Click on confirm button.
 # Comments 
 # Test Case_ID : TC_19
 # 
+@test
 
 Scenario: To verify that System admin should be able to add approve Transfer Rule successfully.
 Given Login into Mobiquity Portal as System admin Maker
@@ -36,6 +38,7 @@ Then click on submit
 # Comments 
 # Test Case_ID : TC_14
 # 
+@test
 
 Scenario: To verify that System admin should be able to add initiate Transfer Rule successfully.
 Given Login into Mobiquity Portal as System admin Maker
@@ -54,6 +57,7 @@ Then Click on confirm button.
 # Comments 
 # Test Case_ID : TC_16
 # 
+@test
 
 Scenario: To verify that System admin should be able to View Transfer Rule successfully.
 Given Login into Mobiquity Portal as System admin Maker
@@ -70,6 +74,7 @@ When User clicks on view option.
 # Comments 
 # Test Case_ID : TC_17
 # 
+@test
 
 Scenario: To verify that System admin should be able to Delete Transfer Rule successfully.
 Given Login into Mobiquity Portal as System admin Maker
@@ -84,6 +89,7 @@ When User clicks on Delete option.
 # Comments 
 # Test Case_ID : TC_18
 # 
+@test
 
 Scenario: To verify that System admin should be able to Suspend Transfer Rule successfully.
 Given Login into Mobiquity Portal as System admin Maker
@@ -102,6 +108,7 @@ Then Click on confirm button.
 # Comments 
 # Test Case_ID : TC_20
 # 
+@test
 
 Scenario: To verify that System admin is able to add O2C Transfer Rule successfully.
 Given Login into Mobiquity Portal as System admin Maker
@@ -122,6 +129,7 @@ And Click on confirm.
 # Comments 
 # Test Case_ID : TC_163
 # 
+@test
 
 Scenario: To verify that System admin should be able to add initiate Transfer Rule successfully.
 Given Login into Mobiquity Portal as System admin Maker
@@ -138,6 +146,7 @@ And Confirm the Error Message
 # Comments 
 # Test Case_ID : TC_164
 # 
+@test
 
 Scenario: To verify that proper error message should be displayed when invalid character is entered in the amount.
 Given Login into Mobiquity Portal as System admin Maker

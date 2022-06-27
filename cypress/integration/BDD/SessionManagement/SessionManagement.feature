@@ -7,6 +7,7 @@ Feature: Session Management
 # Comments 
 # Scenario_ID : PRE-REQUISITE
 # 
+@test
 
 Scenario:Login as Subscriber
 Given Login into Mobiquity Portal as Subscriber
@@ -19,6 +20,7 @@ And Login into Mobiquity Portal as Subscriber1
 # Comments 
 # Scenario_ID : TC_120
 # 
+@test
 
 Scenario:To verify that Master Admin/Network Admin can check details of all his own session through session management .
 Given Login into Mobiquity Portal as System admin Maker
@@ -31,6 +33,7 @@ Then Click On My Sessions
 # Comments 
 # Scenario_ID : TC_121
 # 
+@test
 
 Scenario:To verify that Master Admin/Network Admin can check other user's session details successfully.
 Given Login into Mobiquity Portal as System admin Maker
@@ -43,6 +46,7 @@ And Click On All Session and Enter Number to search
 # Comments 
 # Scenario_ID : TC_122
 # 
+@test
 
 Scenario:To verify that Master Admin/Network Admin can delete all the session details of a selected user successfully.
 Given Login into Mobiquity Portal as System admin Maker

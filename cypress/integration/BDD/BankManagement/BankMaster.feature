@@ -8,6 +8,7 @@ Feature: Bank Management
 # Comments 
 # Scenario_ID : 
 # TestCase_ID : TC_06
+@test
 
 Scenario: To verify that the Proper error message should get generated on screen if user add bank on web without entering Bank Name
 Given Login with Master Admin Checker
@@ -21,6 +22,7 @@ Then Confirm the Error message
 # Comments 
 # Scenario_ID : 
 # TestCase_ID : TC_07
+@test
 
 Scenario: To verify that the master should be able to associate or disassociate services of bank
 Given Login with Master Admin Checker

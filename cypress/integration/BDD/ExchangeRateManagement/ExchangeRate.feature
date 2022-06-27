@@ -9,6 +9,7 @@ Feature: Exchange Rate Management
 # 
 
 
+@test
 
 Scenario:To verify that system admin can initiate Add Exchange Rate .
 Given Login into Mobiquity Portal as System admin Maker
@@ -21,6 +22,7 @@ Then System Admin can initiate Add Exchange Rate
 # Comments 
 # Scenario_ID : TC_117
 # 
+@test
 
 Scenario:Approve Exchange Rate Management
 Given Login into Mobiquity Portal as System admin Checker1
@@ -34,6 +36,7 @@ And Approve Or Reject ER
 # Comments 
 # Scenario_ID : TC_119
 # 
+@test
 
 Scenario:To verify that system admin can Modify the Exchange Rate in the system susccessfully.
 Given Login into Mobiquity Portal as System admin Maker
@@ -51,6 +54,7 @@ Then Click on Approve to Approve Exchange Rate
 # Scenario_ID : TC_118
 # 
 
+@test
 
 Scenario:To verify that systen admin can View Modification exchange History successfully.
 Given Login into Mobiquity Portal as System admin Maker

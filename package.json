@@ -8,7 +8,9 @@
     "start": "node ./serve.js",
     "cy:open": "cypress open",
     "cy:report": "node ./cypress/report.js",
-    "cy:run": "cypress run --browser chrome"
+    "cy:run": "cypress run --browser chrome",
+    "test : Prerequisite" : "npx cypress-tags run -e 'TAGS=@prerequisite'",
+    "test: Test": "npx cypress-tags run -e 'TAGS=@test'"
   },
   "author": "",
   "license": "ISC",

@@ -5,6 +5,7 @@ Feature: Ambiguous profile
 # Comments 
 # Test Case_ID : TC_97
 # 
+@test
 
 Scenario:To verify that System admin should able to see all Ambiguous Transactions from third party.
 Given Login into Mobiquity Portal as System admin Maker
@@ -19,6 +20,7 @@ Then Click on Download button.
 # Comments 
 # Test Case_ID : TC_98
 # 
+@test
 
 Scenario:To verify that the Valid User should be able to upload all Ambiguous Transactions and able to settle them from third party.
 Given Login into Mobiquity Portal as System admin Maker

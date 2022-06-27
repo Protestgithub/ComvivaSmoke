@@ -6,6 +6,7 @@ Feature: Repoting Suite
 # Scenario_ID : TC_101 & TC_188 & TC_189
 # 
 
+@test
 
 Scenario:To verify that the Pentaho User should be able to open and download User Registration Details Report.
 Given Login into Mobiquity Portal as System admin User and Launch Pentaho Portal

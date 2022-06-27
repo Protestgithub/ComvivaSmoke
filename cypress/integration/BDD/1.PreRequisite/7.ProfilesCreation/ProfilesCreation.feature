@@ -9,6 +9,7 @@ Feature: Profiles Creation
 # Comments 
 # Scenario_ID :
 # TC_109
+@prerequisite
 
 #subscriber
 Scenario:To verify that security profiles can be configured in the system for different type of users under different workspaces.
@@ -161,6 +162,7 @@ Then Click on add and confirm
     # # # Comments :
     # # # Scenario_ID : TC_149
     # # #
+@prerequisite
 
     Scenario: To verify that system admin should be able to add authorization profile
         ### Subscriber ###
@@ -217,6 +219,7 @@ Then Click on add and confirm
 # Scenario_ID : TC_143
 # 
 
+@prerequisite
 
 Scenario:To verify that system admin should be able to add regulatory profile in the system
 Given Login into Mobiquity Portal as System admin Maker
@@ -230,6 +233,7 @@ Then Click On Save Regulatory Profile
 # Scenario_ID : TC_147
 # 
 
+@prerequisite
 
 Scenario:To verify that system admin user can Add Marketing Profile.
 Given Login into Mobiquity Portal as System admin Maker

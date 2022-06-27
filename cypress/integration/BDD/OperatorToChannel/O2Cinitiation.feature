@@ -7,6 +7,7 @@ Feature: Operator To Channel
 # Comments 
 # Scenario_ID : 
 # TestCase_ID : TC_186
+@test
 
 Scenario: To verify that proper error message should be displayed when business user is suspended in the system
 Given Login into Mobiquity Portal as System admin Maker
@@ -20,6 +21,7 @@ Then Confirm the Error message
 # Comments 
 # Scenario_ID : 
 # TestCase_ID : TC_165
+@test
 
 Scenario: To verify that proper error message should be displayed when amount field contains any invalid character
 Given Login into Mobiquity Portal as System admin Maker
@@ -32,6 +34,7 @@ And Click on submit and Confirm Error Message
 # Comments 
 # Scenario_ID : 
 # TestCase_ID : TC_166
+@test
 
 Scenario: To verify that proper error message should be displayed when no stock is present in the IND01 wallet.
 Given Login into Mobiquity Portal as System admin Maker
@@ -57,6 +60,7 @@ And Confirm the displayed Error Message
 # Test Case_ID : TC_83
 # 
 #
+@test
 
 Scenario: To verify that System admin can initiate the O2C successfully if valid details are entered.
 Given Login into Mobiquity Portal as System admin Maker
@@ -72,6 +76,7 @@ Then Click on submit and Confirm
 # Test Case_ID : TC_86
 # 
 #
+@test
 
 Scenario: To verify that O2C transfer after initiation for amount transfer should go for Approval 1.
 Given Login into Mobiquity Portal as System admin Checker1
@@ -83,6 +88,7 @@ When Navigate to Operator to channel and click on O2C transfer Approval1
 # Test Case_ID : TC_87
 # 
 #
+@test
 
 Scenario:To verify that if Approval 1 current status should be 'Passed' then , it go for next Approval as 'O2C transfer Approval 2'.
 Given Login into Mobiquity Portal as System admin Checker2
@@ -93,6 +99,7 @@ When Navigate to Operator to channel and click on O2C transfer Approval2
 # Comments 
 # Test Case_ID : TC_85
 # 
+@test
 
 Scenario:To Verify that Channel admin can do O2C Enquiry.
 Given Login into Mobiquity Portal as System admin Maker
@@ -107,6 +114,7 @@ And Enter TransactionID and check
 # Comments 
 # Test Case_ID : TC_21
 # 
+@test
 
 Scenario:To verify that the O2C transaction should go for approval 2 only if transaction amount is greater than the O2C limit.
 Given Login into Mobiquity Portal as System admin Maker
@@ -125,6 +133,7 @@ When Navigate to Operator to channel and click on O2C transfer Approval2
 # Comments 
 # Test Case_ID : TC_22
 # 
+@test
 
 Scenario: To verify that the O2C transaction should go for approval 1 only if transaction amount is less than the O2C limit.
 Given Login into Mobiquity Portal as System admin Maker

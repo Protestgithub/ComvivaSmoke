@@ -7,6 +7,7 @@ Feature: Wallet Creation
 # Comments 
 # Scenario_ID : 
 # TestCase_ID : TC_01
+@prerequisite
 
 Scenario: To verify that System admin is able to Add wallet successfully.
 Given Login into Mobiquity Portal as System admin Maker

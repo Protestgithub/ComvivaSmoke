@@ -9,6 +9,7 @@ Feature: Stock Management
 # Comments 
 # Scenario_ID : 
 # TestCase_ID : TC_75
+@test
 
 Scenario: To verify that System admin can initiate the stock successfully
 Given Login into Mobiquity Portal as System admin Maker
@@ -21,6 +22,7 @@ Then click on Submit and Confirm button
 # Comments 
 # Scenario_ID : 
 # TestCase_ID : TC_76
+@test
 
 Scenario: To verify that System admin can successfully approve the stock at level>>1 
 Given Login into Mobiquity Portal as System admin Checker1
@@ -33,6 +35,7 @@ Then Click on Approve button
 # Comments 
 # Scenario_ID : 
 # TestCase_ID : TC_77
+@test
 
 Scenario: To verify that System admin can successfully approve the stock at level 2.
 Given Login into Mobiquity Portal as System admin Maker
@@ -57,6 +60,7 @@ Then Click on Submit and Approve the Stock at level 2
     # # # Comments :
     # # # Scenario_ID : TC_78
     # # #
+@test
     
     Scenario: To verify that System admin is able to Initiate Stock Transfer to EA through web.
 Given Login into Mobiquity Portal as System admin Maker
@@ -72,6 +76,7 @@ Given Login into Mobiquity Portal as System admin Maker
     # # # Comments :
     # # # Scenario_ID : TC_78
     # # #
+@test
 
     Scenario: To verify that System admin is able to Initiate Stock Transfer to RA through web.
 Given Login into Mobiquity Portal as System admin Maker
@@ -87,6 +92,7 @@ Given Login into Mobiquity Portal as System admin Maker
     # # # Comments :
     # # # Scenario_ID : TC_79
     # # #
+@test
 
     Scenario: To verify that System admin can enquire the Stocks through stock enquiry.
 Given Login into Mobiquity Portal as System admin Maker
@@ -102,6 +108,8 @@ Given Login into Mobiquity Portal as System admin Maker
     # # # Comments :
     # # # Scenario_ID : TC_80
     # # #
+@test
+
     Scenario: To verify that System admin can enquire the details of stock Transfer to EA
 Given Login into Mobiquity Portal as System admin Maker
         When Navigate to Stock Management and Stock Transfer EA Enquiry
@@ -115,6 +123,7 @@ Given Login into Mobiquity Portal as System admin Maker
     # # # Comments :
     # # # Scenario_ID : TC_81
     # # #
+@test
 
     Scenario: To verify that the System admin is able to initiate the reimbursement through web
 Given Login into Mobiquity Portal as System admin Maker
@@ -130,6 +139,7 @@ Given Login into Mobiquity Portal as System admin Maker
     # # # Comments :
     # # # Scenario_ID : TC_82
     # # #
+@test
 
     Scenario: To verify that System admin can approve any stock reimbursement initiation request
 Given Login into Mobiquity Portal as System admin Checker1
@@ -147,6 +157,7 @@ Given Login into Mobiquity Portal as System admin Checker1
     # # # Comments :
     # # # Scenario_ID : TC_171
     # # #
+@test
 
     Scenario: To verify that proper error message should be displayed when no stock is present in wallet
 Given Login into Mobiquity Portal as System admin Checker1
@@ -164,6 +175,7 @@ Given Login into Mobiquity Portal as System admin Checker1
     # # # Comments :
     # # # Scenario_ID : TC_172
     # # #
+@test
 
     Scenario: To verify that proper error message should be displayed when amount field contains any invalid character
 Given Login into Mobiquity Portal as System admin Checker1
@@ -181,6 +193,7 @@ Given Login into Mobiquity Portal as System admin Checker1
     # # # Comments :
     # # # Scenario_ID : TC_173
     # # #
+@test
     
     Scenario: To verify that proper error message should be displayed when amount field contains any invalid characte
 Given Login into Mobiquity Portal as System admin Checker1

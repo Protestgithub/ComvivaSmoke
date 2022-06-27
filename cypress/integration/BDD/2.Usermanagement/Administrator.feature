@@ -10,7 +10,7 @@ Feature: User Management : Administrator
 # Comments :
 # Scenario_ID : S_01
 #
-
+@test
 Scenario: Registration of Business Administrator
 Given Login into Mobiquity Portal as System admin Maker
 When Navigate to User Management and Click on register
@@ -25,6 +25,7 @@ Then Confirmation message is displayed
 # Comments
 # Scenario_ID : S_02
 #
+@test
 
 Scenario: Approval of registered Business Administrator
 Given Login into Mobiquity Portal as System admin Checker1
@@ -38,6 +39,7 @@ Then User status is approved
 # Comments
 # Scenario_ID : S_03
 #
+@test
 
 
 Scenario: System Admin is able to initiate modification request of Business Admin
@@ -54,6 +56,7 @@ Then Confirm the edit details
 # Comments
 # Scenario_ID : S_04
 #
+@test
 
 Scenario: System Admin is able to approve of modification request of Business Admin
 Given Login into Mobiquity Portal as System admin Maker
@@ -68,6 +71,7 @@ Then User modified is approved
 # Comments : 
 # Scenario_ID : S_42
 #
+@test
 
 Scenario: Registration of Business Administrator as Customer care Admin
 Given Login into Mobiquity Portal as System admin Maker
@@ -81,6 +85,7 @@ Then Confirmation message is displayed
 # Comments 
 # Scenario_ID : S_43
 # 
+@test
 
 Scenario: Approval  to create Customer Care Admin
 Given Login into Mobiquity Portal as System admin Checker1
@@ -95,6 +100,7 @@ Then User status is approved
 # Comments 
 # Scenario_ID : S_45
 # 
+@test
 
 Scenario: System admin should be able to Initite modification searching with all values (Mobile,Email and Login)
 Given Login into Mobiquity Portal as System admin Maker
@@ -144,6 +150,7 @@ Then User modified is approved
 # Comments 
 # Scenario_ID : S_46
 # 
+@test
 
 Scenario: To verify that the Proper SMS Notification & E>>mail should be sent to users after addition/modification/deletion in system. (If configured)
 Given Login into Mobiquity Portal as System admin Checker1
@@ -163,6 +170,7 @@ And Approve the Users and Check for SMS Notification sent to user
 # Comments 
 # Scenario_ID : S_48
 # 
+@test
 
 Scenario: System admin should be able to initiate deletion of an existing Business Admin/Customer Care Admin.
 Given Login into Mobiquity Portal as System admin Maker
@@ -176,6 +184,7 @@ Then System Admin is able to Delete the User
 # Comments 
 # Scenario_ID : S_50
 # 
+@test
 
 Scenario: Approve/Reject delete initiation of an existing Business Admin/Customer Care Admin.
 Given Login into Mobiquity Portal as System admin Checker1
@@ -188,6 +197,7 @@ Then Reject the Users
 # Comments 
 # Scenario_ID : S_49
 # 
+@test
 
 Scenario: To verify that System admin can approve modification request of an existing Business Admin/Customer Care Admin
 Given Login into Mobiquity Portal as System admin Maker
@@ -208,6 +218,7 @@ Then User modified is approved
 # Comments 
 # Test Case_ID : TC_51_Business admin
 # 
+@test
 
 Scenario: To verify that Business admin is able to  view Self details 
 Given Login into Mobiquity Portal as Business admin User1
@@ -221,6 +232,7 @@ Then Verify View Details Page
 # Comments 
 # Test Case_ID : TC_52_Sysadmin checking lower Hierarchy details
 #
+@test
 
 Scenario: To verify that System admin is able to  Lower Hierarchy details
 Given Login into Mobiquity Portal as System admin Maker

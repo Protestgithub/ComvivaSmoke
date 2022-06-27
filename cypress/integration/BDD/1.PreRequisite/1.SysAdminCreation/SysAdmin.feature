@@ -8,7 +8,7 @@ Feature: System admin Creation
 # Test Case_ID : TC_40_sysadmin
 # 
 
-
+@prerequisite
 Scenario: To verify that Master user can initiate add request of System admin
 Given Login into Mobiquity Portal as Super admin Maker
 When Navigate to User Management and click on Register
@@ -22,6 +22,7 @@ Then Confirmation message is displayed
 # Test Case_ID : TC_41_sysadmin
 # 
 
+@prerequisite
 
 Scenario:To verify that Master user can approve add initiation request of System admin.
 Given Login into Mobiquity Portal as Super admin Checker
@@ -34,10 +35,12 @@ Then User status is approved
 # Last Updated:
 # Comments    :
 # Test Case_ID : TC_41_sysadmin
+@prerequisite
 
 Scenario: Checking whether we are able to login with created systemadmin crendentials
 Given Login into Mobiquity Portal as System admin Created by Master
 
+@prerequisite
 
 Scenario: To create System Admin2
 Given Login into Mobiquity Portal as Super admin Maker
@@ -54,6 +57,7 @@ Then User status is approved
 Then Logout
 Given Login into Mobiquity Portal as System admin Created by Master2
 
+@prerequisite
 
 Scenario: To create System Admins3
 Given Login into Mobiquity Portal as Super admin Maker

@@ -7,6 +7,7 @@ Feature: WalletManagement
 # Comments 
 # Scenario_ID : 
 # TestCase_ID : TC_02
+@test
 
 Scenario: To verify that System admin should be able to view/delete/modify the Mwallet successfully.
 Given Login into Mobiquity Portal as System admin Maker
@@ -19,6 +20,7 @@ And Click on Added Wallet and Click on Update
 # Comments 
 # Scenario_ID : 
 # TestCase_ID : TC_03
+@test
 
 Scenario: To verify that System admin is not able to Add wallet with the same name of already existing wallet.
 Given Login into Mobiquity Portal as System admin Maker

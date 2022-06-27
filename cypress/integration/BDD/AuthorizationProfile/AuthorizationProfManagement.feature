@@ -8,6 +8,7 @@ Feature: Authorization profile
     # # # Comments :
     # # # Scenario_ID : TC_150
     # # #
+@test
 
     Scenario: To verify that system admin should be able to View Authorization profile for the selected category
         Given Login into Mobiquity Portal as System admin Maker
@@ -21,6 +22,7 @@ Feature: Authorization profile
     # # # Comments :
     # # # Scenario_ID : TC_151
     # # #
+@test
 
 
     Scenario: To verify that system admin should be able to modify an already created authorization profile
@@ -36,6 +38,7 @@ Feature: Authorization profile
     # # # Comments :
     # # # Scenario_ID : TC_152
     # # #
+@test
 
 
     Scenario: To verify that System admin should be able to delete an authorization profile

@@ -8,6 +8,7 @@ Feature: Grade creation
 # Comments 
 # Test Case_ID : TC_12
 # 
+@prerequisite
 
 Scenario:To verify that Master user can create grade, if all fields in contains value upto their maximum length.
 Given Login into Mobiquity Portal as masteradmin Maker

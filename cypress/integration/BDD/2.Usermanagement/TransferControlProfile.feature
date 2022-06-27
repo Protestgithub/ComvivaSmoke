@@ -7,6 +7,7 @@ Feature: Transfer Control Profile
 # Comments Error MEssage
 # Test Case_ID : TC_24
 # 
+@test
 
 Scenario:To verify the error message when instrument level TCP added with same Profile Name.
 Given Login into Mobiquity Portal as System admin Maker
@@ -21,6 +22,7 @@ Then Verify Error Message
 # Comments : Error Message_provider
 # Test Case_ID : TC_24
 # 
+@test
 
 Scenario:To verify the error message when Provider is empty.
 Given Login into Mobiquity Portal as System admin Maker
@@ -34,6 +36,7 @@ Then Verify Error Message for Provider
 # Comments : Error Message_Domain
 # Test Case_ID : TC_24
 # 
+@test
 
 Scenario:To verify the error message when Domain is empty.
 Given Login into Mobiquity Portal as System admin Maker
@@ -48,6 +51,7 @@ Then Verify Error Message for Domain
 # Comments 
 # Test Case_ID : TC_26
 #
+@test
 
 Scenario:To verify that the instrument level TCP cannot be deleted if any user is associated with it.
 Given Login into Mobiquity Portal as System admin Maker
@@ -69,6 +73,7 @@ Then Click On Save Regulatory Profile
 # Comments : View
 # Test Case_ID : TC_25
 #
+@test
 
 Scenario:To verify that master is able to View customer level TCP..
 Given Login into Mobiquity Portal as Super admin Maker
@@ -79,6 +84,7 @@ When  Navigate to Transfer Control Profile to View Details
 # Comments : Edit
 # Test Case_ID : TC_25
 #
+@test
 
 Scenario:To verify that master is able to edit customer level TCP..
 Given Login into Mobiquity Portal as Super admin Maker
@@ -95,6 +101,7 @@ Then Verify the Modification Request message
 # Comments : Deletion
 # Test Case_ID : TC_25
 #
+@test
 
 Scenario:To verify that master is able to delete customer level TCP if any user is not associated with it.
 Given Login into Mobiquity Portal as Super admin Maker

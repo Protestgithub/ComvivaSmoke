@@ -13,6 +13,7 @@ Feature: My Activity
 # Comments 
 # Scenario_ID : 
 # TestCase_ID : TC_123
+@test
 
 Scenario: To verify that system user can manage user registration application, which are not approved like saved,submitted users and rejected users
 Given Login into Mobiquity Portal as System admin Maker
@@ -28,6 +29,7 @@ Then Click on Expand and View Details button
 # Comments 
 # Scenario_ID : 
 # TestCase_ID : TC_124
+@test
 
 Scenario: To verify that system user can view existing details of user's under saved filter whose registration initiation is incomplete
 Given Login into Mobiquity Portal as System admin Maker
@@ -40,6 +42,7 @@ Then Click on Expand and View Details button
 # Comments 
 # Scenario_ID : 
 # TestCase_ID : TC_125
+@test
 
 Scenario: To verify that system user can Add/edit details of user's whose registration is incomplete
 Given Login into Mobiquity Portal as System admin Maker
@@ -53,6 +56,7 @@ And Enter all the required details of the user
 # Comments 
 # Scenario_ID : 
 # TestCase_ID : TC_126
+@test
 
 Scenario: To verify that system user can Send for approval of user's whose registration is Incomplete
 Given Login into Mobiquity Portal as System admin Maker
@@ -67,6 +71,8 @@ Then Confirmation message is displayed
 # Comments 
 # Scenario_ID : 
 # TestCase_ID : TC_127
+@test
+
 Scenario: To verify that system user can Withdraw application of user's whose registration is incomplete and sent for Approval
 Given Login into Mobiquity Portal as System admin Maker
 When Navigate to My Activity and Add the not Approved filters
@@ -78,6 +84,7 @@ Then Click on Expand and Withdraw button
 # Scenario_ID : 
 # TestCase_ID : TC_128
 
+@test
 
 Scenario: To verify that system user can Send for approval of user's whose Registration rejected by approver.
 Given Login into Mobiquity Portal as System admin Maker
