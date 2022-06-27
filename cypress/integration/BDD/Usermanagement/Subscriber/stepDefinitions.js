@@ -50,34 +50,34 @@ Before(() => {
 
 //--------------------------User Management--------------------------------------------------------------
 
-//----------------Launch Mobiquity Portal URL and Login--------------------------------------------------
-Given('Login into Mobiquity Portal as System admin User', function () {
+//---------------------------------------------System Admin Login----------------------------------------------------
+Given('Login into Mobiquity Portal as System admin Maker', function () {
   cy.launchURL(Cypress.env('Adminurl'))
   cy.SysAdminlogin()
   cy.wait(2000)
   cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
 })
-
-Given('Login into Mobiquity Portal as System admin User2', function () {
+Given('Login into Mobiquity Portal as System admin Checker1', function () {
   cy.launchURL(Cypress.env('Adminurl'))
   cy.SysAdminlogin2()
   cy.wait(2000)
   cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
 })
-//---------------------------Login with another Admin credentials------------------------------------
-Given('Login into Mobiquity Portal as another System admin User', function () {
-  cy.launchURL(Cypress.env('Adminurl'))
-  cy.SysAdminlogin2()
+Given('Login into Mobiquity Portal as System admin Maker after Logout', function () {
+  cy.loginAgain(this.data1.sysAdmin1.sysAdminUser1, this.data1.sysAdmin1.sysAdminPwd1)
+  cy.wait(2000)
   cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
-
 })
-//-------------------------------another Admin Approves Suspended Subscriber----------------------
-Given('Login into Mobiquity Portal as another System admin User after Logout', function () {
+Given('Login into Mobiquity Portal as another System admin Checker1 after logout', function () {
   cy.loginAgain(this.data1.sysAdmin2.sysAdminUser1, this.data1.sysAdmin2.sysAdminPwd1)
   cy.checkWelcomeText(this.data1.networkAdminWelcomeText)
 
 })
-
+Then('Logout', function(){
+  welcomePage.getUserMenu().click()
+  welcomePage.getLogoutButton().click()
+  welcomePage.getLogoutYesButton().click()  
+})
 //superadminm
 Given('Login into Mobiquity Portal as Super admin Maker', function () {
   cy.launchURL(Cypress.env('Adminurl'))
@@ -95,12 +95,6 @@ Given('Login into Mobiquity Portal as Business admin User', function () {
   cy.wait(10000)
   cy.checkWelcomeText(this.data2.business.distributerUser)
 })
-  Then('Logout', function () {
-    cy.wait(2000)
-    welcomePage.getUserMenu().click()
-    welcomePage.getLogoutButton().click()
-    welcomePage.getLogoutYesButton().click()
-  })
 
 
 
