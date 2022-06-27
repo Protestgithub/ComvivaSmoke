@@ -12,6 +12,7 @@ import register from '../../../../support/pageObjects/UserManagement/register';
 import approvals from '../../../../support/pageObjects/UserManagement/approvals';
 import manageUsers from '../../../../support/pageObjects/UserManagement/manageUsers';
 import myActivity from '../../../../support/pageObjects/MyActivity/myActivity';
+import { recurse } from 'cypress-recurse';
 
 
 //----------------Object Declaration-----------------------------------------------------------------

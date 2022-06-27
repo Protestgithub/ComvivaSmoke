@@ -41,58 +41,11 @@ import MarketingProfile from '../../../../support/pageObjects/UserManagement/Mar
 
 const pageLogin = new loginPage()
 const welcomePage = new homePage()
-const registerPage = new register()
-const approvalPage = new approvals()
-const manageUsersPage = new manageUsers()
-const ErrorM = new ErrorMessage()
-const AddCategoryPage = new AddCategory()
-const BankManagementPage = new BankManagement()
-const WalletManagementPage = new walletManagement()
-const domainPage = new DomainFieldspage()
 const AddGradePage = new AddGrades()
-const tcpPage = new TransferControlProfile()
-const securityProfilePage = new SecurityProfilePage()
-const authorizationProfilePage = new authorizationManagement()
-const uid1 = () => Cypress._.random(1e2)
-const Id = uid1()
-const profilename = `testname${id}`
-var RegulatoryFile = 'cypress/fixtures/userData/Regulatory&MarketingProfile.json'
-var SubProfileName = 'cypress/fixtures/profileData/Profile.json'
-const MarketingProfile1 = new MarketingProfile()
-const RegulatoryProfile1 = new RegulatoryProfile()
-var mobile
-var number
-const uid = () => Cypress._.random(0, 1e6)
-const id = uid()
-const filenameTCP = 'userData/TCPdata.json'
-const CustTCPdata = 'userData/CustTCPdata.json'
-const fileRegulatoryProfile = 'userData/Regulatory&MarketingProfile.json'
-var Tcpname
-var Tcpname1
-var RName
 
-
-
-var filename1 = 'cypress/fixtures/WalletManagementdata.json'
-const uuid = () => Cypress._.random(1e10)
-const uud = () => Cypress._.random(1e3)
-PoolAccountNo = uuid()
-BankID = uuid()
-Priority = uud()
+var DataFile = "cypress/fixtures/userData/Domain&CAT.json"
+var Gradedata = "cypress/fixtures/userData/Gradedata.json"
 var name
-var PoolAccountNo
-var BankID
-var Priority
-var filename = 'cypress/fixtures/BankManagement.json'
-let Sysfilelogin = 'cypress/fixtures/userData/SystemAdminLogin.json'
-var mobile
-var name
-var LoginId1
-const uuid12 = () => Cypress._.random(1e8)
-LoginId1 = uuid12()
-const Password = '000000'
-const Password1 = 'Com@135'
-var loginId
 let GradeCode
 function getbankName() {
   name = "";
@@ -166,10 +119,10 @@ Given('Login into Mobiquity Portal as another System admin Checker1 after logout
   cy.checkWelcomeText(this.data1.networkAdminWelcomeText)
 
 })
-Then('Logout', function(){
+Then('Logout', function () {
   welcomePage.getUserMenu().click()
   welcomePage.getLogoutButton().click()
-  welcomePage.getLogoutYesButton().click()  
+  welcomePage.getLogoutYesButton().click()
 })
 
 //----------------------------------------------------------------------------------------------------
@@ -227,14 +180,41 @@ And('Select the domain & category for which grade needs to be added.', function 
   const uuid = () => Cypress._.random(1e4)
   GradeCode = uuid()
   cy.wait(2000)
+
   AddGradePage.getAddbttn().click({ force: true })
   cy.wait(2000)
-  AddGradePage.getDomainName().select(this.data01.AddGrades.domainName, { force: true })
-  AddGradePage.getCatergoryName().select(this.data01.AddGrades.categoryname, { force: true })
-  AddGradePage.getgradeCode().type(GradeCode, { force: true })
   cy.RandomName()
+
+  cy.readFile(DataFile).then((data) => {
+    var CatNam = data.Domainname
+    AddGradePage.getDomainName().select(CatNam, { force: true })
+
+    cy.readFile(Gradedata).then((grade) => {
+      grade.DomainName = CatNam
+      cy.writeFile(Gradedata, grade)
+
+    })
+  })
+
+  cy.readFile(DataFile).then((data) => {
+    var CatNam = data.Domainname
+    AddGradePage.getCatergoryName().select(CatNam, { force: true })
+
+    cy.readFile(Gradedata).then((grade) => {
+      grade.CategoryName = CatNam
+      cy.writeFile(Gradedata, grade)
+
+    })
+  })
+
+
+  AddGradePage.getgradeCode().type(GradeCode, { force: true })
+  cy.readFile(Gradedata).then((data) => {
+    data.GradeCode = GradeCode
+    cy.writeFile(Gradedata, data)
+  })
   AddGradePage.getSavebttn().click({ force: true })
+
   cy.wait(2000)
   AddGradePage.getConfirmbttn().click({ force: true })
-
 })    

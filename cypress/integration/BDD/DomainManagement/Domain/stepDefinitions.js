@@ -15,6 +15,14 @@ import DomainFieldspage from '../../../../support/pageObjects/DomainManagement/D
 
 const domainPage = new DomainFieldspage()
 const welcomePage = new homePage()
+const uuid = () => Cypress._.random(1e2)
+const uid = () => Cypress._.random(1e4)
+const id = () => Cypress._.random(1e1)
+var DomainName = uuid()
+var code = uid()
+var Category = id()
+
+var DataFile ="cypress/fixtures/userData/Domain&CAT.json"
 
 Before(() => {
 
@@ -60,35 +68,33 @@ Given('Login into Mobiquity Portal as System admin Maker', function () {
     welcomePage.getLogoutButton().click()
     welcomePage.getLogoutYesButton().click()  
   })
-  When('User Click on Domain Management >> Add Domain', function () {
+When('User Click on Domain Management >> Add Domain', function () {
     welcomePage.getDomainManagementOption().click()
 })
-And('Enter Domain Name and Domain Code.', function () {
-    cy.wait(3000)
-    domainPage.getDomainName().type(this.data4.domainData.domainName, { force: true })
-    domainPage.getDomainCode().type(this.data4.domainData.domainCode, { force: true })
-    domainPage.getDomainCategories().type(this.data4.domainData.domainCategories, { force: true })
+And('Enter Domain Name and Domain Code.',function(){
+  cy.wait(3000)
+ domainPage.getDomainName().type(this.data4.domainData.domainName+DomainName,{force:true})
+ cy.writeFile(DataFile,{Domainname:this.data4.domainData.domainName+DomainName})
+
+ domainPage.getDomainCode().type(this.data4.domainData.domainCode+code,{force:true})
+ cy.readFile(DataFile).then((data) => {
+     data.DomainCode = this.data4.domainData.domainCode
+     cy.writeFile(DataFile, data)
+   })
+ domainPage.getDomainCategories().type(Category,{force:true})
+ cy.readFile(DataFile).then((data) => {
+     data.CategoryNum = Category
+     cy.writeFile(DataFile, data)
+   })
 
 })
-Then('Click on submit button.', function () {
-    domainPage.getDomainSubmitbtn().click({ force: true })
-    cy.wait(2000)
-    domainPage.getSUbMIT2().click({ force: true })
-})
-
 
 //-------------------------------------Error-------------------------------------------
-And('Enter Domain Name and Domain code.', function () {
-    cy.wait(3000)
-    domainPage.getDomainName().type(this.data4.domainData1.domainName, { force: true })
-    domainPage.getDomainCode().type(this.data4.domainData1.domainCode, { force: true })
-    domainPage.getDomainCategories().type(this.data4.domainData1.domainCategories, { force: true })
-    cy.wait(2000)
 
+Then('Click on submit buttonn',function(){
+ domainPage.getDomainSubmitbtn().click({force:true})
+ cy.wait(2000)
+// domainPage.getSUbMIT2().click({force:true})
+ cy.wait(2000)
+ domainPage.getErrormsg().should('have.text',this.data4.Errormsg)
 })
-Then('Click on submit buttonn.',function(){
-    domainPage.getDomainSubmitbtn().click({force:true})
-    cy.wait(2000)
-    domainPage.getErrormsg().should('have.text',this.data4.Errormsg)
-
-  })

@@ -9,7 +9,7 @@ Feature: Transfer Control Profile
 # 
 
 Scenario:To verify the error message when instrument level TCP added with same Profile Name.
-Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
 When Navigate to Transfer Control Profile and Click on Manage Transfer Level TCP
 And  Click on Add New Button
 Then Enter required Fields for error message
@@ -23,7 +23,7 @@ Then Verify Error Message
 # 
 
 Scenario:To verify the error message when Provider is empty.
-Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
 When Navigate to Transfer Control Profile and Click on Manage Transfer Level TCP
 And  Click on Add New Button
 And  Click on Create Button
@@ -36,7 +36,7 @@ Then Verify Error Message for Provider
 # 
 
 Scenario:To verify the error message when Domain is empty.
-Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
 When Navigate to Transfer Control Profile and Click on Manage Transfer Level TCP
 And  Click on Add New Button
 And  Click on Create Button
@@ -50,16 +50,14 @@ Then Verify Error Message for Domain
 #
 
 Scenario:To verify that the instrument level TCP cannot be deleted if any user is associated with it.
-Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
 When  Navigate to User Management and Click on Marketing Profile
 Then Click on Edit Marketing Profile and associate the created TCP with Marketing Profile
 When  Navigate to Transfer Control Profile and Click on Manage Transfer Level TCP
 Then Click on delete icon
 Then Verify Error Message for deletion
-
-
-Scenario:To verify that system admin should be able to add regulatory profile in the system
-Given Login into Mobiquity Portal as System admin User
+Then Logout
+Given Login into Mobiquity Portal as another System admin Checker1 after logout
 When Navigate to UserManagement And Click on Regulatory Profile
 And click on Add Regulatory Profile and Enter Profile Code and Profile Name
 Then Click On Save Regulatory Profile
@@ -86,9 +84,8 @@ Scenario:To verify that master is able to edit customer level TCP..
 Given Login into Mobiquity Portal as Super admin Maker
 When  Navigate to Transfer Control Profile to Edit Details
 Then Verify Success Message for Edit
-
-Scenario:To verify that master admin is able to Approve the  modified customer level TCP..
-Given Login into Mobiquity Portal as Super admin Checker
+Then Logout 
+Given Login into Mobiquity Portal as Super admin Checker after Logout
 When  Navigate to Transfer Control Profile
 Then Approve the TCP
 Then Verify the Modification Request message

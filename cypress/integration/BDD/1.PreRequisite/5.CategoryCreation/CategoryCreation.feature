@@ -25,7 +25,7 @@ And Click on Submit & confirm button.
 # 
 
 Scenario:To verify that only System admin will be able to approve/reject the initiated category.
-Given Login into Mobiquity Portal as System admin User2
+Given Login into Mobiquity Portal as System admin Checker1
 And Click Add category approval.
 Then Select Category approval.
 Then Select the category that needs to be approved

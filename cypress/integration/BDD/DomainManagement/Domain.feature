@@ -11,4 +11,4 @@ Scenario:To verify that proper error message should be displayed when domain cod
 Given Login into Mobiquity Portal as System admin Maker
 When User Click on Domain Management >> Add Domain
 And Enter Domain Name and Domain code.
-Then Click on submit button.
+Then Click on submit buttonn

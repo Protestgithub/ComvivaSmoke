@@ -7,7 +7,7 @@ Feature: Transfer rules
 # 
 
 Scenario: To verify that System admin should be able to Modify Transfer Rule successfully.
-Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
 When User Click on Transfer Rule.
 And Select the Service Name and from details.
 And Select the To details.
@@ -24,7 +24,7 @@ Then Click on confirm button.
 # 
 
 Scenario: To verify that System admin should be able to add approve Transfer Rule successfully.
-Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
 When User clicks on transfer rule approval
 And Select rule and approve
 Then click on submit
@@ -38,7 +38,7 @@ Then click on submit
 # 
 
 Scenario: To verify that System admin should be able to add initiate Transfer Rule successfully.
-Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
 When User Click on Transfer Rule.
 And Select the Service Name and from details.
 And Select the To details.
@@ -56,7 +56,7 @@ Then Click on confirm button.
 # 
 
 Scenario: To verify that System admin should be able to View Transfer Rule successfully.
-Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
 When User Click on Transfer Rule.
 And Select the Service Name and from details.
 And Select the To details.
@@ -72,7 +72,7 @@ When User clicks on view option.
 # 
 
 Scenario: To verify that System admin should be able to Delete Transfer Rule successfully.
-Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
 When User Click on Transfer Rule.
 And Select the Service Name and from details.
 And Select the To details.
@@ -86,7 +86,7 @@ When User clicks on Delete option.
 # 
 
 Scenario: To verify that System admin should be able to Suspend Transfer Rule successfully.
-Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
 When User Click on Transfer Rule.
 And Select the Service Name and from details.
 And Select the To details.
@@ -104,7 +104,7 @@ Then Click on confirm button.
 # 
 
 Scenario: To verify that System admin is able to add O2C Transfer Rule successfully.
-Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
 When User clicks on O2C transfer rules
 And Select Domain Name.
 And Select Category Name.
@@ -124,7 +124,7 @@ And Click on confirm.
 # 
 
 Scenario: To verify that System admin should be able to add initiate Transfer Rule successfully.
-Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
 When User Click on Transfer Rule.
 And Select the Service Name and from details.
 And Select the To details.
@@ -140,7 +140,7 @@ And Confirm the Error Message
 # 
 
 Scenario: To verify that proper error message should be displayed when invalid character is entered in the amount.
-Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
 When User clicks on O2C transfer rules
 And Select Domain Name.
 And Select Category Name.

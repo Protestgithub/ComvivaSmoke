@@ -41,74 +41,14 @@ import MarketingProfile from '../../../../support/pageObjects/UserManagement/Mar
 
 const pageLogin = new loginPage()
 const welcomePage = new homePage()
-const registerPage = new register()
-const approvalPage = new approvals()
-const manageUsersPage = new manageUsers()
-const ErrorM=new ErrorMessage()
-const AddCategoryPage = new AddCategory()
-const BankManagementPage = new BankManagement()
-const WalletManagementPage = new walletManagement()
 const domainPage = new DomainFieldspage()
-const AddGradePage = new AddGrades()
-const tcpPage = new TransferControlProfile()
-const securityProfilePage = new SecurityProfilePage()
-const authorizationProfilePage = new authorizationManagement()
-const uid1 = () => Cypress._.random(1e2)
-const Id = uid1()
-const profilename = `testname${id}`
-var RegulatoryFile = 'cypress/fixtures/userData/Regulatory&MarketingProfile.json'
-var SubProfileName = 'cypress/fixtures/profileData/Profile.json'
-const MarketingProfile1 = new MarketingProfile()
-const RegulatoryProfile1 = new RegulatoryProfile()
-var mobile
-var number
-const uid = () => Cypress._.random(0, 1e6)
-const id = uid()
-const filenameTCP = 'userData/TCPdata.json'
-const CustTCPdata = 'userData/CustTCPdata.json'
-const fileRegulatoryProfile = 'userData/Regulatory&MarketingProfile.json'
-var Tcpname
-var Tcpname1
-var RName
-
-
-
-var filename1 = 'cypress/fixtures/WalletManagementdata.json'
-const uuid = () => Cypress._.random(1e10)
-const uud = () => Cypress._.random(1e3)
-PoolAccountNo =  uuid()
-BankID = uuid()
-Priority = uud()
-var name
-var PoolAccountNo
-var BankID
-var Priority
-var filename = 'cypress/fixtures/BankManagement.json'
-let Sysfilelogin = 'cypress/fixtures/userData/SystemAdminLogin.json'
-var mobile
-var name
-var LoginId1
-const uuid12 = () => Cypress._.random(1e8)
-LoginId1= uuid12()
-const Password='000000'
-const Password1 = 'Com@135'
-var loginId
-let GradeCode
-function getbankName() {
-  name = "";
-  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  for (var i=0; i<5; i++)
-  name += possible.charAt(Math.floor(Math.random() * possible.length));
-  return name;
-  }
-function getRandomName() {
-name = "";
-var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-for (var i=0; i<5; i++)
-name += possible.charAt(Math.floor(Math.random() * possible.length));
-return name;
-}
-
+const uuid = () => Cypress._.random(1e2)
+const uid = () => Cypress._.random(1e4)
+const id = () => Cypress._.random(1e1)
+var DomainName = uuid()
+var code = uid()
+var Category = id()
+var DataFile ="cypress/fixtures/userData/Domain&CAT.json"
 
 
 
@@ -224,15 +164,27 @@ Given ('Login with Master Admin Checker', function(){
 When('User Click on Domain Management >> Add Domain', function () {
   welcomePage.getDomainManagementOption().click()
 })
-And('Enter Domain Name and Domain Code.', function () {
+And('Enter Domain Name and Domain Code.',function(){
   cy.wait(3000)
-  domainPage.getDomainName().type(this.data4.domainData.domainName, { force: true })
-  domainPage.getDomainCode().type(this.data4.domainData.domainCode, { force: true })
-  domainPage.getDomainCategories().type(this.data4.domainData.domainCategories, { force: true })
+ domainPage.getDomainName().type(this.data4.domainData.domainName+DomainName,{force:true})
+ cy.writeFile(DataFile,{Domainname:this.data4.domainData.domainName+DomainName})
+
+ domainPage.getDomainCode().type(this.data4.domainData.domainCode+code,{force:true})
+ cy.readFile(DataFile).then((data) => {
+     data.DomainCode = this.data4.domainData.domainCode
+     cy.writeFile(DataFile, data)
+   })
+ domainPage.getDomainCategories().type(Category,{force:true})
+ cy.readFile(DataFile).then((data) => {
+     data.CategoryNum = Category
+     cy.writeFile(DataFile, data)
+   })
 
 })
-Then('Click on submit button.', function () {
-  domainPage.getDomainSubmitbtn().click({ force: true })
-  cy.wait(2000)
-  domainPage.getSUbMIT2().click({ force: true })
+Then('Click on submit button.',function(){
+domainPage.getDomainSubmitbtn().click({force:true})
+cy.wait(2000)
+domainPage.getSUbMIT2().click({force:true})
+cy.wait(2000)
 })
+

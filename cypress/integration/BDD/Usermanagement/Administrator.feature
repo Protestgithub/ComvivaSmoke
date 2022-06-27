@@ -12,7 +12,7 @@ Feature: User Management : Administrator
 #
 
 Scenario: Registration of Business Administrator
-Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
 When Navigate to User Management and Click on register
 And Select User type as Adminstrator and click on BusinessAdmin
 And Enter all the required details
@@ -27,7 +27,7 @@ Then Confirmation message is displayed
 #
 
 Scenario: Approval of registered Business Administrator
-Given Login into Mobiquity Portal as another System admin User
+Given Login into Mobiquity Portal as System admin Checker1
 When Navigate to Approvals and filter by Submitted status
 And User click on submitted user data
 And Approve the Users
@@ -41,7 +41,7 @@ Then User status is approved
 
 
 Scenario: System Admin is able to initiate modification request of Business Admin
-Given Login into Mobiquity Portal as another System admin User
+Given Login into Mobiquity Portal as System admin Checker1
 When Navigate to Manage User, and search Business Admin
 And Search Business Admin
 And System Admin is able to view details
@@ -56,7 +56,7 @@ Then Confirm the edit details
 #
 
 Scenario: System Admin is able to approve of modification request of Business Admin
-Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
 When Navigate to Approvals and filter by Submitted status
 And User click on submitted user data
 And Approve the Users
@@ -70,7 +70,7 @@ Then User modified is approved
 #
 
 Scenario: Registration of Business Administrator as Customer care Admin
-Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
 When Navigate to User Management and Click on register
 And Select User type as Adminstrator and click on Customer care Admin
 And Enter all the details
@@ -83,7 +83,7 @@ Then Confirmation message is displayed
 # 
 
 Scenario: Approval  to create Customer Care Admin
-Given Login into Mobiquity Portal as another System admin User
+Given Login into Mobiquity Portal as System admin Checker1
 When Navigate to Approvals and filter by Submitted status
 And User click on submitted user data
 And Approve the Users
@@ -97,42 +97,42 @@ Then User status is approved
 # 
 
 Scenario: System admin should be able to Initite modification searching with all values (Mobile,Email and Login)
-Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
 When Navigate to Manage User, and search Business Admin
 And Search with Mobile Number
 And System Admin is able to view details
 And System Admin is able to edit details of the user
 Then Confirm the edit details Of the User
 Then Logout
-Given Login into Mobiquity Portal as another System admin User after Logout
+Given Login into Mobiquity Portal as another System admin Checker1 after logout
 When Navigate to Approvals and filter by Submitted status
 And User click on submitted user data
 And Approve the Users
 Then User modified is approved
 
 Then Logout
-Given Login into Mobiquity Portal as System admin User after Logout
+Given Login into Mobiquity Portal as System admin Maker after Logout
 When Navigate to Manage User, and search Business Admin
 And Search with EmailID
 And System Admin is able to view details
 And System Admin is able to edit details of the user
 Then Confirm the edit details Of the User
 Then Logout
-Given Login into Mobiquity Portal as another System admin User after Logout
+Given Login into Mobiquity Portal as another System admin Checker1 after logout
 When Navigate to Approvals and filter by Submitted status
 And User click on submitted user data
 And Approve the Users
 Then User modified is approved
 
 Then Logout
-Given Login into Mobiquity Portal as System admin User after Logout
+Given Login into Mobiquity Portal as System admin Maker after Logout
 When Navigate to Manage User, and search Business Admin
 And Search with LoginID
 And System Admin is able to view details
 And System Admin is able to edit details of the user
 Then Confirm the edit details Of the User
 Then Logout
-Given Login into Mobiquity Portal as another System admin User after Logout
+Given Login into Mobiquity Portal as another System admin Checker1 after logout
 When Navigate to Approvals and filter by Submitted status
 And User click on submitted user data
 And Approve the Users
@@ -146,14 +146,14 @@ Then User modified is approved
 # 
 
 Scenario: To verify that the Proper SMS Notification & E>>mail should be sent to users after addition/modification/deletion in system. (If configured)
-Given Login into Mobiquity Portal as another System admin User
+Given Login into Mobiquity Portal as System admin Checker1
 When Navigate to Manage User, and search Business Admin
 And Search Business Admin
 And System Admin is able to view details
 And System Admin is able to edit details
 Then Confirm the edit details
 Then Logout
-Given Login into Mobiquity Portal as System admin User after Logout
+Given Login into Mobiquity Portal as System admin Maker after Logout
 When Navigate to Approvals and filter by Submitted status
 And User click on submitted user data
 And Approve the Users and Check for SMS Notification sent to user
@@ -165,7 +165,7 @@ And Approve the Users and Check for SMS Notification sent to user
 # 
 
 Scenario: System admin should be able to initiate deletion of an existing Business Admin/Customer Care Admin.
-Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
 When Navigate to Manage User, and search Business Admin
 And Search Business or Customer care Admin
 Then System Admin is able to Delete the User
@@ -178,7 +178,7 @@ Then System Admin is able to Delete the User
 # 
 
 Scenario: Approve/Reject delete initiation of an existing Business Admin/Customer Care Admin.
-Given Login into Mobiquity Portal as another System admin User
+Given Login into Mobiquity Portal as System admin Checker1
 When Navigate to the Approvals
 And User click on submitted user data
 Then Reject the Users
@@ -190,14 +190,14 @@ Then Reject the Users
 # 
 
 Scenario: To verify that System admin can approve modification request of an existing Business Admin/Customer Care Admin
-Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
 When Navigate to Manage User, and search Business Admin
 And Search with Mobile Number
 And System Admin is able to view details
 And System Admin is able to edit details of the user
 Then Confirm the edit details Of the User
 Then Logout
-Given Login into Mobiquity Portal as another System admin User after Logout
+Given Login into Mobiquity Portal as another System admin Checker1 after logout
 When Navigate to Approvals and filter by Submitted status
 And User click on submitted user data
 And Approve the Users
@@ -223,7 +223,7 @@ Then Verify View Details Page
 #
 
 Scenario: To verify that System admin is able to  Lower Hierarchy details
-Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
 When Navigate to User Management and Click on manage user
 And Enter Mobile number or KYC number in search
 When User Click on eye button 

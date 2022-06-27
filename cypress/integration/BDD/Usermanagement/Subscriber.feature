@@ -11,7 +11,7 @@ Feature: User Management : Subscriber
 # TestCase_ID : TC_182
 
 Scenario:To verify that proper error message should  be displayed when email id/contact number is not verified.
-Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
 When Navigate to User Management and Click on register
 And Select User type as Subscriber and click on Subscriber
 Then Fill all required details and Enter Email and Contact Number which are not verified and confirm Error message
@@ -24,7 +24,7 @@ Then Fill all required details and Enter Email and Contact Number which are not 
 # TestCase_ID : TC_183
 
 Scenario: To verify that immidiate error message should be displayed whne any invalid value is entered by the user.
-Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
 When Navigate to User Management and Click on register
 And Select User type as Subscriber and click on Subscriber
 Then Fill all required details and Enter Invalid value and confirm Error message
@@ -37,7 +37,7 @@ Then Fill all required details and Enter Invalid value and confirm Error message
 # TestCase_ID : TC_184
 
 Scenario: To verify that proper error message should  be displayed when Email id/contact number is not verified
-Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
 When Navigate to User Management and Click on register
 And Select User type as Subscriber and click on Subscriber
 And Fill all required details and Enter Email and Contact Number which are not verified and confirm Error message
@@ -52,7 +52,7 @@ Then Enter all the marketing ,regulatory, authorization profile details and clic
 # TestCase_ID : TC_185
 
 Scenario: To verify that immidiate Error Message should be displayed whne any invalid value is Entered by the user.
-Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
 When Navigate to User Management and Click on register
 And Select User type as Subscriber and click on Subscriber
 And Fill all required details and Enter Invalid value and confirm Error message
@@ -67,7 +67,7 @@ Then Enter all the marketing ,regulatory, authorization profile details and clic
 # TestCase_ID : TC_187
 
 Scenario: To verify that Proper error message should be When contact Number/ Email  is registered in the system
-Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
 When Navigate to User Management and Click on register
 And Select User type as Subscriber and click on Subscriber
 And Fill all required details and enter registered EmailID and confirm Error message
@@ -86,7 +86,7 @@ Then Enter all the marketing ,regulatory, authorization profile details and clic
 # TC_68
 
 Scenario:To verify that valid SystemAdmin/businsess User is able to initiate Subscriber creation.
-Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
 When Navigate to User Management and Click on register
 And Select User type as Subscriber and click on Subscriber
 And Enter all the required subscriber details
@@ -99,7 +99,7 @@ Then SubscrigReg Confirmation message is displayed
 # TC_69
 
 Scenario:To verify that another System Admin/businsess User is able to approve the initiated Subscriber creation.
-Given Login into Mobiquity Portal as System admin User2
+Given Login into Mobiquity Portal as System admin Checker1
 When Navigate to Approvals and filter by Submitted status
 And User click on submitted user data
 And Approve the Users
@@ -112,7 +112,7 @@ Then Added User status is approved
 # TC_70
 
 Scenario:To verify that System Admin/businsess user is able to modify Subscriber successfully.
-Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
 When Navigate to User Management and Click on manage user
 And enter user mobile number and search the user
 And System Admin is able to view details
@@ -126,7 +126,7 @@ Then Confirm the edit details
 # TC_71
 
 Scenario:To verify that another System Admin/businsess User is able to approve the Modified Subscriber Data.
-Given Login into Mobiquity Portal as System admin User2
+Given Login into Mobiquity Portal as System admin Checker1
 When Navigate to Approvals and filter by Modification of user status
 And User click on submitted user data
 And Approve the Users
@@ -141,14 +141,14 @@ Then Edited User status is approved
 
 
 Scenario:To verify that modification message is sent to Subscriber successfully.
-Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
 When Navigate to User Management and Click on manage user
 And enter user mobile number and search the user
 And System Admin is able to view details
 And System Admin is able to edit KYC details
 Then Confirm the edit details
 Then Logout
-Given Login into Mobiquity Portal as another System admin User after Logout
+Given Login into Mobiquity Portal as another System admin Checker1 after logout
 When Navigate to Approvals and filter by Submitted status
 And User click on submitted user data
 Then verify message sent to user
@@ -163,14 +163,14 @@ Then verify message sent to user
 
 
 Scenario:To verify that the System Admin is able to suspend a subscriber successfully through web.
-Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
 When Navigate to User Management and Click on manage user
 And enter user mobile number and search the SuspendResume user
 And System Admin is able to view details
 And Suspend the user by giving the comment
 Then Verify the user suspend Confirmation message
 Then Logout
-Given Login into Mobiquity Portal as another System admin User after Logout
+Given Login into Mobiquity Portal as another System admin Checker1 after logout
 When Navigate to Approvals
 And Admin click on Suspended user data
 And Approve to suspended the Users
@@ -183,57 +183,17 @@ Then Verify the user Suspended approval message
 # TC_74
 
 Scenario:To verify that the System Admin is able to resume a suspend subscriber successfully through web.
-Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
 When Navigate to User Management and Click on manage user
 And enter user mobile number and search the SuspendResume user
 And Resume the user by giving the comment
 Then Verify the user resume Confirmation message
 Then Logout
-Given Login into Mobiquity Portal as another System admin User after Logout
+Given Login into Mobiquity Portal as another System admin Checker1 after logout
 When Navigate to Approvals
 And Admin click on Resumeded user data
 And Approve the Resumed User
 Then Verify the user Resumed approval message
-
-# Author: Chetan.S
-# Last Updated:26-05-2022
-# Comments 
-# Scenario_ID :
-# TC_184
-
-Scenario:To verify that proper error message should  be displayed when contact number is not verified.
-Given Login into Mobiquity Portal as System admin User
-When Navigate to User Management and Click on register
-And Select User type as Subscriber and click on Subscriber
-And Enter all basic details and do not verify contact number
-Then Verify that error button should be visible
-
-
-# Author: Chetan.S
-# Last Updated:26-05-2022
-# Comments 
-# Scenario_ID :
-# TC_185
-
-Scenario:To verify that proper error message should  be displayed when An Invalid Value Entered
-Given Login into Mobiquity Portal as System admin User
-When Navigate to User Management and Click on register
-And Select User type as Subscriber and click on Subscriber
-And Enter any invalid vlue to get the error message
-Then Confirm the Error message
-
-# Author: Chetan.S
-# Last Updated:26-05-2022
-# Comments 
-# Scenario_ID :
-# TC_187
-
-Scenario:To verify that proper error message should  be displayed when Mobile number is not verified.
-Given Login into Mobiquity Portal as System admin User
-When Navigate to User Management and Click on register
-And Select User type as Subscriber and click on Subscriber
-And Enter Subscriber MobileNumber Already Registered
-Then confirm mobile number error message
 
 
 
@@ -275,7 +235,7 @@ Then Verify View Details Page
 
 
 Scenario:To verify that System admin able to view subscriber details
-Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
 When Navigate to User Management and Click on manage user
 And Enter Mobile number or KYC number in Search
 When User Click on eye button
@@ -293,7 +253,7 @@ Then Verify View Details Page
 
 
 Scenario:To verify that proper error message should be displayed when login id is already registered in the system.
-Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
 When Navigate to User Management and Click on register
 And Select User type as Business and Select Corporate
 And Enter registered login id value
@@ -307,34 +267,9 @@ Then Login id Error message is displayed
 
 
 Scenario:To verify that proper error message should be displayed when Email Id  is registered in the system.
-Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
 When Navigate to User Management and Click on register
 And Select User type as Business and Select Corporate
 And Enter registered email id value
 Then Email Error message is displayed
 
-# Author: Arpitha C
-# Last Updated: 26/05/2022
-# Comments : 
-# Scenario_ID : SC_183 
-
-
-Scenario:TO verify that immidiate error message should be displayed whne any invalid value is entered by the user.
-Given Login into Mobiquity Portal as System admin User
-When Navigate to User Management and Click on register
-And Select User type as Business and Select Corporate
-And Enter Invalid Login id value details
-Then invalid value message is displayed
-
-# Author: Arpitha C
-# Last Updated: 26/05/2022
-# Comments : 
-# Scenario_ID : SC_182 
-
-
-Scenario:To verify that proper error message should  be displayed when email id/contact number is not verified.
-Given Login into Mobiquity Portal as System admin User
-When Navigate to User Management and Click on register
-And Select User type as Business and Select Corporate
-And Enter the basic details and do not verify contact number
-Then Verify that error button of contact number should be visible

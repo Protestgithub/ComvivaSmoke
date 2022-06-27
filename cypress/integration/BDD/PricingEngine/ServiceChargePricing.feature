@@ -7,7 +7,7 @@ Feature:ServiceChargePricing
 # Scenario_ID : SC_27 
 
 Scenario:To verify that System admin should be able to view pricing engine module on web.
-Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
 When Click on Pricing Engine
 Then System admin should be able to view pricing engine module on web.
 
@@ -28,7 +28,7 @@ Then User other than System admin should not able to view pricing engine module 
 # Scenario_ID : SC_29 
 
 Scenario:To verify that user should be redirected to a new page for pricing engine.
-Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
 When Click on Pricing Engine
 Then User should be redirected to a new page for pricing engine.
 
@@ -39,7 +39,7 @@ Then User should be redirected to a new page for pricing engine.
 
 
 Scenario:To verify that System admin should be able to add initiate service charge through Pricing engine module successfully.
-Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
 When Click on Pricing Engine
 And Click on the Service Policy
 And Click on add new rule buttton,add New service charge and save the policy as draft
@@ -51,7 +51,7 @@ And Click on add new rule buttton,add New service charge and save the policy as 
 
 
 Scenario:To verify that user should also be able to make commission profile with the same pricing engine module.
-Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
 When Click on Pricing Engine
 And Click on commission 
 And Click on commission and select the service you want to add commission profile for
@@ -65,7 +65,7 @@ And Click on commission and select the service you want to add commission profil
 # TC_33
 
 Scenario:To verify that user should be able to calculate service charge using pricing calculator.
-Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
 When Click on Pricing Engine
 And Click on Pricing Caluclator
 And Enter the party Details
@@ -79,7 +79,7 @@ Then Calculate Service Charge
 # TC_34
 
 Scenario:To verify that user should be able to calculate service charge using pricing calculator.
-Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
 When Click on Pricing Engine
 And Click on the Service Policy
 Then Set Status Active or Inactive
@@ -91,7 +91,7 @@ Then Set Status Active or Inactive
 # TC_35
 
 Scenario:To verify that user should be able to calculate service charge using pricing calculator.
-Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
 When Click on Pricing Engine
 And Click on the Search Tab & Search by Rule Name
 Then Verify Search results should give the list of rule name with Condition,status,Validity,rule & Policytype
@@ -103,7 +103,7 @@ Then Verify Search results should give the list of rule name with Condition,stat
 # TC_36
 
 Scenario:To verify that user is able to view the previous versions of the policy.
-Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
 When Click on Pricing Engine
 And Click on the Service Policy
 Then Click on View Previous Version Link, Enter available Ver no and Proceed to View the details
@@ -115,7 +115,7 @@ Then Click on View Previous Version Link, Enter available Ver no and Proceed to 
 # TC_37
 
 Scenario:To verify that if the user has saved any policy as draft he should be able to view the saved draft.
-Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
 When Click on Pricing Engine
 And Click on the Service Policy
 And Click on add new rule buttton,add New service charge and save the policy as draft
@@ -128,7 +128,7 @@ Then  Check if user is able to view the saved draft
 # TC_38
 
 Scenario:To verify that user should be able to reject the policy pending for approval.
-Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
 When Click on Pricing Engine
 And Click on the Service Policy
 Then 
@@ -139,7 +139,7 @@ Then
 # TC_39
 
 Scenario:To verify that user can easily create a duplicate service charge by clicking on the clone option from the available service charge.
-Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
 When Click on Pricing Engine
 And Click on the Service Policy
 And Click on Existing Service Policy Rule edit and save

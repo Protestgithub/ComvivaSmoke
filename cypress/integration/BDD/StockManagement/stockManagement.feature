@@ -11,7 +11,7 @@ Feature: Stock Management
 # TestCase_ID : TC_75
 
 Scenario: To verify that System admin can initiate the stock successfully
-Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
 When Navigate to Stock Management and Click on Stock initiation
 And Select MFS provider and Enter Reference number and Amount
 Then click on Submit and Confirm button
@@ -23,7 +23,7 @@ Then click on Submit and Confirm button
 # TestCase_ID : TC_76
 
 Scenario: To verify that System admin can successfully approve the stock at level>>1 
-Given Login into Mobiquity Portal as another System admin User
+Given Login into Mobiquity Portal as System admin Checker1
 When Navigate to Stock Management and Click on Stock Approval 1
 And Click on Submit Button
 Then Click on Approve button
@@ -35,17 +35,17 @@ Then Click on Approve button
 # TestCase_ID : TC_77
 
 Scenario: To verify that System admin can successfully approve the stock at level 2.
-Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
 When Navigate to Stock Management and Click on Stock initiation
 And Select MFS provider and Enter reference number and amount
 Then click on Submit and Confirm button
 Then Logout
-Given Login into Mobiquity Portal as another System admin User after Logout
+Given Login into Mobiquity Portal as another System admin Checker1 after logout
 When Navigate to Stock Management and Click on Stock Approval 1
 And Click on Submit Button
 Then Click on Approve button
 Then Logout
-Given Login into Mobiquity Portal as another System admin User after Logout for Approval-2
+Given Login into Mobiquity Portal as System admin Checker2
 When Navigate to Stock Management and Click on Stock Approval 2
 Then Click on Submit and Approve the Stock at level 2
 
@@ -59,7 +59,7 @@ Then Click on Submit and Approve the Stock at level 2
     # # #
     
     Scenario: To verify that System admin is able to Initiate Stock Transfer to EA through web.
-        Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
         When Navigate to Stock Management and Stock Transfer to EA
         And User Select MFS Provider
         And User Should Enter Reference number
@@ -74,7 +74,7 @@ Then Click on Submit and Approve the Stock at level 2
     # # #
 
     Scenario: To verify that System admin is able to Initiate Stock Transfer to RA through web.
-        Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
         When Navigate to Stock Management and Stock Transfer to RA
         And Select MFS Provider
         And Enter Reference number
@@ -89,7 +89,7 @@ Then Click on Submit and Approve the Stock at level 2
     # # #
 
     Scenario: To verify that System admin can enquire the Stocks through stock enquiry.
-        Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
         When Navigate to Stock Management and Stock Enquiry
         #     And User Select the From & To Dates and Transaction Status
         #     And Click on Submit or
@@ -103,7 +103,7 @@ Then Click on Submit and Approve the Stock at level 2
     # # # Scenario_ID : TC_80
     # # #
     Scenario: To verify that System admin can enquire the details of stock Transfer to EA
-        Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
         When Navigate to Stock Management and Stock Transfer EA Enquiry
         And Select the From & To Dates and Transaction Status
         And Click on Submit
@@ -117,7 +117,7 @@ Then Click on Submit and Approve the Stock at level 2
     # # #
 
     Scenario: To verify that the System admin is able to initiate the reimbursement through web
-        Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
         When Click on Stock Management and Reimbursement
         And Select User type
         And Enter MSISDN,Provider,Wallet Type,Reference Number and Remarks
@@ -132,7 +132,7 @@ Then Click on Submit and Approve the Stock at level 2
     # # #
 
     Scenario: To verify that System admin can approve any stock reimbursement initiation request
-        Given Login into Mobiquity Portal as another System admin User
+Given Login into Mobiquity Portal as System admin Checker1
         When  Click on Stock management and stock reimbursement approval
         And  Select the initiated stock reimbursement request
         And   Click on approve submit
@@ -149,7 +149,7 @@ Then Click on Submit and Approve the Stock at level 2
     # # #
 
     Scenario: To verify that proper error message should be displayed when no stock is present in wallet
-        Given Login into Mobiquity Portal as another System admin User
+Given Login into Mobiquity Portal as System admin Checker1
         When Navigate to Stock Management and Stock Withdrawal
         And User Select Stock Withdraw Wallet Type
         #  And User Select MFS Provider
@@ -166,7 +166,7 @@ Then Click on Submit and Approve the Stock at level 2
     # # #
 
     Scenario: To verify that proper error message should be displayed when amount field contains any invalid character
-        Given Login into Mobiquity Portal as another System admin User
+Given Login into Mobiquity Portal as System admin Checker1
         When Navigate to Stock Management and Stock Withdrawal
         And User Select Stock Withdraw Wallet Type
         #  And User Select MFS Provider
@@ -183,7 +183,7 @@ Then Click on Submit and Approve the Stock at level 2
     # # #
     
     Scenario: To verify that proper error message should be displayed when amount field contains any invalid characte
-        Given Login into Mobiquity Portal as another System admin User
+Given Login into Mobiquity Portal as System admin Checker1
         When Navigate to Stock Management and Stock Initiation
         # And User Select MFS Provider
         And User Should Enter Stock Initiation Reference number

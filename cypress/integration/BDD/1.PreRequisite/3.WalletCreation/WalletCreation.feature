@@ -9,7 +9,7 @@ Feature: Wallet Creation
 # TestCase_ID : TC_01
 
 Scenario: To verify that System admin is able to Add wallet successfully.
-Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
 When Navigate Multiple Wallet Management and Click on Add Wallet
 And Enter Wallet name and click on save
 

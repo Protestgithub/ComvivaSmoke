@@ -21,7 +21,7 @@ And Login into Mobiquity Portal as Subscriber1
 # 
 
 Scenario:To verify that Master Admin/Network Admin can check details of all his own session through session management .
-Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
 When Navigate to SessionManagement 
 Then Click On My Sessions
 
@@ -33,7 +33,7 @@ Then Click On My Sessions
 # 
 
 Scenario:To verify that Master Admin/Network Admin can check other user's session details successfully.
-Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
 When Navigate to SessionManagement 
 And Click On All Session and Enter Number to search
 
@@ -45,7 +45,7 @@ And Click On All Session and Enter Number to search
 # 
 
 Scenario:To verify that Master Admin/Network Admin can delete all the session details of a selected user successfully.
-Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
 When Navigate to SessionManagement 
 And Click On All Session and Enter Number to search
 Then Delete Devices

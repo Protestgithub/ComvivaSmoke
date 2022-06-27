@@ -9,7 +9,7 @@ Feature: Commission Disbursement
 
    
     Scenario: To verify that system admin should able to disburse commisson to channel users
-        Given Login into Mobiquity Portal as System admin User
+        Given Login into Mobiquity Portal as System admin Maker
         When  Commission Disbursement Process and Commission Disbursement
         And  Commision disbursment Select MFS provider and enter Mobile number
         And Commision disbursment Download the .csv file

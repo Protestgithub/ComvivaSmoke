@@ -33,7 +33,7 @@ Then Verify Success Message for creation of TCP through Master admin
 # 
 
 Scenario:To verify that System admin is able to add initiate and approve instrument level TCP.
-Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
 When  Navigate to Transfer Control Profile and Click on Manage Transfer Level TCP
 And   Click on Add New Button
 Then  Enter required Fields

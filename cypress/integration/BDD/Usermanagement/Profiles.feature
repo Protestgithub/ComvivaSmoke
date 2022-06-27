@@ -13,7 +13,7 @@ Feature: User Management :Profiles
 
 
 Scenario:To verify that system admin user can view the list of profiles
-Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
 When Navigate to UserManagement And Click on Regulatory Profile
 
 # Author:Monica
@@ -24,7 +24,7 @@ When Navigate to UserManagement And Click on Regulatory Profile
 
 
 Scenario:To verify that system admin user can modify the name of the regulatory profile only.
-Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
 When Navigate to UserManagement And Click on Regulatory Profile
 And Under Actions tab click on Modify Regulatory Profile icon and Enter Profile Name
 Then Click On Save Modified Regulatory Profile
@@ -37,7 +37,7 @@ Then Click On Save Modified Regulatory Profile
 
 
 Scenario:To verify that system admin user can to search the regulatory profile by using the profile code or profile name.
-Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
 When Navigate to UserManagement And Click on Regulatory Profile
 Then Enter detail to seach in textbox and click search
 
@@ -51,7 +51,7 @@ Then Enter detail to seach in textbox and click search
 
 
 Scenario:To verify that That system admin user will be able to search the marketing profile
-Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
 When Navigate to UserManagement And Click on Marketing Profile
 And Enter detail to search in textbox and click search
 

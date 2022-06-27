@@ -12,7 +12,7 @@ Feature: Profiles Creation
 
 #subscriber
 Scenario:To verify that security profiles can be configured in the system for different type of users under different workspaces.
-Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
 When Navigate to Security and click to select security profile
 And Click on add profile select user type as subscriber and fill the details
 And Fill the details-Subscriber Profile Name
@@ -164,7 +164,7 @@ Then Click on add and confirm
 
     Scenario: To verify that system admin should be able to add authorization profile
         ### Subscriber ###
-        Given Login into Mobiquity Portal as System admin User
+        Given Login into Mobiquity Portal as System admin Maker
         When  Select Authorization profile and add profile
         And  select Subscriber user type and select user role
         Then Fill all Details and Create Subscriber authorization profile
@@ -219,7 +219,7 @@ Then Click on add and confirm
 
 
 Scenario:To verify that system admin should be able to add regulatory profile in the system
-Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
 When Navigate to UserManagement And Click on Regulatory Profile
 And click on Add Regulatory Profile and Enter Profile Code and Profile Name
 Then Click On Save Regulatory Profile
@@ -232,6 +232,6 @@ Then Click On Save Regulatory Profile
 
 
 Scenario:To verify that system admin user can Add Marketing Profile.
-Given Login into Mobiquity Portal as System admin User
+Given Login into Mobiquity Portal as System admin Maker
 When Navigate to UserManagement And Click on Marketing Profile
 And Add Marketing Profile
