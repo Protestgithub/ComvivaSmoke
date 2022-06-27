@@ -19,5 +19,7 @@
     "retries": {
       "runMode": 0,
       "openMode": 0
-    }
+    },
+    "video" :"false"
+
   }
