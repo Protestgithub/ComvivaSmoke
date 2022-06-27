@@ -32,13 +32,35 @@ Before(() => {
 
 });
 
+//---------------------------------------------System Admin Login----------------------------------------------------
 Given('Login into Mobiquity Portal as System admin Maker', function () {
     cy.launchURL(Cypress.env('Adminurl'))
-    cy.login(this.data1.sysAdmin1.sysAdminUser1, this.data1.sysAdmin1.sysAdminPwd1)
+    cy.SysAdminlogin()
     cy.wait(2000)
     cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
-})
-When('User Click on Domain Management >> Add Domain', function () {
+  })
+  Given('Login into Mobiquity Portal as System admin Checker1', function () {
+    cy.launchURL(Cypress.env('Adminurl'))
+    cy.SysAdminlogin2()
+    cy.wait(2000)
+    cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
+  })
+  Given('Login into Mobiquity Portal as System admin Maker after Logout', function () {
+    cy.loginAgain(this.data1.sysAdmin1.sysAdminUser1, this.data1.sysAdmin1.sysAdminPwd1)
+    cy.wait(2000)
+    cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
+  })
+  Given('Login into Mobiquity Portal as another System admin Checker1 after logout', function () {
+    cy.loginAgain(this.data1.sysAdmin2.sysAdminUser1, this.data1.sysAdmin2.sysAdminPwd1)
+    cy.checkWelcomeText(this.data1.networkAdminWelcomeText)
+  
+  })
+  Then('Logout', function(){
+    welcomePage.getUserMenu().click()
+    welcomePage.getLogoutButton().click()
+    welcomePage.getLogoutYesButton().click()  
+  })
+  When('User Click on Domain Management >> Add Domain', function () {
     welcomePage.getDomainManagementOption().click()
 })
 And('Enter Domain Name and Domain Code.', function () {
