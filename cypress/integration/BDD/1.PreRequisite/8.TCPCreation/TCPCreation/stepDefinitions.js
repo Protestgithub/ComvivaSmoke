@@ -147,7 +147,7 @@ Before(() => {
 
 //---------------------------------------------Login----------------------------------------------------
 //---------------------------------------------System Admin Login----------------------------------------------------
-Given('Login into Mobiquity Portal as System admin Maker', function () {
+Given(' ', function () {
   cy.launchURL(Cypress.env('Adminurl'))
   cy.SysAdminlogin()
   cy.wait(2000)
