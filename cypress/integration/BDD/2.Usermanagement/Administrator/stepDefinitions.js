@@ -397,7 +397,7 @@ Given('Login into Mobiquity Portal as Business admin User1', function () {
     cy.Passwordchange(this.data1.UserCreationSuccessMessage)
     pageLogin.getloginbtn1().click({force:true})
     cy.wait(8000)
-    cy.intercept('http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/mobiquitypay/ums/v3/user/auth/web/login').as('getPwd')
+    cy.intercept(Cypress.env("apiBaseURL")+ "/mobiquitypay/ums/v3/user/auth/web/login").as('getPwd')
     cy.login(BALogin, this.data1.BAPassword)
     cy.wait(2000)
     cy.wait('@getPwd').then((interception) => {
@@ -405,7 +405,7 @@ Given('Login into Mobiquity Portal as Business admin User1', function () {
     const resValues = Object.values(response)
     const serviceRequestID = resValues[0]
     cy.log(serviceRequestID)
-    let url1 = 'http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/otpservice/internal/genotp/'
+    let url1 = cy.visit(Cypress.env("apiURL"))
     let getURL = url1.concat(serviceRequestID)
     cy.request({
       url: getURL,
