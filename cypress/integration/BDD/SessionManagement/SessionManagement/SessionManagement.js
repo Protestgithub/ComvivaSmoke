@@ -88,7 +88,7 @@ And('Login into Mobiquity Portal as Subscriber1', function () {
     const resValues = Object.values(response)
     const serviceRequestID = resValues[0]
     cy.log(serviceRequestID)
-    let url1 = cy.visit(Cypress.env("apiURL")) +"/otpservice/internal/genotp/"
+    let url1 = cy.visit(Cypress.env("apiURL"))
     let getURL = url1.concat(serviceRequestID)
     cy.request({
       url: getURL,
