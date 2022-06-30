@@ -398,14 +398,14 @@ Cypress.Commands.add('selectDay', (dayName) => {
 Cypress.Commands.add('OTP', () => {
 
 
-    cy.intercept('http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/mobiquitypay/v2/otp/generate').as('getOTP')
+    cy.intercept(Cypress.env('apiBaseURL') + 'mobiquitypay/v2/otp/generate').as('getOTP')
     APIPage.getOTPicon().eq(0).click({ force: true })
     cy.wait('@getOTP').then((interception) => {
         let response = interception.response.body
         const resValues = Object.values(response)
         const serviceRequestID = resValues[0]
         cy.log(serviceRequestID)
-        let url1 = 'http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/otpservice/internal/genotp/'
+    let url1 = Cypress.env('apiURL')
         let getURL = url1.concat(serviceRequestID)
         cy.request({
             url: getURL,
@@ -427,7 +427,7 @@ Cypress.Commands.add('OTP', () => {
 })
 
 Cypress.Commands.add('getMessage', () => {
-    cy.intercept('http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/mobiquitypay/serviceRequest/resume/any').as('getmessage')
+    cy.intercept(Cypress.env('apiBaseURL') + '/mobiquitypay/serviceRequest/resume/any').as('getmessage')
     approvalPage.getApproveButton().click({ force: true })
     approvalPage.getApproveRequest().click({ force: true })
     cy.wait(2000)
@@ -439,7 +439,7 @@ Cypress.Commands.add('getMessage', () => {
         const resValues = Object.values(response)
         let serviceRequestID = resValues[0]
         cy.log(serviceRequestID)
-        let url1 = 'http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/notify/internal/getByMessageIdOrExternalIdAndByToWhom?messageId='
+        let url1 = Cypress.env('apiBaseURL') + 'notify/internal/getByMessageIdOrExternalIdAndByToWhom?messageId='
         let url2 = url1.concat(serviceRequestID)
         let url3 = url2.concat('&toWhom=')
 
@@ -509,14 +509,14 @@ Cypress.Commands.add('MPRandomName', () => {
 })
 
 Cypress.Commands.add('Password', () => {
-    cy.intercept('http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/mobiquitypay/serviceRequest/resume/any').as('getOTP')
+    cy.intercept(Cypress.env('apiBaseURL') +'/mobiquitypay/serviceRequest/resume/any').as('getOTP')
     //  cy.iframe().find('[id="generate-otp-icon"]').eq(0).click()
     cy.wait('@getOTP').then((interception) => {
         let response = interception.response.body
         const resValues = Object.values(response)
         serviceRequestID = resValues[0]
         cy.log(serviceRequestID)
-        let url1 = 'http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/notify/internal/getByMessageIdOrExternalIdAndByToWhom?messageId='
+        let url1 = Cypress.env('apiBaseURL') +'/notify/internal/getByMessageIdOrExternalIdAndByToWhom?messageId='
         let url2 = url1.concat('34c28401-d31a-44dd-acad-4e4071ded10e')
         let url3 = url2.concat('&toWhom=')
         let getURL = url3.concat('971' + mobile)
