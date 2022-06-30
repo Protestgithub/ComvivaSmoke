@@ -56,8 +56,8 @@ Then('Logout', function(){
   welcomePage.getLogoutYesButton().click()  
 })
 Given('Login into Mobiquity Portal as Subscriber', function () {
-  cy.visit("http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/dfscontainer/#/subscriber")
-  cy.visit("http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/dfscontainer/#/subscriber")
+  cy.visit(Cypress.env("Adminurl"))
+  cy.visit(Cypress.env("Adminurl") + "/Subscriber")   
   cy.wait(3000)
   cy.readFile('cypress/fixtures/userData/subscriberReg.json').then((data)=>{
   var SubLogin
@@ -73,10 +73,10 @@ And('Change Password', function () {
   login.getloginbtn1().click()
 })
 And('Login into Mobiquity Portal as Subscriber1', function () {
-  cy.visit("http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/dfscontainer/#/subscriber")
-  cy.visit("http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/dfscontainer/#/subscriber")
+  cy.visit(Cypress.env("Adminurl"))
+  cy.visit(Cypress.env("Adminurl") + "/Subscriber")   
   cy.wait(3000)
-  cy.intercept('http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/mobiquitypay/ums/v3/user/auth/web/login').as('getPwd')
+  cy.intercept(Cypress.env("apiBaseURL") + "/mobiquitypay/ums/v3/user/auth/web/login").as('getPwd')
   cy.readFile('cypress/fixtures/userData/subscriberReg.json').then((data)=>{
     var SubLogin
     SubLogin = data.subscriberLoginId
@@ -88,7 +88,7 @@ And('Login into Mobiquity Portal as Subscriber1', function () {
     const resValues = Object.values(response)
     const serviceRequestID = resValues[0]
     cy.log(serviceRequestID)
-    let url1 = 'http://ec2-35-161-219-222.us-west-2.compute.amazonaws.com/otpservice/internal/genotp/'
+    let url1 = cy.visit(Cypress.env("apiURL")) +"/otpservice/internal/genotp/"
     let getURL = url1.concat(serviceRequestID)
     cy.request({
       url: getURL,
