@@ -39,17 +39,21 @@ Given('Login into Mobiquity Portal as System admin Maker', function () {
     cy.wait(2000)
     cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
   })
-  Given('Login into Mobiquity Portal as System admin Maker after Logout', function () {
-    cy.loginAgain(this.data1.sysAdmin1.sysAdminUser1, this.data1.sysAdmin1.sysAdminPwd1)
-    cy.wait(2000)
-    cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
-  })
-  Given('Login into Mobiquity Portal as another System admin Checker1 after logout', function () {
-    cy.loginAgain(this.data1.sysAdmin2.sysAdminUser1, this.data1.sysAdmin2.sysAdminPwd1)
-    cy.checkWelcomeText(this.data1.networkAdminWelcomeText)
-  
-  })
-  Then('Logout', function(){
+Given('Login into Mobiquity Portal as System admin Maker after Logout', function () {
+  cy.launchURL(Cypress.env('Adminurl'))
+  cy.wait(2000)
+  cy.SysAdminlogin()
+  cy.wait(2000)
+  cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
+})
+Given('Login into Mobiquity Portal as another System admin Checker1 after logout', function () {
+  cy.launchURL(Cypress.env('Adminurl'))
+  cy.wait(2000)
+  cy.SysAdminlogin2()
+  cy.wait(2000)
+  cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
+})
+Then('Logout', function(){
     welcomePage.getUserMenu().click()
     welcomePage.getLogoutButton().click()
     welcomePage.getLogoutYesButton().click()  
