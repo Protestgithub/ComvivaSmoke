@@ -192,21 +192,9 @@ And('Upload the data', function() {
   
 BptPage.getTextBox().invoke('split',' ').its(12).as('batchID');
 cy.get('@batchID').then(id => cy.log(`batch **${id}**`))
-
-Then('Logout', function(){
-  cy.wait(2000)
-  welcomePage.getUserMenu().click()
-  welcomePage.getLogoutButton().click()
-  welcomePage.getLogoutYesButton().click()  
 })
 
 
-})
-Given('Login into Mobiquity Portal as another System admin User after Logout', function(){
-  cy.loginAgain(this.data1.sysAdmin1.sysAdminUser1, this.data1.sysAdmin1.sysAdminPwd1)
-  cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
-
-})
 
 And('Click on Bulk Payout Approval link.',function(){
 BptPage.getBulkApprove().click({force:true})
