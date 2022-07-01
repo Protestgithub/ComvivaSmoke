@@ -161,11 +161,12 @@ Given ('Login with Master Admin Checker', function(){
 //-------------------------------------Bank Creation-------------------------------------------------
 When ('Navigate to Bank Master and Click on it', function(){
     BankManagementPage.getBankMaster().click({force: true})
+    BankManagementPage.getAddBank().click()
     cy.wait(3000)
   })
     
   And ('Enter All the Required Details', function(){
-  cy.getCSVfile()
+  //cy.getCSVfile()
   BankManagementPage.getProvider().select(this.data03.bankMaster.Provider, {force:true})
   BankManagementPage.getBankName().type(getbankName(), {force:true})
   cy.readFile(filename).then((data) => {
@@ -176,9 +177,9 @@ When ('Navigate to Bank Master and Click on it', function(){
   BankManagementPage.getBankId().type(BankID)
   BankManagementPage.getBankType().select(this.data03.bankMaster.BankType, {force:true})
   BankManagementPage.getPoolAccountType().select(this.data03.bankMaster.PoolAccountType, {force:true})
-  BankManagementPage.getCBSType().select(this.data03.bankMaster.CBSType, {force:true})
+  //BankManagementPage.getCBSType().select(this.data03.bankMaster.CBSType, {force:true})
   BankManagementPage.getPriority().type(Priority)
-  BankManagementPage.getChooseFile().attachFile('AddBranches.csv')
+  //BankManagementPage.getChooseFile().attachFile('AddBranches.csv')
   BankManagementPage.getSubmitButton().click({force: true})
   cy.wait(5000)
   BankManagementPage.getAssert().should('have.text',this.data03.bankMaster.assert)
