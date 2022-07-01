@@ -67,7 +67,7 @@ Given('Login into Mobiquity Portal as System admin Maker after Logout', function
   cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
 })
 Given('Login into Mobiquity Portal as another System admin Checker1 after logout', function () {
-  cy.launchURL
+  cy.launchURL(Cypress.env('Adminurl'))
   cy.wait(2000)
   cy.SysAdminlogin2()
   cy.wait(2000)
