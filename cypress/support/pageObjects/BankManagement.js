@@ -3,6 +3,10 @@ class BankManagement{
     {
         return cy.get('[title="Bank Master"]')
     }
+    getAddBank()
+    {
+        return cy.get('a[title="Add Bank"]').eq(0)
+    }
     getDownloadFileTemplate() {
         return cy.iframe().find('a[href*="javaScript:openSheet()"]')
     }
