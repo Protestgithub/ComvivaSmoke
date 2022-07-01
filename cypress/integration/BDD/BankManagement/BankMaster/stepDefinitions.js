@@ -57,6 +57,7 @@ Given ('Login with Master Admin Checker', function(){
 })
 When ('Navigate to Bank Master and Click on it', function(){
   BankManagementPage.getBankMaster().click({force: true})
+  BankManagementPage.getAddBank().click()
   cy.wait(3000)
 })
   
