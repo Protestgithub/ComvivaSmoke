@@ -101,7 +101,7 @@ Given('Login into Mobiquity Portal as Super admin Maker', function () {
 
 Given('Login into Mobiquity Portal as Business admin User', function () {
   cy.launchURL(Cypress.env('Adminurl'))
-  cy.visit(Cypress.env("Adminurl") + "/Business"
+  cy.visit(Cypress.env("Adminurl") + "/Business")
   cy.wait(8000)
   cy.readFile('cypress/fixtures/userData/BusinessUserSuspensionData.json').then((data)=>{
     var SuspendedId
@@ -114,7 +114,7 @@ pageLogin.getUserLoginMessage().should('contain',this.data1.ErrorMessageLogin)
 
 Given('Login into Mobiquity Portal as Business admin User1', function () {
   cy.launchURL(Cypress.env('Adminurl'))
-  cy.visit(Cypress.env("Adminurl") + "/Business"
+  cy.visit(Cypress.env("Adminurl") + "/Business")
   cy.wait(8000)
   cy.readFile('cypress/fixtures/userData/BusinessUserSuspensionData.json').then((data)=>{
     var SuspendedId
