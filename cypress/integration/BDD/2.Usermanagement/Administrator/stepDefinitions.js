@@ -191,6 +191,17 @@ And('Search Business Admin', function () {
   manageUsersPage.getSearchUserButton().click({ force: true })
 })
 
+And('Assert Created Business Admin Mobile Number', function(){
+  cy.wait(2000)
+  cy.getBAMobileNumber()
+  manageUsersPage.getSearchUserButton().click({ force: true })
+  cy.readFile(filename).then((user) => {
+  let BAMobile = user.BAMobileNumber
+  var BBAMobile = " "+BAMobile
+  manageUsersPage.getAssertMobile().eq(1).should('have.text',BBAMobile)
+})
+})
+
 And('System Admin is able to view details', function () {
   (manageUsersPage.getViewIcon().click({ force: true }))
   cy.wait(3000)
@@ -284,6 +295,18 @@ And('Enter all the details', function () {
   registerPage.getNextButtonProfile().click({ force: true })
   registerPage.getSubmitButton().click({ force: true })
 
+})
+
+And('Assert Created Customer Admin Mobile Number', function(){
+  cy.wait(2000)
+  cy.getCCAMobileNumber()
+  manageUsersPage.getSearchUserButton().click({ force: true })
+  cy.readFile(filename).then((user) => {
+  let CCAMobile = user.CCAMobileNumber
+  var CAMobile = " "+CCAMobile
+  manageUsersPage.getAssertMobile().should('have.text',CAMobile)
+  cy.wait(2000)
+})
 })
 
 //-----------------------------SC_45----------------------------------------------------------
