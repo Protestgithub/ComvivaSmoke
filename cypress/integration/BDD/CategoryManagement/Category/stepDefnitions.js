@@ -118,7 +118,7 @@ And('Click Category Management.',function(){
           cy.writeFile(DataFile, data)
         })
         cy.readFile(DataFile).then((data) => {
-          var Catcode = data.DomainCode
+          var Catcode = data.CategoryName
           AddCategoryPage.getCategoryCode().type(Catcode,{force:true})
           data.CategoryCode =Catcode
           cy.writeFile(DataFile, data)
