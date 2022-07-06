@@ -62,7 +62,7 @@ When ('Navigate to Bank Master and Click on it', function(){
 })
   
 And ('Enter All the Required Details', function(){
-//cy.getCSVfile()
+cy.getCSVfile()
 BankManagementPage.getProvider().select(this.data2.bankMaster.Provider, {force:true})
 BankManagementPage.getBankName().type(getbankName(), {force:true})
 cy.readFile(filename).then((data) => {
@@ -73,9 +73,9 @@ BankManagementPage.getPoolAccountNo().type(PoolAccountNo)
 BankManagementPage.getBankId().type(BankID)
 BankManagementPage.getBankType().select(this.data2.bankMaster.BankType, {force:true})
 BankManagementPage.getPoolAccountType().select(this.data2.bankMaster.PoolAccountType, {force:true})
-//BankManagementPage.getCBSType().select(this.data2.bankMaster.CBSType, {force:true})
+BankManagementPage.getCBSType().select(this.data2.bankMaster.CBSType, {force:true})
 BankManagementPage.getPriority().type(Priority)
-//BankManagementPage.getChooseFile().attachFile('AddBranches.csv')
+BankManagementPage.getChooseFile().attachFile('AddBranches.csv')
 BankManagementPage.getSubmitButton().click({force: true})
 cy.wait(5000)
 BankManagementPage.getAssert().should('have.text',this.data2.bankMaster.assert)
