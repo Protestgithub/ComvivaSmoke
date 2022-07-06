@@ -10,7 +10,7 @@ Feature: User Management : Administrator
 # Comments :
 # Scenario_ID : S_01
 #
-@test1
+@test
 Scenario: Registration of Business Administrator
 Given Login into Mobiquity Portal as System admin Maker
 When Navigate to User Management and Click on register
