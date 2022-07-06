@@ -1,6 +1,5 @@
 
 
-
 pipeline {
     //The agent section specifies where the entire Pipeline, or a specific stage, 
     //will execute in the Jenkins environment depending on where the agent section is placed.
@@ -34,7 +33,7 @@ pipeline {
             steps {
                 
                 bat "npm i"
-                bat "npx cypress run --env Adminurl=http://125.16.139.20:8023/dfscontainer/#/ , apiBaseURL=http://172.25.48.237:3133 , apiURL=http://172.25.48.237:3133/otpservice/internal/genotp/ --browser ${BROWSER} --spec ${SPEC}  "
+                bat "npx cypress@9.7.0-tags run -e 'TAGS=@test1' --env Adminurl=http://125.16.139.20:8023/dfscontainer/#/ --config apiBaseURL = http://172.25.48.237:3133 , apiURL = http://172.25.48.237:3133/otpservice/internal/genotp/ --browser ${BROWSER} --spec ${SPEC}  "
                 
             }
         }
