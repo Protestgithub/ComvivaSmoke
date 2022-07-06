@@ -20,10 +20,10 @@ Feature: Churn Management
         And Approve the Users
         Then Added User status is approved
 
-    # # # Author:Chetan.S
-    # # # Last Updated:11-06-2022
-    # # # Comments :
-    # # # Scenario_ID :TC_102
+    # # Author:Chetan.S
+    # # Last Updated:11-06-2022
+    # # Comments :
+    # # Scenario_ID :TC_102
 @test
   
     Scenario: To verify that the System admin can initiated churn process and approve.
@@ -34,10 +34,10 @@ Feature: Churn Management
         And update the json data
         And convert json to csv
         And Upload csv file with valid details
-        Then Logout
-        Given Login into Mobiquity Portal as another System admin Checker1 after logout
-        When Click on Churn Management and Churn Approval
-        Then  Select the initiated churn request and Then click on Batch Reject
+        And Click on Churn Management and Churn Approval
+        And  Select the initiated churn request and
+        Then click on Batch Reject
+        Then Confirm the initiated churn request
 
 
     # # # Author:Chetan.S
@@ -73,11 +73,10 @@ Feature: Churn Management
         When  Click on Churn Management and Churn Initiation
         And  Download a File template
         And Upload Bulk csv file with valid details
-        Then Logout
-        Given Login into Mobiquity Portal as another System admin Checker1 after logout
         When Click on Churn Management and Churn Approval
         And Click on Churn Management > Churn Approval
-        Then  Select the initiated churn request and Then click on Approve/Reject by Selection
+        Then  Select the initiated churn request and
+        Then click on Approve/Reject by Selection
 
     # # # Author: Sudheer Baraker
     # # # Last Updated: 19/05/2022
@@ -94,10 +93,9 @@ Feature: Churn Management
         And update the json data
         And convert json to csv
         And Upload csv file with valid details
-        Then Logout
-        Given Login into Mobiquity Portal as another System admin Checker1 after logout
         When Click on Churn Management and Churn Approval
-        Then Select the initiated churn request and Then click on Batch Reject
+        Then Select the initiated churn request and
+        Then click on Batch Reject
     # # # Author: Sudheer Baraker
     # # # Last Updated: 19/05/2022
     # # # Comments :
@@ -113,10 +111,9 @@ Feature: Churn Management
         And update the json data
         And convert json to csv
         And Upload csv file with valid details
-        Then Logout
-        Given Login into Mobiquity Portal as another System admin Checker1 after logout
         When Click on Churn Management and Churn Approval
-        Then Select the initiated churn request and Then click on Approve and Reject by Selection
+        Then Select the initiated churn request and
+        Then click on Approve and Reject by Selection
 
 
 
