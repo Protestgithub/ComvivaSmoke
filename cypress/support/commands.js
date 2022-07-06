@@ -541,12 +541,34 @@ Cypress.Commands.add('Password', () => {
 //----------------------------------------------------------------
 var name
 Cypress.Commands.add('RandomName', () => {
-    let hi = getRandomName()
-    AddGradePage.getGradeName().type(hi, { force: true })
-    cy.writeFile(GradeFile, { GradeName: hi })
+
+        let hi = getRandomName()
+
+        var GradeFile = 'cypress/fixtures/userData/Gradedata.json'
 
 
-})
+
+        AddGradePage.getGradeName().type(hi, { force: true })
+
+        cy.writeFile(GradeFile, { GradeName: hi })
+
+
+
+        function getRandomName() {
+
+            name = "";
+
+            var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+
+            for (var i = 0; i < 5; i++)
+
+                name += possible.charAt(Math.floor(Math.random() * possible.length));
+
+            return name;
+
+        }
+
+    })
 var GradeFile = 'cypress/fixtures/userData/Gradedata.json'
 Cypress.Commands.add('ModifyRecord', () => {
 
