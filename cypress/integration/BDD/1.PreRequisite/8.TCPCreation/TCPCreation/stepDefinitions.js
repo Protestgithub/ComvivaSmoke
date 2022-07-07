@@ -4,35 +4,35 @@
 //----------------Imports---------------------------------------------------------------------
 import 'cypress-iframe'
 import { Given, When, Then, And, Before } from "cypress-cucumber-preprocessor/steps";
-import loginPage from '../../../../support/pageObjects/loginPage';
-import homePage from '../../../../support/pageObjects/homePage';
+import loginPage from '../../../../../support/pageObjects/loginPage';
+import homePage from '../../../../../support/pageObjects/homePage';
 import { recurse } from 'cypress-recurse';
 
-import "../../../../support/commands";
-import "../../../../support/securityCommands";
-import "../../../../support/TransferControlProfileCommand";
-import BankManagement from '../../../../support/pageObjects/BankManagement';
+import "../../../../../support/commands";
+import "../../../../../support/securityCommands";
+import "../../../../../support/TransferControlProfileCommand";
+import BankManagement from '../../../../../support/pageObjects/BankManagement';
 import 'cypress-file-upload'
-import register from '../../../../support/pageObjects/UserManagement/register';
-import approvals from '../../../../support/pageObjects/UserManagement/approvals';
-import manageUsers from '../../../../support/pageObjects/UserManagement/manageUsers';
-import DomainFieldspage from '../../../../support/pageObjects/DomainManagement/DomainFieldspage';
+import register from '../../../../../support/pageObjects/UserManagement/register';
+import approvals from '../../../../../support/pageObjects/UserManagement/approvals';
+import manageUsers from '../../../../../support/pageObjects/UserManagement/manageUsers';
+import DomainFieldspage from '../../../../../support/pageObjects/DomainManagement/DomainFieldspage';
 import CircularJSON from 'circular-json';
 import Flatted from 'flatted';
-import TransferRulePage from '../../../../support/pageObjects/TransferRules/TransferRulePage';
-import TransferControlProfile from '../../../../support/pageObjects/TransferControlProfile';
-import TransactionCorrection from '../../../../support/pageObjects/TransactionCorrection';
-import ErrorMessage from '../../../../support/pageObjects/UserManagement/ErrorMessage';
-import walletManagement from '../../../../support/pageObjects/WalletManagement/walletManagement';
-import AddGrades from '../../../../support/pageObjects/GradeManagement/AddGrades';
-import ModifyGrades from '../../../../support/pageObjects/GradeManagement/ModifyGrades';
-import DeleteGrades from '../../../../support/pageObjects/GradeManagement/DeleteGrades';
-import AddCategory from '../../../../support/pageObjects/CategoryManagement/AddCategory';
-import SecurityProfilePage from '../../../../support/pageObjects/SecurityProfile/SecurityProfilePage';
-import "../../../../support/authourizationcommands"
-import authorizationManagement from '../../../../support/pageObjects/AuthorizationProfileManagement/authorizationManagement';
-import RegulatoryProfile from '../../../../support/pageObjects/UserManagement/RegulatoryProfile';
-import MarketingProfile from '../../../../support/pageObjects/UserManagement/MarketingProfile';
+import TransferRulePage from '../../../../../support/pageObjects/TransferRules/TransferRulePage';
+import TransferControlProfile from '../../../../../support/pageObjects/TransferControlProfile';
+import TransactionCorrection from '../../../../../support/pageObjects/TransactionCorrection';
+import ErrorMessage from '../../../../../support/pageObjects/UserManagement/ErrorMessage';
+import walletManagement from '../../../../../support/pageObjects/WalletManagement/walletManagement';
+import AddGrades from '../../../../../support/pageObjects/GradeManagement/AddGrades';
+import ModifyGrades from '../../../../../support/pageObjects/GradeManagement/ModifyGrades';
+import DeleteGrades from '../../../../../support/pageObjects/GradeManagement/DeleteGrades';
+import AddCategory from '../../../../../support/pageObjects/CategoryManagement/AddCategory';
+import SecurityProfilePage from '../../../../../support/pageObjects/SecurityProfile/SecurityProfilePage';
+import "../../../../../support/authourizationcommands"
+import authorizationManagement from '../../../../../support/pageObjects/AuthorizationProfileManagement/authorizationManagement';
+import RegulatoryProfile from '../../../../../support/pageObjects/UserManagement/RegulatoryProfile';
+import MarketingProfile from '../../../../../support/pageObjects/UserManagement/MarketingProfile';
 
 
 
@@ -69,6 +69,7 @@ const CustTCPdata = 'userData/CustTCPdata.json'
 const fileRegulatoryProfile = 'userData/Regulatory&MarketingProfile.json'
 var Tcpname
 var Tcpname1
+var TcpnameSub
 var RName
 
 
@@ -270,6 +271,18 @@ Then('Enter required Fields', function () {
      tcpPage.getdescription().type(this.data5.TransferControlProfile.Description, { force: true })    
    )*/
 })
+Then('Enter required Fields for Subscriber domain', function () {
+
+  tcpPage.getprovider().select(this.data5.TransferControlProfile.Provider, { force: true })
+  tcpPage.getdomain().select(this.data5.TransferControlProfile.Domain1, { force: true })
+  tcpPage.getcategory().select(this.data5.TransferControlProfile.Category1, { force: true })
+  tcpPage.getgrade().select(this.data5.TransferControlProfile.Grade1, { force: true })
+  tcpPage.getpaymentinstrument().select(this.data5.TransferControlProfile.PaymentInstrument, { force: true })
+  tcpPage.getwallettype().select(this.data5.TransferControlProfile.Wallet, { force: true })
+  cy.TCPRandomNameSub()
+  tcpPage.getdescription().type(this.data5.TransferControlProfile.Description, { force: true })
+})
+
 And('Click on New Button', function () {
 
   tcpPage.getNew().click({ force: true })
@@ -323,12 +336,17 @@ And('Verify Add Intiation Message for Master', function () {
     tcpPage.getReqtoAddIntiationMaster().should("contain", this.data5.confimationMessage.sucessMasterTcpIntiation + Tcpname1 + this.data5.confimationMessage.successpart2Master)
     cy.wait(3000)
   })
-  And('Verify Add Intiation Message', function () {
+})
+  Then('Verify Add Intiation Message', function () {
       cy.TcpName()
       tcpPage.getReqtoAdd().should("contain", this.data5.confimationMessage.addIntiationPart1 + Tcpname + this.data5.confimationMessage.addIntiationPart2)
       cy.wait(3000)
     })
-})     
+    Then('Verify Add Intiation Message for Subscriber domain', function () {
+      cy.TcpNameSub()
+      tcpPage.getReqtoAdd().should("contain", this.data5.confimationMessage.addIntiationPart1 + TcpnameSub + this.data5.confimationMessage.addIntiationPart3)
+      cy.wait(3000)
+    })  
 Then('Approve the TCP', function () {
   cy.fixture(CustTCPdata).then((user) => {
     Tcpname1 = user.CustTCPProfileName
@@ -360,6 +378,49 @@ Then('Enter all required amount and count', function () {
   })
   tcpPage.getLoadServiceReq().type(number)
   tcpPage.getLoadServiceReq2().type(number)
+  tcpPage.getLocalPoPurchase().type(number) 
+tcpPage.getLocalPoPurchase1().type(number)  
+tcpPage.getlocalwithdrawal().type(number)  
+tcpPage.getlocalwithdrawal1().type(number)
+tcpPage.getlocalwithdrawal2().type(number) 
+tcpPage.getlocalwithdrawal3().type(number) 
+tcpPage.getContactlessPayment().type(number)
+tcpPage.getContactlessPayment1().type(number)
+tcpPage.getCardATMPaymentCashout().type(number) 
+tcpPage.getCardATMPaymentCashout1().type(number)  
+tcpPage.getCardInternetPayment().type(number)  
+tcpPage.getCardInternetPayment1().type(number)  
+tcpPage.getLocalpospurchasecontactless().type(number) 
+tcpPage.getLocalpospurchasecontactless1().type(number)  
+tcpPage.getLoadReversalReqflow().type(number) 
+tcpPage.getLoadReversalReqflow1().type(number)  
+tcpPage.getcardpayment().type(number)
+tcpPage.getcardpayment1().type(number)  
+tcpPage.getcardadujsment().type(number)
+tcpPage.getcardadujsment1().type(number)  
+tcpPage.getQRMerchantPayment().type(number)
+tcpPage.getQRMerchantPayment1().type(number)
+
+  tcpPage.getUserminbalance().type(this.data5.TransferControlProfile.UserMinBal)
+  tcpPage.getUsermaximumbalance().type(this.data5.TransferControlProfile.UserMaxBal)
+  tcpPage.getUserMinTransactionAmount().type(this.data5.TransferControlProfile.MinTranAmount)
+  tcpPage.getUserMaxTransactionAmount().type(this.data5.TransferControlProfile.MaxTranAmount)
+  tcpPage.getMaxPercentageTransferAllowed().type(this.data5.TransferControlProfile.MaxPerAllowed)
+  tcpPage.getNext().click({ force: true })
+  cy.wait(3000)
+  tcpPage.getNext().click({ force: true })
+  cy.wait(3000)
+  welcomePage.getTransferControlProfile()
+    .scrollIntoView()
+})
+Then('Enter all required amount and count for Subscriber domain', function () {
+  pageLogin.getiFrame()
+  cy.wait(3000)
+  const uuid = () => Cypress._.random(1e3)
+  number = uuid()
+  tcpPage.getcount().each((e1, index, list) => {
+    cy.wrap(e1).type(number)
+  })
   tcpPage.getUserminbalance().type(this.data5.TransferControlProfile.UserMinBal)
   tcpPage.getUsermaximumbalance().type(this.data5.TransferControlProfile.UserMaxBal)
   tcpPage.getUserMinTransactionAmount().type(this.data5.TransferControlProfile.MinTranAmount)
@@ -387,6 +448,21 @@ And('Click on Instrument Level TCP', function () {
   })
   tcpPage.getApproveTCP().click({ force: true })
 })
+And('Click on Instrument Level TCP1', function () {
+  welcomePage.getTransferControlProfile().click()
+  welcomePage.getInstrumentLevelTCPApproval().click()
+  cy.wait(4000)
+  tcpPage.getinstrumentlevelTCP().within(function () {
+    cy.fixture(filenameTCP).then((user) => {
+      TcpnameSub = user.TcpProfileNameSub
+      cy.log(TcpnameSub)
+      cy.get("td").eq(1)
+      cy.get("a").contains(TcpnameSub).click({ force: true })
+    })
+  })
+  tcpPage.getApproveTCP().click({ force: true })
+})
+
 Then('Verify Success Message', function () {
   cy.fixture(filenameTCP).then((user) => {
     Tcpname = user.TcpProfileName
@@ -394,6 +470,13 @@ Then('Verify Success Message', function () {
     tcpPage.getsucessmessage().should("contain", this.data5.confimationMessage.successfulTcpIntiation + Tcpname + this.data5.confimationMessage.successpart2)
   })
 })  
+Then('Verify Success Message Subscriber domain', function () {
+  cy.fixture(filenameTCP).then((user) => {
+    TcpnameSub = user.TcpProfileNameSub
+    cy.log(TcpnameSub)
+    tcpPage.getsucessmessage().should("contain", this.data5.confimationMessage.successfulTcpIntiation + TcpnameSub + this.data5.confimationMessage.successpart2Sub)
+  })
+})
 And('Verify Add Intiation Message for Master', function () {
   cy.fixture(CustTCPdata).then((user) => {
     Tcpname1 = user.CustTCPProfileName

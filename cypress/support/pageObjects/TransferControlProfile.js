@@ -119,12 +119,102 @@ class TransferControlProfile{
     }
     getLoadServiceReq()
     {
-        return cy.iframe().find('.style_even>td:nth-child(19) [servicename="Load request flow"]').eq(1)
+        return cy.iframe().find('.style_even>td:nth-child(19) [servicename="Load request flow"]').eq(3)
     }
     getLoadServiceReq2()
     {
-        return cy.iframe().find('.style_even>td:nth-child(23) [servicename="Load request flow"]').eq(1)
+        return cy.iframe().find('.style_even>td:nth-child(23) [servicename="Load request flow"]').eq(3)
     }
+    getLocalPoPurchase()
+    {
+        return cy.iframe().find('.style_even>td:nth-child(19) [servicename="Local Pos Purchase"]').eq(1)
+    }
+    getLocalPoPurchase1()
+    {
+        return cy.iframe().find('.style_even>td:nth-child(23) [servicename="Local Pos Purchase"]').eq(1)
+    }
+    getlocalwithdrawal()
+    {
+       return cy.iframe().find('.style_even>td:nth-child(9) [servicename="Local ATM withdrwal"]').eq(1)
+    }
+    getlocalwithdrawal1()
+    {
+       return cy.iframe().find('.style_even>td:nth-child(17) [servicename="Local ATM withdrwal"]').eq(1)
+    }
+    getlocalwithdrawal2()
+    {
+       return cy.iframe().find('.style_even>td:nth-child(19) [servicename="Local ATM withdrwal"]').eq(1)
+    }
+    getlocalwithdrawal3()
+    {
+       return cy.iframe().find('.style_even>td:nth-child(23) [servicename="Local ATM withdrwal"]').eq(1)
+    }
+    getContactlessPayment()
+    {
+        return cy.iframe().find('.style_even>td:nth-child(19) [servicename="Contactless Payment"]').eq(1)
+    }
+    getCardATMPaymentCashout()
+    {
+        return cy.iframe().find('.style_even>td:nth-child(19) [servicename="Card ATM Payment Cashout"]').eq(1)
+    }
+    getContactlessPayment1()
+    {
+        return cy.iframe().find('.style_even>td:nth-child(23) [servicename="Contactless Payment"]').eq(1)
+    }
+    getCardATMPaymentCashout1()
+    {
+        return cy.iframe().find('.style_even>td:nth-child(23) [servicename="Card ATM Payment Cashout"]').eq(1)
+    }
+
+    getCardInternetPayment()
+    {
+        return cy.iframe().find('.style_even>td:nth-child(19) [servicename="Card Internet Payment"]').eq(1)
+    }
+    getCardInternetPayment1()
+    {
+        return cy.iframe().find('.style_even>td:nth-child(23) [servicename="Card Internet Payment"]').eq(1)
+    }
+    getLocalpospurchasecontactless()
+    {
+        return cy.iframe().find('.style_even>td:nth-child(19) [servicename="Local Pos Purchase Contactless"]').eq(1)
+    }
+    getLocalpospurchasecontactless1()
+    {
+        return cy.iframe().find('.style_even>td:nth-child(23) [servicename="Local Pos Purchase Contactless"]').eq(1)
+    }
+    getLoadReversalReqflow()
+    {
+        return cy.iframe().find('.style_even>td:nth-child(19) [servicename="Load Reversal Request Flow"]').eq(3)
+    }
+    getLoadReversalReqflow1()
+    {
+        return cy.iframe().find('.style_even>td:nth-child(23) [servicename="Load Reversal Request Flow"]').eq(3)
+    }
+    getcardpayment()
+    {
+        return cy.iframe().find('.style_even>td:nth-child(19) [servicename="Card Payment"]').eq(1)
+    }
+    getcardadujsment()
+    {   
+        return cy.iframe().find('.style_even>td:nth-child(19) [servicename="Card Adjustment"]').eq(1)
+    }
+    getQRMerchantPayment()
+    {
+        return cy.iframe().find('.style_even>td:nth-child(19) [servicename="QR Merchant Payment"]').eq(1)
+    }
+    getcardpayment1()
+    {
+        return cy.iframe().find('.style_even>td:nth-child(23) [servicename="Card Payment"]').eq(1)
+    }
+    getcardadujsment1()
+    {   
+        return cy.iframe().find('.style_even>td:nth-child(23) [servicename="Card Adjustment"]').eq(1)
+    }
+    getQRMerchantPayment1()
+    {
+        return cy.iframe().find('.style_even>td:nth-child(23) [servicename="QR Merchant Payment"]').eq(1)
+    }
+   
     getUserminbalance()
     {
         return cy.iframe().find('#user_min_balance_add')

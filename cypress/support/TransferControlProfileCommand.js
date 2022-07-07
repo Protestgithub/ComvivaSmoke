@@ -55,7 +55,7 @@ const manageUsersPage = new manageUsers()
 const filenameTCP = 'userData/TCPdata.json'
 const CustTCPdata = 'userData/CustTCPdata.json'
 const fileRegulatoryProfile = 'userData/Regulatory&MarketingProfile.json'
-var Tcpname, Tcpname1
+var Tcpname, Tcpname1,TcpnameSub
 const Password1 = 'Com@135'
 var name
 let Sysfilelogin = 'cypress/fixtures/userData/SystemAdminLogin.json'
@@ -79,6 +79,14 @@ Cypress.Commands.add('TcpName', (Text) => {
     })
 
 })
+Cypress.Commands.add('TcpNameSub', (Text) => {
+
+  cy.fixture(filenameTCP).then((user) => {
+      TcpnameSub = user.TcpProfileNameSub
+      cy.log(TcpnameSub)
+  })
+
+})
 Cypress.Commands.add('TcpName1', (Text) => {
 
     cy.fixture(CustTCPdata).then((user) => {
@@ -100,6 +108,24 @@ Cypress.Commands.add('TCPRandomName', () => {
     }
 
 })
+Cypress.Commands.add('TCPRandomNameSub', () => {
+  let hi ="InstTCP" +"" +getRandomName() + timestamp
+  tcpPage.getprofilename().type(hi, { force: true })
+  cy.fixture(filenameTCP).then((user) => {
+      Tcpname = user.TcpProfileName
+      cy.log(Tcpname)
+    })
+
+  cy.writeFile('cypress/fixtures/userData/TCPdata.json', { TcpProfileName:Tcpname,TcpProfileNameSub: hi })
+  function getRandomName() {
+      name = "";
+      var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+      for (var i = 0; i < 5; i++)
+          name += possible.charAt(Math.floor(Math.random() * possible.length));
+      return name;
+  }
+
+})
 Cypress.Commands.add('TCPMasRandomName', () => {
     let hi = "CustTCP" +"" +getRandomName() + timestamp
     tcpPage.getprofilename().type(hi, { force: true })
@@ -111,6 +137,19 @@ Cypress.Commands.add('TCPMasRandomName', () => {
             name += possible.charAt(Math.floor(Math.random() * possible.length));
         return name;
     }
+
+})
+Cypress.Commands.add('TCPMasRandomNameSub', () => {
+  let hi = "CustTCP" +"" +getRandomName() + timestamp
+  tcpPage.getprofilename().type(hi, { force: true })
+  cy.writeFile('cypress/fixtures/userData/CustTCPdata.json', { CustTCPProfileNameSub: hi })
+  function getRandomName() {
+      name = "";
+      var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+      for (var i = 0; i < 5; i++)
+          name += possible.charAt(Math.floor(Math.random() * possible.length));
+      return name;
+  }
 
 })
 Cypress.Commands.add('ViewDetails',()=>{
