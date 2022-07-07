@@ -411,17 +411,17 @@ Cypress.Commands.add('selectDay', (dayName) => {
 //   })
 
 // })
-Cypress.Commands.add('OTP', () => {
+Cypress.Commands.add('OTP', (apiBaseURL,apiURL) => {
 
 
-    cy.intercept(Cypress.env('apiBaseURL') + 'mobiquitypay/v2/otp/generate').as('getOTP')
+    cy.intercept(apiBaseURL + 'mobiquitypay/v2/otp/generate').as('getOTP')
     APIPage.getOTPicon().eq(0).click({ force: true })
     cy.wait('@getOTP').then((interception) => {
         let response = interception.response.body
         const resValues = Object.values(response)
         const serviceRequestID = resValues[0]
         cy.log(serviceRequestID)
-    let url1 = Cypress.env('apiURL')
+    let url1 = apiURL
         let getURL = url1.concat(serviceRequestID)
         cy.request({
             url: getURL,
