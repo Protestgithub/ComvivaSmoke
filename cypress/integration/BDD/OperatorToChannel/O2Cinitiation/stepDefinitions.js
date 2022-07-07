@@ -103,12 +103,14 @@ When('Navigate to Operator to channel and click on O2C transfer initiate', funct
 And('Enter All the Mandatory details', function () {
   cy.wait(3000)
   //O2CTransferInitiatePage.getMSISDN().type(this.data5.O2CTransferInitiate.msisdn, { force: true })
-  cy.wait(2000)
-    var O2CFile ="cypress/fixtures/userData/BusinessUsersData.json"
-    cy.readFile(O2CFile).then((data) => {
+  
+    cy.wait(2000)
+    var BBAFile ="cypress/fixtures/userData/BusinessUsersData.json"
+    var O2CFile= "cypress/fixtures/userData/O2Cdata.json"
+    cy.readFile(BBAFile).then((data) => {
     var O2CMsisdn = data.registeredMobile
-    O2CTransferInitiatePage.getMSISDN().type(this.data5.O2CTransferInitiate.msisdn1, {force: true})
-    data.O2CMsisdn =O2CMsisdn
+    O2CTransferInitiatePage.getMSISDN().type(O2CMsisdn, {force: true})
+    data.O2CMsisdn1 =O2CMsisdn
     cy.writeFile(O2CFile, data)
 })
   O2CTransferInitiatePage.getTransferAmount().type(TransferAmount, { force: true })
