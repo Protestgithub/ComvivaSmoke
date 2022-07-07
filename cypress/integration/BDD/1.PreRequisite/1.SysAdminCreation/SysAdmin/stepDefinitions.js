@@ -57,7 +57,7 @@ Priority = uud()
 let Sysfilelogin = 'cypress/fixtures/userData/SystemAdminLogin.json'
 var SubProfileName = 'cypress/fixtures/profileData/Profile.json'
 var mobile
-var name
+var name,SecurityProfile
 var LoginId1
 const uuid12 = () => Cypress._.random(1e8)
 LoginId1= uuid12()
@@ -191,7 +191,7 @@ And('Fill the details-Subscriber Profile Name', function () {
   )
 
   
-      cy.writeFile(SubProfileName, SystemAdminSecuirtyProfile:getRandomName())
+      cy.writeFile(SubProfileName, {SystemAdminSecuirtyProfile : getRandomName()})
     
 })
 And('Fill the details-PasswordRestrictios', function () {
