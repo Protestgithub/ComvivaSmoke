@@ -355,6 +355,22 @@ Cypress.Commands.add('selectMonth', (monthName) => {
     })
 })
 
+Cypress.Commands.add('MPRandomName1', () => {
+    let hi = getRandomName()
+    MarketingProfile1.getMarketingProfileName().type(hi, { force: true })
+    cy.readFile(RegulatoryFile).then((data) => {
+        data.MarketingProfileNameDistributer = hi
+        cy.writeFile(RegulatoryFile, data)
+        })
+        function getRandomName() {
+        name = "";
+        var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+        for (var i = 0; i < 5; i++)
+            name += possible.charAt(Math.floor(Math.random() * possible.length));
+        return name;
+    }
+})
+
 Cypress.Commands.add('selectDay', (dayName) => {
 
     pricingEnginePage.getCalanderDaysStart().eq(dayName - 1).click()
