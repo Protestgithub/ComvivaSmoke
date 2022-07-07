@@ -28,7 +28,10 @@ Before(() => {
   cy.fixture('PricingEngine').then(function (data5) {
     this.data5 = data5;
   })
-  
+  cy.fixture('PEngineRuleName').then(function (data6){
+
+        this.data6=data6;
+    })
 
 });
 //----------------------------------------POC - CODE-------------------------------------------------------
@@ -114,7 +117,8 @@ Then('Set Status Active or Inactive', function () {
 //-----TC_35---------------------------Search For service policy Rules------------------------------------------
 And('Click on the Search Tab & Search by Rule Name', function () {
   cy.wait(3000)
-  pricingEnginePage.getSearchTab().type(this.data5.RuleName)
+  [18:55] Chethan Suresh
+pricingEnginePage.getSearchTab().type(this.data6.Rule)
   cy.wait(2000)
   pricingEnginePage.getSearchButton().click({ force: true })
 })
@@ -159,7 +163,7 @@ And ('Click on the Service Policy',function(){
 And('Click on add new rule buttton,add New service charge and save the policy as draft', function () {
   cy.wait(3000)
   pricingEnginePage.getAddNewRuleBtn().click()
-  pricingEnginePage.getRuleName().type(this.data5.RuleName1, { force: true })
+  pricingEnginePage.getRuleName().type(getRandomName(), { force: true })
   pricingEnginePage.getMinCharge().type(this.data5.MinCharge)
   pricingEnginePage.getMaxCharge().type(this.data5.MaxCharge)
   pricingEnginePage.getDatePickerStart().dblclick({ force: true })
@@ -167,13 +171,13 @@ And('Click on add new rule buttton,add New service charge and save the policy as
   pricingEnginePage.getCalanderStart().should('be.visible', { force: true })
   pricingEnginePage.getCurrentDateSelect().click({ force: true })
   pricingEnginePage.getDatePickerEnd().dblclick({ force: true })
-  ERM.getvalidTo().click()
-  ERM.getnextyear().click()
-  ERM.getnextmonth().click()
-  ERM.getdates().click({force:true})
-  //pricingEnginePage.getMonthNamerStart().contains(this.data5.month).click({ force: true })//(this.data5.month,{force: true}).click() 
-  // pricingEnginePage.getYearNameStart().contains(this.data5.year).click({ force: true })
-  // pricingEnginePage.getCalanderDaysStart().filter(':visible').contains(this.data5.day).click({ force: true })
+ // ERM.getvalidTo().click()
+  //ERM.getnextyear().click()
+//  ERM.getnextmonth().click()
+//  ERM.getdates().click({force:true})
+pricingEnginePage.getMonthNamerStart().contains(this.data5.month).click({ force: true })//(this.data5.month,{force: true}).click() 
+  pricingEnginePage.getYearNameStart().contains(this.data5.year).click({ force: true })
+  pricingEnginePage.getCalanderDaysStart().filter(':visible').contains(this.data5.day).click({ force: true })
   pricingEnginePage.getWhoPays().select(this.data5.WhoPays, { force: true })
   pricingEnginePage.getSVAType().select(this.data5.SenderSVAtype, { force: true })
   pricingEnginePage.getWhomeToPay().select(this.data5.WhomeToPay, { force: true })
@@ -248,7 +252,8 @@ Then('System admin should be able to view pricing engine module on web.', functi
  
    pricingEnginePage.getCashIN().click()
    pricingEnginePage.getAddNewRuleBtn().click()
-   pricingEnginePage.getRuleName().type(this.data5.RuleName1, { force: true })
+   pricingEnginePage.getRuleName().type(getRandomName(), { force: true })
+   cy.writeFile(PEngineRuleName,{Rule:getRandomName()})
    pricingEnginePage.getMinCharge().type(this.data5.MinCharge)
    pricingEnginePage.getMaxCharge().type(this.data5.MaxCharge)
    pricingEnginePage.getDatePickerStart().dblclick({ force: true })
@@ -257,14 +262,14 @@ Then('System admin should be able to view pricing engine module on web.', functi
    pricingEnginePage.getCurrentDateSelect().click({ force: true })
    pricingEnginePage.getDatePickerEnd().dblclick({ force: true })
    //Added
-   ERM.getvalidTo().click()
-   ERM.getnextyear().click()
-   ERM.getnextmonth().click
-   ERM.getdates().click({force:true})
-   //pricingEnginePage.getMonthNamerStart().contains(this.data5.month).click({ force: true })//(this.data5.month,{force: true}).click() 
-  // pricingEnginePage.getYearNameStart().contains(this.data5.year).click({ force: true })
-   //cy.wait(3000)
-   //pricingEnginePage.getCalanderDaysStart().filter(':visible').contains(this.data5.day).click({ force: true })
+  // ERM.getvalidTo().click()
+   //ERM.getnextyear().click()
+   //ERM.getnextmonth().click
+   //ERM.getdates().click({force:true})
+   pricingEnginePage.getMonthNamerStart().contains(this.data5.month).click({ force: true })//(this.data5.month,{force: true}).click() 
+   pricingEnginePage.getYearNameStart().contains(this.data5.year).click({ force: true })
+  cy.wait(3000)
+  pricingEnginePage.getCalanderDaysStart().filter(':visible').contains(this.data5.day).click({ force: true })
    pricingEnginePage.getWhoPays().select(this.data5.WhoPays, { force: true })
    pricingEnginePage.getSVAType().select(this.data5.SenderSVAtype, { force: true })
    pricingEnginePage.getWhomeToPay().select(this.data5.WhomeToPay, { force: true })
@@ -292,7 +297,7 @@ Then('System admin should be able to view pricing engine module on web.', functi
    
    
    pricingEnginePage.getAddNewRuleBtn().click()
-   pricingEnginePage.getRuleName().type(this.data5.RuleName1, { force: true })
+   pricingEnginePage.getRuleName().type(getRandomName(), { force: true })
    pricingEnginePage.getMinCharge().type(this.data5.MinCharge)
    pricingEnginePage.getMaxCharge().type(this.data5.MaxCharge)
    pricingEnginePage.getDatePickerStart().dblclick({ force: true })
@@ -301,17 +306,17 @@ Then('System admin should be able to view pricing engine module on web.', functi
    pricingEnginePage.getCurrentDateSelect().click({ force: true })
    pricingEnginePage.getDatePickerEnd().dblclick({ force: true })
    //added
-   ERM.getvalidTo().click()
-   ERM.getnextyear().click()
-   ERM.getnextmonth().click
-   ERM.getdates().click({force:true})
+  // ERM.getvalidTo().click()
+  // ERM.getnextyear().click()
+  // ERM.getnextmonth().click
+ //  ERM.getdates().click({force:true})
    //cy.selectYear(2023) 
    //cy.selectMonth('January')
    //cy.selectDay(17)  
-   //pricingEnginePage.getMonthNamerStart().contains(this.data5.month).click({ force: true })//(this.data5.month,{force: true}).click() 
-  // pricingEnginePage.getYearNameStart().contains(this.data5.year).click({ force: true })
-   //cy.wait(3000)
-   //pricingEnginePage.getCalanderDaysStart().filter(':visible').contains(this.data5.day).click({ force: true })
+  pricingEnginePage.getMonthNamerStart().contains(this.data5.month).click({ force: true })//(this.data5.month,{force: true}).click() 
+  pricingEnginePage.getYearNameStart().contains(this.data5.year).click({ force: true })
+ cy.wait(3000)
+ pricingEnginePage.getCalanderDaysStart().filter(':visible').contains(this.data5.day).click({ force: true })
    pricingEnginePage.getWhoPays().select(this.data5.WhoPays, { force: true })
    pricingEnginePage.getSVAType().select(this.data5.SenderSVAtype, { force: true })
    pricingEnginePage.getWhomeToPay().select(this.data5.WhomeToPay, { force: true })
@@ -338,15 +343,15 @@ Then('System admin should be able to view pricing engine module on web.', functi
    pricingEnginePage.getCurrentDateSelect().click({ force: true })
    pricingEnginePage.getDatePickerEnd().dblclick({ force: true })
    //added
-   ERM.getvalidTo().click()
-   ERM.getnextyear().click()
-   ERM.getnextmonth().click
-   ERM.getdates().click({force:true})
-   //pricingEnginePage.getMonthNamerStart().contains(this.data5.month).click({ force: true })//(this.data5.month,{force: true}).click() 
-   //pricingEnginePage.getYearNameStart().contains(this.data5.year).click({ force: true })
-   //cy.wait(3000)
-   //pricingEnginePage.getCalanderDaysStart().filter(':visible').contains(this.data5.day).click({ force: true })
-   //pricingEnginePage.getSenderRole().select(this.data5.SenderRole, { force: true })
+  // ERM.getvalidTo().click()
+   //ERM.getnextyear().click()
+   //ERM.getnextmonth().click
+  // ERM.getdates().click({force:true})
+   pricingEnginePage.getMonthNamerStart().contains(this.data5.month).click({ force: true })//(this.data5.month,{force: true}).click() 
+  pricingEnginePage.getYearNameStart().contains(this.data5.year).click({ force: true })
+  cy.wait(3000)
+  pricingEnginePage.getCalanderDaysStart().filter(':visible').contains(this.data5.day).click({ force: true })
+  //pricingEnginePage.getSenderRole().select(this.data5.SenderRole, { force: true })
    //pricingEnginePage.getSenderHierarchy().select(this.data5.SenderHierarchy, { force: true })
    //cy.wait(2000)
   // pricingEnginePage.getSenderGrade().select(this.data5.SenderGrade, { force: true })
