@@ -929,3 +929,35 @@ And('Add Marketing Profile', function () {
   RegulatoryProfile1.getrpsuccess().contains(this.data2.Marketing)
 })
 
+
+And('Add Marketing Profile Wholesaler', function () {
+  cy.iframe().find('[id="profileCode"]').type(LoginId1)
+  recurse(
+    () => cy.iframe().find('[id="profileCode"]').clear().type(LoginId1),
+    () => cy.iframe().find('.MuiButton-label').contains("Search").click({force: true}),
+    (uniqueness) => (uniqueness) == cy.iframe().find('table > tbody').should('have.length', "1")
+  )
+  MarketingProfile1.getAddMarketingProfile().click()
+  MarketingProfile1.getMarketingProfileCode().type(LoginId1, { force: true })
+  cy.MPRandomName1()
+  MarketingProfile1.getMarketingProfileDomainName().click()
+  MarketingProfile1.getMarketingProfileDomainWholesaler().click()
+  MarketingProfile1.getMarketingProfileCategoryName().click()
+  MarketingProfile1.getMarketingProfileCategoryWholesaler().click()
+  MarketingProfile1.getMarketingProfileMFSProvider().click()
+  MarketingProfile1.getMarketingProfileMFSProvider1().click()
+  MarketingProfile1.getMarketingProfileWalletType().click()
+  MarketingProfile1.getMarketingProfileWalletType1().click()
+  MarketingProfile1.getMarketingProfileGrade().click()
+  MarketingProfile1.getMarketingProfileGradeWholesaler().click()
+  MarketingProfile1.getMarketingProfileInstrumentTCP().click()
+  MarketingProfile1.getMarketingProfileInstrumentTCPWholesaler().click()
+  MarketingProfile1.getMarketingProfileAddBtn1().click()
+  cy.wait(3000)
+  cy.readFile(RegulatoryFile).then((data) => {
+    data.MarketingProfileCode1 = LoginId1
+    cy.writeFile(RegulatoryFile, data)
+  })
+  RegulatoryProfile1.getrpsuccess().contains(this.data2.Marketing)
+})
+
