@@ -955,7 +955,7 @@ And('Add Marketing Profile Wholesaler', function () {
   MarketingProfile1.getMarketingProfileAddBtn1().click()
   cy.wait(3000)
   cy.readFile(RegulatoryFile).then((data) => {
-    data.MarketingProfileCode1 = LoginId1
+    data.MarketingProfileCodeDistributer = LoginId1
     cy.writeFile(RegulatoryFile, data)
   })
   RegulatoryProfile1.getrpsuccess().contains(this.data2.Marketing)
