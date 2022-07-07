@@ -104,7 +104,14 @@ When('Navigate to User Management and Click on manage user', function () {
 And('Enter Mobile number or KYC number of subscriber user', function () {
   pageLogin.getiFrame()
   manageUsersPage.getSearchUser().click({ force: true })
-  manageUsersPage.getSearchUser().type(this.data2.mob7, { force: true })
+  var O2CFile ="cypress/fixtures/userData/BusinessUsersData.json"
+    cy.readFile(O2CFile).then((data) => {
+    var BAMobileNumber = data.registeredMobile
+   // O2CTransferInitiatePage.getMSISDN().type(this.data5.O2CTransferInitiate.msisdn1, {force: true})
+   // data.O2CMsisdn =O2CMsisdn
+   // cy.writeFile(O2CFile, data)
+})
+  manageUsersPage.getSearchUser().type(BAMobileNumber, { force: true })
   manageUsersPage.getSearchUserButton().click({ force: true })
 
 })
@@ -122,7 +129,11 @@ When('User Click on eye button for WalletHistory', function () {
   cy.wait(3000)
  // manageUsersPage.getTransactionCorrection().contains(this.data6.ServiceType4).click({force:true})
   manageUsersPage.getApplyFilterButton().click({force:true})
-  manageUsersPage.getSearchTransactionId().type(this.data6.TransactionId1)
+  var O2CData ="cypress/fixtures/userData/BusinessUsersData.json"
+    cy.readFile(O2CData).then((data) => {
+    var TransactionID = data.TransactionId
+  manageUsersPage.getSearchTransactionId().type(TransactionID)
+})
   manageUsersPage.getserachicon().click({force:true})
   cy.wait(3000)
   manageUsersPage.getreversetransaction().eq(0).click()
@@ -155,7 +166,12 @@ When('User Click on eye button for WalletHistory1', function () {
   cy.wait(3000)
   manageUsersPage.getTransactionCorrection().contains(this.data6.ServiceType4).click({force:true})*/
   manageUsersPage.getApplyFilterButton().click({force:true})
-  manageUsersPage.getSearchTransactionId().type(this.data6.TransactionId2)
+  //manageUsersPage.getSearchTransactionId().type(this.data6.TransactionId2)
+  var O2CData ="cypress/fixtures/userData/BusinessUsersData.json"
+    cy.readFile(O2CData).then((data) => {
+    var TransactionID = data.TransactionId
+  manageUsersPage.getSearchTransactionId().type(TransactionID)
+})
   manageUsersPage.getserachicon().click({force:true})
   cy.wait(3000)
   manageUsersPage.getreversetransaction().eq(0).click()
@@ -185,7 +201,12 @@ When('User Click on eye button for WalletHistory2', function () {
   cy.wait(3000)
   manageUsersPage.getTransactionCorrection().contains(this.data6.ServiceType4).click({force:true})*/
   manageUsersPage.getApplyFilterButton().click({force:true})
-  manageUsersPage.getSearchTransactionId().type(this.data6.TransactionId3)
+  //manageUsersPage.getSearchTransactionId().type(this.data6.TransactionId3)
+  var O2CData ="cypress/fixtures/userData/BusinessUsersData.json"
+    cy.readFile(O2CData).then((data) => {
+    var TransactionID = data.TransactionId
+  manageUsersPage.getSearchTransactionId().type(TransactionID)
+})
   manageUsersPage.getserachicon().click({force:true})
   cy.wait(3000)
   manageUsersPage.getreversetransaction().eq(0).click()
