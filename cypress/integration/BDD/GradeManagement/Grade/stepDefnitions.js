@@ -1,4 +1,3 @@
-
 /// <reference types="Cypress" />
 /// <reference types = "Cypress-iframe"/>
 
@@ -59,7 +58,7 @@ When('Click on User Profile Management >> Add Grade', function () {
 })
 And('Select the domain & category for which grade needs to be added.', function () {
     const uuid = () => Cypress._.random(1e4)
-    GradeCode = uuid()
+    let GradeCode = uuid()
     cy.wait(2000)
 
     AddGradePage.getAddbttn().click({ force: true })

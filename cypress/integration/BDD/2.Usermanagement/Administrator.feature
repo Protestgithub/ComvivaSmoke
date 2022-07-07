@@ -33,6 +33,10 @@ When Navigate to Approvals and filter by Submitted status
 And User click on submitted user data
 And Approve the Users
 Then User status is approved
+Then Logout
+Given Login into Mobiquity Portal as System admin Maker after Logout
+When Navigate to Manage User, and search Business Admin
+And Assert Created Business Admin Mobile Number
 
 # Author: Automation Tester 1
 # Last Updated: 21/03/2022
@@ -93,7 +97,10 @@ When Navigate to Approvals and filter by Submitted status
 And User click on submitted user data
 And Approve the Users
 Then User status is approved
-
+Then Logout
+Given Login into Mobiquity Portal as System admin Maker
+When Navigate to Manage User, and search Business Admin
+And Assert Created Customer Admin Mobile Number
 
 # Author: Narendra
 # Last Updated: 21/04/2022

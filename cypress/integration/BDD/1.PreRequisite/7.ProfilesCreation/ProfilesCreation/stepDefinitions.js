@@ -172,6 +172,81 @@ Given ('Login with Master Admin Checker', function(){
     cy.login(this.data1.masteradminchecker.sysAdminUser1, this.data1.masteradminchecker.sysAdminPwd1)
     cy.wait(2000)
   })
+//----------------------------Security Profile Creation for system Admin-------------------------------
+//-------------------------------------Security Profile------------------------------------------------
+//----------------------------------------Subscriber----------------------------------------------------
+
+When('Navigate to Security and click to select security profile', function () {
+
+  welcomePage.getSecurityLink().scrollIntoView()
+  welcomePage.getSecurityLink().click({ force: true })
+  welcomePage.getSecurityProfileLink().click({ force: true })
+  securityProfilePage.getSecurityProfilePageTitle().should('have.text', this.data6.securityProfilePageTitle)
+})
+And('Click on add profile select user type as subscriber and fill the details', function () {
+
+  securityProfilePage.getAddProfile().click()
+  //securityProfilePage.getSelectSubUserTypeTab().click({ force: true })
+ // securityProfilePage.getSelectSubUserTypeTab().focused()
+  securityProfilePage.getUserRole().eq(1).click({ force: true })
+})
+And('Fill the details-Subscriber Profile Name', function () {
+  securityProfilePage.getEnterProfileName().type(getRandomName(), { force: true }),
+  securityProfilePage.getCheckBox().contains(this.data6.checkBox3).click({ force: true }),
+  recurse(
+    ()=>securityProfilePage.getEnterProfileName().clear().type(getRandomName(), { force: true }),
+    ()=>securityProfilePage.getCheckBox().contains(this.data6.checkBox3).click({ force: true }), 
+    ()=>cy.wait(200),   
+    (uniqueness) => (uniqueness) == securityProfilePage.getProfileNameExist().contains
+    ('Profile with same name already exists. Try another!').should('be.visible'),
+    securityProfilePage.getCheckBox().contains(this.data6.checkBox3).click({ force: true })    
+  )
+
+  cy.readFile(ProfileName).then((data) => {
+      data.SystemAdmin = name
+      cy.writeFile(ProfileName, data)
+    })  
+})
+And('Fill the details-PasswordRestrictios', function () {
+  securityProfilePage.getMinPasswordLength().type(this.data6.minPasswordLength)
+  securityProfilePage.getMaxPasswordLength().type(this.data6.maxPasswordLength)
+  securityProfilePage.getCheckBox().contains(this.data6.checkBox1).click({ force: true })
+  securityProfilePage.getCheckBox().contains(this.data6.checkBox2).click({ force: true })
+  securityProfilePage.getCheckBox().contains(this.data6.checkBox3).click({ force: true })
+  securityProfilePage.getFailedPwdLoginCAPTCHA().type(this.data6.failedLoginCAPTCHA)
+  securityProfilePage.getFailedPasswordAttempts().click({ force: true }).type(this.data6.failedPwdAttempts)
+  securityProfilePage.getAllowedSplChar().type(this.data6.specialCharacters)
+  securityProfilePage.getPasswordExpiry().type(this.data6.passwordExpiryDays)
+  securityProfilePage.getLastNonRepeatingPWD().type(this.data6.lastNonRepeatingPassword)
+  securityProfilePage.getCheckBox().contains(this.data6.resetForgetPassword).click({ force: true })
+
+})
+And('Fill the details-AuthRestrictions', function () {
+  //securityProfilePage.getTwoFactorAuth().click({ force: true })
+  //securityProfilePage.getGeoLocation().click({ force: true })
+})
+And('Fill the details-loginRestrictions', function () {
+  securityProfilePage.getLoginRestrictions().click({ force: true })
+  securityProfilePage.getMultipleLoginsAllowedCount().type(this.data6.multipleLoginsAllowedCount)
+  securityProfilePage.getSelectAllorClearLink().click({ force: true })
+  securityProfilePage.getIpGroupRadioButton().click({ force: true })
+  cy.wait(2000)
+  securityProfilePage.getIpAddress().type(this.data6.getIpAddress)
+  //securityProfilePage.getIpRangeTo().type(this.data6.getIpRangeTo)
+  securityProfilePage.getCoolOffPeriod().type(this.data6.getCoolOffPeriod)
+  //securityProfilePage.getAutoLogoutTime().type(this.data6.getAutoLogoutTime)
+  securityProfilePage.getAuthSystem().select(this.data6.authSystem)
+  securityProfilePage.getNotifyOnDeviceChangeCheckBox().click({ force: true })
+  securityProfilePage.getMinSecurityQuestionToResetCredentials().type(this.data6.minQuestions)
+  securityProfilePage.getMaxSecurityQuestionToResetCredentials().type(this.data6.maxQuestions)
+})
+  Then('Click on add and confirm',function () {
+  securityProfilePage.getAddButton().click({ force: true })
+  cy.wait(3000)
+  securityProfilePage.getConfirmButton().click({ force: true })
+  securityProfilePage.getSuccessMessage().should('have.text', this.data6.successMessage)
+  securityProfilePage.getDoneButton().click({ force: true })
+})
 
 
     //---------------------------------------------Security Profile Creation -------------------------------
@@ -849,6 +924,38 @@ And('Add Marketing Profile', function () {
   cy.wait(3000)
   cy.readFile(RegulatoryFile).then((data) => {
     data.MarketingProfileCode = id
+    cy.writeFile(RegulatoryFile, data)
+  })
+  RegulatoryProfile1.getrpsuccess().contains(this.data2.Marketing)
+})
+
+
+And('Add Marketing Profile Wholesaler', function () {
+  cy.iframe().find('[id="profileCode"]').type(LoginId1)
+  recurse(
+    () => cy.iframe().find('[id="profileCode"]').clear().type(LoginId1),
+    () => cy.iframe().find('.MuiButton-label').contains("Search").click({force: true}),
+    (uniqueness) => (uniqueness) == cy.iframe().find('table > tbody').should('have.length', "1")
+  )
+  MarketingProfile1.getAddMarketingProfile().click()
+  MarketingProfile1.getMarketingProfileCode().type(LoginId1, { force: true })
+  cy.MPRandomName1()
+  MarketingProfile1.getMarketingProfileDomainName().click()
+  MarketingProfile1.getMarketingProfileDomainWholesaler().click()
+  MarketingProfile1.getMarketingProfileCategoryName().click()
+  MarketingProfile1.getMarketingProfileCategoryWholesaler().click()
+  MarketingProfile1.getMarketingProfileMFSProvider().click()
+  MarketingProfile1.getMarketingProfileMFSProvider1().click()
+  MarketingProfile1.getMarketingProfileWalletType().click()
+  MarketingProfile1.getMarketingProfileWalletType1().click()
+  MarketingProfile1.getMarketingProfileGrade().click()
+  MarketingProfile1.getMarketingProfileGradeWholesaler().click()
+  MarketingProfile1.getMarketingProfileInstrumentTCP().click()
+  MarketingProfile1.getMarketingProfileInstrumentTCPWholesaler().click()
+  MarketingProfile1.getMarketingProfileAddBtn1().click()
+  cy.wait(3000)
+  cy.readFile(RegulatoryFile).then((data) => {
+    data.MarketingProfileCodeDistributer = LoginId1
     cy.writeFile(RegulatoryFile, data)
   })
   RegulatoryProfile1.getrpsuccess().contains(this.data2.Marketing)

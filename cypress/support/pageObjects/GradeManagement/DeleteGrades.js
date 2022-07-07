@@ -47,21 +47,14 @@ class DeleteGrades {
 
 
 
-          expect(this.windowConfirm).to.be.calledWith('Do you want to delete this Transfer Rule?')
-
-
-
-          expect(this.consoleLog).to.be.calledWith('CONFIRMED')  // passes
-
-
+          expect(this.windowConfirm).to.be.calledWith('Are you sure, Grade will be deleted')
+        //  expect(this.consoleLog).to.be.calledWith('CONFIRMED')  // passes
 
         })
-
-
-
     })
 
   }
+  
   getDeleteRecord() {
 
     cy.readFile('cypress/fixtures/userData/Gradedata.json').then((user) => {

@@ -12,7 +12,7 @@ Feature: User Management : Buissness
 # Test Case_ID : TC_64
 #
 
-@test
+@test1
 
 Scenario:To verify that System admin/Business Admin should be able to Add businsess user for unregistered Mobile number only.
 Given Login into Mobiquity Portal as System admin Maker

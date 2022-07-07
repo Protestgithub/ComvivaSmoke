@@ -39,34 +39,34 @@ function getRandomInt(min, max) {
 }
 
 Cypress.Commands.add('selectModule', () => {
+	let lenn
+	let len
+	let newLen
 	cy.frameLoaded(pageLogin.getiFrame())
 	cy.iframe().find('[class="row profile-detail-row"]').within(function () {
 		cy.get('[class="col-4 p-0 ng-star-inserted"] [class="mat-checkbox-label"]').then(function () {
+			cy.get('.service-container > app-profile-list > div > .profile-list-container > div > button').then(data2 => {
+				lenn = data2.length
+				cy.log('Service Len' + lenn)
+			})
 			cy.get('[class="row mt-2 profile-list-container"]').eq(0).then(function () {
 				cy.get('[class="col-12 px-0 ng-star-inserted"] button').then(data => {
-					let len = data.length - 1 //20
-					cy.log(len + 'M')
+					len = data.length
+					newLen = len - lenn
+					cy.log('New len' + newLen)
 					let count = 0
 					cy.wrap(data).each(($e1) => {
 						count++
 						cy.wrap($e1).click({ force: true })
-
-						cy.get('[class="row mt-2 profile-list-container"]').eq(1).then(function () {
-							cy.get('[class="col-12 px-0 ng-star-inserted"] button').then(data1 => {
-								let lenn = data1.length - 1 //20
-								//	len = data.length-lenn // 0
-									cy.log(len + 'M')
-								cy.log(lenn + 'S')
-								cy.wrap(data1).then(($e2) => {
-									for (let j = len; j <= lenn; j++) {
-										cy.wrap($e2).eq(j).click({ force: true })
-										cy.get('.mat-checkbox-label').contains('ALL').click({ force: true })
-									}
-								})
+						cy.get('.service-container > app-profile-list > div > .profile-list-container > div > button').then(data1 => {
+							cy.wrap(data1).each(($e2) => {
+								cy.wrap($e2).click({ force: true })
+								cy.get('.mat-checkbox-label').contains('ALL').click({ force: true })
 							})
 						})
-						if (count == len) return false
+						if (count == newLen) return false
 					})
+
 				})
 			})
 		})
