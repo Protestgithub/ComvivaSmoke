@@ -55,6 +55,7 @@ PoolAccountNo =  uuid()
 BankID = uuid()
 Priority = uud()
 let Sysfilelogin = 'cypress/fixtures/userData/SystemAdminLogin.json'
+var SubProfileName = 'cypress/fixtures/profileData/Profile.json'
 var mobile
 var name
 var LoginId1
@@ -189,10 +190,9 @@ And('Fill the details-Subscriber Profile Name', function () {
     securityProfilePage.getCheckBox().contains(this.data6.checkBox3).click({ force: true })    
   )
 
-  cy.readFile(ProfileName).then((data) => {
-      data.SystemAdmin = name
-      cy.writeFile(ProfileName, data)
-    })  
+  
+      cy.writeFile(SubProfileName, SystemAdminSecuirtyProfile:getRandomName())
+    
 })
 And('Fill the details-PasswordRestrictios', function () {
   securityProfilePage.getMinPasswordLength().type(this.data6.minPasswordLength)
@@ -350,7 +350,11 @@ registerPage.getNextButtonBasic().click({force: true})
 
 //----------------------Profile Data-----------------------------------------------------------------
 
-registerPage.getSecurityProfile().select(this.data2.personalInfo.securityProfile2, {force: true})
+cy.readFile(SubProfileName).then((user) => {
+        SecurityProfile= user.SystemAdminSecuirtyProfile
+        registerPage.getSecurityProfile().select(SecurityProfile, {force: true})
+    })
+
 registerPage.getAuthProfile().select(this.data2.personalInfo.authProfile2, {force: true})
 registerPage.getNextButtonProfile().click({force: true})
 registerPage.getSubmitButton().click({force: true})
