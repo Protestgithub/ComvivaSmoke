@@ -387,14 +387,14 @@ And('Enter all the required details business', function () {
   registerPage.getMobileNumber().type(mobile, { force: true })
   registerPage.getLastName().type(this.data2.personalInfo.lastName, { force: true })
 
-  cy.OTP()
+  cy.OTP(Cypress.env('apiBaseURL'),Cypress.env('apiURL'))
 
   cy.wait(2000)
   //----------------email id otp---------------------------------------------------//
   cy.getrandomUserEmailID("first", "last")
   registerPage.getFirstName().type(this.data2.personalInfo.firstName, { force: true })
 
-  cy.OTP()
+ cy.OTP(Cypress.env('apiBaseURL'),Cypress.env('apiURL'))
 
   cy.wait(2000)
   registerPage.getTitle().select(this.data2.personalInfo.title, { force: true })
@@ -479,12 +479,12 @@ And('Enter all the required business user details', function () {
   )
   cy.writeFile('cypress/fixtures/userData/BusinessUsersData.json',{registeredMobile:mobile})
   registerPage.getLastName().type(getRandomName(), { force: true })
-  cy.OTP()
+  cy.OTP(Cypress.env('apiBaseURL'),Cypress.env('apiURL'))
   cy.wait(2000)
   //----------------email id otp---------------------------------------------------//
   cy.getBusinessrandomUserEmailID()
   cy.iframe().find('select[data-test-id="preferredLanguage"]').select(this.data2.personalInfo.preferredLang, { force: true })
-  cy.OTP()
+  cy.OTP(Cypress.env('apiBaseURL'),Cypress.env('apiURL'))
   cy.wait(2000)
 
   registerPage.getSupportOnline().select(this.data2.personalInfo.online, { force: true })
@@ -565,12 +565,12 @@ And('Enter all the required business user details1', function () {
   registerPage.getMobileNumber().type(mobile, { force: true })
   cy.writeFile('cypress/fixtures/userData/BusinessUserSuspensionData.json', { registeredMobile: mobile })
   registerPage.getLastName().type(getRandomName(), { force: true })
-  cy.OTP()
+  cy.OTP(Cypress.env('apiBaseURL'),Cypress.env('apiURL'))
   cy.wait(2000)
   //----------------email id otp---------------------------------------------------//
   cy.getBusinessrandomUserEmailID1()
   registerPage.getFirstName().type(getRandomName(), { force: true })
-  cy.OTP()
+  cy.OTP(Cypress.env('apiBaseURL'),Cypress.env('apiURL'))
   cy.wait(2000)
   cy.iframe().find('select[data-test-id="preferredLanguage"]')
     .select(this.data2.personalInfo.preferredLang, { force: true })
