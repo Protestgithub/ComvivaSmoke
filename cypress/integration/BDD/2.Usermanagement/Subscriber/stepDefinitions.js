@@ -386,7 +386,7 @@ And('Enter all the required subscriber details', function () {
     data.subscriberMobile = mobile
     cy.writeFile(subRegistration, data)
   }) 
-  cy.OTP()
+  cy.OTP(Cypress.env('apiBaseURL'),Cypress.env('apiURL'))
 
   //------------------------------------------------------------------------------------------------------------    
   registerPage.getAdressLine1().type(this.data2.subPersonalInfo.addressLine1, { force: true })
