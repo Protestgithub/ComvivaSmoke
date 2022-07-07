@@ -159,6 +159,86 @@ Given ('Login with Master Admin Checker', function(){
     cy.wait(2000)
   })
 
+//----------------------------Security Profile Creation for system Admin-------------------------------
+//-------------------------------------Security Profile------------------------------------------------
+//----------------------------------------Subscriber----------------------------------------------------
+
+When('Navigate to Security and click to select security profile', function () {
+
+  welcomePage.getSecurityLink().scrollIntoView()
+  welcomePage.getSecurityLink().click({ force: true })
+  welcomePage.getSecurityProfileLink().click({ force: true })
+  securityProfilePage.getSecurityProfilePageTitle().should('have.text', this.data6.securityProfilePageTitle)
+})
+And('Click on add profile select user type as subscriber and fill the details', function () {
+
+  securityProfilePage.getAddProfile().click()
+  //securityProfilePage.getSelectSubUserTypeTab().click({ force: true })
+ // securityProfilePage.getSelectSubUserTypeTab().focused()
+  securityProfilePage.getUserRole().eq(1).click({ force: true })
+})
+And('Fill the details-Subscriber Profile Name', function () {
+  securityProfilePage.getEnterProfileName().type(getRandomName(), { force: true }),
+  securityProfilePage.getCheckBox().contains(this.data6.checkBox3).click({ force: true }),
+  recurse(
+    ()=>securityProfilePage.getEnterProfileName().clear().type(getRandomName(), { force: true }),
+    ()=>securityProfilePage.getCheckBox().contains(this.data6.checkBox3).click({ force: true }), 
+    ()=>cy.wait(200),   
+    (uniqueness) => (uniqueness) == securityProfilePage.getProfileNameExist().contains
+    ('Profile with same name already exists. Try another!').should('be.visible'),
+    securityProfilePage.getCheckBox().contains(this.data6.checkBox3).click({ force: true })    
+  )
+
+  cy.readFile(ProfileName).then((data) => {
+      data.SystemAdmin = name
+      cy.writeFile(ProfileName, data)
+    })  
+})
+And('Fill the details-PasswordRestrictios', function () {
+  securityProfilePage.getMinPasswordLength().type(this.data6.minPasswordLength)
+  securityProfilePage.getMaxPasswordLength().type(this.data6.maxPasswordLength)
+  securityProfilePage.getCheckBox().contains(this.data6.checkBox1).click({ force: true })
+  securityProfilePage.getCheckBox().contains(this.data6.checkBox2).click({ force: true })
+  securityProfilePage.getCheckBox().contains(this.data6.checkBox3).click({ force: true })
+  securityProfilePage.getFailedPwdLoginCAPTCHA().type(this.data6.failedLoginCAPTCHA)
+  securityProfilePage.getFailedPasswordAttempts().click({ force: true }).type(this.data6.failedPwdAttempts)
+  securityProfilePage.getAllowedSplChar().type(this.data6.specialCharacters)
+  securityProfilePage.getPasswordExpiry().type(this.data6.passwordExpiryDays)
+  securityProfilePage.getLastNonRepeatingPWD().type(this.data6.lastNonRepeatingPassword)
+  securityProfilePage.getCheckBox().contains(this.data6.resetForgetPassword).click({ force: true })
+
+})
+And('Fill the details-AuthRestrictions', function () {
+  //securityProfilePage.getTwoFactorAuth().click({ force: true })
+  //securityProfilePage.getGeoLocation().click({ force: true })
+})
+And('Fill the details-loginRestrictions', function () {
+  securityProfilePage.getLoginRestrictions().click({ force: true })
+  securityProfilePage.getMultipleLoginsAllowedCount().type(this.data6.multipleLoginsAllowedCount)
+  securityProfilePage.getSelectAllorClearLink().click({ force: true })
+ // securityProfilePage.getIpGroupRadioButton().click({ force: true })
+  cy.wait(2000)
+//  securityProfilePage.getIpAddress().type(this.data6.getIpAddress)
+  //securityProfilePage.getIpRangeTo().type(this.data6.getIpRangeTo)
+  securityProfilePage.getCoolOffPeriod().type(this.data6.getCoolOffPeriod)
+  //securityProfilePage.getAutoLogoutTime().type(this.data6.getAutoLogoutTime)
+  securityProfilePage.getAuthSystem().select(this.data6.authSystem)
+  securityProfilePage.getNotifyOnDeviceChangeCheckBox().click({ force: true })
+  securityProfilePage.getMinSecurityQuestionToResetCredentials().type(this.data6.minQuestions)
+  securityProfilePage.getMaxSecurityQuestionToResetCredentials().type(this.data6.maxQuestions)
+})
+  Then('Click on add and confirm',function () {
+  securityProfilePage.getAddButton().click({ force: true })
+  cy.wait(3000)
+  securityProfilePage.getConfirmButton().click({ force: true })
+  securityProfilePage.getSuccessMessage().should('have.text', this.data6.successMessage)
+  securityProfilePage.getDoneButton().click({ force: true })
+})
+
+
+
+
+
 //---------------------------------SystemAdmin Creation-------------------------------------------------
 Given('Login into Mobiquity Portal as System admin Created by Master', function () {
   cy.launchURL(Cypress.env('Adminurl'))
@@ -356,4 +436,5 @@ cy.log(loginId)
 Then('User status is approved', function() {
   approvalPage.getApproveConfirmationMessage().contains(this.data2.confirmationMessage.addUser)
 })
+
 
