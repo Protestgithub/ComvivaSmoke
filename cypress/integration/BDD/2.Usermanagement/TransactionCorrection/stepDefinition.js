@@ -129,9 +129,9 @@ When('User Click on eye button for WalletHistory', function () {
   cy.wait(3000)
  // manageUsersPage.getTransactionCorrection().contains(this.data6.ServiceType4).click({force:true})
   manageUsersPage.getApplyFilterButton().click({force:true})
-  var O2CData ="cypress/fixtures/userData/BusinessUsersData.json"
+  var O2CData ="cypress/fixtures/userData/O2Cdata.json"
     cy.readFile(O2CData).then((data) => {
-    var TransactionID = data.TransactionId
+    var TransactionID = data.TransactionID
   manageUsersPage.getSearchTransactionId().type(TransactionID)
 })
   manageUsersPage.getserachicon().click({force:true})
@@ -167,9 +167,9 @@ When('User Click on eye button for WalletHistory1', function () {
   manageUsersPage.getTransactionCorrection().contains(this.data6.ServiceType4).click({force:true})*/
   manageUsersPage.getApplyFilterButton().click({force:true})
   //manageUsersPage.getSearchTransactionId().type(this.data6.TransactionId2)
-  var O2CData ="cypress/fixtures/userData/BusinessUsersData.json"
+  var O2CData ="cypress/fixtures/userData/O2Cdata.json"
     cy.readFile(O2CData).then((data) => {
-    var TransactionID = data.TransactionId
+    var TransactionID = data.TransactionID
   manageUsersPage.getSearchTransactionId().type(TransactionID)
 })
   manageUsersPage.getserachicon().click({force:true})
@@ -202,9 +202,9 @@ When('User Click on eye button for WalletHistory2', function () {
   manageUsersPage.getTransactionCorrection().contains(this.data6.ServiceType4).click({force:true})*/
   manageUsersPage.getApplyFilterButton().click({force:true})
   //manageUsersPage.getSearchTransactionId().type(this.data6.TransactionId3)
-  var O2CData ="cypress/fixtures/userData/BusinessUsersData.json"
+  var O2CData ="cypress/fixtures/userData/O2Cdata.json"
     cy.readFile(O2CData).then((data) => {
-    var TransactionID = data.TransactionId
+    var TransactionID = data.TransactionID
   manageUsersPage.getSearchTransactionId().type(TransactionID)
 })
   manageUsersPage.getserachicon().click({force:true})
