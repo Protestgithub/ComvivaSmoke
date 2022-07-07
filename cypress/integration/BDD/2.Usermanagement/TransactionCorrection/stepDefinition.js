@@ -104,13 +104,10 @@ When('Navigate to User Management and Click on manage user', function () {
 And('Enter Mobile number or KYC number of subscriber user', function () {
   pageLogin.getiFrame()
   manageUsersPage.getSearchUser().click({ force: true })
-  var O2CFile ="cypress/fixtures/userData/BusinessUsersData.json"
+  var O2CFile ="cypress/fixtures/userData/O2Cdata.json"
     cy.readFile(O2CFile).then((data) => {
-    var BAMobileNumber = data.registeredMobile
-   // O2CTransferInitiatePage.getMSISDN().type(this.data5.O2CTransferInitiate.msisdn1, {force: true})
-   // data.O2CMsisdn =O2CMsisdn
-   // cy.writeFile(O2CFile, data)
-})
+    var BAMobileNumber = data.Mob
+  })
   manageUsersPage.getSearchUser().type(BAMobileNumber, { force: true })
   manageUsersPage.getSearchUserButton().click({ force: true })
 
