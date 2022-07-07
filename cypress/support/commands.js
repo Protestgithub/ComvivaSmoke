@@ -613,8 +613,10 @@ Cypress.Commands.add('O2CTransactionWriteData', () => {
         let a = q.split(':')
         let b = a[1].trim()
         cy.log(b)
-        cy.writeFile(O2Cfile, { TransactionID: b })
-
+        cy.readFile(O2Cfile).then((data) => {
+                      let q = data.O2CMsisdn1
+            cy.writeFile(O2Cfile, {Mob:q,TransactionID:b})
+          })
     }))
 })
 var O2Cfile = "cypress/fixtures/userData/O2Cdata.json"
