@@ -181,8 +181,30 @@ getServiceChargeTab()
     getCloneButton(){
         return cy.iframe().find('.rule-header').contains(this.data5.RuleName1).find('.btn.waves-effect.waves-cta.clone-rule-button.modal-trigger"]') 
     }   
-
-
+//Added 
+getSenderRoleCom(){
+         return cy.iframe().find('[data-bind="ifnot: operatorAllowsMultipleValues"] select[class="browser-default control"]').eq(0)
+     }
+     getSenderHierarchyCom(){
+         return cy.iframe().find('[data-bind="ifnot: operatorAllowsMultipleValues"] select[class="browser-default control"]').eq(1)
+     }
+     getSenderGradeCom(){
+     return cy.iframe().find('[data-bind="if: hasReferenceData"] select[class="browser-default control selectized"]')
+     }
+     getSenderGradeCom1(){
+        return cy.iframe().find('[data-bind="if: operatorAllowsMultipleValues"] [class="selectize-input items not-full has-options"]')
+        }
     
+        getSenderGradeCom2(){
+            return cy.iframe().find('[class="selectize-dropdown-content"]>div').eq(0)
+            }
+            getGradebtnclick()
+            {
+                return cy.iframe().find('div.col.s4 > label')
+            }
+     getSenderComNew(){
+
+            return cy.iframe().find('div.selectize-input items not-full has-options focus input-active dropdown-active')
+}
 }
 export default PricingEnginePage
