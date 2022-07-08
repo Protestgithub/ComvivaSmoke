@@ -80,7 +80,7 @@ class BankManagement{
     }
     getMFSproviderBankTypeMaster()
     {
-        return cy.get('#collapsible_listnode_2')
+        return cy.get('#collapsible_listnode_3')
     }
     getModifyORDelete()
     {
