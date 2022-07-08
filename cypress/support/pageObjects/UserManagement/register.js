@@ -319,6 +319,10 @@ getValueIsNotUnique(){
 getErrorMaxKycReached(){
     return cy.iframe().find('.text-center').eq(1).contains('Maximum accounts for the primary kyc reached')
 }
+getNextButtonBasic4(){
 
+        return cy.iframe().find('button[data-test-id="next"]').eq(4)
+
+    }
 }
 export default register
