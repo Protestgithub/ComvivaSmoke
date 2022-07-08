@@ -1,7 +1,18 @@
 Feature: TCP Creation
 
 ##################################### TCP Creation ################################################
+# Author:Monica
+# Last Updated:
+# Comments 
+# Scenario_ID : TC_143
+# 
 
+@prerequisite
+Scenario:To verify that system admin should be able to add regulatory profile in the system
+Given Login into Mobiquity Portal as System admin Maker
+When Navigate to UserManagement And Click on Regulatory Profile
+And click on Add Regulatory Profile and Enter Profile Code and Profile Name
+Then Click On Save Regulatory Profile
 
 # Author: Kalyani M
 # Last Updated:
