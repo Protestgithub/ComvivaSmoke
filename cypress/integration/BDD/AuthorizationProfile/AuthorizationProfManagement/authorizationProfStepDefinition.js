@@ -8,7 +8,7 @@ import loginPage from '../../../../support/pageObjects/loginPage';
 import homePage from '../../../../support/pageObjects/homePage';
 
 import "../../../../support/commands";
-import "../../../../support/authorizationcommands";
+import "../../../../support/authourizationcommands";
 
 import authorizationManagement from '../../../../support/pageObjects/AuthorizationProfileManagement/authorizationManagement';
 import { recurse } from 'cypress-recurse';
