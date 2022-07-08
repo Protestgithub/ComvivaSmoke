@@ -3,24 +3,6 @@ Feature: Profiles Creation
 #######################    Profiles Creation ##########################
 
 ##################################### Security Profile Creation ################################################
-# Author: Chetan.S
-# Last Updated:
-# Comments
-# Scenario_ID :
-# TC_
-@prerequisite
-
-#system Admin Security Profile
-Scenario:To verify that security profiles can be configured in the system for different type of users under different workspaces.
-Given Login into Mobiquity Portal as Super admin Maker
-When Navigate to Security and click to select security profile
-And Click on add profile select user type as subscriber and fill the details
-And Fill the details-Subscriber Profile Name
-And Fill the details-PasswordRestrictios
-And Fill the details-AuthRestrictions
-And Fill the details-loginRestrictions
-Then Click on add and confirm
-
 
 # Author: Chetan.S
 # Last Updated: 
@@ -69,16 +51,26 @@ And Fill the details-AuthRestrictions
 And Fill the details-loginRestrictions
 Then Click on add and confirm
 
-
-#Business -- TelcoOperator --(pin Present)
+#Business -- Distributer---(pin present)
+Given Login into Mobiquity Portal as System admin User
 When Navigate to Security and click to select security profile
-And Click on add profile select user type as TelcoOperator and fill the details
-And Fill the details-TelcoOperator Profile Name
+And Click on add profile select user type as Distributer and fill the details
+And Fill the details-Distributer Profile Name
 And Fill the details-PasswordRestrictios
 And Fill the details-PinRestrictions
 And Fill the details-AuthRestrictions
 And Fill the details-loginRestrictions
 Then Click on add and confirm
+
+#Business -- TelcoOperator --(pin Present)
+#When Navigate to Security and click to select security profile
+#And Click on add profile select user type as TelcoOperator and fill the details
+#And Fill the details-TelcoOperator Profile Name
+#And Fill the details-PasswordRestrictios
+#And Fill the details-PinRestrictions
+#And Fill the details-AuthRestrictions
+#And Fill the details-loginRestrictions
+#Then Click on add and confirm
 
 #Business -- ATMMachine
 When Navigate to Security and click to select security profile
@@ -140,16 +132,7 @@ Then Click on add and confirm
 
 
 
-#Business -- Distributer---(pin present)
-#Given Login into Mobiquity Portal as System admin User
-#When Navigate to Security and click to select security profile
-#And Click on add profile select user type as Distributer and fill the details
-#And Fill the details-Distributer Profile Name
-#And Fill the details-PasswordRestrictios
-#And Fill the details-PinRestrictions
-#And Fill the details-AuthRestrictions
-#And Fill the details-loginRestrictions
-#Then Click on add and confirm
+
 
 #Business -- Corporate -- (Pin present)
 #When Navigate to Security and click to select security profile
@@ -231,28 +214,13 @@ Then Click on add and confirm
 
 ################################### Regulatory and Marketing Profiles ###################################
 
-# Author:Monica
-# Last Updated:
-# Comments 
-# Scenario_ID : TC_143
-# 
-
-@prerequisite
-
-Scenario:To verify that system admin should be able to add regulatory profile in the system
-Given Login into Mobiquity Portal as System admin Maker
-When Navigate to UserManagement And Click on Regulatory Profile
-And click on Add Regulatory Profile and Enter Profile Code and Profile Name
-Then Click On Save Regulatory Profile
 
 # Author:Monica
 # Last Updated:
 # Comments 
 # Scenario_ID : TC_147
 # 
-
 @prerequisite
-
 Scenario:To verify that system admin user can Add Marketing Profile.
 Given Login into Mobiquity Portal as System admin Maker
 When Navigate to UserManagement And Click on Marketing Profile
