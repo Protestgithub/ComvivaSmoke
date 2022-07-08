@@ -1,7 +1,7 @@
 {
     "testFiles": "**/*.feature",
-    "defaultCommandTimeout": 15,
-    "pageLoadTimeout": 15,
+    "defaultCommandTimeout": 15000,
+    "pageLoadTimeout": 15000,
     "viewportWidth": 1200,
     "viewportHeight": 900,
     "env": {
