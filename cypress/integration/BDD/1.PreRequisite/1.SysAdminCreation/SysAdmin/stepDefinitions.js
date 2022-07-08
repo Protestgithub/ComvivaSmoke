@@ -38,7 +38,7 @@ import MarketingProfile from '../../../../../support/pageObjects/UserManagement/
 
 
 //----------------Object Declaration----------------------------------------------------------
-
+const securityProfilePage = new SecurityProfilePage()
 const pageLogin = new loginPage()
 const welcomePage = new homePage()
 const registerPage = new register()
@@ -51,16 +51,13 @@ const uid = () => Cypress._.random(0, 1e6)
 const id = uid()
 const uuid = () => Cypress._.random(1e10)
 const uud = () => Cypress._.random(1e3)
-PoolAccountNo =  uuid()
-BankID = uuid()
-Priority = uud()
 let Sysfilelogin = 'cypress/fixtures/userData/SystemAdminLogin.json'
 var SubProfileName = 'cypress/fixtures/profileData/Profile.json'
 var mobile
 var name,SecurityProfile
 var LoginId1
 const uuid12 = () => Cypress._.random(1e8)
-LoginId1= uuid12()
+var LoginId1= uuid12()
 const Password='000000'
 const Password1 = 'Com@135'
 var loginId
@@ -83,7 +80,9 @@ Before(() => {
   cy.fixture('UserManagement').then(function (data2) {
     this.data2 = data2;
   })
-
+  cy.fixture('SecurityProfile').then(function (data6) {
+    this.data6 = data6;
+  })
 }); 
 
 //---------------------------------------------Login----------------------------------------------------
@@ -176,7 +175,7 @@ And('Click on add profile select user type as subscriber and fill the details', 
   securityProfilePage.getAddProfile().click()
   //securityProfilePage.getSelectSubUserTypeTab().click({ force: true })
  // securityProfilePage.getSelectSubUserTypeTab().focused()
-  securityProfilePage.getUserRole().eq(1).click({ force: true })
+  securityProfilePage.getUserRole().eq(0).click({ force: true })
 })
 And('Fill the details-Subscriber Profile Name', function () {
   securityProfilePage.getEnterProfileName().type(getRandomName(), { force: true }),
