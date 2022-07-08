@@ -52,7 +52,6 @@ And Fill the details-loginRestrictions
 Then Click on add and confirm
 
 #Business -- Distributer---(pin present)
-Given Login into Mobiquity Portal as System admin User
 When Navigate to Security and click to select security profile
 And Click on add profile select user type as Distributer and fill the details
 And Fill the details-Distributer Profile Name
