@@ -51,6 +51,7 @@ const RegulatoryProfile1 = new RegulatoryProfile()
 const uid = () => Cypress._.random(0, 1e6)
 const id = uid()
 const ITCP="userData/TCPdata.json"
+const ITCP1="userData/TCPdata1.json"
 var name
 var LoginId1
 const uuid12 = () => Cypress._.random(1e8)
@@ -913,7 +914,7 @@ And('Add Marketing Profile', function () {
   MarketingProfile1.getMarketingProfileWalletType1().click()
   MarketingProfile1.getMarketingProfileGrade().click()
   MarketingProfile1.getMarketingProfileGrade1().click()
-  cy.fixture(ITCP).then((user)=>{
+  cy.fixture(ITCP1).then((user)=>{
     var SITCP=user.TcpProfileNameSub
     cy.log(SITCP)
     MarketingProfile1.getMarketingProfileInstrumentTCP().click()
