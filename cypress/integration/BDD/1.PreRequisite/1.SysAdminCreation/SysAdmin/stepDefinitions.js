@@ -38,12 +38,12 @@ import MarketingProfile from '../../../../../support/pageObjects/UserManagement/
 
 
 //----------------Object Declaration----------------------------------------------------------
-const securityProfilePage = new SecurityProfilePage()
 const pageLogin = new loginPage()
 const welcomePage = new homePage()
 const registerPage = new register()
 const approvalPage = new approvals()
 const manageUsersPage = new manageUsers()
+const securityProfilePage = new SecurityProfilePage()
 const uid1 = () => Cypress._.random(1e2)
 const Id = uid1()
 var mobile
@@ -59,7 +59,7 @@ var LoginId1
 const uuid12 = () => Cypress._.random(1e8)
 var LoginId1= uuid12()
 const Password='000000'
-const Password1 = 'Com@1357'
+const Password1 = 'Com@13579'
 var loginId
 function getRandomName() {
 name = "";
@@ -187,12 +187,12 @@ And('Fill the details-Subscriber Profile Name', function () {
     ('Profile with same name already exists. Try another!').should('be.visible'),
     securityProfilePage.getCheckBox().contains(this.data6.checkBox3).click({ force: true })    
   )
-
-  
   cy.readFile(SubProfileName).then((data) => {
     data.SystemAdminSecuirtyProfile = name
     cy.writeFile(SubProfileName, data)
   })
+    
+})
 And('Fill the details-PasswordRestrictios', function () {
   securityProfilePage.getMinPasswordLength().type(this.data6.minPasswordLength)
   securityProfilePage.getMaxPasswordLength().type(this.data6.maxPasswordLength)
@@ -213,13 +213,13 @@ And('Fill the details-AuthRestrictions', function () {
 })
 And('Fill the details-loginRestrictions', function () {
   securityProfilePage.getLoginRestrictions().click({ force: true })
-  securityProfilePage.getMultipleLoginsAllowedCount().type(this.data6.multipleLoginsAllowedCount)
+  //securityProfilePage.getMultipleLoginsAllowedCount().type(this.data6.multipleLoginsAllowedCount)
   securityProfilePage.getSelectAllorClearLink().click({ force: true })
  // securityProfilePage.getIpGroupRadioButton().click({ force: true })
   cy.wait(2000)
 //  securityProfilePage.getIpAddress().type(this.data6.getIpAddress)
   //securityProfilePage.getIpRangeTo().type(this.data6.getIpRangeTo)
-  securityProfilePage.getCoolOffPeriod().type(this.data6.getCoolOffPeriod)
+  //securityProfilePage.getCoolOffPeriod().type(this.data6.getCoolOffPeriod)
   //securityProfilePage.getAutoLogoutTime().type(this.data6.getAutoLogoutTime)
   securityProfilePage.getAuthSystem().select(this.data6.authSystem)
   securityProfilePage.getNotifyOnDeviceChangeCheckBox().click({ force: true })
