@@ -1,4 +1,3 @@
-
 /// <reference types="Cypress" />
 /// <reference types = "Cypress-iframe"/>
 
@@ -372,7 +371,7 @@ When('User clicks on transfer rule approval', function () {
   welcomePage.getTransferRuleOption().click()
   welcomePage.getTransferRuleApproval().click()
   cy.wait(2000)
-  transferruleapprovalpage.getTransferRule()
+  transferruleapprovalpage.getTransferRule().click()
 })
 And('Select rule and approve', function () {
   cy.wait(3000)
