@@ -287,6 +287,7 @@ And('Fill the details-PasswordRestrictios', function () {
   securityProfilePage.getCheckBox().contains(this.data6.checkBox1).click({ force: true })
   securityProfilePage.getCheckBox().contains(this.data6.checkBox2).click({ force: true })
   securityProfilePage.getCheckBox().contains(this.data6.checkBox3).click({ force: true })
+  securityProfilePage.getCheckBox().contains(this.data6.checkBox4).click({ force: true })
   securityProfilePage.getFailedPwdLoginCAPTCHA().type(this.data6.failedLoginCAPTCHA)
   securityProfilePage.getFailedPasswordAttempts().click({ force: true }).type(this.data6.failedPwdAttempts)
   securityProfilePage.getAllowedSplChar().type(this.data6.specialCharacters)
