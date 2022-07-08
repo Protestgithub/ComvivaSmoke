@@ -1,11 +1,11 @@
 {
   "TransferRuleData":{
       "servicename":"Cash in",
-      "FromMFSprovider":"MFS3",
+      "FromMFSprovider":"MFS2",
       "FromDomain":"Wholesaler",
       "FromPaymentInstrument":"WALLET",
       "FromWallet":"Normal",
-      "ToMFSprovider":"MFS3",
+      "ToMFSprovider":"MFS2",
       "ToDomain":"Merchant",
       "ToPaymentInstrument":"WALLET",
       "ToWallet":"Normal",
@@ -58,7 +58,7 @@
     },
     "O2CData":{
       "DoaminName":"ATM",
-      "CategoryName":"ATM_1234",
+      "CategoryName":"AtmMachine",
       "MFSProvider":"MFS1",
       "Payement":"WALLET",
       "LinkedBank":"Salary",
