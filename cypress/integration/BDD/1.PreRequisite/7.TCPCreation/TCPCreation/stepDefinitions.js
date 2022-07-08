@@ -60,7 +60,6 @@ var RegulatoryFile = 'cypress/fixtures/userData/Regulatory&MarketingProfile.json
 var SubProfileName = 'cypress/fixtures/profileData/Profile.json'
 const MarketingProfile1 = new MarketingProfile()
 const RegulatoryProfile1 = new RegulatoryProfile()
-var mobile
 var number
 const uid = () => Cypress._.random(0, 1e6)
 const id = uid()
@@ -84,31 +83,10 @@ var name
 var PoolAccountNo
 var BankID
 var Priority
-var filename = 'cypress/fixtures/BankManagement.json'
-let Sysfilelogin = 'cypress/fixtures/userData/SystemAdminLogin.json'
-var mobile
-var name
 var LoginId1
 const uuid12 = () => Cypress._.random(1e8)
 LoginId1= uuid12()
-const Password='000000'
-const Password1 = 'Com@135'
-var loginId
-let GradeCode
-function getbankName() {
-  name = "";
-  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  for (var i=0; i<5; i++)
-  name += possible.charAt(Math.floor(Math.random() * possible.length));
-  return name;
-  }
-function getRandomName() {
-name = "";
-var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-for (var i=0; i<5; i++)
-name += possible.charAt(Math.floor(Math.random() * possible.length));
-return name;
-}
+
 
 
 
@@ -486,3 +464,37 @@ And('Verify Add Intiation Message for Master', function () {
   })
 })  
 
+//------------------------------  REGULATORY PROFILE--------------------------------------------
+
+When('Navigate to UserManagement And Click on Regulatory Profile', function () {
+
+  welcomePage.getUserManagementOption().scrollIntoView()
+  welcomePage.getUserManagementOption().click()
+  welcomePage.getregulatoryprofile().click()
+  cy.wait(3000)
+})
+
+And('click on Add Regulatory Profile and Enter Profile Code and Profile Name', function () {
+  cy.iframe().find('[id="profileCode"]').type(id)
+  recurse(
+    () => cy.iframe().find('[id="profileCode"]').clear().type(id),
+    () => cy.iframe().find('.MuiButton-label').contains("Search").click({force: true}),
+    (uniqueness) => (uniqueness) == cy.iframe().find('table > tbody').should('have.length', "1")
+  )
+  cy.log(id)
+  RegulatoryProfile1.getaddregulatoryprofile().click(),
+  RegulatoryProfile1.getregulatoryprofilecode().type(id,{force:true}),
+  cy.RPRandomName(),
+  RegulatoryProfile1.getregulatorysavebtn().click()
+  cy.readFile(RegulatoryFile).then((data) => {
+    data.RegulatoryProfileCode = id
+    cy.writeFile(RegulatoryFile, data)
+
+  })
+})
+
+Then('Click On Save Regulatory Profile', function () {
+    RegulatoryProfile1.getrpsuccess().contains(this.data2.Sucess)
+  cy.wait(3000)
+
+})
