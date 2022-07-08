@@ -32,7 +32,7 @@ class AddCategory{
     
             })
     
-            cy.wait(2000)
+            cy.wait(4000)
     
             cy.get("#wallet_button_next").click({force:true})
     
@@ -50,7 +50,7 @@ class AddCategory{
     
             })
     
-            cy.wait(2000)
+            cy.wait(4000)
     
             cy.get('td').within(function(){
     

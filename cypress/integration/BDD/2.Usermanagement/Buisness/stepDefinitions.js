@@ -615,21 +615,28 @@ And('Enter all the required business user details1', function () {
 
   cy.wait(5000)
   cy.readFile(SubProfileName).then((data) => {
-    let Profile = data.Agent
+    let Profile = data.Distributer
     registerPage.getSecurityProfile().select(Profile, { force: true })
   })
+   // cy.readFile(RegulatoryMarketingProfile).then((data) => {
+    //   let Profile = data.BusinessAgent1
+//registerPage.getAuthProfile().select(Profile, { force: true })
+// })
   registerPage.getAuthProfile().select(this.data2.personalInfo.authProfile8, { force: true })
-  registerPage.getReguProfile().select(this.data2.personalInfo.ReguProfile, { force: true })
-  //cy.readFile(RegulatoryMarketingProfile).then((data) => {
-    //   let Profile = data.RegulatoryProfileName
-     //registerPage.getSecurityProfile().select(Profile, { force: true })
-    // })
-  registerPage.getMarketingProfile().select(this.data2.personalInfo.MarketProfile, { force: true })
-  //cy.readFile(RegulatoryMarketingProfile).then((data) => {
-    //   let Profile = data.MarketingProfileName
-    //   registerPage.getSecurityProfile().select(Profile, { force: true })
-    // })
-  registerPage.getNextButtonBasic3().click({ force: true })
+  //registerPage.getReguProfile().select(this.data2.personalInfo.ReguProfile, { force: true })
+  cy.readFile(RegulatoryMarketingProfile).then((data) => {
+       let Profile = data.RegulatoryProfileName
+registerPage.getSecurityProfile().select(Profile, { force: true })
+ })
+ // registerPage.getMarketingProfile().select(this.data2.personalInfo.MarketProfile, { force: true })
+  cy.readFile(RegulatoryMarketingProfile).then((data) => {
+   let Profile = data.MarketingProfileNameDistributer
+   registerPage.getSecurityProfile().select(Profile, { force: true })
+ })
+ cy.wait(3000)
+
+  registerPage.getNextButtonBasic2().click({ force: true })
+  registerPage.getNextButtonBasic3().click({force:true})
   registerPage.getSubmitButton().click({ force: true })
 
 
