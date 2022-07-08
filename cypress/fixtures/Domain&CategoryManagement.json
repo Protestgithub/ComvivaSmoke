@@ -1,20 +1,20 @@
 {
   "Errormsg":"Domain Name already exists in systemDomain Code already exists in system",
     "domainData":{
-        "domainName":"Corporate",
-        "domainCode":"Corporate",
+        "domainName":"Biller",
+        "domainCode":"Biller",
         "domainCategories":""
       },
       "domainData1":{
-        "domainName":"Corporate",
-        "domainCode":"Corporate",
+        "domainName":"Biller",
+        "domainCode":"Biller",
         "domainCategories":""
       },
       "CategoryData":{
-        "categoryname":"Corporate",
-        "categoryCode":"Corporate",
-        "Domain":"Corporate",
-        "ParentCategory":"Corporate"
+        "categoryname":"Biller",
+        "categoryCode":"Biller",
+        "Domain":"Biller",
+        "ParentCategory":"Biller"
 
       }
 }
