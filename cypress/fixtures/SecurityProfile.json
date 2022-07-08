@@ -6,6 +6,8 @@
     "checkBox1":"Has Digits",
     "checkBox2":"Special characters",
     "checkBox3":"Has Capital Letters",
+        "checkBox4":"Has no sequential words and numbers",
+
     "failedLoginCAPTCHA":"3",
     "failedPwdAttempts":"4",
     "specialCharacters":"$@#*%!",
