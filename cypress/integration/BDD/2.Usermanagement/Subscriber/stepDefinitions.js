@@ -224,16 +224,25 @@ Given('Login into Mobiquity Portal as Business admin User', function () {
     registerPage.getCountry().select(this.data2.personalInfo.country, { force: true })
     registerPage.getNextButtonBasic().click({ force: true })
   
-    cy.readFile(SubProfileName).then((data) => {
-      let Profile = data.businesAadmin
-      registerPage.getSecurityProfile().select(Profile, { force: true })
-    })
-     // cy.readFile(SubProfileName).then((data) => {
-      //let Profile = data.CustomercareAdmin1
-     // registerPage.getAuthProfile().select(Profile, { force: true })
-     // })
-      registerPage.getAuthProfile().select(this.data2.personalInfo.authProfile, { force: true })
-      registerPage.getNextButtonProfile().click({ force: true })
+     cy.readFile(SubProfileName).then((data) => {
+    let Profile = data.subscriber
+    registerPage.getSecurityProfile().select(Profile, { force: true })
+  })
+  cy.readFile(SubProfileName).then((data) => {
+    let Profile = data.SubscriberProfileName1
+    registerPage.getAuthProfile().select(Profile, { force: true })
+  })
+  //  registerPage.getReguProfile().select(this.data2.KycInfo.ReguProfile, { force: true })
+   cy.readFile(RegulatoryMarketingProfile).then((data) => {
+     let Profile = data.RegulatoryProfileName
+     registerPage.getReguProfile().select(Profile, { force: true })
+   })
+  //registerPage.getMarketingProfile().select(this.data2.KycInfo.MarketProfile, { force: true })
+   cy.readFile(RegulatoryMarketingProfile).then((data) => {
+    let Profile = data.MarketingProfileName
+    registerPage.getMarketingProfile().select(Profile, { force: true })
+   })
+   registerPage.getNextButtonProfile().click({ force: true })
   })
   
   Then('Confirm the edit details', function () {
@@ -308,11 +317,24 @@ Given('Login into Mobiquity Portal as Business admin User', function () {
     registerPage.getNextButtonBasic1().click({ force: true })
   })
   Then('Enter all the marketing ,regulatory, authorization profile details and click on next', function () {
-    registerPage.getSecurityProfile().select(this.data2.subPersonalInfo1.securityProfile, { force: true })
-    registerPage.getAuthProfile().select(this.data2.subPersonalInfo1.authProfile, { force: true })
-    registerPage.getReguProfile().select(this.data2.subPersonalInfo1.ReguProfile, { force: true })
-    registerPage.getMarkProfile().select(this.data2.subPersonalInfo1.MarketProfile, { force: true })
-    registerPage.getNextButtonBasic2().click({ force: true })
+  cy.readFile(SubProfileName).then((data) => {
+    let Profile = data.subscriber
+    registerPage.getSecurityProfile().select(Profile, { force: true })
+  })
+  cy.readFile(SubProfileName).then((data) => {
+    let Profile = data.SubscriberProfileName1
+    registerPage.getAuthProfile().select(Profile, { force: true })
+  })
+  //  registerPage.getReguProfile().select(this.data2.KycInfo.ReguProfile, { force: true })
+   cy.readFile(RegulatoryMarketingProfile).then((data) => {
+     let Profile = data.RegulatoryProfileName
+     registerPage.getReguProfile().select(Profile, { force: true })
+   })
+  //registerPage.getMarketingProfile().select(this.data2.KycInfo.MarketProfile, { force: true })
+   cy.readFile(RegulatoryMarketingProfile).then((data) => {
+    let Profile = data.MarketingProfileName
+    registerPage.getMarketingProfile().select(Profile, { force: true })
+   })    registerPage.getNextButtonBasic2().click({ force: true })
   })
 
   //-------------------------------------TC_187-------------------------------------------------
@@ -421,11 +443,11 @@ And('Enter all the required subscriber details', function () {
      let Profile = data.RegulatoryProfileName
      registerPage.getReguProfile().select(Profile, { force: true })
    })
-  registerPage.getMarketingProfile().select(this.data2.KycInfo.MarketProfile, { force: true })
-  // cy.readFile(RegulatoryMarketingProfile).then((data) => {
-  //  let Profile = data.MarketingProfileName
-  //  registerPage.getMarketingProfile().select(Profile, { force: true })
-  // })
+  //registerPage.getMarketingProfile().select(this.data2.KycInfo.MarketProfile, { force: true })
+   cy.readFile(RegulatoryMarketingProfile).then((data) => {
+    let Profile = data.MarketingProfileName
+    registerPage.getMarketingProfile().select(Profile, { force: true })
+   })
 })
 Then('SubscrigReg Confirmation message is displayed', function () {
 
