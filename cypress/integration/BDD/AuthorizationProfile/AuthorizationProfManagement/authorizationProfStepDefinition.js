@@ -22,7 +22,7 @@ const welcomePage = new homePage()
 const uid = () => Cypress._.random(1e6)
 const id = uid()
 var profName
-var SubProfileName = 'cypress/fixtures/userData/AuthorizationProfile.json'
+var SubProfileName = 'cypress/fixtures/profileData/Profile.json'
 
 //----------------BDD Hooks-----------------------------------------------------------------
 Before(() => {
