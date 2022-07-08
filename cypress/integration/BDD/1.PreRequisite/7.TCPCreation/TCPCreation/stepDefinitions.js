@@ -64,6 +64,8 @@ var number
 const uid = () => Cypress._.random(0, 1e6)
 const id = uid()
 const filenameTCP = 'userData/TCPdata.json'
+const filenameTCP1 = 'userData/TCPdata1.json'
+
 const CustTCPdata = 'userData/CustTCPdata.json'
 const fileRegulatoryProfile = 'userData/Regulatory&MarketingProfile.json'
 var Tcpname
@@ -431,7 +433,7 @@ And('Click on Instrument Level TCP1', function () {
   welcomePage.getInstrumentLevelTCPApproval().click()
   cy.wait(4000)
   tcpPage.getinstrumentlevelTCP().within(function () {
-    cy.fixture(filenameTCP).then((user) => {
+    cy.fixture(filenameTCP1).then((user) => {
       TcpnameSub = user.TcpProfileNameSub
       cy.log(TcpnameSub)
       cy.get("td").eq(1)

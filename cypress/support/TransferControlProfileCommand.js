@@ -53,6 +53,7 @@ const RegulatoryProfile1 = new RegulatoryProfile()
 const MarketingProfile1 = new MarketingProfile()
 const manageUsersPage = new manageUsers()
 const filenameTCP = 'userData/TCPdata.json'
+const filenameTCP1 = 'userData/TCPdata1.json'
 const CustTCPdata = 'userData/CustTCPdata.json'
 const fileRegulatoryProfile = 'userData/Regulatory&MarketingProfile.json'
 var Tcpname, Tcpname1,TcpnameSub
@@ -81,7 +82,7 @@ Cypress.Commands.add('TcpName', (Text) => {
 })
 Cypress.Commands.add('TcpNameSub', (Text) => {
 
-  cy.fixture(filenameTCP).then((user) => {
+  cy.fixture(filenameTCP1).then((user) => {
       TcpnameSub = user.TcpProfileNameSub
       cy.log(TcpnameSub)
   })
@@ -111,12 +112,7 @@ Cypress.Commands.add('TCPRandomName', () => {
 Cypress.Commands.add('TCPRandomNameSub', () => {
   let hi ="InstTCP" +"" +getRandomName() + timestamp
   tcpPage.getprofilename().type(hi, { force: true })
-  cy.fixture(filenameTCP).then((user) => {
-      Tcpname = user.TcpProfileName
-      cy.log(Tcpname)
-    })
-
-  cy.writeFile('cypress/fixtures/userData/TCPdata.json', { TcpProfileName:Tcpname,TcpProfileNameSub: hi })
+   cy.writeFile('cypress/fixtures/userData/TCPdata1.json', { TcpProfileNameSub: hi })
   function getRandomName() {
       name = "";
       var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
