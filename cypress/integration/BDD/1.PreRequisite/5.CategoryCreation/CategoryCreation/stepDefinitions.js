@@ -58,10 +58,11 @@ Before(() => {
   });
 
 Given('Login into Mobiquity Portal as System admin Maker', function(){
-    cy.launchURL(Cypress.env('Adminurl'))
-    cy.login(this.data1.sysAdmin1.sysAdminUser1, this.data1.sysAdmin1.sysAdminPwd1)
-    cy.wait(2000)
-    cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
+  cy.launchURL(Cypress.env('Adminurl'))
+  cy.SysAdminlogin()
+  cy.wait(2000)
+  cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
+
 })
 
 Given('Login into Mobiquity Portal as System admin Checker1', function () {
@@ -140,8 +141,8 @@ And('Click Category Management.',function(){
           cy.writeFile(DataFile, data)
         })
         cy.readFile(DataFile).then((data) => {
-          var Catcode = data.DomainCode
-          AddCategoryPage.getCategoryCode().type(Catcode,{force:true})
+          var Catcode = data.CategoryName
+          AddCategoryPage.getCategoryCode().select(Catcode,{force:true})
           data.CategoryCode =Catcode
           cy.writeFile(DataFile, data)
         })
