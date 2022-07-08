@@ -33,6 +33,11 @@ Before(() => {
   cy.fixture('authorizationProfile').then(function (data5) {
     this.data5 = data5;
   })
+  cy.fixture('authorizationProfile').then(function (data2) {
+    this.data2 = data2;
+  })
+
+
 
 });
 
