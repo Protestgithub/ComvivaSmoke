@@ -630,7 +630,7 @@ registerPage.getSecurityProfile().select(Profile, { force: true })
  })
  // registerPage.getMarketingProfile().select(this.data2.personalInfo.MarketProfile, { force: true })
   cy.readFile(RegulatoryMarketingProfile).then((data) => {
-   let Profile = data.MarketingProfileName
+   let Profile = data.MarketingProfileNameDistributer
    registerPage.getSecurityProfile().select(Profile, { force: true })
  })
  cy.wait(3000)
