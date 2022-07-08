@@ -59,7 +59,7 @@ var LoginId1
 const uuid12 = () => Cypress._.random(1e8)
 var LoginId1= uuid12()
 const Password='000000'
-const Password1 = 'Com@135'
+const Password1 = 'Com@1357'
 var loginId
 function getRandomName() {
 name = "";
@@ -178,10 +178,9 @@ And('Click on add profile select user type as subscriber and fill the details', 
   securityProfilePage.getUserRole().eq(0).click({ force: true })
 })
 And('Fill the details-Subscriber Profile Name', function () {
-  securityProfilePage.getEnterProfileName().type(getRandomName(), { force: true }),
   securityProfilePage.getCheckBox().contains(this.data6.checkBox3).click({ force: true }),
   recurse(
-    ()=>securityProfilePage.getEnterProfileName().clear().type(getRandomName(), { force: true }),
+    ()=>securityProfilePage.getEnterProfileName().type(getRandomName(), { force: true }),
     ()=>securityProfilePage.getCheckBox().contains(this.data6.checkBox3).click({ force: true }), 
     ()=>cy.wait(200),   
     (uniqueness) => (uniqueness) == securityProfilePage.getProfileNameExist().contains
@@ -190,9 +189,10 @@ And('Fill the details-Subscriber Profile Name', function () {
   )
 
   
-      cy.writeFile(SubProfileName, {SystemAdminSecuirtyProfile : getRandomName()})
-    
-})
+  cy.readFile(SubProfileName).then((data) => {
+    data.SystemAdminSecuirtyProfile = name
+    cy.writeFile(SubProfileName, data)
+  })
 And('Fill the details-PasswordRestrictios', function () {
   securityProfilePage.getMinPasswordLength().type(this.data6.minPasswordLength)
   securityProfilePage.getMaxPasswordLength().type(this.data6.maxPasswordLength)
