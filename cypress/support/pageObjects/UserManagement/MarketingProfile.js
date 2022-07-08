@@ -1,30 +1,12 @@
 class MarketingProfile {
     getAddMarketingProfile() {
         return cy.iframe().find('button[class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedSizeSmall MuiButton-sizeSmall"]')
-
-
-
     }
     getEditMArketingProfile() {
-
-
-
         return cy.iframe().find('.MuiTableCell-root.MuiTableCell-body.tableCell.MuiTableCell-alignLeft:nth-child(5) svg.MuiSvgIcon-root').eq(0)
-
-
-
     }
-
-
-
     getsave() {
-
-
-
         return cy.iframe().find('button.MuiButtonBase-root.MuiButton-root.MuiButton-contained.jss38.MuiButton-contained > span.MuiButton-label')
-
-
-
     }
     getMarketingProfileCode() {
         return cy.iframe().find('input[name="marketingProfileCode"]')
@@ -54,7 +36,7 @@ class MarketingProfile {
         return cy.iframe().find('[id="mui-component-select-marketingProfileDetails[0].walletType"]')
     }
     getMarketingProfileWalletType1() {
-        return cy.iframe().find('div .MuiList-root.MuiMenu-list.MuiList-padding [data-value="11"]')
+        return cy.iframe().find('div .MuiList-root.MuiMenu-list.MuiList-padding [data-value="12"]')
     }
     getMarketingProfileGrade() {
         return cy.iframe().find('[id="mui-component-select-marketingProfileDetails[0].gradeCode"]')
@@ -66,8 +48,9 @@ class MarketingProfile {
         return cy.iframe().find('[id="mui-component-select-marketingProfileDetails[0].instrumentLevelTCP"]')
     }
     getMarketingProfileInstrumentTCP1() {
-        return cy.iframe().find('div .MuiList-root.MuiMenu-list.MuiList-padding [data-value="TCP2206232208.003910"]')
+        return cy.iframe().find('div .MuiList-root.MuiMenu-list.MuiList-padding')
     }
+    
     getMarketingProfileAddBtn() {
         return cy.iframe().find('button[class="MuiButtonBase-root MuiButton-root MuiButton-contained jss38 MuiButton-contained"]')
     }
@@ -78,52 +61,28 @@ class MarketingProfile {
         return cy.iframe().find('button[id="search-btn"]')
     }
     getMarketingProfileWalletType2() {
-
-
-
         return cy.iframe().find('div .MuiList-root.MuiMenu-list.MuiList-padding [data-value="12"]')
-
-
-
     }
-getMarketingProfileAddBtn1(){
+    getMarketingProfileAddBtn1(){
         return cy.iframe().find('button[class="MuiButtonBase-root MuiButton-root MuiButton-contained jss79 MuiButton-contained"]')
-
-}
-
-
-    getMarketingProfileGrade2() {
-
-
-
-        return cy.iframe().find('div .MuiList-root.MuiMenu-list.MuiList-padding [data-value="GRT"]')
-
-
-
     }
-
-
-
+    getMarketingProfileGrade2() {
+        return cy.iframe().find('div .MuiList-root.MuiMenu-list.MuiList-padding [data-value="GRT"]')
+    }
     getMarketingProfileInstrumentTCP2() {
-
-
-
         return cy.iframe().find('div .MuiList-root.MuiMenu-list.MuiList-padding')
-
-
-
     }
     getMarketingProfileInstrumentTCPWholesaler() {
         return cy.iframe().find('div .MuiList-root.MuiMenu-list.MuiList-padding [data-value="TCP2206232209.012989"]')
     }
 
-getMarketingProfileGradeWholesaler() {
+    getMarketingProfileGradeWholesaler() {
         return cy.iframe().find('div .MuiList-root.MuiMenu-list.MuiList-padding [data-value="GWS"]')
     }
-getMarketingProfileCategoryWholesaler() {
+    getMarketingProfileCategoryWholesaler() {
         return cy.iframe().find('div .MuiList-root.MuiMenu-list.MuiList-padding [data-value="WHS"]')
     }
- getMarketingProfileDomainWholesaler() {
+    getMarketingProfileDomainWholesaler() {
         return cy.iframe().find('div .MuiList-root.MuiMenu-list.MuiList-padding [data-value="DISTWS"]')
     }
 
