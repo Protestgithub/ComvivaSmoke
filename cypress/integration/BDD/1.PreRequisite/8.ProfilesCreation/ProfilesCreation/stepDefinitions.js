@@ -45,10 +45,12 @@ const securityProfilePage = new SecurityProfilePage()
 const authorizationProfilePage = new authorizationManagement()
 var RegulatoryFile = 'cypress/fixtures/userData/Regulatory&MarketingProfile.json'
 var SubProfileName = 'cypress/fixtures/profileData/Profile.json'
+var ProfileName = 'cypress/fixtures/profileData/Profile.json'
 const MarketingProfile1 = new MarketingProfile()
 const RegulatoryProfile1 = new RegulatoryProfile()
 const uid = () => Cypress._.random(0, 1e6)
 const id = uid()
+const ITCP="userData/TCPdata.json"
 var name
 var LoginId1
 const uuid12 = () => Cypress._.random(1e8)
@@ -183,13 +185,7 @@ When('Navigate to Security and click to select security profile', function () {
   welcomePage.getSecurityProfileLink().click({ force: true })
   securityProfilePage.getSecurityProfilePageTitle().should('have.text', this.data6.securityProfilePageTitle)
 })
-And('Click on add profile select user type as subscriber and fill the details', function () {
 
-  securityProfilePage.getAddProfile().click()
-  //securityProfilePage.getSelectSubUserTypeTab().click({ force: true })
- // securityProfilePage.getSelectSubUserTypeTab().focused()
-  securityProfilePage.getUserRole().eq(1).click({ force: true })
-})
 And('Fill the details-Subscriber Profile Name', function () {
   securityProfilePage.getEnterProfileName().type(getRandomName(), { force: true }),
   securityProfilePage.getCheckBox().contains(this.data6.checkBox3).click({ force: true }),
@@ -854,7 +850,6 @@ authorizationProfilePage.getProfileDoneButton().click({ force: true })
 
 })
 //------------------------------  REGULATORY PROFILE--------------------------------------------
-
 When('Navigate to UserManagement And Click on Regulatory Profile', function () {
 
   welcomePage.getUserManagementOption().scrollIntoView()
@@ -918,8 +913,12 @@ And('Add Marketing Profile', function () {
   MarketingProfile1.getMarketingProfileWalletType1().click()
   MarketingProfile1.getMarketingProfileGrade().click()
   MarketingProfile1.getMarketingProfileGrade1().click()
-  MarketingProfile1.getMarketingProfileInstrumentTCP().click()
-  MarketingProfile1.getMarketingProfileInstrumentTCP1().click()
+  cy.fixture(ITCP).then((user)=>{
+    var SITCP=user.TcpProfileNameSub
+    cy.log(SITCP)
+    MarketingProfile1.getMarketingProfileInstrumentTCP().click()
+    MarketingProfile1.getMarketingProfileInstrumentTCP1().contains(SITCP).click()
+  })
   MarketingProfile1.getMarketingProfileAddBtn().click()
   cy.wait(3000)
   cy.readFile(RegulatoryFile).then((data) => {
@@ -950,8 +949,12 @@ And('Add Marketing Profile Wholesaler', function () {
   MarketingProfile1.getMarketingProfileWalletType1().click()
   MarketingProfile1.getMarketingProfileGrade().click()
   MarketingProfile1.getMarketingProfileGradeWholesaler().click()
-  MarketingProfile1.getMarketingProfileInstrumentTCP().click()
-  MarketingProfile1.getMarketingProfileInstrumentTCPWholesaler().click()
+  cy.fixture(ITCP).then((user)=>{
+    var WITCP=user.TcpProfileName
+    cy.log(WITCP)
+    MarketingProfile1.getMarketingProfileInstrumentTCP().click()
+    MarketingProfile1.getMarketingProfileInstrumentTCP1().contains(WITCP).click()
+  })
   MarketingProfile1.getMarketingProfileAddBtn1().click()
   cy.wait(3000)
   cy.readFile(RegulatoryFile).then((data) => {
