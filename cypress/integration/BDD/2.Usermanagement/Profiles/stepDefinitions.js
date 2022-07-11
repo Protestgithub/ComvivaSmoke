@@ -109,7 +109,7 @@ And('Under Actions tab click on Modify Regulatory Profile icon and Enter Profile
   cy.wait(3000)
   RegulatoryProfile1.getmodifyregulatoryprofile().eq(0).click({ force: true })
   RegulatoryProfile1.getregulatoryprofilename().clear()
-  cy.RPRandomName()
+  cy.RPRandomName1()
 
 })
 
