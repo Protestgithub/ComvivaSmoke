@@ -98,7 +98,7 @@ And   Click on Add New Button
 Then  Enter required Fields for Subscriber domain
 And  Click on Create Button
 Then Enter all required amount and count for Subscriber domain
-#Then Verify Success Message Subscriber domain
+Then Verify Success Message Subscriber domain
 When Navigate to Transfer Control Profile and Click on Manage Transfer Level TCP
 And Click on Instrument Level TCP1
-#Then Verify Add Intiation Message for Subscriber domain
+Then Verify Add Intiation Message for Subscriber domain
