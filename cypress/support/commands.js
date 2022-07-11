@@ -508,6 +508,24 @@ Cypress.Commands.add('RPRandomName', () => {
         return name;
     }
 })
+
+Cypress.Commands.add('RPRandomName1', () => {
+    let hi = getRandomName()
+    RegulatoryProfile1.getregulatoryprofilename().type(hi, { force: true })
+     cy.readFile(RegulatoryFile).then((data) => {
+        data.RegulatoryProfileName = hi
+        cy.writeFile(RegulatoryFile, data)
+        })
+       function getRandomName() {
+        name = "";
+        var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+        for (var i = 0; i < 5; i++)
+            name += possible.charAt(Math.floor(Math.random() * possible.length));
+        return name;
+    }
+})
+
+
 Cypress.Commands.add('MPRandomName', () => {
     let hi = getRandomName()
     MarketingProfile1.getMarketingProfileName().type(hi, { force: true })
