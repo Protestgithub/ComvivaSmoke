@@ -13,6 +13,29 @@ getsubmitbttnTransferrule(){
     return cy.iframe().find("#o2cApproval1_displayTransactionDetails_button_submit")
 
 }
+getTransferRule(){
+
+    return cy.iframe().find('[name="confirm"] .wwFormTableC>tbody>tr','{force:true}').each(($row=>{
+
+      cy.wrap($row).within(function(){
+
+          cy.get('td').each(($el=>{
+
+              cy.log($el.text())
+
+              if($el.text()==this.data01.AddGrades.gradeCode){
+
+                  cy.get('a').click()
+
+              }
+
+          }))
+         })
+
+  }))
+
+}
+
 getApprovalTransferrule(){
 
     return cy.iframe().find("#o2cApproval1_displayTransactionDetails_button_approve")
