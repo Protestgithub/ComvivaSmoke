@@ -52,7 +52,7 @@ class MarketingProfile {
     }
     
     getMarketingProfileAddBtn() {
-        return cy.iframe().find('button[class="MuiButtonBase-root MuiButton-root MuiButton-contained jss38 MuiButton-contained"]')
+        return cy.iframe().find('div[class="jss36 jss41"] button[class="MuiButtonBase-root MuiButton-root MuiButton-contained jss38 MuiButton-contained"]')
     }
     getSearchProfilecode() {
         return cy.iframe().find('input[id="profileCode"]')
@@ -64,7 +64,7 @@ class MarketingProfile {
         return cy.iframe().find('div .MuiList-root.MuiMenu-list.MuiList-padding [data-value="12"]')
     }
     getMarketingProfileAddBtn1(){
-        return cy.iframe().find('button[class="MuiButtonBase-root MuiButton-root MuiButton-contained jss79 MuiButton-contained"]')
+                return cy.iframe().find('div[class="jss77 jss82"] button[class="MuiButtonBase-root MuiButton-root MuiButton-contained jss79 MuiButton-contained"]')
     }
     getMarketingProfileGrade2() {
         return cy.iframe().find('div .MuiList-root.MuiMenu-list.MuiList-padding [data-value="GRT"]')
