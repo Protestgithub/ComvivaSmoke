@@ -67,10 +67,11 @@ const filenameTCP = 'userData/TCPdata.json'
 const filenameTCP1 = 'userData/TCPdata1.json'
 
 const CustTCPdata = 'userData/CustTCPdata.json'
+const CustTCPdata1= 'userData/CustTCPdata1.json'
 const fileRegulatoryProfile = 'userData/Regulatory&MarketingProfile.json'
 var Tcpname
 var Tcpname1
-var TcpnameSub
+var TcpnameSub,TcpnameSub1
 var RName
 
 
@@ -451,7 +452,7 @@ Then('Verify Success Message', function () {
   })
 })  
 Then('Verify Success Message Subscriber domain', function () {
-  cy.fixture(filenameTCP).then((user) => {
+  cy.fixture(filenameTCP1).then((user) => {
     TcpnameSub = user.TcpProfileNameSub
     cy.log(TcpnameSub)
     tcpPage.getsucessmessage().should("contain", this.data5.confimationMessage.successfulTcpIntiation + TcpnameSub + this.data5.confimationMessage.successpart2Sub)
@@ -465,6 +466,72 @@ And('Verify Add Intiation Message for Master', function () {
     cy.wait(3000)
   })
 })  
+
+And('Click on New Button for Subscriber', function () {
+
+  tcpPage.getNew().click({ force: true })
+  tcpPage.getprovider().select(this.data5.TransferControlProfile.Provider, { force: true })
+  tcpPage.getdomain().select(this.data5.TransferControlProfile.Domain1, { force: true })
+  tcpPage.getcategory().select(this.data5.TransferControlProfile.Category1, { force: true })
+  cy.fixture(fileRegulatoryProfile).then((user) => {
+    RName = user.RegulatoryProfileName
+    cy.log(RName)
+    tcpPage.getregulatorytype().select(RName, { force: true })
+  })
+  cy.TCPMasRandomNameSub()
+    tcpPage.getdescription().type(this.data5.TransferControlProfile.Description)
+  tcpPage.getadd().click({ force: true })
+  cy.wait(3000)
+  const uuid = () => Cypress._.random(1e3)
+  number = uuid()
+  tcpPage.getAmount().each((e1, index, list) => {1
+    cy.wrap(e1).type(number)
+  })
+  tcpPage.getcountmaster().each((e1, index, list) => {
+    cy.wrap(e1).type(number)
+  })
+  tcpPage.getusermaxbalanceMaster().type(this.data5.TransferControlProfile.UserMaxBal)
+  tcpPage.getNextEdit().click({ force: true })
+  tcpPage.getConfirmEdit().click({ force: true })
+
+})
+
+And('Verify Success Message for creation of TCP through Master admin1', function () {
+  cy.fixture(CustTCPdata1).then((user) => {
+    TcpnameSub1= user.CustTCPProfileNameSub
+    cy.wait(2000)
+    cy.log(TcpnameSub1)
+    tcpPage.getReqtoAddMaster().should("have.text", this.data5.confimationMessage.addIntiationPart1Master + TcpnameSub1 + this.data5.confimationMessage.addIntiationPart3)
+  })
+})
+
+And('Verify Add Intiation Message for Master1', function () {
+  cy.fixture(CustTCPdata1).then((user) => {
+    TcpnameSub1 = user.CustTCPProfileNameSub
+    cy.log(TcpnameSub1)
+    tcpPage.getReqtoAddIntiationMaster().should("contain", this.data5.confimationMessage.sucessMasterTcpIntiation + TcpnameSub1 + this.data5.confimationMessage.successpart2Sub)
+    cy.wait(3000)
+  })
+})
+
+Then('Approve the TCP1', function () {
+  cy.fixture(CustTCPdata1).then((user) => {
+    TcpnameSub1 = user.CustTCPProfileNameSub
+    cy.log(TcpnameSub1)
+    })
+  tcpPage.getinstrumentlevelTCP().each(($row => {
+    cy.wrap($row).within(function () {
+      cy.get('td').each(($el => {
+        if ($el.text() == TcpnameSub1) {
+          cy.get('a').click({ force: true })
+
+        }
+      }))
+    })
+  }))
+  tcpPage.getApproveTCP1().click({ force: true })
+}) 
+
 
 //------------------------------  REGULATORY PROFILE--------------------------------------------
 
