@@ -54,9 +54,10 @@ const MarketingProfile1 = new MarketingProfile()
 const manageUsersPage = new manageUsers()
 const filenameTCP = 'userData/TCPdata.json'
 const filenameTCP1 = 'userData/TCPdata1.json'
-const CustTCPdata = 'userData/CustTCPdata.json'
+const CustTCPdata1 = 'userData/CustTCPdata1.json'
+cypress/support/TransferControlProfileCommand.js
 const fileRegulatoryProfile = 'userData/Regulatory&MarketingProfile.json'
-var Tcpname, Tcpname1,TcpnameSub
+var Tcpname, Tcpname1,TcpnameSub,TcpnameSub1
 const Password1 = 'Com@135'
 var name
 let Sysfilelogin = 'cypress/fixtures/userData/SystemAdminLogin.json'
@@ -88,6 +89,16 @@ Cypress.Commands.add('TcpNameSub', (Text) => {
   })
 
 })
+Cypress.Commands.add('TcpNameSub1', (Text) => {
+
+  cy.fixture(CustTCPdata1).then((user) => {
+      TcpnameSub1 = user.CustTCPProfileNameSub
+      cy.log(TcpnameSub1)
+  })
+
+})
+
+
 Cypress.Commands.add('TcpName1', (Text) => {
 
     cy.fixture(CustTCPdata).then((user) => {
@@ -138,7 +149,7 @@ Cypress.Commands.add('TCPMasRandomName', () => {
 Cypress.Commands.add('TCPMasRandomNameSub', () => {
   let hi = "CustTCP" +"" +getRandomName() + timestamp
   tcpPage.getprofilename().type(hi, { force: true })
-  cy.writeFile('cypress/fixtures/userData/CustTCPdata.json', { CustTCPProfileNameSub: hi })
+  cy.writeFile('cypress/fixtures/userData/CustTCPdata1.json', { CustTCPProfileNameSub: hi })
   function getRandomName() {
       name = "";
       var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
