@@ -55,17 +55,9 @@ Then Verify Error Message for Domain
 
 Scenario:To verify that the instrument level TCP cannot be deleted if any user is associated with it.
 Given Login into Mobiquity Portal as System admin Maker
-When  Navigate to User Management and Click on Marketing Profile
-Then Click on Edit Marketing Profile and associate the created TCP with Marketing Profile
 When  Navigate to Transfer Control Profile and Click on Manage Transfer Level TCP
 Then Click on delete icon
 Then Verify Error Message for deletion
-Then Logout
-Given Login into Mobiquity Portal as another System admin Checker1 after logout
-When Navigate to UserManagement And Click on Regulatory Profile
-And click on Add Regulatory Profile and Enter Profile Code and Profile Name
-Then Click On Save Regulatory Profile
-
 
 
 # Author: Kalyani M
