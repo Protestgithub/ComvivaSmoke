@@ -904,7 +904,7 @@ And('Add Marketing Profile', function () {
   )
   MarketingProfile1.getAddMarketingProfile().click()
   MarketingProfile1.getMarketingProfileCode().type(id, { force: true })
-  cy.MPRandomName()
+  cy.MPRandomName1()
   MarketingProfile1.getMarketingProfileDomainName().click()
   MarketingProfile1.getMarketingProfileDomainName1().click()
   MarketingProfile1.getMarketingProfileCategoryName().click()
@@ -924,7 +924,7 @@ And('Add Marketing Profile', function () {
   MarketingProfile1.getMarketingProfileAddBtn().click()
   cy.wait(3000)
   cy.readFile(RegulatoryFile).then((data) => {
-    data.MarketingProfileCode = id
+    data.MarketingProfileCodeDistributer = id
     cy.writeFile(RegulatoryFile, data)
   })
   RegulatoryProfile1.getrpsuccess().contains(this.data2.Marketing)
@@ -940,7 +940,7 @@ And('Add Marketing Profile Wholesaler', function () {
   )
   MarketingProfile1.getAddMarketingProfile().click()
   MarketingProfile1.getMarketingProfileCode().type(LoginId1, { force: true })
-  cy.MPRandomName1()
+  cy.MPRandomName()
   MarketingProfile1.getMarketingProfileDomainName().click()
   MarketingProfile1.getMarketingProfileDomainWholesaler().click()
   MarketingProfile1.getMarketingProfileCategoryName().click()
@@ -960,7 +960,7 @@ And('Add Marketing Profile Wholesaler', function () {
   MarketingProfile1.getMarketingProfileAddBtn1().click()
   cy.wait(3000)
   cy.readFile(RegulatoryFile).then((data) => {
-    data.MarketingProfileCodeDistributer = LoginId1
+    data.MarketingProfileCode = LoginId1
     cy.writeFile(RegulatoryFile, data)
   })
   RegulatoryProfile1.getrpsuccess().contains(this.data2.Marketing)
