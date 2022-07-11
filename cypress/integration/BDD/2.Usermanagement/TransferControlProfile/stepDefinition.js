@@ -24,8 +24,8 @@ const uuid = () => Cypress._.random(0, 1e6)
 const id = uuid()
 const filenameTCP = 'userData/TCPdata.json'
 const CustTCPdata = 'userData/CustTCPdata.json'
-const filenameTCP = 'userData/TCPdat1a.json'
-const CustTCPdata = 'userData/CustTCPdata1.json'
+const filenameTCP1 = 'userData/TCPdata1.json'
+const CustTCPdata1 = 'userData/CustTCPdata1.json'
 const fileRegulatoryProfile = 'userData/Regulatory&MarketingProfile.json'
 var Tcpname
 var Tcpname1,TcpnameSub,TcpnameSub1
