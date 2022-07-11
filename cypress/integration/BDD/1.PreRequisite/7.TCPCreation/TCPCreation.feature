@@ -41,6 +41,32 @@ Then Verify Success Message for creation of TCP through Master admin
 
 # Author: Kalyani M
 # Last Updated:
+# Comments : View
+# Test Case_ID : TC_23
+@prerequisite
+
+Scenario:To verify that master is able to add initiate and  customer level TCP.
+Given Login into Mobiquity Portal as Super admin Maker
+When  Navigate to Transfer Control Profile
+And Click on New Button for Subscriber
+And Verify Add Intiation Message for Master1
+
+# Author: Kalyani M
+# Last Updated:
+# Comments : View
+# Test Case_ID : TC_23
+#
+@prerequisite
+
+Scenario:To verify that master admin is able to Approve the customer level TCP..
+Given Login into Mobiquity Portal as Super admin Checker
+When  Navigate to Transfer Control Profile
+Then Approve the TCP1
+Then Verify Success Message for creation of TCP through Master admin1
+
+
+# Author: Kalyani M
+# Last Updated:
 # Comments  :
 # Test Case_ID : TC_24
 # 
