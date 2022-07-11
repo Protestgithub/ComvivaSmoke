@@ -24,9 +24,11 @@ const uuid = () => Cypress._.random(0, 1e6)
 const id = uuid()
 const filenameTCP = 'userData/TCPdata.json'
 const CustTCPdata = 'userData/CustTCPdata.json'
+const filenameTCP = 'userData/TCPdat1a.json'
+const CustTCPdata = 'userData/CustTCPdata1.json'
 const fileRegulatoryProfile = 'userData/Regulatory&MarketingProfile.json'
 var Tcpname
-var Tcpname1
+var Tcpname1,TcpnameSub,TcpnameSub1
 var RName
 
 
@@ -90,6 +92,12 @@ Given('Login into Mobiquity Portal as Super admin Maker', function () {
 Given('Login into Mobiquity Portal as Super admin Checker', function () {
   cy.launchURL(Cypress.env('Adminurl'))
   cy.login(this.data1.masteradminchecker.sysAdminUser1, this.data1.masteradminchecker.sysAdminPwd1)
+  cy.wait(2000)
+  cy.checkWelcomeText(this.data1.superadminc.superadminchecker)
+})
+
+Given('Login into Mobiquity Portal as Super admin Checker after Logout', function () {
+  cy.loginAgain(this.data1.masteradminchecker.sysAdminUser1, this.data1.masteradminchecker.sysAdminPwd1)
   cy.wait(2000)
   cy.checkWelcomeText(this.data1.superadminc.superadminchecker)
 })
