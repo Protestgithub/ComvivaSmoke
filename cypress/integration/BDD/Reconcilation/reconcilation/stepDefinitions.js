@@ -80,6 +80,7 @@ Given('Login into Mobiquity Portal as System admin Maker', function () {
         cy.getprovider()
     })
     ReconPage.getsubmit().click({ force: true })
+    cy.wait(5000)
     pageLogin.getiFrame()      
     ReconPage.getmismatch().within(function(){
     ReconPage.getmismatchvalue().should("contain","No Mismatch found")
