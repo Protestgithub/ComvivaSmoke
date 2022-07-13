@@ -154,7 +154,7 @@ And('Enter all the required subscriber details', function () {
   )
   cy.writeFile(churnSubRegistration, { churnSubscriberRegistration: mobile })
 
-  cy.OTP()
+  cy.OTP(Cypress.env('apiBaseURL'))
 
   //---------------------------------------------    
   registerPage.getAdressLine1().type(this.data2.subPersonalInfo.addressLine1, { force: true })
@@ -283,7 +283,7 @@ And('Enter all the required subscriber details using Churned MSISDN', function (
   registerPage.getAdressLine1().click({ force: true })
 
 
-  cy.OTP()
+  cy.OTP(Cypress.env('apiBaseURL'))
 
   //------------------------------------------------------------------------------------------------------------    
   registerPage.getAdressLine1().type(this.data2.subPersonalInfo.addressLine1, { force: true })
@@ -350,7 +350,7 @@ And('Enter all the required subscriber details', function () {
   cy.readFile(churnSubRegistration)
   cy.writeFile(churnSubRegistration, { churnSubscriberRegistration1: mobile })
 
-  cy.OTP()
+  cy.OTP(Cypress.env('apiBaseURL'))
 
   //---------------------------------------------    
   registerPage.getAdressLine1().type(this.data2.subPersonalInfo.addressLine1, { force: true })
