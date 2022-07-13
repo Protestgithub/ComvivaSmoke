@@ -1,7 +1,7 @@
 class BankingActivation
 {
-    getEnterCIFNumber(){
-        return cy.iframe().find('[class="mat-form-field-infix ng-tns-c78-0"]')
+     getEnterCIFNumber(){
+        return cy.iframe().find('#mat-input-0')
     }
     getSearchButton(){
         return cy.iframe().find('button[type="submit"]').eq(0).contains(' Search ')
