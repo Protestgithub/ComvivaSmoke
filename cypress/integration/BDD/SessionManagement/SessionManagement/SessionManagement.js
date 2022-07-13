@@ -82,31 +82,6 @@ And('Login into Mobiquity Portal as Subscriber1', function () {
     SubLogin = data.subscriberLoginId
     cy.login(SubLogin, this.data.subscriber.subpwd)  
   
-  cy.wait(2000)
-  cy.wait('@getPwd').then((interception) => {
-    let response = interception.response.body
-    const resValues = Object.values(response)
-    const serviceRequestID = resValues[0]
-    cy.log(serviceRequestID)
-    let url1 = (Cypress.env("apiURL")) + '/otpservice/internal/genotp/'
-    let getURL = url1.concat(serviceRequestID)
-    cy.request({
-      url: getURL,
-      headers: {
-        'Authorization': 'Basic YWRtaW46c2VjcmV0',
-        'Content-Type': 'application/json'
-      }
-    }).then((res) => {
-      let res1 = res.body
-      const res3 = Object.values(res1)
-      let OTP = res3[4]
-      var OTPArr = Array.from({ length: 6 }, (v, k) => k + 1)
-      cy.wrap(OTPArr).each((index) => {
-        APIPage.getOTPDailogbox1().eq(index - 1).type(OTP[index - 1])
-      })
-      APIPage.getVerifybttn1().click()
-    })
-  })
   cy.wait(10000)
 })
 })
