@@ -157,58 +157,47 @@ Then Click on add and confirm
 
     #######################   Authorization Profile Creation ##########################
 
+   
     # # # Author: Sudheer Baraker
     # # # Last Updated: 17/05/2022
     # # # Comments :
     # # # Scenario_ID : TC_149
     # # #
-@prerequisite
-
+ 
     Scenario: To verify that system admin should be able to add authorization profile
-        ### Subscriber ###
+        ### Subscriber M1S1 ###
         Given Login into Mobiquity Portal as System admin Maker
-        When  Select Authorization profile and add profile
-        And  select Subscriber user type and select user role
-        Then Fill all Details and Create Subscriber authorization profile
-        Then Logout
-        Given Login into Mobiquity Portal as another System admin User after logout
-        Then User approval for Authorization profile
+          When  Select Authorization profile and add profile
+          And  select Subscriber user type and select user role
+          Then Fill all Details and Create Subscriber authorization profile
+          Then Logout
+          Given Login into Mobiquity Portal as System admin Maker after Logout
+          Then User approval for Authorization profile
 
-        # #Administrator -- BusinessAdmin
-        When  Select Authorization profile and add profile
-        And  select BusinessAdmin user type and select user role
-        Then Fill all Details and Create BusinessAdmin authorization profile
-        Then Logout
-        Given Login into Mobiquity Portal as System admin User after Logout
-        Then User approval for Authorization profile
+        #Administrator -- BusinessAdmin
+      #
+          When  Select Authorization profile and add profile
+          And  select BusinessAdmin user type and select user role
+          Then Fill all Details and Create BusinessAdmin authorization profile
+          Then Logout
+          Given Login into Mobiquity Portal as System admin Maker after Logout
+          Then User approval for Authorization profile
 
         # # #Administrator -- CustomercareAdmin
-        When  Select Authorization profile and add profile
-        And  select CustomercareAdmin user type and select user role
-        Then Fill all Details and Create CustomercareAdmin authorization profile
-        Then Logout
-        Given Login into Mobiquity Portal as another System admin User after logout
+          When  Select Authorization profile and add profile
+          And  select CustomercareAdmin user type and select user role
+          Then Fill all Details and Create CustomercareAdmin authorization profile
+          Then Logout
+          Given Login into Mobiquity Portal as System admin Maker after Logout
+          Then User approval for Authorization profile
+
+        #Business -- Distributor
+          When Select Authorization profile and add profile
+            And  select Distributor user type and select user role
+          Then Fill all Details and Create Distributor authorization profile
+          Then Logout
+          Given Login into Mobiquity Portal as System admin Maker after Logout
         Then User approval for Authorization profile
-
-        
-        # #Business -- Agent
-        When  Select Authorization profile and add profile
-        And   select Agent user type and select user role
-        Then Fill all Details and Create Agent authorization profile
-        Then Logout
-        Given Login into Mobiquity Portal as System admin User after Logout
-        Then User approval for Authorization profile
-
-        #Business -- TelcoOperator
-        When  Select Authorization profile and add profile
-        And   select TelcoOperator user type and select user role
-        Then Fill all Details and Create TelcoOperator authorization profile
-        Then Logout
-        Given Login into Mobiquity Portal as another System admin User after logout
-        Then User approval for Authorization profile
-
-
-
 
 
 ################################### Regulatory and Marketing Profiles ###################################
