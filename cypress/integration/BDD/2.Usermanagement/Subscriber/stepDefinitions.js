@@ -95,7 +95,7 @@ Given('Login into Mobiquity Portal as Super admin Maker', function () {
 //DIST7779064594
 Given('Login into Mobiquity Portal as Business admin User', function () {
   cy.launchURL(Cypress.env('Adminurl'))
-  cy.launchURL(Cypress.env('Businessurl'))
+  cy.launchURL(Cypress.env('Adminurl')) + 'Business/'
   cy.wait(8000)
   cy.login(this.data1.businessAdmin.businessadminUser1, this.data1.businessAdmin.businessadminPwd1)
   cy.wait(10000)
