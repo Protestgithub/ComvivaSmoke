@@ -52,18 +52,17 @@ const uid = () => Cypress._.random(0, 1e6)
 const id = uid()
 const ITCP="userData/TCPdata.json"
 const ITCP1="userData/TCPdata1.json"
-var name
+var profName
 var LoginId1
 const uuid12 = () => Cypress._.random(1e8)
 LoginId1= uuid12()
 function getRandomName() {
-name = "";
+profName = "";
 var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 for (var i=0; i<5; i++)
-name += possible.charAt(Math.floor(Math.random() * possible.length));
-return name;
+profName += possible.charAt(Math.floor(Math.random() * possible.length));
+return profName;
 }
-
 
 
 
