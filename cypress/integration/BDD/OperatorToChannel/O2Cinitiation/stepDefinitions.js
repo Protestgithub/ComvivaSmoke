@@ -13,6 +13,18 @@ import TransferRulePage from '../../../../support/pageObjects/TransferRules/Tran
 import Approval from '../../../../support/pageObjects/TransferRules/Approval';
 
 
+import manageUsers from '../../../../support/pageObjects/UserManagement/manageUsers';
+import register from '../../../../support/pageObjects/UserManagement/register';
+import approvals from '../../../../support/pageObjects/UserManagement/approvals';
+
+//----------------Object Declaration-----------------------------------------------------------------
+
+const registerPage = new register()
+const approvalPage = new approvals()
+const manageUsersPage = new manageUsers()
+
+
+
 //----------------Object Declaration-----------------------------------------------------------------
 
 const pageLogin = new loginPage()
@@ -163,6 +175,10 @@ And('Confirm the displayed Error Message', function () {
 })
 
 
+
+
+
+
 //------------------------------------- Likith-------------------------------------------------------
 When('Navigate to Operator to channel and click on O2C transfer initiate', function () {
 
@@ -178,16 +194,15 @@ When('Navigate to Operator to channel and click on O2C transfer initiate', funct
 
 And('Enter All the Mandatory Details', function () {
   cy.wait(3000)
-  //O2CTransferInitiatePage.getMSISDN().type(this.data5.O2CTransferInitiate.msisdn, { force: true })
   
-    cy.wait(2000)
-    var BBAFile ="cypress/fixtures/userData/BusinessUsersData.json"
-    var O2CFile= "cypress/fixtures/userData/O2Cdata.json"
-    cy.readFile(BBAFile).then((data) => {
-    var O2CMsisdn = data.registeredMobile
-    O2CTransferInitiatePage.getMSISDN().type(O2CMsisdn, {force: true})
-    data.O2CMsisdn1 =O2CMsisdn
-    cy.writeFile(O2CFile, data)
+  cy.wait(2000)
+  var BBAFile ="cypress/fixtures/userData/BusinessUsersData.json"
+  var O2CFile= "cypress/fixtures/userData/O2Cdata.json"
+  cy.readFile(BBAFile).then((data) => {
+  var O2CMsisdn = data.registeredMobile
+  O2CTransferInitiatePage.getMSISDN().type(O2CMsisdn, {force: true})
+  data.O2CMsisdn1 =O2CMsisdn
+  cy.writeFile(O2CFile, data)
 })
   O2CTransferInitiatePage.getTransferAmount().type(TransferAmount, { force: true })
   O2CTransferInitiatePage.getReferenceNumber().type(ReferenceNumber, { force: true })
@@ -207,6 +222,31 @@ Then('Click on submit and Confirm', function () {
   cy.wait(3000)
   cy.O2CTransactionWriteData()
 })
+//------------------------------------------------------------
+When ('Navigate to User Management and Click on manage user', function(){
+  welcomePage.getUserManagementOption().scrollIntoView()
+  welcomePage.getUserManagementOption().click()
+  welcomePage.getManageUsersLink().click()
+
+})
+
+And ('enter user mobile number and search', function(){
+  pageLogin.getiFrame()
+  manageUsersPage.getSearchUser().click({force: true})
+  var O2CFile= "cypress/fixtures/userData/O2Cdata.json"
+  cy.readFile(O2CFile).then((data) => {
+  var O2CMsisdn = data.O2CMsisdn1
+  manageUsersPage.getSearchUser().type(O2CMsisdn, {force:true})
+  
+  })
+  manageUsersPage.getSearchUserButton().click({force: true})
+
+})
+When('User Click on eye button', function(){
+  manageUsersPage.getEyeIcon().click({force:true})
+  cy.wait(3000)
+ })
+
 And('click wallet Payment history.', function () {
   manageUsersPage.getWalletHistory().contains("Wallet Payment History").click({ force: true })
 })
@@ -253,32 +293,30 @@ When('Navigate to Operator to channel and click on O2C transfer Approval2', func
   cy.wait(2000)
   transferruleapprovalpage.getApprovalTransferrule().click({ force: true })
 })
-      
+var O2CMsisdn
       And('Enter All the Mandatory Details', function(){
         cy.wait(3000)
-        //O2CTransferInitiatePage.getMSISDN().type(this.data5.O2CTransferInitiate.msisdn, { force: true })
-        
-          cy.wait(2000)
-          var BBAFile ="cypress/fixtures/userData/BusinessUsersData.json"
-          var O2CFile= "cypress/fixtures/userData/O2Cdata.json"
-          cy.readFile(BBAFile).then((data) => {
-          var O2CMsisdn = data.registeredMobile
-          O2CTransferInitiatePage.getMSISDN().type(O2CMsisdn, {force: true})
-          data.O2CMsisdn1 =O2CMsisdn
-          cy.writeFile(O2CFile, data)
+        cy.wait(2000)
+        var BBAFile ="cypress/fixtures/userData/BusinessUsersData.json"
+        var O2CFile= "cypress/fixtures/userData/O2Cdata.json"
+        cy.readFile(BBAFile).then((data) => {
+         O2CMsisdn = data.registeredMobile
+        O2CTransferInitiatePage.getMSISDN().type(O2CMsisdn, {force: true})
+        data.O2CMsisdn1 =O2CMsisdn
+        cy.writeFile(O2CFile, data)
       })
               O2CTransferInitiatePage.getTransferAmount().type(TransferAmount, {force: true})
         O2CTransferInitiatePage.getReferenceNumber().type(ReferenceNumber, {force: true})
         O2CTransferInitiatePage.getType().select(this.data5.O2CTransferInitiate.type, {force: true})
         O2CTransferInitiatePage.getNumber().type(number, {force: true})
         O2CTransferInitiatePage.getRemarks().type(getRandomName(), {force: true})
-        cy.writeFile(filename,{ msidnValue:this.data5.O2CTransferInitiate1.msisdn1,TransferAmt:TransferAmount, RefNum:ReferenceNumber} )
+        cy.writeFile(filename,{ msidnValue:O2CMsisdn,TransferAmt:TransferAmount, RefNum:ReferenceNumber} )
 
 
       
       })
       
-      Then('Click on submit and Confirm', function(){
+      Then('Click on submit and Confirm.', function(){
       
         O2CTransferInitiatePage.getSubmitButton().click({force: true})
       
