@@ -38,8 +38,13 @@ import AddGrades from './pageObjects/GradeManagement/AddGrades';
 import ModifyGrade from './pageObjects/GradeManagement/ModifyGrades';
 import approvals from './pageObjects/UserManagement/approvals';
 import Reconcilation from './pageObjects/Reconcilation/Reconcilation';
+import manageUsers from './pageObjects/UserManagement/manageUsers';
+
+import O2CTransferInitiate from './pageObjects/OperatorToChannel/O2CTransferInitiate'
 
 //-------------------------Object Declaration----------------------------------------------------------
+const O2CTransferInitiatePage = new O2CTransferInitiate()
+const manageUsersPage = new manageUsers()
 const ModifyGradePage = new ModifyGrade()
 const pageLogin = new loginPage()
 const welcomePage = new homePage()
@@ -654,8 +659,9 @@ Cypress.Commands.add('O2CTransactionWriteData', () => {
         let b = a[1].trim()
         cy.log(b)
         cy.readFile(O2Cfile).then((data) => {
-                      let q = data.O2CMsisdn1
-            cy.writeFile(O2Cfile, {Mob:q,TransactionID:b})
+            data.TransactionID = b
+
+            cy.writeFile(O2Cfile, data)
           })
     }))
 })
@@ -667,6 +673,8 @@ Cypress.Commands.add('O2CTransactionReadData', () => {
         manageUsersPage.getSearchTransactionID().type(data, "{force:true}", "{enter}")
     }))
 })
+
+
 
 Cypress.Commands.add('getprovider', () => {
 
