@@ -29,6 +29,12 @@ class manageUsers {
     getconfirm() {
         return cy.iframe().find('#confirm')
     }
+     getWalletHistory(){
+        return cy.iframe().find('.mat-tab-label-content')
+    }
+  getSearchTransactionID(){
+        return cy.iframe().find('#search-transaction-id')
+    }
     getsucessSYS() {
         return cy.iframe().find('p.text-center')
     }
