@@ -421,7 +421,7 @@ Cypress.Commands.add('OTP',(apiURL) => {
         const resValues = Object.values(response)
         const serviceRequestID = resValues[0]
         cy.log(serviceRequestID)
-    let url1 = apiURL
+    let url1 = apiURL + '/otpservice/internal/genotp/'
         let getURL = url1.concat(serviceRequestID)
         cy.request({
             url: getURL,
