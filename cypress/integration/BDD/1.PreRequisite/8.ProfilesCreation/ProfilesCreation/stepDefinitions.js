@@ -789,7 +789,7 @@ And('select Distributor user type and select user role', function () {
   // cy.wait(3000)
   authorizationProfilePage.getBusinessType().click({ force: true })
   authorizationProfilePage.getBusinessType().focused()
-  authorizationProfilePage.getBusinessATMRole().eq(5).click({ force: true })
+  authorizationProfilePage.getBusinessATMRole().eq(10).click({ force: true })
 
 })
 
