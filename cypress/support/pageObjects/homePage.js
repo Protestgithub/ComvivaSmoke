@@ -251,5 +251,10 @@ class homePage {
 {
     return cy.get('[data-testid="test-TCPROFILE"]')
 }
+getBankingChannelActivation() {
+
+        return cy.get('[title="Banking Channel Activation"]')
+
+    }
 }
 export default homePage
