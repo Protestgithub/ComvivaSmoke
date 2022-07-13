@@ -17,18 +17,6 @@ import register from '../../../../../support/pageObjects/UserManagement/register
 import approvals from '../../../../../support/pageObjects/UserManagement/approvals';
 import manageUsers from '../../../../../support/pageObjects/UserManagement/manageUsers';
 import DomainFieldspage from '../../../../../support/pageObjects/DomainManagement/DomainFieldspage';
-import CircularJSON from 'circular-json';
-import Flatted from 'flatted';
-import TransferRulePage from '../../../../../support/pageObjects/TransferRules/TransferRulePage';
-import TransferControlProfile from '../../../../../support/pageObjects/TransferControlProfile';
-import TransactionCorrection from '../../../../../support/pageObjects/TransactionCorrection';
-import ErrorMessage from '../../../../../support/pageObjects/UserManagement/ErrorMessage';
-import walletManagement from '../../../../../support/pageObjects/WalletManagement/walletManagement';
-import AddGrades from '../../../../../support/pageObjects/GradeManagement/AddGrades';
-import ModifyGrades from '../../../../../support/pageObjects/GradeManagement/ModifyGrades';
-import DeleteGrades from '../../../../../support/pageObjects/GradeManagement/DeleteGrades';
-import AddCategory from '../../../../../support/pageObjects/CategoryManagement/AddCategory';
-import SecurityProfilePage from '../../../../../support/pageObjects/SecurityProfile/SecurityProfilePage';
 import "../../../../../support/authourizationcommands"
 import authorizationManagement from '../../../../../support/pageObjects/AuthorizationProfileManagement/authorizationManagement';
 import RegulatoryProfile from '../../../../../support/pageObjects/UserManagement/RegulatoryProfile';
@@ -42,7 +30,7 @@ import MarketingProfile from '../../../../../support/pageObjects/UserManagement/
 const pageLogin = new loginPage()
 const welcomePage = new homePage()
 const domainPage = new DomainFieldspage()
-const uuid = () => Cypress._.random(1e2)
+const uuid = () => Cypress._.random(1e3)
 const uid = () => Cypress._.random(1e2)
 const id = () => Cypress._.random(1e2)
 var DomainName = uuid()
@@ -168,10 +156,10 @@ And('Enter Domain Name and Domain Code.',function(){
   cy.wait(3000)
  domainPage.getDomainName().type(this.data4.domainData.domainName+DomainName,{force:true})
  cy.writeFile(DataFile,{Domainname:this.data4.domainData.domainName+DomainName})
-
- domainPage.getDomainCode().type(this.data4.domainData.domainCode+code,{force:true})
+var ab =this.data4.domainData.domainCode+code
+ domainPage.getDomainCode().type(ab,{force:true})
  cy.readFile(DataFile).then((data) => {
-     data.DomainCode = this.data4.domainData.domainCode
+     data.DomainCode = ab
      cy.writeFile(DataFile, data)
    })
  domainPage.getDomainCategories().type(Category,{force:true})
