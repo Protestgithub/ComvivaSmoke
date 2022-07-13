@@ -27,9 +27,9 @@
     "Longitude": "88",
     "Parent": "DIST7777316210",
     "securityProfile8": "axs51s",
-    "authProfile8": "64222",
+    "authProfile8": "WholesalerDefault Profile",
     "ReguProfile": "FKYC",
-    "MarketProfile": "RTDefaultMP",
+    "MarketProfile": "WHSDefaultMP",
     "securityProfile1": "autoLogoutTime",
     "authProfile1": "FKYC",
     "modifyMob": "7788789756",
@@ -216,5 +216,5 @@
   "Sucess": "Success",
   "Marketing": "Marketing profile added successfully",
   "LockOutgoing":"All Outgoing Payments locked successfully",
-  "UnlockOutgoing":"All Outgoing Payments unlocked successfully"
+  "UnlockOutgoing":"umc.paymentsUnlocked"
 }
