@@ -107,12 +107,14 @@ And('Select MFS provider and Enter Reference number and Amount', function () {
   cy.getprovider()
   stockInitiationPage.getStockFrom().select(this.data10.stockInitiation.stockFrom, { force: true })
   stockInitiationPage.getReferenceNumber().type(mobile, { force: true })
-  stockInitiationPage.getRequestedAmount().type(mobile, { force: true })
+  stockInitiationPage.getRequestedAmount().type(amount, { force: true })
 })
 Then('click on Submit and Confirm button', function () {
   stockInitiationPage.getSubmitButton().click({ force: true })
   cy.wait(2000)
   stockInitiationPage.getConfirmButton().click({ force: true })
+  cy.wait(2000)
+
 })
 
 //----------------------------------------TC_76----------------------------------------------------
@@ -141,7 +143,7 @@ And('Select MFS provider and Enter reference number and amount', function () {
   cy.getprovider()
   stockInitiationPage.getStockFrom().select(this.data10.stockInitiation.stockFrom, { force: true })
   stockInitiationPage.getReferenceNumber().type(mobile, { force: true })
-  stockInitiationPage.getRequestedAmount().type(mobile, { force: true })
+  stockInitiationPage.getRequestedAmount().type(amount1, { force: true })
 })
 
 
