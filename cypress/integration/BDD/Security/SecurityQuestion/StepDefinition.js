@@ -9,6 +9,9 @@ import loginPage from '../../../../support/pageObjects/loginPage';
 
 import "../../../../support/commands";
 import securityQuestion from '../../../../support/pageObjects/SecurityQuestion/securityQuestion';
+import "../../../../support/SecurityQuestionCommands";
+
+
 
 import { should } from 'chai';
 
@@ -26,7 +29,11 @@ Before(() => {
     this.data1 = data1;
   })
 
-  cy.fixture('securitys').then(function (data2) {
+  cy.fixture('securitys').then(function (data4) {
+    this.data4 = data4;
+  })
+
+ cy.fixture('UserManagement').then(function (data2) {
     this.data2 = data2;
   })
 
@@ -81,6 +88,12 @@ And('User click on add questions and Enter question in the textbox', function ()
   cy.wait(2000)
   securityPage.getAddQuestion().click({ force: true })
   cy.RandomQuestions()
+  recurse(
+    () => cy.RandomQuestions(),
+    () => cy.wait(2000),
+    (uniqueness) => (uniqueness) == securityPage.getProfileNameExist().contains
+      (this.data3.questionpresent).should('be.visible'),
+  )
 })
 
 And('User click on Add', function () {
@@ -91,7 +104,7 @@ And('User click on Add', function () {
 Then('User click on save', function () {
   pageLogin.getiFrame()
   securityPage.getConfirmButton().click({ force: true })
-  securityPage.getMessage().should('contain.text', this.data3.addquestion)
+  securityPage.getMessage().contains(this.data3.addquestion)
   securityPage.getDoneButton().click({ force: true })
 
 })
@@ -111,7 +124,7 @@ And('User click on add questions and question is already existing', function () 
   pageLogin.getiFrame()
   cy.wait(2000)
   securityPage.getAddQuestion().click({ force: true })
-  securityPage.getSearchBox().type(this.data2.SecurityQuestion1, { force: true })
+  securityPage.getSearchBox().type(this.data4.SecurityQuestion1, { force: true })
 
 })
 
@@ -123,7 +136,7 @@ And('User click on Add Button', function () {
 Then('User click on save Button', function () {
   pageLogin.getiFrame()
   securityPage.getConfirmButton().click({ force: true })
-  securityPage.getMessage().should('contain.text', this.data3.questionpresent)
+  securityPage.getMessage().contains(this.data3.questionpresent)
   securityPage.getDoneButton().click({ force: true })
 })
 
@@ -143,6 +156,12 @@ And('User click on add questions button and Enter question in the textbox', func
   securityPage.getAddQuestion().click({ force: true })
   securityPage.getDefaultSystemLanguage().should('be.disabled')
   cy.RandomQuestion()
+  recurse(
+    () => cy.RandomQuestion(),
+    () => cy.wait(2000),
+    (uniqueness) => (uniqueness) == securityPage.getProfileNameExist().contains
+      (this.data3.questionpresent).should('be.visible'),
+  )
 })
 
 And('User click on Button Add', function () {
@@ -153,7 +172,7 @@ And('User click on Button Add', function () {
 Then('User click on Button save', function () {
   pageLogin.getiFrame()
   securityPage.getConfirmButton().click({ force: true })
-  securityPage.getMessage().should('contain.text', this.data3.addquestion)
+  securityPage.getMessage().contains(this.data3.addquestion)
   securityPage.getDoneButton().click({ force: true })
 })
 
@@ -170,6 +189,12 @@ And('User click on add questions Button', function () {
   cy.wait(2000)
   securityPage.getAddQuestion().click({ force: true })
   cy.RandomQuestion2()
+  recurse(
+    () => cy.RandomQuestion2(),
+    () => cy.wait(2000),
+    (uniqueness) => (uniqueness) == securityPage.getProfileNameExist().contains
+      (this.data3.questionpresent).should('be.visible'),
+  )
 })
 
 And('User click on other language and enter the questions other language in question textbox', function () {
@@ -178,7 +203,7 @@ And('User click on other language and enter the questions other language in ques
   securityPage.getAddLanguage().click({ force: true })
   cy.wait(2000)
   securityPage.getLanguageDropDowns().select(this.data3.languages.language1, { force: true })
-  securityPage.getOtherLanguageQuestion().type(this.data2.SecurityQuestion3, { force: true })
+  securityPage.getOtherLanguageQuestion().type(this.data4.SecurityQuestion3, { force: true })
 })
 
 And('Click on add Button', function () {
@@ -189,7 +214,7 @@ And('Click on add Button', function () {
 Then('Click on Confirm Button', function () {
   pageLogin.getiFrame()
   securityPage.getConfirm().click({ force: true })
-  securityPage.getOtherLanguageSuccess().should('contain.text', this.data3.addquestion)
+  securityPage.getOtherLanguageSuccess().contains(this.data3.addquestion)
   securityPage.getDoneOtherLanguage().click({ force: true })
 })
 //--------------Security Question END-------------------------------------------------------------------------------
