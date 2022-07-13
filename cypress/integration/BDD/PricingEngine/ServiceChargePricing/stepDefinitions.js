@@ -21,19 +21,30 @@ Before(() => {
   cy.fixture('login').then(function (data1) {
     this.data1 = data1;
   })
-  cy.fixture('UserManagement').then(function(data2)
-  {
-      this.data2 = data2;
+  cy.fixture('UserManagement').then(function (data2) {
+    this.data2 = data2;
   })
   cy.fixture('PricingEngine').then(function (data5) {
     this.data5 = data5;
   })
-  cy.fixture('PEngineRuleName').then(function (data6){
+  cy.fixture('BankManagement').then(function (data3) {
+    this.data3 = data3;
+  })
+  // cy.fixture('PEngineRuleName').then(function (data6){
 
-        this.data6=data6;
-    })
+  //       this.data6=data6;
+  //   })
 
 });
+
+var name
+function getRandomName() {
+  name = "";
+  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+  for (var i = 0; i < 5; i++)
+    name += possible.charAt(Math.floor(Math.random() * possible.length));
+  return name;
+}
 //----------------------------------------POC - CODE-------------------------------------------------------
 //---------------------------------------------System Admin Login----------------------------------------------------
 Given('Login into Mobiquity Portal as System admin Maker', function () {
@@ -58,10 +69,10 @@ Given('Login into Mobiquity Portal as another System admin Checker1 after logout
   cy.checkWelcomeText(this.data1.networkAdminWelcomeText)
 
 })
-Then('Logout', function(){
+Then('Logout', function () {
   welcomePage.getUserMenu().click()
   welcomePage.getLogoutButton().click()
-  welcomePage.getLogoutYesButton().click()  
+  welcomePage.getLogoutYesButton().click()
 })
 
 
@@ -73,10 +84,10 @@ When('Click on Pricing Engine', function () {
 And('Click on Pricing Caluclator', function () {
   cy.wait(3000)
   pricingEnginePage.getPricingCalculator().click({ force: true })
+  cy.wait(2000)
+  pricingEnginePage.getCashIN().click({ force: true })
 })
 And('Enter the party Details', function () {
-  cy.wait(2000)
-  pricingEnginePage.getFundTransfer().click()
   cy.wait(2000)
   pricingEnginePage.getSenderBankName().select(this.data3.BankName, { force: true })
   pricingEnginePage.getSenderSVAType().select(this.data5.SenderSVAtype, { force: true })
@@ -111,23 +122,39 @@ And('Click on the Service Policy', function () {
 Then('Set Status Active or Inactive', function () {
   cy.wait(2000)
   pricingEnginePage.getActiveOrInactive().click({ force: true })
-  pricingEnginePage.getActiveOrInactive1().click({ force: true })
+  //pricingEnginePage.getActiveOrInactive1().click({ force: true })
 })
 
 //-----TC_35---------------------------Search For service policy Rules------------------------------------------
 And('Click on the Search Tab & Search by Rule Name', function () {
   cy.wait(3000)
-  [18:55] Chethan Suresh
-pricingEnginePage.getSearchTab().type(this.data6.Rule)
+  pricingEnginePage.getSearchTab().type(this.data5.Rule)
   cy.wait(2000)
   pricingEnginePage.getSearchButton().click({ force: true })
 })
 Then('Verify Search results should give the list of rule name with Condition,status,Validity,rule & Policytype', function () {
-  pricingEnginePage.getRule().should('have.text', this.data5.Rule)
-  pricingEnginePage.getPolicy().should('have.text', this.data5.Policy)
-  pricingEnginePage.getStatus().should('contain.text', this.data5.Status)
-  pricingEnginePage.getValidity().should('contain.value', this.data5.Validity)
-  expect()
+  // pricingEnginePage.getRule().should('have.text', this.data5.Rule)
+  // pricingEnginePage.getPolicy().should('have.text', this.data5.Policy)
+  // pricingEnginePage.getStatus().should('contain.text', this.data5.Status)
+  // pricingEnginePage.getValidity().should('contain.value', this.data5.Validity)
+  // expect()
+  pricingEnginePage.getRule().then(data => {
+    let rule = data.text()
+    cy.log(rule)
+  })
+  pricingEnginePage.getPolicy().then(data => {
+    let policy = data.text()
+    cy.log(policy)
+  })
+  pricingEnginePage.getStatus().then(data => {
+    let status = data.text()
+    cy.log(status)
+  })
+  pricingEnginePage.getValidity().then(data => {
+    let validity = data.text()
+    cy.log(validity)
+  })
+
 })
 
 //-------TC_36----------------------------------------------------------------------------------------------
@@ -146,7 +173,7 @@ Then('Click on View Previous Version Link, Enter available Ver no and Proceed to
   cy.wait(2000)
   pricingEnginePage.getProceedButton().click()
   cy.wait(2000)
-  pricingEnginePage.getPolicyVersionLink().eq(1).should('have.data', this.data5.PolicyVersion)
+  pricingEnginePage.getPolicyVersionLink().should('contain.text', this.data5.PolicyVersion)
 
 })
 
@@ -163,7 +190,12 @@ And ('Click on the Service Policy',function(){
 And('Click on add new rule buttton,add New service charge and save the policy as draft', function () {
   cy.wait(3000)
   pricingEnginePage.getAddNewRuleBtn().click()
-  pricingEnginePage.getRuleName().type(getRandomName(), { force: true })
+  pricingEnginePage.getRuleName().type(name, { force: true })
+  var PricingEngine = 'cypress/fixtures/userData/PricingEngine.json'
+  cy.readFile(PricingEngine).then((data) => {
+    data.RuleName2 = name
+    cy.writeFile(PricingEngine, data)
+  })
   pricingEnginePage.getMinCharge().type(this.data5.MinCharge)
   pricingEnginePage.getMaxCharge().type(this.data5.MaxCharge)
   pricingEnginePage.getDatePickerStart().dblclick({ force: true })
@@ -171,11 +203,11 @@ And('Click on add new rule buttton,add New service charge and save the policy as
   pricingEnginePage.getCalanderStart().should('be.visible', { force: true })
   pricingEnginePage.getCurrentDateSelect().click({ force: true })
   pricingEnginePage.getDatePickerEnd().dblclick({ force: true })
- // ERM.getvalidTo().click()
+  //ERM.getvalidTo().click()
   //ERM.getnextyear().click()
-//  ERM.getnextmonth().click()
-//  ERM.getdates().click({force:true})
-pricingEnginePage.getMonthNamerStart().contains(this.data5.month).click({ force: true })//(this.data5.month,{force: true}).click() 
+  //ERM.getnextmonth().click()
+  //ERM.getdates().click({force:true})
+  pricingEnginePage.getMonthNamerStart().contains(this.data5.month).click({ force: true })//(this.data5.month,{force: true}).click() 
   pricingEnginePage.getYearNameStart().contains(this.data5.year).click({ force: true })
   pricingEnginePage.getCalanderDaysStart().filter(':visible').contains(this.data5.day).click({ force: true })
   pricingEnginePage.getWhoPays().select(this.data5.WhoPays, { force: true })
@@ -185,11 +217,12 @@ pricingEnginePage.getMonthNamerStart().contains(this.data5.month).click({ force:
   pricingEnginePage.getPricingPercntage().type(this.data5.Percentage)
   pricingEnginePage.getPricingFixedAmt().type(this.data5.FixedAmt)
   pricingEnginePage.getSaveDraftBtn().trigger('mouseover').click({ force: true })
+  pricingEnginePage.getSavedDraftPageTitle().should('have.text', this.data5.pageTitle)
 })
 Then('Check if user is able to view the saved draft', function () {
   cy.wait(2000)
 
-  pricingEnginePage.getPolicyName().eq(0).should('have.text', this.data5.RuleName1, { force: true })
+  pricingEnginePage.getPolicyName().eq(0).should('have.text', this.data5.RuleName2, { force: true })
 
 })
 
@@ -219,158 +252,150 @@ Then('clone the edited Service Policy Rule with other service Policy', function 
 
 //-------------------------------------------TC-27 View PricingEngine Module-----------------------------------------
 
-Then('System admin should be able to view pricing engine module on web.', function() {
+Then('System admin should be able to view pricing engine module on web.', function () {
   cy.wait(4000)
-   pricingEnginePage.getServiceChargeTab().should('be.visible', { force: true })
- })
- 
- //----------------------------------------Tc-28---------------------------------------------------------
- 
- Given ('Login into Mobiquity Portal as Super admin', function()
- {
- 
-   cy.launchURL(Cypress.env('Adminurl'))
-   cy.login(this.data1.masteradminmaker.sysAdminUser1, this.data1.masteradminmaker.sysAdminPwd1)
-   cy.wait(2000)
- })
- 
- Then('User other than System admin should not able to view pricing engine module on web.', function()
- {
-   cy.wait(4000)
-   welcomePage.getPricingEngineLink().should('not.exist');
- })
- 
- //------------------------------------------Tc-29---------------------------------------------------
- Then('User should be redirected to a new page for pricing engine.', function()
- {
-   cy.wait(4000)
-   pricingEnginePage.getServiceChargeHeader().should("have.text","Service Charge Policy")
- })
- 
- //----------------------------------------------Tc-30-------------------------------------------------
- And('Click on any service to add service charge.', function(){ 
- 
-   pricingEnginePage.getCashIN().click()
-   pricingEnginePage.getAddNewRuleBtn().click()
-   pricingEnginePage.getRuleName().type(getRandomName(), { force: true })
-   cy.writeFile(PEngineRuleName,{Rule:getRandomName()})
-   pricingEnginePage.getMinCharge().type(this.data5.MinCharge)
-   pricingEnginePage.getMaxCharge().type(this.data5.MaxCharge)
-   pricingEnginePage.getDatePickerStart().dblclick({ force: true })
-   cy.wait(2000)
-   pricingEnginePage.getCalanderStart().should('be.visible', { force: true })
-   pricingEnginePage.getCurrentDateSelect().click({ force: true })
-   pricingEnginePage.getDatePickerEnd().dblclick({ force: true })
-   //Added
+  pricingEnginePage.getServiceChargeTab().should('be.visible', { force: true })
+})
+
+//----------------------------------------Tc-28---------------------------------------------------------
+
+Given('Login into Mobiquity Portal as Super admin', function () {
+
+  cy.launchURL(Cypress.env('Adminurl'))
+  cy.login(this.data1.masteradminmaker.sysAdminUser1, this.data1.masteradminmaker.sysAdminPwd1)
+  cy.wait(2000)
+})
+
+Then('User other than System admin should not able to view pricing engine module on web.', function () {
+  cy.wait(4000)
+  welcomePage.getPricingEngineLink().should('not.exist');
+})
+
+//------------------------------------------Tc-29---------------------------------------------------
+Then('User should be redirected to a new page for pricing engine.', function () {
+  cy.wait(4000)
+  pricingEnginePage.getServiceChargeHeader().should("have.text", "Service Charge Policy")
+})
+
+//----------------------------------------------Tc-30-------------------------------------------------
+And('Click on any service to add service charge.', function () {
+
+  pricingEnginePage.getCashIN().click()
+  pricingEnginePage.getAddNewRuleBtn().click()
+  pricingEnginePage.getRuleName().type(getRandomName(), { force: true })
+  cy.writeFile(PEngineRuleName, { Rule: getRandomName() })
+  pricingEnginePage.getMinCharge().type(this.data5.MinCharge)
+  pricingEnginePage.getMaxCharge().type(this.data5.MaxCharge)
+  pricingEnginePage.getDatePickerStart().dblclick({ force: true })
+  cy.wait(2000)
+  pricingEnginePage.getCalanderStart().should('be.visible', { force: true })
+  pricingEnginePage.getCurrentDateSelect().click({ force: true })
+  pricingEnginePage.getDatePickerEnd().dblclick({ force: true })
+  //Added
   // ERM.getvalidTo().click()
-   //ERM.getnextyear().click()
-   //ERM.getnextmonth().click
-   //ERM.getdates().click({force:true})
-   pricingEnginePage.getMonthNamerStart().contains(this.data5.month).click({ force: true })//(this.data5.month,{force: true}).click() 
-   pricingEnginePage.getYearNameStart().contains(this.data5.year).click({ force: true })
+  //ERM.getnextyear().click()
+  //ERM.getnextmonth().click
+  //ERM.getdates().click({force:true})
+  pricingEnginePage.getMonthNamerStart().contains(this.data5.month).click({ force: true })//(this.data5.month,{force: true}).click() 
+  pricingEnginePage.getYearNameStart().contains(this.data5.year).click({ force: true })
   cy.wait(3000)
   pricingEnginePage.getCalanderDaysStart().filter(':visible').contains(this.data5.day).click({ force: true })
-   pricingEnginePage.getWhoPays().select(this.data5.WhoPays, { force: true })
-   pricingEnginePage.getSVAType().select(this.data5.SenderSVAtype, { force: true })
-   pricingEnginePage.getWhomeToPay().select(this.data5.WhomeToPay, { force: true })
-   pricingEnginePage.getChargeStatmentPricing().click({ force: true })
-   pricingEnginePage.getPricingPercntage().type(this.data5.Percentage)
-   pricingEnginePage.getPricingFixedAmt().type(this.data5.FixedAmt)
-   pricingEnginePage.getSaveDraftBtn().trigger('mouseover').click({ force: true })
- 
- })
- 
- 
- //---------------------------------------Tc-32---------------------------------------------------------
- And ('Click on commission', function()
- {
-   cy.wait(3000)
-    pricingEnginePage.getCommissionTab().dblclick({ force: true })
- })
- 
- And('select the service  to add commission profile for.', function()
- {
-   pricingEnginePage.getCashIN().click()
- })
- Then('User should be able to make commission profile with the same pricing engine module.', function()
- {
-   
-   
-   pricingEnginePage.getAddNewRuleBtn().click()
-   pricingEnginePage.getRuleName().type(getRandomName(), { force: true })
-   pricingEnginePage.getMinCharge().type(this.data5.MinCharge)
-   pricingEnginePage.getMaxCharge().type(this.data5.MaxCharge)
-   pricingEnginePage.getDatePickerStart().dblclick({ force: true })
-   cy.wait(2000)
-   pricingEnginePage.getCalanderStart().should('be.visible', { force: true })
-   pricingEnginePage.getCurrentDateSelect().click({ force: true })
-   pricingEnginePage.getDatePickerEnd().dblclick({ force: true })
-   //added
+  pricingEnginePage.getWhoPays().select(this.data5.WhoPays, { force: true })
+  pricingEnginePage.getSVAType().select(this.data5.SenderSVAtype, { force: true })
+  pricingEnginePage.getWhomeToPay().select(this.data5.WhomeToPay, { force: true })
+  pricingEnginePage.getChargeStatmentPricing().click({ force: true })
+  pricingEnginePage.getPricingPercntage().type(this.data5.Percentage)
+  pricingEnginePage.getPricingFixedAmt().type(this.data5.FixedAmt)
+  pricingEnginePage.getSaveDraftBtn().trigger('mouseover').click({ force: true })
+
+})
+
+
+//---------------------------------------Tc-32---------------------------------------------------------
+And('Click on commission', function () {
+  cy.wait(3000)
+  pricingEnginePage.getCommissionTab().dblclick({ force: true })
+})
+
+And('select the service  to add commission profile for.', function () {
+  pricingEnginePage.getCashIN().click()
+})
+Then('User should be able to make commission profile with the same pricing engine module.', function () {
+
+
+  pricingEnginePage.getAddNewRuleBtn().click()
+  pricingEnginePage.getRuleName().type(getRandomName(), { force: true })
+  pricingEnginePage.getMinCharge().type(this.data5.MinCharge)
+  pricingEnginePage.getMaxCharge().type(this.data5.MaxCharge)
+  pricingEnginePage.getDatePickerStart().dblclick({ force: true })
+  cy.wait(2000)
+  pricingEnginePage.getCalanderStart().should('be.visible', { force: true })
+  pricingEnginePage.getCurrentDateSelect().click({ force: true })
+  pricingEnginePage.getDatePickerEnd().dblclick({ force: true })
+  //added
   // ERM.getvalidTo().click()
   // ERM.getnextyear().click()
   // ERM.getnextmonth().click
- //  ERM.getdates().click({force:true})
-   //cy.selectYear(2023) 
-   //cy.selectMonth('January')
-   //cy.selectDay(17)  
+  //  ERM.getdates().click({force:true})
+  //cy.selectYear(2023) 
+  //cy.selectMonth('January')
+  //cy.selectDay(17)  
   pricingEnginePage.getMonthNamerStart().contains(this.data5.month).click({ force: true })//(this.data5.month,{force: true}).click() 
   pricingEnginePage.getYearNameStart().contains(this.data5.year).click({ force: true })
- cy.wait(3000)
- pricingEnginePage.getCalanderDaysStart().filter(':visible').contains(this.data5.day).click({ force: true })
-   pricingEnginePage.getWhoPays().select(this.data5.WhoPays, { force: true })
-   pricingEnginePage.getSVAType().select(this.data5.SenderSVAtype, { force: true })
-   pricingEnginePage.getWhomeToPay().select(this.data5.WhomeToPay, { force: true })
-   pricingEnginePage.getChargeStatmentPricing().click({ force: true })
-   pricingEnginePage.getPricingPercntage().type(this.data5.Percentage)
-   pricingEnginePage.getPricingFixedAmt().type(this.data5.FixedAmt)
-   pricingEnginePage.getSaveDraftBtn().trigger('mouseover').click({ force: true })
- 
- 
- })
- 
- And('Click on commission and select the service you want to add commission profile for', function()
- {
-   cy.wait(2000)
-   pricingEnginePage.getCashIN().click()
-   cy.wait(3000)
-   pricingEnginePage.getAddNewRuleBtn().click()
-   pricingEnginePage.getRuleName().type(this.data5.RuleName1, { force: true })
-   pricingEnginePage.getMinCharge().type(this.data5.MinCharge)
-   pricingEnginePage.getMaxCharge().type(this.data5.MaxCharge)
-   pricingEnginePage.getDatePickerStart().dblclick({ force: true })
-   cy.wait(2000)
-   pricingEnginePage.getCalanderStart().should('be.visible', { force: true })
-   pricingEnginePage.getCurrentDateSelect().click({ force: true })
-   pricingEnginePage.getDatePickerEnd().dblclick({ force: true })
-   //added
+  cy.wait(3000)
+  pricingEnginePage.getCalanderDaysStart().filter(':visible').contains(this.data5.day).click({ force: true })
+  pricingEnginePage.getWhoPays().select(this.data5.WhoPays, { force: true })
+  pricingEnginePage.getSVAType().select(this.data5.SenderSVAtype, { force: true })
+  pricingEnginePage.getWhomeToPay().select(this.data5.WhomeToPay, { force: true })
+  pricingEnginePage.getChargeStatmentPricing().click({ force: true })
+  pricingEnginePage.getPricingPercntage().type(this.data5.Percentage)
+  pricingEnginePage.getPricingFixedAmt().type(this.data5.FixedAmt)
+  pricingEnginePage.getSaveDraftBtn().trigger('mouseover').click({ force: true })
+
+
+})
+
+And('Click on commission and select the service you want to add commission profile for', function () {
+  cy.wait(2000)
+  pricingEnginePage.getCashIN().click()
+  cy.wait(3000)
+  pricingEnginePage.getAddNewRuleBtn().click()
+  pricingEnginePage.getRuleName().type(this.data5.RuleName1, { force: true })
+  pricingEnginePage.getMinCharge().type(this.data5.MinCharge)
+  pricingEnginePage.getMaxCharge().type(this.data5.MaxCharge)
+  pricingEnginePage.getDatePickerStart().dblclick({ force: true })
+  cy.wait(2000)
+  pricingEnginePage.getCalanderStart().should('be.visible', { force: true })
+  pricingEnginePage.getCurrentDateSelect().click({ force: true })
+  pricingEnginePage.getDatePickerEnd().dblclick({ force: true })
+  //added
   // ERM.getvalidTo().click()
-   //ERM.getnextyear().click()
-   //ERM.getnextmonth().click
+  //ERM.getnextyear().click()
+  //ERM.getnextmonth().click
   // ERM.getdates().click({force:true})
-   pricingEnginePage.getMonthNamerStart().contains(this.data5.month).click({ force: true })//(this.data5.month,{force: true}).click() 
+  pricingEnginePage.getMonthNamerStart().contains(this.data5.month).click({ force: true })//(this.data5.month,{force: true}).click() 
   pricingEnginePage.getYearNameStart().contains(this.data5.year).click({ force: true })
   cy.wait(3000)
   pricingEnginePage.getCalanderDaysStart().filter(':visible').contains(this.data5.day).click({ force: true })
   //pricingEnginePage.getSenderRole().select(this.data5.SenderRole, { force: true })
-   //pricingEnginePage.getSenderHierarchy().select(this.data5.SenderHierarchy, { force: true })
-   //cy.wait(2000)
+  //pricingEnginePage.getSenderHierarchy().select(this.data5.SenderHierarchy, { force: true })
+  //cy.wait(2000)
   // pricingEnginePage.getSenderGrade().select(this.data5.SenderGrade, { force: true })
-   pricingEnginePage.getSenderRoleCom().select(this.data5.SenderRole, { force: true })
-   pricingEnginePage.getSenderHierarchyCom().select(this.data5.SenderHierarchy, { force: true })
-   cy.wait(2000)
-   pricingEnginePage.getSenderGradeCom1().click({force:true})
-   cy.wait(2000)
-   pricingEnginePage.getSenderGradeCom2().click({force:true})
-   pricingEnginePage.getGradebtnclick().click({force:true})
-   cy.wait(2000)
-   pricingEnginePage.getWhoPays().select(this.data5.WhoPays, { force: true })
-   pricingEnginePage.getSVAType().select(this.data5.SenderSVAtype, { force: true })
-   pricingEnginePage.getWhomeToPay().select(this.data5.WhomeToPay, { force: true })
-   pricingEnginePage.getChargeStatmentPricing().click({ force: true })
-   pricingEnginePage.getPricingPercntage().type(this.data5.Percentage)
-   pricingEnginePage.getPricingFixedAmt().type(this.data5.FixedAmt)
-   pricingEnginePage.getSaveDraftBtn().trigger('mouseover')
-   pricingEnginePage.getSubmitPolicy().dblclick({force:true})
-   pricingEnginePage.getSubmitBtn().dblclick({force:true})
- })
- 
+  pricingEnginePage.getSenderRoleCom().select(this.data5.SenderRole, { force: true })
+  pricingEnginePage.getSenderHierarchyCom().select(this.data5.SenderHierarchy, { force: true })
+  cy.wait(2000)
+  pricingEnginePage.getSenderGradeCom1().click({ force: true })
+  cy.wait(2000)
+  pricingEnginePage.getSenderGradeCom2().click({ force: true })
+  pricingEnginePage.getGradebtnclick().click({ force: true })
+  cy.wait(2000)
+  pricingEnginePage.getWhoPays().select(this.data5.WhoPays, { force: true })
+  pricingEnginePage.getSVAType().select(this.data5.SenderSVAtype, { force: true })
+  pricingEnginePage.getWhomeToPay().select(this.data5.WhomeToPay, { force: true })
+  pricingEnginePage.getChargeStatmentPricing().click({ force: true })
+  pricingEnginePage.getPricingPercntage().type(this.data5.Percentage)
+  pricingEnginePage.getPricingFixedAmt().type(this.data5.FixedAmt)
+  pricingEnginePage.getSaveDraftBtn().trigger('mouseover')
+  pricingEnginePage.getSubmitPolicy().dblclick({ force: true })
+  pricingEnginePage.getSubmitBtn().dblclick({ force: true })
+})
