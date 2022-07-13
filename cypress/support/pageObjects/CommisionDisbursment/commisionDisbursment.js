@@ -51,6 +51,14 @@ class commisionDisbursment {
     getFileUploadSubmitButton() {
         return cy.iframe().find('.btn.waves-effect.waves-light.submitBtn')
     }
+    getDomain(){
+            return cy.iframe().find('select[id="domainCode"]')
+
+                }
+    getCategory(){
+            return cy.iframe().find('select[id="categoryCode"]')
+    
+            }
 
     getUploadCSVAlertSuccess() {
         return cy.iframe().find('.alert alert-success')
