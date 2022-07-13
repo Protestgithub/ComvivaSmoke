@@ -1,5 +1,4 @@
 
-
 {  
   "networkAdminWelcomeText" : "Network NWADM Admin",
     "loginPageTitle": "Welcome to Mobiquity Pay",
@@ -43,7 +42,7 @@
     "subscriber":{
       "sub1":"Beta88067",
       "subpwd":"000000",
-      "subpwd1":"Com@1357"
+      "subpwd1":"Com@135"
     },
     "superadminc": {
       "superadminchecker": "superadmin checker"
