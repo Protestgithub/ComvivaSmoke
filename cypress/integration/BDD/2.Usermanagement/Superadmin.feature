@@ -24,7 +24,7 @@ When User Click on eye button
 Scenario: To verify that Super admin is able to  view Lower_Hierarchy details 
 Given Login into Mobiquity Portal as Super admin Maker
 When Navigate to User Management and Click on manage user
-And Enter Mobile number or KYC number of subscriber user in search
+And Enter Mobile number or KYC number of System admin in Search
 When User Click on eye button
 
 # Author: Kalyani M
