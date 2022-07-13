@@ -248,6 +248,19 @@ Cypress.Commands.add('getrandomUserEmailID', () => {
     registerPage.getEmailID().type(emailId, { force: true })
 
 })
+
+Cypress.Commands.add('getrandomUserEmailID1', () => {
+
+    let num = Math.floor((Math.random() * 100))
+    let userID = getRandomName().concat(getRandomName() + num)
+    let emailId = userID.concat('@comviva.com')
+    registerPage.getLoginID().type(userID, { force: true })
+    registerPage.getEmailID().type(emailId, { force: true })
+        cy.readFile('cypress/fixtures/userData/SystemAdminLogin.json').then((data) => {
+        emailId = data.SYSEmailId
+        cy.writeFile(cypress/fixtures/userData/SystemAdminLogin.json, data)
+        })
+})
 Cypress.Commands.add('TcpName', (Text) => {
 
     cy.fixture(filenameTCP).then((user) => {
