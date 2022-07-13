@@ -32,7 +32,6 @@ import 'cypress-file-upload';
 import API from './pageObjects/API';
 import RegulatoryProfile from './pageObjects/UserManagement/RegulatoryProfile';
 import MarketingProfile from './pageObjects/UserManagement/MarketingProfile';
-import manageUsers from './pageObjects/UserManagement/manageUsers';
 import TransferControlProfile from './pageObjects/TransferControlProfile';
 import AddGrades from './pageObjects/GradeManagement/AddGrades';
 import ModifyGrade from './pageObjects/GradeManagement/ModifyGrades';
@@ -56,12 +55,11 @@ const approvalPage =new approvals
 const ReconPage = new Reconcilation()
 var pricingEnginePage = new PricingEnginePage()
 var dateUtils = new DateUtils()
-var name,SubMobile
+var SubMobile
 
 var RegulatoryFile = 'cypress/fixtures/userData/Regulatory&MarketingProfile.json'
 const RegulatoryProfile1 = new RegulatoryProfile()
 const MarketingProfile1 = new MarketingProfile()
-const manageUsersPage = new manageUsers()
 const filenameTCP = 'userData/TCPdata.json'
 const CustTCPdata = 'userData/CustTCPdata.json'
 var Tcpname, Tcpname1
