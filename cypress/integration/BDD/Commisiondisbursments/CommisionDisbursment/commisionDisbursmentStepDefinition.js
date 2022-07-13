@@ -83,11 +83,15 @@ When('Commission Disbursement Process and Commission Disbursement', function () 
 })
 
 And('Commision disbursment Select MFS provider and enter Mobile number', function () {
-  cy.wait(3000)
+     cy.wait(3000)
    commisionDisbursmentPage.getCDMFSProviders().select(this.data6.Provider, { force: true })
+   cy.wait(3000)
+    commisionDisbursmentPage.getDomain().select(this.data6.domain, { force: true })
+    cy.wait(3000)
+    commisionDisbursmentPage.getCategory().select(this.data6.category, { force: true })
   //cy.cdmfsProvider()
   //commisionDisbursmentPage.getCDMSISDN().select(this.data6.Provider, { force: true })
-  commisionDisbursmentPage.getCDMSISDN().type(this.data6.msisdn.comissiondismsisdn, { force: true })
+ // commisionDisbursmentPage.getCDMSISDN().type(this.data6.msisdn.comissiondismsisdn, { force: true })
   commisionDisbursmentPage.getCDButtonSubmit().click({ force: true })
 })
 And('Commision disbursment Download the .csv file', function () {
