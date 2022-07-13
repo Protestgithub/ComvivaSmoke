@@ -220,7 +220,7 @@ Then Verify the user Resumed approval message
 @test
 
 Scenario: To verify that Business admin is able to  view Lower_Hierarchy details 
-Given Login into Mobiquity Portal as Business admin User
+Given Login into Mobiquity Portal as Business admin User1
 When Navigate to User Management and Click on manage user
 And Enter Mobile number or KYC number in Search
 When User Click on eye button 
