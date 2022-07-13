@@ -7,7 +7,6 @@ Feature: My Activity
 
 ####################################### My Activity ################################################################
 
-
 # Author: Narendra
 # Last Updated: 10/05/2022
 # Comments 
@@ -20,9 +19,8 @@ Given Login into Mobiquity Portal as System admin Maker
 When Navigate to User Management and Click on register
 And Select User type as Adminstrator and click on Customer care Admin
 And Enter all the User details
-And Navigate to My Activity and Add the not Approved filters
+And Navigate to My Activity and Add the required filter
 Then Click on Expand and View Details button
-
 
 # Author: Narendra
 # Last Updated: 10/05/2022
@@ -37,6 +35,7 @@ When Navigate to My Activity and Add the required filter
 Then Click on Expand and View Details button
 
 
+
 # Author: Narendra
 # Last Updated: 11/05/2022
 # Comments 
@@ -46,9 +45,10 @@ Then Click on Expand and View Details button
 
 Scenario: To verify that system user can Add/edit details of user's whose registration is incomplete
 Given Login into Mobiquity Portal as System admin Maker
-When Navigate to My Activity and Add the not Approved filters
+When Navigate to My Activity and Add the required filter
 And Click on Expand and Resume button
 And Enter all the required details of the user
+
 
 
 # Author: Narendra
@@ -60,7 +60,7 @@ And Enter all the required details of the user
 
 Scenario: To verify that system user can Send for approval of user's whose registration is Incomplete
 Given Login into Mobiquity Portal as System admin Maker
-When Navigate to My Activity and Add the not Approved filters
+When Navigate to My Activity and Add the required filter
 And Click on Expand and Resume button
 And Enter all the required details of the user
 And Click the >> Submit Button
@@ -104,6 +104,7 @@ And Click on Expand and Resume button
 And Enter all the required details of the user
 And Click the >> Submit Button
 Then Confirmation message is displayed
+
 
 
 
