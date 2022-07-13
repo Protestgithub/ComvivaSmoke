@@ -249,7 +249,7 @@ Given('Login into Mobiquity Portal as Business admin User1', function () {
    })
   //registerPage.getMarketingProfile().select(this.data2.KycInfo.MarketProfile, { force: true })
    cy.readFile(RegulatoryMarketingProfile).then((data) => {
-    let Profile = data.MarketingProfileName
+    let Profile = data.MarketingProfileNameDistributer
     registerPage.getMarketingProfile().select(Profile, { force: true })
    })
    registerPage.getNextButtonProfile().click({ force: true })
@@ -462,7 +462,7 @@ And('Enter all the required subscriber details', function () {
    })
   //registerPage.getMarketingProfile().select(this.data2.personalInfo.MarketProfile, { force: true })
   cy.readFile(RegulatoryMarketingProfile).then((data) => {
-    let Profile = data.MarketingProfileName
+    let Profile = data.MarketingProfileNameDistributer
     registerPage.getMarketingProfile().select(Profile, { force: true })
    })
 })
