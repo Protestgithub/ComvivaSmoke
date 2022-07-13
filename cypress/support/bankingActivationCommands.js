@@ -7,7 +7,7 @@ var SubscriberMsg = 'cypress/fixtures/userData/subscriberMsg.json'
 
 
 //------------------------------------------------------------------------------------------------------
-Cypress.Commands.add('getMobBankingActivationMessage', () => {
+Cypress.Commands.add('getMobBankingActivationMessage', (apiURL) => {
     cy.intercept('/mobiquitypay/serviceRequest/resume/any').as('getmessage')
     bankingActivationPage.getConfirmButton().click({force:true})
     cy.wait(2000)
@@ -19,7 +19,7 @@ Cypress.Commands.add('getMobBankingActivationMessage', () => {
         const resValues = Object.values(response)
         let serviceRequestID = resValues[3]
         cy.log(serviceRequestID)
-        let url1 = '/notify/internal/getByMessageIdOrExternalIdAndByToWhom?messageId='
+        let url1 = apiURL + '/notify/internal/getByMessageIdOrExternalIdAndByToWhom?messageId='
         let url2 = url1.concat(serviceRequestID)
         let url3 = url2.concat('&toWhom=')
 
@@ -44,8 +44,8 @@ Cypress.Commands.add('getMobBankingActivationMessage', () => {
 })
 
 
-Cypress.Commands.add('getInternetBankingActivationMessage', () => {
-    cy.intercept('http://125.16.139.20:8023/dfscontainer/#/mobiquitypay/serviceRequest/resume/any').as('getmessage')
+Cypress.Commands.add('getInternetBankingActivationMessage', (apiURL) => {
+    cy.intercept('/mobiquitypay/serviceRequest/resume/any').as('getmessage')
     bankingActivationPage.getConfirmButton().click({force:true})
     cy.wait(2000)
     //approvalPage.getApproveConfirmationMessage().contains(this.data2.confirmationMessage.editUser)
@@ -56,7 +56,7 @@ Cypress.Commands.add('getInternetBankingActivationMessage', () => {
         const resValues = Object.values(response)
         let serviceRequestID = resValues[3]
         cy.log(serviceRequestID)
-        let url1 = '/notify/internal/getByMessageIdOrExternalIdAndByToWhom?messageId='
+        let url1 = apiURL + '/notify/internal/getByMessageIdOrExternalIdAndByToWhom?messageId='
         let url2 = url1.concat(serviceRequestID)
         let url3 = url2.concat('&toWhom=')
 
