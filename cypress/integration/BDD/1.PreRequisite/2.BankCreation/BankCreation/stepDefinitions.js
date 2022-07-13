@@ -165,7 +165,7 @@ When ('Navigate to Bank Master and Click on it', function(){
     cy.wait(3000)
   })
     
-  And ('Enter All the Required Details', function(){
+  And ('Enter All the Required Details', {execTimeout: 20000}, function(){
   cy.getCSVfile()
   BankManagementPage.getProvider().select(this.data03.bankMaster.Provider, {force:true})
   BankManagementPage.getBankName().type(getbankName(), {force:true})
