@@ -132,7 +132,7 @@ class authorizationManagement {
     // ------------------Administrator---------------
 
     getAdministratorType() {
-        return cy.iframe().find('#ngb-nav-1')
+        return cy.iframe().find('[name="user-type-2"]')
     }
 
     getAdministratorBusinessAdmin() {
