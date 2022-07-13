@@ -2,6 +2,7 @@ Feature: Profiles Creation
 
 #######################    Profiles Creation ##########################
 
+
 ##################################### Security Profile Creation ################################################
 
 # Author: Chetan.S
@@ -41,15 +42,8 @@ And Fill the details-AuthRestrictions
 And Fill the details-loginRestrictions
 Then Click on add and confirm
 
-#Business -- Agent - (Pin Present)
-When Navigate to Security and click to select security profile
-And Click on add profile select user type as Agent and fill the details
-And Fill the details-Agent Profile Name
-And Fill the details-PasswordRestrictios
-And Fill the details-PinRestrictions
-And Fill the details-AuthRestrictions
-And Fill the details-loginRestrictions
-Then Click on add and confirm
+
+
 
 #Business -- Distributer---(pin present)
 When Navigate to Security and click to select security profile
@@ -72,13 +66,13 @@ Then Click on add and confirm
 #Then Click on add and confirm
 
 #Business -- ATMMachine
-When Navigate to Security and click to select security profile
-And Click on add profile select user type as ATMMachine and fill the details
-And Fill the details-ATMMachine Profile Name
-And Fill the details-PasswordRestrictios
-And Fill the details-AuthRestrictions
-And Fill the details-loginRestrictions
-Then Click on add and confirm
+#When Navigate to Security and click to select security profile
+#And Click on add profile select user type as ATMMachine and fill the details
+#And Fill the details-ATMMachine Profile Name
+#And Fill the details-PasswordRestrictios
+#And Fill the details-AuthRestrictions
+#And Fill the details-loginRestrictions
+#Then Click on add and confirm
 
 #Business -- HeadMerchant-----(Pin present)
 #When Navigate to Security and click to select security profile
@@ -157,7 +151,6 @@ Then Click on add and confirm
 
     #######################   Authorization Profile Creation ##########################
 
-   
     # # # Author: Sudheer Baraker
     # # # Last Updated: 17/05/2022
     # # # Comments :
@@ -171,7 +164,7 @@ Then Click on add and confirm
           And  select Subscriber user type and select user role
           Then Fill all Details and Create Subscriber authorization profile
           Then Logout
-          Given Login into Mobiquity Portal as System admin Maker after Logout
+          Given Login into Mobiquity Portal as another System admin User after logout
           Then User approval for Authorization profile
 
         #Administrator -- BusinessAdmin
@@ -180,7 +173,7 @@ Then Click on add and confirm
           And  select BusinessAdmin user type and select user role
           Then Fill all Details and Create BusinessAdmin authorization profile
           Then Logout
-          Given Login into Mobiquity Portal as System admin Maker after Logout
+          Given Login into Mobiquity Portal as System admin User after Logout
           Then User approval for Authorization profile
 
         # # #Administrator -- CustomercareAdmin
@@ -188,7 +181,7 @@ Then Click on add and confirm
           And  select CustomercareAdmin user type and select user role
           Then Fill all Details and Create CustomercareAdmin authorization profile
           Then Logout
-          Given Login into Mobiquity Portal as System admin Maker after Logout
+          Given Login into Mobiquity Portal as another System admin User after logout
           Then User approval for Authorization profile
 
         #Business -- Distributor
@@ -196,8 +189,16 @@ Then Click on add and confirm
             And  select Distributor user type and select user role
           Then Fill all Details and Create Distributor authorization profile
           Then Logout
-          Given Login into Mobiquity Portal as System admin Maker after Logout
+          Given Login into Mobiquity Portal as System admin User after Logout
         Then User approval for Authorization profile
+
+        
+
+
+     
+
+
+
 
 
 ################################### Regulatory and Marketing Profiles ###################################
