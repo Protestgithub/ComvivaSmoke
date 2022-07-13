@@ -333,7 +333,7 @@ And('Enter all required Fields',function(){
   mobile = "77" + uuid()
   loginId = "SYS" + mobile
 registerPage.getLastName().type(getRandomName(), {force: true})
-cy.getrandomUserEmailID()
+cy.getrandomUserEmailID1()
 registerPage.getLoginID().clear()
 registerPage.getLoginID().type(loginId)
 recurse(
