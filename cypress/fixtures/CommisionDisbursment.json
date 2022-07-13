@@ -3,5 +3,11 @@
         "comissiondismsisdn": "7786535187"
     },
     "alertmessage": "The bulk request file has been uploaded",
-    "Provider": "MFS1"
+    "Provider": "MFS1",
+       "domain": "Merchant",
+       "category": "Merchant"
+
+
+
+
 }
