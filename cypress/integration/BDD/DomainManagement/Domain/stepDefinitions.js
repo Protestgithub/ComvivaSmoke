@@ -71,23 +71,26 @@ Given('Login into Mobiquity Portal as System admin Maker', function () {
 When('User Click on Domain Management >> Add Domain', function () {
     welcomePage.getDomainManagementOption().click()
 })
-And('Enter Domain Name and Domain Code.',function(){
+And('Enter Domain Name and Domain code.',function(){
   cy.wait(3000)
- domainPage.getDomainName().type(this.data4.domainData.domainName+DomainName,{force:true})
- cy.writeFile(DataFile,{Domainname:this.data4.domainData.domainName+DomainName})
 
- domainPage.getDomainCode().type(this.data4.domainData.domainCode+code,{force:true})
- cy.readFile(DataFile).then((data) => {
-     data.DomainCode = this.data4.domainData.domainCode
-     cy.writeFile(DataFile, data)
-   })
- domainPage.getDomainCategories().type(Category,{force:true})
- cy.readFile(DataFile).then((data) => {
-     data.CategoryNum = Category
-     cy.writeFile(DataFile, data)
-   })
+  cy.readFile(DataFile).then((data) => {
+    var CatNam = data.Domainname
+    domainPage.getDomainName().type(CatNam,{force:true})
 
-})
+  })
+  cy.readFile(DataFile).then((data) => {
+    var Catcode = data.DomainCode
+    domainPage.getDomainCode().type(Catcode,{force:true})
+  })
+
+ cy.readFile(DataFile).then((data) => {
+
+  var Category = data.CategoryNum
+
+     domainPage.getDomainCategories().type(Category,{force:true})
+
+    })
 
 //-------------------------------------Error-------------------------------------------
 
