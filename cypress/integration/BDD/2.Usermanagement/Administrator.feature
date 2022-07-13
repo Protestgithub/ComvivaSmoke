@@ -241,10 +241,10 @@ Then Verify View Details Page
 #
 @test
 
-Scenario: To verify that System admin is able to  Lower Hierarchy details
+Scenario: To verify that Business admin is able to  Lower Hierarchy details
 Given Login into Mobiquity Portal as System admin Maker
 When Navigate to User Management and Click on manage user
-And Enter Mobile number or KYC number in search
+And Enter Mobile number of subscriber in search
 When User Click on eye button 
 Then Verify View Details Page
 
