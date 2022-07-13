@@ -651,46 +651,51 @@ And('Click on add profile select user type as SuperAgent and fill the details', 
 
 //------------------------ Authorization Profile Management----------------------------------
 
+//------------------------ Authorization Profile Management----------------------------------
+
 //----------TC_149-----To verify that system admin should be able to add authorization profile------------------------------
 
 When('Select Authorization profile and add profile', function () {
 
-authorizationProfilePage.getAuthorizationProfileManagement().scrollIntoView()
-authorizationProfilePage.getAuthorizationProfileManagement().click({ force: true })
-authorizationProfilePage.getAddProfile().click({ force: true })
+  authorizationProfilePage.getAuthorizationProfileManagement().scrollIntoView()
+  authorizationProfilePage.getAuthorizationProfileManagement().click({ force: true })
+  authorizationProfilePage.getAddProfile().click({ force: true })
 })
 
 And('select Subscriber user type and select user role', function () {
-// cy.wait(3000)
-authorizationProfilePage.getAuthorizationUserType().click({ force: true })
-authorizationProfilePage.getAuthorizationUserType().focused()
-authorizationProfilePage.getAuthorizationUserRole().click({ force: true })
+  // cy.wait(3000)
+  authorizationProfilePage.getAuthorizationUserType().click({ force: true })
+  authorizationProfilePage.getAuthorizationUserType().focused()
+  authorizationProfilePage.getAuthorizationUserRole().click({ force: true })
 
 })
+//-----------------------SubscriberM1S1----------------------
 
 Then('Fill all Details and Create Subscriber authorization profile', function () {
-cy.wait(3000)
-authorizationProfilePage.getProfileName().clear({force:true}).type(getRandomName(), { force: true }),
-authorizationProfilePage.getUserServicePreferences().contains('ALL').click({ force: true })
-recurse(
-  () => authorizationProfilePage.getProfileName().clear({force:true}).type(getRandomName(), { force: true }),
-  () => cy.wait(2000),
-  ()=>authorizationProfilePage.getUserServicePreferences().contains('ALL').click({ force: true }),
-  () => cy.wait(2000),
-  (uniqueness) => (uniqueness) == authorizationProfilePage.getProfileNameExist().contains
-    ('Authorization profile name already exists,please try with different name').should('be.visible'),
-  authorizationProfilePage.getUserServicePreferences().contains('ALL').click({ force: true })
-)
-cy.readFile(SubProfileName).then((data) => {
-  data.SubscriberProfileName1 = name
-  cy.writeFile(SubProfileName, data)
-})
-cy.selectModule()
-cy.wait(3000)
-authorizationProfilePage.getAdd().click({ force: true })
-authorizationProfilePage.getConfirm().click({ force: true })
-// authorizationProfilePage.getProfileSuccessMessage().should('contain.text', this.data5.authorizationprofilesuccess)
-authorizationProfilePage.getProfileDoneButton().click({ force: true })
+  cy.wait(3000)
+  authorizationProfilePage.getProfileName().clear({ force: true }).type(getRandomName(), { force: true }),
+    authorizationProfilePage.getUserServicePreferences().contains('ALL').click({ force: true })
+  recurse(
+    () => authorizationProfilePage.getProfileName().clear({ force: true }).type(getRandomName(), { force: true }),
+    () => cy.wait(2000),
+    () => authorizationProfilePage.getUserServicePreferences().contains('ALL').click({ force: true }),
+    () => cy.wait(2000),
+    (uniqueness) => (uniqueness) == authorizationProfilePage.getProfileNameExist().contains
+      ('Authorization profile name already exists,please try with different name').should('be.visible'),
+    authorizationProfilePage.getUserServicePreferences().contains('ALL').click({ force: true }),
+   
+  )
+  cy.readFile(SubProfileName).then((data) => {
+    data.SubscriberProfileName = profName
+    cy.writeFile(SubProfileName, data)
+  })
+  cy.selectModule()
+  cy.wait(3000)
+  authorizationProfilePage.getAdd().click({ force: true })
+  cy.wait(5000)
+  authorizationProfilePage.getConfirm().click({ force: true })
+  authorizationProfilePage.getProfileSuccessMessage().should('contain.text', this.data5.authorizationprofilesuccess)
+  authorizationProfilePage.getProfileDoneButton().click({ force: true })
 
 })
 
@@ -698,159 +703,171 @@ authorizationProfilePage.getProfileDoneButton().click({ force: true })
 
 //----------------------Approvals------------------------
 Then('User approval for Authorization profile', function () {
-cy.wait(3000)
-authorizationProfilePage.getApprovals().scrollIntoView()
-authorizationProfilePage.getApprovals().click({ force: true })
-authorizationProfilePage.getApproveButton().click({ force: true })
-authorizationProfilePage.getApproveButtonSubmit().click({ force: true })
-//authorizationProfilePage.getApproveConfirmationMessage().should('contain.text'.this.data5.addconfirmationMessage)
+  cy.wait(3000)
+  authorizationProfilePage.getApprovals().scrollIntoView()
+  authorizationProfilePage.getApprovals().click({ force: true })
+  authorizationProfilePage.getApproveButton().click({ force: true })
+  authorizationProfilePage.getApproveButtonSubmit().click({ force: true })
+  //authorizationProfilePage.getApproveConfirmationMessage().should('contain.text'.this.data5.addconfirmationMessage)
 })
 
 //----------------------Administrator--------BusinessAdmin-----------------------------------
 And('select BusinessAdmin user type and select user role', function () {
-//cy.wait(3000)
-authorizationProfilePage.getAdministratorType().click({ force: true })
-authorizationProfilePage.getAdministratorType().focused()
-authorizationProfilePage.getAdministratorBusinessAdmin().eq(0).click({ force: true })
+  //cy.wait(3000)
+  authorizationProfilePage.getAdministratorType().click({ force: true })
+  authorizationProfilePage.getAdministratorType().focused()
+  authorizationProfilePage.getAdministratorBusinessAdmin().eq(0).click({ force: true })
 })
 
 Then('Fill all Details and Create BusinessAdmin authorization profile', function () {
 
-authorizationProfilePage.getProfileName().clear({force:true}).type(getRandomName(), { force: true }),
-authorizationProfilePage.getUserServicePreferences().contains('ALL').click({ force: true })
-recurse(
-  () => authorizationProfilePage.getProfileName().clear({force:true}).type(getRandomName(), { force: true }),
-  () => cy.wait(2000),
-  ()=>authorizationProfilePage.getUserServicePreferences().contains('ALL').click({ force: true }),
-  () => cy.wait(2000),
-  (uniqueness) => (uniqueness) == authorizationProfilePage.getProfileNameExist().contains
-    ('Authorization profile name already exists,please try with different name').should('be.visible'),
-  authorizationProfilePage.getUserServicePreferences().contains('ALL').click({ force: true })
+  authorizationProfilePage.getProfileName().clear({ force: true }).type(getRandomName(), { force: true }),
+    authorizationProfilePage.getUserServicePreferences().contains('ALL').click({ force: true })
+  recurse(
+    () => authorizationProfilePage.getProfileName().clear({ force: true }).type(getRandomName(), { force: true }),
+    () => cy.wait(2000),
+    () => authorizationProfilePage.getUserServicePreferences().contains('ALL').click({ force: true }),
+    () => cy.wait(2000),
+    (uniqueness) => (uniqueness) == authorizationProfilePage.getProfileNameExist().contains
+      ('Authorization profile name already exists,please try with different name').should('be.visible'),
+    authorizationProfilePage.getUserServicePreferences().contains('ALL').click({ force: true })
 
-)
-cy.readFile(SubProfileName).then((data) => {
-  data.businesAadmin1 = name
-  cy.writeFile(SubProfileName, data)
-})
-// cy.wait(3000)
-cy.selectModule()
-cy.wait(3000)
-authorizationProfilePage.getAdd().click({ force: true })
-authorizationProfilePage.getConfirm().click({ force: true })
-// authorizationProfilePage.getProfileSuccessMessage().should('contain.text', this.data5.authorizationprofilesuccess)
-authorizationProfilePage.getProfileDoneButton().click({ force: true })
+  )
+  cy.readFile(SubProfileName).then((data) => {
+    data.businesAadmin = profName
+    cy.writeFile(SubProfileName, data)
+  })
+  // cy.wait(3000)
+
+  cy.selectModule()
+
+  cy.wait(3000)
+  authorizationProfilePage.getAdd().click({ force: true })
+  authorizationProfilePage.getConfirm().click({ force: true })
+  authorizationProfilePage.getProfileSuccessMessage().should('contain.text', this.data5.authorizationprofilesuccess)
+  authorizationProfilePage.getProfileDoneButton().click({ force: true })
 
 })
 //----------------------Administrator--------CustomercareAdmin-----------------------------------
 And('select CustomercareAdmin user type and select user role', function () {
-//cy.wait(3000)
-authorizationProfilePage.getAdministratorType().click({ force: true })
-authorizationProfilePage.getAdministratorType().focused()
-authorizationProfilePage.getAdministratorBusinessAdmin().eq(1).click({ force: true })
+  //cy.wait(3000)
+  authorizationProfilePage.getAdministratorType().click({ force: true })
+  authorizationProfilePage.getAdministratorType().focused()
+  authorizationProfilePage.getAdministratorBusinessAdmin().eq(1).click({ force: true })
 })
 
 Then('Fill all Details and Create CustomercareAdmin authorization profile', function () {
-cy.wait(3000)
-authorizationProfilePage.getProfileName().clear({force:true}).type(getRandomName(), { force: true }),
-authorizationProfilePage.getUserServicePreferences().contains('ALL').click({ force: true })
-recurse(
-  () =>authorizationProfilePage.getProfileName().clear({force:true}).type(getRandomName(), { force: true }),
-  () => cy.wait(2000),
-  ()=>authorizationProfilePage.getUserServicePreferences().contains('ALL').click({ force: true }),
-  () => cy.wait(2000),
-  (uniqueness) => (uniqueness) == authorizationProfilePage.getProfileNameExist().contains
-    ('Authorization profile name already exists,please try with different name').should('be.visible'),
-  authorizationProfilePage.getUserServicePreferences().contains('ALL').click({ force: true })
+  cy.wait(3000)
+  authorizationProfilePage.getProfileName().clear({ force: true }).type(getRandomName(), { force: true }),
+    authorizationProfilePage.getUserServicePreferences().contains('ALL').click({ force: true })
+  recurse(
+    () => authorizationProfilePage.getProfileName().clear({ force: true }).type(getRandomName(), { force: true }),
+    () => cy.wait(2000),
+    () => authorizationProfilePage.getUserServicePreferences().contains('ALL').click({ force: true }),
+    () => cy.wait(2000),
+    (uniqueness) => (uniqueness) == authorizationProfilePage.getProfileNameExist().contains
+      ('Authorization profile name already exists,please try with different name').should('be.visible'),
+    authorizationProfilePage.getUserServicePreferences().contains('ALL').click({ force: true })
 
-)
-cy.readFile(SubProfileName).then((data) => {
-  data.CustomercareAdmin1 = name
-  cy.writeFile(SubProfileName, data)
-})
+  )
+  cy.readFile(SubProfileName).then((data) => {
+    data.CustomercareAdmin = profName
+    cy.writeFile(SubProfileName, data)
+  })
 
-cy.selectModule()
-cy.wait(3000)
-authorizationProfilePage.getAdd().click({ force: true })
-authorizationProfilePage.getConfirm().click({ force: true })
-//authorizationProfilePage.getProfileSuccessMessage().should('contain.text', this.data5.authorizationprofilesuccess)
-authorizationProfilePage.getProfileDoneButton().click({ force: true })
-
-})
-//----------------------Business-------------TelcoOperator---------------------------------------------------
-
-And('select TelcoOperator user type and select user role', function () {
-// cy.wait(3000)
-authorizationProfilePage.getBusinessType().click({ force: true })
-authorizationProfilePage.getBusinessType().focused()
-authorizationProfilePage.getBusinessATMRole().eq(5).click({ force: true })
+  cy.selectModule()
+  cy.wait(3000)
+  authorizationProfilePage.getAdd().click({ force: true })
+  authorizationProfilePage.getConfirm().click({ force: true })
+  authorizationProfilePage.getProfileSuccessMessage().should('contain.text', this.data5.authorizationprofilesuccess)
+  authorizationProfilePage.getProfileDoneButton().click({ force: true })
 
 })
+//----------------------Business-------------Distributor---------------------------------------------------
 
-Then('Fill all Details and Create TelcoOperator authorization profile', function () {
-cy.wait(3000)
-authorizationProfilePage.getProfileName().clear({force:true}).type(getRandomName(), { force: true }),
-authorizationProfilePage.getUserServicePreferences().contains('ALL').click({ force: true })
-recurse(
-  () => authorizationProfilePage.getProfileName().clear({force:true}).type(getRandomName(), { force: true }),
-  () => cy.wait(2000),
-  ()=>authorizationProfilePage.getUserServicePreferences().contains('ALL').click({ force: true }),
-  () => cy.wait(2000),
-  (uniqueness) => (uniqueness) == authorizationProfilePage.getProfileNameExist().contains
-    ('Authorization profile name already exists,please try with different name').should('be.visible'),
-  authorizationProfilePage.getUserServicePreferences().contains('ALL').click({ force: true })
-
-)
-
-cy.readFile(SubProfileName).then((data) => {
-  data.BusinesselcoOperator1 = name
-  cy.writeFile(SubProfileName, data)
-})
-
-cy.selectModule()
-cy.wait(3000)
-authorizationProfilePage.getAdd().click({ force: true })
-authorizationProfilePage.getConfirm().click({ force: true })
-//authorizationProfilePage.getProfileSuccessMessage().should('contain.text', this.data5.authorizationprofilesuccess)
-authorizationProfilePage.getProfileDoneButton().click({ force: true })
+And('select Distributor user type and select user role', function () {
+  // cy.wait(3000)
+  authorizationProfilePage.getBusinessType().click({ force: true })
+  authorizationProfilePage.getBusinessType().focused()
+  authorizationProfilePage.getBusinessATMRole().eq(5).click({ force: true })
 
 })
 
-//----------------------Business-------------Agent---------------------------------------------------
+Then('Fill all Details and Create Distributor authorization profile', function () {
+  cy.wait(3000)
+  authorizationProfilePage.getProfileName().clear({ force: true }).type(getRandomName(), { force: true }),
+    authorizationProfilePage.getUserServicePreferences().contains('ALL').click({ force: true })
+  recurse(
+    () => authorizationProfilePage.getProfileName().clear({ force: true }).type(getRandomName(), { force: true }),
+    () => cy.wait(2000),
+    () => authorizationProfilePage.getUserServicePreferences().contains('ALL').click({ force: true }),
+    () => cy.wait(2000),
+    (uniqueness) => (uniqueness) == authorizationProfilePage.getProfileNameExist().contains
+      ('Authorization profile name already exists,please try with different name').should('be.visible'),
+    authorizationProfilePage.getUserServicePreferences().contains('ALL').click({ force: true })
 
-And('select Agent user type and select user role', function () {
-// cy.wait(3000)
-authorizationProfilePage.getBusinessType().click({ force: true })
-authorizationProfilePage.getBusinessType().focused()
-authorizationProfilePage.getBusinessATMRole().eq(7).click({ force: true })
+  )
+
+  cy.readFile(SubProfileName).then((data) => {
+    data.BusinesselcoOperator = profName
+    cy.writeFile(SubProfileName, data)
+  })
+
+  cy.selectModule()
+  cy.wait(3000)
+  authorizationProfilePage.getAdd().click({ force: true })
+  authorizationProfilePage.getConfirm().click({ force: true })
+  authorizationProfilePage.getProfileSuccessMessage().should('contain.text', this.data5.authorizationprofilesuccess)
+  authorizationProfilePage.getProfileDoneButton().click({ force: true })
+
+})
+
+//----------TC_150-----To verify that system admin should be able to ViewAuthorization profile for the selected category------------------------------
+When('Select Authorization profile', function () {
+  cy.wait(3000)
+  authorizationProfilePage.getAuthorizationProfileManagement().click({ force: true })
+})
+
+Then('View Profiles', function () {
+  cy.wait(3000)
+  // authorizationProfilePage.getViewProfile().any().click({ force: true });
+  authorizationProfilePage.getViewProfile().click({ force: true })
+  authorizationProfilePage.getViewProfileSuccess().should('have.text', this.data5.viewprofile)
 
 })
 
-Then('Fill all Details and Create Agent authorization profile', function () {
-cy.wait(3000)
-authorizationProfilePage.getProfileName().clear({force:true}).type(getRandomName(), { force: true }),
-authorizationProfilePage.getUserServicePreferences().contains('ALL').click({ force: true })
-recurse(
-  () =>authorizationProfilePage.getProfileName().clear({force:true}).type(getRandomName(), { force: true }),
-  () => cy.wait(2000),
-  ()=>authorizationProfilePage.getUserServicePreferences().contains('ALL').click({ force: true }),
-  () => cy.wait(2000),
-  (uniqueness) => (uniqueness) == authorizationProfilePage.getProfileNameExist().contains
-    ('Authorization profile name already exists,please try with different name').should('be.visible'),
-  authorizationProfilePage.getUserServicePreferences().contains('ALL').click({ force: true })
 
-)
-cy.readFile(SubProfileName).then((data) => {
-  data.BusinessAgent1 = name
-  cy.writeFile(SubProfileName, data)
-})
-cy.selectModule()
-cy.wait(3000)
-authorizationProfilePage.getAdd().click({ force: true })
-authorizationProfilePage.getConfirm().click({ force: true })
-//authorizationProfilePage.getProfileSuccessMessage().should('contain.text', this.data5.authorizationprofilesuccess)
-authorizationProfilePage.getProfileDoneButton().click({ force: true })
+//----------TC_151----To verify that system admin should be able to modify an already created authorization profile-------------------------------
 
+Then('Click on Modify Icon in front of authorization profile to modify', function () {
+  cy.wait(3000)
+  authorizationProfilePage.getEditProfile().click({ force: true })
+  authorizationProfilePage.getModifyProfile().click({ force: true })
+  authorizationProfilePage.getConfirm().click({ force: true })
+  //authorizationProfilePage.getViewProfileModifySuccess().should('have.text', this.data5.modifysuccessmessage)
+  authorizationProfilePage.getViewProfileModifyDone().click({ force: true })
 })
+
+//----------------------Approvals------------------------
+Then('User approval for modified Authorization profile', function () {
+  cy.wait(3000)
+  authorizationProfilePage.getApprovals().scrollIntoView()
+  authorizationProfilePage.getApprovals().click({ force: true })
+  authorizationProfilePage.getApproveButton().click({ force: true })
+  authorizationProfilePage.getApproveButtonSubmit().click({ force: true })
+  // authorizationProfilePage.getApproveConfirmationMessage().should('contain.text', this.data5.modifyconfirmationMessage)
+})
+
+
+//----------TC_152-------To verify that System admin should be able to delete an authorization profile----------------------------
+
+Then('Click on Modify Icon in front of authorization profile to delete', function () {
+  cy.wait(3000)
+  authorizationProfilePage.getDeleteProfile().click({ force: true })
+  authorizationProfilePage.getYesDeleteProfile().click({ force: true })
+  //authorizationProfilePage.getApproveConfirmationMessage().should('contain.text', this.data5.deletemessagesuccess)
+})
+
 //------------------------------  REGULATORY PROFILE--------------------------------------------
 When('Navigate to UserManagement And Click on Regulatory Profile', function () {
 
