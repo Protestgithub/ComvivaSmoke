@@ -344,7 +344,8 @@ Given('Login into Mobiquity Portal as Business admin User1', function () {
    cy.readFile(RegulatoryMarketingProfile).then((data) => {
     let Profile = data.MarketingProfileName
     registerPage.getMarketingProfile().select(Profile, { force: true })
-   })    registerPage.getNextButtonBasic2().click({ force: true })
+   })   
+   registerPage.getNextButtonBasic2().click({ force: true })
   })
 
   //-------------------------------------TC_187-------------------------------------------------
