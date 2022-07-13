@@ -6,7 +6,7 @@ import 'cypress-iframe'
 import { Given, When, Then, And, Before } from "cypress-cucumber-preprocessor/steps";
 import homePage from '../../../../support/pageObjects/homePage';
 import "../../../../support/bankingActivationCommands";
-import BankingActivation from '../../../../support/pageObjects/BankingChannelActivation/BankingActivation';
+import BankingActivation from '../../../../support/pageObjects/BankingActivation';
 //----------------Object Declaration----------------------------------------------------------
 const welcomePage = new homePage()
 const bankingActivationPage = new BankingActivation()
@@ -21,9 +21,7 @@ Before(() => {
     cy.fixture('userData/subscriberReg').then(function (data6) {
         this.data6 = data6;
     })
-    cy.fixture('BankingActivation').then(function (data7) {
-        this.data7 = data7;
-    })
+   
 });
 //----------------------------------------POC - CODE-------------------------------------------------------
 //---------------------------------------------System Admin Login----------------------------------------------------
@@ -71,8 +69,8 @@ When('Navigate to Banking Channel Activation and click', function () {
 
 And('Enter the CIF number and search for the user', function () {
 cy.wait(2000)
-    bankingActivationPage.getEnterCIFNumber().type(this.data6.subscriberCIF)
-    cy.wait(2000)
+bankingActivationPage.getEnterCIFNumber().type(this.data6.CIFnumber,{ force: true })
+cy.wait(2000)
     bankingActivationPage.getSearchButton().click()
 })
 And('Click on Mobile Banking Activation', function () {
