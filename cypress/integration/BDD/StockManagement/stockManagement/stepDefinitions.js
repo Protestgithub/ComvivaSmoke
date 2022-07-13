@@ -326,7 +326,7 @@ And('Select User type', function () {
 
 And('Enter MSISDN,Provider,Wallet Type,Reference Number and Remarks', function () {
 
-  stockManagementPage.getMSISDN().type(this.data10.msisdn.subscribermsisdn, { force: true }).click({ force: true })
+    cy.getSubscriberMobileNumber()
   cy.reimbursementproviders()
   cy.wait(3000)
   stockManagementPage.getWalletTypes().select(this.data10.wallettype.value, { force: true })
