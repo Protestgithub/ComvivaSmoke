@@ -8,21 +8,21 @@
         "stockFrom": "TB101"
     },
     
-        "trasanctionid": {
-            "id1": "XX220506.1239.A22484"
+         "trasanctionid": {
+            "id1": "XX220712.1807.A45021"
         },
         "msisdn": {
-            "subscribermsisdn": "7786113685"
+            "subscribermsisdn": "7799184364"
         },
         "date": {
-            "fromdate": "10/05/2022",
-            "todate": "01/06/2022"
+            "fromdate": "01/07/2022",
+            "todate": "12/07/2022"
         },
         "stocktypeA": {
             "value": "Stock Creation"
         },
         "stockEnq_loadDetails_status": {
-            "value": "Approved-1"
+            "value": "Transaction Success"
         },
         "usertype": {
             "value": "Subscriber"
@@ -31,10 +31,10 @@
             "value": "Normal"
         },
         "selectBank": {
-            "bankname": "FIRST BANK"
+            "bankname": "TB101"
         },
         "bankaccnumber": {
-            "number": "XXX6387457845187"
+            "number": "XXX598229"
         },
         "stockwithdrawerrormessage": "Transfer Amount should be less than the Available balance",
         "stockwithdrawerrormessage2": "Transfer Amount should be numeric",
