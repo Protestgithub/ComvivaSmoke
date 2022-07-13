@@ -1,6 +1,5 @@
 Feature:ServiceChargePricing
 
-
 # Author: Arpitha C
 # Last Updated: 2/05/2022
 # Comments : Service Charge Pricing Module Test Cases
@@ -62,7 +61,6 @@ And Click on commission
 And Click on commission and select the service you want to add commission profile for
 
 
-
 # Author: Chetan.S
 # Last Updated: 29-04-2022
 # Comments 
@@ -85,7 +83,7 @@ Then Calculate Service Charge
 # TC_34
 @test
 
-Scenario:To verify that user should be able to calculate service charge using pricing calculator.
+Scenario:To verify that user should be able to set the status of the service policy as active or inactive..
 Given Login into Mobiquity Portal as System admin Maker
 When Click on Pricing Engine
 And Click on the Service Policy
@@ -98,7 +96,7 @@ Then Set Status Active or Inactive
 # TC_35
 @test
 
-Scenario:To verify that user should be able to calculate service charge using pricing calculator.
+Scenario:Search for Rules To verify that user is able to search for rules from anywhere in the Pricing Engine.
 Given Login into Mobiquity Portal as System admin Maker
 When Click on Pricing Engine
 And Click on the Search Tab & Search by Rule Name
@@ -116,7 +114,6 @@ Given Login into Mobiquity Portal as System admin Maker
 When Click on Pricing Engine
 And Click on the Service Policy
 Then Click on View Previous Version Link, Enter available Ver no and Proceed to View the details
-
 # Author: Chetan.S
 # Last Updated: 29-04-2022
 # Comments 
@@ -130,6 +127,8 @@ When Click on Pricing Engine
 And Click on the Service Policy
 And Click on add new rule buttton,add New service charge and save the policy as draft
 Then  Check if user is able to view the saved draft
+
+
 
 # Author: Chetan.S
 # Last Updated: 29-04-2022
