@@ -368,7 +368,7 @@ And('Search with LoginID', function () {
 
 And('Approve the Users and Check for SMS Notification sent to user', function () {
   cy.wait(2000)
-  cy.getMessage()
+  cy.getMessage(Cypress.env('apiBaseURL'))
 
 })
 
