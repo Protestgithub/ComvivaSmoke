@@ -1,5 +1,8 @@
 class O2CTransferInitiate
 {
+    getSuccessMsg(){
+   return cy.iframe().find('.actionMessage')
+}
  getErrorMessage()
  {
     return cy.iframe().find('.errorMessage')
