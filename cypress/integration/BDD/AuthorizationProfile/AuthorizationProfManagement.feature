@@ -35,23 +35,15 @@ Feature: Authorization profile
           Given Login into Mobiquity Portal as System admin Maker after Logout
           Then User approval for Authorization profile
 
-        #Business -- TelcoOperator
+        #Business -- Distributor
           When Select Authorization profile and add profile
-            And  select TelcoOperator user type and select user role
-          Then Fill all Details and Create TelcoOperator authorization profile
+            And  select Distributor user type and select user role
+          Then Fill all Details and Create Distributor authorization profile
           Then Logout
           Given Login into Mobiquity Portal as System admin Maker after Logout
         Then User approval for Authorization profile
 
-        # #Business -- Agent
-        When  Select Authorization profile and add profile
-        And   select Agent user type and select user role
-        Then Fill all Details and Create Agent authorization profile
-        Then Logout
-        Given Login into Mobiquity Portal as System admin Maker after Logout
-        Then User approval for Authorization profile
-
-
+       
     # # # Author: Sudheer Baraker
     # # # Last Updated: 17/05/2022
     # # # Comments :
