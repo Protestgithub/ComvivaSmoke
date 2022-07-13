@@ -81,7 +81,7 @@ And('Click on Mobile Banking Activation', function () {
 })
 Then('Confirm and Verify the Mob Banking Activtion Message sent to user', function () {
     cy.wait(2000)
-    cy.getMobBankingActivationMessage()
+    cy.getMobBankingActivationMessage(Cypress.env('apiBaseURL'))
 
 })
 //----------TC_156--------------------------------------------------------------------------------------
@@ -94,7 +94,7 @@ And('Click on Internet Banking Activation', function () {
 
 Then('Confirm and Verify the Internet Banking Activtion Message sent to user', function () {
     cy.wait(2000)
-    cy.getInternetBankingActivationMessage()
+    cy.getInternetBankingActivationMessage(Cypress.env('apiBaseURL'))
 
 })
 //-----------TC_157--------------------------------------------------------------------------------------
