@@ -76,7 +76,7 @@ And('Login into Mobiquity Portal as Subscriber1', function () {
   cy.visit(Cypress.env("Adminurl"))
   cy.visit(Cypress.env("Adminurl") + "/Subscriber")   
   cy.wait(3000)
-  cy.intercept(Cypress.env("apiBaseURL") + "/mobiquitypay/ums/v3/user/auth/web/login").as('getPwd')
+  cy.intercept("/mobiquitypay/ums/v3/user/auth/web/login").as('getPwd')
   cy.readFile('cypress/fixtures/userData/subscriberReg.json').then((data)=>{
     var SubLogin
     SubLogin = data.subscriberLoginId
@@ -88,7 +88,7 @@ And('Login into Mobiquity Portal as Subscriber1', function () {
     const resValues = Object.values(response)
     const serviceRequestID = resValues[0]
     cy.log(serviceRequestID)
-    let url1 = cy.visit(Cypress.env("apiURL"))
+    let url1 = (Cypress.env("apiURL")) + '/otpservice/internal/genotp/'
     let getURL = url1.concat(serviceRequestID)
     cy.request({
       url: getURL,
