@@ -473,6 +473,8 @@ And User click on submitted user data
 And Approve the Users
 Then User status is Suspended
 
+Scenario:Asserting the Suspended business user login 
+Given Login into Mobiquity Portal as Business admin User
 
 # Author: Kalyani M
 # Last Updated:
@@ -507,15 +509,6 @@ And User click on submitted user data
 And Approve the Users
 Then User status is Resumed
 
-# Author: Kalyani M
-# Last Updated:
-# Comments 
-# Test Case_ID : TC_52_SuperadminMaker_LowerHierarchyDetails
-# 
-@test
+Scenario:Asserting the Resumed business user login 
+Given Login into Mobiquity Portal as Business admin User1
 
-Scenario: To verify that Super admin is able to  view Lower_Hierarchy details 
-Given Login into Mobiquity Portal as System admin Maker
-When Navigate to User Management and Click on manage user
-And Select user type & enter Mobile number or KYC number in search
-When User Click on eye button
