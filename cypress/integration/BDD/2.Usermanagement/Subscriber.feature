@@ -256,6 +256,18 @@ And Enter Mobile number or KYC number in Search
 When User Click on eye button
 Then Verify View Details Page
 
+# Author: Kalyani M
+# Last Updated:
+# Comments   :
+# Test Case_ID : TC_90
+# 
+@test
+
+Scenario:To verify that Super admin maker able to view subscriber details
+Given Login into Mobiquity Portal as Super admin Maker
+When Navigate to User Management and Click on manage user
+And Enter Mobile number or KYC number in Search
+When User Click on eye button
 
 ########################################## Arpitha ###############################################
 
