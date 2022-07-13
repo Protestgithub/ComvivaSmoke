@@ -244,7 +244,11 @@ class register {
 getDenominationOptional(){
     return cy.iframe().find('#denominationSeries')
 }
+getCIF(){
 
+        return cy.iframe().find('[id="cif"]')
+
+    }
 getKYCButton(){
     return cy.iframe().find('[class="ng-fa-icon"]')
 }
