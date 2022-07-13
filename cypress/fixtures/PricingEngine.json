@@ -31,7 +31,9 @@
     "Percentage":"20",
     "FixedAmt":"2000",
     "editPercentage":"22",
-    "editFixedAmt":"2000"
+    "editFixedAmt":"2000",
+    "pageTitle":"You are working on a saved draft of this policy",
+    "RuleName2":""
 
 
 }
