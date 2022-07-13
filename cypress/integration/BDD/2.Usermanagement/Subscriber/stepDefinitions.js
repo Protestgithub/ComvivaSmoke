@@ -394,15 +394,20 @@ And('Enter all the required subscriber details', function () {
   mobile = "77" + uuid()
   const lgid = () => Cypress._.random(1e5)
   loginId = this.data2.personalInfo.firstName + lgid()
-
+  CIF = "1"+ lgid()
   cy.wait(2000)
   registerPage.getFirstName().type(getRandomName(), { force: true })  
   registerPage.getLastName().type(getRandomName(), { force: true })     
   cy.iframe().find('select[data-test-id="preferredLanguage"]').select(this.data2.personalInfo.preferredLang, { force: true })
   registerPage.getLoginID().type(loginId, { force: true })
- 
   cy.readFile(subRegistration).then((data) => {
     data.subscriberLoginId = loginId
+    cy.writeFile(subRegistration, data)
+  })
+  var CIF 
+  registerPage.getCIF().type(CIF, { force: true })
+  cy.readFile(subRegistration).then((data) => {
+    data.CIFnumber = CIF
     cy.writeFile(subRegistration, data)
   }) 
 
@@ -418,7 +423,9 @@ And('Enter all the required subscriber details', function () {
     data.subscriberMobile = mobile
     cy.writeFile(subRegistration, data)
   }) 
-  cy.OTP(Cypress.env('apiBaseURL'))
+
+
+  cy.OTP(Cypress.env('apiBaseURL'),Cypress.env('apiURL'))
 
   //------------------------------------------------------------------------------------------------------------    
   registerPage.getAdressLine1().type(this.data2.subPersonalInfo.addressLine1, { force: true })
@@ -428,14 +435,13 @@ And('Enter all the required subscriber details', function () {
   registerPage.getNextButtonBasic().click({ force: true })
 
   //----------------------KYC-----------------------------------------------------------------------
-  KycValue = "ABX" + uuid()
+  const timestamp = (new Date).getTime()
+  KycValue = "A" + timestampKycValue 
   registerPage.getKycDropDownButton().eq(0).click({ force: true })
-
   registerPage.getKycIDType().select(this.data2.KycInfo.KycIDType, { force: true })
   registerPage.getKycIDValue().type(KycValue, { force: true }),
-    // registerPage.getKycIDType().select(this.data2.KycInfo.KycIDType, { force: true })
-    registerPage.getMakeThisPrimaryButton().click({ force: true }),
-    registerPage.getKycGracePeriod().select(this.data2.KycInfo.KycGracePeriod, { force: true })
+  registerPage.getMakeThisPrimaryButton().click({ force: true }),
+  registerPage.getKycGracePeriod().select(this.data2.KycInfo.KycGracePeriod, { force: true })
   registerPage.getNextButtonBasic1().click({ force: true })
 
   //-----------------------Profile------------------------------------------------------------------------
@@ -453,8 +459,8 @@ And('Enter all the required subscriber details', function () {
      let Profile = data.RegulatoryProfileName
      registerPage.getReguProfile().select(Profile, { force: true })
    })
-  //registerPage.getMarketingProfile().select(this.data2.KycInfo.MarketProfile, { force: true })
-   cy.readFile(RegulatoryMarketingProfile).then((data) => {
+  //registerPage.getMarketingProfile().select(this.data2.personalInfo.MarketProfile, { force: true })
+  cy.readFile(RegulatoryMarketingProfile).then((data) => {
     let Profile = data.MarketingProfileName
     registerPage.getMarketingProfile().select(Profile, { force: true })
    })
@@ -463,20 +469,10 @@ Then('SubscrigReg Confirmation message is displayed', function () {
 
   registerPage.getNextButtonBasic2().click({ force: true })
   registerPage.getSubmitButton().click({ force: true })
-
-  // recurse(
-  //   ()=>registerPage.getDoneButton().click({ force: true }),
-  //   ()=>registerPage.getKycTab().click({ force: true }),
-  //   ()=>cy.wait(2000),
-  //   ()=>registerPage.getKycIDValue().clear().type('axpcceyd12', { force: true }),
-  //   ()=>registerPage.getNextButtonBasic1().click({ force: true }),
-  //   ()=>registerPage.getNextButtonBasic2().click({ force: true }),
-  //   ()=>registerPage.getSubmitButton().click({ force: true }),
-  //   registerPage.getKycIDType().select(this.data2.KycInfo.KycIDType, { force: true }), 
-  //   (uniqueness) => (uniqueness) == registerPage.getErrorMaxKycReached().should('be.visible'),    
-  //   )
   registerPage.getConfirmationText()
 })
+
+
 
 
 //-----TC_69-------------------------Approve(Subscriber)--------------------------------------------------
