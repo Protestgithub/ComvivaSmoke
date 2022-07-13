@@ -74,6 +74,16 @@ Cypress.Commands.add('reimbursementproviders', () => {
 			});
 		})
 })
+var SubMobile
+Cypress.Commands.add('getSubscriberMobileNumber', () => {
+	//pageLogin.getiFrame()
+	cy.fixture('userData/subscriberReg.json').then((usermobile) => {
+		SubMobile = usermobile.subscriberMobile
+		cy.log(SubMobile)
+		stockManagementPage.getMSISDN().type(SubMobile, { force: true })
+		
+	})
+})
 
 Cypress.Commands.add('selectInstrumentType', () => {
 	stockManagementPage.getOperatorInstrumentTypes()
