@@ -423,37 +423,8 @@ Given('Login into Mobiquity Portal as Business admin User1', function () {
     cy.wait(2000)
     cy.Passwordchange(this.data1.UserCreationSuccessMessage)
     pageLogin.getloginbtn1().click({force:true})
-    cy.wait(8000)
-    cy.intercept(Cypress.env("apiBaseURL")+ "/mobiquitypay/ums/v3/user/auth/web/login").as('getPwd')
     cy.login(BALogin, this.data1.BAPassword)
-    cy.wait(2000)
-    cy.wait('@getPwd').then((interception) => {
-    let response = interception.response.body
-    const resValues = Object.values(response)
-    const serviceRequestID = resValues[0]
-    cy.log(serviceRequestID)
-    let url1 = cy.visit(Cypress.env("apiURL"))
-    let getURL = url1.concat(serviceRequestID)
-    cy.request({
-      url: getURL,
-      headers: {
-        'Authorization': 'Basic YWRtaW46c2VjcmV0',
-        'Content-Type': 'application/json'
-      }
-    }).then((res) => {
-      let res1 = res.body
-      const res3 = Object.values(res1)
-      let OTP = res3[4]
-      var OTPArr = Array.from({ length: 6 }, (v, k) => k + 1)
-      cy.wrap(OTPArr).each((index) => {
-      APIPage.getOTPDailogbox1().eq(index - 1).type(OTP[index - 1])
-      })
-      APIPage.getVerifybttn1().click()
     })
-  })
-  cy.wait(10000)
-   
-})
     cy.checkWelcomeText(this.data1.BAAdminText)
 
 })
@@ -470,6 +441,19 @@ When('Navigate to User Management and Click on manage user', function () {
   welcomePage.getUserManagementOption().scrollIntoView()
   welcomePage.getUserManagementOption().click()
   welcomePage.getManageUsersLink().click()
+
+})
+
+And('Enter Mobile number of subscriber in search', function () {
+  pageLogin.getiFrame()
+  manageUsersPage.getSearchUser().click({ force: true })
+  cy.readFile('cypress/fixtures/userData/subscriberReg.json').then((data) => {
+    var mobile
+    mobile = data.subscriberMobile 
+    cy.log(mobile)
+  manageUsersPage.getSearchUser().type(mobile, { force: true })
+})
+  manageUsersPage.getSearchUserButton().click({ force: true })
 
 })
 
