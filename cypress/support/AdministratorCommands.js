@@ -130,7 +130,7 @@ Cypress.Commands.add('getCCALoginID', () => {
 
 
 
-Cypress.Commands.add('getMessage', () => {
+Cypress.Commands.add('getMessage', (apiURL) => {
     cy.intercept("/mobiquitypay/serviceRequest/resume/any").as('getmessage')
     approvalPage.getApproveButton().click({ force: true })
     approvalPage.getApproveRequest().click({ force: true })
@@ -141,7 +141,7 @@ Cypress.Commands.add('getMessage', () => {
         const resValues = Object.values(response)
         let serviceRequestID = resValues[0]
         cy.log(serviceRequestID)
-        let url1 = cy.visit("/notify/internal/getByMessageIdOrExternalIdAndByToWhom?messageId=")
+        let url1 = apiURL + "/notify/internal/getByMessageIdOrExternalIdAndByToWhom?messageId="
         let url2 = url1.concat(serviceRequestID)
         let url3 = url2.concat('&toWhom=')
 
