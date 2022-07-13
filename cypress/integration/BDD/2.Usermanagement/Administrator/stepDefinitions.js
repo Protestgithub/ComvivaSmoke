@@ -58,12 +58,14 @@ Before(() => {
 //---------------------------------------------System Admin Login----------------------------------------------------
 Given('Login into Mobiquity Portal as System admin Maker', function () {
   cy.launchURL(Cypress.env('Adminurl'))
+  cy.wait(2000)
   cy.SysAdminlogin()
   cy.wait(2000)
   cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
 })
 Given('Login into Mobiquity Portal as System admin Checker1', function () {
   cy.launchURL(Cypress.env('Adminurl'))
+  cy.wait(2000)
   cy.SysAdminlogin2()
   cy.wait(2000)
   cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
@@ -190,6 +192,16 @@ And('Search Business Admin', function () {
   cy.getBAMobileNumber()
   manageUsersPage.getSearchUserButton().click({ force: true })
 })
+And('Assert Created Business Admin Mobile Number', function(){
+  cy.wait(2000)
+  cy.getBAMobileNumber()
+  manageUsersPage.getSearchUserButton().click({ force: true })
+  cy.readFile(filename).then((user) => {
+  let BAMobile = user.BAMobileNumber
+  var BBAMobile = " "+BAMobile
+  manageUsersPage.getAssertMobile().eq(1).should('have.text',BBAMobile)
+})
+})
 
 And('Assert Created Business Admin Mobile Number', function(){
   cy.wait(2000)
@@ -296,7 +308,6 @@ And('Enter all the details', function () {
   registerPage.getSubmitButton().click({ force: true })
 
 })
-
 And('Assert Created Customer Admin Mobile Number', function(){
   cy.wait(2000)
   cy.getCCAMobileNumber()
@@ -304,11 +315,10 @@ And('Assert Created Customer Admin Mobile Number', function(){
   cy.readFile(filename).then((user) => {
   let CCAMobile = user.CCAMobileNumber
   var CAMobile = " "+CCAMobile
-  manageUsersPage.getAssertMobile().should('have.text',CAMobile)
+  manageUsersPage.getAssertMobile().eq(1).should('have.text',CAMobile)
   cy.wait(2000)
 })
 })
-
 //-----------------------------SC_45----------------------------------------------------------
 //---------------------------Login with another Admin credentials------------------------------------
 
