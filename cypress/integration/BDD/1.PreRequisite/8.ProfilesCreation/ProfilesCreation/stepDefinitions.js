@@ -786,7 +786,7 @@ Then('Fill all Details and Create CustomercareAdmin authorization profile', func
 //----------------------Business-------------Distributor---------------------------------------------------
 
 And('select Distributor user type and select user role', function () {
-  // cy.wait(3000)
+  cy.wait(3000)
   authorizationProfilePage.getBusinessType().click({ force: true })
   authorizationProfilePage.getBusinessType().focused()
   authorizationProfilePage.getBusinessATMRole().eq(5).click({ force: true })
