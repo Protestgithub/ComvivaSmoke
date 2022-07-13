@@ -219,9 +219,9 @@ Then('Fill all Details and Create CustomercareAdmin authorization profile', func
   authorizationProfilePage.getProfileDoneButton().click({ force: true })
 
 })
-//----------------------Business-------------TelcoOperator---------------------------------------------------
+//----------------------Business-------------Distributor---------------------------------------------------
 
-And('select TelcoOperator user type and select user role', function () {
+And('select Distributor user type and select user role', function () {
   // cy.wait(3000)
   authorizationProfilePage.getBusinessType().click({ force: true })
   authorizationProfilePage.getBusinessType().focused()
@@ -229,7 +229,7 @@ And('select TelcoOperator user type and select user role', function () {
 
 })
 
-Then('Fill all Details and Create TelcoOperator authorization profile', function () {
+Then('Fill all Details and Create Distributor authorization profile', function () {
   cy.wait(3000)
   authorizationProfilePage.getProfileName().clear({ force: true }).type(getRandomName(), { force: true }),
     authorizationProfilePage.getUserServicePreferences().contains('ALL').click({ force: true })
@@ -257,45 +257,6 @@ Then('Fill all Details and Create TelcoOperator authorization profile', function
   authorizationProfilePage.getProfileDoneButton().click({ force: true })
 
 })
-
-//----------------------Business-------------Agent---------------------------------------------------
-
-And('select Agent user type and select user role', function () {
-  // cy.wait(3000)
-  authorizationProfilePage.getBusinessType().click({ force: true })
-  authorizationProfilePage.getBusinessType().focused()
-  authorizationProfilePage.getBusinessATMRole().eq(7).click({ force: true })
-
-})
-
-Then('Fill all Details and Create Agent authorization profile', function () {
-  cy.wait(3000)
-  authorizationProfilePage.getProfileName().clear({ force: true }).type(getRandomName(), { force: true }),
-    authorizationProfilePage.getUserServicePreferences().contains('ALL').click({ force: true })
-  recurse(
-    () => authorizationProfilePage.getProfileName().clear({ force: true }).type(getRandomName(), { force: true }),
-    () => cy.wait(2000),
-    () => authorizationProfilePage.getUserServicePreferences().contains('ALL').click({ force: true }),
-    () => cy.wait(2000),
-    (uniqueness) => (uniqueness) == authorizationProfilePage.getProfileNameExist().contains
-      ('Authorization profile name already exists,please try with different name').should('be.visible'),
-    authorizationProfilePage.getUserServicePreferences().contains('ALL').click({ force: true })
-
-  )
-  cy.readFile(SubProfileName).then((data) => {
-    data.BusinessAgent = profName
-    cy.writeFile(SubProfileName, data)
-  })
-  cy.selectModule()
-  cy.wait(3000)
-  authorizationProfilePage.getAdd().click({ force: true })
-  authorizationProfilePage.getConfirm().click({ force: true })
-  authorizationProfilePage.getProfileSuccessMessage().should('contain.text', this.data5.authorizationprofilesuccess)
-  authorizationProfilePage.getProfileDoneButton().click({ force: true })
-
-})
-
-
 
 //----------TC_150-----To verify that system admin should be able to ViewAuthorization profile for the selected category------------------------------
 When('Select Authorization profile', function () {
