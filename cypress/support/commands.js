@@ -87,7 +87,7 @@ function getRandomInt(min, max) {
 }
 
 Cypress.Commands.add('launchURL', (URL) => {
-    cy.visit(URL)
+    cy.visit(URL + '/dfscontainer/#/')
 })
 
 Cypress.Commands.add('login', (Username, Password) => {
