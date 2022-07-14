@@ -52,6 +52,7 @@ Feature: Churn Management
         And Select User type as Subscriber and click on Subscriber
         And Enter all the required subscriber details using Churned MSISDN
         Then SubscrigReg Confirmation message is displayed
+        Then Save the Registered MSISDN in to fixture
         Then Logout
     #Approval
         Given Login into Mobiquity Portal as another System admin Checker1 after logout
