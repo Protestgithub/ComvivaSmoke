@@ -27,11 +27,22 @@ const approvalPage = new approvals()
 
 const churnSubRegistration = 'cypress/fixtures/userData/churnSubscriberReg.json'
 var mobile
+var CIF
+var name
+var SubProfileName = 'cypress/fixtures/profileData/Profile.json'
+var RegulatoryMarketingProfile = 'cypress/fixtures/userData/Regulatory&MarketingProfile.json'
 var loginId
 var KycValue
 var CsvFile = 'cypress/fixtures/ChurnUserInitiation.csv'
 var JSONFile = 'cypress/fixtures/churnData/ChurnUserInitiation.json'
 
+function getRandomName() {
+  name = "";
+  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+  for (var i = 0; i < 5; i++)
+    name += possible.charAt(Math.floor(Math.random() * possible.length));
+  return name;
+}
 //----------------BDD Hooks-----------------------------------------------------------------
 Before(() => {
   cy.fixture('login').then(function (data1) {
@@ -131,49 +142,47 @@ And('Enter all the required subscriber details', function () {
   mobile = "77" + uuid()
   const lgid = () => Cypress._.random(1e5)
   loginId = this.data2.personalInfo.firstName + lgid()
-  const timestamp = (new Date).getTime()
-  KycValue = "A" + timestamp
-
-
+  CIF = lgid()
   cy.wait(2000)
-  cy.SubRandomName()
-  registerPage.getLastName().type(this.data2.personalInfo.lastName, { force: true })
-  cy.iframe().find('select[data-test-id="preferredLanguage"]')
-    .select(this.data2.personalInfo.preferredLang, { force: true })
+  registerPage.getFirstName().type(getRandomName(), { force: true })  
+  registerPage.getLastName().type(getRandomName(), { force: true })     
+  cy.iframe().find('select[data-test-id="preferredLanguage"]').select(this.data2.personalInfo.preferredLang, { force: true })
   registerPage.getLoginID().type(loginId, { force: true })
-
- // registerPage.getMobileNumber().type(mobile, { force: true })
- // registerPage.getAdressLine1().click({ force: true })
-
-  recurse(
+  
+    recurse(
     () => registerPage.getMobileNumber().clear().type(mobile, { force: true }),
     () => registerPage.getAdressLine1().click({ force: true }),
     (uniqueness) => (uniqueness) == registerPage.getValueIsNotUnique().contains
       ('Value is not unique').should('be.visible'),
     registerPage.getAdressLine1().click({ force: true }),
   )
+  //cy.writeFile(subRegistration,{ subscriberMobile: mobile })
   cy.writeFile(churnSubRegistration, { churnSubscriberRegistration: mobile })
+
 
   cy.OTP(Cypress.env('apiBaseURL'))
 
-  //---------------------------------------------    
+  //------------------------------------------------------------------------------------------------------------    
   registerPage.getAdressLine1().type(this.data2.subPersonalInfo.addressLine1, { force: true })
   registerPage.getCountry().select(this.data2.personalInfo.country, { force: true })
   registerPage.getState().select(this.data2.subPersonalInfo.state, { force: true })
   registerPage.getCity().select(this.data2.subPersonalInfo.city, { force: true })
   registerPage.getNextButtonBasic().click({ force: true })
 
-  //----------------------KYC---------------------
+  //----------------------KYC-----------------------------------------------------------------------
+  KycValue = "ABX" + uuid()
   registerPage.getKycDropDownButton().eq(0).click({ force: true })
+
   registerPage.getKycIDType().select(this.data2.KycInfo.KycIDType, { force: true })
   registerPage.getKycIDValue().type(KycValue, { force: true }),
+    // registerPage.getKycIDType().select(this.data2.KycInfo.KycIDType, { force: true })
     registerPage.getMakeThisPrimaryButton().click({ force: true }),
     registerPage.getKycGracePeriod().select(this.data2.KycInfo.KycGracePeriod, { force: true })
   registerPage.getNextButtonBasic1().click({ force: true })
 
-  //-----------------------Profile------------------
+  //-----------------------Profile------------------------------------------------------------------------
   cy.wait(2000)
-    cy.readFile(SubProfileName).then((data) => {
+  cy.readFile(SubProfileName).then((data) => {
     let Profile = data.subscriber
     registerPage.getSecurityProfile().select(Profile, { force: true })
   })
@@ -186,20 +195,19 @@ And('Enter all the required subscriber details', function () {
      let Profile = data.RegulatoryProfileName
      registerPage.getReguProfile().select(Profile, { force: true })
    })
-  //registerPage.getMarketingProfile().select(this.data2.KycInfo.MarketProfile, { force: true })
-   cy.readFile(RegulatoryMarketingProfile).then((data) => {
-    let Profile = data.MarketingProfileNameDistributer
-    registerPage.getMarketingProfile().select(Profile, { force: true })
-   }) 
+  registerPage.getMarketingProfile().select(this.data2.personalInfo.MarketProfileDistributer, { force: true })
+  // cy.readFile(RegulatoryMarketingProfile).then((data) => {
+  //  let Profile = data.MarketingProfileName
+  //  registerPage.getMarketingProfile().select(Profile, { force: true })
+  // })
 })
 Then('SubscrigReg Confirmation message is displayed', function () {
 
   registerPage.getNextButtonBasic2().click({ force: true })
   registerPage.getSubmitButton().click({ force: true })
-
-
   registerPage.getConfirmationText()
 })
+
 
 //------------------------------Approve to (Reg Subscriber to churn)--------------------------------------------------
 
@@ -282,20 +290,18 @@ And('Enter all the required subscriber details using Churned MSISDN', function (
   mobile = "77" + uuid()
   const lgid = () => Cypress._.random(1e5)
   loginId = this.data2.personalInfo.firstName + lgid()
-  const timestamp = (new Date).getTime()
-  KycValue = "A" + timestamp
-
+  CIF = lgid()
   cy.wait(2000)
-  cy.SubRandomName()
-  registerPage.getLastName().type(this.data2.personalInfo.lastName, { force: true })
-  cy.iframe().find('select[data-test-id="preferredLanguage"]')
-    .select(this.data2.personalInfo.preferredLang, { force: true })
+  registerPage.getFirstName().type(getRandomName(), { force: true })  
+  registerPage.getLastName().type(getRandomName(), { force: true })     
+  cy.iframe().find('select[data-test-id="preferredLanguage"]').select(this.data2.personalInfo.preferredLang, { force: true })
   registerPage.getLoginID().type(loginId, { force: true })
+   
   registerPage.getMobileNumber().type(this.data8.churnSubscriberRegistration, { force: true })
-  registerPage.getAdressLine1().click({ force: true })
-
-
-  cy.OTP(Cypress.env('apiBaseURL'))
+ 
+  //cy.writeFile(subRegistration,{ subscriberMobile: mobile })
+   cy.OTP(Cypress.env('apiBaseURL'))
+ 
 
   //------------------------------------------------------------------------------------------------------------    
   registerPage.getAdressLine1().type(this.data2.subPersonalInfo.addressLine1, { force: true })
@@ -305,18 +311,19 @@ And('Enter all the required subscriber details using Churned MSISDN', function (
   registerPage.getNextButtonBasic().click({ force: true })
 
   //----------------------KYC-----------------------------------------------------------------------
-
+  KycValue = "ABX" + uuid()
   registerPage.getKycDropDownButton().eq(0).click({ force: true })
+
   registerPage.getKycIDType().select(this.data2.KycInfo.KycIDType, { force: true })
   registerPage.getKycIDValue().type(KycValue, { force: true }),
+    // registerPage.getKycIDType().select(this.data2.KycInfo.KycIDType, { force: true })
     registerPage.getMakeThisPrimaryButton().click({ force: true }),
     registerPage.getKycGracePeriod().select(this.data2.KycInfo.KycGracePeriod, { force: true })
   registerPage.getNextButtonBasic1().click({ force: true })
 
   //-----------------------Profile------------------------------------------------------------------------
   cy.wait(2000)
-  cy.wait(2000)
-    cy.readFile(SubProfileName).then((data) => {
+  cy.readFile(SubProfileName).then((data) => {
     let Profile = data.subscriber
     registerPage.getSecurityProfile().select(Profile, { force: true })
   })
@@ -329,11 +336,17 @@ And('Enter all the required subscriber details using Churned MSISDN', function (
      let Profile = data.RegulatoryProfileName
      registerPage.getReguProfile().select(Profile, { force: true })
    })
-  //registerPage.getMarketingProfile().select(this.data2.KycInfo.MarketProfile, { force: true })
-   cy.readFile(RegulatoryMarketingProfile).then((data) => {
-    let Profile = data.MarketingProfileNameDistributer
-    registerPage.getMarketingProfile().select(Profile, { force: true })
-   })
+  registerPage.getMarketingProfile().select(this.data2.personalInfo.MarketProfileDistributer, { force: true })
+  // cy.readFile(RegulatoryMarketingProfile).then((data) => {
+  //  let Profile = data.MarketingProfileName
+  //  registerPage.getMarketingProfile().select(Profile, { force: true })
+  // })
+})
+Then('SubscrigReg Confirmation message is displayed', function () {
+
+  registerPage.getNextButtonBasic2().click({ force: true })
+  registerPage.getSubmitButton().click({ force: true })
+  registerPage.getConfirmationText()
 })
 
 Then('Save the Registered MSISDN in to fixture', function () {
@@ -361,7 +374,6 @@ And('Enter all the required subscriber details', function () {
   cy.iframe().find('select[data-test-id="preferredLanguage"]')
     .select(this.data2.personalInfo.preferredLang, { force: true })
   registerPage.getLoginID().type(loginId, { force: true })
-
   registerPage.getMobileNumber().type("7723456789", { force: true })
   registerPage.getAdressLine1().click({ force: true })
 
@@ -388,19 +400,31 @@ And('Enter all the required subscriber details', function () {
   registerPage.getKycDropDownButton().eq(0).click({ force: true })
   registerPage.getKycIDType().select(this.data2.KycInfo.KycIDType, { force: true })
   registerPage.getKycIDValue().type(KycValue, { force: true }),
-    registerPage.getMakeThisPrimaryButton().click({ force: true }),
-    registerPage.getKycGracePeriod().select(this.data2.KycInfo.KycGracePeriod, { force: true })
+  registerPage.getMakeThisPrimaryButton().click({ force: true }),
+  registerPage.getKycGracePeriod().select(this.data2.KycInfo.KycGracePeriod, { force: true })
   registerPage.getNextButtonBasic1().click({ force: true })
 
   //-----------------------Profile------------------
   cy.wait(2000)
-  registerPage.getSecurityProfile().select(this.data2.personalInfo.securityProfile1, { force: true })
-  //cy.getSecurityProfileName()
-  registerPage.getAuthProfile().select(this.data2.personalInfo.authProfile1, { force: true })
-  registerPage.getReguProfile().select(this.data2.KycInfo.ReguProfile, { force: true })
+  cy.readFile(SubProfileName).then((data) => {
+    let Profile = data.subscriber
+    registerPage.getSecurityProfile().select(Profile, { force: true })
+  })
+  cy.readFile(SubProfileName).then((data) => {
+    let Profile = data.SubscriberProfileName1
+    registerPage.getAuthProfile().select(Profile, { force: true })
+  })
+  //  registerPage.getReguProfile().select(this.data2.KycInfo.ReguProfile, { force: true })
+   cy.readFile(RegulatoryMarketingProfile).then((data) => {
+     let Profile = data.RegulatoryProfileName
+     registerPage.getReguProfile().select(Profile, { force: true })
+   })
   registerPage.getMarketingProfile().select(this.data2.KycInfo.MarketProfile, { force: true })
+  // cy.readFile(RegulatoryMarketingProfile).then((data) => {
+  //  let Profile = data.MarketingProfileName
+  //  registerPage.getMarketingProfile().select(Profile, { force: true })
+  // })
 })
-
 
 And('Upload Bulk csv file with valid details', function () {
 
@@ -447,7 +471,7 @@ Then('Select the initiated churn request and Then click on Approve and Reject by
     cy.wrap($body)
     churnManagementPage.getChurnApprovalSubmitButton().click({ force: true })
     .should(function () {
-        expect(this.windowConfirm).to.be.calledWith('Are you sure you want to Reject?')
+     expect(this.windowConfirm).to.be.calledWith('Are you sure you want to Reject?')
         //expect(this.consoleLog).to.be.calledWith('CONFIRMED')  // passes
       })
 
