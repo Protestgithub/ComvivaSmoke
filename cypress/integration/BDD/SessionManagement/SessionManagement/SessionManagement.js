@@ -22,6 +22,9 @@ Before(() => {
   cy.fixture('login').then(function (data) {
     this.data = data;
   })
+   cy.fixture('UserManagement').then(function (data2) {
+    this.data2 = data2;
+  })
 });
 
 
