@@ -907,6 +907,82 @@ Then('Verify that error button of contact number should be visible', function ()
   registerPage.getErrorIcon().should('be.visible')
 })
 
+//--------------------------Search Subscriber Mobile NUmber---------------------------------------------
+And('Enter Mobile number of subscriber in search', function () {
+  pageLogin.getiFrame()
+  manageUsersPage.getSearchUser().click({ force: true })
+  cy.readFile('cypress/fixtures/userData/subscriberReg.json').then((data) => {
+    var mobile
+    mobile = data.subscriberMobile 
+    cy.log(mobile)
+  manageUsersPage.getSearchUser().type(mobile, { force: true })
+})
+  manageUsersPage.getSearchUserButton().click({ force: true })
+
+})
+
+//------------------------------------Monica----------------------------------------------------------
+
+//-----------------------------Test Scripts-----------------------------------------------------------------------------
+
+//---------------------USER MANAGEMENNT MANAGE USER--------------------------------------------
+
+
+//---------------------USER MANAGEMENNT MANAGE USER--------------------------------------------
+
+
+And('Enter Mobile number and KYC number in search menu1', function () {
+  cy.fixture(SubMob).then((user) => {
+    var SubMob1 = user.subscriberMobile
+    cy.log(SubMob1)
+    manageUsersPage.getSearchUser().type(SubMob1)
+  })
+    manageUsersPage.getSearchUserButton().click({ force: true })
+})
+And('Click on view Details and Click on Account info', function () {
+
+  manageUsersPage.getViewIcon().eq(0).click({ force: true })
+  manageUsersPage.getAccountInfo().click({ force: true })
+})
+
+Then('Check All Wallet Details', function () {
+  cy.wait(3000)
+})
+And('select either Lock outgoing payments or Lock incoming payments or Lock both', function () {
+
+  manageUsersPage.getlockunclockWallets().click({ force: true })
+  manageUsersPage.getLockOutgoingPayements().click({ force: true })
+})
+Then('Click On lock all', function () {
+  manageUsersPage.getlockallbtn().click({ force: true })
+  manageUsersPage.getconfirmationlock().type(getRandomName(), { force: true })
+  manageUsersPage.getconfirmationbtn().click({ force: true })
+  manageUsersPage.getlockedmessage().should('have.text', this.data2.LockOutgoing)
+})
+And('select either UNLock outgoing payments or UNLock incoming payments or Lock both', function () {
+
+  manageUsersPage.getlockunclockWallets().click({ force: true })
+  manageUsersPage.getUnlockoutgoingPayements().click({ force: true })
+
+})
+Then('Click On UNLock', function () {
+  manageUsersPage.getunlockbtn().click({ force: true })
+  manageUsersPage.getconfirmationlock().type(getRandomName(), { force: true })
+  manageUsersPage.getconfirmationbtn().click({ force: true })
+  manageUsersPage.getlockedmessage().should('have.text',this.data2.UnlockOutgoing)
+})
+And('Click on view Details and Click on Credentials', function () {
+
+  manageUsersPage.getViewIcon().eq(0).click({ force: true })
+  manageUsersPage.getcredentials().click({ force: true })
+})
+And('Click on refresh icon corresponding to the respective authentication factor', function () {
+  manageUsersPage.getresetcredentials().eq(0).click({ force: true })
+  manageUsersPage.getresetconfirmation().click({ force: true })
+  manageUsersPage.getsuccessresetconfirmation().click({ force: true })
+})
+
+
 
 
 
