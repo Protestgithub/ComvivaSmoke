@@ -1,4 +1,3 @@
-
 class ReportingSuite
 {
     getclosebtn()
@@ -15,7 +14,7 @@ class ReportingSuite
         const $body = $element.contents().find('body')
         let stripe = cy.wrap($body)
         stripe.find('[class="pentaho-button"]').eq(0).click({force:true})
-        cy.wait(5000)
+        cy.wait(10000)
       })
     }
     getBrowseFiles()
