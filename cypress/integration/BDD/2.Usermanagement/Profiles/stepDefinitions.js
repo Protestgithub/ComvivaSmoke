@@ -26,6 +26,9 @@ const MarketingProfile1 = new MarketingProfile()
 
 const uuid = () => Cypress._.random(0, 1e6)
 const id = uuid()
+var RegulatoryFile = 'userData/Regulatory&MarketingProfile.json'
+
+
 
 //----------------BDD Hooks-----------------------------------------------------------------
 Before(() => {
