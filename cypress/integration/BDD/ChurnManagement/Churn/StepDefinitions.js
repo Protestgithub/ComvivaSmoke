@@ -57,7 +57,9 @@ Before(() => {
   cy.fixture('ChurnManagement').then(function (data3) {
     this.data3 = data3;
   })
-
+  cy.fixture('userData/Regulatory&MarketingProfile').then(function (data4) {
+    this.data4 = data4;
+  })
 });
 
 //---------------------------------------------System Admin Login----------------------------------------------------
@@ -195,7 +197,7 @@ And('Enter all the required subscriber details', function () {
      let Profile = data.RegulatoryProfileName
      registerPage.getReguProfile().select(Profile, { force: true })
    })
-  registerPage.getMarketingProfile().select(this.data2.personalInfo.MarketProfileDistributer, { force: true })
+  registerPage.getMarketingProfile().select(this.data4.MarketingProfileName, { force: true })
   // cy.readFile(RegulatoryMarketingProfile).then((data) => {
   //  let Profile = data.MarketingProfileName
   //  registerPage.getMarketingProfile().select(Profile, { force: true })
@@ -300,8 +302,8 @@ And('Enter all the required subscriber details using Churned MSISDN', function (
   registerPage.getMobileNumber().type(this.data8.churnSubscriberRegistration, { force: true })
  
   //cy.writeFile(subRegistration,{ subscriberMobile: mobile })
-   cy.OTP(Cypress.env('apiBaseURL'))
- 
+  
+  cy.OTP(Cypress.env('apiBaseURL'))
 
   //------------------------------------------------------------------------------------------------------------    
   registerPage.getAdressLine1().type(this.data2.subPersonalInfo.addressLine1, { force: true })
@@ -336,7 +338,7 @@ And('Enter all the required subscriber details using Churned MSISDN', function (
      let Profile = data.RegulatoryProfileName
      registerPage.getReguProfile().select(Profile, { force: true })
    })
-  registerPage.getMarketingProfile().select(this.data2.personalInfo.MarketProfileDistributer, { force: true })
+  registerPage.getMarketingProfile().select(this.data4.MarketingProfileName, { force: true })
   // cy.readFile(RegulatoryMarketingProfile).then((data) => {
   //  let Profile = data.MarketingProfileName
   //  registerPage.getMarketingProfile().select(Profile, { force: true })
@@ -389,6 +391,7 @@ And('Enter all the required subscriber details', function () {
 
   cy.OTP(Cypress.env('apiBaseURL'))
 
+
   //---------------------------------------------    
   registerPage.getAdressLine1().type(this.data2.subPersonalInfo.addressLine1, { force: true })
   registerPage.getCountry().select(this.data2.personalInfo.country, { force: true })
@@ -419,15 +422,20 @@ And('Enter all the required subscriber details', function () {
      let Profile = data.RegulatoryProfileName
      registerPage.getReguProfile().select(Profile, { force: true })
    })
-  registerPage.getMarketingProfile().select(this.data2.KycInfo.MarketProfile, { force: true })
-  // cy.readFile(RegulatoryMarketingProfile).then((data) => {
+   registerPage.getMarketingProfile().select(this.data4.MarketingProfileName, { force: true })
+   // cy.readFile(RegulatoryMarketingProfile).then((data) => {
   //  let Profile = data.MarketingProfileName
   //  registerPage.getMarketingProfile().select(Profile, { force: true })
   // })
 })
 
 And('Upload Bulk csv file with valid details', function () {
-
+  cy.wait(2000)
+  churnManagementPage.getChurnInitiationUpload().attachFile('ChurnUserInitiation.csv')
+  cy.wait(3000)
+  churnManagementPage.getChurnInitiationUploadSubmit().click({ force: true })
+  cy.wait(3000)
+  churnManagementPage.getChurnInitiationMessage().should('have.text', 'Churn initiation is completed')
 
 })
 
