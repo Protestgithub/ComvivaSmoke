@@ -37,8 +37,8 @@ Before(() => {
 //---------------------------------Kalyani_BA Login-------------------------------------------------------
 
 Given('Login into Mobiquity Portal as Business admin User1', function () {
-    cy.launchURL(Cypress.env('Businessurl1'))
-    cy.launchURL(Cypress.env('Businessurl'))
+    cy.launchURL(Cypress.env('Adminurl'))
+    cy.visit(Cypress.env("Adminurl") + "Business/")
     cy.wait(3000)
     cy.login(this.data1.businessAdmin.businessadminUser1, this.data1.businessAdmin.businessadminPwd1)
     cy.checkWelcomeText(this.data1.BAAdminText)
