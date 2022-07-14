@@ -25,7 +25,7 @@ import './securityCommands'
 import './subscriberCommands'
 import 'cypress-failed-log'
 
-afterEach(() => {
+/*afterEach(() => {
 
   const screenshotsFolder = Cypress.config("screenshotsFolder");
   if (window.cucumberJson?.generate) {
@@ -45,7 +45,7 @@ afterEach(() => {
       });
     }
   }
-});
+});*/
 
 module.exports = (on, config) => {
     on("file:preprocessor", cucumber());
