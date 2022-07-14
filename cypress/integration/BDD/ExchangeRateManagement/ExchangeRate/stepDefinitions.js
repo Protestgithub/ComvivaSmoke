@@ -27,6 +27,11 @@ Before(() => {
    {
        this.data = data;
    })
+   cy.fixture('UserManagement').then(function(data2)
+   {
+       this.data2 = data2;
+   })
+  
    cy.fixture('erm').then(function(data1)
    {
      this.data1=data1;
