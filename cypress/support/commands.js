@@ -388,7 +388,7 @@ Cypress.Commands.add('MPRandomName1', () => {
         cy.writeFile(RegulatoryFile, data)
         })
         function getRandomName() {
-        name = "";
+        name = "MP";
         var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
         for (var i = 0; i < 5; i++)
             name += possible.charAt(Math.floor(Math.random() * possible.length));
@@ -526,7 +526,7 @@ Cypress.Commands.add('RPRandomName', () => {
     RegulatoryProfile1.getregulatoryprofilename().type(hi, { force: true })
     cy.writeFile(RegulatoryFile, { RegulatoryProfileName: hi })
     function getRandomName() {
-        name = "";
+        name = "RP";
         var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
         for (var i = 0; i < 5; i++)
             name += possible.charAt(Math.floor(Math.random() * possible.length));
@@ -542,7 +542,7 @@ Cypress.Commands.add('RPRandomName1', () => {
         cy.writeFile(RegulatoryFile, data)
         })
        function getRandomName() {
-        name = "";
+        name = "RP";
         var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
         for (var i = 0; i < 5; i++)
             name += possible.charAt(Math.floor(Math.random() * possible.length));
@@ -559,7 +559,7 @@ Cypress.Commands.add('MPRandomName', () => {
         cy.writeFile(RegulatoryFile, data)
         })
         function getRandomName() {
-        name = "";
+        name = "MP";
         var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
         for (var i = 0; i < 5; i++)
             name += possible.charAt(Math.floor(Math.random() * possible.length));
