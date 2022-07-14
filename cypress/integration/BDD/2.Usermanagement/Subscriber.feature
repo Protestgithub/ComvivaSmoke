@@ -269,6 +269,21 @@ When Navigate to User Management and Click on manage user
 And Enter Mobile number or KYC number in Search
 When User Click on eye button
 
+# Author: Kalyani M
+# Last Updated:
+# Comments 
+# Test Case_ID : TC_52_Sysadmin checking lower Hierarchy details
+#
+@test
+
+Scenario: To verify that Business admin is able to  Lower Hierarchy details
+Given Login into Mobiquity Portal as System admin Maker
+When Navigate to User Management and Click on manage user
+And Enter Mobile number of subscriber in search
+When User Click on eye button 
+Then Verify View Details Page
+
+
 ########################################## Arpitha ###############################################
 
 
@@ -300,4 +315,69 @@ When Navigate to User Management and Click on register
 And Select User type as Business and Select Corporate
 And Enter registered email id value
 Then Email Error message is displayed
+
+
+###################################### Monica ###########################################################
+
+# Author:Monica
+# Last Updated:
+# Comments 
+# Scenario_ID : TC_136
+# 
+@test
+
+Scenario:To verify that user can view details of all wallets associated with the user along with their corresponding balances and status successfully.
+Given Login into Mobiquity Portal as System admin Maker
+When Navigate to UserManagement And Click on Manage Users
+And Enter Mobile number and KYC number in search menu1
+And Click on view Details and Click on Account info
+Then Check All Wallet Details
+
+# Author:
+# Last Updated:
+# Comments 
+# Scenario_ID :TC_137
+# 
+@test
+
+Scenario:To verify that Admin user can lock user’s wallet as sender or receiver or both.
+Given Login into Mobiquity Portal as System admin Maker
+When Navigate to UserManagement And Click on Manage Users
+And Enter Mobile number and KYC number in search menu1
+And Click on view Details and Click on Account info
+And select either Lock outgoing payments or Lock incoming payments or Lock both
+Then Click On lock all
+    
+# Author:
+# Last Updated:
+# Comments 
+# Scenario_ID : TC_142
+# 
+@test
+
+Scenario:To verify that admin user can reset the credentials of Business user and customer's successfully.
+Given Login into Mobiquity Portal as System admin Maker
+When Navigate to UserManagement And Click on Manage Users
+And Enter Mobile number and KYC number in search menu1
+And Click on view Details and Click on Credentials
+And Click on refresh icon corresponding to the respective authentication factor
+
+# Author:Monica
+# Last Updated:
+# Comments 
+# Scenario_ID : TC_140
+# 
+@test
+
+Scenario:To Verify that Admin user can unlock user’s wallet as sender or receiver or both.
+Given Login into Mobiquity Portal as System admin Maker
+When Navigate to UserManagement And Click on Manage Users
+And Enter Mobile number and KYC number in search menu1
+And Click on view Details and Click on Account info
+And select either UNLock outgoing payments or UNLock incoming payments or Lock both
+Then Click On UNLock
+
+
+
+
 
