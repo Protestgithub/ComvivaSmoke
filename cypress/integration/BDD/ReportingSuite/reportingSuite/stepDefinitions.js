@@ -32,7 +32,7 @@ Given('Login into Mobiquity Portal as System admin User and Launch Pentaho Porta
 //-------------------------------Click on Browser Files-----------------------------------------------
 And('click on Browse Files',function(){
   cy.wait(20000)
-  cy.visit(Cypress.env(apiBaseURL) + '/pentaho/Home?locale=en')
+  cy.visit(Cypress.env('Adminurl') + '/pentaho/Home?locale=en')
   cy.wait(20000)
   Report.getBrowseFiles()
 })
