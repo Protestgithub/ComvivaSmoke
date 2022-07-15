@@ -324,8 +324,8 @@ And('Enter all the mandatory Basic information details and click on next', funct
   registerPage.getNextButtonBasic().click({ force: true })
 })
 Then('Enter all the mandatory Profile details like marketing profile,regulatory profile,Operator profile.', function () {
-  registerPage.getRegulatory().select(this.data2.personalInfo.regulatory, { force: true })
-  registerPage.getMarketing().select(this.data2.personalInfo.marketing, { force: true })
+  registerPage.getRegulatory().select('FullKycprofile', { force: true })
+  registerPage.getMarketing().select("TELOPTDefaultMP", { force: true })
   registerPage.getNextButtonProfile().click({ force: true })
 
   registerPage.getSMSC().select(this.data2.personalInfo.smscid, { force: true })
