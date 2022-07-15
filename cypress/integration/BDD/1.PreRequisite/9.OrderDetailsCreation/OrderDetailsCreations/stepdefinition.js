@@ -49,8 +49,9 @@ Given('Login into Mobiquity Portal as Business admin User1', function () {
 
 When('Navigate to Transfer to Bank', function () {
     cy.wait(3000)
-    orderDetailsCreationPage.getTransferToBankOption().scrollIntoView()
-    orderDetailsCreationPage.getTransferToBankOption().click({ force: true })
+    orderDetailsCreationPage.getBankServices().scrollIntoView()
+    orderDetailsCreationPage.getBankServices().click({ force: true })
+    orderDetailsCreationPage.getTransferToBank().click({ force: true })
 
 })
 
