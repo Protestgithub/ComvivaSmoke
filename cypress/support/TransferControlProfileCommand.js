@@ -54,6 +54,7 @@ const MarketingProfile1 = new MarketingProfile()
 const manageUsersPage = new manageUsers()
 const filenameTCP = 'userData/TCPdata.json'
 const filenameTCP1 = 'userData/TCPdata1.json'
+const CustTCPdata = 'userData/CustTCPdata.json'
 const CustTCPdata1 = 'userData/CustTCPdata1.json'
 const fileRegulatoryProfile = 'userData/Regulatory&MarketingProfile.json'
 var Tcpname, Tcpname1,TcpnameSub,TcpnameSub1
