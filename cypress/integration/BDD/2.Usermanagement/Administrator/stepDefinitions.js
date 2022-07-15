@@ -130,14 +130,14 @@ And('Enter all the required details', function () {
   registerPage.getNextButtonBasic().click({ force: true })
 
   //----------------------Profile Data-----------------------------------------------------------------
-  cy.readFile(SubProfileName).then((data) => {
-    let Profile = data.businesAadmin
-    registerPage.getSecurityProfile().select(Profile, { force: true })
-  })
-    cy.readFile(SubProfileName).then((data) => {
-    let Profile = data.businesAadmin1
-    registerPage.getAuthProfile().select(Profile, { force: true })
-    })
+  /*cy.readFile(SubProfileName).then((data) => {
+    let Profile = data.businesAadmin*/
+    registerPage.getSecurityProfile().select('BusinessAdminSecurityProfile', { force: true })
+  //})
+    /*cy.readFile(SubProfileName).then((data) => {
+    let Profile = data.businesAadmin1*/
+    registerPage.getAuthProfile().select('BusinessAdminDefault Profile', { force: true })
+    //})
     registerPage.getNextButtonProfile().click({ force: true })
     registerPage.getSubmitButton().click({ force: true })
 
@@ -233,14 +233,14 @@ And('System Admin is able to edit details', function () {
   registerPage.getCountry().select(this.data2.personalInfo.country, { force: true })
   registerPage.getNextButtonBasic().click({ force: true })
 
-  //cy.readFile(SubProfileName).then((data) => {
-  //  let Profile = data.businesAadmin
-    registerPage.getSecurityProfile().select( 'BusinessAdminSecurityProfile', { force: true })
- // })
-  //  cy.readFile(SubProfileName).then((data) => {
- //   let Profile = data.businesAadmin1
-    registerPage.getAuthProfile().select('BusinessAdminDefault Profile', { force: true })
-  //  })
+  /*cy.readFile(SubProfileName).then((data) => {
+    let Profile = data.businesAadmin
+    registerPage.getSecurityProfile().select(Profile, { force: true })
+  })
+    cy.readFile(SubProfileName).then((data) => {
+    let Profile = data.businesAadmin1
+    registerPage.getAuthProfile().select(Profile, { force: true })
+    })*/
     registerPage.getNextButtonProfile().click({ force: true })
 })
 
@@ -294,8 +294,8 @@ And('Enter all the details', function () {
   registerPage.getNextButtonBasic().click({ force: true })
 
   //----------------------Profile Data-----------------------------------------------------------------
- // cy.readFile(SubProfileName).then((data) => {
- //  let Profile = data.CustomercareAdmin
+ /* cy.readFile(SubProfileName).then((data) => {
+   let Profile = data.CustomercareAdmin*/
    registerPage.getSecurityProfile().select('CustomerCareAdminSecurityProfile', { force: true })
 
  // })
@@ -303,7 +303,7 @@ And('Enter all the details', function () {
   //  let Profile = data.CustomercareAdmin1
     registerPage.getAuthProfile().select('CCEDefault Profile', { force: true })
  
-//   })
+   //})
   registerPage.getNextButtonProfile().click({ force: true })
   registerPage.getSubmitButton().click({ force: true })
 
