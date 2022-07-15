@@ -19,6 +19,9 @@ class manageUsers {
     getViewDetails() {
         return cy.iframe().find('span.font-weight-bold')
     }
+    getAssertMobile(){
+    return cy.iframe().find('[class="mat-tooltip-trigger ng-star-inserted"]')
+    }
 
     getSuspendIcon() {
         return cy.iframe().find('.mat-tooltip-trigger.ng-star-inserted')
