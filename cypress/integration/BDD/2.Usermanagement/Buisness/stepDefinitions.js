@@ -801,7 +801,7 @@ And('Click on refresh icon corresponding to the respective authentication factor
 
 //-----------------------------------------Sudheer----------------------------------------------------------
 
-//----------TC_129-------To verify that Admin user can view all the transaction details under Order details menu------------
+//----------TC_130-------To verify that Admin user can check all the Order Details of a customer/ business users successfully------------
 
 
 When('Click on user management and Manage users', function () {
@@ -811,11 +811,12 @@ When('Click on user management and Manage users', function () {
   manageUsersPage.getManageUsers().click()
 })
 
-And('Enter Mobile numberin search Menu', function () {
+
+And('Enter Mobile number and KYC number in search menu for customer/ business users', function () {
   cy.wait(3000)
-  pageLogin.getiFrame()
-  manageUsersPage.getUserSearchDetails().click({ force: true })
-  cy.getSubscriberMobileNumber()
+
+ cy.getBusinessUserMobNum()
+  manageUsersPage.getBusinessUserDetail().should('have.text', ' Business')
 })
 
 And('Click on view Details', function () {
@@ -823,233 +824,10 @@ And('Click on view Details', function () {
   manageUsersPage.getViewAllDetailsButton().click({ force: true })
 })
 
-Then('Click on order details', function () {
-
-  manageUsersPage.getOrderDetailsButton().click({ force: true })
-  cy.wait(3000)
-  manageUsersPage.getOrderDetailsMessage().should('have.text', ' Manage Users  > View Details')
-})
-
-//----------TC_130-------To verify that Admin user can check all the Order Details of a customer/ business users successfully------------
-
-And('Enter Mobile number and KYC number in search menu for customer/ business users', function () {
-  cy.wait(3000)
-  manageUsersPage.getUserSearchDetails().type(this.data4.mobilenumber.businessUserMobile, { force: true })
-  manageUsersPage.getSearchUserButton().click({ force: true })
-  //cy.getBAMobileNumber()
-
-  manageUsersPage.getBusinessUserDetail().should('have.text', ' Business')
-})
-
 Then('Click on order details for customer/ business users', function () {
   cy.wait(3000)
   manageUsersPage.getOrderDetailsButton().click({ force: true })
   manageUsersPage.getOrderDetailsMessage().should('have.text', ' Manage Users  > View Details')
-})
-
-// //---------TC_131------To verify that latest order transactions will be displayed on the first page of Order details screen.------------
-
-Then('Click on order details for latest order transactions', function () {
-  cy.wait(3000)
-  manageUsersPage.getOrderDetailsButton().click({ force: true })
-  manageUsersPage.getWalletExpandButton().click({ force: true })
-  manageUsersPage.getViewMoreDetailsButton().click({ force: true })
-  manageUsersPage.getLatestTrasanction().should('have.text', '1')
-})
-
-
-//---------TC_132-----To verify that all the wallet transactions are displayed in statement screen sucessfully.------------
-
-And('Click on Wallet Payment History', function () {
-  manageUsersPage.getWalletPaymentHistoryButton().click({ force: true })
-
-})
-
-And('Click on expand button', function () {
-  manageUsersPage.getWalletExpandButton().click({ force: true })
-})
-
-Then('Click on wallet view Details', function () {
-  manageUsersPage.getViewMoreDetailsButton().click({ force: true })
-  manageUsersPage.getDateRangeAssert().should('contain.text', 'More Details')
-})
-
-
-
-//-------TC_133------To verify that user can able to view all the wallet transactions by entering valid transaction id.------------
-
-Then('Click on transactions id view Details', function () {
-  cy.wait(3000)
-  manageUsersPage.getViewMoreDetailsButton().click({ force: true })
-  manageUsersPage.getDateRangeAssert().should('contain.text', 'More Details')
-})
-//-------TC_133------To verify that user can able to view all the wallet transactions by entering valid transaction id.------------
-
-
-When('Click on user management and Manage users', function () {
-
-  manageUsersPage.getUsermanagement().scrollIntoView()
-  manageUsersPage.getUsermanagement().click()
-  manageUsersPage.getManageUsers().click()
-})
-
-And('Enter Mobile number and KYC number in search menu for valid transaction with id', function () {
-  cy.wait(3000)
-  manageUsersPage.getUserSearchDetails().type(this.data2.mobilenumber.mobile, { force: true })
-  manageUsersPage.getSearchUserButton().click({ force: true })
-})
-
-And('Click on view Details for valid transaction with id', function () {
-  cy.wait(3000)
-  manageUsersPage.getViewAllDetailsButton().click({ force: true })
-})
-
-And('Click on Wallet Payment History for valid transaction with id', function () {
-  cy.wait(3000)
-  manageUsersPage.getWalletPaymentHistoryButton().click({ force: true })
-
-})
-
-And('Click on expand button on valid transaction with id', function () {
-
-  manageUsersPage.getSearchTransactionId().type(this.data2.transactionid.validid, { force: true })
-  cy.wait(3000)
-  manageUsersPage.getWalletExpandButton().click({ force: true })
-})
-
-Then('Click on view Details for wallet transactions with id', function () {
-  cy.wait(3000)
-  manageUsersPage.getViewMoreDetailsButton().click({ force: true })
-  //  cy.get('.modal-content').should('have.text', 'Transaction ID')
-})
-
-
-
-
-
-
-//-----TC_134-----To verify that user can able to fetch the Statement based on the transaction type (success, fail etc.)------------
-
-When('Click on user management and Manage users', function () {
-
-  manageUsersPage.getUsermanagement().scrollIntoView()
-  manageUsersPage.getUsermanagement().click()
-  manageUsersPage.getManageUsers().click()
-})
-
-And('Enter Mobile number and KYC number in search menu for transaction type', function () {
-  cy.wait(3000)
-  manageUsersPage.getUserSearchDetails().type(this.data2.mobilenumber.mobile, { force: true })
-  manageUsersPage.getSearchUserButton().click({ force: true })
-})
-
-And('Click on view Details for transaction type', function () {
-  cy.wait(3000)
-  manageUsersPage.getViewAllDetailsButton().click({ force: true })
-})
-
-And('Click on Wallet Payment History for transaction type', function () {
-  cy.wait(3000)
-  manageUsersPage.getWalletPaymentHistoryButton().click({ force: true })
-
-})
-
-And('Click on filter and Select status type and Select apply', function () {
-  //cy.wait(3000)
-  manageUsersPage.getFilterStatementButton().click({ force: true })
-  manageUsersPage.getStatus().click()
-  cy.wait(3000)
-  manageUsersPage.getApplyFilterButton().click({ force: true })
-})
-And('Click on expand button for transaction type', function () {
-  cy.wait(3000)
-  manageUsersPage.getWalletExpandButton().click({ force: true })
-})
-
-Then('Click on view Details for transaction', function () {
-  cy.wait(3000)
-  manageUsersPage.getViewMoreDetailsButton().click({ force: true })
-
-})
-
-//-----TC_135-------To verify that user can able to fetch the Statement based on the Date range.------------
-
-When('Click on user management and Manage users', function () {
-
-  manageUsersPage.getUsermanagement().scrollIntoView()
-  manageUsersPage.getUsermanagement().click()
-  manageUsersPage.getManageUsers().click()
-})
-
-And('Enter Mobile number and KYC number in search menu based on the Date', function () {
-  cy.wait(3000)
-  manageUsersPage.getUserSearchDetails().type(this.data2.mobilenumber.mobile, { force: true })
-  manageUsersPage.getSearchUserButton().click({ force: true })
-})
-
-//-----TC_135-------To verify that user can able to fetch the Statement based on the Date range.------------
-
-And('Click on view Details based on the Date', function () {
-  cy.wait(3000)
-  manageUsersPage.getViewAllDetailsButton().click({ force: true })
-})
-
-And('Click on Wallet Payment History based on the Date', function () {
-  // cy.wait(3000)
-  manageUsersPage.getWalletPaymentHistoryButton().click({ force: true })
-
-})
-
-And('Click on filter', function () {
-  cy.wait(3000)
-  manageUsersPage.getFilterStatementButton().click({ force: true })
-})
-And('Select start date and end date and  Click apply', function () {
-  cy.wait(3000)
-
-  manageUsersPage.getDatePickerStart().click({ force: true })
-  manageUsersPage.getStartDate().contains(this.data2.usercalender.startday).click({ force: true })
-
-  manageUsersPage.getDatePickerEnd().click({ force: true })
-  manageUsersPage.getEndDate().contains(this.data2.usercalender.endday).click({ force: true })
-
-  manageUsersPage.getApplyFilterButton().click({ force: true })
-
-})
-
-And('Click on expand button based on the Date', function () {
-  cy.wait(3000)
-  manageUsersPage.getWalletExpandButton().click({ force: true })
-})
-And('Click on filter', function () {
-  cy.wait(3000)
-  manageUsersPage.getFilterStatementButton().click({ force: true })
-})
-And('Select start date and end date and  Click apply', function () {
-  cy.wait(3000)
-
-  manageUsersPage.getDatePickerStart().click({ force: true })
-  manageUsersPage.getStartDate().contains(this.data4.usercalender.startday).click({ force: true })
-
-  manageUsersPage.getDatePickerEnd().click({ force: true })
-  manageUsersPage.getEndDate().contains(this.data4.usercalender.endday).click({ force: true })
-
-  manageUsersPage.getApplyFilterButton().click({ force: true })
-
-})
-And('Click on expand button based on the Date', function () {
-  cy.wait(3000)
-  manageUsersPage.getWalletExpandButton().click({ force: true })
-})
-
-Then('Click on view Details based on the Date range', function () {
-  cy.wait(3000)
-  manageUsersPage.getViewMoreDetailsButton().click({ force: true })
-  manageUsersPage.getDateRangeAssert().should('contain.text', 'More Details')
-})
-
-
-
 
 //-----------------------------------------------Kalyani-------------------------------------------------------
 
