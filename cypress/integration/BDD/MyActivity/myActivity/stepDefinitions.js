@@ -176,16 +176,16 @@ And('Enter all the User details', function () {
   registerPage.getNextButtonBasic().click({ force: true })
 
   //----------------------Profile Data-----------------------------------------------------------------
-  cy.readFile(SubProfileName).then((data) => {
-    let Profile = data.CustomercareAdmin
-    registerPage.getSecurityProfile().select(Profile, { force: true })
+ // cy.readFile(SubProfileName).then((data) => {
+ //   let Profile = data.CustomercareAdmin
+    registerPage.getSecurityProfile().select("CustomerCareAdminSecurityProfile", { force: true })
 
-  })
-  cy.readFile(SubProfileName).then((data) => {
-    let Profile = data.CustomercareAdmin1
-    registerPage.getAuthProfile().select(Profile, { force: true })
+ // })
+ // cy.readFile(SubProfileName).then((data) => {
+//    let Profile = data.CustomercareAdmin1
+    registerPage.getAuthProfile().select("CCEDefault Profile", { force: true })
 
-  })
+ // })
   registerPage.getSaveButton().click({ force: true })
 })
 
@@ -244,16 +244,16 @@ And('Enter all the required details of the user', function () {
 
   //----------------------Profile Data-----------------------------------------------------------------
 
-  cy.readFile(SubProfileName).then((data) => {
-    let Profile = data.CustomercareAdmin
-    registerPage.getSecurityProfile().select(Profile, { force: true })
+  //cy.readFile(SubProfileName).then((data) => {
+//    let Profile = data.CustomercareAdmin
+    registerPage.getSecurityProfile().select("CustomerCareAdminSecurityProfile", { force: true })
 
-  })
-  cy.readFile(SubProfileName).then((data) => {
-    let Profile = data.CustomercareAdmin1
-    registerPage.getAuthProfile().select(Profile, { force: true })
+ // })
+ // cy.readFile(SubProfileName).then((data) => {
+   // let Profile = data.CustomercareAdmin1
+    registerPage.getAuthProfile().select("CCEDefault Profile", { force: true })
 
-  })
+ // })
   registerPage.getNextButtonProfile().click({ force: true })
 
 })
@@ -304,16 +304,16 @@ And('Enter all the details', function () {
 
   //----------------------Profile Data-----------------------------------------------------------------
 
-  cy.readFile(SubProfileName).then((data) => {
-    let Profile = data.CustomercareAdmin
-    registerPage.getSecurityProfile().select(Profile, { force: true })
+   //cy.readFile(SubProfileName).then((data) => {
+//    let Profile = data.CustomercareAdmin
+    registerPage.getSecurityProfile().select("CustomerCareAdminSecurityProfile", { force: true })
 
-  })
-  cy.readFile(SubProfileName).then((data) => {
-    let Profile = data.CustomercareAdmin1
-    registerPage.getAuthProfile().select(Profile, { force: true })
+ // })
+ // cy.readFile(SubProfileName).then((data) => {
+   // let Profile = data.CustomercareAdmin1
+    registerPage.getAuthProfile().select("CCEDefault Profile", { force: true })
 
-  })
+ // })
 
   registerPage.getNextButtonProfile().click({ force: true })
   registerPage.getSubmitButton().click({ force: true })
