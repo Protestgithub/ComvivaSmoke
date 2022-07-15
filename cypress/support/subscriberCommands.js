@@ -101,7 +101,16 @@ Cypress.Commands.add('SubRandomName', () => {
 
 })
 
-
+var SubMobile
+Cypress.Commands.add('getSubscriberMobNum', () => {
+	pageLogin.getiFrame()
+	cy.fixture('userData/subscriberReg.json').then((usermobile) => {
+		SubMobile = usermobile.subscriberMobile
+		cy.log(SubMobile)
+		manageUsersPage.getUserSearchDetails().type(SubMobile, { force: true })
+		manageUsersPage.getSearchUserButton().click({ force: true })
+	})
+})
 
 
 // Cypress.Commands.add('getAdminSecurityProfileName',() => {
