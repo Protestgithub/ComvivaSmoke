@@ -91,6 +91,7 @@ And('Enter Domain Name and Domain code.',function(){
     domainPage.getDomainName().type(CatNam,{force:true})
 
   })
+})
   cy.readFile(DataFile).then((data) => {
     var Catcode = data.DomainCode
     domainPage.getDomainCode().type(Catcode,{force:true})
