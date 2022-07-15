@@ -53,7 +53,7 @@ Before(() => {
      {
          this.data4 = data4;
      })
-     if ( Cypress.browser.isHeadless ) {
+    if ( Cypress.browser.isHeadless ) {
     cy.clearCookie('shouldStop')
   } else {
     cy.getCookie('shouldStop').then(cookie => {
@@ -64,6 +64,8 @@ Before(() => {
       ) {
         Cypress.runner.stop();
       }
+    })
+  }
      
   });
 
