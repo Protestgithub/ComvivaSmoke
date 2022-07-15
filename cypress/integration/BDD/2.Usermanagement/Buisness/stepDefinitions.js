@@ -102,7 +102,7 @@ Given('Login into Mobiquity Portal as Super admin Maker', function () {
 
 Given('Login into Mobiquity Portal as Business admin User', function () {
   cy.launchURL(Cypress.env('Adminurl'))
-  cy.visit(Cypress.env("Adminurl") + "Business/")
+  cy.visit(Cypress.env("Adminurl") + "/Business/")
   cy.wait(8000)
   cy.readFile('cypress/fixtures/userData/BusinessUserSuspensionData.json').then((data)=>{
     var SuspendedId
@@ -115,7 +115,7 @@ pageLogin.getUserLoginMessage().should('contain',this.data1.ErrorMessageLogin)
 
 Given('Login into Mobiquity Portal as Business admin User1', function () {
   cy.launchURL(Cypress.env('Adminurl'))
-  cy.visit(Cypress.env("Adminurl") + "Business/")
+  cy.visit(Cypress.env("Adminurl") + "/Business/")
   cy.wait(8000)
   cy.readFile('cypress/fixtures/userData/BusinessUserSuspensionData.json').then((data)=>{
     var SuspendedId
@@ -205,7 +205,13 @@ When('Navigate to UserManagement And Click on Manage Users', function () {
 And('Search Business Admin', function () {
   pageLogin.getiFrame()
   manageUsersPage.getSearchUser().click({ force: true })
-  manageUsersPage.getSearchUser().type(this.data2.manageUserInfo.mobile, { force: true })
+  cy.readFile('cypress/fixtures/userData/AdministratorData.json').then((data) => {
+    var Mobile
+    Mobile = data.BAMobileNumber 
+    cy.log(mobile)
+  manageUsersPage.getSearchUser().type(Mobile, { force: true })
+})
+  //manageUsersPage.getSearchUser().type(this.data2.manageUserInfo.mobile, { force: true })
   manageUsersPage.getSearchUserButton().click({ force: true })
 
 })
@@ -325,8 +331,9 @@ And('Enter all the mandatory Basic information details and click on next', funct
 })
 Then('Enter all the mandatory Profile details like marketing profile,regulatory profile,Operator profile.', function () {
   registerPage.getRegulatory().select('FullKycprofile', { force: true })
-  registerPage.getMarketing().select("TELOPTDefaultMP", { force: true })
+  registerPage.getMarketing().select('TELOPTDefaultMP', { force: true })
   registerPage.getNextButtonProfile().click({ force: true })
+  
 
   registerPage.getSMSC().select(this.data2.personalInfo.smscid, { force: true })
   registerPage.getTopUpId().select(this.data2.personalInfo.topupid, { force: true })
@@ -337,6 +344,7 @@ Then('Enter all the mandatory Profile details like marketing profile,regulatory 
 })
 And('Click on Next >> click on Confirm', function () {
   registerPage.getNextButtonOperatorProfile().click({ force: true })
+  registerPage.getNextButtonBasic3().click({ force: true })
   registerPage.getSubmitButton().click({ force: true })
 })
 Then('Confirmation message', function () {
@@ -526,25 +534,27 @@ And('Enter all the required business user details', function () {
   //-----------------------------Profile---------------------------------------------------------------
 
   cy.wait(5000)
-  cy.readFile(SubProfileName).then((data) => {
-    let Profile = data.Distributer
-    registerPage.getSecurityProfile().select(Profile, { force: true })
-  })
-  cy.readFile(SubAuthProfileName).then((data) => {
-    let Profile1 = data.BusinessDistributor
-    registerPage.getAuthProfile().select(Profile1, { force: true })
-  })
+  //cy.readFile(SubProfileName).then((data) => {
+  //  let Profile = data.Distributer
+    registerPage.getSecurityProfile().select('WholesalerDefaultSecurityProfile', { force: true })
+ // })
+ // cy.readFile(SubAuthProfileName).then((data) => {
+  //  let Profile1 = data.BusinessDistributor
+    registerPage.getAuthProfile().select('WholesalerDefault Profile', { force: true })
+  //})
  // registerPage.getReguProfile().select(this.data2.personalInfo.ReguProfile, { force: true })
-  cy.readFile(RegulatoryMarketingProfile).then((data) => {
-       let RegProfile = data.RegulatoryProfileName
-     registerPage.getReguProfile().select(RegProfile, { force: true })
-     })
+ // cy.readFile(RegulatoryMarketingProfile).then((data) => {
+   //    let RegProfile = data.RegulatoryProfileName
+     registerPage.getReguProfile().select('FullKycprofile', { force: true })
+    // })
   //registerPage.getMarketingProfile().select(this.data2.personalInfo.MarketProfile, { force: true })
-  cy.readFile(RegulatoryMarketingProfile).then((data) => {
-      let MarProfile = data.MarketingProfileNameDistributer
-       registerPage.getMarketingProfile().select(MarProfile, { force: true })
-     })
+ // cy.readFile(RegulatoryMarketingProfile).then((data) => {
+   //   let MarProfile = data.MarketingProfileNameDistributer
+       registerPage.getMarketingProfile().select('WHSDefaultMP', { force: true })
+   //  })
+   registerPage.getNextButtonBasic2().click({force:true})
   registerPage.getNextButtonBasic3().click({ force: true })
+   
   registerPage.getSubmitButton().click({ force: true })
 
 
@@ -614,25 +624,25 @@ And('Enter all the required business user details1', function () {
   //-----------------------------Profile---------------------------------------------------------------
 
   cy.wait(5000)
-  cy.readFile(SubProfileName).then((data) => {
-    let Profile = data.Distributer
-    registerPage.getSecurityProfile().select(Profile, { force: true })
-  })
+  //cy.readFile(SubProfileName).then((data) => {
+    //let Profile = data.Distributer
+    registerPage.getSecurityProfile().select('WholesalerDefaultSecurityProfile', { force: true })
+  //})
    // cy.readFile(RegulatoryMarketingProfile).then((data) => {
     //   let Profile = data.BusinessAgent1
 //registerPage.getAuthProfile().select(Profile, { force: true })
 // })
-  registerPage.getAuthProfile().select(this.data2.personalInfo.authProfile8, { force: true })
+  registerPage.getAuthProfile().select('WholesalerDefault Profile', { force: true })
   //registerPage.getReguProfile().select(this.data2.personalInfo.ReguProfile, { force: true })
-  cy.readFile(RegulatoryMarketingProfile).then((data) => {
-       let Profile = data.RegulatoryProfileName
-registerPage.getSecurityProfile().select(Profile, { force: true })
- })
+  //cy.readFile(RegulatoryMarketingProfile).then((data) => {
+    //   let Profile = data.RegulatoryProfileName
+registerPage.getReguProfile().select('FullKycprofile', { force: true })
+ //})
  // registerPage.getMarketingProfile().select(this.data2.personalInfo.MarketProfile, { force: true })
-  cy.readFile(RegulatoryMarketingProfile).then((data) => {
-   let Profile = data.MarketingProfileNameDistributer
-   registerPage.getSecurityProfile().select(Profile, { force: true })
- })
+  //cy.readFile(RegulatoryMarketingProfile).then((data) => {
+   //let Profile = data.MarketingProfileNameDistributer
+   registerPage.getMarketingProfile().select('WHSDefaultMP', { force: true })
+// })
  cy.wait(3000)
 
   registerPage.getNextButtonBasic2().click({ force: true })
@@ -801,7 +811,7 @@ And('Click on refresh icon corresponding to the respective authentication factor
 
 //-----------------------------------------Sudheer----------------------------------------------------------
 
-//----------TC_130-------To verify that Admin user can check all the Order Details of a customer/ business users successfully------------
+//----------TC_129-------To verify that Admin user can view all the transaction details under Order details menu------------
 
 
 When('Click on user management and Manage users', function () {
@@ -811,12 +821,11 @@ When('Click on user management and Manage users', function () {
   manageUsersPage.getManageUsers().click()
 })
 
-
-And('Enter Mobile number and KYC number in search menu for customer/ business users', function () {
+And('Enter Mobile numberin search Menu', function () {
   cy.wait(3000)
-
- cy.getBusinessUserMobNum()
-  manageUsersPage.getBusinessUserDetail().should('have.text', ' Business')
+  pageLogin.getiFrame()
+  manageUsersPage.getUserSearchDetails().click({ force: true })
+  cy.getSubscriberMobileNumber()
 })
 
 And('Click on view Details', function () {
@@ -824,10 +833,233 @@ And('Click on view Details', function () {
   manageUsersPage.getViewAllDetailsButton().click({ force: true })
 })
 
+Then('Click on order details', function () {
+
+  manageUsersPage.getOrderDetailsButton().click({ force: true })
+  cy.wait(3000)
+  manageUsersPage.getOrderDetailsMessage().should('have.text', ' Manage Users  > View Details')
+})
+
+//----------TC_130-------To verify that Admin user can check all the Order Details of a customer/ business users successfully------------
+
+And('Enter Mobile number and KYC number in search menu for customer/ business users', function () {
+  cy.wait(3000)
+  manageUsersPage.getUserSearchDetails().type(this.data4.mobilenumber.businessUserMobile, { force: true })
+  manageUsersPage.getSearchUserButton().click({ force: true })
+  //cy.getBAMobileNumber()
+
+  manageUsersPage.getBusinessUserDetail().should('have.text', ' Business')
+})
+
 Then('Click on order details for customer/ business users', function () {
   cy.wait(3000)
   manageUsersPage.getOrderDetailsButton().click({ force: true })
   manageUsersPage.getOrderDetailsMessage().should('have.text', ' Manage Users  > View Details')
+})
+
+// //---------TC_131------To verify that latest order transactions will be displayed on the first page of Order details screen.------------
+
+Then('Click on order details for latest order transactions', function () {
+  cy.wait(3000)
+  manageUsersPage.getOrderDetailsButton().click({ force: true })
+  manageUsersPage.getWalletExpandButton().click({ force: true })
+  manageUsersPage.getViewMoreDetailsButton().click({ force: true })
+  manageUsersPage.getLatestTrasanction().should('have.text', '1')
+})
+
+
+//---------TC_132-----To verify that all the wallet transactions are displayed in statement screen sucessfully.------------
+
+And('Click on Wallet Payment History', function () {
+  manageUsersPage.getWalletPaymentHistoryButton().click({ force: true })
+
+})
+
+And('Click on expand button', function () {
+  manageUsersPage.getWalletExpandButton().click({ force: true })
+})
+
+Then('Click on wallet view Details', function () {
+  manageUsersPage.getViewMoreDetailsButton().click({ force: true })
+  manageUsersPage.getDateRangeAssert().should('contain.text', 'More Details')
+})
+
+
+
+//-------TC_133------To verify that user can able to view all the wallet transactions by entering valid transaction id.------------
+
+Then('Click on transactions id view Details', function () {
+  cy.wait(3000)
+  manageUsersPage.getViewMoreDetailsButton().click({ force: true })
+  manageUsersPage.getDateRangeAssert().should('contain.text', 'More Details')
+})
+//-------TC_133------To verify that user can able to view all the wallet transactions by entering valid transaction id.------------
+
+
+When('Click on user management and Manage users', function () {
+
+  manageUsersPage.getUsermanagement().scrollIntoView()
+  manageUsersPage.getUsermanagement().click()
+  manageUsersPage.getManageUsers().click()
+})
+
+And('Enter Mobile number and KYC number in search menu for valid transaction with id', function () {
+  cy.wait(3000)
+  manageUsersPage.getUserSearchDetails().type(this.data2.mobilenumber.mobile, { force: true })
+  manageUsersPage.getSearchUserButton().click({ force: true })
+})
+
+And('Click on view Details for valid transaction with id', function () {
+  cy.wait(3000)
+  manageUsersPage.getViewAllDetailsButton().click({ force: true })
+})
+
+And('Click on Wallet Payment History for valid transaction with id', function () {
+  cy.wait(3000)
+  manageUsersPage.getWalletPaymentHistoryButton().click({ force: true })
+
+})
+
+And('Click on expand button on valid transaction with id', function () {
+
+  manageUsersPage.getSearchTransactionId().type(this.data2.transactionid.validid, { force: true })
+  cy.wait(3000)
+  manageUsersPage.getWalletExpandButton().click({ force: true })
+})
+
+Then('Click on view Details for wallet transactions with id', function () {
+  cy.wait(3000)
+  manageUsersPage.getViewMoreDetailsButton().click({ force: true })
+  //  cy.get('.modal-content').should('have.text', 'Transaction ID')
+})
+
+
+
+
+
+
+//-----TC_134-----To verify that user can able to fetch the Statement based on the transaction type (success, fail etc.)------------
+
+When('Click on user management and Manage users', function () {
+
+  manageUsersPage.getUsermanagement().scrollIntoView()
+  manageUsersPage.getUsermanagement().click()
+  manageUsersPage.getManageUsers().click()
+})
+
+And('Enter Mobile number and KYC number in search menu for transaction type', function () {
+  cy.wait(3000)
+  manageUsersPage.getUserSearchDetails().type(this.data2.mobilenumber.mobile, { force: true })
+  manageUsersPage.getSearchUserButton().click({ force: true })
+})
+
+And('Click on view Details for transaction type', function () {
+  cy.wait(3000)
+  manageUsersPage.getViewAllDetailsButton().click({ force: true })
+})
+
+And('Click on Wallet Payment History for transaction type', function () {
+  cy.wait(3000)
+  manageUsersPage.getWalletPaymentHistoryButton().click({ force: true })
+
+})
+
+And('Click on filter and Select status type and Select apply', function () {
+  //cy.wait(3000)
+  manageUsersPage.getFilterStatementButton().click({ force: true })
+  manageUsersPage.getStatus().click()
+  cy.wait(3000)
+  manageUsersPage.getApplyFilterButton().click({ force: true })
+})
+And('Click on expand button for transaction type', function () {
+  cy.wait(3000)
+  manageUsersPage.getWalletExpandButton().click({ force: true })
+})
+
+Then('Click on view Details for transaction', function () {
+  cy.wait(3000)
+  manageUsersPage.getViewMoreDetailsButton().click({ force: true })
+
+})
+
+//-----TC_135-------To verify that user can able to fetch the Statement based on the Date range.------------
+
+When('Click on user management and Manage users', function () {
+
+  manageUsersPage.getUsermanagement().scrollIntoView()
+  manageUsersPage.getUsermanagement().click()
+  manageUsersPage.getManageUsers().click()
+})
+
+And('Enter Mobile number and KYC number in search menu based on the Date', function () {
+  cy.wait(3000)
+  manageUsersPage.getUserSearchDetails().type(this.data2.mobilenumber.mobile, { force: true })
+  manageUsersPage.getSearchUserButton().click({ force: true })
+})
+
+//-----TC_135-------To verify that user can able to fetch the Statement based on the Date range.------------
+
+And('Click on view Details based on the Date', function () {
+  cy.wait(3000)
+  manageUsersPage.getViewAllDetailsButton().click({ force: true })
+})
+
+And('Click on Wallet Payment History based on the Date', function () {
+  // cy.wait(3000)
+  manageUsersPage.getWalletPaymentHistoryButton().click({ force: true })
+
+})
+
+And('Click on filter', function () {
+  cy.wait(3000)
+  manageUsersPage.getFilterStatementButton().click({ force: true })
+})
+And('Select start date and end date and  Click apply', function () {
+  cy.wait(3000)
+
+  manageUsersPage.getDatePickerStart().click({ force: true })
+  manageUsersPage.getStartDate().contains(this.data2.usercalender.startday).click({ force: true })
+
+  manageUsersPage.getDatePickerEnd().click({ force: true })
+  manageUsersPage.getEndDate().contains(this.data2.usercalender.endday).click({ force: true })
+
+  manageUsersPage.getApplyFilterButton().click({ force: true })
+
+})
+
+And('Click on expand button based on the Date', function () {
+  cy.wait(3000)
+  manageUsersPage.getWalletExpandButton().click({ force: true })
+})
+And('Click on filter', function () {
+  cy.wait(3000)
+  manageUsersPage.getFilterStatementButton().click({ force: true })
+})
+And('Select start date and end date and  Click apply', function () {
+  cy.wait(3000)
+
+  manageUsersPage.getDatePickerStart().click({ force: true })
+  manageUsersPage.getStartDate().contains(this.data4.usercalender.startday).click({ force: true })
+
+  manageUsersPage.getDatePickerEnd().click({ force: true })
+  manageUsersPage.getEndDate().contains(this.data4.usercalender.endday).click({ force: true })
+
+  manageUsersPage.getApplyFilterButton().click({ force: true })
+
+})
+And('Click on expand button based on the Date', function () {
+  cy.wait(3000)
+  manageUsersPage.getWalletExpandButton().click({ force: true })
+})
+
+Then('Click on view Details based on the Date range', function () {
+  cy.wait(3000)
+  manageUsersPage.getViewMoreDetailsButton().click({ force: true })
+  manageUsersPage.getDateRangeAssert().should('contain.text', 'More Details')
+})
+
+
+
 
 //-----------------------------------------------Kalyani-------------------------------------------------------
 
