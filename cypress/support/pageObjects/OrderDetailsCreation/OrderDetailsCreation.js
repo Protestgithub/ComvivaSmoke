@@ -1,10 +1,6 @@
 class OrderDetailsCreations{
    
-    getTransferToBankOption() {
-
-        return cy.get('[data-testid="test-TRANSFER_TO_BANK"]')
-    }
-
+   
     getCurrency() {
         return cy.iframe().find('select[id="currency"]')
     }
@@ -25,7 +21,15 @@ class OrderDetailsCreations{
         return cy.iframe().find('input[id="submit-form"]')
     }
 
-    
+     getBankServices() {
+        return cy.get('[data-testid="menu.bank_service"]')
+    }
+
+    getTransferToBank() {
+        return cy.get('[data-testid="menu.bank_service"]').find('[title="Transfer to Bank"]')
+
+    }
+
 
 
    
