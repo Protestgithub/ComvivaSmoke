@@ -61,7 +61,7 @@ Before(() => {
   cy.fixture('userData/SystemAdminLogin.json').then(function (data6) {
     this.data6 = data6;
   })
- if ( Cypress.browser.isHeadless ) {
+  if ( Cypress.browser.isHeadless ) {
     cy.clearCookie('shouldStop')
   } else {
     cy.getCookie('shouldStop').then(cookie => {
@@ -72,6 +72,8 @@ Before(() => {
       ) {
         Cypress.runner.stop();
       }
+    })
+  }
 }); 
 
 //superadminm
