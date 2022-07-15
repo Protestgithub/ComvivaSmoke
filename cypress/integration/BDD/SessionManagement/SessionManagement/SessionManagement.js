@@ -46,13 +46,13 @@ Before(() => {
 //---------------------------------------------System Admin Login----------------------------------------------------
 Given('Login into Mobiquity Portal as System admin Maker', function () {
   cy.launchURL(Cypress.env('Adminurl'))
-  cy.SysAdminlogin()
+  cy.login()
   cy.wait(2000)
   cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
 })
 Given('Login into Mobiquity Portal as System admin Checker1', function () {
   cy.launchURL(Cypress.env('Adminurl'))
-  cy.SysAdminlogin2()
+  cy.login2()
   cy.wait(2000)
   cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
 })
@@ -73,7 +73,7 @@ Then('Logout', function(){
 })
 Given('Login into Mobiquity Portal as Subscriber', function () {
   cy.visit(Cypress.env("Adminurl"))
-  cy.visit(Cypress.env("Adminurl") + "/Subscriber")   
+  cy.visit(Cypress.env("Adminurl") + "/Subscriber/")   
   cy.wait(3000)
   cy.readFile('cypress/fixtures/userData/subscriberReg.json').then((data)=>{
   var SubLogin
@@ -90,7 +90,7 @@ And('Change Password', function () {
 })
 And('Login into Mobiquity Portal as Subscriber1', function () {
   cy.visit(Cypress.env("Adminurl"))
-  cy.visit(Cypress.env("Adminurl") + "/Subscriber")   
+  cy.visit(Cypress.env("Adminurl") + "/Subscriber/")   
   cy.wait(3000)
   cy.intercept("/mobiquitypay/ums/v3/user/auth/web/login").as('getPwd')
   cy.readFile('cypress/fixtures/userData/subscriberReg.json').then((data)=>{
