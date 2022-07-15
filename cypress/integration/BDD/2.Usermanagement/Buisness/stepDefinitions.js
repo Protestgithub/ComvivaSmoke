@@ -335,10 +335,13 @@ And('Select User type as Business and click on Telco operator', function () {
 And('Enter all the mandatory Basic information details and click on next', function () {
   cy.wait(3000)
   registerPage.getTitle().select(this.data2.personalInfo.title, { force: true })
-  registerPage.getFirstName().type(this.data2.personalInfo.firstName, { force: true })
   registerPage.getLastName().type(this.data2.personalInfo.lastName, { force: true })
   cy.iframe().find('select[data-test-id="preferredLanguage"]').select(this.data2.personalInfo.preferredLang, { force: true })
-  registerPage.getMobileNumber().type(mobile, { force: true })
+  recurse(
+    () => registerPage.getMobileNumber().clear().type(mobile, { force: true }),
+    () => registerPage.getFirstName().clear().type(getRandomName(), { force: true }),
+    (uniqueness) => (uniqueness) == registerPage.getuniqueness()
+  )
   registerPage.getNextButtonBasic().click({ force: true })
 })
 Then('Enter all the mandatory Profile details like marketing profile,regulatory profile,Operator profile.', function () {
