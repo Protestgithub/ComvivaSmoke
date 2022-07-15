@@ -169,15 +169,15 @@ Given('Login into Mobiquity Portal as Business admin User1', function () {
     registerPage.getNextButtonBasic().click({ force: true })
   
     //----------------------Profile Data-----------------------------------------------------------------
-    cy.readFile(SubProfileName).then((data) => {
-    let Profile = data.businesAadmin
-    registerPage.getSecurityProfile().select(Profile, { force: true })
-  })
+  //  cy.readFile(SubProfileName).then((data) => {
+  //  let Profile = data.businesAadmin
+    registerPage.getSecurityProfile().select("subscriberSecurityProfile", { force: true })
+//  })
      // cy.readFile(SubProfileName).then((data) => {
       //let Profile = data.CustomercareAdmin1
      // registerPage.getAuthProfile().select(Profile, { force: true })
      // })
-     registerPage.getAuthProfile().select(this.data2.personalInfo.authProfile, { force: true })
+     registerPage.getAuthProfile().select("SubsDefault Profile", { force: true })
      registerPage.getNextButtonProfile().click({ force: true })
     registerPage.getSubmitButton().click({ force: true })
   
@@ -252,24 +252,24 @@ Given('Login into Mobiquity Portal as Business admin User1', function () {
     registerPage.getCountry().select(this.data2.personalInfo.country, { force: true })
     registerPage.getNextButtonBasic().click({ force: true })
   
-     cy.readFile(SubProfileName).then((data) => {
-    let Profile = data.subscriber
-    registerPage.getSecurityProfile().select(Profile, { force: true })
-  })
-  cy.readFile(SubProfileName).then((data) => {
-    let Profile = data.SubscriberProfileName1
-    registerPage.getAuthProfile().select(Profile, { force: true })
-  })
+    // cy.readFile(SubProfileName).then((data) => {
+   // let Profile = data.subscriber
+    registerPage.getSecurityProfile().select("subscriberSecurityProfile", { force: true })
+ // })
+  //cy.readFile(SubProfileName).then((data) => {
+ //   let Profile = data.SubscriberProfileName1
+    registerPage.getAuthProfile().select("SubsDefault Profile", { force: true })
+ // })
   //  registerPage.getReguProfile().select(this.data2.KycInfo.ReguProfile, { force: true })
-   cy.readFile(RegulatoryMarketingProfile).then((data) => {
-     let Profile = data.RegulatoryProfileName
-     registerPage.getReguProfile().select(Profile, { force: true })
-   })
+  // cy.readFile(RegulatoryMarketingProfile).then((data) => {
+   //  let Profile = data.RegulatoryProfileName
+     registerPage.getReguProfile().select("NoKycprofile", { force: true })
+  // })
   //registerPage.getMarketingProfile().select(this.data2.KycInfo.MarketProfile, { force: true })
-   cy.readFile(RegulatoryMarketingProfile).then((data) => {
-    let Profile = data.MarketingProfileName
-    registerPage.getMarketingProfile().select(Profile, { force: true })
-   })
+   //cy.readFile(RegulatoryMarketingProfile).then((data) => {
+  //  let Profile = data.MarketingProfileName
+    registerPage.getMarketingProfile().select("SUBSDefaultMP", { force: true })
+  // })
    registerPage.getNextButtonProfile().click({ force: true })
   })
   
@@ -345,24 +345,24 @@ Given('Login into Mobiquity Portal as Business admin User1', function () {
     registerPage.getNextButtonBasic1().click({ force: true })
   })
   Then('Enter all the marketing ,regulatory, authorization profile details and click on next', function () {
-  cy.readFile(SubProfileName).then((data) => {
-    let Profile = data.subscriber
-    registerPage.getSecurityProfile().select(Profile, { force: true })
-  })
-  cy.readFile(SubProfileName).then((data) => {
-    let Profile = data.SubscriberProfileName1
-    registerPage.getAuthProfile().select(Profile, { force: true })
-  })
+     // cy.readFile(SubProfileName).then((data) => {
+   // let Profile = data.subscriber
+    registerPage.getSecurityProfile().select("subscriberSecurityProfile", { force: true })
+ // })
+  //cy.readFile(SubProfileName).then((data) => {
+ //   let Profile = data.SubscriberProfileName1
+    registerPage.getAuthProfile().select("SubsDefault Profile", { force: true })
+ // })
   //  registerPage.getReguProfile().select(this.data2.KycInfo.ReguProfile, { force: true })
-   cy.readFile(RegulatoryMarketingProfile).then((data) => {
-     let Profile = data.RegulatoryProfileName
-     registerPage.getReguProfile().select(Profile, { force: true })
-   })
+  // cy.readFile(RegulatoryMarketingProfile).then((data) => {
+   //  let Profile = data.RegulatoryProfileName
+     registerPage.getReguProfile().select("NoKycprofile", { force: true })
+  // })
   //registerPage.getMarketingProfile().select(this.data2.KycInfo.MarketProfile, { force: true })
-   cy.readFile(RegulatoryMarketingProfile).then((data) => {
-    let Profile = data.MarketingProfileName
-    registerPage.getMarketingProfile().select(Profile, { force: true })
-   })   
+   //cy.readFile(RegulatoryMarketingProfile).then((data) => {
+  //  let Profile = data.MarketingProfileName
+    registerPage.getMarketingProfile().select("SUBSDefaultMP", { force: true })
+  // })
    registerPage.getNextButtonBasic2().click({ force: true })
   })
 
