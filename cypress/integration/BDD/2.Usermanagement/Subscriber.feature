@@ -328,7 +328,7 @@ Then Email Error message is displayed
 
 Scenario:To verify that user can view details of all wallets associated with the user along with their corresponding balances and status successfully.
 Given Login into Mobiquity Portal as System admin Maker
-When Navigate to UserManagement And Click on Manage Users
+When Navigate to User Management and Click on manage user
 And Enter Mobile number and KYC number in search menu1
 And Click on view Details and Click on Account info
 Then Check All Wallet Details
@@ -342,7 +342,7 @@ Then Check All Wallet Details
 
 Scenario:To verify that Admin user can lock user’s wallet as sender or receiver or both.
 Given Login into Mobiquity Portal as System admin Maker
-When Navigate to UserManagement And Click on Manage Users
+When Navigate to User Management and Click on manage user
 And Enter Mobile number and KYC number in search menu1
 And Click on view Details and Click on Account info
 And select either Lock outgoing payments or Lock incoming payments or Lock both
@@ -357,7 +357,7 @@ Then Click On lock all
 
 Scenario:To verify that admin user can reset the credentials of Business user and customer's successfully.
 Given Login into Mobiquity Portal as System admin Maker
-When Navigate to UserManagement And Click on Manage Users
+When Navigate to User Management and Click on manage user
 And Enter Mobile number and KYC number in search menu1
 And Click on view Details and Click on Credentials
 And Click on refresh icon corresponding to the respective authentication factor
@@ -371,7 +371,7 @@ And Click on refresh icon corresponding to the respective authentication factor
 
 Scenario:To Verify that Admin user can unlock user’s wallet as sender or receiver or both.
 Given Login into Mobiquity Portal as System admin Maker
-When Navigate to UserManagement And Click on Manage Users
+When Navigate to User Management and Click on manage user
 And Enter Mobile number and KYC number in search menu1
 And Click on view Details and Click on Account info
 And select either UNLock outgoing payments or UNLock incoming payments or Lock both
