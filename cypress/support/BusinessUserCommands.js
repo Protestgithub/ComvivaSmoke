@@ -1,4 +1,3 @@
-
 import loginPage from '../support/pageObjects/loginPage';
 
 import homePage from './pageObjects/homePage';
@@ -161,6 +160,16 @@ Cypress.Commands.add('getBusinessUserKycID', () => {
     })
 })
 
+var BusinessMobile
+Cypress.Commands.add('getBusinessUserMobNum', () => {
+	pageLogin.getiFrame()
+	cy.fixture('userData/BusinessUsersData.json').then((usermobile) => {
+		BusinessMobile = usermobile.registeredMobile
+		cy.log(BusinessMobile)
+		manageUsersPage.getUserSearchDetails().type(BusinessMobile, { force: true })
+		manageUsersPage.getSearchUserButton().click({ force: true })
+	})
+})
 
 
 Cypress.Commands.add('getSubscriberMobileNumber', () => {
