@@ -197,21 +197,21 @@ And Search with the Mobile Number
 And System Admin is able to view details
 And System Admin is able to edit details of the user
 Then Confirm the edit details
-When Navigate to Manage User, and search Business Admin
-And Search with the EmailID
-And System Admin is able to view details
-And System Admin is able to edit details of the user
-Then Confirm the edit details
-When Navigate to Manage User, and search Business Admin
-And Search with the LoginID
-And System Admin is able to view details
-And System Admin is able to edit details of the user
-Then Confirm the edit details
-When Navigate to Manage User, and search Business Admin
-And Search with the KYC Number
-And System Admin is able to view details
-And System Admin is able to edit details of the user
-Then Confirm the edit details
+# When Navigate to Manage User, and search Business Admin
+#And Search with the EmailID
+#And System Admin is able to view details
+#And System Admin is able to edit details of the user
+#Then Confirm the edit details
+#When Navigate to Manage User, and search Business Admin
+#And Search with the LoginID
+#And System Admin is able to view details
+#And System Admin is able to edit details of the user
+#Then Confirm the edit details
+#When Navigate to Manage User, and search Business Admin
+#And Search with the KYC Number
+#And System Admin is able to view details
+#And System Admin is able to edit details of the user
+#Then Confirm the edit details
 
 
 
@@ -249,22 +249,6 @@ And System Admin is able to view details
 
 
 
-
-######################################### Sudheer ##################################################
-
-      # # # Author: Sudheer Baraker
-    # # # Last Updated: 11/05/2022
-    # # # Comments :
-    # # # Scenario_ID : TC_130
-    # # #
-@test
-
-    Scenario: To verify that Admin user can check all the Order Details of a customer/ business users successfully.
-   	 Given Login into Mobiquity Portal as System admin Maker
-        When  Click on user management and Manage users
-        And  Enter Mobile number and KYC number in search menu for customer/ business users
-        And  Click on view Details
-        Then Click on order details for customer/ business users
 
 ###################################### Kalyani ####################################################
 
