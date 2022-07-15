@@ -21,6 +21,8 @@ const registerPage = new register()
 const approvalPage = new approvals()
 const manageUsersPage = new manageUsers()
 const uuid = () => Cypress._.random(1e8)
+const SubMob='userData/subscriberReg.json'
+
 mobile = "77" + uuid()
 var mobile
 var loginId
@@ -29,6 +31,9 @@ var name
 var subRegistration = 'cypress/fixtures/userData/subscriberReg.json'
 var SubProfileName = 'cypress/fixtures/profileData/Profile.json'
 var RegulatoryMarketingProfile = 'cypress/fixtures/userData/Regulatory&MarketingProfile.json'
+
+
+
 function getRandomName() {
   name = "";
   var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
