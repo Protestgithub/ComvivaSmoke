@@ -197,23 +197,23 @@ And('Enter all the required subscriber details', function () {
 
   //-----------------------Profile------------------------------------------------------------------------
   cy.wait(2000)
-  cy.readFile(SubProfileName).then((data) => {
-    let Profile = data.subscriber
-    registerPage.getSecurityProfile().select(Profile, { force: true })
-  })
-  cy.readFile(SubProfileName).then((data) => {
-    let Profile = data.SubscriberProfileName1
-    registerPage.getAuthProfile().select(Profile, { force: true })
-  })
+      // cy.readFile(SubProfileName).then((data) => {
+   // let Profile = data.subscriber
+    registerPage.getSecurityProfile().select("subscriberSecurityProfile", { force: true })
+ // })
+  //cy.readFile(SubProfileName).then((data) => {
+ //   let Profile = data.SubscriberProfileName1
+    registerPage.getAuthProfile().select("SubsDefault Profile", { force: true })
+ // })
   //  registerPage.getReguProfile().select(this.data2.KycInfo.ReguProfile, { force: true })
-   cy.readFile(RegulatoryMarketingProfile).then((data) => {
-     let Profile = data.RegulatoryProfileName
-     registerPage.getReguProfile().select(Profile, { force: true })
-   })
-  registerPage.getMarketingProfile().select(this.data4.MarketingProfileName, { force: true })
   // cy.readFile(RegulatoryMarketingProfile).then((data) => {
+   //  let Profile = data.RegulatoryProfileName
+     registerPage.getReguProfile().select("NoKycprofile", { force: true })
+  // })
+  //registerPage.getMarketingProfile().select(this.data2.KycInfo.MarketProfile, { force: true })
+   //cy.readFile(RegulatoryMarketingProfile).then((data) => {
   //  let Profile = data.MarketingProfileName
-  //  registerPage.getMarketingProfile().select(Profile, { force: true })
+    registerPage.getMarketingProfile().select("SUBSDefaultMP", { force: true })
   // })
 })
 Then('SubscrigReg Confirmation message is displayed', function () {
@@ -338,23 +338,23 @@ And('Enter all the required subscriber details using Churned MSISDN', function (
 
   //-----------------------Profile------------------------------------------------------------------------
   cy.wait(2000)
-  cy.readFile(SubProfileName).then((data) => {
-    let Profile = data.subscriber
-    registerPage.getSecurityProfile().select(Profile, { force: true })
-  })
-  cy.readFile(SubProfileName).then((data) => {
-    let Profile = data.SubscriberProfileName1
-    registerPage.getAuthProfile().select(Profile, { force: true })
-  })
+     // cy.readFile(SubProfileName).then((data) => {
+   // let Profile = data.subscriber
+    registerPage.getSecurityProfile().select("subscriberSecurityProfile", { force: true })
+ // })
+  //cy.readFile(SubProfileName).then((data) => {
+ //   let Profile = data.SubscriberProfileName1
+    registerPage.getAuthProfile().select("SubsDefault Profile", { force: true })
+ // })
   //  registerPage.getReguProfile().select(this.data2.KycInfo.ReguProfile, { force: true })
-   cy.readFile(RegulatoryMarketingProfile).then((data) => {
-     let Profile = data.RegulatoryProfileName
-     registerPage.getReguProfile().select(Profile, { force: true })
-   })
-  registerPage.getMarketingProfile().select(this.data4.MarketingProfileName, { force: true })
   // cy.readFile(RegulatoryMarketingProfile).then((data) => {
+   //  let Profile = data.RegulatoryProfileName
+     registerPage.getReguProfile().select("NoKycprofile", { force: true })
+  // })
+  //registerPage.getMarketingProfile().select(this.data2.KycInfo.MarketProfile, { force: true })
+   //cy.readFile(RegulatoryMarketingProfile).then((data) => {
   //  let Profile = data.MarketingProfileName
-  //  registerPage.getMarketingProfile().select(Profile, { force: true })
+    registerPage.getMarketingProfile().select("SUBSDefaultMP", { force: true })
   // })
 })
 Then('SubscrigReg Confirmation message is displayed', function () {
@@ -422,23 +422,23 @@ And('Enter all the required subscriber details', function () {
 
   //-----------------------Profile------------------
   cy.wait(2000)
-  cy.readFile(SubProfileName).then((data) => {
-    let Profile = data.subscriber
-    registerPage.getSecurityProfile().select(Profile, { force: true })
-  })
-  cy.readFile(SubProfileName).then((data) => {
-    let Profile = data.SubscriberProfileName1
-    registerPage.getAuthProfile().select(Profile, { force: true })
-  })
+      // cy.readFile(SubProfileName).then((data) => {
+   // let Profile = data.subscriber
+    registerPage.getSecurityProfile().select("subscriberSecurityProfile", { force: true })
+ // })
+  //cy.readFile(SubProfileName).then((data) => {
+ //   let Profile = data.SubscriberProfileName1
+    registerPage.getAuthProfile().select("SubsDefault Profile", { force: true })
+ // })
   //  registerPage.getReguProfile().select(this.data2.KycInfo.ReguProfile, { force: true })
-   cy.readFile(RegulatoryMarketingProfile).then((data) => {
-     let Profile = data.RegulatoryProfileName
-     registerPage.getReguProfile().select(Profile, { force: true })
-   })
-   registerPage.getMarketingProfile().select(this.data4.MarketingProfileName, { force: true })
-   // cy.readFile(RegulatoryMarketingProfile).then((data) => {
+  // cy.readFile(RegulatoryMarketingProfile).then((data) => {
+   //  let Profile = data.RegulatoryProfileName
+     registerPage.getReguProfile().select("NoKycprofile", { force: true })
+  // })
+  //registerPage.getMarketingProfile().select(this.data2.KycInfo.MarketProfile, { force: true })
+   //cy.readFile(RegulatoryMarketingProfile).then((data) => {
   //  let Profile = data.MarketingProfileName
-  //  registerPage.getMarketingProfile().select(Profile, { force: true })
+    registerPage.getMarketingProfile().select("SUBSDefaultMP", { force: true })
   // })
 })
 
