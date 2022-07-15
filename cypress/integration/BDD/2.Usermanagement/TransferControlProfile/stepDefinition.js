@@ -46,7 +46,7 @@ Before(() => {
   cy.fixture('userData/Regulatory&MarketingProfile.json').then(function (data8) {
     this.data8 = data8;
   })
-   if ( Cypress.browser.isHeadless ) {
+  if ( Cypress.browser.isHeadless ) {
     cy.clearCookie('shouldStop')
   } else {
     cy.getCookie('shouldStop').then(cookie => {
@@ -57,6 +57,8 @@ Before(() => {
       ) {
         Cypress.runner.stop();
       }
+    })
+  }
 });
 
 //---------------------------------------------System Admin Login----------------------------------------------------
