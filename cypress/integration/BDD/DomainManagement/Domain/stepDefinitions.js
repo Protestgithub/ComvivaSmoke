@@ -36,7 +36,19 @@ Before(() => {
     cy.fixture('Domain&CategoryManagement').then(function (data4) {
         this.data4 = data4;
     })
-
+  if ( Cypress.browser.isHeadless ) {
+    cy.clearCookie('shouldStop')
+  } else {
+    cy.getCookie('shouldStop').then(cookie => {
+      if (
+        cookie &&
+        typeof cookie === 'object' &&
+        cookie.value === 'true'
+      ) {
+        Cypress.runner.stop();
+      }
+    })
+  }
 
 });
 
