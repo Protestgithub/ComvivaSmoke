@@ -29,7 +29,7 @@ Before(() => {
     this.data1 = data1;
   })
 
-  cy.fixture('securitys').then(function (data4) {
+  cy.fixture('SecurityAssertion').then(function (data4) {
     this.data4 = data4;
   })
 
@@ -92,7 +92,7 @@ And('User click on add questions and Enter question in the textbox', function ()
     () => cy.RandomQuestions(),
     () => cy.wait(2000),
     (uniqueness) => (uniqueness) == securityPage.getProfileNameExist().contains
-      (this.data3.questionpresent).should('be.visible'),
+      (this.data3.questionpresent).should('be.visible')
   )
 })
 
