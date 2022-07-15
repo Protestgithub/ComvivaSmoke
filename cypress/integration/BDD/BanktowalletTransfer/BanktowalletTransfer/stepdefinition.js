@@ -31,7 +31,20 @@ Before(() => {
     cy.fixture('OrderDetailsCreation').then(function (data2) {
         this.data2 = data2;
     })
-})
+  if ( Cypress.browser.isHeadless ) {
+    cy.clearCookie('shouldStop')
+  } else {
+    cy.getCookie('shouldStop').then(cookie => {
+      if (
+        cookie &&
+        typeof cookie === 'object' &&
+        cookie.value === 'true'
+      ) {
+        Cypress.runner.stop();
+      }
+    })
+  }
+});
 //----------------Test Scripts---------------------------------------------------------------------------
 
 //---------------------------------Kalyani_BA Login-------------------------------------------------------
