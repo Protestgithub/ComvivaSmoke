@@ -36,7 +36,19 @@ Before(() => {
    {
      this.data1=data1;
    })
-
+ if ( Cypress.browser.isHeadless ) {
+    cy.clearCookie('shouldStop')
+  } else {
+    cy.getCookie('shouldStop').then(cookie => {
+      if (
+        cookie &&
+        typeof cookie === 'object' &&
+        cookie.value === 'true'
+      ) {
+        Cypress.runner.stop();
+      }
+    })
+  }
 });
 
 
