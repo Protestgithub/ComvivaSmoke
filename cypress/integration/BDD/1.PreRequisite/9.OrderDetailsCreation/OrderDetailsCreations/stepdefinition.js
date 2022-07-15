@@ -40,7 +40,17 @@ Given('Login into Mobiquity Portal as Business admin User1', function () {
     cy.launchURL(Cypress.env('Adminurl'))
     cy.visit(Cypress.env("Adminurl") + "Business/")
     cy.wait(3000)
-    cy.login(this.data1.businessAdmin.businessadminUser1, this.data1.businessAdmin.businessadminPwd1)
+    cy.readFile('cypress/fixtures/userData/BusinessUsersData.json').then((data)=>{
+    var loginId
+    loginId = data.LoginId
+    cy.login(loginId, this.data1.businessAdmin.DefaultPassword)
+    cy.login1(this.data1.businessAdmin.businessadminPwd1)
+    cy.wait(2000)
+    cy.Passwordchange(this.data1.UserCreationSuccessMessage)
+    pageLogin.getloginbtn1().click({force:true})
+    cy.login(loginId, this.data1.businessAdmin.businessadminPwd1)
+        
+    })
     cy.checkWelcomeText(this.data1.BAAdminText)
 
 })
