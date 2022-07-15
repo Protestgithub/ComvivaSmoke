@@ -4,11 +4,11 @@
 //----------------Imports---------------------------------------------------------------------
 import 'cypress-iframe'
 import { Given, When, Then, And, Before } from "cypress-cucumber-preprocessor/steps";
-import loginPage from '../../../../../support/pageObjects/loginPage';
-import homePage from '../../../../../support/pageObjects/homePage';
-import OrderDetailsCreations from '../../../../../support/pageObjects/OrderDetailsCreation/OrderDetailsCreations';
+import loginPage from '../../../../support/pageObjects/loginPage';
+import homePage from '../../../../support/pageObjects/homePage';
+import OrderDetailsCreations from '../../../../support/pageObjects/OrderDetailsCreation/OrderDetailsCreations';
 
-import "../../../../../support/commands";
+import "../../../../support/commands";
 
 
 
