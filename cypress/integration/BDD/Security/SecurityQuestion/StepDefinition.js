@@ -10,7 +10,7 @@ import loginPage from '../../../../support/pageObjects/loginPage';
 import "../../../../support/commands";
 import securityQuestion from '../../../../support/pageObjects/SecurityQuestion/securityQuestion';
 import "../../../../support/SecurityQuestionCommands";
-
+import { recurse } from 'cypress-recurse';
 
 
 import { should } from 'chai';
@@ -29,7 +29,7 @@ Before(() => {
     this.data1 = data1;
   })
 
-  cy.fixture('SecurityAssertion').then(function (data4) {
+  cy.fixture('securitys').then(function (data4) {
     this.data4 = data4;
   })
 
