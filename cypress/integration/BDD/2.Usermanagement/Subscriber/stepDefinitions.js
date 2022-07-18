@@ -455,7 +455,7 @@ And('Enter all the required subscriber details', function () {
 
   //----------------------KYC-----------------------------------------------------------------------
   const timestamp = (new Date).getTime()
-  KycValue = "A" + timestampKycValue 
+  KycValue = "A" + timestamp
   registerPage.getKycDropDownButton().eq(0).click({ force: true })
   registerPage.getKycIDType().select(this.data2.KycInfo.KycIDType, { force: true })
   registerPage.getKycIDValue().type(KycValue, { force: true }),
@@ -561,8 +561,8 @@ Then('Edited User status is approved', function () {
 //------TC_72------------------------Notification to the User--------------------------------------------
 
 And('System Admin is able to edit KYC details', function () {
-  const uuid = () => Cypress._.random(1e8)
-  KycValue = "ABc" + uuid()
+  const timestamp = (new Date).getTime()
+  KycValue = "A" + timestamp
   manageUsersPage.getEditToolTip().eq(0).click({ force: true })
   registerPage.getNextButtonBasic().eq(0).click({ force: true })
   registerPage.getKycDropDownButton().eq(0).click({ force: true })
@@ -657,62 +657,6 @@ Then('Verify the user Resumed approval message', function () {
 })
 
 //------------------------------------------THE END-----------------------------------------------------------------
-
-  //----------------TC_184-----------------------------------------------------------------------------------------
-  And('Enter all basic details and do not verify contact number', function () {
-
-    const uuid = () => Cypress._.random(1e8)
-    mobile = "77" + uuid()
-    const lgid = () => Cypress._.random(1e5)
-    loginId = this.data2.personalInfo.firstName + lgid()
-    cy.wait(2000)
-    registerPage.getFirstName().type(this.data2.personalInfo.firstName, { force: true })
-    registerPage.getLastName().type(this.data2.personalInfo.lastName, { force: true })
-    cy.iframe().find('select[data-test-id="preferredLanguage"]')
-      .select(this.data2.personalInfo.preferredLang, { force: true })
-    registerPage.getLoginID().type(loginId, { force: true })
-    registerPage.getMobileNumber().type(mobile, { force: true })
-    registerPage.getAdressLine1().click({ force: true })
-
-  })
-  Then('Verify that error button should be visible', function () {
-
-    registerPage.getErrorIcon().should('be.visible')
-
-  })
-
-  //-------TC_185--------------------------------------------------------------------------------------------------
-
-
-  And('Enter any invalid vlue to get the error message', function () {
-
-
-    registerPage.getFirstName().type(this.data2.personalInfo.invalidFirstName, { force: true })
-    registerPage.getAdressLine1().click({ force: true })
-
-  })
-  Then('Confirm the Error message', function () {
-    registerPage.getInvalidInputMessage().should('have.text', this.data2.personalInfo.invalidInputMessage)
-
-  })
-
-  //--------TC_187--------------------------------------------------------------------------------------------------
-
-  And('Enter Subscriber MobileNumber Already Registered', function () {
-
-
-    registerPage.getFirstName().type(this.data2.personalInfo.firstName, { force: true })
-    registerPage.getMobileNumber().type(this.data2.personalInfo.RegisteredMobile)
-    registerPage.getAdressLine1().click({ force: true })
-
-  })
-
-  Then('confirm mobile number error message', function () {
-
-   // registerPage.getValueIsNotUnique().should('have.text', this.data2.personalInfo.notUnique)
-
-
-  })
   //---------------------------------------------------Kalyani----------------------------------------------
   And('Enter Mobile number or KYC number of subscriber user in search', function () {
     pageLogin.getiFrame()
