@@ -35,6 +35,7 @@ var mobile,BAMobileNumber
 var ProfileName
 var number
 const TransactionFile ='cypress/fixtures/userData/TransactionCorrectionData.json'
+var O2CData ="cypress/fixtures/userData/O2Cdata.json"
 
 //----------------BDD Hooks-----------------------------------------------------------------
 Before(() => {
@@ -120,8 +121,8 @@ And('Enter Mobile number or KYC number', function () {
   var O2CFile ="cypress/fixtures/userData/O2Cdata.json"
     cy.readFile(O2CFile).then((data) => {
      BAMobileNumber = data.O2CMsisdn1
+    manageUsersPage.getSearchUser().type(BAMobileNumber, { force: true })
   })
-  manageUsersPage.getSearchUser().type(BAMobileNumber, { force: true })
   manageUsersPage.getSearchUserButton().click({ force: true })
 
 })
@@ -139,12 +140,14 @@ When('User Click on eye button for WalletHistory', function () {
   cy.wait(3000)
  // manageUsersPage.getTransactionCorrection().contains(this.data6.ServiceType4).click({force:true})
  // manageUsersPage.getApplyFilterButton().click({force:true})
-  var O2CData ="cypress/fixtures/userData/O2Cdata.json"
+  
     cy.readFile(O2CData).then((data) => {
     const TransactionID = data.TransactionID
+    cy.log(TransactionID)
   manageUsersPage.getSearchTransactionId().type(TransactionID)
-})
   manageUsersPage.getserachicon().click({force:true})
+})
+ // manageUsersPage.getserachicon().click({force:true})
   cy.wait(3000)
   manageUsersPage.getreversetransaction().eq(0).click()
   manageUsersPage.getreason().type('NIL')
@@ -167,23 +170,23 @@ When('User Click on eye button for WalletHistory1', function () {
   manageUsersPage.getEyeIcon().click({ force: true })
   manageUsersPage.getexpandmore().click({ force: true })
   manageUsersPage.getwallet().click({ force: true })
-  manageUsersPage.getFilter().click({force:true})
-  manageUsersPage.getradiostatus().contains(this.data6.Status).click({force:true})
+ // manageUsersPage.getFilter().click({force:true})
+  //manageUsersPage.getradiostatus().contains(this.data6.Status).click({force:true})
  /* manageUsersPage.getcheckbox1().contains(this.data6.ServiceType1).click({force:true})
   manageUsersPage.getcheckbox1().contains(this.data6.ServiceType2).click({force:true})
   manageUsersPage.getcheckbox1().contains(this.data6.ServiceType3).click({force:true})
   manageUsersPage.getservice().type('T')
   cy.wait(3000)
   manageUsersPage.getTransactionCorrection().contains(this.data6.ServiceType4).click({force:true})*/
-  manageUsersPage.getApplyFilterButton().click({force:true})
+  //manageUsersPage.getApplyFilterButton().click({force:true})
   //manageUsersPage.getSearchTransactionId().type(this.data6.TransactionId2)
-  var O2CData ="cypress/fixtures/userData/O2Cdata.json"
-    cy.readFile(O2CData).then((data) => {
-    var TransactionID = data.TransactionID
+  cy.readFile(O2CData).then((data) => {
+    const TransactionID = data.TransactionID
+    cy.log(TransactionID)
   manageUsersPage.getSearchTransactionId().type(TransactionID)
-})
   manageUsersPage.getserachicon().click({force:true})
-  cy.wait(3000)
+})
+cy.wait(3000)
   manageUsersPage.getreversetransaction().eq(0).click()
   manageUsersPage.getreason().type('NIL')
   manageUsersPage.getreverseservicecharge().click({ force: true })
@@ -202,24 +205,24 @@ When('User Click on eye button for WalletHistory2', function () {
   manageUsersPage.getEyeIcon().click({ force: true })
   manageUsersPage.getexpandmore().click({ force: true })
   manageUsersPage.getwallet().click({ force: true })
-  manageUsersPage.getFilter().click({force:true})
-  manageUsersPage.getradiostatus().contains(this.data6.Status).click({force:true})
+ // manageUsersPage.getFilter().click({force:true})
+  //manageUsersPage.getradiostatus().contains(this.data6.Status).click({force:true})
  /* manageUsersPage.getcheckbox1().contains(this.data6.ServiceType1).click({force:true})
   manageUsersPage.getcheckbox1().contains(this.data6.ServiceType2).click({force:true})
   manageUsersPage.getcheckbox1().contains(this.data6.ServiceType3).click({force:true})
   manageUsersPage.getservice().type('T')
   cy.wait(3000)
   manageUsersPage.getTransactionCorrection().contains(this.data6.ServiceType4).click({force:true})*/
-  manageUsersPage.getApplyFilterButton().click({force:true})
+  //manageUsersPage.getApplyFilterButton().click({force:true})
   //manageUsersPage.getSearchTransactionId().type(this.data6.TransactionId3)
-  var O2CData ="cypress/fixtures/userData/O2Cdata.json"
-    cy.readFile(O2CData).then((data) => {
-    var TransactionID = data.TransactionID
+  cy.readFile(O2CData).then((data) => {
+    const TransactionID = data.TransactionID
+    cy.log(TransactionID)
   manageUsersPage.getSearchTransactionId().type(TransactionID)
-})
   manageUsersPage.getserachicon().click({force:true})
-  cy.wait(3000)
-  manageUsersPage.getreversetransaction().eq(0).click()
+})
+cy.wait(3000)
+manageUsersPage.getreversetransaction().eq(0).click()
   manageUsersPage.getreason().type('NIL')
  // manageUsersPage.getreverseservicecharge().click({ force: true })
   cy.wait(2000)
@@ -240,15 +243,15 @@ When('Navigate to Transaction Correction and click on Transaction Approval', fun
   welcomePage.getTransactionCorrectionApproval().click()
   cy.wait(3000)
   tranCorrPage.getcolumn().within(function(){
-    cy.wait(3000)    
-    /*cy.readFile(TransactionFile).then((data) => {
-      var transID = data.TransactionId
-      cy.log(transID)*/
-        cy.get('td').contains(this.data6.TransactionId1)
+    cy.wait(3000) 
+    cy.readFile(O2CData).then((data) => {
+      var transID = data.TransactionID
+      cy.log(transID)
+        cy.get('td').contains(transID)
       
           tranCorrPage.getradiobutton().check()
           tranCorrPage.getsubmit().click({force:true})
-        //})
+        })
           cy.wait(3000)
            
          })
@@ -264,14 +267,14 @@ When('Navigate to Transaction Correction and click on Transaction Approval1', fu
   cy.wait(3000)
   tranCorrPage.getcolumn().within(function(){
     cy.wait(3000)    
-    /*cy.readFile(TransactionFile).then((data) => {
-      var transID = data.TransactionId
-      cy.log(transID)*/
-        cy.get('td').contains(this.data6.TransactionId2)
+    cy.readFile(TransactionFile).then((data) => {
+      var transID1 = data.TransactionID
+      cy.log(transID1)
+        cy.get('td').contains(transID1)
       
           tranCorrPage.getradiobutton().check()
           tranCorrPage.getsubmit().click({force:true})
-        //})
+        })
           cy.wait(3000)
            
          })
@@ -287,14 +290,14 @@ When('Navigate to Transaction Correction and click on Transaction Approval2', fu
   cy.wait(3000)
   tranCorrPage.getcolumn().within(function(){
     cy.wait(3000)    
-    /*cy.readFile(TransactionFile).then((data) => {
-      var transID = data.TransactionId
-      cy.log(transID)*/
-        cy.get('td').contains(this.data6.TransactionId3)
+    cy.readFile(TransactionFile).then((data) => {
+      var transID2 = data.TransactionId
+      cy.log(transID2)
+        cy.get('td').contains(transID2)
       
           tranCorrPage.getradiobutton().check()
           tranCorrPage.getsubmit().click({force:true})
-        //})
+        })
           cy.wait(3000)
            
          })
