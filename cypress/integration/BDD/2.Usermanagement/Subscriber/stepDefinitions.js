@@ -609,7 +609,7 @@ And('Suspend the user by giving the comment', function () {
 })
 
 Then('Verify the user suspend Confirmation message', function () {
-  //approvalPage.getApproveConfirmationMessage().contains(this.data2.suspendResumeConfirmationMessage.suspendResumeUser)
+  approvalPage.getApproveConfirmationMessage().contains(this.data2.suspendResumeConfirmationMessage.suspendResumeUser)
 })
 
 
@@ -628,7 +628,7 @@ And('Approve to suspended the Users', function () {
 })
 
 Then('Verify the user Suspended approval message', function () {
- // approvalPage.getApproveConfirmationMessage().contains(this.data2.suspendResumeConfirmationMessage.userSuspended)
+  approvalPage.getApproveConfirmationMessage().contains(this.data2.suspendResumeConfirmationMessage.userSuspended)
 })
 
 
