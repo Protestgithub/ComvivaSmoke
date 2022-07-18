@@ -1,10 +1,13 @@
 import stockInitiation from './pageObjects/StockManagement/stockInitiation';
 import stockManagement from './pageObjects/StockManagement/stockManagement';
 import 'cypress-file-upload';
+import loginPage from '../support/pageObjects/loginPage';
+
 //-------------------------Object Declaration----------------------------------------------------------
 
 const stockInitiationPage = new stockInitiation()
 const stockManagementPage = new stockManagement()
+const pageLogin = new loginPage()
 
 function getRandomInt(min, max) {
 	return Math.floor(Math.random() * (max - min + 1)) + min;
