@@ -312,10 +312,10 @@ And('Select start date and end date and  Click apply', function () {
   cy.wait(3000)
 
   manageUsersPage.getDatePickerStart().click({ force: true })
-  manageUsersPage.getStartDate().contains(this.data4.usercalender.startday).click({ force: true })
+  manageUsersPage.getStartDate().contains(this.data2.usercalender.startday).click({ force: true })
 
   manageUsersPage.getDatePickerEnd().click({ force: true })
-  manageUsersPage.getEndDate().contains(this.data4.usercalender.endday).click({ force: true })
+  manageUsersPage.getEndDate().contains(this.data2.usercalender.endday).click({ force: true })
 
   manageUsersPage.getApplyFilterButton().click({ force: true })
 
