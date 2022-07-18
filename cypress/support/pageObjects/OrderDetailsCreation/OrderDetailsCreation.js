@@ -1,4 +1,4 @@
-class OrderDetailsCreations{
+class OrderDetailsCreation{
    
    
     getCurrency() {
@@ -34,4 +34,4 @@ class OrderDetailsCreations{
 
    
 }
-export default OrderDetailsCreations
+export default OrderDetailsCreation
