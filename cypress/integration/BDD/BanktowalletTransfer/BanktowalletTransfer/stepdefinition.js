@@ -6,7 +6,7 @@ import 'cypress-iframe'
 import { Given, When, Then, And, Before } from "cypress-cucumber-preprocessor/steps";
 import loginPage from '../../../../support/pageObjects/loginPage';
 import homePage from '../../../../support/pageObjects/homePage';
-import OrderDetailsCreations from '../../../../support/pageObjects/OrderDetailsCreation/OrderDetailsCreations';
+import OrderDetailsCreation from '../../../../support/pageObjects/OrderDetailsCreation/OrderDetailsCreation';
 
 import "../../../../support/commands";
 
@@ -17,7 +17,7 @@ import "../../../../support/commands";
 
 const pageLogin = new loginPage()
 const welcomePage = new homePage()
-const orderDetailsCreationPage = new OrderDetailsCreations()
+const orderDetailsCreationPage = new OrderDetailsCreation()
 
 var bamount
 const uid = () => Cypress._.random(1e3)
