@@ -180,7 +180,16 @@ And enter user mobile number and search the SuspendResume user
 And System Admin is able to view details
 And Suspend the user by giving the comment
 Then Verify the user suspend Confirmation message
-Then Logout
+
+# Author: Chetan.S
+# Last Updated: 25-04-2022
+# Comments 
+# Scenario_ID :
+# TC_73
+@test
+
+
+Scenario:To verify that the System Admin is able to Approve the suspended user
 Given Login into Mobiquity Portal as another System admin Checker1 after logout
 When Navigate to Approvals
 And Admin click on Suspended user data
@@ -200,7 +209,15 @@ When Navigate to User Management and Click on manage user
 And enter user mobile number and search the SuspendResume user
 And Resume the user by giving the comment
 Then Verify the user resume Confirmation message
-Then Logout
+
+# Author: Chetan.S
+# Last Updated: 25-04-2022
+# Comments 
+# Scenario_ID :
+# TC_74
+@test
+
+Scenario:To verify that the System Admin is able to approve the resumed user.
 Given Login into Mobiquity Portal as another System admin Checker1 after logout
 When Navigate to Approvals
 And Admin click on Resumeded user data
