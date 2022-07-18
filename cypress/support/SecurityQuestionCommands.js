@@ -44,20 +44,20 @@ function getRandomName() {
 
 Cypress.Commands.add('RandomQuestions', () => {
     q1 = getRandomName()
-    securityQuestionPage.getSearchBox().type(q1, { force: true })
+    securityQuestionPage.getSearchBox().clear({force:true}).type(q1, { force: true })
     cy.writeFile(filename, { SecurityQuestion1: q1 })
 })
 
 
 Cypress.Commands.add('RandomQuestion', () => {
     q2 = getRandomName()
-    securityQuestionPage.getSearchBox().type(q2, { force: true })
+    securityQuestionPage.getSearchBox().clear({force:true}).type(q2, { force: true })
     cy.writeFile(filename, { SecurityQuestion1: q1, SecurityQuestion2: q2 })
 })
 
 Cypress.Commands.add('RandomQuestion2', () => {
     q3 = getRandomName()
-    securityQuestionPage.getSearchBox().type(q3, { force: true })
+    securityQuestionPage.getSearchBox().clear({force:true}).type(q3, { force: true })
     cy.writeFile(filename, { SecurityQuestion1: q1, SecurityQuestion2: q2, SecurityQuestion3: q3 })
 })
 
