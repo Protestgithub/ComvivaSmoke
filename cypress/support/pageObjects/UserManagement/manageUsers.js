@@ -12,7 +12,9 @@ class manageUsers {
         return cy.iframe().find('span.font-weight-bold')
 
     }
-
+getDateRangeAssert() {
+        return cy.iframe().find('.modal-label.more-details-header')
+    }
     getViewIcon() {
         return cy.iframe().find('[data-test-id="view-all-details"]')
     }
