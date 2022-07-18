@@ -27,7 +27,7 @@ When Navigate to Transaction Correction and click on Transaction Approval
 Scenario:To verify that when the Roll Back Service charge option is selected, then along with service charge, the applicable tax should also be rolled back
 Given Login into Mobiquity Portal as System admin Maker
 When Navigate to User Management and Click on manage user
-And Enter Mobile number or KYC number of subscriber user
+And Enter Mobile number or KYC number
 When User Click on eye button for WalletHistory1
 Then Logout
 Given Login into Mobiquity Portal as another System admin Checker1 after logout
@@ -43,7 +43,7 @@ When Navigate to Transaction Correction and click on Transaction Approval1
 Scenario:To verify that when the Roll Back Commission option is selected, then along with commission, the applicable tax should also be rolled back
 Given Login into Mobiquity Portal as System admin Maker
 When Navigate to User Management and Click on manage user
-And Enter Mobile number or KYC number of subscriber user
+And Enter Mobile number or KYC number
 When User Click on eye button for WalletHistory2
 Then Logout
 Given Login into Mobiquity Portal as another System admin Checker1 after logout
