@@ -7,7 +7,7 @@ Feature:Transaction Correction
 # 
 @test
 
-Scenario:To verify that the Valid User should able to perform Transaction correction for CASHIN,CASHOUT,P2P,MERCHANT PAYMENT. 
+Scenario:To verify that the Valid User should able to perform Transaction correction 
 Given Login into Mobiquity Portal as System admin Maker
 When Navigate to User Management and Click on manage user
 And Enter Mobile number or KYC number
