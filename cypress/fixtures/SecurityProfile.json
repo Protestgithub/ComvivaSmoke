@@ -16,7 +16,7 @@
     "resetForgetPassword":"Secret Question & Answers",
     "pinLength":"8",
     "failedAttemptsToBlock":"3",
-    "getIpAddress":"192.18.0.1",
+    "getIpAddress":"192.168.0.1",
     "pinExpiry":"3",
     "failedPin":"3",
     "lastNonRepeatingPin":"2",
