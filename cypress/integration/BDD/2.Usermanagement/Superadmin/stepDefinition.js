@@ -326,25 +326,31 @@ When('Navigate to User Management and Click on manage user', function () {
 And('Enter Mobile number or KYC number of superadmin in search', function () {
   pageLogin.getiFrame()
   manageUsersPage.getSearchUser().click({ force: true })
-  cy.wait(3000)
-  manageUsersPage.getSearchUser().type(this.data2.mob4, { force: true })
-  manageUsersPage.getSearchUserButton().click({ force: true })
+  cy.readFile(Sysfilelogin).then((data)=>{
+    var mobileSys
+    mobileSys = data.MobileNumber3
+    manageUsersPage.getSearchUser().type(mobileSys, { force: true })
+  })
+    manageUsersPage.getSearchUserButton().click({ force: true })
 
 })
 And('Enter Mobile number or KYC number of subscriber user in search', function () {
-  pageLogin.getiFrame()
-  manageUsersPage.getSearchUser().click({ force: true })
-  manageUsersPage.getSearchUser().type(this.data2.mob2, { force: true })
-  manageUsersPage.getSearchUserButton().click({ force: true })
-
-})
-And('Enter Mobile number or KYC number of System admin in Search', function () {
   pageLogin.getiFrame()
   manageUsersPage.getSearchUser().click({ force: true })
   cy.readFile(Sysfilelogin).then((data)=>{
     var mobileSys
     mobileSys = data.MobileNumber3
     manageUsersPage.getSearchUser().type(mobileSys, { force: true })
+  })
+  manageUsersPage.getSearchUserButton().click({ force: true })
+
+})
+And('Enter Mobile number or KYC number of System admin in Search', function () {
+  pageLogin.getiFrame()
+  manageUsersPage.getSearchUser().click({ force: true })
+  cy.readFile('cypress/fixtures/userData/SystemAdminLogin.json').then((data)=>{
+   let mobileSys = data.MobileNumber2
+    manageUsersPage.getSearchUser().type(mobileSys, {force: true})
   })
   manageUsersPage.getSearchUserButton().click({ force: true })
 
@@ -423,7 +429,7 @@ And('Fill All Required Fields and Enter Registered EmailID',function(){
     registerPage.getFirstName().type(this.data2.personalInfo.firstName, {force: true})
     registerPage.getLastName().type(this.data2.personalInfo.lastName, {force: true})
     //cy.getrandomUserEmailID(this.data2.personalInfo.firstName, this.data2.personalInfo.lastName)
-ErrorM.getEmailiD().type(this.data6.SYSEmailId,{force:true})
+ErrorM.getEmailiD().type(this.data6.MobileNumber2,{force:true})
 registerPage.getMobileNumber().type(mobile, {force:true})
     cy.iframe().find('select[data-test-id="preferredLanguage"]')
     .select(this.data2.personalInfo.preferredLang,{force: true})
@@ -431,7 +437,7 @@ registerPage.getMobileNumber().type(mobile, {force:true})
     ErrorM.getLoginID().type(LoginId1,{force:true})
 })
 Then('Email Id Error Message Should be dispalyed',function(){
-    ErrorM.getEmailIDErrorMessage().should('have.text',this.data2.errorMessage.emailerror,{force:true})
+    ErrorM.getEmailIDErrorMessage().should('have.text',this.data2.errorMessage.invaildemail,{force:true})
 })
 And('Fill All Required Fields and Enter Not Verified EmailID',function(){
     const uuid = () => Cypress._.random(1e8)
