@@ -19,7 +19,7 @@ class authorizationManagement {
     }
 
     getAuthorizationUserType() {
-        return cy.iframe().find('.nav-item.ng-star-inserted > a > h4').contains('Subscriber')
+        return cy.iframe().find('.nav-item.ng-star-inserted > a').contains('Subscriber')
     }
     getAuthorizationUserRole() {
         return cy.iframe().find('.mat-radio-label-content')
@@ -132,7 +132,7 @@ class authorizationManagement {
     // ------------------Administrator---------------
 
     getAdministratorType() {
-        return cy.iframe().find('.nav-item.ng-star-inserted > a > h4').contains('Administrator')
+        return cy.iframe().find('.nav-item.ng-star-inserted > a').contains('Administrator')
     }
 
     getAdministratorBusinessAdmin() {
@@ -140,7 +140,7 @@ class authorizationManagement {
     }
 
     getBusinessType() {
-        return cy.iframe().find('.nav-item.ng-star-inserted > a > h4').contains('Business')
+        return cy.iframe().find('.nav-item.ng-star-inserted > a').contains('Business')
     }
 
     getBusinessATMRole() {
