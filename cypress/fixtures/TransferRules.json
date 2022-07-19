@@ -16,7 +16,8 @@
       "Status":"Initiated",
       "TransferType":"Transfer",
       "GeographicalDomain":"Mobiquity",
-      "Status1":"Suspended"
+      "Status1":"Suspended",
+      "ErrorMessage": "Transfer Rule Already Exists"
     },
     "TransferRuleDataCreation":{
       "servicename":"Debit SVA",
@@ -62,6 +63,8 @@
       "MFSProvider":"MFS1",
       "Payement":"WALLET",
       "LinkedBank":"Salary",
-      "FirstApproval":"170949"
+      "FirstApproval":"170949",
+      "ErrorMessage": "Please enter correct value in Minimum Transfer Amount"
+      
     }
 }
