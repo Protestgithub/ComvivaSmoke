@@ -49,12 +49,16 @@ Feature: Churn Management
 @test
 
     Scenario: To verify that the System admin can approve the initiated churn process with Bulk Upload and Approve
-        Given Login into Mobiquity Portal as System admin Maker
+         Given Login into Mobiquity Portal as System admin Maker
         When  Click on Churn Management and Churn Initiation
-        And  Download a File template
-        And Upload Bulk csv file with valid details
-        And Click on Churn Managemen and Churn Approval
+        And  Download a File template 
+        And Convert csv To JSON file
+        And update the json data for bulkpayout
+        And convert json to csv
+        And Upload csv file with valid details
+        And Click on Churn Management and Churn Approval
         And Select the initiated churn request and click on Batch Reject 
+        Then Confirm the initiated churn request
 
     # # # Author: Sudheer Baraker
     # # # Last Updated: 19/05/2022
