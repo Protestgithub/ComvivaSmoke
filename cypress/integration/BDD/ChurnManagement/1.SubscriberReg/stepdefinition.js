@@ -239,8 +239,11 @@ And('Enter all the required subscriber details for bulk payout', function () {
     registerPage.getAdressLine1().click({ force: true }),
   )
   //cy.writeFile(subRegistration,{ subscriberMobile: mobile })
-  cy.writeFile(churnSubRegistration, { churnSubscriberRegistrationBulkPayout: mobile })
-
+  
+  cy.readFile(churnSubRegistration).then((data) => {
+data.churnSubscriberRegistrationBulkPayout = mobile
+cy.writeFile(churnSubRegistration, data)
+})
 
   cy.OTP(Cypress.env('apiBaseURL'))
 
