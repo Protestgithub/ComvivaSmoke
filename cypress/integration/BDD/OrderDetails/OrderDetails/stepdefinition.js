@@ -147,7 +147,7 @@ When('Click on user management and Manage users', function () {
 
 And('Enter Mobile numberin search Menu', function () {
   cy.wait(3000)
-  cy.getSubscriberMobNum()
+ cy.getBusinessUserMobNum()
 })
 
 And('Click on view Details', function () {
@@ -159,7 +159,9 @@ Then('Click on order details', function () {
 
   manageUsersPage.getOrderDetailsButton().click({ force: true })
   cy.wait(3000)
-  manageUsersPage.getOrderDetailsMessage().should('have.text', ' Manage Users  > View Details')
+
+manageUsersPage.getWalletExpandButton().click({ force: true })
+  manageUsersPage.getViewMoreDetailsButton().click({ force: true })
 })
 
 //----------TC_130-------To verify that Admin user can check all the Order Details of a customer/ business users successfully------------
