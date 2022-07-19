@@ -1,10 +1,51 @@
 Feature: User Management : Buissness
 
-
-
 ################################# Likith   #########################################################
 
+# Author: Likith R
+# Last Updated:
+# Comments
+# Test Case_ID : TC_66
+#
+@test
 
+
+Scenario: To verify that the System admin is able to Add telco operator through user management module.
+Given Login into Mobiquity Portal as System admin Maker
+When Navigate to User Management and Click on register
+And Select User type as Business and click on Telco operator
+And Enter all the mandatory Basic information details and click on next
+Then Enter all the mandatory Profile details like marketing profile,regulatory profile,Operator profile.
+And Click on Next >> click on Confirm
+Then Confirmation message
+Then Logout
+Given Login into Mobiquity Portal as another System admin Checker1 after logout
+When Navigate to Approvals and filter by Submitted status
+And User click on submitted user data
+And Approve the Users
+
+# Author: Likith R
+# Last Updated:
+# Comments
+# Test Case_ID : Tc_67
+#
+
+@test
+
+Scenario:To verify that the System admin is able to Modify  telco operator through user management module.
+Given Login into Mobiquity Portal as System admin Maker
+When Navigate to User Management and Click on manage user
+And Enter Telco operator Mobile number and KYC number in search menu
+When User Click on eye button
+And Click on edit
+And Edit the required details >> Click on Next
+And Click on save
+Then Confirmation modify message
+Then Logout
+Given Login into Mobiquity Portal as another System admin Checker1 after logout
+When Navigate to Approvals and filter by Submitted status
+And User click on submitted user data
+Then Approve the Users
 
 # Author: Likith R
 # Last Updated:
@@ -78,57 +119,6 @@ When User Click on eye button
 And Click on edit
 And Edit the required details >> Click on Next
 And Click on save
-
-
-
-# Author: Likith R
-# Last Updated:
-# Comments
-# Test Case_ID : TC_66
-#
-@test
-
-
-Scenario: To verify that the System admin is able to Add telco operator through user management module.
-Given Login into Mobiquity Portal as System admin Maker
-When Navigate to User Management and Click on register
-And Select User type as Business and click on Telco operator
-And Enter all the mandatory Basic information details and click on next
-Then Enter all the mandatory Profile details like marketing profile,regulatory profile,Operator profile.
-And Click on Next >> click on Confirm
-Then Confirmation message
-Then Logout
-Given Login into Mobiquity Portal as another System admin Checker1 after logout
-When Navigate to Approvals and filter by Submitted status
-And User click on submitted user data
-And Approve the Users
-
-
-# Author: Likith R
-# Last Updated:
-# Comments
-# Test Case_ID : Tc_67
-#
-
-@test
-
-Scenario:To verify that the System admin is able to Modify  telco operator through user management module.
-Given Login into Mobiquity Portal as System admin Maker
-When Navigate to User Management and Click on manage user
-And Enter Telco operator Mobile number and KYC number in search menu
-When User Click on eye button
-And Click on edit
-And Edit the required details >> Click on Next
-And Click on save
-Then Confirmation modify message
-Then Logout
-Given Login into Mobiquity Portal as another System admin Checker1 after logout
-When Navigate to Approvals and filter by Submitted status
-And User click on submitted user data
-Then Approve the Users
-
-
-
 
 ##################################### Arpitha ####################################################
 
@@ -230,7 +220,6 @@ And Approve the Users
 Then User modified is approved
 
 
-
 # Author: Arpitha C
 # Last Updated: 25/04/2022
 # Comments : 
@@ -242,9 +231,6 @@ Scenario:To verify that System Admin/Business Admin is able to view the businses
 Given Login into Mobiquity Portal as System admin Maker
 When Navigate to Manage User, and search Business Admin
 And Search with the Mobile Number
-And System Admin is able to view details
-When Navigate to Manage User, and search Business Admin
-And Search with the KYC Number
 And System Admin is able to view details
 
 
