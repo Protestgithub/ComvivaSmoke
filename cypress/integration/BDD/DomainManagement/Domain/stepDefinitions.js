@@ -90,7 +90,7 @@ And('Enter Domain Name and Domain code.',function(){
     var CatNam = data.Domainname
     domainPage.getDomainName().type(CatNam,{force:true})
 
-  })
+  
 })
   cy.readFile(DataFile).then((data) => {
     var Catcode = data.DomainCode
@@ -104,7 +104,7 @@ And('Enter Domain Name and Domain code.',function(){
      domainPage.getDomainCategories().type(Category,{force:true})
 
     })
-
+})
 //-------------------------------------Error-------------------------------------------
 
 Then('Click on submit buttonn',function(){
