@@ -35,8 +35,7 @@ Feature: Churn Management
         And convert json to csv
         And Upload csv file with valid details
         And Click on Churn Management and Churn Approval
-        And  Select the initiated churn request and
-        Then click on Batch Reject
+        And Select the initiated churn request and click on Batch Reject 
         Then Confirm the initiated churn request
 
 
@@ -74,10 +73,8 @@ Feature: Churn Management
         When  Click on Churn Management and Churn Initiation
         And  Download a File template
         And Upload Bulk csv file with valid details
-        When Click on Churn Management and Churn Approval
-        And Click on Churn Management > Churn Approval
-        Then  Select the initiated churn request and
-        Then click on Approve/Reject by Selection
+        And Click on Churn Managemen and Churn Approval
+        And Select the initiated churn request and click on Batch Reject 
 
     # # # Author: Sudheer Baraker
     # # # Last Updated: 19/05/2022
@@ -94,9 +91,9 @@ Feature: Churn Management
         And update the json data
         And convert json to csv
         And Upload csv file with valid details
-        When Click on Churn Management and Churn Approval
-        Then Select the initiated churn request and
-        Then click on Batch Reject
+        And Click on Churn Management and Churn Approval
+        And Select the initiated churn request and click on Batch Reject
+        
     # # # Author: Sudheer Baraker
     # # # Last Updated: 19/05/2022
     # # # Comments :
@@ -112,9 +109,9 @@ Feature: Churn Management
         And update the json data
         And convert json to csv
         And Upload csv file with valid details
-        When Click on Churn Management and Churn Approval
-        Then Select the initiated churn request and
-        Then click on Approve and Reject by Selection
+        And Click on Churn Management and Churn Approval
+        Then Select the initiated churn request and click on Approve and Reject by Selection
+       
 
 
 
