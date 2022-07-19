@@ -200,9 +200,11 @@ When('Select Authorization profile and add profile', function () {
 })
 
 And('select Subscriber user type and select user role', function () {
-  // cy.wait(3000)
+  cy.wait(2000)
   authorizationProfilePage.getAuthorizationUserType().click({ force: true })
-  authorizationProfilePage.getAuthorizationUserType().click({ force: true })
+  cy.wait(2000)
+  authorizationProfilePage.getAdministratorType().focused() 
+  cy.wait(2000)
   authorizationProfilePage.getAuthorizationUserRole().contains('Subscriber').click({ force: true })
 
 })
@@ -214,9 +216,7 @@ Then('Fill all Details and Create Subscriber authorization profile', function ()
     authorizationProfilePage.getUserServicePreferences().contains('ALL').click({ force: true })
   recurse(
     () => authorizationProfilePage.getProfileName().clear({ force: true }).type(getRandomName(), { force: true }),
-    () => cy.wait(2000),
     () => authorizationProfilePage.getUserServicePreferences().contains('ALL').click({ force: true }),
-    () => cy.wait(2000),
     (uniqueness) => (uniqueness) == authorizationProfilePage.getProfileNameExist().contains
       ('Authorization profile name already exists,please try with different name').should('be.visible'),
     authorizationProfilePage.getUserServicePreferences().contains('ALL').click({ force: true }),
@@ -250,9 +250,11 @@ Then('User approval for Authorization profile', function () {
 
 //----------------------Administrator--------BusinessAdmin-----------------------------------
 And('select BusinessAdmin user type and select user role', function () {
-  //cy.wait(3000)
+  cy.wait(2000)
   authorizationProfilePage.getAdministratorType().click({ force: true })
-  authorizationProfilePage.getAdministratorType().click({ force: true })
+  cy.wait(2000)
+  authorizationProfilePage.getAdministratorType().focused()
+  cy.wait(2000)
   authorizationProfilePage.getAdministratorBusinessAdmin().contains('Business Admin').click({ force: true })
 })
 
@@ -262,9 +264,7 @@ Then('Fill all Details and Create BusinessAdmin authorization profile', function
     authorizationProfilePage.getUserServicePreferences().contains('ALL').click({ force: true })
   recurse(
     () => authorizationProfilePage.getProfileName().clear({ force: true }).type(getRandomName(), { force: true }),
-    () => cy.wait(2000),
     () => authorizationProfilePage.getUserServicePreferences().contains('ALL').click({ force: true }),
-    () => cy.wait(2000),
     (uniqueness) => (uniqueness) == authorizationProfilePage.getProfileNameExist().contains
       ('Authorization profile name already exists,please try with different name').should('be.visible'),
     authorizationProfilePage.getUserServicePreferences().contains('ALL').click({ force: true })
@@ -287,9 +287,11 @@ Then('Fill all Details and Create BusinessAdmin authorization profile', function
 })
 //----------------------Administrator--------CustomercareAdmin-----------------------------------
 And('select CustomercareAdmin user type and select user role', function () {
-  //cy.wait(3000)
+  cy.wait(2000)
   authorizationProfilePage.getAdministratorType().click({ force: true })
-  authorizationProfilePage.getAdministratorType().click({ force: true })
+  cy.wait(2000)
+  authorizationProfilePage.getAdministratorType().focused()
+  cy.wait(2000)
   authorizationProfilePage.getAdministratorBusinessAdmin().contains('Customer care Admin').click({ force: true })
 })
 
@@ -299,9 +301,7 @@ Then('Fill all Details and Create CustomercareAdmin authorization profile', func
     authorizationProfilePage.getUserServicePreferences().contains('ALL').click({ force: true })
   recurse(
     () => authorizationProfilePage.getProfileName().clear({ force: true }).type(getRandomName(), { force: true }),
-    () => cy.wait(2000),
     () => authorizationProfilePage.getUserServicePreferences().contains('ALL').click({ force: true }),
-    () => cy.wait(2000),
     (uniqueness) => (uniqueness) == authorizationProfilePage.getProfileNameExist().contains
       ('Authorization profile name already exists,please try with different name').should('be.visible'),
     authorizationProfilePage.getUserServicePreferences().contains('ALL').click({ force: true })
@@ -323,9 +323,11 @@ Then('Fill all Details and Create CustomercareAdmin authorization profile', func
 //----------------------Business-------------Distributor---------------------------------------------------
 
 And('select Distributor user type and select user role', function () {
-  // cy.wait(3000)
+  cy.wait(2000)
   authorizationProfilePage.getBusinessType().click({ force: true })
-  authorizationProfilePage.getBusinessType().click({ force: true })
+  cy.wait(2000)
+  authorizationProfilePage.getBusinessType().focused()
+  cy.wait(2000)
   authorizationProfilePage.getBusinessATMRole().contains('Distributer').click({ force: true })
 
 })
@@ -336,9 +338,7 @@ Then('Fill all Details and Create Distributor authorization profile', function (
     authorizationProfilePage.getUserServicePreferences().contains('ALL').click({ force: true })
   recurse(
     () => authorizationProfilePage.getProfileName().clear({ force: true }).type(getRandomName(), { force: true }),
-    () => cy.wait(2000),
     () => authorizationProfilePage.getUserServicePreferences().contains('ALL').click({ force: true }),
-    () => cy.wait(2000),
     (uniqueness) => (uniqueness) == authorizationProfilePage.getProfileNameExist().contains
       ('Authorization profile name already exists,please try with different name').should('be.visible'),
     authorizationProfilePage.getUserServicePreferences().contains('ALL').click({ force: true })
