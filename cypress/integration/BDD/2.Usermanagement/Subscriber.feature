@@ -4,6 +4,7 @@ Feature: User Management : Subscriber
     Customer Support Admin Users by System Admin
 
 
+
 # Author: Narendra
 # Last Updated: 27/04/2022
 # Comments 
@@ -141,30 +142,6 @@ And User click on submitted user data
 And Approve the Users
 Then Edited User status is approved
  
-
-# Author: Chetan.S
-# Last Updated: 25-04-2022
-# Comments 
-# Scenario_ID :
-# TC_72
-@test
-
-
-Scenario:To verify that modification message is sent to Subscriber successfully.
-Given Login into Mobiquity Portal as System admin Maker
-When Navigate to User Management and Click on manage user
-And enter user mobile number and search the user
-And System Admin is able to view details
-And System Admin is able to edit KYC details
-Then Confirm the edit details
-Then Logout
-Given Login into Mobiquity Portal as another System admin Checker1 after logout
-When Navigate to Approvals and filter by Submitted status
-And User click on submitted user data
-Then verify message sent to user
-
- 
-
 # Author: Chetan.S
 # Last Updated: 25-04-2022
 # Comments 
@@ -201,6 +178,7 @@ Then Verify the user Suspended approval message
 # Comments 
 # Scenario_ID :
 # TC_74
+
 @test
 
 Scenario:To verify that the System Admin is able to resume a suspend subscriber successfully through web.
@@ -215,6 +193,7 @@ Then Verify the user resume Confirmation message
 # Comments 
 # Scenario_ID :
 # TC_74
+
 @test
 
 Scenario:To verify that the System Admin is able to approve the resumed user.
@@ -298,7 +277,6 @@ When Navigate to User Management and Click on manage user
 And Enter Mobile number of subscriber in search
 When User Click on eye button 
 Then Verify View Details Page
-
 
 ########################################## Arpitha ###############################################
 
@@ -393,7 +371,25 @@ And Click on view Details and Click on Account info
 And select either UNLock outgoing payments or UNLock incoming payments or Lock both
 Then Click On UNLock
 
+# Author: Chetan.S
+# Last Updated: 25-04-2022
+# Comments 
+# Scenario_ID :
+# TC_72
+
+@test
 
 
-
+Scenario:To verify that modification message is sent to Subscriber successfully.
+Given Login into Mobiquity Portal as System admin Maker
+When Navigate to User Management and Click on manage user
+And enter user mobile number and search the user
+And System Admin is able to view details
+And System Admin is able to edit KYC details
+Then Confirm the edit details
+Then Logout
+Given Login into Mobiquity Portal as another System admin Checker1 after logout
+When Navigate to Approvals and filter by Submitted status
+And User click on submitted user data
+Then verify message sent to user
 
