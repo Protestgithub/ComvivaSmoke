@@ -112,35 +112,7 @@ And Assert Created Customer Admin Mobile Number
 Scenario: System admin should be able to Initite modification searching with all values (Mobile,Email and Login)
 Given Login into Mobiquity Portal as System admin Maker
 When Navigate to Manage User, and search Business Admin
-And Search with Mobile Number
-And System Admin is able to view details
-And System Admin is able to edit details of the user
-Then Confirm the edit details Of the User
-Then Logout
-Given Login into Mobiquity Portal as another System admin Checker1 after logout
-When Navigate to Approvals and filter by Submitted status
-And User click on submitted user data
-And Approve the Users
-Then User modified is approved
-
-Then Logout
-Given Login into Mobiquity Portal as System admin Maker after Logout
-When Navigate to Manage User, and search Business Admin
 And Search with EmailID
-And System Admin is able to view details
-And System Admin is able to edit details of the user
-Then Confirm the edit details Of the User
-Then Logout
-Given Login into Mobiquity Portal as another System admin Checker1 after logout
-When Navigate to Approvals and filter by Submitted status
-And User click on submitted user data
-And Approve the Users
-Then User modified is approved
-
-Then Logout
-Given Login into Mobiquity Portal as System admin Maker after Logout
-When Navigate to Manage User, and search Business Admin
-And Search with LoginID
 And System Admin is able to view details
 And System Admin is able to edit details of the user
 Then Confirm the edit details Of the User
