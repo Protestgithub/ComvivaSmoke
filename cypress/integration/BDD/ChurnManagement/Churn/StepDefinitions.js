@@ -253,6 +253,7 @@ And('update the json data', function () {
     cy.writeFile(JSONFile, data)
   })
 })
+
 And('convert json to csv', function () {
   cy.jsonToCSV(JSONFile, CsvFile)
   cy.wait(3000)
@@ -273,10 +274,11 @@ And('Click on Churn Management and Churn Approval', function () {
  cy.wait(2000)
   welcomePage.getChurnApproval().click()
 })
-And('Select the initiated churn request and Then click on Batch Reject', function () {
+And('Select the initiated churn request and click on Batch Reject', function () {
   cy.wait(2000)
   churnManagementPage.getRecentDatainchurn()
   churnManagementPage.getCBatchApprove().click({ force: true })
+  cy.wait(2000)
   //churnManagementPage.getChurnApprovalSubmitButton().click({force:true})
 
 })
@@ -313,7 +315,8 @@ And('Enter all the required subscriber details using Churned MSISDN', function (
   registerPage.getLoginID().type(loginId, { force: true })
    
   registerPage.getMobileNumber().type(this.data8.churnSubscriberRegistration, { force: true })
- 
+  registerPage.getAdressLine1().click({ force: true })
+  
   //cy.writeFile(subRegistration,{ subscriberMobile: mobile })
   
   cy.OTP(Cypress.env('apiBaseURL'))
@@ -367,80 +370,24 @@ Then('SubscrigReg Confirmation message is displayed', function () {
 Then('Save the Registered MSISDN in to fixture', function () {
   cy.readFile(churnSubRegistration).then((data) => {
     data.afterChurnSubscriberRegistration = churnSubscriberRegistration
-    cy.writeFile(churnSubRegistration, { afterChurnSubscriberRegistration: data })
+    cy.writeFile(churnSubRegistration, data)
   })
 })
 
 //--------TC_105---------Churn Bulk Upload---------------------------------------------------------------------
-And('Enter all the required subscriber details', function () {
 
-  //-------------------Random Data-------
-  const uuid = () => Cypress._.random(1e8)
-  mobile = "77" + uuid()
-  const lgid = () => Cypress._.random(1e5)
-  loginId = this.data2.personalInfo.firstName + lgid()
-  const timestamp = (new Date).getTime()
-  KycValue = "A" + timestamp
-
-
-  cy.wait(2000)
-  cy.SubRandomName()
-  registerPage.getLastName().type(this.data2.personalInfo.lastName, { force: true })
-  cy.iframe().find('select[data-test-id="preferredLanguage"]')
-    .select(this.data2.personalInfo.preferredLang, { force: true })
-  registerPage.getLoginID().type(loginId, { force: true })
-  registerPage.getMobileNumber().type("7723456789", { force: true })
-  registerPage.getAdressLine1().click({ force: true })
-
-  recurse(
-    () => registerPage.getMobileNumber().clear().type(mobile, { force: true }),
-    () => registerPage.getAdressLine1().click({ force: true }),
-    (uniqueness) => (uniqueness) == registerPage.getValueIsNotUnique().contains
-      ('Value is not unique').should('be.visible'),
-    registerPage.getAdressLine1().click({ force: true }),
-  )
-  cy.readFile(churnSubRegistration)
-  cy.writeFile(churnSubRegistration, { churnSubscriberRegistration1: mobile })
-
-  cy.OTP(Cypress.env('apiBaseURL'))
-
-
-  //---------------------------------------------    
-  registerPage.getAdressLine1().type(this.data2.subPersonalInfo.addressLine1, { force: true })
-  registerPage.getCountry().select(this.data2.personalInfo.country, { force: true })
-  registerPage.getState().select(this.data2.subPersonalInfo.state, { force: true })
-  registerPage.getCity().select(this.data2.subPersonalInfo.city, { force: true })
-  registerPage.getNextButtonBasic().click({ force: true })
-
-  //----------------------KYC---------------------
-  registerPage.getKycDropDownButton().eq(0).click({ force: true })
-  registerPage.getKycIDType().select(this.data2.KycInfo.KycIDType, { force: true })
-  registerPage.getKycIDValue().type(KycValue, { force: true }),
-  registerPage.getMakeThisPrimaryButton().click({ force: true }),
-  registerPage.getKycGracePeriod().select(this.data2.KycInfo.KycGracePeriod, { force: true })
-  registerPage.getNextButtonBasic1().click({ force: true })
-
-  //-----------------------Profile------------------
-  cy.wait(2000)
-      // cy.readFile(SubProfileName).then((data) => {
-   // let Profile = data.subscriber
-    registerPage.getSecurityProfile().select("subscriberSecurityProfile", { force: true })
- // })
-  //cy.readFile(SubProfileName).then((data) => {
- //   let Profile = data.SubscriberProfileName1
-    registerPage.getAuthProfile().select("SubsDefault Profile", { force: true })
- // })
-  //  registerPage.getReguProfile().select(this.data2.KycInfo.ReguProfile, { force: true })
-  // cy.readFile(RegulatoryMarketingProfile).then((data) => {
-   //  let Profile = data.RegulatoryProfileName
-     registerPage.getReguProfile().select("NoKycprofile", { force: true })
-  // })
-  //registerPage.getMarketingProfile().select(this.data2.KycInfo.MarketProfile, { force: true })
-   //cy.readFile(RegulatoryMarketingProfile).then((data) => {
-  //  let Profile = data.MarketingProfileName
-    registerPage.getMarketingProfile().select("SUBSDefaultMP", { force: true })
-  // })
+And('update the json data for bulkpayout', function () {
+  cy.readFile(JSONFile).then((data) => {
+    data['MSISDN*'] = this.data8.churnSubscriberRegistrationBulkPayout 
+    data['CHURN_SUBSCRIBER*'] = 'Y'
+    data['CHURN_CHANNEL_USER*'] = 'N'
+    data['MSISDN*'] = this.data8.churnSubscriberRegistration 
+    data['CHURN_SUBSCRIBER*'] = 'Y'
+    data['CHURN_CHANNEL_USER*'] = 'N'
+    cy.writeFile(JSONFile, data)
+  })
 })
+
 
 And('Upload Bulk csv file with valid details', function () {
   cy.wait(2000)
@@ -475,7 +422,7 @@ Then('Select the initiated churn request and Then click on Batch Reject', functi
   //cy.on('window:confirm', () => true)
 })
 //---TC_108---Churn Management---To verify that the System admin can approve the initiated churn process as Approve/Reject by Selection-----------------
-Then('Select the initiated churn request and Then click on Approve and Reject by Selection', function () {
+Then('Select the initiated churn request and click on Approve and Reject by Selection', function () {
   cy.wait(3000)
   churnManagementPage.getLastRadioButton().click({ force: true })
   churnManagementPage.getCBatchApproveRejectBySelection().click({ force: true })
