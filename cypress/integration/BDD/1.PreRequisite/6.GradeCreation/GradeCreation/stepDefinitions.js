@@ -193,7 +193,7 @@ And('Select the domain & category for which grade needs to be added.', function 
 
   AddGradePage.getAddbttn().click({ force: true })
   cy.wait(2000)
-  cy.RandomName()
+  cy.GradeName()
 
   cy.readFile(DataFile).then((data) => {
     var CatNam = data.Domainname
