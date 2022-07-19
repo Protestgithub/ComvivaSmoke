@@ -304,12 +304,12 @@ And('Approve the Users and save loginID3', function () {
 cy.log(loginId)
 })
 
-And('Approve the modification/Deletion Request', function () {
+And('User click on approve', function () {
   approvalPage.getApproveButton().click({ force: true })
-    cy.wait(3000)
   approvalPage.getApproveRequest().click({ force: true })
-  cy.wait(3000)
+  approvalPage.getApproveConfirmationMessage().should('have.text',this.data2.confirmationMessage.editUser)
 })
+
 Then('User status is approved', function() {
   approvalPage.getApproveConfirmationMessage().contains(this.data2.confirmationMessage.addUser)
 })
