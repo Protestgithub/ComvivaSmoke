@@ -1,18 +1,5 @@
 Feature: User Management : Super admin
 
-# Author: Kalyani M
-# Last Updated:
-# Comments 
-# Test Case_ID : TC_51_SuperadminMaker_selfdetails
-# 
-@test
-
-Scenario: To verify that Super admin is able to  view Self details 
-Given Login into Mobiquity Portal as Super admin Maker
-When Navigate to User Management and Click on manage user
-And Enter Mobile number or KYC number of superadmin in search
-When User Click on eye button
-
 
 # Author: Kalyani M
 # Last Updated:
@@ -129,3 +116,16 @@ When Navigate to User Management and click on Register
 And Click On System Admin and select Single User
 And enter invalid value in mandatory field
 Then Invaild Value Error Message
+
+# Author: Kalyani M
+# Last Updated:
+# Comments 
+# Test Case_ID : TC_51_SuperadminMaker_selfdetails
+# 
+@test
+
+Scenario: To verify that Super admin is able to  view Self details 
+Given Login into Mobiquity Portal as Super admin Maker
+When Navigate to User Management and Click on manage user
+And Enter Mobile number or KYC number of superadmin in search
+When User Click on eye button
