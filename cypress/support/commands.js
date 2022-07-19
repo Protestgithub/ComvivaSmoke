@@ -599,7 +599,7 @@ Cypress.Commands.add('Password', (apiURL) => {
 
 //----------------------------------------------------------------
 var name
-Cypress.Commands.add('RandomName', () => {
+Cypress.Commands.add('GradeName', () => {
 
         let hi = getRandomName()
 
