@@ -22,11 +22,7 @@ And Click on confirm button.
 # 
 @test
 
-Scenario:To verify that master can not modify the grade code only the name of the grade can be modified
-Given Login into Mobiquity Portal as masteradmin Maker
-When Click on User Profile Management >> Add Grade
-And Select the domain & category for which grade needs to be added.
-And logout the user
+Scenario:To verify that master can delete grade successfully
 Given Login into Mobiquity Portal as masteradmin Maker
 When Click on User Profile Management >> Delete Grade
 
