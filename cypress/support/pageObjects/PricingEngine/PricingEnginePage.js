@@ -1,210 +1,230 @@
-class PricingEnginePage{
-    
-    getCommissionTab()
+class PricingEnginePage {
 
-    {
+    getCommissionTab() {
 
         return cy.iframe().find('#main-menu-commission-service-selector')
 
     }
-    getServiceChargeHeader()
-    {
-       return cy.iframe().find('h5.page-heading')
-    }
-   
-    getSubmitPolicy()
-    {
-       return cy.iframe().find('a.btn-floating.modal-trigger.cta-background-color.submit-rules')
+    getServiceChargeHeader() {
+        return cy.iframe().find('h5.page-heading')
     }
 
-    getSubmitBtn()
-    {
-       return cy.iframe().find('a.modal-action.modal-close.center-align.submit-for-approval-btn')
+    getSubmitPolicy() {
+        return cy.iframe().find('a.btn-floating.modal-trigger.cta-background-color.submit-rules')
     }
 
-getServiceChargeTab()
-   {
-       return cy.iframe().find('#main-menu-service-charge-service-selector')
-   }
-    getPricingCalculator(){
+    getSubmitBtn() {
+        return cy.iframe().find('a.modal-action.modal-close.center-align.submit-for-approval-btn')
+    }
+
+    getServiceChargeTab() {
+        return cy.iframe().find('#main-menu-service-charge-service-selector')
+    }
+    getPricingCalculator() {
         return cy.iframe().find('#policy-calculator-serviceSelector')
     }
-    getFundTransfer(){
+    getFundTransfer() {
         return cy.iframe().find('[title="Fund Transfer"]')
     }
-    getSenderBankName(){
+    getSenderBankName() {
         return cy.iframe().find('[data-bind="with: senderSelector"] [class="col s5 input-select"] [class="browser-default control"]').eq(0)
     }
-    getSenderSVAType(){
+    getSenderSVAType() {
         return cy.iframe().find('[data-bind="with: senderSelector"] [class="col s5 input-select"] [class="browser-default control"]').eq(1)
     }
-    getSenderRole(){
+    getSenderRole() {
         return cy.iframe().find('[data-bind="with: senderSelector"] [class="col s5 input-select required"] [class="browser-default control"]').eq(0)
     }
-    getSenderHierarchy(){
+    getSenderHierarchy() {
         return cy.iframe().find('[data-bind="with: senderSelector"] [class="col s5 input-select required"] [class="browser-default control"]').eq(1)
     }
-    getSenderGrade(){
+    getSenderGrade() {
         return cy.iframe().find('[data-bind="with: senderSelector"] [class="col s5 input-select required"] [class="browser-default control"]').eq(2)
     }
-    getReceiverBankName(){
+    getReceiverBankName() {
         return cy.iframe().find('[data-bind="with: receiverSelector"] [class="col s5 input-select"] [class="browser-default control"]').eq(0)
     }
-    getReceiverSVAType(){
+    getReceiverSVAType() {
         return cy.iframe().find('[data-bind="with: receiverSelector"] [class="col s5 input-select"] [class="browser-default control"]').eq(1)
     }
-    getReceiverRole(){
+    getReceiverRole() {
         return cy.iframe().find('[data-bind="with: receiverSelector"] [class="col s5 input-select required"] [class="browser-default control"]').eq(0)
     }
-    getReceiverHierarchy(){
+    getReceiverHierarchy() {
         return cy.iframe().find('[data-bind="with: receiverSelector"] [class="col s5 input-select required"] [class="browser-default control"]').eq(1)
     }
-    getReceiverGrade(){
+    getReceiverGrade() {
         return cy.iframe().find('[data-bind="with: receiverSelector"] [class="col s5 input-select required"] [class="browser-default control"]').eq(2)
     }
-    getCurrencyType(){
+    getCurrencyType() {
         return cy.iframe().find('[id="currencyType"]')
     }
-    getTransactionAmt(){
+    getTransactionAmt() {
         return cy.iframe().find('[id="calculator-transactionAmount"]')
     }
-    getTransactionDateTime(){
+    getTransactionDateTime() {
         return cy.iframe().find('[id="calculator-transactionDateTime"]')
     }
-    getBearerCode(){
+    getBearerCode() {
         return cy.iframe().find('[id="bearerCode"]')
     }
-    getCalculate(){
+    getCalculate() {
         return cy.iframe().find('[class="btn calculator-btn"]')
     }
-    getCashIN(){
+    getCashIN() {
         return cy.iframe().find('[title="Cash In"]')
     }
-    getActiveOrInactive(){
+    getActiveOrInactive() {
         return cy.iframe().find('[class="switch-label"]').eq(1)
     }
-    getActiveOrInactive1(){
+    getActiveOrInactive1() {
         return cy.iframe().find('[class="switch-label"]').eq(2)
     }
-    getSearchTab(){
+    getSearchTab() {
         return cy.iframe().find('[class="search-placeholder"]')
     }
-    getSearchButton(){
+    getSearchButton() {
         return cy.iframe().find('[type="submit"]')
     }
-    getRule(){
+    getRule() {
         return cy.iframe().find('[class="truncate rule-policy-name"]')
     }
-    getPolicy(){
+    getPolicy() {
         return cy.iframe().find('[class="truncate rule-policy-type"]')
     }
-    getStatus(){
+    getStatus() {
         return cy.iframe().find('[class="rule-status"]')
     }
-    getValidity(){
+    getValidity() {
         return cy.iframe().find('[class="validity-details"]')
     }
-    getPolicyVersionLink(){
+    getPolicyVersionLink() {
         return cy.iframe().find('[class="version-button"]')
     }
-    getPolicyVersionInPut(){
+    getPolicyVersionInPut() {
         return cy.iframe().find('#policy-version')
     }
-    getProceedButton(){
+    getProceedButton() {
         return cy.iframe().find('#open-policy-version')
     }
-    getAddNewRuleBtn(){
-        return cy.iframe().find('div.row:nth-child(5) div.col.l10.m9.float:nth-child(2) div.policy-list div.col.l12.m12:nth-child(3) form:nth-child(27) section.rules-container.charge-rules:nth-child(8) div.row.add-new-charge-rule:nth-child(5) a.btn.add-new-rule-btn.waves-effect.waves-cta.add-new-charge-rule-btn > i.material-icons')
-    }
-    getRuleName(){
+    
+    getRuleName() {
         return cy.iframe().find('.rule-name')
     }
-    getMinCharge(){
+    getMinCharge() {
         return cy.iframe().find('[for="ruleBased-min-charge"]')
     }
-    getMaxCharge(){
+    getMaxCharge() {
         return cy.iframe().find('[for="ruleBased-max-charge"]')
     }
     //----------------------------------Calander Objects--------------------------------------
-    getDatePickerStart(){
+    getDatePickerStart() {
         return cy.iframe().find('#charge-rule-0-start-date')
     }
-    getDatePickerEnd(){
+    getDatePickerEnd() {
         return cy.iframe().find('#charge-rule-0-end-date')
     }
-    getCurrentDateSelect(){
+
+    getCurrentDateSelect() {
         return cy.iframe().find('.xdsoft_date.xdsoft_current').filter(':visible')
-    }   
-    getCalanderStart(){
+    }
+    getCalanderStart() {
         return cy.iframe().find('.xdsoft_datepicker.active:nth-child(1)')
     }
-    getNavigateForwardStart(){
+    getNavigateForwardStart() {
         return cy.iframe().find('.xdsoft_next').eq(2)
     }
-    getNavigateBackStart(){
+    getNavigateBackStart() {
         return cy.iframe().find('.xdsoft_prev').eq(2)
     }
-    getMonthNamerStart(){
+    getMonthNamerStart() {
         return cy.iframe().find('.xdsoft_label.xdsoft_month').eq(1).click().find('.xdsoft_option')
     }
-    getYearNameStart(){
+    getYearNameStart() {
         return cy.iframe().find('.xdsoft_label.xdsoft_year').eq(1).click().find('.xdsoft_option')
     }
-    getCalanderDaysStart(){
+    getCalanderDaysStart() {
         return cy.iframe().find('.xdsoft_date')
     }
     //------------------------------------------------------------------------------------------
-    getSaveDraftBtn(){
+    getSaveDraftBtn() {
         return cy.iframe().find('[class="fixed-action-btn horizontal"]')
     }
-    getWhoPays(){
+    getWhoPays() {
         return cy.iframe().find('[id="charge-rule-0-charge-statement-0-charge-payer"]')
     }
-    getSVAType(){
-        return cy.iframe().find('[id="charge-rule-0-charge-statement-0-charge-payer-product"]') 
+    getSVAType() {
+        return cy.iframe().find('[id="charge-rule-0-charge-statement-0-charge-payer-product"]')
     }
-    getWhomeToPay(){
-        return cy.iframe().find('[id="charge-rule-0-charge-statement-0-charge-receiver"]') 
+    getWhomeToPay() {
+        return cy.iframe().find('[id="charge-rule-0-charge-statement-0-charge-receiver"]')
     }
-    getChargeStatmentPricing(){
-        return cy.iframe().find('[id="charge-statement-0-flat"]') 
+    getChargeStatmentPricing() {
+        return cy.iframe().find('[id="charge-statement-0-flat"]')
     }
-    getPricingPercntage(){
-        return cy.iframe().find('div.col.s6.input-field.no-margin.no-padding') 
+    getPricingPercntage() {
+        return cy.iframe().find('div.col.s6.input-field.no-margin.no-padding')
     }
-    getPricingFixedAmt(){
-        return cy.iframe().find('div.col.input-field.no-margin.s6').eq(1) 
+    getPricingFixedAmt() {
+        return cy.iframe().find('div.col.input-field.no-margin.s6').eq(1)
     }
-    getPolicyName(){
-        return cy.iframe().find('span.truncate') 
-    }   
-    getCloneButton(){
-        return cy.iframe().find('.rule-header').contains(this.data5.RuleName1).find('.btn.waves-effect.waves-cta.clone-rule-button.modal-trigger"]') 
-    }   
-//Added 
-getSenderRoleCom(){
-         return cy.iframe().find('[data-bind="ifnot: operatorAllowsMultipleValues"] select[class="browser-default control"]').eq(0)
-     }
-     getSenderHierarchyCom(){
-         return cy.iframe().find('[data-bind="ifnot: operatorAllowsMultipleValues"] select[class="browser-default control"]').eq(1)
-     }
-     getSenderGradeCom(){
-     return cy.iframe().find('[data-bind="if: hasReferenceData"] select[class="browser-default control selectized"]')
-     }
-     getSenderGradeCom1(){
-        return cy.iframe().find('[data-bind="if: operatorAllowsMultipleValues"] [class="selectize-input items not-full has-options"]')
-        }
+    getPolicyName() {
+        return cy.iframe().find('span.truncate')
+    }
     
-        getSenderGradeCom2(){
-            return cy.iframe().find('[class="selectize-dropdown-content"]>div').eq(0)
-            }
-            getGradebtnclick()
-            {
-                return cy.iframe().find('div.col.s4 > label')
-            }
-     getSenderComNew(){
+    //Added 
+    getSenderRoleCom() {
+        return cy.iframe().find('[data-bind="ifnot: operatorAllowsMultipleValues"] select[class="browser-default control"]').eq(0)
+    }
+    getSenderHierarchyCom() {
+        return cy.iframe().find('[data-bind="ifnot: operatorAllowsMultipleValues"] select[class="browser-default control"]').eq(1)
+    }
+    getSenderGradeCom() {
+        return cy.iframe().find('[data-bind="if: hasReferenceData"] select[class="browser-default control selectized"]')
+    }
+    getSenderGradeCom1() {
+        return cy.iframe().find('[data-bind="if: operatorAllowsMultipleValues"] [class="selectize-input items not-full has-options"]')
+    }
 
-            return cy.iframe().find('div.selectize-input items not-full has-options focus input-active dropdown-active')
-}
+    getSenderGradeCom2() {
+        return cy.iframe().find('[class="selectize-dropdown-content"]>div').eq(0)
+    }
+    getGradebtnclick() {
+        return cy.iframe().find('div.col.s4 > label')
+    }
+    getSenderComNew() {
+
+        return cy.iframe().find('div.selectize-input items not-full has-options focus input-active dropdown-active')
+    }
+    getnextmonth(){
+        return cy.iframe().find('.xdsoft_mounthpicker>.xdsoft_next').eq(1)
+    }
+    getRuleName1(){
+        return cy.iframe().find('.truncate.rule-name')
+    }
+    getCurrentPolicyVersion(){
+        return cy.iframe().find('[data-bind="text: activePolicyVersion"]')
+    }
+    getAddNewRuleBtn() {
+        return cy.iframe().find('[data-bind="click: addNewChargeRule"]')
+    }
+    getSavedDraftPageTitle() {
+        return cy.iframe().find('.alert.alert-info.float-reverse')
+    }
+    getRuleName2(){
+        return cy.iframe().find('.row.rule-name-truncate')
+    }
+    getCloneButton() {
+        return cy.iframe().find('.btn.waves-effect.waves-cta.clone-rule-button.modal-trigger')
+    }
+    getServiceChargeRule() {
+        return cy.iframe().find('div.service-charge-rule')
+    }
+    getCloneService() {
+        return cy.iframe().find('.col.s3')
+    }
+    getCloneButton1() {
+        return cy.iframe().find('[class="modal-action modal-close center-align submit-for-approval-btn"]').eq(1)
+    }
 }
 export default PricingEnginePage
