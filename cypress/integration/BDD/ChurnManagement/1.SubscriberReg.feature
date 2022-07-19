@@ -31,7 +31,7 @@
         Given Login into Mobiquity Portal as System admin Maker
         When Navigate to User Management and Click on register
         And Select User type as Subscriber and click on Subscriber
-        And Enter all the required subscriber details
+        And Enter all the required subscriber details for bulk payout
         Then SubscrigReg Confirmation message is displayed
         Then Logout
     #Approval
