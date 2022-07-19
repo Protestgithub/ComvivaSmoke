@@ -94,9 +94,9 @@ When('Click on Pricing Engine', function () {
   welcomePage.getPricingEngineLink().click({ force: true })
 })
 And('Click on Pricing Caluclator', function () {
-  cy.wait(3000)
+  cy.wait(4000)
   pricingEnginePage.getPricingCalculator().click({ force: true })
-  cy.wait(2000)
+  cy.wait(4000)
   pricingEnginePage.getCashIN().click({ force: true })
 })
 And('Enter the party Details', function () {
@@ -129,20 +129,27 @@ Then('Calculate Service Charge', function () {
 })*/
 And('Click on the Service Policy', function () {
   cy.wait(2000)
-  pricingEnginePage.getCashIN().click()
+  pricingEnginePage.getCashIN().click({ force: true })
+  cy.wait(4000)
 })
 Then('Set Status Active or Inactive', function () {
   cy.wait(2000)
   pricingEnginePage.getActiveOrInactive().click({ force: true })
-  //pricingEnginePage.getActiveOrInactive1().click({ force: true })
+  pricingEnginePage.getActiveOrInactive().click({ force: true })
+  //pricingEnginePage.getActiveOrInactive().click({ force: true })
 })
 
 //-----TC_35---------------------------Search For service policy Rules------------------------------------------
 And('Click on the Search Tab & Search by Rule Name', function () {
   cy.wait(3000)
-  pricingEnginePage.getSearchTab().type(this.data5.Rule)
+  cy.readFile(fileis).then((data) => {
+    let RuleName = data.ServiceRuleName
+    pricingEnginePage.getSearchTab().type(RuleName)
+  })
+  //pricingEnginePage.getSearchTab().type(this.data5.Rule)
   cy.wait(2000)
   pricingEnginePage.getSearchButton().click({ force: true })
+
 })
 Then('Verify Search results should give the list of rule name with Condition,status,Validity,rule & Policytype', function () {
   // pricingEnginePage.getRule().should('have.text', this.data5.Rule)
@@ -150,6 +157,11 @@ Then('Verify Search results should give the list of rule name with Condition,sta
   // pricingEnginePage.getStatus().should('contain.text', this.data5.Status)
   // pricingEnginePage.getValidity().should('contain.value', this.data5.Validity)
   // expect()
+  cy.readFile(fileis).then((data) => {
+    let RuleName = data.ServiceRuleName
+    pricingEnginePage.getRuleName1().should('contain.text', RuleName)
+  })
+
   pricingEnginePage.getRule().then(data => {
     let rule = data.text()
     cy.log(rule)
@@ -179,14 +191,19 @@ And ('Click on the Service Policy',function(){
   pricingEnginePage.getCashIN().click()
 })*/
 Then('Click on View Previous Version Link, Enter available Ver no and Proceed to View the details', function () {
-  cy.wait(2000)
+  cy.wait(4000)
   pricingEnginePage.getPolicyVersionLink().eq(1).click({ force: true })
-  pricingEnginePage.getPolicyVersionInPut().type(this.data5.PolicyVersion, { force: true })
-  cy.wait(2000)
-  pricingEnginePage.getProceedButton().click()
-  cy.wait(2000)
-  pricingEnginePage.getPolicyVersionLink().should('contain.text', this.data5.PolicyVersion)
-
+  pricingEnginePage.getCurrentPolicyVersion().then(data => {
+    let policyVersion = data.text()
+    cy.log(policyVersion)
+    let previousPolicyVersion = policyVersion - 1
+    cy.log(previousPolicyVersion)
+    pricingEnginePage.getPolicyVersionInPut().type(previousPolicyVersion, { force: true })
+    cy.wait(2000)
+    pricingEnginePage.getProceedButton().click()
+    cy.wait(2000)
+    pricingEnginePage.getPolicyVersionLink().should('contain.text', previousPolicyVersion)
+  })
 })
 
 
@@ -200,13 +217,14 @@ And ('Click on the Service Policy',function(){
   pricingEnginePage.getCashIN().click()
 })*/
 And('Click on add new rule buttton,add New service charge and save the policy as draft', function () {
-  cy.wait(3000)
+  cy.wait(4000)
   pricingEnginePage.getAddNewRuleBtn().click()
-  pricingEnginePage.getRuleName().type(name, { force: true })
-  var PricingEngine = 'cypress/fixtures/userData/PricingEngine.json'
-  cy.readFile(PricingEngine).then((data) => {
-    data.RuleName2 = name
-    cy.writeFile(PricingEngine, data)
+
+  pricingEnginePage.getRuleName().type(getRandomName(), { force: true })
+
+  cy.readFile(fileis).then((data) => {
+    data.ServiceRuleName1 = name
+    cy.writeFile(fileis, data)
   })
   pricingEnginePage.getMinCharge().type(this.data5.MinCharge)
   pricingEnginePage.getMaxCharge().type(this.data5.MaxCharge)
@@ -215,26 +233,34 @@ And('Click on add new rule buttton,add New service charge and save the policy as
   pricingEnginePage.getCalanderStart().should('be.visible', { force: true })
   pricingEnginePage.getCurrentDateSelect().click({ force: true })
   pricingEnginePage.getDatePickerEnd().dblclick({ force: true })
+  cy.wait(2000)
+  Cypress._.times(4, () => {
+    pricingEnginePage.getnextmonth().click()
+  })
   //ERM.getvalidTo().click()
   //ERM.getnextyear().click()
   //ERM.getnextmonth().click()
   //ERM.getdates().click({force:true})
-  pricingEnginePage.getMonthNamerStart().contains(this.data5.month).click({ force: true })//(this.data5.month,{force: true}).click() 
-  pricingEnginePage.getYearNameStart().contains(this.data5.year).click({ force: true })
-  pricingEnginePage.getCalanderDaysStart().filter(':visible').contains(this.data5.day).click({ force: true })
+  //pricingEnginePage.getMonthNamerStart().contains(this.data5.month).click({ force: true })//(this.data5.month,{force: true}).click() 
+  //pricingEnginePage.getYearNameStart().contains(this.data5.year).click({ force: true })
+  pricingEnginePage.getCurrentDateSelect().click({ force: true })
+  //pricingEnginePage.getCalanderDaysStart().filter(':visible').contains(Date).click()
   pricingEnginePage.getWhoPays().select(this.data5.WhoPays, { force: true })
   pricingEnginePage.getSVAType().select(this.data5.SenderSVAtype, { force: true })
   pricingEnginePage.getWhomeToPay().select(this.data5.WhomeToPay, { force: true })
   pricingEnginePage.getChargeStatmentPricing().click({ force: true })
   pricingEnginePage.getPricingPercntage().type(this.data5.Percentage)
   pricingEnginePage.getPricingFixedAmt().type(this.data5.FixedAmt)
-  pricingEnginePage.getSaveDraftBtn().trigger('mouseover').click({ force: true })
-  pricingEnginePage.getSavedDraftPageTitle().should('have.text', this.data5.pageTitle)
+  pricingEnginePage.getSaveDraftBtn().trigger('mouseover').click()
+  pricingEnginePage.getSavedDraftPageTitle().scrollIntoView().should('contain.text', this.data5.pageTitle)
 })
 Then('Check if user is able to view the saved draft', function () {
   cy.wait(2000)
 
-  pricingEnginePage.getPolicyName().eq(0).should('have.text', this.data5.RuleName2, { force: true })
+  cy.readFile(fileis).then((data) => {
+    let RuleName = data.ServiceRuleName1
+    pricingEnginePage.getRuleName2().should('contain.text', RuleName)
+  })
 
 })
 
@@ -246,17 +272,18 @@ And('Click on Existing Service Policy Rule edit and save', function () {
   pricingEnginePage.getPolicyName().eq(0).click({ force: true })
   pricingEnginePage.getPricingPercntage().type(this.data5.editPercentage)
   pricingEnginePage.getPricingFixedAmt().type(this.data5.editFixedAmt)
-  pricingEnginePage.getSaveDraftBtn().trigger('mouseover').click({ force: true })
+  pricingEnginePage.getSaveDraftBtn().trigger('mouseover').click()
 })
 
 Then('clone the edited Service Policy Rule with other service Policy', function () {
-  pricingEnginePage.getCloneButton().click()
-
-
+  pricingEnginePage.getCloneButton().eq(0).click({ force: true })
+  pricingEnginePage.getCloneService().contains('Cash Out').click({ force: true })
+  pricingEnginePage.getCloneButton1().click({ force: true })
+  cy.wait(2000)
+  pricingEnginePage.getPolicyName().eq(0).should('contain.text','Cloned',{ force: true })
 })
-
-
 //--------------------------------------------------------------------------------------
+
 
 
 //----------------------------Arpitha Pricing EEngine TestCases------------------------------------
