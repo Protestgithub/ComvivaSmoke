@@ -1,4 +1,3 @@
-
 class ChurnManagement {
     getCBatchApprove() {
         return cy.iframe().find('[id="approvalTypeCHURN_APPR"]')    }
@@ -46,6 +45,14 @@ class ChurnManagement {
     {
         return cy.iframe().find('.actionMessage')
     }
+getRecentDatainchurn(){
+return cy.iframe().find('#approvalForm>.wwFormTableC>tbody>tr',{force:true}).within(function(){
+cy.wait(2000)
+	cy.get("td").within(function(){
+ 	cy.get('input[id="approvedBatchId"]').last().click({force:true})
+		})
+	})
+}
 
 
 }
