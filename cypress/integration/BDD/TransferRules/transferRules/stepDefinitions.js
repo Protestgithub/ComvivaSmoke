@@ -39,7 +39,14 @@ const BulkSettlementpage = new BulkSettlement()
 const TransferRuleApproval = new Approval()
 
 var mobile
-
+var mobile,name
+function getRandomName() {
+  name = "";
+  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+  for (var i = 0; i < 5; i++)
+    name += possible.charAt(Math.floor(Math.random() * possible.length));
+  return name;
+}
 
 //----------------BDD Hooks-----------------------------------------------------------------
 Before(() => {
