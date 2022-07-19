@@ -212,9 +212,9 @@ And('Fill the details-loginRestrictions', function () {
 })
   Then('Click on add and confirm',function () {
   securityProfilePage.getAddButton().click({ force: true })
-  cy.wait(3000)
+  cy.wait(5000)
   securityProfilePage.getConfirmButton().click({ force: true })
-  securityProfilePage.getSuccessMessage().should('have.text', this.data6.successMessage)
+  securityProfilePage.getSuccessMessage().contains(this.data6.successMessage)
   securityProfilePage.getDoneButton().click({ force: true })
 })
 //--------------------------------Administrator -- BusinessAdmin-----------------------------------------------
