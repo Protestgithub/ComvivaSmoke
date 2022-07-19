@@ -333,7 +333,9 @@ And('Select User type as Business and click on Telco operator', function () {
   registerPage.getRegistrationMode().eq(0).click({ force: true })
 })
 And('Enter all the mandatory Basic information details and click on next', function () {
-  cy.wait(3000)
+ cy.wait(3000)
+  const uuid = () => Cypress._.random(1e8)
+  mobile = "77" + uuid()
   registerPage.getTitle().select(this.data2.personalInfo.title, { force: true })
   registerPage.getLastName().type(this.data2.personalInfo.lastName, { force: true })
   cy.iframe().find('select[data-test-id="preferredLanguage"]').select(this.data2.personalInfo.preferredLang, { force: true })
@@ -342,8 +344,14 @@ And('Enter all the mandatory Basic information details and click on next', funct
     () => registerPage.getFirstName().clear().type(getRandomName(), { force: true }),
     (uniqueness) => (uniqueness) == registerPage.getuniqueness()
   )
+  cy.readFile('cypress/fixtures/userData/BusinessUsersData.json').then((data) => {
+    data.TelcoMob = mobile
+    cy.writeFile('cypress/fixtures/userData/BusinessUsersData.json', data)
+  })
   registerPage.getNextButtonBasic().click({ force: true })
 })
+    
+    
 Then('Enter all the mandatory Profile details like marketing profile,regulatory profile,Operator profile.', function () {
   registerPage.getRegulatory().select('FullKycprofile', { force: true })
   registerPage.getMarketing().select('TELOPTDefaultMP', { force: true })
@@ -369,7 +377,10 @@ Then('Confirmation message', function () {
 /*----------------------------Modify--telco operator----------------------------------*/
 And('Enter Telco operator Mobile number and KYC number in search menu', function () {
   manageUsersPage.getSearchUser().click({ force: true })
-  manageUsersPage.getSearchUser().type(this.data2.personalInfo.InterfaceId, { force: true })
+  cy.readFile('cypress/fixtures/userData/BusinessUsersData.json').then((data) => {
+   let mobil = data.TelcoMob
+    manageUsersPage.getSearchUser().type(mobil, { force: true })
+  })
   manageUsersPage.getSearchUserButton().click({ force: true })
 })
 
