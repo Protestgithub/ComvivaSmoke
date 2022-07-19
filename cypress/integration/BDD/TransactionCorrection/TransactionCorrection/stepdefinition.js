@@ -181,7 +181,7 @@ When('User Click on eye button for WalletHistory1', function () {
   //manageUsersPage.getApplyFilterButton().click({force:true})
   //manageUsersPage.getSearchTransactionId().type(this.data6.TransactionId2)
   cy.readFile(O2CData).then((data) => {
-    const TransactionID = data.TransactionID
+    const TransactionID = data.TransactionID1
     cy.log(TransactionID)
   manageUsersPage.getSearchTransactionId().type(TransactionID)
   manageUsersPage.getserachicon().click({force:true})
@@ -216,7 +216,7 @@ When('User Click on eye button for WalletHistory2', function () {
   //manageUsersPage.getApplyFilterButton().click({force:true})
   //manageUsersPage.getSearchTransactionId().type(this.data6.TransactionId3)
   cy.readFile(O2CData).then((data) => {
-    const TransactionID = data.TransactionID
+    const TransactionID = data.TransactionID2
     cy.log(TransactionID)
   manageUsersPage.getSearchTransactionId().type(TransactionID)
   manageUsersPage.getserachicon().click({force:true})
