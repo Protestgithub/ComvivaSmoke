@@ -107,7 +107,7 @@ Given('Login into Mobiquity Portal as Super admin Maker', function () {
   cy.launchURL(Cypress.env('Adminurl'))
   cy.login(this.data1.masteradminmaker.sysAdminUser1, this.data1.masteradminmaker.sysAdminPwd1)
   cy.wait(2000)
-  cy.checkWelcomeText(this.data2.superadminm.superadminmaker)
+ // cy.checkWelcomeText(this.data2.superadminm.superadminmaker)
 })
 
 //DIST7779064594
@@ -793,7 +793,11 @@ And('Enter registered login id value', function () {
 
   cy.iframe().find('select[data-test-id="preferredLanguage"]')
     .select(this.data2.personalInfo.preferredLang, { force: true })
-  cy.getBusinessUserLoginID()
+    cy.readFile("cypress/fixtures/userData/BusinessUsersData.json").then((data) =>{
+      let BusinessLoginid = data.LoginId
+      registerPage.getLoginID().type(BusinessLoginid, {force : true})
+    })
+  
   registerPage.getCountry().select(this.data2.personalInfo.country, { force: true })
 
 
@@ -816,8 +820,10 @@ And('Enter registered email id value', function () {
   registerPage.getLastName().type(getRandomName(), { force: true })
   cy.iframe().find('select[data-test-id="preferredLanguage"]')
     .select(this.data2.personalInfo.preferredLang, { force: true })
-  cy.getBusinessUserLoginID()
-  cy.getBusinessUserEmailID()
+    cy.readFile("cypress/fixtures/userData/BusinessUsersData.json").then((data) =>{
+      let BusinessLoginid = data.EmailID
+      registerPage.getEmailID().type(BusinessLoginid, {force: true})
+    })
   registerPage.getCountry().select(this.data2.personalInfo.country, { force: true })
 
 })
