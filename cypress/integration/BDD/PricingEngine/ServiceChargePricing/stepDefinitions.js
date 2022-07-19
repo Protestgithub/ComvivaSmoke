@@ -15,6 +15,7 @@ import PricingEnginePage from '../../../../support/pageObjects/PricingEngine/Pri
 const pageLogin = new loginPage()
 const welcomePage = new homePage()
 const pricingEnginePage = new PricingEnginePage()
+var fileis = 'cypress/fixtures/userData/Aservice.json'
 
 //----------------BDD Hooks-----------------------------------------------------------------
 Before(() => {
