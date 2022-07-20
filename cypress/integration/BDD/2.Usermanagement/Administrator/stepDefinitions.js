@@ -434,6 +434,7 @@ Given('Login into Mobiquity Portal as Business admin User1', function () {
     cy.wait(2000)
     cy.Passwordchange(this.data1.UserCreationSuccessMessage)
     pageLogin.getloginbtn1().click({force:true})
+    cy.wait(5000)
     cy.login(BALogin, this.data1.BAPassword)
     })
     cy.checkWelcomeText(this.data1.BAAdminText)
