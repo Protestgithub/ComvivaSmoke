@@ -659,20 +659,48 @@ Cypress.Commands.add('O2CTransactionWriteData', () => {
         cy.readFile(O2Cfile).then((data) => {
             data.TransactionID = b
 
-            cy.writeFile(O2Cfile, data)
+            cy.writeFile(TransactionFile, data)
+          })
+    }))
+})
+
+Cypress.Commands.add('O2CTransactionWriteData1', () => {
+    O2CTransferInitiatePage.getSuccessMsg().then((al => {
+        let q = al.text()
+        cy.log(q)
+        let a = q.split(':')
+        let b = a[1].trim()
+        cy.log(b)
+        cy.readFile(TransactionFile).then((data) => {
+            data.TransactionID1 = b
+
+            cy.writeFile(TransactionFile, data)
+          })
+    }))
+})
+Cypress.Commands.add('O2CTransactionWriteData2', () => {
+    O2CTransferInitiatePage.getSuccessMsg().then((al => {
+        let q = al.text()
+        cy.log(q)
+        let a = q.split(':')
+        let b = a[1].trim()
+        cy.log(b)
+        cy.readFile(TransactionFile).then((data) => {
+            data.TransactionID2 = b
+
+            cy.writeFile(TransactionFile, data)
           })
     }))
 })
 var O2Cfile = "cypress/fixtures/userData/O2Cdata.json"
+var TransactionFile = "cypress/fixtures/userData/TransactionFile.json"
 
 Cypress.Commands.add('O2CTransactionReadData', () => {
-    cy.readFile(O2Cfile).then((id => {
+    cy.readFile(TransactionFile).then((id => {
         let data = id.TransactionID
         manageUsersPage.getSearchTransactionID().type(data, "{force:true}", "{enter}")
     }))
 })
-
-
 
 Cypress.Commands.add('getprovider', () => {
 
