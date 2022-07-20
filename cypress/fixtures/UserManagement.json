@@ -196,6 +196,16 @@
     "DomainName": "External Companies",
     "MProfilecode1": "3456"
   },
+  "Bank":{
+  "Currency":"US Dollar - $",
+  "BankName":"TB101",
+  "accnum":"2456778909846222",
+  "Confirmaccnum":"2456778909846222",
+  "nname":"testus",
+  "BankAccountType":"Savings",
+  "BankIfsc":"57897543222"
+},
+
   "errorMessage":{
     "Lname1":"12",
     "LoginId":"123",
