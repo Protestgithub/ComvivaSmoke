@@ -16,10 +16,19 @@ class BankingActivation
         return cy.iframe().find('div>button[class="unblock-btn btn"]')
     }
     getMobActivatedMsg(){
-        return cy.iframe().find('[type="button"]').eq(1)
+        return cy.iframe().find('[class="action-btn btn activated-text ng-star-inserted"]')
     }
     getInternetActivatedMsg(){
-        return cy.iframe().find('[type="button"]').eq(2)
+        return cy.iframe().find('[type="button"]').contains(' Intrernet Banking Activated ')
+    }
+    getNextBtn(){
+        return cy.iframe().find('[class="btn next-btn"]')
+    }
+    getNextBtn1(){
+        return cy.iframe().find('[class="btn unblock-btn"]')
+    }
+    getNextBtn2(){
+        return cy.iframe().find('[class="btn unblock-btn ng-star-inserted"]')
     }
    
 }
