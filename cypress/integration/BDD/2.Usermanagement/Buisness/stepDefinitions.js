@@ -440,7 +440,7 @@ Then('Click on Next', function () {
 })
 And('Enter all the mandatory KYC details.', function () {
   
-  KycValue = "AZ" + kycid()
+  KycValue = "AZC" + kycid()
   registerPage.getNextButtonBasic().click({ force: true })
   registerPage.getKYCButton().click({ force: true })
   registerPage.getKYCIDType().select(this.data2.subPersonalInfo.KYCIDType, { force: true })
@@ -528,7 +528,7 @@ And('Enter all the required business user details', function () {
 
   registerPage.getNextButtonBasic().eq(0).click({ force: true })
 
-  KycValue = "AZ" + kycid()
+  KycValue = "AZB" + kycid()
   //---------------------KYC-----------------------------------------------------------------------
   registerPage.getKYCButton().eq(0).click({ force: true })
   cy.wait(2000)
@@ -668,7 +668,7 @@ And('Enter all the required business user details1', function () {
 
   registerPage.getNextButtonBasic().eq(0).click({ force: true })
 
-  KycValue = "AZ" + kycid()
+  KycValue = "AZG" + kycid()
   //---------------------KYC-----------------------------------------------------------------------
   registerPage.getKYCButton().eq(0).click({ force: true })
   cy.wait(2000)
