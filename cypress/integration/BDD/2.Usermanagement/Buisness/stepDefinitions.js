@@ -576,9 +576,61 @@ And('Enter all the required business user details', function () {
        registerPage.getMarketingProfile().select('WHSDefaultMP', { force: true })
    //  })
    registerPage.getNextButtonBasic2().click({force:true})
-  registerPage.getNextButtonBasic3().click({ force: true })
+   ----------------------------------Bank------------------------------------------------------------------------------------
    
-  registerPage.getSubmitButton().click({ force: true })
+
+  const uuidbk = () => Cypress._.random(1e8)
+ifscnum="SBI"+uuidbk()
+
+const uuidbkd = () => Cypress._.random(1e9)
+accnumber="4239346"+uuidbkd()
+   registerPage.getCurrency().select(this.data2.Bank.Currency, { force: true })
+   cy.wait(3000)
+
+   cy.readFile(BankData).then((data) => {
+    data.CurrencyDetail= this.data2.Bank.Currency
+    cy.writeFile(BankData, data)
+  })
+   cy.wait(3000)
+
+
+ registerPage.getBankName().select(this.data2.Bank.BankName, {force:true})
+
+ //cy.writeFile(BankData,{BankNameDetail:BankName})
+ cy.wait(3000)
+ 
+ cy.readFile(BankData).then((data) => {
+  data.BankNameDetail= this.data2.Bank.BankName
+  cy.writeFile(BankData, data)
+})
+ 
+ registerPage.getAccountNum().type(accnumber, { force: true })
+ 
+ //cy.writeFile(BankData,{Accnum:accnumber})
+ cy.wait(3000)
+ cy.readFile(BankData).then((data) => {
+  data.Accnum= accnumber
+  cy.writeFile(BankData, data)
+})
+ registerPage.getConfirmAccNum().type(accnumber, { force: true })
+ 
+ registerPage.getNickName().type(getRandomName(), { force: true })
+ registerPage.getBankAccountType().select(this.data2.Bank.BankAccountType,{force:true})
+// cy.writeFile(BankData,{BankAccountTYpeDetail:BankAccountType})
+
+ cy.readFile(BankData).then((data) => {
+  data.BankAccountTYpeDetail= this.data2.Bank.BankAccountType
+  cy.writeFile(BankData, data)
+})
+ cy.wait(3000)
+ 
+ registerPage.getBankIFSC().type(ifscnum, { force: true })
+ //registerPage.getNextButtonBasic4().click({force:true})
+ 
+ 
+ registerPage.getNextButtonBasic3().click({force:true})
+ registerPage.getSubmitButton().click({ force: true })
+
 
 
 })
@@ -669,8 +721,59 @@ registerPage.getReguProfile().select('FullKycprofile', { force: true })
  cy.wait(3000)
 
   registerPage.getNextButtonBasic2().click({ force: true })
-  registerPage.getNextButtonBasic3().click({force:true})
-  registerPage.getSubmitButton().click({ force: true })
+  ------------------------------Bank----------------------------------------------------------------------
+  
+  const uuidbk = () => Cypress._.random(1e8)
+ifscnum="SBI"+uuidbk()
+
+const uuidbkd = () => Cypress._.random(1e9)
+accnumber="4239346"+uuidbkd()
+   registerPage.getCurrency().select(this.data2.Bank.Currency, { force: true })
+   cy.wait(3000)
+
+   cy.readFile(BankData).then((data) => {
+    data.CurrencyDetail= this.data2.Bank.Currency
+    cy.writeFile(BankData, data)
+  })
+   cy.wait(3000)
+
+
+ registerPage.getBankName().select(this.data2.Bank.BankName, {force:true})
+
+ //cy.writeFile(BankData,{BankNameDetail:BankName})
+ cy.wait(3000)
+ 
+ cy.readFile(BankData).then((data) => {
+  data.BankNameDetail= this.data2.Bank.BankName
+  cy.writeFile(BankData, data)
+})
+ 
+ registerPage.getAccountNum().type(accnumber, { force: true })
+ 
+ //cy.writeFile(BankData,{Accnum:accnumber})
+ cy.wait(3000)
+ cy.readFile(BankData).then((data) => {
+  data.Accnum= accnumber
+  cy.writeFile(BankData, data)
+})
+ registerPage.getConfirmAccNum().type(accnumber, { force: true })
+ 
+ registerPage.getNickName().type(getRandomName(), { force: true })
+ registerPage.getBankAccountType().select(this.data2.Bank.BankAccountType,{force:true})
+// cy.writeFile(BankData,{BankAccountTYpeDetail:BankAccountType})
+
+ cy.readFile(BankData).then((data) => {
+  data.BankAccountTYpeDetail= this.data2.Bank.BankAccountType
+  cy.writeFile(BankData, data)
+})
+ cy.wait(3000)
+ 
+ registerPage.getBankIFSC().type(ifscnum, { force: true })
+ //registerPage.getNextButtonBasic4().click({force:true})
+ 
+ 
+ registerPage.getNextButtonBasic3().click({force:true})
+ registerPage.getSubmitButton().click({ force: true })
 
 
 })
@@ -711,6 +814,8 @@ And('System Admin is able to edit details of the user', function () {
 
 And('Search with the EmailID', function () {
   pageLogin.getiFrame()
+  cy.wait(3000)
+  manageUsersPage.getSearchUser().click({ force: true })
   cy.wait(2000)
   cy.getBusinessUserEmailID()
   manageUsersPage.getSearchUserButton().click({ force: true })
@@ -719,7 +824,8 @@ And('Search with the EmailID', function () {
 //---------------------LoginID-----------------------------
 And('Search with the LoginID', function () {
   pageLogin.getiFrame()
-  cy.wait(2000)
+   cy.wait(3000)
+  manageUsersPage.getSearchUser().click({ force: true })
   cy.getBusinessUserLoginID()
   manageUsersPage.getSearchUserButton().click({ force: true })
 
@@ -728,6 +834,8 @@ And('Search with the LoginID', function () {
 //---------------------KYC Number-----------------------------
 And('Search with the KYC Number', function () {
   pageLogin.getiFrame()
+  cy.wait(3000)
+  manageUsersPage.getSearchUser().click({ force: true })
   cy.getBusinessUserKycID()
   manageUsersPage.getSearchUserButton().click({ force: true })
 
