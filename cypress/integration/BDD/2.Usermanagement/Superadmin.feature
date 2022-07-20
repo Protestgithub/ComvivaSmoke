@@ -95,16 +95,30 @@ And User click on approve
 
 Scenario: To verify that Master user is able to initiate deletion of an existing System admin.
 Given Login into Mobiquity Portal as Super admin Maker
+When Navigate to User Management and click on Register
+And Click On System Admin and select Single User
+And Enter all required Fields
+Then Confirmation message is displayed
+Then Logout
+Given Login into Mobiquity Portal as Super admin Checker after Logout
+When Navigate to Approvals and filter by Submitted status
+And User click on submitted user data
+And Approve the Users and save loginID4
+Then User status is approved
+Then Logout
+
+Scenario:To verify deletion of system admin
+Given Login into Mobiquity Portal as Super admin Maker
 When Navigate to User Management and Click on manage user
-And Enter Mobile number or KYC number of systemadmin in search
+And Enter Mobile number4 or KYC number of System admin in Search
 When User Click on eye button
 And Click on delete
-And Verify Sucess Message
+#And Verify Sucess Message
 Then Logout 
 Given Login into Mobiquity Portal as Super admin Checker after Logout
 When Navigate to Approvals and filter by Submitted status
 And User click on submitted user data
-And Approve the modification/Deletion Request
+And User click on approve delete request
 
 # Author: Kalyani M
 # Last Updated:
