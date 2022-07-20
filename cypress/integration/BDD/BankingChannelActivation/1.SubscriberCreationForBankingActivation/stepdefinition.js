@@ -313,9 +313,13 @@ And('Enter all the required subscriber details', function () {
   registerPage.getLastName().type(getRandomName(), { force: true })     
   cy.iframe().find('select[data-test-id="preferredLanguage"]').select(this.data2.personalInfo.preferredLang, { force: true })
   registerPage.getLoginID().type(loginId, { force: true })
-  
-  registerPage.getCIF().type(CIF, { force: true })
- 
+  var CIF 
+registerPage.getCIF().type(CIF, { force: true })
+cy.readFile(subRegistration).then((data) => {
+data.CIFnumberBanking = CIF
+cy.writeFile(subRegistration, data)
+}) 
+
 
   recurse(
     () => registerPage.getMobileNumber().clear().type(mobile, { force: true }),
