@@ -213,7 +213,9 @@ And('Enter All the Mandatory Details', function () {
   var O2CFile= "cypress/fixtures/userData/O2Cdata.json"
   cy.readFile(BBAFile).then((data) => {
   var O2CMsisdn = data.registeredMobile
-  O2CTransferInitiatePage.getMSISDN().type(O2CMsisdn, {force: true})
+  //O2CTransferInitiatePage.getMSISDN().type("7735575036", {force: true})
+
+ O2CTransferInitiatePage.getMSISDN().type(O2CMsisdn, {force: true})
   data.O2CMsisdn1 =O2CMsisdn
   cy.writeFile(O2CFile, data)
 })
@@ -329,7 +331,7 @@ var O2CMsisdn
       
       })
       
-      Then('Click on submit and Confirm.', function(){
+      Then('Click on submit and Confirm00', function(){
       
         O2CTransferInitiatePage.getSubmitButton().click({force: true})
       
@@ -339,6 +341,41 @@ var O2CMsisdn
         cy.wait(3000)
        cy.O2CTransactionWriteData()
       })
+
+      Then('Click on submit and Confirm0', function(){
+      
+        O2CTransferInitiatePage.getSubmitButton().click({force: true})
+      
+        cy.wait(2000)
+      
+        O2CTransferInitiatePage.getConfirmButton().click({force: true})
+        cy.wait(3000)
+       cy.O2CTransactionWriteData()
+      })
+
+      Then('Click on submit and Confirm1', function(){
+      
+        O2CTransferInitiatePage.getSubmitButton().click({force: true})
+      
+        cy.wait(2000)
+      
+        O2CTransferInitiatePage.getConfirmButton().click({force: true})
+        cy.wait(3000)
+       cy.O2CTransactionWriteData1()
+      })
+
+      Then('Click on submit and Confirm2', function(){
+      
+        O2CTransferInitiatePage.getSubmitButton().click({force: true})
+      
+        cy.wait(2000)
+      
+        O2CTransferInitiatePage.getConfirmButton().click({force: true})
+        cy.wait(3000)
+       cy.O2CTransactionWriteData2()
+      })
+
+
       And('click wallet Payment history.',function(){
         manageUsersPage.getWalletHistory().contains("Wallet Payment History").click({force:true})
       })
@@ -386,4 +423,3 @@ var O2CMsisdn
        transferruleapprovalpage.getApprovalTransferrule().click({force:true})
         })  
       
-        
