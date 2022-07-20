@@ -28,6 +28,7 @@ const approvalPage = new approvals()
 const manageUsersPage = new manageUsers()
 const ErrorM=new ErrorMessage()
 let Sysfilelogin = 'cypress/fixtures/userData/SystemAdminLogin.json'
+var SubProfileName = 'cypress/fixtures/profileData/Profile.json'
 var mobile
 var name
 var LoginId1
@@ -219,7 +220,12 @@ registerPage.getNextButtonBasic().click({force: true})
 
 //----------------------Profile Data-----------------------------------------------------------------
 
-registerPage.getSecurityProfile().select(this.data2.personalInfo.securityProfile2, {force: true})
+var SecurityProfile
+cy.readFile(SubProfileName).then((user) => {
+        SecurityProfile= user.SystemAdminSecuirtyProfile
+        registerPage.getSecurityProfile().select(SecurityProfile, {force: true})
+    })
+
 registerPage.getAuthProfile().select(this.data2.personalInfo.authProfile2, {force: true})
 registerPage.getNextButtonProfile().click({force: true})
 registerPage.getSubmitButton().click({force: true})
@@ -303,11 +309,36 @@ And('Approve the Users and save loginID3', function () {
 })
 cy.log(loginId)
 })
+And('Approve the Users and save loginID4', function () {
+  approvalPage.getApproveButton().click({ force: true })
+    cy.wait(3000)
+  approvalPage.getApproveRequest().click({ force: true })
+  cy.wait(3000)
+  cy.readFile(Sysfilelogin).then((data) => {
+    data.LoginId4 = loginId
+    cy.writeFile(Sysfilelogin, data)
+    })
+    cy.readFile(Sysfilelogin).then((data) => {
+    data.ChangePassword4 = Password1
+    cy.writeFile(Sysfilelogin, data)
+    })
+    cy.readFile(Sysfilelogin).then((data) => {
+    data.MobileNumber4 = mobile
+    cy.writeFile(Sysfilelogin, data)
+})
+cy.log(loginId)
+})
+
 
 And('User click on approve', function () {
   approvalPage.getApproveButton().click({ force: true })
   approvalPage.getApproveRequest().click({ force: true })
   approvalPage.getApproveConfirmationMessage().should('have.text',this.data2.confirmationMessage.editUser)
+})
+And('User click on approve delete request', function () {
+  approvalPage.getApproveButton().click({ force: true })
+  approvalPage.getApproveRequest().click({ force: true })
+  //approvalPage.getApproveConfirmationMessage().should('have.text',this.data2.confirmationMessage.editUser)
 })
 
 Then('User status is approved', function() {
@@ -383,6 +414,17 @@ And('Enter Mobile number or KYC number of systemadmin in search', function () {
   manageUsersPage.getSearchUser().click({ force: true })
   cy.wait(3000)
   manageUsersPage.getSearchUser().type(mobile, { force: true })
+  manageUsersPage.getSearchUserButton().click({ force: true })
+
+})
+And('Enter Mobile number4 or KYC number of System admin in Search', function () {
+  pageLogin.getiFrame()
+  manageUsersPage.getSearchUser().click({ force: true })
+  cy.readFile(Sysfilelogin).then((data)=>{
+    var mobileSys
+    mobileSys = data.MobileNumber4
+    manageUsersPage.getSearchUser().type(mobileSys, { force: true })
+  })
   manageUsersPage.getSearchUserButton().click({ force: true })
 
 })
