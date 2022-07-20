@@ -53,6 +53,9 @@ cy.wait(2000)
 		})
 	})
 }
+getChurnInitiationMessage1() {
+return cy.iframe().find('span.actionMessage')
+}
 
 
 }
