@@ -357,12 +357,8 @@ When('Navigate to User Management and Click on manage user', function () {
 And('Enter Mobile number or KYC number of superadmin in search', function () {
   pageLogin.getiFrame()
   manageUsersPage.getSearchUser().click({ force: true })
-  cy.readFile(Sysfilelogin).then((data)=>{
-    var mobileSys
-    mobileSys = data.MobileNumber3
-    manageUsersPage.getSearchUser().type(mobileSys, { force: true })
-  })
-    manageUsersPage.getSearchUserButton().click({ force: true })
+  manageUsersPage.getSearchUser().type(this.data2.mob4, { force: true })
+  manageUsersPage.getSearchUserButton().click({ force: true })
 
 })
 And('Enter Mobile number or KYC number of subscriber user in search', function () {
