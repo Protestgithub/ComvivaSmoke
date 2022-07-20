@@ -81,7 +81,7 @@ When('Navigate to Banking Channel Activation and click', function () {
 
 And('Enter the CIF number and search for the user', function () {
   cy.wait(2000)
-  bankingActivationPage.getEnterCIFNumber().type(this.data6.CIFnumber, { force: true })
+  bankingActivationPage.getEnterCIFNumber().type(this.data6.CIFnumberBanking, { force: true })
   cy.wait(2000)
   bankingActivationPage.getSearchButton().click()
 })
@@ -111,7 +111,7 @@ Then('Confirm and Verify the Internet Banking Activtion Message sent to user', f
 
 And('Enter the Activated CIF number and search for the user', function () {
 
-  bankingActivationPage.getEnterCIFNumber().type(this.data6.CIFnumber, { force: true })
+  bankingActivationPage.getEnterCIFNumber().type(this.data6.CIFnumberBanking, { force: true })
   bankingActivationPage.getSearchButton().click({ force: true })
 })
 
