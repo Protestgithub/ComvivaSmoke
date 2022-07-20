@@ -269,12 +269,12 @@ And('Upload csv file with valid details', function () {
 })
 
 And('Click on Churn Management and Churn Approval', function () {
-  //welcomePage.getChurnManagement().scrollIntoView()
- // welcomePage.getChurnManagement().click()
+  welcomePage.getChurnManagement().scrollIntoView()
+  welcomePage.getChurnManagement().click()
  cy.wait(2000)
   welcomePage.getChurnApproval().click()
 })
-And('Select the initiated churn request and click on Batch Reject', function () {
+And('Select the initiated churn request and click on Batch Approve', function () {
   cy.wait(2000)
   churnManagementPage.getRecentDatainchurn()
   churnManagementPage.getCBatchApprove().click({ force: true })
@@ -376,14 +376,14 @@ Then('Save the Registered MSISDN in to fixture', function () {
 
 //--------TC_105---------Churn Bulk Upload---------------------------------------------------------------------
 
-And('update the json data for bulkpayout', function () {
+And('update the json data for bulkupload', function () {
   cy.readFile(JSONFile).then((data) => {
-    data['MSISDN*'] = this.data8.churnSubscriberRegistrationBulkPayout 
+    data['MSISDN*'] = this.data8.churnSubscriberRegistrationBulkUpload 
     data['CHURN_SUBSCRIBER*'] = 'Y'
     data['CHURN_CHANNEL_USER*'] = 'N'
-    data['MSISDN*'] = this.data8.churnSubscriberRegistration 
-    data['CHURN_SUBSCRIBER*'] = 'Y'
-    data['CHURN_CHANNEL_USER*'] = 'N'
+    // data['MSISDN*'] = this.data8.churnSubscriberRegistration 
+    // data['CHURN_SUBSCRIBER*'] = 'Y'
+    // data['CHURN_CHANNEL_USER*'] = 'N'
     cy.writeFile(JSONFile, data)
   })
 })
@@ -401,7 +401,7 @@ And('Upload Bulk csv file with valid details', function () {
 
 //---TC_107---Churn Management---To verify that the System admin can approve the initiated churn process as Batch Reject-----------------
 
-Then('Select the initiated churn request and Then click on Batch Reject', function () {
+Then('Select the initiated churn request and click on Batch Reject', function () {
   cy.wait(3000)
   churnManagementPage.getLastRadioButton().click({ force: true })
   churnManagementPage.getCBatchReject().click({ force: true })
@@ -411,22 +411,33 @@ Then('Select the initiated churn request and Then click on Batch Reject', functi
     cy.stub($win, 'confirm', () => true)
       .as('windowConfirm')
     cy.stub($win.console, 'log').as('consoleLog')
-    cy.wrap($body).churnManagementPage.getChurnApprovalSubmitButton().click({ force: true }).should(function () {
+    cy.wrap($body)
+    churnManagementPage.getChurnApprovalSubmitButton().click({ force: true }).should(function () {
         expect(this.windowConfirm).to.be.calledWith('Are you sure you want to Reject?')
         //expect(this.consoleLog).to.be.calledWith('CONFIRMED')  // passes
       })
 
   })
   cy.wait(3000)
-  churnManagementPage.getChurnInitiationMessage().should('contain.text', this.data2.rejectmessage)
+  churnManagementPage.getChurnInitiationMessage().should('contain.text', this.data3.rejectmessage)
   //cy.on('window:confirm', () => true)
 })
 //---TC_108---Churn Management---To verify that the System admin can approve the initiated churn process as Approve/Reject by Selection-----------------
+
+And('update the json data for Approve and Reject', function () {
+  cy.readFile(JSONFile).then((data) => {
+    data['MSISDN*'] = this.data8.churnSubscriberRegistrationChurnAprRej 
+    data['CHURN_SUBSCRIBER*'] = 'Y'
+    data['CHURN_CHANNEL_USER*'] = 'N'
+    cy.writeFile(JSONFile, data)
+  })
+})
+
 Then('Select the initiated churn request and click on Approve and Reject by Selection', function () {
   cy.wait(3000)
   churnManagementPage.getLastRadioButton().click({ force: true })
   churnManagementPage.getCBatchApproveRejectBySelection().click({ force: true })
-  //churnManagementPage.getChurnApprovalSubmitButton().click({ force: true })
+  churnManagementPage.getChurnApprovalSubmitButton().click({ force: true })
   cy.wait(3000)
   churnManagementPage.getCheckAll().click({ force: true })
   cy.wait(3000)
@@ -437,16 +448,15 @@ Then('Select the initiated churn request and click on Approve and Reject by Sele
       .as('windowConfirm')
     cy.stub($win.console, 'log').as('consoleLog')
     cy.wrap($body)
-    churnManagementPage.getChurnApprovalSubmitButton().click({ force: true })
-    .should(function () {
-     expect(this.windowConfirm).to.be.calledWith('Are you sure you want to Reject?')
-        //expect(this.consoleLog).to.be.calledWith('CONFIRMED')  // passes
-      })
+    churnManagementPage.getApprove().click({ force: true })
+    // .should(function () {
+    //  expect(this.windowConfirm).to.be.calledWith('Are you sure you want to Reject?')
+    //     //expect(this.consoleLog).to.be.calledWith('CONFIRMED')  // passes
+    //   })
 
   })
 
-  churnManagementPage.getChurnInitiationMessage().should('contain.text', this.data2.approvalmessage)
+  churnManagementPage.getChurnInitiationMessage1().should('contain.text', this.data3.approvalmessage)
   // cy.on('window:confirm', () => true)
 })
-
 
