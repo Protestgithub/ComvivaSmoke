@@ -173,7 +173,7 @@ Cypress.Commands.add('SysAdminlogin3', () => {
 
 Cypress.Commands.add('csvToJSON', (CsvFile,JsonFile) => {
     let result = [];
-    cy.readFile('cypress/fixtures/input/BULK_O2C-template.csv')
+    cy.readFile('cypress/downloads/BULK_O2C-template.csv')
     .then((data) => {
      var lines = data.split("\n")
      var headers = lines[0].split(",")
