@@ -17,6 +17,14 @@ class PricingEnginePage {
         return cy.iframe().find('a.modal-action.modal-close.center-align.submit-for-approval-btn')
     }
 
+getSubmitClickBtn()
+    {
+        return cy.iframe().find('div[data-tooltip="Submit Policy"]')
+    }
+    getServiceHeader()
+    {
+        return cy.iframe().find('div.alert.alert-success span[data-bind="text: successMessage"]')
+    }
     getServiceChargeTab() {
         return cy.iframe().find('#main-menu-service-charge-service-selector')
     }
