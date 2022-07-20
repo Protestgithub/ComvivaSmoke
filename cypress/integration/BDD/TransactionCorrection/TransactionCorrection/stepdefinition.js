@@ -36,7 +36,7 @@ var ProfileName
 var number
 const TransactionFile ='cypress/fixtures/userData/TransactionCorrectionData.json'
 var O2CData ="cypress/fixtures/userData/O2Cdata.json"
-
+var TransactionFleO2C = "cypress/fixtures/userData/TransactionFile.json"
 //----------------BDD Hooks-----------------------------------------------------------------
 Before(() => {
   cy.fixture('login').then(function (data1) {
@@ -141,7 +141,7 @@ When('User Click on eye button for WalletHistory', function () {
  // manageUsersPage.getTransactionCorrection().contains(this.data6.ServiceType4).click({force:true})
  // manageUsersPage.getApplyFilterButton().click({force:true})
   
-    cy.readFile(O2CData).then((data) => {
+    cy.readFile(TransactionFleO2C).then((data) => {
     const TransactionID = data.TransactionID
     cy.log(TransactionID)
   manageUsersPage.getSearchTransactionId().type(TransactionID)
@@ -180,7 +180,7 @@ When('User Click on eye button for WalletHistory1', function () {
   manageUsersPage.getTransactionCorrection().contains(this.data6.ServiceType4).click({force:true})*/
   //manageUsersPage.getApplyFilterButton().click({force:true})
   //manageUsersPage.getSearchTransactionId().type(this.data6.TransactionId2)
-  cy.readFile(O2CData).then((data) => {
+  cy.readFile(TransactionFleO2C).then((data) => {
     const TransactionID = data.TransactionID1
     cy.log(TransactionID)
   manageUsersPage.getSearchTransactionId().type(TransactionID)
@@ -215,7 +215,7 @@ When('User Click on eye button for WalletHistory2', function () {
   manageUsersPage.getTransactionCorrection().contains(this.data6.ServiceType4).click({force:true})*/
   //manageUsersPage.getApplyFilterButton().click({force:true})
   //manageUsersPage.getSearchTransactionId().type(this.data6.TransactionId3)
-  cy.readFile(O2CData).then((data) => {
+  cy.readFile(TransactionFleO2C).then((data) => {
     const TransactionID = data.TransactionID2
     cy.log(TransactionID)
   manageUsersPage.getSearchTransactionId().type(TransactionID)
@@ -244,7 +244,7 @@ When('Navigate to Transaction Correction and click on Transaction Approval', fun
   cy.wait(3000)
   tranCorrPage.getcolumn().within(function(){
     cy.wait(3000) 
-    cy.readFile(O2CData).then((data) => {
+    cy.readFile(TransactionFleO2C).then((data) => {
       var transID = data.TransactionID
       cy.log(transID)
         cy.get('td').contains(transID)
@@ -267,8 +267,8 @@ When('Navigate to Transaction Correction and click on Transaction Approval1', fu
   cy.wait(3000)
   tranCorrPage.getcolumn().within(function(){
     cy.wait(3000)    
-    cy.readFile(TransactionFile).then((data) => {
-      var transID1 = data.TransactionID
+    cy.readFile(TransactionFleO2C).then((data) => {
+      var transID1 = data.TransactionID1
       cy.log(transID1)
         cy.get('td').contains(transID1)
       
@@ -290,8 +290,8 @@ When('Navigate to Transaction Correction and click on Transaction Approval2', fu
   cy.wait(3000)
   tranCorrPage.getcolumn().within(function(){
     cy.wait(3000)    
-    cy.readFile(TransactionFile).then((data) => {
-      var transID2 = data.TransactionId
+    cy.readFile(TransactionFleO2C).then((data) => {
+      var transID2 = data.TransactionID2
       cy.log(transID2)
         cy.get('td').contains(transID2)
       
