@@ -26,7 +26,6 @@ import './subscriberCommands'
 import 'cypress-failed-log'
 
 afterEach(() => {
-
   const screenshotsFolder = Cypress.config("screenshotsFolder");
   if (window.cucumberJson?.generate) {
     const testState = window.testState;
@@ -46,14 +45,6 @@ afterEach(() => {
           index: testState.currentStep,
           testCase: testState.formatTestCase(testState.currentScenario),
         };
-        if(imgData) {
-          stepResult.attachment = {
-            data: imgData,
-            media: { type: "image/png" },
-            index: testState.currentStep,
-            testCase: testState.formatTestCase(testState.currentScenario),
-          };
-        }
       });
     }
   }
