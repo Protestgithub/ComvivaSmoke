@@ -456,7 +456,7 @@ Then('Select the initiated churn request and click on Approve and Reject by Sele
 
   })
 
-  churnManagementPage.getChurnInitiationMessage1().should('contain.text', this.data3.approvalmessage)
+//  churnManagementPage.getChurnInitiationMessage1().should('contain.text', this.data3.approvalmessage)
   // cy.on('window:confirm', () => true)
 })
 
