@@ -124,7 +124,7 @@ Then('verify admin is able to see the Activated Message', function () {
 //--------TC_158-----------------------------------------------------------------------------------------
 And('Enter the Full KYC mobile number and search for the user', function () {
   cy.wait(2000)
-  bankingActivationPage.getEnterCIFNumber().type(this.data6.subscriberMobile, { force: true })
+  bankingActivationPage.getEnterCIFNumber().type(this.data6.subscriberMobileBankingActivation, { force: true })
   cy.wait(2000)
   bankingActivationPage.getSearchButton().click()
 })
