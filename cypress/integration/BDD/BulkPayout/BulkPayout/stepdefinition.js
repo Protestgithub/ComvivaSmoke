@@ -1,7 +1,6 @@
+
 /// <reference types="Cypress" />
 /// <reference types = "Cypress-iframe"/>
-
-//----------------Imports---------------------------------------------------------------------
 import 'cypress-iframe'
 import { Given, When, Then, And, Before } from "cypress-cucumber-preprocessor/steps";
 import loginPage from '../../../../support/pageObjects/loginPage';
@@ -21,12 +20,12 @@ import { random } from 'lodash';
 import stockInitiation from '../../../../support/pageObjects/StockManagement/stockInitiation';
 import Approval from '../../../../support/pageObjects/TransferRules/Approval';
 import O2C from '../../../../support/pageObjects/TransferRules/O2C';
-//import O2CTransferInitiate from '../../../../support/pageObjects/OperatorToChannel/O2CTransferInitiate';
 import DownloadAmb from '../../../../support/pageObjects/AmbiguousTransaction/DownloadAmb';
 import BulkSettlement from '../../../../support/pageObjects/AmbiguousTransaction/BulkSettlement';
 import myActivity from '../../../../support/pageObjects/MyActivity/myActivity';
-import O2CTransferInitiate from '../../../../support/pageObjects/OperatorToChannel/O2CTransferInitiate';
 import BulkPayout from '../../../../support/pageObjects/BulkPayout';
+import "../../../../support/commands";
+import O2CTransferInitiate from '../../../../support/pageObjects/OperatorToChannel/O2CTransferInitiate';
 
 
 //----------------Object Declaration-----------------------------------------------------------------
@@ -49,6 +48,9 @@ const O2CTransferInitiatePage = new O2CTransferInitiate()
 const DownloadAmbpage = new DownloadAmb()
 const BulkSettlementpage = new BulkSettlement()
 const BptPage=new BulkPayout()
+const TransferRuleApproval = new Approval()
+
+
 
 var loginId
 var mobile 
@@ -59,6 +61,23 @@ var CsvFile='cypress/fixtures/input/BULK_O2C-template.csv';
 var JsonFile='cypress/fixtures/input/BULK_O2C-template.json';
 
 
+const uid = () => Cypress._.random(1e10)
+const uuid = () => Cypress._.random(1e5)
+var TransferAmount = uuid()
+var ReferenceNumber = uuid()
+var number = uuid()
+var Amount = uid()
+var name
+var filename="cypress/fixtures/userData/O2CBulkData.json"
+var BusinessMoBileData="userData/BusinessUsersData.json"
+function getRandomName() {
+  name = "";
+  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+  for (var i = 0; i < 5; i++)
+    name += possible.charAt(Math.floor(Math.random() * possible.length));
+  return name;
+}
+
 //----------------BDD Hooks-----------------------------------------------------------------
 Before(() => {      
   cy.fixture('login').then(function(data1)
@@ -67,6 +86,13 @@ Before(() => {
        this.data1 = data1;
 
    })
+   cy.fixture(BusinessMoBileData).then(function(data6)
+
+   {
+       this.data6 = data6;
+
+   })
+
    cy.fixture('UserManagement').then(function(data2)
    {
        this.data2 = data2;
@@ -76,6 +102,15 @@ Before(() => {
    {
        this.data9=data9
    })
+
+   cy.fixture('userData/O2CBulkData.json').then(function(data7)
+   {
+       this.data7=data7
+   })
+
+   cy.fixture('OperatorToChannel').then(function (data5) {
+    this.data5 = data5;
+  })
 
       if ( Cypress.browser.isHeadless ) {
     cy.clearCookie('shouldStop')
@@ -143,6 +178,89 @@ Then('Logout', function () {
 //----------------Test Scripts---------------------------------------------------------------
 
 
+When('Navigate to Operator to channel and click on O2C transfer initiate', function () {
+
+  welcomePage.getOperatorToChannelOption().scrollIntoView()
+
+  welcomePage.getOperatorToChannelOption().click()
+
+  welcomePage.getO2CTransferInitiateOption().click()
+
+
+
+})
+
+When('Navigate to Operator to channel and click on O2C transfer Approval2', function () {
+
+  welcomePage.getOperatorToChannelOption().scrollIntoView()
+
+  welcomePage.getOperatorToChannelOption().click()
+
+  welcomePage.getOperatorToChannelApproval2().click()
+  cy.wait(4000)
+
+  O2CTransferInitiatePage.getRecentDatainO2C()
+  TransferRuleApproval.getsubmitbttnTransferrule().click({ force: true })
+  cy.wait(2000)
+  transferruleapprovalpage.getApprovalTransferrule().click({ force: true })
+})
+var O2CMsisdn
+      And('Enter All the Mandatory Details', function(){
+        cy.wait(3000)
+        cy.wait(2000)
+        var BBAFile ="cypress/fixtures/userData/BusinessUsersData.json"
+        var O2CFile= "cypress/fixtures/userData/O2Cdata.json"
+        cy.readFile(BBAFile).then((data) => {
+         O2CMsisdn = data.registeredMobile
+        O2CTransferInitiatePage.getMSISDN().type(O2CMsisdn, {force: true})
+        data.O2CMsisdn1 =O2CMsisdn
+        cy.writeFile(O2CFile, data)
+      })
+        O2CTransferInitiatePage.getTransferAmount().type(TransferAmount, {force: true})
+        O2CTransferInitiatePage.getReferenceNumber().type(ReferenceNumber, {force: true})
+        O2CTransferInitiatePage.getType().select(this.data5.O2CTransferInitiate.type, {force: true})
+        O2CTransferInitiatePage.getNumber().type(number, {force: true})
+        O2CTransferInitiatePage.getRemarks().type(getRandomName(), {force: true})
+        cy.writeFile(filename,{ msidnValue:O2CMsisdn,TransferAmt:TransferAmount, RefNum:ReferenceNumber} )
+      
+      })
+
+And('logout the user', function () {
+
+  welcomePage.getProfileIcon().click()
+  cy.wait(2000)
+  welcomePage.getLogOutbttn().click()
+  cy.wait(2000)
+  welcomePage.getLogOutYesbttn().click()
+})
+
+When('Navigate to Operator to channel and click on O2C transfer Approval1', function () {
+
+  welcomePage.getOperatorToChannelOption().scrollIntoView()
+
+  welcomePage.getOperatorToChannelOption().click()
+
+  welcomePage.getOperatorToChannelApproval1().click()
+  cy.wait(4000)
+
+  O2CTransferInitiatePage.getRecentDatainO2C()
+  TransferRuleApproval.getsubmitbttnTransferrule().click({ force: true })
+  cy.wait(2000)
+  transferruleapprovalpage.getApprovalTransferrule().click({ force: true })
+})
+
+      
+     Then('Click on submit and Confirm2', function(){
+      
+        O2CTransferInitiatePage.getSubmitButton().click({force: true})
+      
+        cy.wait(2000)
+      
+        O2CTransferInitiatePage.getConfirmButton().click({force: true})
+        cy.wait(3000)
+       //cy.O2CTransactionWriteData2()
+      })
+
 
 When ('Click on BulkPayout tool', function()
 {
@@ -152,11 +270,10 @@ When ('Click on BulkPayout tool', function()
 And ('Click on Bulk Payout Initiate',function()
 {
       BptPage.getBulkPayoutInitiateLink().click({force:true})
-      cy.wait(20000)
-     
+      cy.wait(10000)
      BptPage.getServicename().select(this.data2.personalInfo.ServiceName,{force:true})
      BptPage.getDownloadTemplate().click({force:true})
-     cy.wait(1000)
+     cy.wait(10000)
      BptPage.getRemark().click({force:true}).type('testing user1234')
 
   cy.csvToJSON(CsvFile,JsonFile)
@@ -165,17 +282,17 @@ And ('Click on Bulk Payout Initiate',function()
       
 })
 Then('update the json data', function () {
+
   cy.readFile("cypress/fixtures/input/BULK_O2C-template.json").then((data) => {
-    cy.readFile("cypress/fixtures/userData/O2CBulkData.json").then((data) => {
-      data['Receiver Mobile Number*']=data.msidnValue,
-      data['Amount*']=data.TransferAmt,
-      data['Reference number*']=data.RefNum
-    })
+    
     data['Serial Number*'] = this.data9.SerialNumber,
     data['MFS Provider*'] = this.data9.MFSProvider, 
     data['Receiver SVA Type ID*']=this.data9.ReceiverSVATypeID,
+    data['Receiver Mobile Number*']=this.data6.registeredMobile,
+    data['Amount*']=this.data7.TransferAmt,
     data['Transfer Date*']=this.data9.TransferDate,
     data['Payment Type*']=this.data9.PaymentType,
+    data['Reference number*']=this.data7.RefNum,
     data['Remarks*']=this.data9.Remarks,
     data['Payment Number']=this.data9.PaymentNumber,
     data['Payment Date']=this.data9.PaymentDate,
@@ -191,23 +308,31 @@ Then('update the json data', function () {
     data['Additional Parameter 9']=""
     data['Additional Parameter 10']=""
     cy.writeFile("cypress/fixtures/input/BULK_O2C-template.json", data)
-   
  })
 })
 And('Upload the data', function() {
      cy.jsonToCSV(JsonFile,CsvFile)
-    BptPage.getUploadLink().attachFile('BULK_O2C-template.csv')
+    BptPage.getUploadLink().attachFile('input/BULK_O2C-template.csv')
     cy.wait(10000)
  BptPage.getSubmit().dblclick({force:true})
  cy.wait(10000)
 
   
-BptPage.getTextBox().invoke('split',' ').its(12).as('batchID');
+/*BptPage.getTextBox().invoke('split',' ').its(12).as('batchID');
 cy.get('@batchID').then(id => cy.log(`batch **${id}**`))
+})*/
+
+
+
+BptPage.getTextBox().then(($btn) => {
+  const txt = $btn.text()
+  cy.log(txt)
+  
+
 })
 
 
-
+})
 And('Click on Bulk Payout Approval link.',function(){
 BptPage.getBulkApprove().click({force:true})
 cy.wait(5000)
@@ -230,7 +355,7 @@ Then ('Verify Batch Id',function(){
   cy.wait(10000)
  
 BptPage.getBatchIDFromBox().invoke('text').then((elementText1) =>{
-  expect(elementText1).to.contain(batchID)
+  expect(elementText1).to.contain('BA')
      
 })    
 
@@ -240,7 +365,7 @@ BptPage.getBatchIDFromBox().invoke('text').then((elementText1) =>{
 Then ('Verify success',function(){
   cy.wait(10000)
 BptPage.getSuccessAsOne().invoke('text').then((elementText) =>{
-  expect(elementText).to.contain('1')
+  expect(elementText).to.contain('0')
 
 })
 
