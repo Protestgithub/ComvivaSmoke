@@ -12,7 +12,7 @@ import register from '../../../../support/pageObjects/UserManagement/register';
 import approvals from '../../../../support/pageObjects/UserManagement/approvals';
 import manageUsers from '../../../../support/pageObjects/UserManagement/manageUsers';
 import { recurse } from 'cypress-recurse';
-
+import "../../../../support/BusinessUserCommands";
 //----------------Object Declaration-----------------------------------------------------------------
 
 const pageLogin = new loginPage()
@@ -22,6 +22,8 @@ const approvalPage = new approvals()
 const manageUsersPage = new manageUsers()
 const uuid = () => Cypress._.random(1e8)
 const SubMob='userData/subscriberReg.json'
+var lid
+var eid
 
 mobile = "77" + uuid()
 var mobile
@@ -793,11 +795,14 @@ And('Enter registered login id value', function () {
 
   cy.iframe().find('select[data-test-id="preferredLanguage"]')
     .select(this.data2.personalInfo.preferredLang, { force: true })
-    cy.readFile("cypress/fixtures/userData/BusinessUsersData.json").then((data) =>{
-      let BusinessLoginid = data.LoginId
-      registerPage.getLoginID().type(BusinessLoginid, {force : true})
-    })
-  
+  //cy.getBusinessUserLoginID()
+  cy.fixture('userData/BusinessUsersData.json').then((usermobile) => {
+    lid= usermobile.LoginId
+    cy.log(lid)
+    registerPage.getLoginID().type(lid,{force:true})
+  })
+
+
   registerPage.getCountry().select(this.data2.personalInfo.country, { force: true })
 
 
@@ -820,10 +825,13 @@ And('Enter registered email id value', function () {
   registerPage.getLastName().type(getRandomName(), { force: true })
   cy.iframe().find('select[data-test-id="preferredLanguage"]')
     .select(this.data2.personalInfo.preferredLang, { force: true })
-    cy.readFile("cypress/fixtures/userData/BusinessUsersData.json").then((data) =>{
-      let BusinessLoginid = data.EmailID
-      registerPage.getEmailID().type(BusinessLoginid, {force: true})
+    cy.fixture('userData/BusinessUsersData.json').then((usermobile) => {
+      eid= usermobile.EmailID
+      cy.log(eid)
+      registerPage.getEmailID().type(eid,{force:true})
     })
+  
+
   registerPage.getCountry().select(this.data2.personalInfo.country, { force: true })
 
 })
