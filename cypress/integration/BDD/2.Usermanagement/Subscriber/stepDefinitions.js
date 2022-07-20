@@ -24,6 +24,7 @@ const uuid = () => Cypress._.random(1e8)
 const SubMob='userData/subscriberReg.json'
 var lid
 var eid
+var CIF
 
 mobile = "77" + uuid()
 var mobile
