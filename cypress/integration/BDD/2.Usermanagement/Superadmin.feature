@@ -123,19 +123,6 @@ And User click on approve delete request
 # Author: Kalyani M
 # Last Updated:
 # Comments 
-# Test Case_ID : TC_51_SuperadminMaker_selfdetails
-# 
-@test
-
-Scenario: To verify that Super admin is able to  view Self details 
-Given Login into Mobiquity Portal as Super admin Maker
-When Navigate to User Management and Click on manage user
-And Enter Mobile number or KYC number of superadmin in search
-When User Click on eye button
-
-# Author: Kalyani M
-# Last Updated:
-# Comments 
 # Test Case_ID : TC_52_SuperadminChecker_LowerHierarchyDetails
 # 
 @test
@@ -144,5 +131,19 @@ Scenario: To verify that Super admin is able to  view Lower_Hierarchy details
 Given Login into Mobiquity Portal as Super admin Maker
 When Navigate to User Management and Click on manage user
 And Enter Mobile number or KYC number of System admin in Search
+When User Click on eye button
+
+
+# Author: Kalyani M
+# Last Updated:
+# Comments 
+# Test Case_ID : TC_51_SuperadminMaker_selfdetails
+# 
+@test
+
+Scenario: To verify that Super admin is able to  view Self details 
+Given Login into Mobiquity Portal as Super admin Maker
+When Navigate to User Management and Click on manage user
+And Enter Mobile number or KYC number of superadmin in search
 When User Click on eye button
 
