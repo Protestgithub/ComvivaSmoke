@@ -576,7 +576,7 @@ And('Enter all the required business user details', function () {
        registerPage.getMarketingProfile().select('WHSDefaultMP', { force: true })
    //  })
    registerPage.getNextButtonBasic2().click({force:true})
-   
+   // ------------------------------Bank----------------------------------------------------------------------
   const uuidbk = () => Cypress._.random(1e8)
 ifscnum="SBI"+uuidbk()
 
@@ -719,7 +719,7 @@ registerPage.getReguProfile().select('FullKycprofile', { force: true })
  cy.wait(3000)
 
   registerPage.getNextButtonBasic2().click({ force: true })
-  ------------------------------Bank----------------------------------------------------------------------
+ // ------------------------------Bank----------------------------------------------------------------------
   
   const uuidbk = () => Cypress._.random(1e8)
 ifscnum="SBI"+uuidbk()
