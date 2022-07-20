@@ -217,7 +217,7 @@ And('Enter all the required subscriber details', function () {
     registerPage.getMarketingProfile().select("SUBSDefaultMP", { force: true })
   // })
 })
-And('Enter all the required subscriber details for bulk payout', function () {
+And('Enter all the required subscriber details for bulk upload', function () {
 
   //-------------------Random Data-------
   const uuid = () => Cypress._.random(1e8)
@@ -241,7 +241,7 @@ And('Enter all the required subscriber details for bulk payout', function () {
   //cy.writeFile(subRegistration,{ subscriberMobile: mobile })
   
   cy.readFile(churnSubRegistration).then((data) => {
-data.churnSubscriberRegistrationBulkPayout = mobile
+data.churnSubscriberRegistrationBulkUpload = mobile
 cy.writeFile(churnSubRegistration, data)
 })
 
@@ -299,7 +299,80 @@ Then('SubscrigReg Confirmation message is displayed', function () {
 
 //------------------------------Approve to (Reg Subscriber to churn)--------------------------------------------------
 
-Then('Added User status is approved', function () {
-  approvalPage.getApproveConfirmationMessage().contains(this.data2.confirmationMessage.addUser)
+// Then('Added User status is approved', function () {
+//   approvalPage.getApproveConfirmationMessage().contains(this.data2.confirmationMessage.addUser)
+// })
+
+
+//-------------------------------- Subscriber Registration for churn Approve or Reject-------
+
+And('Enter all the required subscriber details for churn approve or reject',function() {
+//-------------------Random Data-------
+const uuid = () => Cypress._.random(1e8)
+mobile = "77" + uuid()
+const lgid = () => Cypress._.random(1e5)
+loginId = this.data2.personalInfo.firstName + lgid()
+CIF = lgid()
+cy.wait(2000)
+registerPage.getFirstName().type(getRandomName(), { force: true })  
+registerPage.getLastName().type(getRandomName(), { force: true })     
+cy.iframe().find('select[data-test-id="preferredLanguage"]').select(this.data2.personalInfo.preferredLang, { force: true })
+registerPage.getLoginID().type(loginId, { force: true })
+
+  recurse(
+  () => registerPage.getMobileNumber().clear().type(mobile, { force: true }),
+  () => registerPage.getAdressLine1().click({ force: true }),
+  (uniqueness) => (uniqueness) == registerPage.getValueIsNotUnique().contains
+    ('Value is not unique').should('be.visible'),
+  registerPage.getAdressLine1().click({ force: true }),
+)
+//cy.writeFile(subRegistration,{ subscriberMobile: mobile })
+
+cy.readFile(churnSubRegistration).then((data) => {
+data.churnSubscriberRegistrationChurnAprRej = mobile
+cy.writeFile(churnSubRegistration, data)
 })
 
+cy.OTP(Cypress.env('apiBaseURL'))
+
+//------------------------------------------------------------------------------------------------------------    
+registerPage.getAdressLine1().type(this.data2.subPersonalInfo.addressLine1, { force: true })
+registerPage.getCountry().select(this.data2.personalInfo.country, { force: true })
+registerPage.getState().select(this.data2.subPersonalInfo.state, { force: true })
+registerPage.getCity().select(this.data2.subPersonalInfo.city, { force: true })
+registerPage.getNextButtonBasic().click({ force: true })
+
+//----------------------KYC-----------------------------------------------------------------------
+const timestamp = (new Date).getTime()
+KycValue = "A" + timestamp
+
+registerPage.getKycDropDownButton().eq(0).click({ force: true })
+
+registerPage.getKycIDType().select(this.data2.KycInfo.KycIDType, { force: true })
+registerPage.getKycIDValue().type(KycValue, { force: true }),
+  // registerPage.getKycIDType().select(this.data2.KycInfo.KycIDType, { force: true })
+  registerPage.getMakeThisPrimaryButton().click({ force: true }),
+  registerPage.getKycGracePeriod().select(this.data2.KycInfo.KycGracePeriod, { force: true })
+registerPage.getNextButtonBasic1().click({ force: true })
+
+//-----------------------Profile------------------------------------------------------------------------
+cy.wait(2000)
+    // cy.readFile(SubProfileName).then((data) => {
+ // let Profile = data.subscriber
+  registerPage.getSecurityProfile().select("subscriberSecurityProfile", { force: true })
+// })
+//cy.readFile(SubProfileName).then((data) => {
+//   let Profile = data.SubscriberProfileName1
+  registerPage.getAuthProfile().select("SubsDefault Profile", { force: true })
+// })
+//  registerPage.getReguProfile().select(this.data2.KycInfo.ReguProfile, { force: true })
+// cy.readFile(RegulatoryMarketingProfile).then((data) => {
+ //  let Profile = data.RegulatoryProfileName
+   registerPage.getReguProfile().select("NoKycprofile", { force: true })
+// })
+//registerPage.getMarketingProfile().select(this.data2.KycInfo.MarketProfile, { force: true })
+ //cy.readFile(RegulatoryMarketingProfile).then((data) => {
+//  let Profile = data.MarketingProfileName
+  registerPage.getMarketingProfile().select("SUBSDefaultMP", { force: true })
+// })
+})
