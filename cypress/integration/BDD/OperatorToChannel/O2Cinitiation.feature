@@ -66,7 +66,7 @@ Scenario: To verify that System admin can initiate the O2C successfully if valid
 Given Login into Mobiquity Portal as System admin Maker
 When Navigate to Operator to channel and click on O2C transfer initiate
 And Enter All the Mandatory Details
-Then Click on submit and Confirm.
+Then Click on submit and Confirm00
 
 
 
@@ -121,7 +121,7 @@ Scenario: To verify that the O2C transaction should go for approval 1 only if tr
 Given Login into Mobiquity Portal as System admin Maker
 When Navigate to Operator to channel and click on O2C transfer initiate
 And Enter All the Mandatory Details
-Then Click on submit and Confirm
+Then Click on submit and Confirm0
 And logout the user
 Given Login into Mobiquity Portal as another System admin Checker1 after logout
 When Navigate to Operator to channel and click on O2C transfer Approval1
@@ -139,7 +139,7 @@ Scenario:To verify that the O2C transaction should go for approval 2 only if tra
 Given Login into Mobiquity Portal as System admin Maker
 When Navigate to Operator to channel and click on O2C transfer initiate
 And Enter All the Mandatory Details
-Then Click on submit and Confirm
+Then Click on submit and Confirm1
 And logout the user
 
 Given Login into Mobiquity Portal as System admin Checker1
@@ -147,6 +147,33 @@ When Navigate to Operator to channel and click on O2C transfer Approval1
 And logout the user
 Given Login into Mobiquity Portal as System admin Checker2
 When Navigate to Operator to channel and click on O2C transfer Approval2
+
+
+# Author: Likith R
+# Last Updated:
+# Comments 
+# Test Case_ID : TC_21
+# 
+@test
+
+Scenario:To verify that the O2C transaction should go for approval 2 only if transaction amount is greater than the O2C limit.
+Given Login into Mobiquity Portal as System admin Maker
+When Navigate to Operator to channel and click on O2C transfer initiate
+And Enter All the Mandatory Details
+Then Click on submit and Confirm2
+And logout the user
+
+Given Login into Mobiquity Portal as System admin Checker1
+When Navigate to Operator to channel and click on O2C transfer Approval1
+And logout the user
+Given Login into Mobiquity Portal as System admin Checker2
+When Navigate to Operator to channel and click on O2C transfer Approval2
+
+
+
+
+
+
 
 
 
