@@ -1,6 +1,6 @@
 //----------------Imports---------------------------------------------------------------------
 import 'cypress-iframe'
-import BankingActivation from '../support/pageObjects/BankingChannelActivation/BankingActivation';
+import BankingActivation from '../support/pageObjects/BankingActivation';
 //----------------Object Declaration----------------------------------------------------------
 const bankingActivationPage = new BankingActivation()
 var SubscriberMsg = 'cypress/fixtures/userData/subscriberMsg.json'
@@ -9,7 +9,8 @@ var SubscriberMsg = 'cypress/fixtures/userData/subscriberMsg.json'
 //------------------------------------------------------------------------------------------------------
 Cypress.Commands.add('getMobBankingActivationMessage', (apiURL) => {
     cy.intercept('/mobiquitypay/serviceRequest/resume/any').as('getmessage')
-    bankingActivationPage.getConfirmButton().click({force:true})
+    bankingActivationPage.getConfirmButton().contains('Confirm').click({force:true})
+    bankingActivationPage.getConfirmButton().contains('Done').click({force:true})
     cy.wait(2000)
     //approvalPage.getApproveConfirmationMessage().contains(this.data2.confirmationMessage.editUser)
 
@@ -46,7 +47,8 @@ Cypress.Commands.add('getMobBankingActivationMessage', (apiURL) => {
 
 Cypress.Commands.add('getInternetBankingActivationMessage', (apiURL) => {
     cy.intercept('/mobiquitypay/serviceRequest/resume/any').as('getmessage')
-    bankingActivationPage.getConfirmButton().click({force:true})
+    bankingActivationPage.getConfirmButton().contains('Confirm').click({force:true})
+    bankingActivationPage.getConfirmButton().contains('Done').click({force:true})
     cy.wait(2000)
     //approvalPage.getApproveConfirmationMessage().contains(this.data2.confirmationMessage.editUser)
 
