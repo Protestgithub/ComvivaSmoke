@@ -45,7 +45,10 @@ Scenario:To verify that System admin should be able to add initiate service char
 Given Login into Mobiquity Portal as System admin Maker
 When Click on Pricing Engine
 And Click on the Service Policy
-And Click on add new rule buttton,add New service charge and save the policy as draft
+And Click on any service to add service charge.
+
+
+
 
 # Author: Arpitha C
 # Last Updated: 2/05/2022
@@ -59,7 +62,6 @@ Given Login into Mobiquity Portal as System admin Maker
 When Click on Pricing Engine
 And Click on commission 
 And Click on commission and select the service you want to add commission profile for
-
 
 # Author: Chetan.S
 # Last Updated: 29-04-2022
