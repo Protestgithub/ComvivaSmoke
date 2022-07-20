@@ -40,6 +40,14 @@ Cypress.Commands.add('getSubscriberMobileNumber', () => {
     })
 })
 
+Cypress.Commands.add('getSubscriberMobileNumberSuspension', () => {
+    manageUsersPage.getUserSearchDetails().click({ force: true })
+    cy.fixture('userData/subscriberReg.json').then((usermobile) => {
+        SubMobile = usermobile.subscriberMobileSuspend
+        cy.log(SubMobile)
+        manageUsersPage.getUserSearchDetails().type(SubMobile, { force: true })
+    })
+})
 Cypress.Commands.add('getSecurityProfileName', () => {
     //manageUsersPage.getUserSearchDetails().click({ force: true })
     cy.fixture('profileData/securityProfile.json').then((userProfileName) => {
