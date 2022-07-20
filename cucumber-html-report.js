@@ -4,7 +4,7 @@ const timestamp = (new Date).getTime();
 
 report.generate({
     jsonDir: './cypress/cucumber-json',
-    reportPath: './reports/'+ "Phase1 Test-Report " + timestamp +'/cucumber-htmlreport.html',
+    reportPath: './reports/cucumber-htmlreport_PLATFORM_JENKINS_BUILD.html',
     displayDuration : true,
     metadata:{
         browser: {
