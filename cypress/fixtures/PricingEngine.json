@@ -33,7 +33,11 @@
     "editPercentage":"22",
     "editFixedAmt":"2000",
     "pageTitle":"You are working on a saved draft of this policy",
-    "RuleName2":""
+    "RuleName2":"",
+       "textmsg":"Service Charge Policy has been applied successfully",
+    "WhoPaysCom":"Receiver",
+    "SenderSVAtypeCom":"Normal",
+    "WhomeToPayCom":"Service Provider"
 
 
 }
