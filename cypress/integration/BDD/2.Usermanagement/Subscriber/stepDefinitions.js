@@ -22,15 +22,8 @@ const approvalPage = new approvals()
 const manageUsersPage = new manageUsers()
 const uuid = () => Cypress._.random(1e8)
 const SubMob='userData/subscriberReg.json'
-var lid
-var eid
-var CIF, Submobile
-
+var lid,eid,CIF, Submobile,mobile,loginId,KycValue,name
 mobile = "77" + uuid()
-var mobile
-var loginId
-var KycValue
-var name
 var subRegistration = 'cypress/fixtures/userData/subscriberReg.json'
 var SubProfileName = 'cypress/fixtures/profileData/Profile.json'
 var RegulatoryMarketingProfile = 'cypress/fixtures/userData/Regulatory&MarketingProfile.json'
