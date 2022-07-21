@@ -25,12 +25,7 @@ const manageUsersPage = new manageUsers()
 const uuuid = () => Cypress._.random(1e3)
 const SubMob='userData/subscriberReg.json'
 amount = uuuid()
-var loginId
-var mobile
-var BusinessMobile
-var KycValue
-var amount
-var name
+var loginId, mobile, BusinessMobile, KycValue, amount, name, ifscnum
 const uuid = () => Cypress._.random(1e8)
 const kycid = () => Cypress._.random(1e8)
 mobile = "77" + uuid()
