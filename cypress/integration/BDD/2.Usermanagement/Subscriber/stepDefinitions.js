@@ -24,7 +24,7 @@ const uuid = () => Cypress._.random(1e8)
 const SubMob='userData/subscriberReg.json'
 var lid
 var eid
-var CIF
+var CIF, Submobile
 
 mobile = "77" + uuid()
 var mobile
@@ -116,7 +116,7 @@ Given('Login into Mobiquity Portal as Super admin Maker', function () {
 //DIST7779064594
 Given('Login into Mobiquity Portal as Business admin User', function () {
   cy.launchURL(Cypress.env('Adminurl'))
-  cy.launchURL(Cypress.env('Adminurl')) + 'Business/'
+  cy.launchURL(Cypress.env('Adminurl')) + '/dfscontainer/#/business/'
   cy.wait(8000)
   cy.login(this.data1.businessAdmin.businessadminUser1, this.data1.businessAdmin.businessadminPwd1)
   cy.wait(10000)
@@ -772,7 +772,6 @@ And('Enter Mobile number or KYC number in Search', function () {
   manageUsersPage.getSearchUser().click({ force: true })
   //Reading Subscriber mobile number from Subscriber registration Fixture to check his details
   cy.readFile('cypress/fixtures/userData/subscriberReg.json').then((data) => {
-    var Submobile
     Submobile = data.subscriberMobile 
     cy.log(Submobile)
     manageUsersPage.getSearchUser().type(Submobile, { force: true })
@@ -819,7 +818,7 @@ And('click on yes', function () {
 })
 And('Assert the user login', function () {
 
-  cy.frameLoaded(pageLogin.getiFrame()).should("not.contain", "7779050504")
+  cy.frameLoaded(pageLogin.getiFrame()).should("not.contain", Submobile)
   cy.wait(10000)
   //cy.url().should("not.contain", "/business");
 })
@@ -839,9 +838,9 @@ Then('User status is Resumed', function () {
 
 And('Assert the user login', function () {
 
-  cy.frameLoaded(pageLogin.getiFrame()).should("not.contain", "DIST7779064594")
+  cy.frameLoaded(pageLogin.getiFrame()).should("not.contain", Submobile)
   cy.wait(10000)
-  cy.url().should("not.contain", "/business");
+  cy.url().should("not.contain", "/dfscontainer/#/business/");
 })
 
 
