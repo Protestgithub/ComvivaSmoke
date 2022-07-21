@@ -69,7 +69,12 @@ class register {
     getCountry1(){
         return cy.iframe().find('select[id="country"]> option',"{force:true}")
     }
+     getCurrency()
+    {
 
+        return cy.iframe().find('select[name="currency"]')
+
+    }
     getState(){
         return cy.iframe().find('select[id="state"]')
     }
@@ -328,5 +333,41 @@ getNextButtonBasic4(){
         return cy.iframe().find('button[data-test-id="next"]').eq(4)
 
     }
+getBankName()
+    {
+
+      return cy.iframe().find('select[name="bankName"]')
+
+    }
+getAccountNum()
+
+    {
+
+     return cy.iframe().find('input[name="accNumber"]')
+
+    }
+getConfirmAccNum()
+    {
+
+    return cy.iframe().find('input[name="confirmAccNumber"]')
+
+    }
+getNickName()
+    {
+
+    return cy.iframe().find('input[name="nickname"]')
+
+    }
+getBankAccountType()
+    {
+      return cy.iframe().find('select[name="bankAccountType"]')
+
+    }
+getBankIFSC()
+    {
+    return cy.iframe().find('input[name="bankIfsc"]')
+
+    }
+
 }
 export default register
