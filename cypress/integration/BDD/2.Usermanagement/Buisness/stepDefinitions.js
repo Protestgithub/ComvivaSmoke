@@ -895,6 +895,7 @@ And('Enter registered login id value', function () {
     cy.log(lid)
     registerPage.getLoginID().type(lid,{force:true})
   })
+  registerPage.getCountry().select(this.data2.personalInfo.country, { force: true })
 })
 Then('Login id Error message is displayed', function () {
   registerPage.getLoginError().find('small.text-danger').should('have.text', ' Value is not unique ');
@@ -909,6 +910,8 @@ cy.readFile('cypress/fixtures/userData/BusinessUsersData.json').then((usermobile
     cy.log(eid)
     registerPage.getEmailID().type(eid,{force:true})
     })
+    
+    registerPage.getCountry().select(this.data2.personalInfo.country, { force: true })
 
 })
 Then('Email Error message is displayed', function () {
