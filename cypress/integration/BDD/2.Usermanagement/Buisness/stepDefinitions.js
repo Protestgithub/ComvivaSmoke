@@ -33,6 +33,7 @@ var subRegistration = 'cypress/fixtures/userData/subscriberReg.json'
 var SubProfileName = 'cypress/fixtures/profileData/Profile.json'
 var SubAuthProfileName ='cypress/fixtures/userData/AuthorizationProfile.json'
 var RegulatoryMarketingProfile = 'cypress/fixtures/userData/Regulatory&MarketingProfile.json'
+var BankData = 'cypress/fixtures/userData/BankData.json'
 
 function getRandomName() {
   name = "";
