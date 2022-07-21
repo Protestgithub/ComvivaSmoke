@@ -331,12 +331,14 @@ And('Select User type as Business and click on Telco operator', function () {
   registerPage.getRegistrationMode().eq(0).click({ force: true })
 })
 And('Enter all the mandatory Basic information details and click on next', function () {
+const uuid1 = () => Cypress._.random(1e8)
+  var mobile2 = "77" + uuid1()
   cy.wait(3000)
   registerPage.getTitle().select(this.data2.personalInfo.title, { force: true })
   registerPage.getLastName().type(this.data2.personalInfo.lastName, { force: true })
   cy.iframe().find('select[data-test-id="preferredLanguage"]').select(this.data2.personalInfo.preferredLang, { force: true })
   recurse(
-    () => registerPage.getMobileNumber().clear().type(mobile, { force: true }),
+    () => registerPage.getMobileNumber().clear().type(mobile2, { force: true }),
     () => registerPage.getFirstName().type(getRandomName(), { force: true }),
     (uniqueness) => (uniqueness) == registerPage.getuniqueness()
   )
