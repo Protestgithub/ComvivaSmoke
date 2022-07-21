@@ -51,7 +51,7 @@ Before(() => {
 
 Given('Login into Mobiquity Portal as Business admin User1', function () {
     cy.launchURL(Cypress.env('Adminurl'))
-    cy.visit(Cypress.env("Adminurl") + "/Business/")
+    cy.visit(Cypress.env("Adminurl") + "/dfscontainer/#/business/")
     cy.wait(3000)
     cy.readFile('cypress/fixtures/userData/BusinessUsersData.json').then((data)=>{
     var loginId
