@@ -234,6 +234,37 @@ And Search with the Mobile Number
 And System Admin is able to view details
 
 
+# Author: Arpitha C
+# Last Updated: 26/05/2022
+# Comments : 
+# Scenario_ID : SC_169 
+
+@test
+
+
+Scenario:To verify that proper error message should be displayed when login id is already registered in the system.
+Given Login into Mobiquity Portal as System admin Maker
+When Navigate to User Management and Click on register
+And Select User type as Business and Select Corporate
+And Enter registered login id value
+Then Login id Error message is displayed
+
+# Author: Arpitha C
+# Last Updated: 26/05/2022
+# Comments : 
+# Scenario_ID : SC_170 
+@test
+
+
+Scenario:To verify that proper error message should be displayed when Email Id  is registered in the system.
+Given Login into Mobiquity Portal as System admin Maker
+When Navigate to User Management and Click on register
+And Select User type as Business and Select Corporate
+And Enter registered email id value
+Then Email Error message is displayed
+
+
+
 
 
 ###################################### Kalyani ####################################################
