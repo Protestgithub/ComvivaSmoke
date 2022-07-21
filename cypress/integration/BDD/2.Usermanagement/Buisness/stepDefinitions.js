@@ -440,7 +440,7 @@ Then('Click on Next', function () {
 })
 And('Enter all the mandatory KYC details.', function () {
   
-  KycValue = "AZC" + kycid()
+  KycValue = "AZ" + kycid()
   registerPage.getNextButtonBasic().click({ force: true })
   registerPage.getKYCButton().click({ force: true })
   registerPage.getKYCIDType().select(this.data2.subPersonalInfo.KYCIDType, { force: true })
@@ -528,7 +528,7 @@ And('Enter all the required business user details', function () {
 
   registerPage.getNextButtonBasic().eq(0).click({ force: true })
 
-  KycValue = "AZB" + kycid()
+  KycValue = "AZ" + kycid()
   //---------------------KYC-----------------------------------------------------------------------
   registerPage.getKYCButton().eq(0).click({ force: true })
   cy.wait(2000)
@@ -576,7 +576,8 @@ And('Enter all the required business user details', function () {
        registerPage.getMarketingProfile().select('WHSDefaultMP', { force: true })
    //  })
    registerPage.getNextButtonBasic2().click({force:true})
-   // ------------------------------Bank----------------------------------------------------------------------
+   
+
   const uuidbk = () => Cypress._.random(1e8)
 ifscnum="SBI"+uuidbk()
 
@@ -668,7 +669,7 @@ And('Enter all the required business user details1', function () {
 
   registerPage.getNextButtonBasic().eq(0).click({ force: true })
 
-  KycValue = "AZG" + kycid()
+  KycValue = "AZ" + kycid()
   //---------------------KYC-----------------------------------------------------------------------
   registerPage.getKYCButton().eq(0).click({ force: true })
   cy.wait(2000)
@@ -719,7 +720,6 @@ registerPage.getReguProfile().select('FullKycprofile', { force: true })
  cy.wait(3000)
 
   registerPage.getNextButtonBasic2().click({ force: true })
- // ------------------------------Bank----------------------------------------------------------------------
   
   const uuidbk = () => Cypress._.random(1e8)
 ifscnum="SBI"+uuidbk()
