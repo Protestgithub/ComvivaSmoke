@@ -123,7 +123,7 @@ Given('Login into Mobiquity Portal as Business admin User', function () {
   cy.checkWelcomeText(this.data2.business.distributerUser)
 })
 
-Given('Login into Mobiquity Portal as Business admin User1', function () {
+Given('Login into Mobiquity Portal as Business admin User2', function () {
   cy.launchURL(Cypress.env('Adminurl'))
   cy.wait(8000)
   cy.readFile('cypress/fixtures/userData/AdministratorData.json').then((data)=>{
@@ -134,6 +134,23 @@ Given('Login into Mobiquity Portal as Business admin User1', function () {
     cy.checkWelcomeText(this.data1.BAAdminText)
 
 })
+Given('Login into Mobiquity Portal as Business admin User1', function () {
+  cy.launchURL(Cypress.env('Adminurl'))
+  cy.wait(8000)
+  cy.readFile('cypress/fixtures/userData/AdministratorData.json').then((data)=>{
+    var BALogin
+    BALogin = data.BALoginID
+    cy.login(BALogin, this.data1.businessAdmin.DefaultPassword)
+    cy.login1(this.data1.BAPassword)
+    cy.Passwordchange(this.data1.UserCreationSuccessMessage)
+    pageLogin.getloginbtn1().click({force:true})
+    cy.wait(8000)
+    cy.login(BALogin, this.data1.BAPassword)
+  })
+    cy.checkWelcomeText(this.data1.BAAdminText)
+
+})
+
 
   //----------------Navigate to User Management tab and Click on Register---------------------------------
   When('Navigate to User Management and Click on register', function () {
