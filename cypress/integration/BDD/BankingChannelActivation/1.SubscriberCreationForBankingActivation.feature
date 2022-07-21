@@ -1,3 +1,8 @@
+Feature: BankingActivation
+
+    This feature includes Banking Activation of Subscribers
+
+
 # Author: Chetan.S
 # Last Updated: 25-04-2022
 # Comments 
