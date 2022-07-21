@@ -245,7 +245,7 @@ And System Admin is able to view details
 Scenario:To verify that proper error message should be displayed when login id is already registered in the system.
 Given Login into Mobiquity Portal as System admin Maker
 When Navigate to User Management and Click on register
-And Select User type as Business and Select Corporate
+And Select User type as Business and Select user role
 And Enter registered login id value
 Then Login id Error message is displayed
 
@@ -259,7 +259,7 @@ Then Login id Error message is displayed
 Scenario:To verify that proper error message should be displayed when Email Id  is registered in the system.
 Given Login into Mobiquity Portal as System admin Maker
 When Navigate to User Management and Click on register
-And Select User type as Business and Select Corporate
+And Select User type as Business and Select user role
 And Enter registered email id value
 Then Email Error message is displayed
 
