@@ -890,25 +890,11 @@ And('Select User type as Business and Select Corporate', function () {
 })
 
 And('Enter registered login id value', function () {
-  cy.iframe().find('select[data-test-id="title"]')
-    .select(this.data2.personalInfo.Title, { force: true })
-  registerPage.getFirstName().type(getRandomName(), { force: true })
-  registerPage.getLastName().type(getRandomName(), { force: true })
-
-  cy.iframe().find('select[data-test-id="preferredLanguage"]')
-    .select(this.data2.personalInfo.preferredLang, { force: true })
-  //cy.getBusinessUserLoginID()
-  cy.fixture('userData/BusinessUsersData.json').then((usermobile) => {
-    lid= usermobile.LoginId
+ cy.readFile('cypress/fixtures/userData/BusinessUsersData.json').then((usermobile) => {
+    let lid = usermobile.LoginId
     cy.log(lid)
     registerPage.getLoginID().type(lid,{force:true})
   })
-
-
-  registerPage.getCountry().select(this.data2.personalInfo.country, { force: true })
-
-
-
 })
 Then('Login id Error message is displayed', function () {
   registerPage.getLoginError().find('small.text-danger').should('have.text', ' Value is not unique ');
@@ -918,23 +904,11 @@ Then('Login id Error message is displayed', function () {
 
 
 And('Enter registered email id value', function () {
-  const lgid = () => Cypress._.random(1e5)
-  loginId = this.data2.personalInfo.firstName + lgid()
-  cy.wait(2000)
-  cy.iframe().find('select[data-test-id="title"]')
-    .select(this.data2.personalInfo.Title, { force: true })
-  registerPage.getFirstName().type(getRandomName(), { force: true })
-  registerPage.getLastName().type(getRandomName(), { force: true })
-  cy.iframe().find('select[data-test-id="preferredLanguage"]')
-    .select(this.data2.personalInfo.preferredLang, { force: true })
-    cy.fixture('userData/BusinessUsersData.json').then((usermobile) => {
-      eid= usermobile.EmailID
-      cy.log(eid)
-      registerPage.getEmailID().type(eid,{force:true})
+cy.readFile('cypress/fixtures/userData/BusinessUsersData.json').then((usermobile) => {
+    let eid = usermobile.EmailID
+    cy.log(eid)
+    registerPage.getEmailID().type(eid,{force:true})
     })
-  
-
-  registerPage.getCountry().select(this.data2.personalInfo.country, { force: true })
 
 })
 Then('Email Error message is displayed', function () {
@@ -957,7 +931,7 @@ Then('Email Error message is displayed', function () {
 
 
 And('Enter Mobile number and KYC number in search menu1', function () {
-  cy.fixture(SubMob).then((user) => {
+cy.readFile(cypress/fixtures/SubMob.json).then((user) => {
     var SubMob1 = user.subscriberMobile
     cy.log(SubMob1)
     manageUsersPage.getSearchUser().type(SubMob1)
