@@ -383,9 +383,6 @@ Given('Login into Mobiquity Portal as Business admin User1', function () {
 
   And('Fill all required details and enter registered EmailID and confirm Error message', function () {
 
-    const uuid = () => Cypress._.random(1e8)
-    mobile = "77" + uuid()
-
     cy.wait(2000)
     registerPage.getFirstName().type(this.data2.personalInfo.firstName, { force: true })
     registerPage.getLastName().type(this.data2.personalInfo.lastName, { force: true })
@@ -422,9 +419,7 @@ And('Select User type as Subscriber and click on Subscribers', function () {
 And('Enter all the required subscriber details', function () {
 
   //-------------------Random Data-----------------------------------------------------------------
-  const uuid = () => Cypress._.random(1e8)
-  mobile = "77" + uuid()
-  const lgid = () => Cypress._.random(1e5)
+   const lgid = () => Cypress._.random(1e5)
   loginId = this.data2.personalInfo.firstName + lgid()
   CIF = "1"+ lgid()
   cy.wait(2000)
@@ -517,8 +512,7 @@ Then('Added User status is approved', function () {
 And('Enter all the required subscriber details for suspension and Resumption', function () {
 
   //-------------------Random Data-----------------------------------------------------------------
-  const uuid = () => Cypress._.random(1e8)
-  mobile = "77" + uuid()
+  
   const lgid = () => Cypress._.random(1e5)
   loginId = this.data2.personalInfo.firstName + lgid()
   CIF = "1"+ lgid()
@@ -948,8 +942,7 @@ Then('invalid value message is displayed', function () {
 //-------------------------------------------TC_182---------------------------------------------------------------------
 
 And('Enter the basic details and do not verify contact number', function () {
-  const uuid = () => Cypress._.random(1e8)
-  mobile = "77" + uuid()
+ 
   const lgid = () => Cypress._.random(1e5)
   loginId = this.data2.personalInfo.firstName + lgid()
   cy.wait(2000)
