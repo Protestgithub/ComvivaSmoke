@@ -1,7 +1,6 @@
 Feature: BankingActivation
 
-    This feature includes registering, Modifying and Approval of Business Admin and
-    Customer Support Admin Users by System Admin
+    This feature includes Banking Activation of Subscribers
 
     # Author: CHetan S
     # Last Updated:21/06/2022
