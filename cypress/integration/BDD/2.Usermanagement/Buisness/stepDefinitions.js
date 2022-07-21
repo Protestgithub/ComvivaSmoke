@@ -343,7 +343,7 @@ const uuid1 = () => Cypress._.random(1e8)
     (uniqueness) => (uniqueness) == registerPage.getuniqueness()
   )
   cy.readFile('cypress/fixtures/userData/BusinessUsersData.json').then((data) => {
-    data.telcoMobile = mobile
+    data.telcoMobile = mobile2
    cy.writeFile('cypress/fixtures/userData/BusinessUsersData.json', data)
 })
   registerPage.getNextButtonBasic().click({ force: true })
