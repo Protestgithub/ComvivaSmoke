@@ -259,7 +259,7 @@ Then Verify View Details Page
 
 
 Scenario:To verify that Business admin able to view subscriber details
-Given Login into Mobiquity Portal as Business admin User1
+Given Login into Mobiquity Portal as Business admin User2
 When Navigate to User Management and Click on manage user
 And Enter Mobile number or KYC number in Search
 When User Click on eye button 
@@ -300,7 +300,7 @@ When User Click on eye button
 #
 @test
 
-Scenario: To verify that Business admin is able to  Lower Hierarchy details
+Scenario: To verify that System admin is able to  Lower Hierarchy details
 Given Login into Mobiquity Portal as System admin Maker
 When Navigate to User Management and Click on manage user
 And Enter Mobile number of subscriber in search
