@@ -436,7 +436,7 @@ Then('Click on Next', function () {
 })
 And('Enter all the mandatory KYC details.', function () {
   
-  KycValue = "AZ" + kycid()
+  KycValue = "BZ" + kycid()
   registerPage.getNextButtonBasic().click({ force: true })
   registerPage.getKYCButton().click({ force: true })
   registerPage.getKYCIDType().select(this.data2.subPersonalInfo.KYCIDType, { force: true })
