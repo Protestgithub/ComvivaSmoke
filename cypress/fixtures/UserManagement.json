@@ -101,8 +101,8 @@
   },
 
   "confirmationMessage": {
-    "addUser": " User Registration has been completed successfully with the mobileNumber",
-    "editUser": " User Modification has been completed successfully",
+    "addUser": "User Registration has been completed successfully with the mobileNumber",
+    "editUser": "User Modification has been completed successfully",
     "editUser1": " SUCCESS Service is successfully paused. Kindly contact admin for approval",
     "successMessage": "SUCCESS",
     "viewDetails": " View Details",
