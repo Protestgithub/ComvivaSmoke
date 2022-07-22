@@ -276,7 +276,7 @@ Given('Login into Mobiquity Portal as Business admin User1', function () {
 
 //----TC_68--------------------------User Management(Subscriber)---------------------------------------
 
-And('Select User type as Subscriber and click on Subscribers', function () {
+And('Select User type as Subscriber and click on Subscriber', function () {
   welcomePage.getUserManagementOption().scrollIntoView()
   welcomePage.getUserManagementOption().click()
   welcomePage.getRegisterOption().click()
