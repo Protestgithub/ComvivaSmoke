@@ -7,8 +7,8 @@
     "country": "India",
     "securityProfile": "BCU49100",
     "authProfile": "BUAdmin",
-    "successConfirmationMessage": "SUCCESS",
-    "successConfirm": "SUCCESS",
+    "successConfirmationMessage": "SUCCESS User registration is successfully initiated. Kindly contact admin for approval",
+    "successConfirm": "SUCCESS Service is successfully paused. Kindly contact admin for approval",
     "title": "Mr",
     "InterfaceId": "9959676595",
     "regulatory": "abc123",
@@ -36,7 +36,7 @@
     "suspendResumeMob": "7772227722",
     "ViewdetailsOfUser": " > View Details",
     "invalidFirstName": "ldsnv3lllC LLL42# A",
-    "invalidInputMessage": "Only alphabets and space is allowed",
+    "invalidInputMessage": " Only alphabets and space is allowed ",
     "RegisteredMobile": "7788789756",
     "notUnique": " Value is not unique ",
     "securityProfile2": "NWADM44550",
@@ -101,12 +101,12 @@
   },
 
   "confirmationMessage": {
-    "addUser": "success",
-    "editUser": "success",
-    "editUser1": "SUCCESS",
-    "successMessage": " SUCCESS ",
+    "addUser": "User Registration has been completed successfully with the mobileNumber",
+    "editUser": "User Modification has been completed successfully",
+    "editUser1": "SUCCESS Service is successfully paused. Kindly contact admin for approval",
+    "successMessage": "SUCCESS",
     "viewDetails": " View Details",
-    "EdituserSys":"success"
+    "EdituserSys":"Service is successfully paused. Kindly contact admin for approval"
   },
   "subPersonalInfo": {
     "subUserType": "Subscriber",
@@ -145,8 +145,8 @@
   },
   "suspendResumeConfirmationMessage": {
     "suspendResumeUser": "Your transaction request has been initiated, and is now pending confirmation",
-    "userSuspended": "Successfully",
-    "userResumed": "Successfully"
+    "userSuspended": "User Suspended Successfully",
+    "userResumed": "User Resumed Successfully"
   },
   "KycInfo": {
     "KycIDType": "SSN",
