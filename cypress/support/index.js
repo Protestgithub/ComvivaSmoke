@@ -40,6 +40,6 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 
-import "cypress-fail-fast";
+//import "cypress-fail-fast";
 
 
