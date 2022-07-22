@@ -28,10 +28,13 @@ pipeline {
         }
         
         stage('Testing') {
+            options {
+                timeout(time: 20, unit: 'MINUTES')
+            }
             steps {
                 
                 bat "npm i"
-                bat "npx cypress@9.7.0 run --quiet --env Adminurl=http://125.16.139.20:8023 ,apiBaseURL=http://172.25.48.237:3133 --browser ${BROWSER} --spec ${SPEC}  "
+                bat "npx cypress@9.7.0 run --quiet --env Adminurl=http://172.25.48.237,apiBaseURL=http://172.25.48.237:3133 --browser ${BROWSER} --spec ${SPEC}"
                 
             }
         }
