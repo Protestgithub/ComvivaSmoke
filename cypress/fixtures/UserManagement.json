@@ -8,7 +8,7 @@
     "securityProfile": "BCU49100",
     "authProfile": "BUAdmin",
     "successConfirmationMessage": " SUCCESS User registration is successfully initiated. Kindly contact admin for approval",
-    "successConfirm": "SUCCESS Service is successfully paused. Kindly contact admin for approval",
+    "successConfirm": " SUCCESS Service is successfully paused. Kindly contact admin for approval",
     "title": "Mr",
     "InterfaceId": "9959676595",
     "regulatory": "abc123",
@@ -101,12 +101,12 @@
   },
 
   "confirmationMessage": {
-    "addUser": "User Registration has been completed successfully with the mobileNumber",
-    "editUser": "User Modification has been completed successfully",
-    "editUser1": "SUCCESS Service is successfully paused. Kindly contact admin for approval",
+    "addUser": " User Registration has been completed successfully with the mobileNumber",
+    "editUser": " User Modification has been completed successfully",
+    "editUser1": " SUCCESS Service is successfully paused. Kindly contact admin for approval",
     "successMessage": "SUCCESS",
     "viewDetails": " View Details",
-    "EdituserSys":"Service is successfully paused. Kindly contact admin for approval"
+    "EdituserSys":" Service is successfully paused. Kindly contact admin for approval"
   },
   "subPersonalInfo": {
     "subUserType": "Subscriber",
