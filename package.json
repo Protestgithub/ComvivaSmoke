@@ -2,7 +2,6 @@
   "name": "comviva_poc",
   "version": "1.0.0",
   "main": "index.js",
-  
   "test:sanity": "npx cypress-tags run -e 'TAGS=@prerequisite'",
   "test": "cypress run --spec \"**/*.feature\"",
   "scripts": {
@@ -10,7 +9,7 @@
     "cy:open": "cypress open",
     "cy:report": "node cucumber-html-report.js",
     "cy:run": "cypress run --browser chrome",
-    "cy:Prerequisite" : "npx cypress-tags run -e 'TAGS=@prerequisite' --browser chrome",
+    "cy:Prerequisite": "npx cypress-tags run -e 'TAGS=@prerequisite' --browser chrome",
     "cy:Test": "npx cypress-tags run -e 'TAGS=@test' --browser chrome"
   },
   "author": "",
@@ -20,6 +19,7 @@
     "cypress": "^9.7.0",
     "cypress-cucumber-attach-screenshots-to-failed-steps": "^1.0.0",
     "cypress-cucumber-preprocessor": "^4.3.1",
+    "cypress-fail-fast": "^5.0.0",
     "cypress-failed-log": "^2.9.5",
     "cypress-file-upload": "^5.0.8",
     "cypress-iframe": "^1.0.1",
