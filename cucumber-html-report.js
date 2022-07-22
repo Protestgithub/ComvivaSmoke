@@ -6,6 +6,9 @@ report.generate({
     jsonDir: './cypress/cucumber-json',
     reportPath: './reports/cucumber-htmlreport_PLATFORM_JENKINS_BUILD.html',
     displayDuration : true,
+    reportSuiteAsScenarios : true,
+    scenarioTimestamp : true,
+    launchReport : true,
     metadata:{
         browser: {
             name: 'chrome',
@@ -18,11 +21,11 @@ report.generate({
         }
     },
     customData: {
-        title: 'Run info',
+        title: 'Mobiquity Phase1 UI Automation Suite Test Report',
         data: [
-            {label: 'Project', value: 'Custom project'},
-            {label: 'Release', value: '1.2.3'},
-            {label: 'Cycle', value: 'B11221.34321'},
+            {label: 'Project', value: 'Mobiquity Pay'},
+            {label: 'Release', value: ''},
+            {label: 'Cycle', value: ''},
             {label: 'Execution Start Time'},
             {label: 'Execution End Time'}
         ]
