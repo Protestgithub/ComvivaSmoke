@@ -49,11 +49,9 @@ const Id = uid1()
 var mobile
 const uid = () => Cypress._.random(0, 1e6)
 const id = uid()
-const uuid = () => Cypress._.random(1e10)
 const uud = () => Cypress._.random(1e3)
 let Sysfilelogin = 'cypress/fixtures/userData/SystemAdminLogin.json'
 var SubProfileName = 'cypress/fixtures/profileData/Profile.json'
-var mobile
 var name,SecurityProfile
 var LoginId1
 const uuid12 = () => Cypress._.random(1e8)
@@ -69,7 +67,8 @@ name += possible.charAt(Math.floor(Math.random() * possible.length));
 return name;
 }
 
-
+const uuid = () => Cypress._.random(1e8)
+mobile = "77" + uuid()
 
 
 //----------------BDD Hooks-----------------------------------------------------------------
@@ -330,8 +329,6 @@ And('Click On System Admin and select Single User',function(){
 })
 
 And('Enter all required Fields',function(){
-  const uuid = () => Cypress._.random(1e8)
-  mobile = "77" + uuid()
   loginId = "SYS" + mobile
 registerPage.getLastName().type(getRandomName(), {force: true})
 cy.getrandomUserEmailID1()
