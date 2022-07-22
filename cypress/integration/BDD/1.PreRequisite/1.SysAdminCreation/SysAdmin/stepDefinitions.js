@@ -83,19 +83,7 @@ Before(() => {
   cy.fixture('SecurityProfile').then(function (data6) {
     this.data6 = data6;
   })
-   if ( Cypress.browser.isHeadless ) {
-    cy.clearCookie('shouldStop')
-  } else {
-    cy.getCookie('shouldStop').then(cookie => {
-      if (
-        cookie &&
-        typeof cookie === 'object' &&
-        cookie.value === 'true'
-      ) {
-        Cypress.runner.stop();
-      }
-    })
-  }
+
 }); 
 
 //---------------------------------------------Login----------------------------------------------------
