@@ -159,7 +159,7 @@ Then('Confirmation message is displayed', function () {
 })
 
 When('Navigate to Approvals and filter by Submitted status', function () {
-  welcomePage.getUserManagementOption().scrollIntoView()
+ // welcomePage.getUserManagementOption().scrollIntoView()
   welcomePage.getApprovalTab().click()
  cy.wait(2000)
  welcomePage.getApprovalButtonTab().click()
@@ -832,7 +832,7 @@ And('Search with the KYC Number', function () {
 
 //---------------------------TC57----------Approve the Modification of the Businsess User.----------------------------------------------------------------------------
 When('Navigate to Approvals and filter by Modification of user status', function () {
-  welcomePage.getUserManagementOption().scrollIntoView()
+  //welcomePage.getUserManagementOption().scrollIntoView()
   welcomePage.getApprovalTab().click()
    cy.wait(2000)
  welcomePage.getApprovalButtonTab().click()
