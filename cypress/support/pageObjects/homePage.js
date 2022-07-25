@@ -34,11 +34,13 @@ class homePage {
     
     }
     getApprovalTab() {
-        return cy.get('#collapsible_listnode_18 > .fd-nested-list__title')
+    cy.get('[data-testid="menu.ums_approvals"]').click()
     }
-    getApprovalButtonTab() {
-        return cy.get('[data-testid="menu.ums_approvals"] > .fd-nested-list > :nth-child(1) > [data-testid="test-undefined"]')
-    }    
+    getApprovalButton(){
+
+    
+    cy.get('[data-testid="menu.ums_approvals"] > ul > li > a').contains("Approvals").click()
+    }
     getLogoutButton() {
 
         return cy.get('a[data-testid="logout-link"]')
