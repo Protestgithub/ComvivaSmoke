@@ -137,7 +137,9 @@ And('Enter All the Mandatory details and type Invalid Character in Transfer amou
   cy.wait(3000)
   cy.fixture('userData/BusinessUsersData.json').then((usermobile) => {
   let BsnuserMobile = usermobile.registeredMobile
-  O2CTransferInitiatePage.getMSISDN().type(BsnuserMobile, { force: true })
+  
+  
+  //O2CTransferInitiatePage.getMSISDN().type(BsnuserMobile, { force: true })
   })
   O2CTransferInitiatePage.getTransferAmount().type(getRandomName(), { force: true })
   O2CTransferInitiatePage.getReferenceNumber().type(ReferenceNumber, { force: true })
@@ -157,7 +159,7 @@ And('Enter All the Details', function () {
   cy.wait(3000)
   cy.fixture('userData/BusinessUsersData.json').then((usermobile) => {
     let BsnuserMobile = usermobile.registeredMobile
-    O2CTransferInitiatePage.getMSISDN().type(BsnuserMobile, { force: true })
+    //O2CTransferInitiatePage.getMSISDN().type(BsnuserMobile, { force: true })
     })
     O2CTransferInitiatePage.getTransferAmount().type(Amount, { force: true })
   O2CTransferInitiatePage.getReferenceNumber().type(ReferenceNumber, { force: true })
@@ -201,7 +203,7 @@ And('Enter All the Mandatory Details', function () {
   var O2CMsisdn = data.registeredMobile
   //O2CTransferInitiatePage.getMSISDN().type("7735575036", {force: true})
 
- O2CTransferInitiatePage.getMSISDN().type(O2CMsisdn, {force: true})
+// O2CTransferInitiatePage.getMSISDN().type(O2CMsisdn, {force: true})
   data.O2CMsisdn1 =O2CMsisdn
   cy.writeFile(O2CFile, data)
 })
@@ -302,7 +304,7 @@ var O2CMsisdn
         var O2CFile= "cypress/fixtures/userData/O2Cdata.json"
         cy.readFile(BBAFile).then((data) => {
          O2CMsisdn = data.registeredMobile
-        O2CTransferInitiatePage.getMSISDN().type(O2CMsisdn, {force: true})
+      //  O2CTransferInitiatePage.getMSISDN().type(O2CMsisdn, {force: true})
         data.O2CMsisdn1 =O2CMsisdn
         cy.writeFile(O2CFile, data)
       })
