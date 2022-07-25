@@ -55,7 +55,7 @@ var loginId
 var mobile 
 var ProfileName
 var KycValue
-
+var O2CMsisdn
 var CsvFile='cypress/fixtures/input/BULK_O2C-template.csv';
 var JsonFile='cypress/fixtures/input/BULK_O2C-template.json';
 
@@ -191,9 +191,10 @@ When('Navigate to Operator to channel and click on O2C transfer Approval2', func
   cy.wait(2000)
   transferruleapprovalpage.getApprovalTransferrule().click({ force: true })
 })
-var O2CMsisdn
-      And('Enter All the Mandatory Details', function(){
-      cy.wait(3000)
+
+
+And('Enter All the Mandatory Details', function(){
+   cy.wait(3000)
         cy.wait(2000)
 
       cy.get('.fd-page.iframeContainer.svelte-1v5e28n > iframe').then(($iframe) => {
@@ -210,19 +211,21 @@ var O2CMsisdn
          O2CMsisdn = data.registeredMobile
         data.O2CMsisdn1 =O2CMsisdn
         cy.writeFile(O2CFile, data)
-        O2CTransferInitiatePage.getMSISDN().type(O2CMsisdn, {force: true}).should(function () {
-            expect(this.windowConfirm).to.be.calledWith('Are you sure you want to Approve?')
+        O2CTransferInitiatePage.getMSISDN().type(O2CMsisdn, {force: true})
+        O2CTransferInitiatePage.getTransferAmount().type(TransferAmount, {force: true}).should(function () {
+            expect(this.windowConfirm).to.be.calledWith('Channel User Does Not Exist')
             //expect(this.consoleLog).to.be.calledWith('CONFIRMED')  // passes
           })
         })
       })
 
-        O2CTransferInitiatePage.getTransferAmount().type(TransferAmount, {force: true})
+        
         O2CTransferInitiatePage.getReferenceNumber().type(ReferenceNumber, {force: true})
         O2CTransferInitiatePage.getType().select(this.data5.O2CTransferInitiate.type, {force: true})
         O2CTransferInitiatePage.getNumber().type(number, {force: true})
         O2CTransferInitiatePage.getRemarks().type(getRandomName(), {force: true})
         cy.writeFile(filename,{ msidnValue:O2CMsisdn,TransferAmt:TransferAmount, RefNum:ReferenceNumber} )
+      
       
       })
 
