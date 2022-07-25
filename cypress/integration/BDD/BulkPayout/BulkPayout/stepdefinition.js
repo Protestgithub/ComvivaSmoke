@@ -194,38 +194,68 @@ When('Navigate to Operator to channel and click on O2C transfer Approval2', func
 
 
 And('Enter All the Mandatory Details', function(){
-   cy.wait(3000)
-        cy.wait(2000)
+ cy.wait(3000)
+  
+  cy.wait(2000)
+  var BBAFile ="cypress/fixtures/userData/BusinessUsersData.json"
+  var O2CFile= "cypress/fixtures/userData/O2Cdata.json"
+  cy.readFile(BBAFile).then((data) => {
+  var O2CMsisdn = data.registeredMobile
+  //O2CTransferInitiatePage.getMSISDN().type("7735575036", {force: true})
 
-      cy.get('.fd-page.iframeContainer.svelte-1v5e28n > iframe').then(($iframe) => {
-        const $body = $iframe.contents().find('body')
-        const $win = $iframe[0].contentWindow
-        cy.stub($win, 'confirm', () => true)
-          .as('windowConfirm')
-        cy.stub($win.console, 'log').as('consoleLog')
-        cy.wrap($body)
+ O2CTransferInitiatePage.getMSISDN().type(O2CMsisdn, {force: true})
+  data.O2CMsisdn1 =O2CMsisdn
+  cy.writeFile(O2CFile, data)
+})
 
-        var BBAFile ="cypress/fixtures/userData/BusinessUsersData.json"
-        var O2CFile= "cypress/fixtures/userData/O2Cdata.json"
-        cy.readFile(BBAFile).then((data) => {
-         O2CMsisdn = data.registeredMobile
-        data.O2CMsisdn1 =O2CMsisdn
-        cy.writeFile(O2CFile, data)
-        O2CTransferInitiatePage.getMSISDN().type(O2CMsisdn, {force: true}).should(function () {
-            expect(this.windowConfirm).to.be.calledWith('Channel User Does Not Exist')
-            //expect(this.consoleLog).to.be.calledWith('CONFIRMED')  // passes
-          })
-        })
-      })
+cy.wait(6000)
+   cy.get('.fd-page.iframeContainer.svelte-1v5e28n > iframe').then(($iframe) => {
 
-        O2CTransferInitiatePage.getTransferAmount().type(TransferAmount, {force: true})
-        O2CTransferInitiatePage.getReferenceNumber().type(ReferenceNumber, {force: true})
-        O2CTransferInitiatePage.getType().select(this.data5.O2CTransferInitiate.type, {force: true})
-        O2CTransferInitiatePage.getNumber().type(number, {force: true})
-        O2CTransferInitiatePage.getRemarks().type(getRandomName(), {force: true})
-        cy.writeFile(filename,{ msidnValue:O2CMsisdn,TransferAmt:TransferAmount, RefNum:ReferenceNumber} )
-      
-      
+
+
+  const $body = $iframe.contents().find('body')
+
+
+
+  const $win = $iframe[0].contentWindow
+
+
+
+
+
+  cy.stub($win, 'alert', () => true)
+
+
+
+    .as('windowConfirm')
+
+
+
+  cy.stub($win.console, 'log').as('consoleLog')
+
+
+
+
+
+  cy.wrap($body)
+
+    .find('input[name="amount"]').click({ force: true })
+
+    .should(function () {
+
+
+
+      expect(this.windowConfirm).to.be.calledWith("Channel User Does Not Exist")
+
+    })
+})
+  O2CTransferInitiatePage.getTransferAmount().type(TransferAmount, { force: true })
+ 
+  O2CTransferInitiatePage.getReferenceNumber().type(ReferenceNumber, { force: true })
+  O2CTransferInitiatePage.getType().select(this.data5.O2CTransferInitiate.type, { force: true })
+  O2CTransferInitiatePage.getNumber().type(number, { force: true })
+  O2CTransferInitiatePage.getRemarks().type(getRandomName(), { force: true })
+
       })
 
 And('logout the user', function () {
