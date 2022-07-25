@@ -279,7 +279,7 @@ Then('Confirm the initiated churn request', function () {
       .as('windowConfirm')
     cy.stub($win.console, 'log').as('consoleLog')
     cy.wrap($body)
-    churnManagementPage.getChurnApprovalSubmitButton().click({ force: true }).should(function () {
+    .find('[id="appchurn"]').click({ force: true }).should(function () {
         expect(this.windowConfirm).to.be.calledWith('Are you sure you want to Approve?')
         //expect(this.consoleLog).to.be.calledWith('CONFIRMED')  // passes
       })
