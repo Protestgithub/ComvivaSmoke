@@ -365,7 +365,7 @@ Then('Confirmation message is displayed', function() {
   })
 //------------------------------------Approve----------------------------------------------------------
 When('Navigate to Approvals and filter by Submitted status', function () {
-  welcomePage.getApprovalTab().click()
+  welcomePage.getApprovaltab().click()
   //------------------------------------Filter the data--------------------------------------------------
   pageLogin.getiFrame()
   approvalPage.getFilter().click({ force: true })
