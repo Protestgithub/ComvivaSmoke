@@ -161,7 +161,9 @@ Then('Confirmation message is displayed', function () {
 When('Navigate to Approvals and filter by Submitted status', function () {
   welcomePage.getUserManagementOption().scrollIntoView()
   welcomePage.getApprovalTab().click()
-
+ cy.wait(2000)
+ welcomePage.getApprovalButtonTab().click()
+ cy.wait(2000)
   //------------------------------------Filter the data--------------------------------------------------
   pageLogin.getiFrame()
   approvalPage.getFilter().click({ force: true })
@@ -832,6 +834,9 @@ And('Search with the KYC Number', function () {
 When('Navigate to Approvals and filter by Modification of user status', function () {
   welcomePage.getUserManagementOption().scrollIntoView()
   welcomePage.getApprovalTab().click()
+   cy.wait(2000)
+ welcomePage.getApprovalButtonTab().click()
+ cy.wait(2000)
   //----------Filter the data
   cy.wait(8000)
   pageLogin.getiFrame()
@@ -1292,6 +1297,9 @@ Then('Verify the user resume Confirmation message', function () {
 When('Navigate to Approvals and filter by Submitted status', function () {
   welcomePage.getUserManagementOption().scrollIntoView()
   welcomePage.getApprovalTab().click()
+   cy.wait(2000)
+ welcomePage.getApprovalButtonTab().click()
+ cy.wait(2000)
   //------------------------------------Filter the data--------------------------------------------------
   pageLogin.getiFrame()
   approvalPage.getFilter().click({ force: true })
