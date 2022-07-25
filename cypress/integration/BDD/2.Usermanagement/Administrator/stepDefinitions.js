@@ -155,7 +155,9 @@ Then('Confirmation message is displayed', function () {
 When('Navigate to Approvals and filter by Submitted status', function () {
   welcomePage.getUserManagementOption().scrollIntoView()
   welcomePage.getApprovalTab().click()
-
+ cy.wait(2000)
+ welcomePage.getApprovalButtonTab().click()
+ cy.wait(2000)
   //------------------------------------Filter the data--------------------------------------------------
   pageLogin.getiFrame()
   approvalPage.getFilter().click({ force: true })
@@ -357,6 +359,9 @@ And('Confirm the edit details Of the User', function () {
 And('Navigate to the Approvals', function () {
   welcomePage.getUserManagementOption().scrollIntoView()
   welcomePage.getApprovalTab().click()
+ cy.wait(2000)
+ welcomePage.getApprovalButtonTab().click()
+ cy.wait(2000)
   pageLogin.getiFrame()
 })
 
