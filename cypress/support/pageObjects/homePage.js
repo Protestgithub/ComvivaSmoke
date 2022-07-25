@@ -37,9 +37,10 @@ class homePage {
     cy.get('[data-testid="menu.ums_approvals"]')
     }
     getApprovalButtonTab(){
-
-    
     cy.get('[data-testid="menu.ums_approvals"] > ul > li > a').contains("Approvals")
+    }
+    getApprovaltab() {
+        return cy.get('[data-testid="test-UMS_APPROVALS"]')
     }
     getLogoutButton() {
 
