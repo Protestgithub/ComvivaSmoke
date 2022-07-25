@@ -3,8 +3,12 @@ class authorizationManagement {
         return cy.get('[data-testid="test-AUTH_PROFILE"]')
     }
     getApprovals() {
-        return cy.get('[data-testid="test-UMS_APPROVALS"]')
+        return cy.get('#collapsible_listnode_18 > .fd-nested-list__title')
     }
+    getApprovalButtonTab() {
+        return cy.get('[data-testid="menu.ums_approvals"] > .fd-nested-list > :nth-child(1) > [data-testid="test-undefined"]')
+    } 
+
 
     getAddProfile() {
         return cy.iframe().find('[id="add-profile"]')
