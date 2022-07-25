@@ -329,7 +329,7 @@ And('Click On System Admin and select Single User',function(){
 })
 
 And('Enter all required Fields',function(){
-  loginId = "SYS" + mobile
+  loginId = "SY" + mobile
 registerPage.getLastName().type(getRandomName(), {force: true})
 cy.getrandomUserEmailID1()
 registerPage.getLoginID().clear()
