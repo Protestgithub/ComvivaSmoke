@@ -378,15 +378,15 @@ When('User clicks on transfer rule approval', function () {
   welcomePage.getTransferRuleOption().click()
   welcomePage.getTransferRuleApproval().click()
   cy.wait(2000)
-  transferruleapprovalpage.getTransferRule().click()
+ // transferruleapprovalpage.getTransferRule().click()
 })
 And('Select rule and approve', function () {
   cy.wait(3000)
-  // transferruleapprovalpage.getFirstApproval().contains("Approve").click()
+  transferruleapprovalpage.getFirstApproval().contains("Approve").click()
 })
 Then('click on submit', function () {
   cy.wait(2000)
-  //  transferruleapprovalpage.getSubmitbttn().click()
+    transferruleapprovalpage.getSubmitbttn().click()
 })
 
 //-------------------O2C transfer rules--------------------------------------------//
