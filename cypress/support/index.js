@@ -42,4 +42,9 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 
 //import "cypress-fail-fast";
 
-
+afterEach(()=>{
+  if (stepResult?.status === "failed") {
+       cy.setCookie('shouldStop', 'true');
+      Cypress.runner.stop();
+    }
+})
