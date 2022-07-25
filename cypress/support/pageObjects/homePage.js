@@ -34,8 +34,11 @@ class homePage {
     
     }
     getApprovalTab() {
-        return cy.get('[data-testid="test-UMS_APPROVALS"] > .fd-nested-list__title')
+        return cy.get('#collapsible_listnode_18 > .fd-nested-list__title')
     }
+    getApprovalButtonTab() {
+        return cy.get('[data-testid="menu.ums_approvals"] > .fd-nested-list > :nth-child(1) > [data-testid="test-undefined"]')
+    }    
     getLogoutButton() {
 
         return cy.get('a[data-testid="logout-link"]')
@@ -82,9 +85,6 @@ class homePage {
         return cy.get('[data-testid="menu.user_management"]').find('[title="Register"]')
     }
 
-    getApprovalTab() {
-        return cy.get('[data-testid="test-UMS_APPROVALS"] > .fd-nested-list__title')
-    }
     getLogoutButton() {
 
         return cy.get('a[data-testid="logout-link"]')
