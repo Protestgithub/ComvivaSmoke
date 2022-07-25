@@ -34,12 +34,12 @@ class homePage {
     
     }
     getApprovalTab() {
-    cy.get('[data-testid="menu.ums_approvals"]').click()
+    cy.get('[data-testid="menu.ums_approvals"]')
     }
-    getApprovalButton(){
+    getApprovalButtonTab(){
 
     
-    cy.get('[data-testid="menu.ums_approvals"] > ul > li > a').contains("Approvals").click()
+    cy.get('[data-testid="menu.ums_approvals"] > ul > li > a').contains("Approvals")
     }
     getLogoutButton() {
 
