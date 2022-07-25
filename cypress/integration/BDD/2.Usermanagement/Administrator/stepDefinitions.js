@@ -153,7 +153,7 @@ Then('Confirmation message is displayed', function () {
 
 
 When('Navigate to Approvals and filter by Submitted status', function () {
-  welcomePage.getUserManagementOption().scrollIntoView()
+  //welcomePage.getUserManagementOption().scrollIntoView()
   welcomePage.getApprovalTab().click()
  cy.wait(2000)
  welcomePage.getApprovalButtonTab().click()
@@ -357,7 +357,7 @@ And('Confirm the edit details Of the User', function () {
   manageUsersPage.getDoneButton().click({ force: true })
 })
 And('Navigate to the Approvals', function () {
-  welcomePage.getUserManagementOption().scrollIntoView()
+//  welcomePage.getUserManagementOption().scrollIntoView()
   welcomePage.getApprovalTab().click()
  cy.wait(2000)
  welcomePage.getApprovalButtonTab().click()
