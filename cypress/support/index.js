@@ -23,12 +23,12 @@ import './authourizationcommands'
 import './comissioncommands'
 import './securityCommands'
 import './subscriberCommands'
-import 'cypress-failed-log'
+//import 'cypress-failed-log'
 
 module.exports = (on, config) => {
     on("file:preprocessor", cucumber());
   };
-  require('cypress-failed-log')    
+//  require('cypress-failed-log')    
   
 Cypress.on('uncaught:exception', (err, runnable) => {
     // returning false here prevents Cypress from
