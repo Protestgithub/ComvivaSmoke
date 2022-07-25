@@ -25,9 +25,9 @@ module.exports = (on, config) => {
 //  require("cypress-fail-fast/plugin")(on, config);
   on('file:preprocessor', cucumber()),
   on('task', {
-    failed: require('cypress-failed-log/src/failed')(),
+   // failed: require('cypress-failed-log/src/failed')(),
     })
-    return config;
+//    return config;
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
 }
