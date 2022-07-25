@@ -211,15 +211,14 @@ And('Enter All the Mandatory Details', function(){
          O2CMsisdn = data.registeredMobile
         data.O2CMsisdn1 =O2CMsisdn
         cy.writeFile(O2CFile, data)
-        O2CTransferInitiatePage.getMSISDN().type(O2CMsisdn, {force: true})
-        O2CTransferInitiatePage.getTransferAmount().type(TransferAmount, {force: true}).should(function () {
+        O2CTransferInitiatePage.getMSISDN().type(O2CMsisdn, {force: true}).should(function () {
             expect(this.windowConfirm).to.be.calledWith('Channel User Does Not Exist')
             //expect(this.consoleLog).to.be.calledWith('CONFIRMED')  // passes
           })
         })
       })
 
-        
+        O2CTransferInitiatePage.getTransferAmount().type(TransferAmount, {force: true})
         O2CTransferInitiatePage.getReferenceNumber().type(ReferenceNumber, {force: true})
         O2CTransferInitiatePage.getType().select(this.data5.O2CTransferInitiate.type, {force: true})
         O2CTransferInitiatePage.getNumber().type(number, {force: true})
