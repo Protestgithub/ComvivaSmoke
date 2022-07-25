@@ -137,10 +137,21 @@ And('Enter All the Mandatory details and type Invalid Character in Transfer amou
   cy.wait(3000)
   cy.fixture('userData/BusinessUsersData.json').then((usermobile) => {
   let BsnuserMobile = usermobile.registeredMobile
-  
-  
-  //O2CTransferInitiatePage.getMSISDN().type(BsnuserMobile, { force: true })
+  O2CTransferInitiatePage.getMSISDN().type(BsnuserMobile, { force: true })
   })
+    cy.wait(6000)
+  cy.get('.fd-page.iframeContainer.svelte-1v5e28n > iframe').then(($iframe) => {
+  const $body = $iframe.contents().find('body')
+  const $win = $iframe[0].contentWindow
+  cy.stub($win, 'alert', () => true)
+    .as('windowConfirm')
+  cy.stub($win.console, 'log').as('consoleLog')
+  cy.wrap($body)
+    .find('input[name="amount"]').click({ force: true })
+    .should(function () {
+      expect(this.windowConfirm).to.be.calledWith("Channel User Does Not Exist")
+    })
+})
   O2CTransferInitiatePage.getTransferAmount().type(getRandomName(), { force: true })
   O2CTransferInitiatePage.getReferenceNumber().type(ReferenceNumber, { force: true })
   O2CTransferInitiatePage.getType().select(this.data5.O2CTransferInitiate.type, { force: true })
@@ -159,9 +170,22 @@ And('Enter All the Details', function () {
   cy.wait(3000)
   cy.fixture('userData/BusinessUsersData.json').then((usermobile) => {
     let BsnuserMobile = usermobile.registeredMobile
-    //O2CTransferInitiatePage.getMSISDN().type(BsnuserMobile, { force: true })
+    O2CTransferInitiatePage.getMSISDN().type(BsnuserMobile, { force: true })
     })
-    O2CTransferInitiatePage.getTransferAmount().type(Amount, { force: true })
+  cy.wait(6000)
+  cy.get('.fd-page.iframeContainer.svelte-1v5e28n > iframe').then(($iframe) => {
+  const $body = $iframe.contents().find('body')
+  const $win = $iframe[0].contentWindow
+  cy.stub($win, 'alert', () => true)
+    .as('windowConfirm')
+  cy.stub($win.console, 'log').as('consoleLog')
+  cy.wrap($body)
+    .find('input[name="amount"]').click({ force: true })
+    .should(function () {
+      expect(this.windowConfirm).to.be.calledWith("Channel User Does Not Exist")
+    })
+})
+  O2CTransferInitiatePage.getTransferAmount().type(Amount, { force: true })
   O2CTransferInitiatePage.getReferenceNumber().type(ReferenceNumber, { force: true })
   O2CTransferInitiatePage.getType().select(this.data5.O2CTransferInitiate.type, { force: true })
   O2CTransferInitiatePage.getNumber().type(number, { force: true })
@@ -174,6 +198,8 @@ And('Confirm the displayed Error Message', function () {
  // O2CTransferInitiatePage.getErrorMessage1().should('have.text', this.data5.O2CTransferInitiate.ErrorMessage1, { force: true })
  // cy.wait(2000)
 })
+
+
 
 
 
@@ -203,11 +229,27 @@ And('Enter All the Mandatory Details', function () {
   var O2CMsisdn = data.registeredMobile
   //O2CTransferInitiatePage.getMSISDN().type("7735575036", {force: true})
 
-// O2CTransferInitiatePage.getMSISDN().type(O2CMsisdn, {force: true})
+ O2CTransferInitiatePage.getMSISDN().type(O2CMsisdn, {force: true})
   data.O2CMsisdn1 =O2CMsisdn
   cy.writeFile(O2CFile, data)
 })
+
+cy.wait(6000)
+   cy.get('.fd-page.iframeContainer.svelte-1v5e28n > iframe').then(($iframe) => {
+  const $body = $iframe.contents().find('body')
+  const $win = $iframe[0].contentWindow
+  cy.stub($win, 'alert', () => true)
+    .as('windowConfirm')
+  cy.stub($win.console, 'log').as('consoleLog')
+  cy.wrap($body)
+    .find('input[name="amount"]').click({ force: true })
+    .should(function () {
+   expect(this.windowConfirm).to.be.calledWith("Channel User Does Not Exist")
+
+    })
+})
   O2CTransferInitiatePage.getTransferAmount().type(TransferAmount, { force: true })
+ 
   O2CTransferInitiatePage.getReferenceNumber().type(ReferenceNumber, { force: true })
   O2CTransferInitiatePage.getType().select(this.data5.O2CTransferInitiate.type, { force: true })
   O2CTransferInitiatePage.getNumber().type(number, { force: true })
@@ -297,17 +339,33 @@ When('Navigate to Operator to channel and click on O2C transfer Approval2', func
   transferruleapprovalpage.getApprovalTransferrule().click({ force: true })
 })
 var O2CMsisdn
-      And('Enter All the Mandatory Details', function(){
+      And('Enter All the Mandatory Details1', function(){
         cy.wait(3000)
         cy.wait(2000)
         var BBAFile ="cypress/fixtures/userData/BusinessUsersData.json"
         var O2CFile= "cypress/fixtures/userData/O2Cdata.json"
         cy.readFile(BBAFile).then((data) => {
          O2CMsisdn = data.registeredMobile
-      //  O2CTransferInitiatePage.getMSISDN().type(O2CMsisdn, {force: true})
+           O2CTransferInitiatePage.getMSISDN().type("7735575036", {force: true})
+
+       // O2CTransferInitiatePage.getMSISDN().type(O2CMsisdn, {force: true})
         data.O2CMsisdn1 =O2CMsisdn
         cy.writeFile(O2CFile, data)
       })
+      cy.wait(6000)
+   cy.get('.fd-page.iframeContainer.svelte-1v5e28n > iframe').then(($iframe) => {
+  const $body = $iframe.contents().find('body')
+  const $win = $iframe[0].contentWindow
+  cy.stub($win, 'alert', () => true)
+    .as('windowConfirm')
+  cy.stub($win.console, 'log').as('consoleLog')
+  cy.wrap($body)
+    .find('input[name="amount"]').click({ force: true })
+    .should(function () {
+   expect(this.windowConfirm).to.be.calledWith("Channel User Does Not Exist")
+
+    })
+})
               O2CTransferInitiatePage.getTransferAmount().type(TransferAmount, {force: true})
         O2CTransferInitiatePage.getReferenceNumber().type(ReferenceNumber, {force: true})
         O2CTransferInitiatePage.getType().select(this.data5.O2CTransferInitiate.type, {force: true})
