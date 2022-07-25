@@ -50,8 +50,6 @@ When Navigate to Operator to channel and click on O2C transfer Approval2
 And Confirm the displayed Error Message
 
 
-
-############################################# Likith ######################################################
 ############################################# Likith ######################################################
 
 # Author: Likith R
@@ -159,7 +157,7 @@ When Navigate to Operator to channel and click on O2C transfer Approval2
 Scenario:To verify that the O2C transaction should go for approval 2 only if transaction amount is greater than the O2C limit.
 Given Login into Mobiquity Portal as System admin Maker
 When Navigate to Operator to channel and click on O2C transfer initiate
-And Enter All the Mandatory Details
+And Enter All the Mandatory Details1
 Then Click on submit and Confirm2
 And logout the user
 
@@ -168,12 +166,5 @@ When Navigate to Operator to channel and click on O2C transfer Approval1
 And logout the user
 Given Login into Mobiquity Portal as System admin Checker2
 When Navigate to Operator to channel and click on O2C transfer Approval2
-
-
-
-
-
-
-
 
 
