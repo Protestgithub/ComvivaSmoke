@@ -182,8 +182,10 @@ Given('Login into Mobiquity Portal as Business admin User1', function () {
   
   
   When('Navigate to Approvals and filter by Submitted status', function () {
-    welcomePage.getUserManagementOption().scrollIntoView()
-    welcomePage.getApprovalTab().click()
+  welcomePage.getApprovalTab().click()
+ cy.wait(2000)
+ welcomePage.getApprovalButtonTab().click()
+ cy.wait(2000)
   
     //------------------------------------Filter the data--------------------------------------------------
     pageLogin.getiFrame()
