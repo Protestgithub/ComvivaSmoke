@@ -196,7 +196,9 @@ Then('Confirmation message is displayed', function () {
 When('Navigate to Approvals and filter by Submitted status', function () {
   welcomePage.getUserManagementOption().scrollIntoView()
   welcomePage.getApprovalTab().click()
-
+ cy.wait(2000)
+ welcomePage.getApprovalButtonTab().click()
+ cy.wait(2000)
   //------------------------------------Filter the data--------------------------------------------------
   pageLogin.getiFrame()
   approvalPage.getFilter().click({ force: true })
@@ -613,7 +615,9 @@ Then('Confirm the edit details', function () {
 When('Navigate to Approvals and filter by Modification of user status', function () {
   welcomePage.getUserManagementOption().scrollIntoView()
   welcomePage.getApprovalTab().click()
-
+ cy.wait(2000)
+ welcomePage.getApprovalButtonTab().click()
+ cy.wait(2000)
   //----------Filter the data
   pageLogin.getiFrame()
   approvalPage.getFilter().click({ force: true })
@@ -686,6 +690,9 @@ Then('Verify the user suspend Confirmation message', function () {
 When('Navigate to Approvals', function () {
   welcomePage.getUserManagementOption().scrollIntoView()
   welcomePage.getApprovalTab().click()
+   cy.wait(2000)
+ welcomePage.getApprovalButtonTab().click()
+ cy.wait(2000)
 })
 
 And('Admin click on Suspended user data', function () {
@@ -782,6 +789,9 @@ And('Enter Mobile number or KYC number of subscriber user', function () {
 When('Navigate to Approvals and filter by Submitted status', function () {
   welcomePage.getUserManagementOption().scrollIntoView()
   welcomePage.getApprovalTab().click()
+   cy.wait(2000)
+ welcomePage.getApprovalButtonTab().click()
+ cy.wait(2000)
   //------------------------------------Filter the data--------------------------------------------------
   pageLogin.getiFrame()
   approvalPage.getFilter().click({ force: true })
