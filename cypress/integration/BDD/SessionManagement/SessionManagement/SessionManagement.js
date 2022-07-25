@@ -61,7 +61,7 @@ Then('Logout', function(){
   welcomePage.getLogoutYesButton().click()  
 })
 Given('Login into Mobiquity Portal as Subscriber', function () {
-  cy.visit(Cypress.env("Adminurl"))
+  cy.visit(Cypress.env("Adminurl") + "/dfscontainer/#/subscriber/") 
   cy.visit(Cypress.env("Adminurl") + "/dfscontainer/#/subscriber/")   
   cy.wait(3000)
   cy.readFile('cypress/fixtures/userData/subscriberReg.json').then((data)=>{
