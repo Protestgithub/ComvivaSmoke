@@ -87,8 +87,8 @@ And('Enter all the required details and click on Submit',function(){
 
   ERM.getiframeERM().frameLoaded()
   cy.wait(3000)
-  ERM.getbasecurrency().select(this.data1.erm.frombasecurrency,{force:true})
-  ERM.gettargetcurrency().select(this.data1.erm.fromTargetCurrecny,{force:true})
+  ERM.getbasecurrency().select(this.data1.erm.fromTargetCurrecny,{force:true})
+  ERM.gettargetcurrency().select(this.data1.erm.frombasecurrency,{force:true})
   ERM.getvalidfrom().type(d.toLocaleDateString('en-GB'),{force:true})
   ERM.getvalidTo().click()
   ERM.getnextyear().click()
@@ -140,8 +140,8 @@ When('Navigate to Exchange Rate Management and Click Update Exchange Rate',funct
 And('Enter all details and click on Submit',function(){
   ERM.getiframeERM().frameLoaded()
   cy.wait(3000)
-  UER.getupdatedbasecurrency().select(this.data1.updateder.frombasecurrency1,{force:true})
-  UER.getupdatedtargetcurrency().select(this.data1.updateder.fromTargetCurrecny1,{force:true})
+  UER.getupdatedbasecurrency().select(this.data1.updateder.fromTargetCurrecny1,{force:true})
+  UER.getupdatedtargetcurrency().select(this.data1.updateder.frombasecurrency1,{force:true})
   ERM.getvalidfrom().type(d.toLocaleDateString('en-GB'),{force:true})
   UER.getupdatedvalidto().within(function(){
     cy.get('td').eq(1)
