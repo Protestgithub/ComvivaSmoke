@@ -319,7 +319,6 @@ When('Navigate to User Management and click on Register',function(){
 
   welcomePage.getUserManagementOption().click()
   welcomePage.getRegisterOption().click()
-  cy.wait(5000)
 
 })
 
