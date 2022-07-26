@@ -48,7 +48,7 @@ When Navigate to User Management and click on Register
 And Click On System Admin and select Single User
 And Enter all required Fields
 Then Confirmation message is displayed
-Then Logout
+#Then Logout
 Given Login into Mobiquity Portal as Super admin Checker after Logout
 When Navigate to Approvals and filter by Submitted status
 And User click on submitted user data
@@ -65,7 +65,7 @@ When Navigate to User Management and click on Register
 And Click On System Admin and select Single User
 And Enter all required Fields
 Then Confirmation message is displayed
-Then Logout
+#Then Logout
 Given Login into Mobiquity Portal as Super admin Checker after Logout
 When Navigate to Approvals and filter by Submitted status
 And User click on submitted user data
