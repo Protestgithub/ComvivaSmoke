@@ -4,7 +4,7 @@ class SecurityProfilePage{
         return cy.iframe().find('.text-secondary')
     }
     getAddProfile(){
-        return cy.iframe().find('.addProfile-Btn')
+       return cy.iframe().find('.addProfile-Btn > Button')
     }
     getEnterProfileName(){
         return cy.iframe().find('#profileName')
