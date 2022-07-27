@@ -59,7 +59,7 @@ afterEach(() => {
           testCase: testState.formatTestCase(testState.currentScenario),
         };
       });
-      Cypress.runner.stop()
+  //    Cypress.runner.stop()
     }
   }
 });
