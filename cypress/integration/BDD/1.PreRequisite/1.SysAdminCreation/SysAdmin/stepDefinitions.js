@@ -172,7 +172,7 @@ When('Navigate to Security and click to select security profile', function () {
 })
 And('Click on add profile select user type as subscriber and fill the details', function () {
 
-  securityProfilePage.getAddProfile().click()
+  securityProfilePage.getAddProfile().click({force:true})
   //securityProfilePage.getSelectSubUserTypeTab().click({ force: true })
  // securityProfilePage.getSelectSubUserTypeTab().focused()
   securityProfilePage.getUserRole().eq(0).click({ force: true })
