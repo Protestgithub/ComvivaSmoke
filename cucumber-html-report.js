@@ -6,7 +6,6 @@ report.generate({
     jsonDir: './cypress/cucumber-json',
     reportPath: './reports/cucumber-htmlreport_PLATFORM_JENKINS_BUILD.html',
     displayDuration : true,
-    reportSuiteAsScenarios : true,
     scenarioTimestamp : true,
     launchReport : true,
     metadata:{
