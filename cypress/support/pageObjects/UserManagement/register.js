@@ -169,7 +169,7 @@ class register {
 
     getConfirmationText()
     {
-        return cy.iframe().find('.text-center').should('have.text',' SUCCESS User registration is successfully initiated. Kindly contact admin for approval')
+        return cy.iframe().find('.text-center')
     }
     getConfirmationText1()
     {
