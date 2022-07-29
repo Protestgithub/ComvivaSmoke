@@ -37,7 +37,7 @@ class homePage {
         return cy.get('#collapsible_listnode_18 > .fd-nested-list__title')
     }
     getApprovalButtonTab(){
-    cy.get('[data-testid="menu.ums_approvals"] > ul > li > a').contains("Approvals")
+        return cy.get('[data-testid="menu.ums_approvals"] > ul > li > a').contains("Approvals")
     }
     getApprovaltab() {
         return cy.get('[data-testid="test-UMS_APPROVALS"]')
