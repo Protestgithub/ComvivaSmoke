@@ -554,6 +554,6 @@ And('Select User type as Subscriber and click on Subscriber', function () {
 })
 
 Then('Verify User registration have security profile', function () {
-  securityProfilePage.getSecurityProfiletitle().should('have.text', 'Security  ')
+  registerPage.getSecurityProfile().select("subscriberSecurityProfile", { force: true }).should("contain.text","subscriberSecurityProfile")
 })
 
