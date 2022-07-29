@@ -153,26 +153,6 @@ And User click on submitted user data
 And Approve the Users
 Then User status is approved
 
-#Author: Arpitha C
-# Last Updated: 25/04/2022
-# Comments : refered here is narendra 
-# Scenario_ID : TC_55
-@test
-
-Scenario:To verify that after successful creation of the businsess user, notification should be sent to the user
-Given Login into Mobiquity Portal as System admin Maker
-When Navigate to User Management and Click on register
-And Select User type as Business and Select user role
-And Enter all the required business user details
-Then Confirmation message is displayed
-Then Logout
-Given Login into Mobiquity Portal as another System admin Checker1 after logout
-When Navigate to Approvals and filter by Submitted status 
-And User click on submitted user data
-And Approve the Users
-Then User status is approved
-
-
 
 # Author: Arpitha C
 # Last Updated: 25/04/2022
@@ -354,3 +334,22 @@ Then User status is Resumed
 Scenario:Asserting the Resumed business user login 
 Given Login into Mobiquity Portal as Business admin User1
 
+
+#Author: Arpitha C
+# Last Updated: 25/04/2022
+# Comments : refered here is narendra 
+# Scenario_ID : TC_55
+@test
+
+Scenario:To verify that after successful creation of the businsess user, notification should be sent to the user
+Given Login into Mobiquity Portal as System admin Maker
+When Navigate to User Management and Click on register
+And Select User type as Business and Select user role
+And Enter all the required business user details
+Then Confirmation message is displayed
+Then Logout
+Given Login into Mobiquity Portal as another System admin Checker1 after logout
+When Navigate to Approvals and filter by Submitted status 
+And User click on submitted user data
+And Approve the Users
+Then User status is approved
