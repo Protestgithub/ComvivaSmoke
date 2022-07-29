@@ -28,7 +28,7 @@ Feature: Authorization profile
         When  Select Authorization profile
         Then Click on Modify Icon in front of authorization profile to modify
         Then Logout
-        Given Login into Mobiquity Portal as System admin Maker after Logout
+        Given Login into Mobiquity Portal as another System admin Checker1 after logout
         Then User approval for modified Authorization profile
 
     # # # Author: Sudheer Baraker
