@@ -27,7 +27,8 @@ const SubMob='userData/subscriberReg.json'
 amount = uuuid()
 var loginId, mobile, BusinessMobile, KycValue, amount, name, ifscnum, accnumber, BankData
 const uuid = () => Cypress._.random(1e8)
-const kycid = () => Cypress._.random(1e8)
+const timestamp = (new Date).getTime()
+const kycid = timestamp
 mobile = "77" + uuid()
 var subRegistration = 'cypress/fixtures/userData/subscriberReg.json'
 var SubProfileName = 'cypress/fixtures/profileData/Profile.json'
@@ -428,7 +429,7 @@ Then('Click on Next', function () {
 })
 And('Enter all the mandatory KYC details.', function () {
   
-  KycValue = "BZ" + kycid()
+  KycValue = "Z" + kycid
   registerPage.getNextButtonBasic().click({ force: true })
   registerPage.getKYCButton().click({ force: true })
   registerPage.getKYCIDType().select(this.data2.subPersonalInfo.KYCIDType, { force: true })
@@ -516,7 +517,7 @@ And('Enter all the required business user details', function () {
 
   registerPage.getNextButtonBasic().eq(0).click({ force: true })
 
-  KycValue = "AZ" + kycid()
+  KycValue = "A" + kycid
   //---------------------KYC-----------------------------------------------------------------------
   registerPage.getKYCButton().eq(0).click({ force: true })
   cy.wait(2000)
@@ -624,8 +625,8 @@ accnumber="4239346"+uuidbkd()
 //####Creating Business User For Suspension
 And('Enter all the required business user details1', function () {
 
-  const uuid = () => Cypress._.random(1e8)
-  mobile = "77" + uuid()
+  const uuid1 = () => Cypress._.random(1e8)
+  mobile = "77" + uuid1()
   cy.wait(2000)
   const lgid = () => Cypress._.random(1e5)
   loginId = this.data2.personalInfo.name + lgid()
@@ -657,7 +658,7 @@ And('Enter all the required business user details1', function () {
 
   registerPage.getNextButtonBasic().eq(0).click({ force: true })
 
-  KycValue = "AZ" + kycid()
+  KycValue = "A" + kycid
   //---------------------KYC-----------------------------------------------------------------------
   registerPage.getKYCButton().eq(0).click({ force: true })
   cy.wait(2000)
