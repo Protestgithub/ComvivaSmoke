@@ -24,7 +24,13 @@ class transferToUnregistred
     {
         return cy.iframe().find('[id="transferToUnregistered_submit_update"]')
     }
+ getAssertMessage()
 
+    {
+
+        return cy.iframe().find('span[class="errorMessage"]')
+
+    }
    
 }
 export default transferToUnregistred
