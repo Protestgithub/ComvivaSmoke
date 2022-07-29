@@ -97,4 +97,5 @@ And('Transfer to Unregistered Enter subscriber Mobile number or transaction ID',
 Then('Transfer to Unregistered Click on submit', function () {
   cy.wait(3000)
   transferToUnregistredPage.getTransferToUnregistredSubmitUpdate().click({ force: true })
+  transferToUnregistredPage.getAssertMessage().should('contain.text', this.data7.errorMessage)
 })
