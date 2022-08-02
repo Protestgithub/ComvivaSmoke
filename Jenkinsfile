@@ -31,8 +31,8 @@ pipeline {
                 
                 bat "npm i"
                 bat "npm i cypress-parallel"
+                 bat "./node_modules/.bin/cypress.cmd install --force "
                 bat "npm run cy:parallel --env Adminurl=http://125.16.139.20:8023 ,apiBaseURL=http://172.25.48.237:3133 --browser ${BROWSER} --spec ${SPEC}  "
-                bat ".\node_modules\.bin\cypress.cmd install --force "
 
 
             }
