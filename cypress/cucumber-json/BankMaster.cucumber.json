@@ -1,0 +1,113 @@
+[
+  {
+    "description": "    This feature includes registering, Modifying and Approval of Business Admin and\n    Customer Support Admin Users by System Admin",
+    "keyword": "Feature",
+    "name": "Bank Management",
+    "line": 1,
+    "id": "bank-management",
+    "tags": [],
+    "uri": "BankMaster.feature",
+    "elements": [
+      {
+        "id": "bank-management;to-verify-that-the-proper-error-message-should-get-generated-on-screen-if-user-add-bank-on-web-without-entering-bank-name",
+        "keyword": "Scenario",
+        "line": 13,
+        "name": "To verify that the Proper error message should get generated on screen if user add bank on web without entering Bank Name",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 11
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 14,
+            "name": "Login with Master Admin Checker",
+            "result": {
+              "status": "passed",
+              "duration": 11254000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 15,
+            "name": "Navigate to Bank Master and Click on it",
+            "result": {
+              "status": "passed",
+              "duration": 3930000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "Enter all the details Except Bank Name",
+            "result": {
+              "status": "passed",
+              "duration": 12416000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 17,
+            "name": "Confirm the Error message",
+            "result": {
+              "status": "passed",
+              "duration": 3548000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "bank-management;to-verify-that-the-master-should-be-able-to-associate-or-disassociate-services-of-bank",
+        "keyword": "Scenario",
+        "line": 27,
+        "name": "To verify that the master should be able to associate or disassociate services of bank",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 25
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 28,
+            "name": "Login with Master Admin Checker",
+            "result": {
+              "status": "passed",
+              "duration": 9290000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 29,
+            "name": "Navigate to MFS provider Bank type master and Click on Modify or Delete Bank",
+            "result": {
+              "status": "passed",
+              "duration": 2939000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 30,
+            "name": "Select the bank and associate new services",
+            "result": {
+              "status": "passed",
+              "duration": 124901000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

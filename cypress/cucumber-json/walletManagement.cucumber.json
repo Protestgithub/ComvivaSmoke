@@ -1,0 +1,105 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "WalletManagement",
+    "line": 1,
+    "id": "walletmanagement",
+    "tags": [],
+    "uri": "walletManagement.feature",
+    "elements": [
+      {
+        "id": "walletmanagement;to-verify-that-system-admin-should-be-able-to-view/delete/modify-the-mwallet-successfully.",
+        "keyword": "Scenario",
+        "line": 12,
+        "name": "To verify that System admin should be able to view/delete/modify the Mwallet successfully.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 10
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 13,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 9462000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 14,
+            "name": "Navigate Multiple Wallet Management and Click on Modify Wallet",
+            "result": {
+              "status": "passed",
+              "duration": 2645000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "Click on Added Wallet and Click on Update",
+            "result": {
+              "status": "passed",
+              "duration": 14024000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "walletmanagement;to-verify-that-system-admin-is-not-able-to-add-wallet-with-the-same-name-of-already-existing-wallet.",
+        "keyword": "Scenario",
+        "line": 25,
+        "name": "To verify that System admin is not able to Add wallet with the same name of already existing wallet.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 23
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 26,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "failed",
+              "error_message": "CypressError: Timed out retrying after 15050ms: `cy.click()` failed because this element is not visible:\n\n`<button class=\"fd-shellbar__button fd-button fd-identifier fd-identifier--xs fd-identifier--circle svelte-1jh0v0i\" style=\"background-image: url('./default_profile_pic.png');background-size:30px;background-repeat: no-repeat;background-position: center;\" aria-expanded=\"false\" aria-haspopup=\"true\" title=\"NvrKc hhJGW\"></button>`\n\nThis element `<button.fd-shellbar__button.fd-button.fd-identifier.fd-identifier--xs.fd-identifier--circle.svelte-1jh0v0i>` is not visible because its parent `<div.fd-shellbar.hideNavComponent.svelte-1jh0v0i>` has CSS property: `display: none`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at runVisibilityCheck (http://172.25.48.237/__cypress/runner/cypress_runner.js:168736:76)\n    at $Cy.ensureStrictVisibility (http://172.25.48.237/__cypress/runner/cypress_runner.js:168752:12)\n    at runAllChecks (http://172.25.48.237/__cypress/runner/cypress_runner.js:154700:14)\n    at retryActionability (http://172.25.48.237/__cypress/runner/cypress_runner.js:154755:16)\n    at tryCatcher (http://172.25.48.237/__cypress/runner/cypress_runner.js:13022:23)\n    at Promise.attempt.Promise.try (http://172.25.48.237/__cypress/runner/cypress_runner.js:10296:29)\n    at whenStable (http://172.25.48.237/__cypress/runner/cypress_runner.js:173835:65)\n    at http://172.25.48.237/__cypress/runner/cypress_runner.js:173290:14\n    at tryCatcher (http://172.25.48.237/__cypress/runner/cypress_runner.js:13022:23)\n    at Promise._settlePromiseFromHandler (http://172.25.48.237/__cypress/runner/cypress_runner.js:10957:31)\n    at Promise._settlePromise (http://172.25.48.237/__cypress/runner/cypress_runner.js:11014:18)\n    at Promise._settlePromise0 (http://172.25.48.237/__cypress/runner/cypress_runner.js:11059:10)\n    at Promise._settlePromises (http://172.25.48.237/__cypress/runner/cypress_runner.js:11139:18)\n    at Promise._fulfill (http://172.25.48.237/__cypress/runner/cypress_runner.js:11083:18)\n    at http://172.25.48.237/__cypress/runner/cypress_runner.js:12697:46\nFrom Your Spec Code:\n    at Context.eval (http://172.25.48.237/__cypress/tests?p=cypress\\integration\\BDD\\1.TestMany\\WalletManagement\\walletManagement.feature:579:29)"
+            },
+            "embeddings": [
+              {
+                "mime_type": "image/png"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 27,
+            "name": "Navigate Multiple Wallet Management and Click on Add Wallet",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 28,
+            "name": "Enter Wallet name and click on Save",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

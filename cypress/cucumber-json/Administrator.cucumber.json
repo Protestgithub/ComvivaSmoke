@@ -1,0 +1,889 @@
+[
+  {
+    "description": "    This feature includes registering, Modifying and Approval of Business Admin and\n    Customer Support Admin Users by System Admin",
+    "keyword": "Feature",
+    "name": "User Management : Administrator",
+    "line": 1,
+    "id": "user-management-:-administrator",
+    "tags": [],
+    "uri": "Administrator.feature",
+    "elements": [
+      {
+        "id": "user-management-:-administrator;system-admin-is-able-to-initiate-modification-request-of-business-admin",
+        "keyword": "Scenario",
+        "line": 17,
+        "name": "System Admin is able to initiate modification request of Business Admin",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 14
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 18,
+            "name": "Login into Mobiquity Portal as System admin Checker1",
+            "result": {
+              "status": "failed",
+              "duration": 24493000000,
+              "error_message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.fd-shellbar__button--user-menu > button`, but never found it.\n    at homePage.getUserMenu (http://172.25.48.237/__cypress/tests?p=cypress\\integration\\BDD\\1.PreRequisite\\9.Users\\Administrator.feature:4107:17)\n    at Context.eval (http://172.25.48.237/__cypress/tests?p=cypress\\integration\\BDD\\1.PreRequisite\\9.Users\\Administrator.feature:1122:15)"
+            },
+            "embeddings": [
+              {
+                "mime_type": "image/png"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 19,
+            "name": "Navigate to Manage User, and search Business Admin",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 20,
+            "name": "Search Business Admin",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 21,
+            "name": "System Admin is able to view details",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 22,
+            "name": "System Admin is able to edit details",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 23,
+            "name": "Confirm the edit details",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-management-:-administrator;system-admin-is-able-to-approve-of-modification-request-of-business-admin",
+        "keyword": "Scenario",
+        "line": 33,
+        "name": "System Admin is able to approve of modification request of Business Admin",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 31
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 34,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "failed",
+              "duration": 1000000,
+              "error_message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.fd-shellbar__button--user-menu > button`, but never found it.\n    at homePage.getUserMenu (http://172.25.48.237/__cypress/tests?p=cypress\\integration\\BDD\\1.PreRequisite\\9.Users\\Administrator.feature:4107:17)\n    at Context.eval (http://172.25.48.237/__cypress/tests?p=cypress\\integration\\BDD\\1.PreRequisite\\9.Users\\Administrator.feature:1122:15)"
+            },
+            "embeddings": [
+              {
+                "mime_type": "image/png"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 35,
+            "name": "Navigate to Approvals and filter by Submitted status",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 36,
+            "name": "User click on submitted user data",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 37,
+            "name": "Approve the Users",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 38,
+            "name": "User modified is approved",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-management-:-administrator;registration-of-business-administrator-as-customer-care-admin",
+        "keyword": "Scenario",
+        "line": 48,
+        "name": "Registration of Business Administrator as Customer care Admin",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 46
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 49,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 12569000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 50,
+            "name": "Navigate to User Management and Click on register",
+            "result": {
+              "status": "passed",
+              "duration": 880000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 51,
+            "name": "Select User type as Adminstrator and click on Customer care Admin",
+            "result": {
+              "status": "passed",
+              "duration": 8882000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 52,
+            "name": "Enter all the details",
+            "result": {
+              "status": "passed",
+              "duration": 14225000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 53,
+            "name": "Confirmation message is displayed",
+            "result": {
+              "status": "passed",
+              "duration": 2035000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-management-:-administrator;approval--to-create-customer-care-admin",
+        "keyword": "Scenario",
+        "line": 62,
+        "name": "Approval  to create Customer Care Admin",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 60
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 63,
+            "name": "Login into Mobiquity Portal as System admin Checker1",
+            "result": {
+              "status": "passed",
+              "duration": 10444000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 64,
+            "name": "Navigate to Approvals and filter by Submitted status",
+            "result": {
+              "status": "passed",
+              "duration": 11069000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 65,
+            "name": "User click on submitted user data",
+            "result": {
+              "status": "passed",
+              "duration": 1041000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 66,
+            "name": "Approve the Users",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.mat-dialog-actions > button.mat-focus-indicator.btn-rounded.button-primary`, but never found it. Queried from element: <body>\n    at approvals.getApproveRequest (http://172.25.48.237/__cypress/tests?p=cypress\\integration\\BDD\\1.PreRequisite\\9.Users\\Administrator.feature:3156:26)\n    at Context.eval (http://172.25.48.237/__cypress/tests?p=cypress\\integration\\BDD\\1.PreRequisite\\9.Users\\Administrator.feature:250:16)\n    at Context.resolveAndRunStepDefinition (http://172.25.48.237/__cypress/tests?p=cypress\\integration\\BDD\\1.PreRequisite\\9.Users\\Administrator.feature:14918:29)\n    at Context.eval (http://172.25.48.237/__cypress/tests?p=cypress\\integration\\BDD\\1.PreRequisite\\9.Users\\Administrator.feature:14239:35)"
+            },
+            "embeddings": [
+              {
+                "mime_type": "image/png"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 67,
+            "name": "User status is approved",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 68,
+            "name": "Logout",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 69,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 70,
+            "name": "Navigate to Manage User, and search Business Admin",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 71,
+            "name": "Assert Created Customer Admin Mobile Number",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-management-:-administrator;system-admin-should-be-able-to-initite-modification-searching-with-all-values-(mobile,email-and-login)",
+        "keyword": "Scenario",
+        "line": 80,
+        "name": "System admin should be able to Initite modification searching with all values (Mobile,Email and Login)",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 78
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 81,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 10851000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 82,
+            "name": "Navigate to Manage User, and search Business Admin",
+            "result": {
+              "status": "passed",
+              "duration": 1714000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 83,
+            "name": "Search with EmailID",
+            "result": {
+              "status": "passed",
+              "duration": 3876000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 84,
+            "name": "System Admin is able to view details",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `[data-test-id=\"view-all-details\"]`, but never found it. Queried from element: <body>\n    at manageUsers.getViewIcon (http://172.25.48.237/__cypress/tests?p=cypress\\integration\\BDD\\1.PreRequisite\\9.Users\\Administrator.feature:3228:26)\n    at Context.eval (http://172.25.48.237/__cypress/tests?p=cypress\\integration\\BDD\\1.PreRequisite\\9.Users\\Administrator.feature:294:19)\n    at Context.resolveAndRunStepDefinition (http://172.25.48.237/__cypress/tests?p=cypress\\integration\\BDD\\1.PreRequisite\\9.Users\\Administrator.feature:14918:29)\n    at Context.eval (http://172.25.48.237/__cypress/tests?p=cypress\\integration\\BDD\\1.PreRequisite\\9.Users\\Administrator.feature:14239:35)"
+            },
+            "embeddings": [
+              {
+                "mime_type": "image/png"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 85,
+            "name": "System Admin is able to edit details of the user",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 86,
+            "name": "Confirm the edit details Of the User",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 87,
+            "name": "Logout",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 88,
+            "name": "Login into Mobiquity Portal as another System admin Checker1 after logout",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 89,
+            "name": "Navigate to Approvals and filter by Submitted status",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 90,
+            "name": "User click on submitted user data",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 91,
+            "name": "Approve the Users",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 92,
+            "name": "User modified is approved",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-management-:-administrator;system-admin-should-be-able-to-initiate-deletion-of-an-existing-business-admin/customer-care-admin.",
+        "keyword": "Scenario",
+        "line": 103,
+        "name": "System admin should be able to initiate deletion of an existing Business Admin/Customer Care Admin.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 101
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 104,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 17852000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 105,
+            "name": "Navigate to Manage User, and search Business Admin",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `[data-testid=\"menu.user_management\"]`, but never found it.\n    at homePage.getUserManagementOption (http://172.25.48.237/__cypress/tests?p=cypress\\integration\\BDD\\1.PreRequisite\\9.Users\\Administrator.feature:4117:17)\n    at Context.eval (http://172.25.48.237/__cypress/tests?p=cypress\\integration\\BDD\\1.PreRequisite\\9.Users\\Administrator.feature:258:15)\n    at Context.resolveAndRunStepDefinition (http://172.25.48.237/__cypress/tests?p=cypress\\integration\\BDD\\1.PreRequisite\\9.Users\\Administrator.feature:14918:29)\n    at Context.eval (http://172.25.48.237/__cypress/tests?p=cypress\\integration\\BDD\\1.PreRequisite\\9.Users\\Administrator.feature:14239:35)"
+            },
+            "embeddings": [
+              {
+                "mime_type": "image/png"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 106,
+            "name": "Search Business or Customer care Admin",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 107,
+            "name": "System Admin is able to Delete the User",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-management-:-administrator;approve/reject-delete-initiation-of-an-existing-business-admin/customer-care-admin.",
+        "keyword": "Scenario",
+        "line": 117,
+        "name": "Approve/Reject delete initiation of an existing Business Admin/Customer Care Admin.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 115
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 118,
+            "name": "Login into Mobiquity Portal as System admin Checker1",
+            "result": {
+              "status": "failed",
+              "error_message": "CypressError: Timed out retrying after 15050ms: `cy.click()` failed because this element is not visible:\n\n`<button class=\"fd-shellbar__button fd-button fd-identifier fd-identifier--xs fd-identifier--circle svelte-1jh0v0i\" style=\"background-image: url('./default_profile_pic.png');background-size:30px;background-repeat: no-repeat;background-position: center;\" aria-expanded=\"false\" aria-haspopup=\"true\" title=\"wyaRg rSlNC\"></button>`\n\nThis element `<button.fd-shellbar__button.fd-button.fd-identifier.fd-identifier--xs.fd-identifier--circle.svelte-1jh0v0i>` is not visible because its parent `<div.fd-shellbar.hideNavComponent.svelte-1jh0v0i>` has CSS property: `display: none`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at runVisibilityCheck (http://172.25.48.237/__cypress/runner/cypress_runner.js:168736:76)\n    at $Cy.ensureStrictVisibility (http://172.25.48.237/__cypress/runner/cypress_runner.js:168752:12)\n    at runAllChecks (http://172.25.48.237/__cypress/runner/cypress_runner.js:154700:14)\n    at retryActionability (http://172.25.48.237/__cypress/runner/cypress_runner.js:154755:16)\n    at tryCatcher (http://172.25.48.237/__cypress/runner/cypress_runner.js:13022:23)\n    at Promise.attempt.Promise.try (http://172.25.48.237/__cypress/runner/cypress_runner.js:10296:29)\n    at whenStable (http://172.25.48.237/__cypress/runner/cypress_runner.js:173835:65)\n    at http://172.25.48.237/__cypress/runner/cypress_runner.js:173290:14\n    at tryCatcher (http://172.25.48.237/__cypress/runner/cypress_runner.js:13022:23)\n    at Promise._settlePromiseFromHandler (http://172.25.48.237/__cypress/runner/cypress_runner.js:10957:31)\n    at Promise._settlePromise (http://172.25.48.237/__cypress/runner/cypress_runner.js:11014:18)\n    at Promise._settlePromise0 (http://172.25.48.237/__cypress/runner/cypress_runner.js:11059:10)\n    at Promise._settlePromises (http://172.25.48.237/__cypress/runner/cypress_runner.js:11139:18)\n    at Promise._fulfill (http://172.25.48.237/__cypress/runner/cypress_runner.js:11083:18)\n    at http://172.25.48.237/__cypress/runner/cypress_runner.js:12697:46\nFrom Your Spec Code:\n    at Context.eval (http://172.25.48.237/__cypress/tests?p=cypress\\integration\\BDD\\1.PreRequisite\\9.Users\\Administrator.feature:1122:29)"
+            },
+            "embeddings": [
+              {
+                "mime_type": "image/png"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 119,
+            "name": "Navigate to the Approvals",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 120,
+            "name": "User click on submitted user data",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 121,
+            "name": "Reject the Users",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-management-:-administrator;to-verify-that-system-admin-can-approve-modification-request-of-an-existing-business-admin/customer-care-admin",
+        "keyword": "Scenario",
+        "line": 130,
+        "name": "To verify that System admin can approve modification request of an existing Business Admin/Customer Care Admin",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 128
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 131,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "failed",
+              "error_message": "CypressError: Timed out retrying after 15050ms: `cy.click()` failed because this element is not visible:\n\n`<button class=\"fd-shellbar__button fd-button fd-identifier fd-identifier--xs fd-identifier--circle svelte-1jh0v0i\" style=\"background-image: url('./default_profile_pic.png');background-size:30px;background-repeat: no-repeat;background-position: center;\" aria-expanded=\"false\" aria-haspopup=\"true\" title=\"wyaRg rSlNC\"></button>`\n\nThis element `<button.fd-shellbar__button.fd-button.fd-identifier.fd-identifier--xs.fd-identifier--circle.svelte-1jh0v0i>` is not visible because its parent `<div.fd-shellbar.hideNavComponent.svelte-1jh0v0i>` has CSS property: `display: none`\n\nFix this problem, or use `{force: true}` to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at runVisibilityCheck (http://172.25.48.237/__cypress/runner/cypress_runner.js:168736:76)\n    at $Cy.ensureStrictVisibility (http://172.25.48.237/__cypress/runner/cypress_runner.js:168752:12)\n    at runAllChecks (http://172.25.48.237/__cypress/runner/cypress_runner.js:154700:14)\n    at retryActionability (http://172.25.48.237/__cypress/runner/cypress_runner.js:154755:16)\n    at tryCatcher (http://172.25.48.237/__cypress/runner/cypress_runner.js:13022:23)\n    at Promise.attempt.Promise.try (http://172.25.48.237/__cypress/runner/cypress_runner.js:10296:29)\n    at whenStable (http://172.25.48.237/__cypress/runner/cypress_runner.js:173835:65)\n    at http://172.25.48.237/__cypress/runner/cypress_runner.js:173290:14\n    at tryCatcher (http://172.25.48.237/__cypress/runner/cypress_runner.js:13022:23)\n    at Promise._settlePromiseFromHandler (http://172.25.48.237/__cypress/runner/cypress_runner.js:10957:31)\n    at Promise._settlePromise (http://172.25.48.237/__cypress/runner/cypress_runner.js:11014:18)\n    at Promise._settlePromise0 (http://172.25.48.237/__cypress/runner/cypress_runner.js:11059:10)\n    at Promise._settlePromises (http://172.25.48.237/__cypress/runner/cypress_runner.js:11139:18)\n    at Promise._fulfill (http://172.25.48.237/__cypress/runner/cypress_runner.js:11083:18)\n    at http://172.25.48.237/__cypress/runner/cypress_runner.js:12697:46\nFrom Your Spec Code:\n    at Context.eval (http://172.25.48.237/__cypress/tests?p=cypress\\integration\\BDD\\1.PreRequisite\\9.Users\\Administrator.feature:1122:29)"
+            },
+            "embeddings": [
+              {
+                "mime_type": "image/png"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 132,
+            "name": "Navigate to Manage User, and search Business Admin",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 133,
+            "name": "Search with Mobile Number",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 134,
+            "name": "System Admin is able to view details",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 135,
+            "name": "System Admin is able to edit details of the user",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 136,
+            "name": "Confirm the edit details Of the User",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 137,
+            "name": "Logout",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 138,
+            "name": "Login into Mobiquity Portal as another System admin Checker1 after logout",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 139,
+            "name": "Navigate to Approvals and filter by Submitted status",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 140,
+            "name": "User click on submitted user data",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 141,
+            "name": "Approve the Users",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 142,
+            "name": "User modified is approved",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-management-:-administrator;to-verify-that-business-admin-is-able-to--view-self-details",
+        "keyword": "Scenario",
+        "line": 151,
+        "name": "To verify that Business admin is able to  view Self details",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 149
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 152,
+            "name": "Login into Mobiquity Portal as Business admin User1",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `button[class=\"change-password-btn\"]`, but never found it. Queried from element: <body>\n    at loginPage.getchangepassword (http://172.25.48.237/__cypress/tests?p=cypress\\integration\\BDD\\1.PreRequisite\\9.Users\\Administrator.feature:4484:26)\n    at Context.eval (http://172.25.48.237/__cypress/tests?p=cypress\\integration\\BDD\\1.PreRequisite\\9.Users\\Administrator.feature:1013:13)"
+            },
+            "embeddings": [
+              {
+                "mime_type": "image/png"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 153,
+            "name": "Navigate to User Management and Click on manage user",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 154,
+            "name": "Enter Mobile number or KYC number in search",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 155,
+            "name": "User Click on eye button",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 156,
+            "name": "Verify View Details Page",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-management-:-administrator;to-verify-that-the-proper-sms-notification-&-e>>mail-should-be-sent-to-users-after-addition/modification/deletion-in-system.-(if-configured)",
+        "keyword": "Scenario",
+        "line": 167,
+        "name": "To verify that the Proper SMS Notification & E>>mail should be sent to users after addition/modification/deletion in system. (If configured)",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 165
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 168,
+            "name": "Login into Mobiquity Portal as System admin Checker1",
+            "result": {
+              "status": "failed",
+              "duration": 1000000,
+              "error_message": "CypressError: Timed out retrying after 15050ms: `cy.click()` failed because this element is detached from the DOM.\n\n`<button class=\"fd-shellbar__button fd-button fd-identifier fd-identifier--xs fd-identifier--circle svelte-1jh0v0i\" style=\"background-image: url('./default_profile_pic.png');background-size:30px;background-repeat: no-repeat;background-position: center;\" aria-expanded=\"false\" aria-haspopup=\"true\" title=\"wyaRg rSlNC\"></button>`\n\nCypress requires elements be attached in the DOM to interact with them.\n\nThe previous command that ran was:\n\n  > `cy.get()`\n\nThis DOM element likely became detached somewhere between the previous and current command.\n\nCommon situations why this happens:\n  - Your JS framework re-rendered asynchronously\n  - Your app code reacted to an event firing and removed the element\n\nYou typically need to re-query for the element or add 'guards' which delay Cypress from running new commands.\n\nhttps://on.cypress.io/element-has-detached-from-dom\n    at $Cy.ensureAttached (http://172.25.48.237/__cypress/runner/cypress_runner.js:168765:76)\n    at runAllChecks (http://172.25.48.237/__cypress/runner/cypress_runner.js:154675:12)\n    at retryActionability (http://172.25.48.237/__cypress/runner/cypress_runner.js:154755:16)\n    at tryCatcher (http://172.25.48.237/__cypress/runner/cypress_runner.js:13022:23)\n    at Promise.attempt.Promise.try (http://172.25.48.237/__cypress/runner/cypress_runner.js:10296:29)\n    at whenStable (http://172.25.48.237/__cypress/runner/cypress_runner.js:173835:65)\n    at http://172.25.48.237/__cypress/runner/cypress_runner.js:173290:14\n    at tryCatcher (http://172.25.48.237/__cypress/runner/cypress_runner.js:13022:23)\n    at Promise._settlePromiseFromHandler (http://172.25.48.237/__cypress/runner/cypress_runner.js:10957:31)\n    at Promise._settlePromise (http://172.25.48.237/__cypress/runner/cypress_runner.js:11014:18)\n    at Promise._settlePromise0 (http://172.25.48.237/__cypress/runner/cypress_runner.js:11059:10)\n    at Promise._settlePromises (http://172.25.48.237/__cypress/runner/cypress_runner.js:11139:18)\n    at Promise._fulfill (http://172.25.48.237/__cypress/runner/cypress_runner.js:11083:18)\n    at http://172.25.48.237/__cypress/runner/cypress_runner.js:12697:46\nFrom Your Spec Code:\n    at Context.eval (http://172.25.48.237/__cypress/tests?p=cypress\\integration\\BDD\\1.PreRequisite\\9.Users\\Administrator.feature:1122:29)"
+            },
+            "embeddings": [
+              {
+                "mime_type": "image/png"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 169,
+            "name": "Navigate to Manage User, and search Business Admin",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 170,
+            "name": "Search Business Admin",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 171,
+            "name": "System Admin is able to view details",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 172,
+            "name": "System Admin is able to edit details",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 173,
+            "name": "Confirm the edit details",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 174,
+            "name": "Logout",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 175,
+            "name": "Login into Mobiquity Portal as System admin Maker after Logout",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 176,
+            "name": "Navigate to Approvals and filter by Submitted status",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 177,
+            "name": "User click on submitted user data",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 178,
+            "name": "Approve the Users and Check for SMS Notification sent to user",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -10,7 +10,11 @@
     "cy:report": "node cucumber-html-report.js",
     "cy:run": "cypress run --browser chrome",
     "cy:Prerequisite": "npx cypress-tags run -e 'TAGS=@prerequisite' --browser chrome",
-    "cy:Test": "npx cypress-tags run -e 'TAGS=@test' --browser chrome"
+    "cy:Test": "npx cypress-tags run -e 'TAGS=@test' --browser chrome",
+    "cy:parallel": "cypress-parallel -s cy:run -t 1 -d 'cypress/integration/BDD/CreationOfUsers/**/*.feature'",
+    "cy:parallel:many1": "cypress-parallel -s cy:run -t 5 -d 'cypress/integration/BDD/IntegrationTesting/**/*.feature'",
+    "cy:parallel:many2": "cypress-parallel -s cy:run -t 5 -d 'cypress/integration/BDD/TransactionOrders/**/*.feature'",
+    "cy:parallel:many": "cypress-parallel -s cy:run -t 5 -d 'cypress/integration/BDD/PreRequisite/**/*.feature'"
   },
   "author": "",
   "license": "ISC",
@@ -42,6 +46,7 @@
     "@types/lodash-es": "^4.17.6",
     "chromedriver": "^99.0.0",
     "circular-json": "^0.5.9",
+    "cypress-parallel": "^0.9.1",
     "dayjs": "^1.11.1",
     "flatted": "^3.2.5",
     "lodash": "^4.17.21",

@@ -1,0 +1,258 @@
+[
+  {
+    "description": "    This feature includes Banking Activation of Subscribers",
+    "keyword": "Feature",
+    "name": "BankingActivation",
+    "line": 1,
+    "id": "bankingactivation",
+    "tags": [],
+    "uri": "BankingActivation.feature",
+    "elements": [
+      {
+        "id": "bankingactivation;to-verify-that-system-admin-is-able-to-activate-mobile-banking-if-cif-number-exist.",
+        "keyword": "Scenario",
+        "line": 12,
+        "name": "To verify that System Admin is able to activate mobile banking if CIF number exist.",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 13,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 8493000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 14,
+            "name": "Navigate to Banking Channel Activation and click",
+            "result": {
+              "status": "passed",
+              "duration": 424000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "Enter the CIF number and search for the user",
+            "result": {
+              "status": "passed",
+              "duration": 4898000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "Click on Mobile Banking Activation",
+            "result": {
+              "status": "passed",
+              "duration": 2356000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 17,
+            "name": "Confirm and Verify the Mob Banking Activtion Message sent to user",
+            "result": {
+              "status": "failed",
+              "duration": 17668000000,
+              "error_message": "AssertionError: Timed out retrying after 15000ms: Expected to find content: 'Done' within the element: <button.unblock-btn.btn> but never did.\n    at Context.eval (http://172.25.48.237/__cypress/tests?p=cypress\\integration\\BDD\\1.TestMany\\BankingChannelActivation\\BankingActivation.feature:201:44)"
+            },
+            "embeddings": [
+              {
+                "mime_type": "image/png"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bankingactivation;to-verify-that-system-admin-is-able-to-activate-internet-banking-if-cif-number-exist.",
+        "keyword": "Scenario",
+        "line": 42,
+        "name": "To verify that System Admin is able to activate Internet banking if CIF number exist.",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 43,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 8097000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 44,
+            "name": "Navigate to Banking Channel Activation and click",
+            "result": {
+              "status": "passed",
+              "duration": 466000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 45,
+            "name": "Enter the CIF number and search for the user",
+            "result": {
+              "status": "passed",
+              "duration": 5466000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 46,
+            "name": "Click on Internet Banking Activation",
+            "result": {
+              "status": "passed",
+              "duration": 2799000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 47,
+            "name": "Confirm and Verify the Internet Banking Activtion Message sent to user",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `div>button[class=\"unblock-btn btn\"]`, but never found it. Queried from element: <body>\n    at BankingActivation.getConfirmButton (http://172.25.48.237/__cypress/tests?p=cypress\\integration\\BDD\\1.TestMany\\BankingChannelActivation\\BankingActivation.feature:317:26)\n    at Context.eval (http://172.25.48.237/__cypress/tests?p=cypress\\integration\\BDD\\1.TestMany\\BankingChannelActivation\\BankingActivation.feature:237:25)"
+            },
+            "embeddings": [
+              {
+                "mime_type": "image/png"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bankingactivation;to-verify-that-system-admin-is-able-to-verify-admin-is-able-to-see-the-activated-message.",
+        "keyword": "Scenario",
+        "line": 97,
+        "name": "To verify that System Admin is able to verify admin is able to see the Activated Message.",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 98,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 11305000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 99,
+            "name": "Navigate to Banking Channel Activation and click",
+            "result": {
+              "status": "passed",
+              "duration": 382000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 100,
+            "name": "Enter the mobile or CIF number which is not registered and search for the user",
+            "result": {
+              "status": "passed",
+              "duration": 5303000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 101,
+            "name": "verify admin is able to see the Message mobile or CIF number does not exist in the system",
+            "result": {
+              "status": "undefined"
+            }
+          }
+        ]
+      },
+      {
+        "id": "bankingactivation;to-verify-that-system-admin-is-able-to-activate-mobile-banking-using-msisdn-if-cif-number-does-not-exist.",
+        "keyword": "Scenario",
+        "line": 69,
+        "name": "To verify that System Admin is able to activate mobile banking using MSISDN if CIF number does not exist.",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 70,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 8517000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 71,
+            "name": "Navigate to Banking Channel Activation and click",
+            "result": {
+              "status": "passed",
+              "duration": 680000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 72,
+            "name": "Enter the Full KYC mobile number and search for the user",
+            "result": {
+              "status": "passed",
+              "duration": 5982000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 73,
+            "name": "Click on next and activate mobile Banking",
+            "result": {
+              "status": "passed",
+              "duration": 2157000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 74,
+            "name": "Confirm and Verify the Mob Banking Activtion Message sent to user",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `div>button[class=\"unblock-btn btn\"]`, but never found it. Queried from element: <body>\n    at BankingActivation.getConfirmButton (http://172.25.48.237/__cypress/tests?p=cypress\\integration\\BDD\\1.TestMany\\BankingChannelActivation\\BankingActivation.feature:317:26)\n    at Context.eval (http://172.25.48.237/__cypress/tests?p=cypress\\integration\\BDD\\1.TestMany\\BankingChannelActivation\\BankingActivation.feature:198:25)"
+            },
+            "embeddings": [
+              {
+                "mime_type": "image/png"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

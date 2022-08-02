@@ -4,6 +4,8 @@
     "pageLoadTimeout": 15000,
     "viewportWidth": 1200,
     "viewportHeight": 900,
+    "trashAssetsBeforeRun": true,
+
     "env": {
      "Adminurl": "http://172.25.48.237",
      "apiBaseURL": "http://172.25.48.237:3133"

@@ -1,0 +1,142 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Ambiguous profile",
+    "line": 1,
+    "id": "ambiguous-profile",
+    "tags": [],
+    "uri": "Ambiguous.feature",
+    "elements": [
+      {
+        "id": "ambiguous-profile;to-verify-that-system-admin-should-able-to-see-all-ambiguous-transactions-from-third-party.",
+        "keyword": "Scenario",
+        "line": 10,
+        "name": "To verify that System admin should able to see all Ambiguous Transactions from third party.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 8
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 11,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 12842000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 12,
+            "name": "Click on Ambiguous Order Transaction >> Download Ambiguous Order",
+            "result": {
+              "status": "passed",
+              "duration": 1024000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "Select Ambiguous Type and party type and party name",
+            "result": {
+              "status": "passed",
+              "duration": 5277000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "Select From Date , To Date",
+            "result": {
+              "status": "passed",
+              "duration": 2905000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 15,
+            "name": "Click on Download button.",
+            "result": {
+              "status": "passed",
+              "duration": 387000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "ambiguous-profile;to-verify-that-the-valid-user-should-be-able-to-upload-all-ambiguous-transactions-and-able-to-settle-them-from-third-party.",
+        "keyword": "Scenario",
+        "line": 25,
+        "name": "To verify that the Valid User should be able to upload all Ambiguous Transactions and able to settle them from third party.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 23
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 26,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 8329000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 27,
+            "name": "Click on Ambiguous Order Transaction >> Bulk settlement initiation",
+            "result": {
+              "status": "passed",
+              "duration": 1060000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 28,
+            "name": "Select operation name",
+            "result": {
+              "status": "passed",
+              "duration": 9635000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 29,
+            "name": "Click on Download template and enter remark",
+            "result": {
+              "status": "passed",
+              "duration": 760000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 30,
+            "name": "Upload file",
+            "result": {
+              "status": "passed",
+              "duration": 1697000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,458 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Transfer Control Profile",
+    "line": 1,
+    "id": "transfer-control-profile",
+    "tags": [],
+    "uri": "TransferControlProfile.feature",
+    "elements": [
+      {
+        "id": "transfer-control-profile;to-verify-the-error-message-when-provider-is-empty.",
+        "keyword": "Scenario",
+        "line": 12,
+        "name": "To verify the error message when Provider is empty.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 10
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 13,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "failed",
+              "duration": 25809000000,
+              "error_message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.fd-shellbar__button--user-menu > button`, but never found it.\n    at homePage.getUserMenu (http://172.25.48.237/__cypress/tests?p=cypress\\integration\\BDD\\1.PreRequisite\\9.Users\\TransferControlProfile.feature:3729:17)\n    at Context.eval (http://172.25.48.237/__cypress/tests?p=cypress\\integration\\BDD\\1.PreRequisite\\9.Users\\TransferControlProfile.feature:851:15)"
+            },
+            "embeddings": [
+              {
+                "mime_type": "image/png"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 14,
+            "name": "Navigate to Transfer Control Profile and Click on Manage Transfer Level TCP",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "Click on Add New Button",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "Click on Create Button",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 17,
+            "name": "Verify Error Message for Provider",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "transfer-control-profile;to-verify-the-error-message-when-domain-is-empty.",
+        "keyword": "Scenario",
+        "line": 26,
+        "name": "To verify the error message when Domain is empty.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 24
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 27,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.fd-shellbar__button--user-menu > button`, but never found it.\n    at homePage.getUserMenu (http://172.25.48.237/__cypress/tests?p=cypress\\integration\\BDD\\1.PreRequisite\\9.Users\\TransferControlProfile.feature:3729:17)\n    at Context.eval (http://172.25.48.237/__cypress/tests?p=cypress\\integration\\BDD\\1.PreRequisite\\9.Users\\TransferControlProfile.feature:851:15)"
+            },
+            "embeddings": [
+              {
+                "mime_type": "image/png"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 28,
+            "name": "Navigate to Transfer Control Profile and Click on Manage Transfer Level TCP",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 29,
+            "name": "Click on Add New Button",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 30,
+            "name": "Click on Create Button",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 31,
+            "name": "Verify Error Message for Domain",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "transfer-control-profile;to-verify-that-master-is-able-to-view-customer-level-tcp..",
+        "keyword": "Scenario",
+        "line": 40,
+        "name": "To verify that master is able to View customer level TCP..",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 38
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 41,
+            "name": "Login into Mobiquity Portal as Super admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 13307000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 42,
+            "name": "Navigate to Transfer Control Profile to View Details",
+            "result": {
+              "status": "passed",
+              "duration": 51343000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "transfer-control-profile;to-verify-that-master-is-able-to-edit-customer-level-tcp..",
+        "keyword": "Scenario",
+        "line": 51,
+        "name": "To verify that master is able to edit customer level TCP..",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 49
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 52,
+            "name": "Login into Mobiquity Portal as Super admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 8592000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 53,
+            "name": "Navigate to Transfer Control Profile to Edit Details",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `[data-testid=\"test-TCPROFILE\"]`, but never found it.\n    at homePage.getTransferControlProfileSA (http://172.25.48.237/__cypress/tests?p=cypress\\integration\\BDD\\1.PreRequisite\\9.Users\\TransferControlProfile.feature:4049:17)\n    at Context.eval (http://172.25.48.237/__cypress/tests?p=cypress\\integration\\BDD\\1.PreRequisite\\9.Users\\TransferControlProfile.feature:175:15)\n    at Context.resolveAndRunStepDefinition (http://172.25.48.237/__cypress/tests?p=cypress\\integration\\BDD\\1.PreRequisite\\9.Users\\TransferControlProfile.feature:14544:29)\n    at Context.eval (http://172.25.48.237/__cypress/tests?p=cypress\\integration\\BDD\\1.PreRequisite\\9.Users\\TransferControlProfile.feature:13865:35)"
+            },
+            "embeddings": [
+              {
+                "mime_type": "image/png"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 54,
+            "name": "Verify Success Message for Edit",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 55,
+            "name": "Logout",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 56,
+            "name": "Login into Mobiquity Portal as Super admin Checker after Logout",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 57,
+            "name": "Navigate to Transfer Control Profile",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 58,
+            "name": "Approve the TCP",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 59,
+            "name": "Verify the Modification Request message",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "transfer-control-profile;to-verify-that-master-is-able-to-delete-customer-level-tcp-if-any-user-is-not-associated-with-it.",
+        "keyword": "Scenario",
+        "line": 68,
+        "name": "To verify that master is able to delete customer level TCP if any user is not associated with it.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 66
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 69,
+            "name": "Login into Mobiquity Portal as Super admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 7818000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 70,
+            "name": "Navigate to Transfer Control Profile to Delete Details",
+            "result": {
+              "status": "passed",
+              "duration": 41924000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 71,
+            "name": "Verify Success Message for deletion",
+            "result": {
+              "status": "passed",
+              "duration": 785000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "transfer-control-profile;to-verify-that-the-instrument-level-tcp-cannot-be-deleted-if-any-user-is-associated-with-it.",
+        "keyword": "Scenario",
+        "line": 81,
+        "name": "To verify that the instrument level TCP cannot be deleted if any user is associated with it.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 79
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 82,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 9429000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 83,
+            "name": "Navigate to Transfer Control Profile and Click on Manage Transfer Level TCP",
+            "result": {
+              "status": "passed",
+              "duration": 6688000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 84,
+            "name": "Click on delete icon",
+            "result": {
+              "status": "failed",
+              "error_message": "CypressError: `cy.contains()` can only accept a string, number or regular expression.\n\nhttps://on.cypress.io/contains\n    at Context.contains (http://172.25.48.237/__cypress/runner/cypress_runner.js:164701:78)\n    at Context.<anonymous> (http://172.25.48.237/__cypress/runner/cypress_runner.js:178437:19)\nFrom Your Spec Code:\n    at Context.eval (http://172.25.48.237/__cypress/tests?p=cypress\\integration\\BDD\\1.PreRequisite\\9.Users\\TransferControlProfile.feature:311:29)"
+            },
+            "embeddings": [
+              {
+                "mime_type": "image/png"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 85,
+            "name": "Verify Error Message for deletion",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "transfer-control-profile;to-verify-the-error-message-when-instrument-level-tcp-added-with-same-profile-name.",
+        "keyword": "Scenario",
+        "line": 94,
+        "name": "To verify the error message when instrument level TCP added with same Profile Name.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 92
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 95,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 7736000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 96,
+            "name": "Navigate to Transfer Control Profile and Click on Manage Transfer Level TCP",
+            "result": {
+              "status": "passed",
+              "duration": 7028000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 97,
+            "name": "Click on Add New Button",
+            "result": {
+              "status": "passed",
+              "duration": 3476000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 98,
+            "name": "Enter required Fields for error message",
+            "result": {
+              "status": "passed",
+              "duration": 6245000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 99,
+            "name": "Click on Create Button",
+            "result": {
+              "status": "passed",
+              "duration": 333000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 100,
+            "name": "Verify Error Message",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 15000ms: expected '<div#add_modal_error_msg.error_message>' to contain 'Please select another profile name as this profile name is being used by an active profile'\n    at Context.eval (http://172.25.48.237/__cypress/tests?p=cypress\\integration\\BDD\\1.PreRequisite\\9.Users\\TransferControlProfile.feature:250:29)\n    at Context.resolveAndRunStepDefinition (http://172.25.48.237/__cypress/tests?p=cypress\\integration\\BDD\\1.PreRequisite\\9.Users\\TransferControlProfile.feature:14544:29)\n    at Context.eval (http://172.25.48.237/__cypress/tests?p=cypress\\integration\\BDD\\1.PreRequisite\\9.Users\\TransferControlProfile.feature:13865:35)"
+            },
+            "embeddings": [
+              {
+                "mime_type": "image/png"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

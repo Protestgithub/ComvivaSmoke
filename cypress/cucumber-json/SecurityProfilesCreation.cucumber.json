@@ -1,0 +1,328 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Profiles Creation",
+    "line": 1,
+    "id": "profiles-creation",
+    "tags": [],
+    "uri": "SecurityProfilesCreation.feature",
+    "elements": [
+      {
+        "id": "profiles-creation;to-verify-that-security-profiles-can-be-configured-in-the-system-for-different-type-of-users-under-different-workspaces.",
+        "keyword": "Scenario",
+        "line": 16,
+        "name": "To verify that security profiles can be configured in the system for different type of users under different workspaces.",
+        "tags": [
+          {
+            "name": "@prerequisite",
+            "line": 13
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 17,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 12800000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 18,
+            "name": "Navigate to Security and click to select security profile",
+            "result": {
+              "status": "passed",
+              "duration": 3013000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 19,
+            "name": "Click on add profile select user type as subscriber and fill the details",
+            "result": {
+              "status": "passed",
+              "duration": 4064000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 20,
+            "name": "Fill the details-Subscriber Profile Name",
+            "result": {
+              "status": "passed",
+              "duration": 4443000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 21,
+            "name": "Fill the details-PasswordRestrictios",
+            "result": {
+              "status": "passed",
+              "duration": 9165000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 22,
+            "name": "Fill the details-PinRestrictions",
+            "result": {
+              "status": "passed",
+              "duration": 7598000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 23,
+            "name": "Fill the details-AuthRestrictions",
+            "result": {
+              "status": "passed",
+              "duration": 1616000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 24,
+            "name": "Fill the details-loginRestrictions",
+            "result": {
+              "status": "passed",
+              "duration": 8245000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 25,
+            "name": "Click on add and confirm",
+            "result": {
+              "status": "passed",
+              "duration": 8518000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 28,
+            "name": "Navigate to Security and click to select security profile",
+            "result": {
+              "status": "passed",
+              "duration": 4372000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 29,
+            "name": "Click on add profile select user type as BusinessAdmin and fill the details",
+            "result": {
+              "status": "passed",
+              "duration": 5527000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 30,
+            "name": "Fill the details-BusinessAdmin Profile Name",
+            "result": {
+              "status": "passed",
+              "duration": 5955000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 31,
+            "name": "Fill the details-PasswordRestrictios",
+            "result": {
+              "status": "passed",
+              "duration": 11001000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 32,
+            "name": "Fill the details-AuthRestrictions",
+            "result": {
+              "status": "passed",
+              "duration": 1590000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 33,
+            "name": "Fill the details-loginRestrictions",
+            "result": {
+              "status": "passed",
+              "duration": 10689000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 34,
+            "name": "Click on add and confirm",
+            "result": {
+              "status": "failed",
+              "duration": 21873000000,
+              "error_message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.mat-button-wrapper`, but never found it. Queried from element: <body>\n    at SecurityProfilePage.getConfirmButton (http://172.25.48.237/__cypress/tests?p=cypress\\integration\\BDD\\1.PreRequisite\\8.ProfilesCreation\\SecurityProfilesCreation.feature:3046:26)\n    at Context.eval (http://172.25.48.237/__cypress/tests?p=cypress\\integration\\BDD\\1.PreRequisite\\8.ProfilesCreation\\SecurityProfilesCreation.feature:274:23)\n    at Context.resolveAndRunStepDefinition (http://172.25.48.237/__cypress/tests?p=cypress\\integration\\BDD\\1.PreRequisite\\8.ProfilesCreation\\SecurityProfilesCreation.feature:15602:29)\n    at Context.eval (http://172.25.48.237/__cypress/tests?p=cypress\\integration\\BDD\\1.PreRequisite\\8.ProfilesCreation\\SecurityProfilesCreation.feature:14923:35)"
+            },
+            "embeddings": [
+              {
+                "mime_type": "image/png"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 37,
+            "name": "Navigate to Security and click to select security profile",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 38,
+            "name": "Click on add profile select user type as CustomercareAdmin and fill the details",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 39,
+            "name": "Fill the details-CustomercareAdmin Profile Name",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 40,
+            "name": "Fill the details-PasswordRestrictios",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 41,
+            "name": "Fill the details-AuthRestrictions",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 42,
+            "name": "Fill the details-loginRestrictions",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 43,
+            "name": "Click on add and confirm",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 47,
+            "name": "Navigate to Security and click to select security profile",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 48,
+            "name": "Click on add profile select user type as Distributer and fill the details",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 49,
+            "name": "Fill the details-Distributer Profile Name",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 50,
+            "name": "Fill the details-PasswordRestrictios",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 51,
+            "name": "Fill the details-PinRestrictions",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 52,
+            "name": "Fill the details-AuthRestrictions",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 53,
+            "name": "Fill the details-loginRestrictions",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 54,
+            "name": "Click on add and confirm",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
