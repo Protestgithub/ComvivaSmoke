@@ -28,7 +28,7 @@ pipeline {
         }
         stage('Sys'){
             steps{
-               bat "npm i"
+               bat "npm install cypress@9.7.0 --save-dev"
                 bat "npm i cypress-parallel"
                 bat "npm run cy:parallel --env Adminurl=http://125.16.139.20:8023 ,apiBaseURL=http://172.25.48.237:3133 --browser ${BROWSER} --spec ${SPEC}  "
             }
