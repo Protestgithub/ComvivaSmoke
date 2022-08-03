@@ -173,7 +173,7 @@ Cypress.Commands.add('SysAdminlogin3', () => {
 
 Cypress.Commands.add('csvToJSON', (CsvFile,JsonFile) => {
     let result = [];
-    cy.readFile('cypress/downloads/BULK_O2C-template.csv')
+    cy.readFile('cypress/fixtures/templates/BULK_O2C-template.csv')
     .then((data) => {
      var lines = data.split("\n")
      var headers = lines[0].split(",")
@@ -189,14 +189,14 @@ Cypress.Commands.add('csvToJSON', (CsvFile,JsonFile) => {
    cy.log(obj)
 
       }
-      cy.writeFile('cypress/fixtures/input/BULK_O2C-template.json', obj)
+      cy.writeFile('cypress/fixtures/BulkData/BULK_O2C-template.json', obj)
       
   })
   // console.log(result
 
 })
   Cypress.Commands.add('jsonToCSV', (JsonFile, CsvFile)=>{
-    cy.readFile('cypress/fixtures/input/BULK_O2C-template.json').then((data)=>{
+    cy.readFile('cypress/fixtures/BulkData/BULK_O2C-template.json').then((data)=>{
         var fields =  Object.keys(data)
         var values = Object.values(data)
         var csv1 = fields.map(function() {})
@@ -207,7 +207,7 @@ Cypress.Commands.add('csvToJSON', (CsvFile,JsonFile) => {
         csv.unshift(values.join(',')) // add header column
         let str2 = csv;
         let sl3 = str2.slice(0, 1)
-        cy.writeFile('cypress/fixtures/input/BULK_O2C-template.csv', sl2 + '\n' + sl3)
+        cy.writeFile('cypress/fixtures/templates/BULK_O2C-template.csv', sl2 + '\n' + sl3)
         })
         
     })

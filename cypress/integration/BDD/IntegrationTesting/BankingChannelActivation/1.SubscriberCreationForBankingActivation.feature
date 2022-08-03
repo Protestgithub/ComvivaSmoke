@@ -1,4 +1,4 @@
-Feature: BankingActivation
+Feature: SubScriberCreationForBankingActivation
 
     This feature includes Banking Activation of Subscribers
 

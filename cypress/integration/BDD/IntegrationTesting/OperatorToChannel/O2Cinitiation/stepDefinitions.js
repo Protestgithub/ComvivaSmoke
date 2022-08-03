@@ -140,24 +140,38 @@ And('Enter All the Mandatory details and type Invalid Character in Transfer amou
   O2CTransferInitiatePage.getMSISDN().type(BsnuserMobile, { force: true })
   })
     cy.wait(6000)
-  cy.get('.fd-page.iframeContainer.svelte-1v5e28n > iframe').then(($iframe) => {
+ 
+cy.get('.fd-page.iframeContainer.svelte-1v5e28n > iframe').then(($iframe) => {
   const $body = $iframe.contents().find('body')
   const $win = $iframe[0].contentWindow
-  cy.stub($win, 'alert', () => true)
-    .as('windowConfirm')
+
+  const stub=cy.stub()
+ if(cy.stub($win, 'alert', () => false)
+    .as('windowConfirm'))
+    {
+      
+    }
+    
+    else{
   cy.stub($win.console, 'log').as('consoleLog')
   cy.wrap($body)
     .find('input[name="amount"]').click({ force: true })
-    .should(function () {
-      expect(this.windowConfirm).to.be.calledWith("Channel User Does Not Exist")
+    .should(function () 
+    {
+      
+     expect(this.windowConfirm).to.be.calledWith("Channel User Does Not Exist")
+    
+     })
+    }
+    
     })
-})
   O2CTransferInitiatePage.getTransferAmount().type(getRandomName(), { force: true })
   O2CTransferInitiatePage.getReferenceNumber().type(ReferenceNumber, { force: true })
   O2CTransferInitiatePage.getType().select(this.data5.O2CTransferInitiate.type, { force: true })
   O2CTransferInitiatePage.getNumber().type(number, { force: true })
   O2CTransferInitiatePage.getRemarks().type(getRandomName(), { force: true })
 })
+
 
 Then('Click on submit and Confirm Error Message', function () {
   O2CTransferInitiatePage.getSubmitButton().click({ force: true })

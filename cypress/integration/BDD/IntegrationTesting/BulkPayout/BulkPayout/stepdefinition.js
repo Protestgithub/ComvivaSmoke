@@ -55,8 +55,8 @@ var mobile
 var ProfileName
 var KycValue
 var O2CMsisdn
-var CsvFile='cypress/fixtures/input/BULK_O2C-template.csv';
-var JsonFile='cypress/fixtures/input/BULK_O2C-template.json';
+var CsvFile='cypress/fixtures/templates/BULK_O2C-template.csv';
+var JsonFile='cypress/fixtures/BulkData/BULK_O2C-template.json';
 
 
 const uid = () => Cypress._.random(1e10)
@@ -193,70 +193,56 @@ When('Navigate to Operator to channel and click on O2C transfer Approval2', func
 
 
 And('Enter All the Mandatory Details', function(){
- cy.wait(3000)
-  
-  cy.wait(2000)
-  var BBAFile ="cypress/fixtures/userData/BusinessUsersData.json"
-  var O2CFile= "cypress/fixtures/userData/O2Cdata.json"
-  cy.readFile(BBAFile).then((data) => {
-  var O2CMsisdn = data.registeredMobile
-  //O2CTransferInitiatePage.getMSISDN().type("7735575036", {force: true})
 
- O2CTransferInitiatePage.getMSISDN().type(O2CMsisdn, {force: true})
-  data.O2CMsisdn1 =O2CMsisdn
-  cy.writeFile(O2CFile, data)
-})
-
-cy.wait(6000)
-   cy.get('.fd-page.iframeContainer.svelte-1v5e28n > iframe').then(($iframe) => {
-
-
-
-  const $body = $iframe.contents().find('body')
-
-
-
-  const $win = $iframe[0].contentWindow
-
-
-
-
-
-  cy.stub($win, 'alert', () => true)
-
-
-
-    .as('windowConfirm')
-
-
-
-  cy.stub($win.console, 'log').as('consoleLog')
-
-
-
-
-
-  cy.wrap($body)
-
-    .find('input[name="amount"]').click({ force: true })
-
-    .should(function () {
-
-
-
-      expect(this.windowConfirm).to.be.calledWith("Channel User Does Not Exist")
-
-    })
-})
-  O2CTransferInitiatePage.getTransferAmount().type(TransferAmount, { force: true })
+  cy.wait(3000)
+   
+   cy.wait(2000)
+   var BBAFile ="cypress/fixtures/userData/BusinessUsersData.json"
+   var O2CFile= "cypress/fixtures/userData/O2Cdata.json"
+   cy.readFile(BBAFile).then((data) => {
+   var O2CMsisdn = data.registeredMobile
+   //O2CTransferInitiatePage.getMSISDN().type("7735575036", {force: true})
+   
+  O2CTransferInitiatePage.getMSISDN().type(O2CMsisdn, {force: true})
+   data.O2CMsisdn1 =O2CMsisdn
+   cy.writeFile(O2CFile, data)
+ })
+ cy.wait(6000)
  
-  O2CTransferInitiatePage.getReferenceNumber().type(ReferenceNumber, { force: true })
-  O2CTransferInitiatePage.getType().select(this.data5.O2CTransferInitiate.type, { force: true })
-  O2CTransferInitiatePage.getNumber().type(number, { force: true })
-  O2CTransferInitiatePage.getRemarks().type(getRandomName(), { force: true })
-
+ 
+ 
+ cy.get('.fd-page.iframeContainer.svelte-1v5e28n > iframe').then(($iframe) => {
+   const $body = $iframe.contents().find('body')
+   const $win = $iframe[0].contentWindow
+ 
+   const stub=cy.stub()
+  if(cy.stub($win, 'alert', () => false)
+     .as('windowConfirm'))
+     {
+       
+     }
+     
+     else{
+   cy.stub($win.console, 'log').as('consoleLog')
+   cy.wrap($body)
+     .find('input[name="amount"]').click({ force: true })
+     .should(function () 
+     {
+       
+      expect(this.windowConfirm).to.be.calledWith("Channel User Does Not Exist")
+ 
       })
-
+     }
+     })
+   O2CTransferInitiatePage.getTransferAmount().type(TransferAmount, { force: true })
+   O2CTransferInitiatePage.getReferenceNumber().type(ReferenceNumber, { force: true })
+   O2CTransferInitiatePage.getType().select(this.data5.O2CTransferInitiate.type, { force: true })
+   O2CTransferInitiatePage.getNumber().type(number, { force: true })
+   O2CTransferInitiatePage.getRemarks().type(getRandomName(), { force: true })
+ 
+       })
+ 
+ 
 And('logout the user', function () {
 
   welcomePage.getProfileIcon().click()
@@ -315,7 +301,7 @@ And ('Click on Bulk Payout Initiate',function()
 })
 Then('update the json data', function () {
 
-  cy.readFile("cypress/fixtures/input/BULK_O2C-template.json").then((data) => {
+  cy.readFile("cypress/fixtures/BulkData/BULK_O2C-template.json").then((data) => {
     
     data['Serial Number*'] = this.data9.SerialNumber,
     data['MFS Provider*'] = this.data9.MFSProvider, 
@@ -339,12 +325,12 @@ Then('update the json data', function () {
     data['Additional Parameter 8']=""
     data['Additional Parameter 9']=""
     data['Additional Parameter 10']=""
-    cy.writeFile("cypress/fixtures/input/BULK_O2C-template.json", data)
+    cy.writeFile("cypress/fixtures/BulkData/BULK_O2C-template.json", data)
  })
 })
 And('Upload the data', function() {
      cy.jsonToCSV(JsonFile,CsvFile)
-    BptPage.getUploadLink().attachFile('input/BULK_O2C-template.csv')
+    BptPage.getUploadLink().attachFile('templates/BULK_O2C-template.csv')
     cy.wait(10000)
  BptPage.getSubmit().dblclick({force:true})
  cy.wait(10000)

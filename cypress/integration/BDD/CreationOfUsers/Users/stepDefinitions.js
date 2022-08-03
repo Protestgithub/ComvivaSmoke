@@ -35,8 +35,10 @@ const uuuid = () => Cypress._.random(1e3)
 amount = uuuid()
 var loginId, mobile, BusinessMobile, KycValue, amount, name, ifscnum, accnumber, BankData
 const kycid = () => Cypress._.random(1e8)
+const timestamp = (new Date).getTime()
+  KycValue = "A" + timestamp
 mobile = "77" + uuid()
-var lid, eid, CIF, mobile1, Mobile, Submobile, loginId, KycValue, name
+var lid, eid, CIF, mobile1, Mobile, Submobile, loginId, name
 mobile1 = "77" + uuid()
 var filename = 'cypress/fixtures/userData/AdministratorData.json'
 var subRegistration = 'cypress/fixtures/userData/subscriberReg.json'
@@ -278,8 +280,7 @@ And('Enter all the required subscriber details', function () {
   registerPage.getNextButtonBasic().click({ force: true })
 
   //----------------------KYC-----------------------------------------------------------------------
-  const timestamp = (new Date).getTime()
-  KycValue = "A" + timestamp
+  
   registerPage.getKycDropDownButton().eq(0).click({ force: true })
   registerPage.getKycIDType().select(this.data2.KycInfo.KycIDType, { force: true })
   registerPage.getKycIDValue().type(KycValue, { force: true }),
@@ -383,7 +384,7 @@ And('Enter all the required business user details', function () {
 
   registerPage.getNextButtonBasic().eq(0).click({ force: true })
 
-  KycValue = "AZ" + kycid()
+  
   //---------------------KYC-----------------------------------------------------------------------
   registerPage.getKYCButton().eq(0).click({ force: true })
   cy.wait(2000)

@@ -1,0 +1,143 @@
+[
+  {
+    "description": "    This feature includes registering, Modifying and Approval of Business Admin and\n    Customer Support Admin Users by System Admin",
+    "keyword": "Feature",
+    "name": "User Management : Administrator/Business/Subscriber",
+    "line": 1,
+    "id": "user-management-:-administrator/business/subscriber",
+    "tags": [],
+    "uri": "Users.feature",
+    "elements": [
+      {
+        "id": "user-management-:-administrator/business/subscriber;to-verify-that-valid-system-admin/business-admin-is-able-to-initiate-businsess-user-creation.",
+        "keyword": "Scenario",
+        "line": 16,
+        "name": "To verify that valid System admin/Business Admin is able to initiate businsess user creation.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 14
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 17,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 8936000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 18,
+            "name": "Navigate to User Management and Click on register",
+            "result": {
+              "status": "passed",
+              "duration": 521000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 19,
+            "name": "Select User type as Business and Select user role",
+            "result": {
+              "status": "passed",
+              "duration": 3256000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 20,
+            "name": "Enter all the required business user details",
+            "result": {
+              "status": "passed",
+              "duration": 62615000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 21,
+            "name": "Confirmation message is displayed",
+            "result": {
+              "status": "passed",
+              "duration": 2194000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-management-:-administrator/business/subscriber;to-verify-that-another-system-admin/businsess-user--is-able-to-approve-the-initiated-business-user-creation.",
+        "keyword": "Scenario",
+        "line": 31,
+        "name": "To verify that another System Admin/businsess User  is able to approve the initiated business user creation.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 29
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 32,
+            "name": "Login into Mobiquity Portal as System admin Checker1",
+            "result": {
+              "status": "passed",
+              "duration": 8731000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 33,
+            "name": "Navigate to Approvals and filter by Submitted status",
+            "result": {
+              "status": "passed",
+              "duration": 7177000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 34,
+            "name": "User click on submitted user data",
+            "result": {
+              "status": "passed",
+              "duration": 303000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 35,
+            "name": "Approve the Users",
+            "result": {
+              "status": "passed",
+              "duration": 609000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 36,
+            "name": "User status is approved",
+            "result": {
+              "status": "passed",
+              "duration": 1135000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

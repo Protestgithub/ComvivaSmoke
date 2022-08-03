@@ -4,22 +4,22 @@
 //----------------Imports---------------------------------------------------------------------
 import 'cypress-iframe'
 import { Given, When, Then, And, Before } from "cypress-cucumber-preprocessor/steps";
-import loginPage from '../../../../../support/pageObjects/loginPage';
-import homePage from '../../../../../support/pageObjects/homePage';
+import loginPage from '../../../../support/pageObjects/loginPage';
+import homePage from '../../../../support/pageObjects/homePage';
 
-import "../../../../../support/commands";
-import register from '../../../../../support/pageObjects/UserManagement/register';
-import approvals from '../../../../../support/pageObjects/UserManagement/approvals';
-import manageUsers from '../../../../../support/pageObjects/UserManagement/manageUsers';
-import DomainFieldspage from '../../../../../support/pageObjects/DomainManagement/DomainFieldspage';
+import "../../../../support/commands";
+import register from '../../../../support/pageObjects/UserManagement/register';
+import approvals from '../../../../support/pageObjects/UserManagement/approvals';
+import manageUsers from '../../../../support/pageObjects/UserManagement/manageUsers';
+import DomainFieldspage from '../../../../support/pageObjects/DomainManagement/DomainFieldspage';
 import CircularJSON from 'circular-json';
 import Flatted from 'flatted';
-import TransferRulePage from '../../../../../support/pageObjects/TransferRules/TransferRulePage';
-import Approval from '../../../../../support/pageObjects/TransferRules/Approval';
-import O2C from '../../../../../support/pageObjects/TransferRules/O2C';
-import O2CTransferInitiate from '../../../../../support/pageObjects/OperatorToChannel/O2CTransferInitiate';
-import DownloadAmb from '../../../../../support/pageObjects/AmbiguousTransaction/DownloadAmb';
-import BulkSettlement from '../../../../../support/pageObjects/AmbiguousTransaction/BulkSettlement';
+import TransferRulePage from '../../../../support/pageObjects/TransferRules/TransferRulePage';
+import Approval from '../../../../support/pageObjects/TransferRules/Approval';
+import O2C from '../../../../support/pageObjects/TransferRules/O2C';
+import O2CTransferInitiate from '../../../../support/pageObjects/OperatorToChannel/O2CTransferInitiate';
+import DownloadAmb from '../../../../support/pageObjects/AmbiguousTransaction/DownloadAmb';
+import BulkSettlement from '../../../../support/pageObjects/AmbiguousTransaction/BulkSettlement';
 
 
 //----------------Object Declaration----------------------------------------------------------
@@ -37,9 +37,10 @@ const O2CTransferInitiatePage = new O2CTransferInitiate()
 const DownloadAmbpage = new DownloadAmb()
 const BulkSettlementpage = new BulkSettlement()
 const TransferRuleApproval = new Approval()
+var DataFile = "cypress/fixtures/userData/Domain&CAT.json"
+var GradeFile = 'cypress/fixtures/userData/Gradedata.json'
 
-var mobile
-var mobile,name
+var mobile, name
 function getRandomName() {
   name = "";
   var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
@@ -69,7 +70,6 @@ Before(() => {
   cy.fixture('AmbOrderTransaction').then(function (data6) {
     this.data6 = data6;
   })
- 
 });
 
 
@@ -102,10 +102,10 @@ Given('Login into Mobiquity Portal as another System admin Checker1 after logout
   cy.wait(2000)
   cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
 })
-Then('Logout', function(){
+Then('Logout', function () {
   welcomePage.getUserMenu().click()
   welcomePage.getLogoutButton().click()
-  welcomePage.getLogoutYesButton().click()  
+  welcomePage.getLogoutYesButton().click()
 })
 When('User Click on Transfer Rule.', function () {
   cy.wait(2000)
@@ -125,23 +125,22 @@ And('Select the Service Name and from detailss.', function () {
   cy.wait(4000)
   //cy.mfsprovider()
   transferrulepage.getFromMFSProvider().select(this.data3.TransferRuleDataCreation.FromMFSprovider, { force: true })
-  transferrulepage.getFromeDomain().select(this.data3.TransferRuleDataCreation.FromDomain, { force: true })
+  cy.readFile(DataFile).then((data) => {
+    let Domain = data.Doaminname
+    transferrulepage.getFromeDomain().select(Domain, { force: true })
+  })
   transferrulepage.getFromPaymentInstrument().select(this.data3.TransferRuleDataCreation.FromPaymentInstrument, { force: true })
   transferrulepage.getFromWallettype().select(this.data3.TransferRuleDataCreation.FromWallet, { force: true })
 })
 
 
 And('Select the To detailss.', function () {
-
   cy.wait(2000)
-
   transferrulepage.getToMFSProvider().select(this.data3.TransferRuleDataCreation.ToMFSprovider, { force: true })
   transferrulepage.getToDomain().select(this.data3.TransferRuleDataCreation.ToDomain, { force: true })
   cy.wait(2000)
   transferrulepage.getToPaymentInstrument().select(this.data3.TransferRuleDataCreation.ToPaymentInstrument, { force: true })
   transferrulepage.getToWallettype().select(this.data3.TransferRuleDataCreation.ToWallet, { force: true })
-
-
   transferrulepage.getSubmitbttn().click()
   cy.wait(2000)
 })
@@ -157,14 +156,6 @@ And('Select the From & To categoryy.', function () {
 
 })
 //-----------------------------------------------------------------------------------
-When('User Click on Transfer Rule.', function () {
-  cy.wait(2000)
-  welcomePage.getTransferRuleOption().click()
-  cy.wait(2000)
-  welcomePage.getTransferRule().click()
-  cy.wait(2000)
-})
-
 And('Select the Service Name and from details.', function () {
 
 
@@ -174,54 +165,62 @@ And('Select the Service Name and from details.', function () {
   cy.wait(4000)
   //cy.mfsprovider()
   transferrulepage.getFromMFSProvider().select(this.data3.TransferRuleData.FromMFSprovider, { force: true })
-  transferrulepage.getFromeDomain().select(this.data3.TransferRuleData.FromDomain, { force: true })
+  cy.readFile(DataFile).then((data) => {
+    let Domain = data.Domainname
+    transferrulepage.getFromeDomain().select(Domain, { force: true })
+  })
   transferrulepage.getFromPaymentInstrument().select(this.data3.TransferRuleData.FromPaymentInstrument, { force: true })
   transferrulepage.getFromWallettype().select(this.data3.TransferRuleData.FromWallet, { force: true })
 })
 
 
 And('Select the To details.', function () {
-
   cy.wait(2000)
-
   transferrulepage.getToMFSProvider().select(this.data3.TransferRuleData.ToMFSprovider, { force: true })
   transferrulepage.getToDomain().select(this.data3.TransferRuleData.ToDomain, { force: true })
   transferrulepage.getToPaymentInstrument().select(this.data3.TransferRuleData.ToPaymentInstrument, { force: true })
   transferrulepage.getToWallettype().select(this.data3.TransferRuleData.ToWallet, { force: true })
-
-
   transferrulepage.getSubmitbttn().click()
   cy.wait(2000)
 })
+
 And('Select the From & To category.', function () {
-
   cy.wait(2000)
-
-  transferrulepage.getFromCategory().select(this.data3.TransferRuleData.FromCategory, { force: true })
+  cy.readFile(DataFile).then((data) => {
+    let Domain = data.Domainname
+    transferrulepage.getFromCategory().select(Domain, { force: true })
+  })
   transferrulepage.getToCategory().select(this.data3.TransferRuleData.ToCategory, { force: true })
-
-  transferrulepage.getFromGrade().select(this.data3.TransferRuleData.FromGrade, { force: true })
+  cy.readFile(GradeFile).then((data) => {
+    let Grade = data.GradeName
+    transferrulepage.getFromGrade().select(Grade, { force: true })
+  })
   transferrulepage.getToGrade().select(this.data3.TransferRuleData.ToGrade, { force: true })
 
 })
+
 When('Click on Add Transfer Rule button.', function () {
-
   cy.wait(2000)
-
   transferrulepage.getAddToTransferbttn().click()
 })
+
 And('Select Status,Fixed Trf Level,Transfer type,Geographical Domain and Controlled Trf Level', function () {
-
+const uuid = () => Cypress._.random(1e3)
+const uuid1 = () => Cypress._.random(1e3)
+MinimumTransferAmount = uuid()
+MaximumTransferAmount = uuid1()
+let MinimumTransferAmount,MaximumTransferAmount
   cy.wait(2000)
-
   transferrulepage.getStatus().select(this.data3.TransferRuleData.Status, { force: true })
   transferrulepage.getTransferType().select(this.data3.TransferRuleData.TransferType, { force: true })
   transferrulepage.getGeographicalDomain().select(this.data3.TransferRuleData.GeographicalDomain, { force: true })
+  transferrulepage.getMinimumTransferAmount().type(MinimumTransferAmount,{ force: true })
+  transferrulepage.getMaximumTransferAmount().type(MaximumTransferAmount,{ force: true })
+
 })
+
 Then('Click on submit button.', function () {
-
   cy.wait(2000)
-
   transferrulepage.getSubmitbttn2().click()
 })
 Then('Click on confirm button.', function () {
@@ -233,77 +232,11 @@ Then('Click on confirm button.', function () {
 
 //------------------------------------Testcase2--------------------------------------------------//
 //----------------Modify--------------------------------------//
-
-
-And('Select the Service Name and from details.', function () {
-
-
-  cy.wait(2000)
-
-  transferrulepage.getServiceName().select(this.data3.TransferRuleData3.servicename, { force: true })
-
-
-  transferrulepage.getFromMFSProvider().select(this.data3.TransferRuleData.FromMFSprovider, { force: true })
-  transferrulepage.getFromeDomain().select(this.data3.TransferRuleData.FromDomain, { force: true })
-  transferrulepage.getFromPaymentInstrument().select(this.data3.TransferRuleData.FromPaymentInstrument, { force: true })
-  transferrulepage.getFromWallettype().select(this.data3.TransferRuleData.FromWallet, { force: true })
-})
-
-
-And('Select the To details.', function () {
-
-  cy.wait(2000)
-
-  transferrulepage.getToMFSProvider().select(this.data3.TransferRuleData.ToMFSprovider, { force: true })
-  transferrulepage.getToDomain().select(this.data3.TransferRuleData.ToDomain, { force: true })
-  transferrulepage.getToPaymentInstrument().select(this.data3.TransferRuleData.ToPaymentInstrument, { force: true })
-  transferrulepage.getToWallettype().select(this.data3.TransferRuleData.ToWallet, { force: true })
-
-
-  transferrulepage.getSubmitbttn().click()
-  cy.wait(2000)
-})
-And('Select the From & To category.', function () {
-
-  cy.wait(2000)
-
-  transferrulepage.getFromCategory().select(this.data3.TransferRuleData.FromCategory, { force: true })
-  transferrulepage.getToCategory().select(this.data3.TransferRuleData.ToCategory, { force: true })
-
-  transferrulepage.getFromGrade().select(this.data3.TransferRuleData.FromGrade, { force: true })
-  transferrulepage.getToGrade().select(this.data3.TransferRuleData.ToGrade, { force: true })
-
-})
-When('Click on Add Transfer Rule button.', function () {
-
-  cy.wait(2000)
-
-  transferrulepage.getAddToTransferbttn().click()
-})
-And('Select Status,Fixed Trf Level,Transfer type,Geographical Domain and Controlled Trf Level', function () {
-
-  cy.wait(2000)
-
-  transferrulepage.getStatus().select(this.data3.TransferRuleData.Status, { force: true })
-  transferrulepage.getTransferType().select(this.data3.TransferRuleData.TransferType, { force: true })
-  transferrulepage.getGeographicalDomain().select(this.data3.TransferRuleData.GeographicalDomain, { force: true })
-})
 When('User clicks on edit option.', function () {
 
   transferrulepage.getEditOption().click()
 })
-Then('Click on submit button.', function () {
 
-  cy.wait(2000)
-
-  transferrulepage.getSubmitbttn2().click()
-})
-Then('Click on confirm button.', function () {
-
-  cy.wait(2000)
-
-  transferrulepage.getConfirmbttn().click()
-})
 // --------------------------------------view-------------------------------//
 When('User clicks on view option.', function () {
   transferrulepage.getViewOption().click()
@@ -378,14 +311,26 @@ When('User clicks on transfer rule approval', function () {
   welcomePage.getTransferRuleOption().click()
   welcomePage.getTransferRuleApproval().click()
   cy.wait(2000)
- // transferruleapprovalpage.getTransferRule().click()
 })
 And('Select rule and approve', function () {
   cy.wait(3000)
-  transferruleapprovalpage.getFirstApproval().contains("Approve").click()
+  cy.get('.fd-page.iframeContainer.svelte-1v5e28n > iframe').then(($iframe) => {
+    const $body = $iframe.contents().find('body')
+    const $win = $iframe[0].contentWindow
+    cy.stub($win, 'confirm', () => true)
+      .as('windowConfirm')
+    cy.stub($win.console, 'log').as('consoleLog')
+    cy.wrap($body)
+    transferruleapprovalpage.getFirstApproval().contains("Approve").click()
+    // .should(function () {
+    //  expect(this.windowConfirm).to.be.calledWith('Are you sure you want to Reject?')
+    //     //expect(this.consoleLog).to.be.calledWith('CONFIRMED')  // passes
+    //   })
+  })
 })
 Then('click on submit', function () {
   cy.wait(2000)
+
     transferruleapprovalpage.getSubmitbttn().click()
 })
 

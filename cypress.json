@@ -5,6 +5,7 @@
     "viewportWidth": 1200,
     "viewportHeight": 900,
     "trashAssetsBeforeRun": true,
+    "downloadsFolder":"cypress/fixtures/templates",
 
     "env": {
      "Adminurl": "http://172.25.48.237",

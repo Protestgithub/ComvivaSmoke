@@ -19,6 +19,7 @@ When Click on Add Transfer Rule button.
 And Select Status,Fixed Trf Level,Transfer type,Geographical Domain and Controlled Trf Level
 Then Click on submit button.
 Then Click on confirm button.
+
 # Author: Likith R
 # Last Updated:
 # Comments 
@@ -65,6 +66,7 @@ And Select the From & To category.
 When User clicks on edit option.
 Then Click on submit button.
 Then Click on confirm button.
+
 # Author: Likith R
 # Last Updated:
 # Comments 
@@ -109,6 +111,11 @@ And Select the Service Name and from details.
 And Select the To details.
 And Select the From & To category.
 When User clicks on Delete option.
+Then Logout
+Given Login into Mobiquity Portal as another System admin Checker1 after logout
+When User clicks on transfer rule approval
+And Select rule and approve
+Then click on submit
 
 # Author: Likith R
 # Last Updated:

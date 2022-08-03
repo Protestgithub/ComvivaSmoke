@@ -1,5 +1,9 @@
 class BankingActivation
 {
+    getInvalidNumber(){
+
+        return cy.iframe().find('div[class="ng-star-inserted"] div[class="ng-star-inserted"]')
+    }
      getEnterCIFNumber(){
         return cy.iframe().find('#mat-input-0')
     }

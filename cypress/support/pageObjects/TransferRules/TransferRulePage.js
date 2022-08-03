@@ -57,8 +57,12 @@ class TransferRulePage {
     return cy.iframe().find('select[id="payeeGradeCode"]')
   }
   /*--------------------------------*/
-
-
+  getMinimumTransferAmount(){
+    return cy.iframe().find('input[name="trfAmtMin"]')
+  }
+  getMaximumTransferAmount(){
+    return cy.iframe().find('input[name="trfAmtMax"]')
+  }
   getStatus() {
     return cy.iframe().find('select[id="trRule_confirmCoU_statusId"]')
   }

@@ -104,7 +104,7 @@ And('Enter the Activated CIF number and search for the user', function () {
 
 Then('verify admin is able to see the Activated Message', function () {
 
-  bankingActivationPage.getMobActivatedMsg().should('have.text', ' Mobile Banking Activated ')
+  bankingActivationPage.getMobActivatedMsg().eq(0).should('have.text', ' Mobile Banking Activated ')
   bankingActivationPage.getInternetActivatedMsg().should('have.text', ' Internet Banking Activated ')
 
 })
@@ -133,6 +133,6 @@ And('Enter the mobile or CIF number which is not registered and search for the u
 })
 
 Then('verify admin is able to see the Message mobile or CIF number does not exist in the system',function() {
-  bankingActivationPage.getInvalidNumber().should('have.text', ' CIF number 7213456273 is invalid.  Next ')
+  bankingActivationPage.getInvalidNumber().should('contain.text', ' is invalid. Next ')
   })
   
