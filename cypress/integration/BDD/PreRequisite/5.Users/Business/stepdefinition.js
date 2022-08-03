@@ -482,8 +482,9 @@ And('Select User type as Business and Select user role', function () {
 //----------------------Basic Data---------------------------------------------------------------
 And('Enter all the required business user details', function () {
 
-  const uuid = () => Cypress._.random(1e8)
-  mobile = "77" + uuid()
+  let mobileut;
+  const m = parseInt(Date.now()/100000);
+  mobileut = "77" + m
   cy.wait(2000)
   const lgid = () => Cypress._.random(1e5)
   loginId = this.data2.personalInfo.name + lgid()
@@ -493,11 +494,11 @@ And('Enter all the required business user details', function () {
     .select(this.data2.personalInfo.Title, { force: true })
   //-----------------------Mobile Number OTP-------------------------------------------------------------------
   recurse(
-    () => registerPage.getMobileNumber().clear().type(mobile, { force: true }),
+    () => registerPage.getMobileNumber().clear().type(mobileut, { force: true }),
     () => registerPage.getFirstName().clear().type(getRandomName(), { force: true }),
     (uniqueness) => (uniqueness) == registerPage.getuniqueness()
   )
-  cy.writeFile('cypress/fixtures/userData/BusinessUsersData.json',{registeredMobile:mobile})
+  cy.writeFile('cypress/fixtures/userData/BusinessUsersData.json',{registeredMobile:mobileut})
   registerPage.getLastName().type(getRandomName(), { force: true })
   cy.OTP(Cypress.env('apiBaseURL'))
   cy.wait(2000)
@@ -517,14 +518,16 @@ And('Enter all the required business user details', function () {
 
   registerPage.getNextButtonBasic().eq(0).click({ force: true })
 
-  KycValue = "A" + kycid
+  let kycut
+  const k = parseInt(Date.now());
+  kycut="A"+k
   //---------------------KYC-----------------------------------------------------------------------
   registerPage.getKYCButton().eq(0).click({ force: true })
   cy.wait(2000)
   registerPage.getKYCIDType().select(this.data2.KycInfo8.KycIDType, { force: true })
-  registerPage.getKYCIDValue().type(KycValue, { force: true })
+  registerPage.getKYCIDValue().type(kycut, { force: true })
   cy.readFile('cypress/fixtures/userData/BusinessUsersData.json').then((data) => {
-    data.RegisteredKyc = KycValue
+    data.RegisteredKyc = kycut
     cy.writeFile('cypress/fixtures/userData/BusinessUsersData.json', data)
 
   })
@@ -567,8 +570,9 @@ And('Enter all the required business user details', function () {
    registerPage.getNextButtonBasic2().click({force:true})
    
 
-  const uuidbk = () => Cypress._.random(1e8)
-ifscnum="SBI"+uuidbk()
+   const t = parseInt(Date.now()/1000);
+
+   ifscnum="S"+t
 
 const uuidbkd = () => Cypress._.random(1e9)
 accnumber="4239346"+uuidbkd()
@@ -625,8 +629,9 @@ accnumber="4239346"+uuidbkd()
 //####Creating Business User For Suspension
 And('Enter all the required business user details1', function () {
 
-  const uuid1 = () => Cypress._.random(1e8)
-  mobile = "77" + uuid1()
+  let mobileut;
+  const m = parseInt(Date.now()/100000);
+  mobileut = "77" + m
   cy.wait(2000)
   const lgid = () => Cypress._.random(1e5)
   loginId = this.data2.personalInfo.name + lgid()
@@ -635,8 +640,8 @@ And('Enter all the required business user details1', function () {
   cy.iframe().find('select[data-test-id="title"]')
     .select(this.data2.personalInfo.Title, { force: true })
   //-----------------------Mobile Number OTP-------------------------------------------------------------------
-  registerPage.getMobileNumber().type(mobile, { force: true })
-  cy.writeFile('cypress/fixtures/userData/BusinessUserSuspensionData.json', { registeredMobile: mobile })
+  registerPage.getMobileNumber().type(mobileut, { force: true })
+  cy.writeFile('cypress/fixtures/userData/BusinessUserSuspensionData.json', { registeredMobile: mobileut })
   registerPage.getLastName().type(getRandomName(), { force: true })
   cy.OTP(Cypress.env('apiBaseURL'))
   cy.wait(2000)
@@ -658,18 +663,14 @@ And('Enter all the required business user details1', function () {
 
   registerPage.getNextButtonBasic().eq(0).click({ force: true })
 
-  KycValue = "A" + kycid
+  let kycut
+  const k = parseInt(Date.now());
+  kycut="A"+k
   //---------------------KYC-----------------------------------------------------------------------
   registerPage.getKYCButton().eq(0).click({ force: true })
   cy.wait(2000)
   registerPage.getKYCIDType().select(this.data2.KycInfo8.KycIDType, { force: true })
-  registerPage.getKYCIDValue().type(KycValue, { force: true })
-  cy.readFile('cypress/fixtures/userData/BusinessUsersData.json').then((data) => {
-    data.RegisteredKyc = KycValue
-    cy.writeFile('cypress/fixtures/userData/BusinessUsersData.json', data)
-
-  })
-
+  registerPage.getKYCIDValue().type(kycut, { force: true })
   cy.wait(2000)
   registerPage.getMakeThisPrimaryButton().eq(2).click({ force: true })
   cy.wait(2000)
@@ -710,8 +711,8 @@ registerPage.getReguProfile().select('FullKycprofile', { force: true })
 
   registerPage.getNextButtonBasic2().click({ force: true })
   
-  const uuidbk = () => Cypress._.random(1e8)
-ifscnum="SBI"+uuidbk()
+  const t = parseInt(Date.now()/1000);
+  ifscnum="S"+t
 
 const uuidbkd = () => Cypress._.random(1e9)
 accnumber="4239346"+uuidbkd()
