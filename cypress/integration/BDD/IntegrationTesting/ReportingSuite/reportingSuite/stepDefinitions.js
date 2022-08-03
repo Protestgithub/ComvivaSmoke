@@ -30,6 +30,20 @@ Given('Login into Mobiquity Portal as System admin User and Launch Pentaho Porta
   cy.checkWelcomeText(this.data.networkAdminWelcomeText)
   Report.getPentaho()
 })
+Given('Login into Mobiquity Portal as System admin User and Launch Pentaho Portal1', function(){
+  cy.launchURL(Cypress.env('Adminurl'))
+  cy.SysAdminlogin2()
+  cy.wait(2000)
+  cy.checkWelcomeText(this.data.networkAdminWelcomeText)
+  Report.getPentaho()
+})
+Given('Login into Mobiquity Portal as System admin User and Launch Pentaho Portal2', function(){
+  cy.launchURL(Cypress.env('Adminurl'))
+  cy.SysAdminlogin3()
+  cy.wait(2000)
+  cy.checkWelcomeText(this.data.networkAdminWelcomeText)
+  Report.getPentaho()
+})
 //-------------------------------Click on Browser Files-----------------------------------------------
 And('click on Browse Files',function(){
   cy.wait(20000)

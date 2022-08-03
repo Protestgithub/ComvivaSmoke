@@ -75,13 +75,14 @@ class ReportingSuite
             let stripe6 = cy.wrap($body)
             stripe6.find('.flow.parameter-wrapper > :nth-child(6) > div > select').select('table/excel;page-mode=flow')
             this.getViewReport()
+            cy.wait(40000)
           }) 
           cy.get('iframe[name="frame_0"]').then($element => {
             const $body = $element.contents().find('body')
             let stripe7 = cy.wrap($body)
             stripe7.find('.flow.parameter-wrapper > :nth-child(6) > div > select').select('application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;page-mode=flow')
             this.getViewReport()
-            cy.wait(60000)
+            cy.wait(100000)
           })
           cy.get('iframe[name="frame_0"]').then($element => {
             const $body = $element.contents().find('body')
