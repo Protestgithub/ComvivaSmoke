@@ -26,7 +26,7 @@ pipeline {
                 echo "Building the application"
             }
         }
-         stage('Sys'){
+        stage('Sys'){
             steps{
                bat "npm i"
                 bat "npm i cypress-parallel"
@@ -41,7 +41,17 @@ pipeline {
                 bat "npm run cy:parallel:many --env Adminurl=http://125.16.139.20:8023 ,apiBaseURL=http://172.25.48.237:3133 --browser ${BROWSER} --spec ${SPEC}  "
             }
             }
-           }
+            stage('Test2') {
+            steps {
+                bat "npm run cy:parallel:many1 --env Adminurl=http://125.16.139.20:8023 ,apiBaseURL=http://172.25.48.237:3133 --browser ${BROWSER} --spec ${SPEC}  "
+            }
+        }
+        stage('Test3') {
+            steps {
+                bat "npm run cy:parallel:many2 --env Adminurl=http://125.16.139.20:8023 ,apiBaseURL=http://172.25.48.237:3133 --browser ${BROWSER} --spec ${SPEC}  "
+            }
+        }
+            }
         }
         stage('Deploy'){
             steps {
