@@ -208,3 +208,20 @@ Cypress.Commands.add('DeleteDetails',()=>{
         })
       }))
 })
+
+Cypress.Commands.add('DeleteDetails1',()=>{
+
+    tcpPage.getViewDetails().each(($row => {
+
+        cy.wrap($row).within(function () {
+    
+          cy.get('td.name').each(($el => {
+    
+            if ($el.text() == Tcpname) {
+              cy.get('span.glyphicon.glyphicon-trash').click({ force: true })
+    
+            }
+          }))
+        })
+      }))
+})
