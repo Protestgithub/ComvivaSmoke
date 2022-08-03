@@ -257,14 +257,11 @@ Then('Click on Edit Marketing Profile and associate the created TCP with Marketi
 
 Then('Click on delete icon', function () {
 
-  cy.wait(3000)
-  tcpPage.getdelete().within(function () {
-    cy.get("td")
-    cy.wait(5000)
+  cy.wait(4000)
+  
     cy.TcpName()
-    tcpPage.getdeleteicon().contains(Tcpname).click({ force: true })
-
-  })
+    cy.DeleteDetails1(Tcpname)
+   
 })
 //------------------------Regulatory Profile Creation ----------------------//
 When('Navigate to UserManagement And Click on Regulatory Profile', function () {
