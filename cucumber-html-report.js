@@ -20,7 +20,7 @@ report.generate({
         }
     },
     customData: {
-        title: 'Mobiquity Phase1 UI Automation Suite Test Report',
+        title: 'UIAutomation Report',
         data: [
             {label: 'Project', value: 'Mobiquity Pay'},
             {label: 'Release', value: ''},
