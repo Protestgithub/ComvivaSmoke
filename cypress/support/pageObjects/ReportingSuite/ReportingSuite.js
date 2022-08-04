@@ -75,7 +75,7 @@ class ReportingSuite
             let stripe6 = cy.wrap($body)
             stripe6.find('.flow.parameter-wrapper > :nth-child(6) > div > select').select('table/excel;page-mode=flow')
             this.getViewReport()
-            cy.wait(40000)
+            cy.wait(60000)
           }) 
           cy.get('iframe[name="frame_0"]').then($element => {
             const $body = $element.contents().find('body')
@@ -100,37 +100,37 @@ class ReportingSuite
       })
       this.getopenbtn()
       cy.wait(10000)
-        cy.get('iframe[name="frame_1"]').then($element => {
+        cy.get('iframe[name="frame_0"]').then($element => {
             const $body = $element.contents().find('body')
             let stripe4 = cy.wrap($body)
             stripe4.find('.flow.parameter-wrapper > :nth-child(5) > div > select').select('pageable/pdf')
             this.getViewReport()
           })
-          cy.get('iframe[name="frame_1"]').then($element => {
+          cy.get('iframe[name="frame_0"]').then($element => {
             const $body = $element.contents().find('body')
             let stripe4 = cy.wrap($body)
             stripe4.find('.flow.parameter-wrapper > :nth-child(5) > div > select').select('table/html;page-mode=page')
             this.getViewReport()
           })
-          cy.get('iframe[name="frame_1"]').then($element => {
+          cy.get('iframe[name="frame_0"]').then($element => {
             const $body = $element.contents().find('body')
             let stripe5 = cy.wrap($body)
             stripe5.find('.flow.parameter-wrapper > :nth-child(5) > div > select').select('table/html;page-mode=stream')
             this.getViewReport()
           })
-          cy.get('iframe[name="frame_1"]').then($element => {
+          cy.get('iframe[name="frame_0"]').then($element => {
             const $body = $element.contents().find('body')
             let stripe6 = cy.wrap($body)
             stripe6.find('.flow.parameter-wrapper > :nth-child(5) > div > select').select('table/excel;page-mode=flow')
            this.getViewReport()
           })
-          cy.get('iframe[name="frame_1"]').then($element => {
+          cy.get('iframe[name="frame_0"]').then($element => {
             const $body = $element.contents().find('body')
             let stripe7 = cy.wrap($body)
             stripe7.find('.flow.parameter-wrapper > :nth-child(5) > div > select').select('application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;page-mode=flow')
             this.getViewReport()
           })
-          cy.get('iframe[name="frame_1"]').then($element => {
+          cy.get('iframe[name="frame_0"]').then($element => {
             const $body = $element.contents().find('body')
             let stripe8 = cy.wrap($body)
             stripe8.find('.flow.parameter-wrapper > :nth-child(5) > div > select').select('table/csv;page-mode=stream')
@@ -146,37 +146,37 @@ class ReportingSuite
           })
         this.getopenbtn()
         cy.wait(10000)
-        cy.get('iframe[name="frame_2"]').then($element => {
+        cy.get('iframe[name="frame_1"]').then($element => {
             const $body = $element.contents().find('body')       
             let stripe4 = cy.wrap($body)       
             stripe4.find('.flow.parameter-wrapper > :nth-child(6) > div > select').select('pageable/pdf')
             this.getViewReport()
           })
-          cy.get('iframe[name="frame_2"]').then($element => {
+          cy.get('iframe[name="frame_1"]').then($element => {
             const $body = $element.contents().find('body')
             let stripe4 = cy.wrap($body)
             stripe4.find('.flow.parameter-wrapper > :nth-child(6) > div > select').select('table/html;page-mode=page')
             this.getViewReport()
           })
-          cy.get('iframe[name="frame_2"]').then($element => {   
+          cy.get('iframe[name="frame_1"]').then($element => {   
             const $body = $element.contents().find('body')   
             let stripe5 = cy.wrap($body)
             stripe5.find('.flow.parameter-wrapper > :nth-child(6) > div > select').select('table/html;page-mode=stream')
             this.getViewReport()
           })
-          cy.get('iframe[name="frame_2"]').then($element => {       
+          cy.get('iframe[name="frame_1"]').then($element => {       
             const $body = $element.contents().find('body')        
             let stripe6 = cy.wrap($body)
             stripe6.find('.flow.parameter-wrapper > :nth-child(6) > div > select').select('table/excel;page-mode=flow')
             this.getViewReport()
           })
-          cy.get('iframe[name="frame_2"]').then($element => {     
+          cy.get('iframe[name="frame_1"]').then($element => {     
             const $body = $element.contents().find('body')     
             let stripe7 = cy.wrap($body)
             stripe7.find('.flow.parameter-wrapper > :nth-child(6) > div > select').select('application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;page-mode=flow')
             this.getViewReport()
           })
-          cy.get('iframe[name="frame_2"]').then($element => {       
+          cy.get('iframe[name="frame_1"]').then($element => {       
             const $body = $element.contents().find('body')       
             let stripe8 = cy.wrap($body)
             stripe8.find('.flow.parameter-wrapper > :nth-child(6) > div > select').select('table/csv;page-mode=stream')
@@ -192,37 +192,37 @@ class ReportingSuite
       })
       this.getopenbtn()
       cy.wait(10000)
-        cy.get('iframe[name="frame_3"]').then($element => {
+        cy.get('iframe[name="frame_2"]').then($element => {
           const $body = $element.contents().find('body')
           let stripe4 = cy.wrap($body)
           stripe4.find('.flow.parameter-wrapper > :nth-child(6) > div > select').select('pageable/pdf')
           this.getViewReport()
         })
-        cy.get('iframe[name="frame_3"]').then($element => {
+        cy.get('iframe[name="frame_2"]').then($element => {
           const $body = $element.contents().find('body')
           let stripe4 = cy.wrap($body)
           stripe4.find('.flow.parameter-wrapper > :nth-child(6) > div > select').select('table/html;page-mode=page')
           this.getViewReport()
         })
-        cy.get('iframe[name="frame_3"]').then($element => {
+        cy.get('iframe[name="frame_2"]').then($element => {
           const $body = $element.contents().find('body')
           let stripe5 = cy.wrap($body)
           stripe5.find('.flow.parameter-wrapper > :nth-child(6) > div > select').select('table/html;page-mode=stream')
           this.getViewReport()
         })
-        cy.get('iframe[name="frame_3"]').then($element => {
+        cy.get('iframe[name="frame_2"]').then($element => {
           const $body = $element.contents().find('body')
           let stripe6 = cy.wrap($body)
           stripe6.find('.flow.parameter-wrapper > :nth-child(6) > div > select').select('table/excel;page-mode=flow')
           this.getViewReport()
         })
-        cy.get('iframe[name="frame_3"]').then($element => {
+        cy.get('iframe[name="frame_2"]').then($element => {
           const $body = $element.contents().find('body')
           let stripe7 = cy.wrap($body)
           stripe7.find('.flow.parameter-wrapper > :nth-child(6) > div > select').select('application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;page-mode=flow')
           this.getViewReport()
         })
-        cy.get('iframe[name="frame_3"]').then($element => { 
+        cy.get('iframe[name="frame_2"]').then($element => { 
           const $body = $element.contents().find('body') 
           let stripe8 = cy.wrap($body)
           stripe8.find('.flow.parameter-wrapper > :nth-child(6) > div > select').select('table/csv;page-mode=stream')
@@ -238,37 +238,37 @@ class ReportingSuite
       })
       this.getopenbtn()
       cy.wait(10000)
-        cy.get('iframe[name="frame_4"]').then($element => {
+        cy.get('iframe[name="frame_3"]').then($element => {
             const $body = $element.contents().find('body')
             let stripe4 = cy.wrap($body)
             stripe4.find('.flow.parameter-wrapper > :nth-child(6) > div > select').select('pageable/pdf')
             this.getViewReport()
           })
-          cy.get('iframe[name="frame_4"]').then($element => {
+          cy.get('iframe[name="frame_3"]').then($element => {
             const $body = $element.contents().find('body')
             let stripe4 = cy.wrap($body)
             stripe4.find('.flow.parameter-wrapper > :nth-child(6) > div > select').select('table/html;page-mode=page')
             this.getViewReport()
           })
-          cy.get('iframe[name="frame_4"]').then($element => {
+          cy.get('iframe[name="frame_3"]').then($element => {
             const $body = $element.contents().find('body')
             let stripe5 = cy.wrap($body)
             stripe5.find('.flow.parameter-wrapper > :nth-child(6) > div > select').select('table/html;page-mode=stream')
             this.getViewReport()
           })
-          cy.get('iframe[name="frame_4"]').then($element => {
+          cy.get('iframe[name="frame_3"]').then($element => {
             const $body = $element.contents().find('body')
             let stripe6 = cy.wrap($body)
             stripe6.find('.flow.parameter-wrapper > :nth-child(6) > div > select').select('table/excel;page-mode=flow')
             this.getViewReport()
           })
-          cy.get('iframe[name="frame_4"]').then($element => {
+          cy.get('iframe[name="frame_3"]').then($element => {
             const $body = $element.contents().find('body')
             let stripe7 = cy.wrap($body)
             stripe7.find('.flow.parameter-wrapper > :nth-child(6) > div > select').select('application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;page-mode=flow')
             this.getViewReport()
           })
-          cy.get('iframe[name="frame_4"]').then($element => {
+          cy.get('iframe[name="frame_3"]').then($element => {
             const $body = $element.contents().find('body')
             let stripe8 = cy.wrap($body)
             stripe8.find('.flow.parameter-wrapper > :nth-child(6) > div > select').select('table/csv;page-mode=stream')
@@ -284,31 +284,31 @@ class ReportingSuite
       })
       this.getopenbtn()
       cy.wait(10000)
-        cy.get('iframe[name="frame_5"]').then($element => {
+        cy.get('iframe[name="frame_4"]').then($element => {
             const $body = $element.contents().find('body')
             let stripe4 = cy.wrap($body)
             stripe4.find('.flow.parameter-wrapper > :nth-child(14) > div > select').select('pageable/pdf')
             this.getViewReport()
           })
-          cy.get('iframe[name="frame_5"]').then($element => {
+          cy.get('iframe[name="frame_4"]').then($element => {
             const $body = $element.contents().find('body')
             let stripe5 = cy.wrap($body)
             stripe5.find('.flow.parameter-wrapper > :nth-child(14) > div > select').select('table/html;page-mode=stream')
             this.getViewReport()
           })
-          cy.get('iframe[name="frame_5"]').then($element => {
+          cy.get('iframe[name="frame_4"]').then($element => {
             const $body = $element.contents().find('body')
             let stripe6 = cy.wrap($body)
             stripe6.find('.flow.parameter-wrapper > :nth-child(14) > div > select').select('table/excel;page-mode=flow')
             this.getViewReport()
           })
-          cy.get('iframe[name="frame_5"]').then($element => {
+          cy.get('iframe[name="frame_4"]').then($element => {
             const $body = $element.contents().find('body')
             let stripe7 = cy.wrap($body)
             stripe7.find('.flow.parameter-wrapper > :nth-child(14) > div > select').select('application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;page-mode=flow')
             this.getViewReport()
           })
-          cy.get('iframe[name="frame_5"]').then($element => {
+          cy.get('iframe[name="frame_4"]').then($element => {
             const $body = $element.contents().find('body')
             let stripe8 = cy.wrap($body)
             stripe8.find('.flow.parameter-wrapper > :nth-child(14) > div > select').select('table/csv;page-mode=stream')
@@ -324,31 +324,31 @@ class ReportingSuite
       })
       this.getopenbtn()
       cy.wait(10000)
-        cy.get('iframe[name="frame_6"]').then($element => {
+        cy.get('iframe[name="frame_0"]').then($element => {
             const $body = $element.contents().find('body')
             let stripe4 = cy.wrap($body)
             stripe4.find('.flow.parameter-wrapper > :nth-child(10) > div > select').select('pageable/pdf')
             this.getViewReport()
           })
-          cy.get('iframe[name="frame_6"]').then($element => {
+          cy.get('iframe[name="frame_0"]').then($element => {
             const $body = $element.contents().find('body')
             let stripe5 = cy.wrap($body)
             stripe5.find('.flow.parameter-wrapper > :nth-child(10) > div > select').select('table/html;page-mode=stream')
             this.getViewReport()
           })
-          cy.get('iframe[name="frame_6"]').then($element => {
+          cy.get('iframe[name="frame_0"]').then($element => {
             const $body = $element.contents().find('body')
             let stripe6 = cy.wrap($body)
             stripe6.find('.flow.parameter-wrapper > :nth-child(10) > div > select').select('table/excel;page-mode=flow')
            this.getViewReport()
           })
-          cy.get('iframe[name="frame_6"]').then($element => {
+          cy.get('iframe[name="frame_0"]').then($element => {
             const $body = $element.contents().find('body')
             let stripe7 = cy.wrap($body)
             stripe7.find('.flow.parameter-wrapper > :nth-child(10) > div > select').select('application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;page-mode=flow')
            this.getViewReport()
           })
-          cy.get('iframe[name="frame_6"]').then($element => {
+          cy.get('iframe[name="frame_0"]').then($element => {
             const $body = $element.contents().find('body')
             let stripe8 = cy.wrap($body)
             stripe8.find('.flow.parameter-wrapper > :nth-child(10) > div > select').select('table/csv;page-mode=stream')
@@ -364,19 +364,19 @@ class ReportingSuite
       })
       this.getopenbtn()
       cy.wait(10000)
-        cy.get('iframe[name="frame_7"]').then($element => {
+        cy.get('iframe[name="frame_1"]').then($element => {
             const $body = $element.contents().find('body')
             let stripe4 = cy.wrap($body) 
             stripe4.find('.flow.parameter-wrapper > :nth-child(14) > div > select').select('pageable/pdf')
             this.getViewReport()
           })
-          cy.get('iframe[name="frame_7"]').then($element => {
+          cy.get('iframe[name="frame_1"]').then($element => {
             const $body = $element.contents().find('body')
             let stripe6 = cy.wrap($body)
             stripe6.find('.flow.parameter-wrapper > :nth-child(14) > div > select').select('table/excel;page-mode=flow')
             this.getViewReport()
           })
-          cy.get('iframe[name="frame_7"]').then($element => {        
+          cy.get('iframe[name="frame_1"]').then($element => {        
             const $body = $element.contents().find('body')       
             let stripe7 = cy.wrap($body)
             stripe7.find('.flow.parameter-wrapper > :nth-child(14) > div > select').select('application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;page-mode=flow')
@@ -392,31 +392,31 @@ class ReportingSuite
       })
       this.getopenbtn()
       cy.wait(10000)
-        cy.get('iframe[name="frame_8"]').then($element => {
+        cy.get('iframe[name="frame_2"]').then($element => {
             const $body = $element.contents().find('body')
             let stripe4 = cy.wrap($body)       
             stripe4.find('.flow.parameter-wrapper > :nth-child(8) > div > select').select('pageable/pdf')
             this.getViewReport()
           })
-          cy.get('iframe[name="frame_8"]').then($element => {
+          cy.get('iframe[name="frame_2"]').then($element => {
             const $body = $element.contents().find('body')
             let stripe5 = cy.wrap($body)
             stripe5.find('.flow.parameter-wrapper > :nth-child(8) > div > select').select('table/html;page-mode=stream')
             this.getViewReport()
           })
-          cy.get('iframe[name="frame_8"]').then($element => {
+          cy.get('iframe[name="frame_2"]').then($element => {
             const $body = $element.contents().find('body')
             let stripe6 = cy.wrap($body)
             stripe6.find('.flow.parameter-wrapper > :nth-child(8) > div > select').select('table/excel;page-mode=flow')
             this.getViewReport()
           })
-          cy.get('iframe[name="frame_8"]').then($element => {
+          cy.get('iframe[name="frame_2"]').then($element => {
             const $body = $element.contents().find('body')       
             let stripe7 = cy.wrap($body)
             stripe7.find('.flow.parameter-wrapper > :nth-child(8) > div > select').select('application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;page-mode=flow')
             this.getViewReport()
           })         
-          cy.get('iframe[name="frame_8"]').then($element => {       
+          cy.get('iframe[name="frame_2"]').then($element => {       
             const $body = $element.contents().find('body')
             let stripe8 = cy.wrap($body)
             stripe8.find('.flow.parameter-wrapper > :nth-child(8) > div > select').select('table/csv;page-mode=stream')
@@ -432,31 +432,31 @@ class ReportingSuite
       })
       this.getopenbtn()
       cy.wait(10000)
-        cy.get('iframe[name="frame_9"]').then($element => {
+        cy.get('iframe[name="frame_3"]').then($element => {
             const $body = $element.contents().find('body')
             let stripe4 = cy.wrap($body)
             stripe4.find('.flow.parameter-wrapper > :nth-child(17) > div > select').select('pageable/pdf')
             this.getViewReport()
           })
-          cy.get('iframe[name="frame_9"]').then($element => {        
+          cy.get('iframe[name="frame_3"]').then($element => {        
             const $body = $element.contents().find('body')
             let stripe5 = cy.wrap($body)
             stripe5.find('.flow.parameter-wrapper > :nth-child(17) > div > select').select('table/html;page-mode=stream')
             this.getViewReport()
           })
-          cy.get('iframe[name="frame_9"]').then($element => {
+          cy.get('iframe[name="frame_3"]').then($element => {
             const $body = $element.contents().find('body')
             let stripe6 = cy.wrap($body)
             stripe6.find('.flow.parameter-wrapper > :nth-child(17) > div > select').select('table/excel;page-mode=flow')
             this.getViewReport()
           })
-          cy.get('iframe[name="frame_9"]').then($element => {
+          cy.get('iframe[name="frame_3"]').then($element => {
             const $body = $element.contents().find('body')
             let stripe7 = cy.wrap($body)
             stripe7.find('.flow.parameter-wrapper > :nth-child(17) > div > select').select('application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;page-mode=flow')
             this.getViewReport()
           })
-          cy.get('iframe[name="frame_9"]').then($element => {
+          cy.get('iframe[name="frame_3"]').then($element => {
             const $body = $element.contents().find('body')
             let stripe8 = cy.wrap($body)
             stripe8.find('.flow.parameter-wrapper > :nth-child(17) > div > select').select('table/csv;page-mode=stream')
