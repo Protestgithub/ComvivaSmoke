@@ -27,7 +27,7 @@ Then Click on confirm button.
 # 
 @test
 
-Scenario: To verify that System admin should be able to add approve Transfer Rule successfully.
+Scenario: To verify that System admin should be able to add Approve Transfer Rule successfully.
 Given Login into Mobiquity Portal as System admin Checker1
 When User clicks on transfer rule approval
 And Select rule and approve
@@ -74,7 +74,7 @@ Then Click on confirm button.
 # 
 @test
 
-Scenario: To verify that System admin should be able to add approve Transfer Rule successfully.
+Scenario: To verify that System admin should be able to  Approve Transfer Rule successfully.
 Given Login into Mobiquity Portal as System admin Checker1
 When User clicks on transfer rule approval
 And Select rule and approve
@@ -142,7 +142,7 @@ Then Click on confirm button.
 # 
 @test
 
-Scenario: To verify that System admin should be able to add approve Transfer Rule successfully.
+Scenario: To verify that System admin should be able to add approves Transfer Rule successfully.
 Given Login into Mobiquity Portal as System admin Checker1
 When User clicks on transfer rule approval
 And Select rule and approve
