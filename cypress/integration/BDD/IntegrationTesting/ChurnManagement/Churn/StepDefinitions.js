@@ -379,7 +379,7 @@ And('update the json data for bulkupload', function () {
 
 And('Upload Bulk csv file with valid details', function () {
   cy.wait(2000)
-  churnManagementPage.getChurnInitiationUpload().attachFile('ChurnUserInitiation.csv')
+  churnManagementPage.getChurnInitiationUpload().attachFile('templates/ChurnUserInitiation.csv')
   cy.wait(3000)
   churnManagementPage.getChurnInitiationUploadSubmit().click({ force: true })
   cy.wait(3000)
