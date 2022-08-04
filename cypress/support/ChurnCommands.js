@@ -1,5 +1,4 @@
-
-var CsvFile = 'cypress/downloads/ChurnUserInitiation.csv'
+var CsvFile = 'cypress/fixtures/templates/ChurnUserInitiation.csv'
 var JSONFile = 'cypress/fixtures/churnData/ChurnUserInitiation.json'
 
 //----------------Imports---------------------------------------------------------------------
