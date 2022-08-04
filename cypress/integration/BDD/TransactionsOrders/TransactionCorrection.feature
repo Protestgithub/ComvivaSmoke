@@ -48,3 +48,4 @@ When User Click on eye button for WalletHistory2
 Then Logout
 Given Login into Mobiquity Portal as another System admin Checker1 after logout
 When Navigate to Transaction Correction and click on Transaction Approval2
+
