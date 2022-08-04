@@ -33,7 +33,7 @@ var SubProfileName = 'cypress/fixtures/profileData/Profile.json'
 var RegulatoryMarketingProfile = 'cypress/fixtures/userData/Regulatory&MarketingProfile.json'
 var loginId
 var KycValue
-var CsvFile = 'cypress/fixtures/ChurnUserInitiation.csv'
+var CsvFile = 'cypress/fixtures/templates/ChurnUserInitiation.csv'
 var JSONFile = 'cypress/fixtures/churnData/ChurnUserInitiation.json'
 
 function getRandomName() {
@@ -249,7 +249,7 @@ And('convert json to csv', function () {
 
 And('Upload csv file with valid details', function () {
   cy.wait(2000)
-  churnManagementPage.getChurnInitiationUpload().attachFile('ChurnUserInitiation.csv')
+  churnManagementPage.getChurnInitiationUpload().attachFile('templates/ChurnUserInitiation.csv')
   cy.wait(3000)
   churnManagementPage.getChurnInitiationUploadSubmit().click({ force: true })
   cy.wait(3000)
