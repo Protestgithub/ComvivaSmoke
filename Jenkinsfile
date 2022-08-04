@@ -26,7 +26,7 @@ pipeline {
                 echo "Building the application"
             }
         }
-        stage('Sys'){
+        stage('Prerequisites'){
             steps{
                bat "npm i"
                 bat "npm i cypress-parallel"
