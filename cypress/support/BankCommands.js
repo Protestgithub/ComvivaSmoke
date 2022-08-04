@@ -67,9 +67,9 @@ Cypress.Commands.add('getCSVfile', () => {
     cy.wait(3000)
     BankManagementPage.getDownloadFileTemplate().click({ force: true })
    cy.wait(2000)
-   cy.readFile('cypress/downloads/AddBranches.csv')
+   cy.readFile('cypress/fixtures/templates/AddBranches.csv')
    .then((data) => {
-   cy.writeFile('cypress/fixtures/AddBranches.csv', data)
+   cy.writeFile('cypress/fixtures/templates/AddBranches.csv', data)
    })
    let result = [];
    cy.readFile('cypress/fixtures/AddBranches.csv')
