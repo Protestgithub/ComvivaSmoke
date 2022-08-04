@@ -13,7 +13,6 @@
     "cy:Test": "npx cypress-tags run -e 'TAGS=@test' --browser chrome",
     "cy:parallel": "cypress-parallel -s cy:run -t 1 -d 'cypress/integration/BDD/CreationOfUsers/**/*.feature'",
     "cy:parallel:many1": "cypress-parallel -s cy:run -t 2 -d 'cypress/integration/BDD/Tests/**/*.feature'",
-    "cy:parallel:many2": "cypress-parallel -s cy:run -t 2 -d 'cypress/integration/BDD/TransactionsOrders/**/*.feature'",
     "cy:parallel:many": "cypress-parallel -s cy:run -t 2 -d 'cypress/integration/BDD/PreRequisite/**/*.feature'"
   },
   "author": "",
