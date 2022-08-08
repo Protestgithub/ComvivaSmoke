@@ -85,7 +85,7 @@ And('Login into Mobiquity Portal as Subscriber1', function () {
   cy.readFile('cypress/fixtures/userData/subscriberReg.json').then((data)=>{
     var SubLogin
     SubLogin = data.subscriberLoginId
-    cy.login(SubLogin, this.data.subscriber.subpwd)  
+    cy.login(SubLogin, this.data.subscriber.subpwd1)  
   
   cy.wait(10000)
 })
