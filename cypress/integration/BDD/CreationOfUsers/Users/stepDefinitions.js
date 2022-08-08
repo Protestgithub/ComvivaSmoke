@@ -1,4 +1,3 @@
-
 /// <reference types="Cypress" />
 /// <reference types = "Cypress-iframe"/>
 
@@ -250,6 +249,11 @@ And('Enter all the required subscriber details', function () {
     cy.writeFile(subRegistration, data)
   })
   var CIF
+  let mobileut1;
+  const m = parseInt(Date.now()/100000);
+  mobileut1 = "77" + m
+
+
   registerPage.getCIF().type(CIF, { force: true })
   cy.readFile(subRegistration).then((data) => {
     data.CIFnumber = CIF
@@ -257,7 +261,7 @@ And('Enter all the required subscriber details', function () {
   })
 
   recurse(
-    () => registerPage.getMobileNumber().clear().type(mobile1, { force: true }),
+    () => registerPage.getMobileNumber().clear().type(mobileut1, { force: true }),
     () => registerPage.getAdressLine1().click({ force: true }),
     (uniqueness) => (uniqueness) == registerPage.getValueIsNotUnique().contains
       ('Value is not unique').should('be.visible'),
@@ -265,7 +269,7 @@ And('Enter all the required subscriber details', function () {
   )
   //cy.writeFile(subRegistration,{ subscriberMobile: mobile })
   cy.readFile(subRegistration).then((data) => {
-    data.subscriberMobile = mobile
+    data.subscriberMobile = mobileut1
     cy.writeFile(subRegistration, data)
   })
 
