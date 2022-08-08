@@ -234,13 +234,21 @@ And('Enter All the Mandatory Details', function(){
       })
      }
      })
-   O2CTransferInitiatePage.getTransferAmount().type(TransferAmount, { force: true })
-   O2CTransferInitiatePage.getReferenceNumber().type(ReferenceNumber, { force: true })
+     O2CTransferInitiatePage.getTransferAmount().type(TransferAmount, { force: true })
+     cy.readFile('cypress/fixtures/userData/O2CBulkData.json').then((data) => {
+      data.TransferAmt = TransferAmount
+      cy.writeFile('cypress/fixtures/userData/O2CBulkData.json', data)
+    })
+    O2CTransferInitiatePage.getReferenceNumber().type(ReferenceNumber, { force: true })
+    cy.readFile('cypress/fixtures/userData/O2CBulkData.json').then((data) => {
+     data.RefNum = ReferenceNumber
+     cy.writeFile('cypress/fixtures/userData/O2CBulkData.json', data) 
+   })
    O2CTransferInitiatePage.getType().select(this.data5.O2CTransferInitiate.type, { force: true })
    O2CTransferInitiatePage.getNumber().type(number, { force: true })
    O2CTransferInitiatePage.getRemarks().type(getRandomName(), { force: true })
  
-       })
+  })
  
  
 And('logout the user', function () {
@@ -383,7 +391,7 @@ BptPage.getBatchIDFromBox().invoke('text').then((elementText1) =>{
 Then ('Verify success',function(){
   cy.wait(10000)
 BptPage.getSuccessAsOne().invoke('text').then((elementText) =>{
-  expect(elementText).to.contain('0')
+  expect(elementText).to.contain('1')
 
 })
 
