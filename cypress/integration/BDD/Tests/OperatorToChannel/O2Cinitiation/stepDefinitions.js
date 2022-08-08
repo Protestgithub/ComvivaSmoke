@@ -44,9 +44,9 @@ var TransferAmount = uuid()
 var ReferenceNumber = uuid()
 var number = uuid()
 var Amount = uid()
-var name,BAMobileNumber
+var name, BAMobileNumber
 var TransactionFleO2C = "cypress/fixtures/userData/TransactionFile.json"
-var filename="cypress/fixtures/userData/O2CBulkData.json"
+var filename = "cypress/fixtures/userData/O2CBulkData.json"
 function getRandomName() {
   name = "";
   var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
@@ -81,6 +81,7 @@ Given('Login into Mobiquity Portal as System admin Maker', function () {
 })
 Given('Login into Mobiquity Portal as System admin Checker1', function () {
   cy.launchURL(Cypress.env('Adminurl'))
+  cy.wait(2000)
   cy.SysAdminlogin2()
   cy.wait(2000)
   cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
@@ -100,8 +101,9 @@ Given('Login into Mobiquity Portal as another System admin Checker1 after logout
   cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
 })
 Given('Login into Mobiquity Portal as System admin Checker2', function () {
-  cy.launchURL(Cypress.env('Adminurl'))
   cy.wait(2000)
+  cy.launchURL(Cypress.env('Adminurl'))
+  cy.wait(4000)
   cy.SysAdminlogin3()
   cy.wait(3000)
 })
@@ -145,35 +147,33 @@ Then('Confirm the Error message', function () {
 And('Enter All the Mandatory details and type Invalid Character in Transfer amount', function () {
   cy.wait(3000)
   cy.fixture('userData/BusinessUsersData.json').then((usermobile) => {
-  let BsnuserMobile = usermobile.registeredMobile
-  O2CTransferInitiatePage.getMSISDN().type(BsnuserMobile, { force: true })
+    let BsnuserMobile = usermobile.registeredMobile
+    O2CTransferInitiatePage.getMSISDN().type(BsnuserMobile, { force: true })
   })
-    cy.wait(6000)
- 
-cy.get('.fd-page.iframeContainer.svelte-1v5e28n > iframe').then(($iframe) => {
-  const $body = $iframe.contents().find('body')
-  const $win = $iframe[0].contentWindow
+  cy.wait(6000)
 
-  const stub=cy.stub()
- if(cy.stub($win, 'alert', () => false)
-    .as('windowConfirm'))
-    {
-      
+  cy.get('.fd-page.iframeContainer.svelte-1v5e28n > iframe').then(($iframe) => {
+    const $body = $iframe.contents().find('body')
+    const $win = $iframe[0].contentWindow
+
+    const stub = cy.stub()
+    if (cy.stub($win, 'alert', () => false)
+      .as('windowConfirm')) {
+
     }
-    
-    else{
-  cy.stub($win.console, 'log').as('consoleLog')
-  cy.wrap($body)
-    .find('input[name="amount"]').click({ force: true })
-    .should(function () 
-    {
-      
-     expect(this.windowConfirm).to.be.calledWith("Channel User Does Not Exist")
-    
-     })
+
+    else {
+      cy.stub($win.console, 'log').as('consoleLog')
+      cy.wrap($body)
+        .find('input[name="amount"]').click({ force: true })
+        .should(function () {
+
+          expect(this.windowConfirm).to.be.calledWith("Channel User Does Not Exist")
+
+        })
     }
-    
-    })
+
+  })
   O2CTransferInitiatePage.getTransferAmount().type(getRandomName(), { force: true })
   O2CTransferInitiatePage.getReferenceNumber().type(ReferenceNumber, { force: true })
   O2CTransferInitiatePage.getType().select(this.data5.O2CTransferInitiate.type, { force: true })
@@ -194,20 +194,30 @@ And('Enter All the Details', function () {
   cy.fixture('userData/BusinessUsersData.json').then((usermobile) => {
     let BsnuserMobile = usermobile.registeredMobile
     O2CTransferInitiatePage.getMSISDN().type(BsnuserMobile, { force: true })
-    })
+  })
   cy.wait(6000)
   cy.get('.fd-page.iframeContainer.svelte-1v5e28n > iframe').then(($iframe) => {
-  const $body = $iframe.contents().find('body')
-  const $win = $iframe[0].contentWindow
-  cy.stub($win, 'alert', () => true)
-    .as('windowConfirm')
-  cy.stub($win.console, 'log').as('consoleLog')
-  cy.wrap($body)
-    .find('input[name="amount"]').click({ force: true })
-    .should(function () {
-      expect(this.windowConfirm).to.be.calledWith("Channel User Does Not Exist")
-    })
-})
+    const $body = $iframe.contents().find('body')
+    const $win = $iframe[0].contentWindow
+
+    const stub = cy.stub()
+    if (cy.stub($win, 'alert', () => false)
+      .as('windowConfirm')) {
+
+    }
+
+    else {
+      cy.stub($win.console, 'log').as('consoleLog')
+      cy.wrap($body)
+        .find('input[name="amount"]').click({ force: true })
+        .should(function () {
+
+          expect(this.windowConfirm).to.be.calledWith("Channel User Does Not Exist")
+
+        })
+    }
+
+  })
   O2CTransferInitiatePage.getTransferAmount().type(Amount, { force: true })
   O2CTransferInitiatePage.getReferenceNumber().type(ReferenceNumber, { force: true })
   O2CTransferInitiatePage.getType().select(this.data5.O2CTransferInitiate.type, { force: true })
@@ -218,8 +228,8 @@ And('Enter All the Details', function () {
 
 And('Confirm the displayed Error Message', function () {
   cy.wait(3000)
- // O2CTransferInitiatePage.getErrorMessage1().should('have.text', this.data5.O2CTransferInitiate.ErrorMessage1, { force: true })
- // cy.wait(2000)
+  //O2CTransferInitiatePage.getErrorMessage1().should('have.text', this.data5.O2CTransferInitiate.ErrorMessage1, { force: true })
+  cy.wait(2000)
 })
 
 
@@ -231,48 +241,51 @@ And('Confirm the displayed Error Message', function () {
 
 //------------------------------------- Likith-------------------------------------------------------
 When('Navigate to Operator to channel and click on O2C transfer initiate', function () {
-
   welcomePage.getOperatorToChannelOption().scrollIntoView()
-
   welcomePage.getOperatorToChannelOption().click()
-
   welcomePage.getO2CTransferInitiateOption().click()
-
-
-
 })
 
 And('Enter All the Mandatory Details', function () {
   cy.wait(3000)
-  
+
   cy.wait(2000)
-  var BBAFile ="cypress/fixtures/userData/BusinessUsersData.json"
-  var O2CFile= "cypress/fixtures/userData/O2Cdata.json"
+  var BBAFile = "cypress/fixtures/userData/BusinessUsersData.json"
+  var O2CFile = "cypress/fixtures/userData/O2Cdata.json"
   cy.readFile(BBAFile).then((data) => {
-  var O2CMsisdn = data.registeredMobile
-  //O2CTransferInitiatePage.getMSISDN().type("7735575036", {force: true})
+    var O2CMsisdn = data.registeredMobile
+    //O2CTransferInitiatePage.getMSISDN().type("7735575036", {force: true})
 
- O2CTransferInitiatePage.getMSISDN().type(O2CMsisdn, {force: true})
-  data.O2CMsisdn1 =O2CMsisdn
-  cy.writeFile(O2CFile, data)
-})
+    O2CTransferInitiatePage.getMSISDN().type(O2CMsisdn, { force: true })
+    data.O2CMsisdn1 = O2CMsisdn
+    cy.writeFile(O2CFile, data)
+  })
 
-cy.wait(6000)
-   cy.get('.fd-page.iframeContainer.svelte-1v5e28n > iframe').then(($iframe) => {
-  const $body = $iframe.contents().find('body')
-  const $win = $iframe[0].contentWindow
-  cy.stub($win, 'alert', () => true)
-    .as('windowConfirm')
-  cy.stub($win.console, 'log').as('consoleLog')
-  cy.wrap($body)
-    .find('input[name="amount"]').click({ force: true })
-    .should(function () {
-   expect(this.windowConfirm).to.be.calledWith("Channel User Does Not Exist")
+  cy.wait(6000)
+  cy.get('.fd-page.iframeContainer.svelte-1v5e28n > iframe').then(($iframe) => {
+    const $body = $iframe.contents().find('body')
+    const $win = $iframe[0].contentWindow
 
-    })
-})
+    const stub = cy.stub()
+    if (cy.stub($win, 'alert', () => false)
+      .as('windowConfirm')) {
+
+    }
+
+    else {
+      cy.stub($win.console, 'log').as('consoleLog')
+      cy.wrap($body)
+        .find('input[name="amount"]').click({ force: true })
+        .should(function () {
+
+          expect(this.windowConfirm).to.be.calledWith("Channel User Does Not Exist")
+
+        })
+    }
+
+  })
+
   O2CTransferInitiatePage.getTransferAmount().type(TransferAmount, { force: true })
- 
   O2CTransferInitiatePage.getReferenceNumber().type(ReferenceNumber, { force: true })
   O2CTransferInitiatePage.getType().select(this.data5.O2CTransferInitiate.type, { force: true })
   O2CTransferInitiatePage.getNumber().type(number, { force: true })
@@ -281,39 +294,36 @@ cy.wait(6000)
 })
 
 Then('Click on submit and Confirm', function () {
-
   O2CTransferInitiatePage.getSubmitButton().click({ force: true })
-
   cy.wait(2000)
-
   O2CTransferInitiatePage.getConfirmButton().click({ force: true })
   cy.wait(3000)
   cy.O2CTransactionWriteData()
 })
 //------------------------------------------------------------
-When ('Navigate to User Management and Click on manage user', function(){
+When('Navigate to User Management and Click on manage user', function () {
   welcomePage.getUserManagementOption().scrollIntoView()
   welcomePage.getUserManagementOption().click()
   welcomePage.getManageUsersLink().click()
 
 })
 
-And ('enter user mobile number and search', function(){
+And('enter user mobile number and search', function () {
   pageLogin.getiFrame()
-  manageUsersPage.getSearchUser().click({force: true})
-  var O2CFile= "cypress/fixtures/userData/O2Cdata.json"
+  manageUsersPage.getSearchUser().click({ force: true })
+  var O2CFile = "cypress/fixtures/userData/O2Cdata.json"
   cy.readFile(O2CFile).then((data) => {
-  var O2CMsisdn = data.O2CMsisdn1
-  manageUsersPage.getSearchUser().type(O2CMsisdn, {force:true})
-  
+    var O2CMsisdn = data.O2CMsisdn1
+    manageUsersPage.getSearchUser().type(O2CMsisdn, { force: true })
+
   })
-  manageUsersPage.getSearchUserButton().click({force: true})
+  manageUsersPage.getSearchUserButton().click({ force: true })
 
 })
-When('User Click on eye button', function(){
-  manageUsersPage.getEyeIcon().click({force:true})
+When('User Click on eye button', function () {
+  manageUsersPage.getEyeIcon().click({ force: true })
   cy.wait(3000)
- })
+})
 
 And('click wallet Payment history.', function () {
   manageUsersPage.getWalletHistory().contains("Wallet Payment History").click({ force: true })
@@ -362,334 +372,344 @@ When('Navigate to Operator to channel and click on O2C transfer Approval2', func
   transferruleapprovalpage.getApprovalTransferrule().click({ force: true })
 })
 var O2CMsisdn
-      And('Enter All the Mandatory Details1', function(){
-        cy.wait(3000)
-        cy.wait(2000)
-        var BBAFile ="cypress/fixtures/userData/BusinessUsersData.json"
-        var O2CFile= "cypress/fixtures/userData/O2Cdata.json"
-        cy.readFile(BBAFile).then((data) => {
-         O2CMsisdn = data.registeredMobile
-           O2CTransferInitiatePage.getMSISDN().type("7735575036", {force: true})
+And('Enter All the Mandatory Details1', function () {
+  cy.wait(3000)
+  cy.wait(2000)
+  var BBAFile = "cypress/fixtures/userData/BusinessUsersData.json"
+  var O2CFile = "cypress/fixtures/userData/O2Cdata.json"
+  cy.readFile(BBAFile).then((data) => {
+    O2CMsisdn = data.registeredMobile
+    O2CTransferInitiatePage.getMSISDN().type("7735575036", { force: true })
 
-       // O2CTransferInitiatePage.getMSISDN().type(O2CMsisdn, {force: true})
-        data.O2CMsisdn1 =O2CMsisdn
-        cy.writeFile(O2CFile, data)
-      })
-      cy.wait(6000)
-   cy.get('.fd-page.iframeContainer.svelte-1v5e28n > iframe').then(($iframe) => {
-  const $body = $iframe.contents().find('body')
-  const $win = $iframe[0].contentWindow
-  cy.stub($win, 'alert', () => true)
-    .as('windowConfirm')
-  cy.stub($win.console, 'log').as('consoleLog')
-  cy.wrap($body)
-    .find('input[name="amount"]').click({ force: true })
-    .should(function () {
-   expect(this.windowConfirm).to.be.calledWith("Channel User Does Not Exist")
+    // O2CTransferInitiatePage.getMSISDN().type(O2CMsisdn, {force: true})
+    data.O2CMsisdn1 = O2CMsisdn
+    cy.writeFile(O2CFile, data)
+  })
+  cy.wait(6000)
+  cy.get('.fd-page.iframeContainer.svelte-1v5e28n > iframe').then(($iframe) => {
+    const $body = $iframe.contents().find('body')
+    const $win = $iframe[0].contentWindow
 
-    })
+    const stub = cy.stub()
+    if (cy.stub($win, 'alert', () => false)
+      .as('windowConfirm')) {
+
+    }
+
+    else {
+      cy.stub($win.console, 'log').as('consoleLog')
+      cy.wrap($body)
+        .find('input[name="amount"]').click({ force: true })
+        .should(function () {
+
+          expect(this.windowConfirm).to.be.calledWith("Channel User Does Not Exist")
+
+        })
+    }
+
+  })
+
+  O2CTransferInitiatePage.getTransferAmount().type(TransferAmount, { force: true })
+  O2CTransferInitiatePage.getReferenceNumber().type(ReferenceNumber, { force: true })
+  O2CTransferInitiatePage.getType().select(this.data5.O2CTransferInitiate.type, { force: true })
+  O2CTransferInitiatePage.getNumber().type(number, { force: true })
+  O2CTransferInitiatePage.getRemarks().type(getRandomName(), { force: true })
+  cy.writeFile(filename, { msidnValue: O2CMsisdn, TransferAmt: TransferAmount, RefNum: ReferenceNumber })
+
+
+
 })
-              O2CTransferInitiatePage.getTransferAmount().type(TransferAmount, {force: true})
-        O2CTransferInitiatePage.getReferenceNumber().type(ReferenceNumber, {force: true})
-        O2CTransferInitiatePage.getType().select(this.data5.O2CTransferInitiate.type, {force: true})
-        O2CTransferInitiatePage.getNumber().type(number, {force: true})
-        O2CTransferInitiatePage.getRemarks().type(getRandomName(), {force: true})
-        cy.writeFile(filename,{ msidnValue:O2CMsisdn,TransferAmt:TransferAmount, RefNum:ReferenceNumber} )
+
+Then('Click on submit and Confirm00', function () {
+
+  O2CTransferInitiatePage.getSubmitButton().click({ force: true })
+
+  cy.wait(2000)
+
+  O2CTransferInitiatePage.getConfirmButton().click({ force: true })
+  cy.wait(3000)
+  cy.O2CTransactionWriteData()
+})
+
+Then('Click on submit and Confirm0', function () {
+
+  O2CTransferInitiatePage.getSubmitButton().click({ force: true })
+
+  cy.wait(2000)
+
+  O2CTransferInitiatePage.getConfirmButton().click({ force: true })
+  cy.wait(3000)
+  cy.O2CTransactionWriteData()
+})
+
+Then('Click on submit and Confirm1', function () {
+
+  O2CTransferInitiatePage.getSubmitButton().click({ force: true })
+
+  cy.wait(2000)
+
+  O2CTransferInitiatePage.getConfirmButton().click({ force: true })
+  cy.wait(3000)
+  cy.O2CTransactionWriteData1()
+})
+
+Then('Click on submit and Confirm2', function () {
+
+  O2CTransferInitiatePage.getSubmitButton().click({ force: true })
+
+  cy.wait(2000)
+
+  O2CTransferInitiatePage.getConfirmButton().click({ force: true })
+  cy.wait(3000)
+  cy.O2CTransactionWriteData2()
+})
 
 
-      
-      })
-      
-      Then('Click on submit and Confirm00', function(){
-      
-        O2CTransferInitiatePage.getSubmitButton().click({force: true})
-      
-        cy.wait(2000)
-      
-        O2CTransferInitiatePage.getConfirmButton().click({force: true})
-        cy.wait(3000)
-       cy.O2CTransactionWriteData()
-      })
-
-      Then('Click on submit and Confirm0', function(){
-      
-        O2CTransferInitiatePage.getSubmitButton().click({force: true})
-      
-        cy.wait(2000)
-      
-        O2CTransferInitiatePage.getConfirmButton().click({force: true})
-        cy.wait(3000)
-       cy.O2CTransactionWriteData()
-      })
-
-      Then('Click on submit and Confirm1', function(){
-      
-        O2CTransferInitiatePage.getSubmitButton().click({force: true})
-      
-        cy.wait(2000)
-      
-        O2CTransferInitiatePage.getConfirmButton().click({force: true})
-        cy.wait(3000)
-       cy.O2CTransactionWriteData1()
-      })
-
-      Then('Click on submit and Confirm2', function(){
-      
-        O2CTransferInitiatePage.getSubmitButton().click({force: true})
-      
-        cy.wait(2000)
-      
-        O2CTransferInitiatePage.getConfirmButton().click({force: true})
-        cy.wait(3000)
-       cy.O2CTransactionWriteData2()
-      })
+And('click wallet Payment history.', function () {
+  manageUsersPage.getWalletHistory().contains("Wallet Payment History").click({ force: true })
+})
+And('Enter TransactionID and check', function () {
+  cy.O2CTransactionReadData()
 
 
-      And('click wallet Payment history.',function(){
-        manageUsersPage.getWalletHistory().contains("Wallet Payment History").click({force:true})
-      })
-    And('Enter TransactionID and check',function(){
-      cy.O2CTransactionReadData()
-        
+})
+And('logout the user', function () {
+
+  welcomePage.getProfileIcon().click()
+  cy.wait(2000)
+  welcomePage.getLogOutbttn().click()
+  cy.wait(2000)
+  welcomePage.getLogOutYesbttn().click()
+})
+When('Navigate to Operator to channel and click on O2C transfer Approval1', function () {
+
+  welcomePage.getOperatorToChannelOption().scrollIntoView()
+
+  welcomePage.getOperatorToChannelOption().click()
+
+  welcomePage.getOperatorToChannelApproval1().click()
+  cy.wait(4000)
+
+  O2CTransferInitiatePage.getRecentDatainO2C()
+  TransferRuleApproval.getsubmitbttnTransferrule().click({ force: true })
+  cy.wait(2000)
+  transferruleapprovalpage.getApprovalTransferrule().click({ force: true })
+})
+
+//-------------------------O2C approal2------------------------------------
+When('Navigate to Operator to channel and click on O2C transfer Approval2', function () {
+
+  welcomePage.getOperatorToChannelOption().scrollIntoView()
+
+  welcomePage.getOperatorToChannelOption().click()
+
+  welcomePage.getOperatorToChannelApproval2().click()
+  cy.wait(4000)
+
+  O2CTransferInitiatePage.getRecentDatainO2C()
+  TransferRuleApproval.getsubmitbttnTransferrule().click({ force: true })
+  cy.wait(2000)
+  transferruleapprovalpage.getApprovalTransferrule().click({ force: true })
+})
+
+///////////////////// KALYANI /////////////////////////////////
+
+And('Enter Mobile number or KYC number', function () {
+  pageLogin.getiFrame()
+  manageUsersPage.getSearchUser().click({ force: true })
+  var O2CFile = "cypress/fixtures/userData/O2Cdata.json"
+  cy.readFile(O2CFile).then((data) => {
+    BAMobileNumber = data.O2CMsisdn1
+    manageUsersPage.getSearchUser().type(BAMobileNumber, { force: true })
+  })
+  manageUsersPage.getSearchUserButton().click({ force: true })
+
+})
+
+When('User Click on eye button for WalletHistory', function () {
+  manageUsersPage.getEyeIcon().click({ force: true })
+  manageUsersPage.getexpandmore().click({ force: true })
+  manageUsersPage.getwallet().click({ force: true })
+  //manageUsersPage.getFilter().click({force:true})
+  //manageUsersPage.getradiostatus().contains(this.data6.Status).click({force:true})
+  //manageUsersPage.getcheckbox1().contains(this.data6.ServiceType1).click({force:true})
+  // manageUsersPage.getcheckbox1().contains(this.data6.ServiceType2).click({force:true})
+  //  manageUsersPage.getcheckbox1().contains(this.data6.ServiceType3).click({force:true})
+  //  manageUsersPage.getservice().type('T')
+  cy.wait(3000)
+  // manageUsersPage.getTransactionCorrection().contains(this.data6.ServiceType4).click({force:true})
+  // manageUsersPage.getApplyFilterButton().click({force:true})
+
+  cy.readFile(TransactionFleO2C).then((data) => {
+    const TransactionID = data.TransactionID
+    cy.log(TransactionID)
+    manageUsersPage.getSearchTransactionId().type(TransactionID)
+    manageUsersPage.getserachicon().click({ force: true })
+  })
+  // manageUsersPage.getserachicon().click({force:true})
+  cy.wait(3000)
+  manageUsersPage.getreversetransaction().eq(0).click()
+  manageUsersPage.getreason().type('NIL')
+  manageUsersPage.getreverseservicecharge().click({ force: true })
+  cy.wait(2000)
+  manageUsersPage.getreversecommission().click({ force: true })
+  cy.wait(2000)
+  manageUsersPage.getReverYes().click({ force: true })
+  cy.wait(3000)
+  /* manageUsersPage.gettransactionId().eq(1).then((data=>{
+     
+      var transid = data.text()
+      cy.writeFile(TransactionFile,{TransactionId : transid })
+      cy.log(transid)   
+     
+     }))  */
+
+})
+When('User Click on eye button for WalletHistory1', function () {
+  manageUsersPage.getEyeIcon().click({ force: true })
+  manageUsersPage.getexpandmore().click({ force: true })
+  manageUsersPage.getwallet().click({ force: true })
+  // manageUsersPage.getFilter().click({force:true})
+  //manageUsersPage.getradiostatus().contains(this.data6.Status).click({force:true})
+  /* manageUsersPage.getcheckbox1().contains(this.data6.ServiceType1).click({force:true})
+   manageUsersPage.getcheckbox1().contains(this.data6.ServiceType2).click({force:true})
+   manageUsersPage.getcheckbox1().contains(this.data6.ServiceType3).click({force:true})
+   manageUsersPage.getservice().type('T')
+   cy.wait(3000)
+   manageUsersPage.getTransactionCorrection().contains(this.data6.ServiceType4).click({force:true})*/
+  //manageUsersPage.getApplyFilterButton().click({force:true})
+  //manageUsersPage.getSearchTransactionId().type(this.data6.TransactionId2)
+  cy.readFile(TransactionFleO2C).then((data) => {
+    const TransactionID = data.TransactionID1
+    cy.log(TransactionID1)
+    manageUsersPage.getSearchTransactionId().type(TransactionID1)
+    manageUsersPage.getserachicon().click({ force: true })
+  })
+  cy.wait(3000)
+  manageUsersPage.getreversetransaction().eq(0).click()
+  manageUsersPage.getreason().type('NIL')
+  manageUsersPage.getreverseservicecharge().click({ force: true })
+  cy.wait(2000)
+  manageUsersPage.getReverYes().click({ force: true })
+  cy.wait(3000)
+  /* manageUsersPage.gettransactionId().eq(1).then((data=>{
+     
+     var transid = data.text()
+     cy.writeFile(TransactionFile,{TransactionId : transid })
+     cy.log(transid)   
     
-      })
-      And('logout the user',function(){
+    }))*/
+})
+When('User Click on eye button for WalletHistory2', function () {
+  manageUsersPage.getEyeIcon().click({ force: true })
+  manageUsersPage.getexpandmore().click({ force: true })
+  manageUsersPage.getwallet().click({ force: true })
+  // manageUsersPage.getFilter().click({force:true})
+  //manageUsersPage.getradiostatus().contains(this.data6.Status).click({force:true})
+  /* manageUsersPage.getcheckbox1().contains(this.data6.ServiceType1).click({force:true})
+   manageUsersPage.getcheckbox1().contains(this.data6.ServiceType2).click({force:true})
+   manageUsersPage.getcheckbox1().contains(this.data6.ServiceType3).click({force:true})
+   manageUsersPage.getservice().type('T')
+   cy.wait(3000)
+   manageUsersPage.getTransactionCorrection().contains(this.data6.ServiceType4).click({force:true})*/
+  //manageUsersPage.getApplyFilterButton().click({force:true})
+  //manageUsersPage.getSearchTransactionId().type(this.data6.TransactionId3)
+  cy.readFile(TransactionFleO2C).then((data) => {
+    let TransactionID = data.TransactionID2
+    cy.log(TransactionID)
+    manageUsersPage.getSearchTransactionId().type(TransactionID)
+    manageUsersPage.getserachicon().click({ force: true })
+  })
+  cy.wait(3000)
+  manageUsersPage.getreversetransaction().eq(0).click()
+  manageUsersPage.getreason().type('NIL')
+  // manageUsersPage.getreverseservicecharge().click({ force: true })
+  cy.wait(2000)
+  manageUsersPage.getreversecommission().click({ force: true })
+  cy.wait(2000)
+  manageUsersPage.getReverYes().click({ force: true })
+  cy.wait(3000)
+  /* manageUsersPage.gettransactionId().eq(1).then((data=>{    
+     var transid = data.text()
+     cy.writeFile(TransactionFile,{TransactionId : transid })
+     cy.log(transid)   
     
-        welcomePage.getProfileIcon().click()
-        cy.wait(2000)
-        welcomePage.getLogOutbttn().click()
-        cy.wait(2000)
-          welcomePage.getLogOutYesbttn().click()
-      })
-      When('Navigate to Operator to channel and click on O2C transfer Approval1', function(){
-    
-        welcomePage.getOperatorToChannelOption().scrollIntoView()
-        
-        welcomePage.getOperatorToChannelOption().click()
-        
-        welcomePage.getOperatorToChannelApproval1().click()
-        cy.wait(4000)
-        
-        O2CTransferInitiatePage.getRecentDatainO2C()
-        TransferRuleApproval.getsubmitbttnTransferrule().click({force:true})
-        cy.wait(2000)
-         transferruleapprovalpage.getApprovalTransferrule().click({force:true})
-          })
-          
-     //-------------------------O2C approal2------------------------------------
-     When('Navigate to Operator to channel and click on O2C transfer Approval2', function(){
-    
-      welcomePage.getOperatorToChannelOption().scrollIntoView()
-      
-      welcomePage.getOperatorToChannelOption().click()
-      
-      welcomePage.getOperatorToChannelApproval2().click()
-      cy.wait(4000)
-      
-      O2CTransferInitiatePage.getRecentDatainO2C()
-      TransferRuleApproval.getsubmitbttnTransferrule().click({force:true})
-      cy.wait(2000)
-       transferruleapprovalpage.getApprovalTransferrule().click({force:true})
-        })  
+    })) */
+})
 
-        ///////////////////// KALYANI /////////////////////////////////
+When('Navigate to Transaction Correction and click on Transaction Approval', function () {
+  welcomePage.getTransactionCorrection().click()
+  welcomePage.getTransactionCorrectionApproval().click()
+  cy.wait(3000)
+  tranCorrPage.getcolumn().within(function () {
+    cy.wait(3000)
+    cy.readFile(TransactionFleO2C).then((data) => {
+      var transID = data.TransactionID
+      cy.log(transID)
+      cy.get('td').contains(transID)
 
-        And('Enter Mobile number or KYC number', function () {
-          pageLogin.getiFrame()
-          manageUsersPage.getSearchUser().click({ force: true })
-          var O2CFile ="cypress/fixtures/userData/O2Cdata.json"
-            cy.readFile(O2CFile).then((data) => {
-             BAMobileNumber = data.O2CMsisdn1
-            manageUsersPage.getSearchUser().type(BAMobileNumber, { force: true })
-          })
-          manageUsersPage.getSearchUserButton().click({ force: true })
-        
-        })
-        
-        When('User Click on eye button for WalletHistory', function () {
-          manageUsersPage.getEyeIcon().click({ force: true })
-          manageUsersPage.getexpandmore().click({ force: true })
-          manageUsersPage.getwallet().click({ force: true })
-          //manageUsersPage.getFilter().click({force:true})
-          //manageUsersPage.getradiostatus().contains(this.data6.Status).click({force:true})
-          //manageUsersPage.getcheckbox1().contains(this.data6.ServiceType1).click({force:true})
-         // manageUsersPage.getcheckbox1().contains(this.data6.ServiceType2).click({force:true})
-        //  manageUsersPage.getcheckbox1().contains(this.data6.ServiceType3).click({force:true})
-        //  manageUsersPage.getservice().type('T')
-          cy.wait(3000)
-         // manageUsersPage.getTransactionCorrection().contains(this.data6.ServiceType4).click({force:true})
-         // manageUsersPage.getApplyFilterButton().click({force:true})
-          
-            cy.readFile(TransactionFleO2C).then((data) => {
-            const TransactionID = data.TransactionID
-            cy.log(TransactionID)
-          manageUsersPage.getSearchTransactionId().type(TransactionID)
-          manageUsersPage.getserachicon().click({force:true})
-        })
-         // manageUsersPage.getserachicon().click({force:true})
-          cy.wait(3000)
-          manageUsersPage.getreversetransaction().eq(0).click()
-          manageUsersPage.getreason().type('NIL')
-          manageUsersPage.getreverseservicecharge().click({ force: true })
-          cy.wait(2000)
-          manageUsersPage.getreversecommission().click({ force: true })
-          cy.wait(2000)
-          manageUsersPage.getReverYes().click({ force: true })
-          cy.wait(3000)  
-         /* manageUsersPage.gettransactionId().eq(1).then((data=>{
-            
-             var transid = data.text()
-             cy.writeFile(TransactionFile,{TransactionId : transid })
-             cy.log(transid)   
-            
-            }))  */
-          
-        })
-        When('User Click on eye button for WalletHistory1', function () {
-          manageUsersPage.getEyeIcon().click({ force: true })
-          manageUsersPage.getexpandmore().click({ force: true })
-          manageUsersPage.getwallet().click({ force: true })
-         // manageUsersPage.getFilter().click({force:true})
-          //manageUsersPage.getradiostatus().contains(this.data6.Status).click({force:true})
-         /* manageUsersPage.getcheckbox1().contains(this.data6.ServiceType1).click({force:true})
-          manageUsersPage.getcheckbox1().contains(this.data6.ServiceType2).click({force:true})
-          manageUsersPage.getcheckbox1().contains(this.data6.ServiceType3).click({force:true})
-          manageUsersPage.getservice().type('T')
-          cy.wait(3000)
-          manageUsersPage.getTransactionCorrection().contains(this.data6.ServiceType4).click({force:true})*/
-          //manageUsersPage.getApplyFilterButton().click({force:true})
-          //manageUsersPage.getSearchTransactionId().type(this.data6.TransactionId2)
-          cy.readFile(TransactionFleO2C).then((data) => {
-            const TransactionID = data.TransactionID1
-            cy.log(TransactionID1)
-          manageUsersPage.getSearchTransactionId().type(TransactionID1)
-          manageUsersPage.getserachicon().click({force:true})
-        })
-        cy.wait(3000)
-          manageUsersPage.getreversetransaction().eq(0).click()
-          manageUsersPage.getreason().type('NIL')
-          manageUsersPage.getreverseservicecharge().click({ force: true })
-          cy.wait(2000)
-          manageUsersPage.getReverYes().click({ force: true })
-          cy.wait(3000)
-         /* manageUsersPage.gettransactionId().eq(1).then((data=>{
-            
-            var transid = data.text()
-            cy.writeFile(TransactionFile,{TransactionId : transid })
-            cy.log(transid)   
-           
-           }))*/  
-        })
-        When('User Click on eye button for WalletHistory2', function () {
-          manageUsersPage.getEyeIcon().click({ force: true })
-          manageUsersPage.getexpandmore().click({ force: true })
-          manageUsersPage.getwallet().click({ force: true })
-         // manageUsersPage.getFilter().click({force:true})
-          //manageUsersPage.getradiostatus().contains(this.data6.Status).click({force:true})
-         /* manageUsersPage.getcheckbox1().contains(this.data6.ServiceType1).click({force:true})
-          manageUsersPage.getcheckbox1().contains(this.data6.ServiceType2).click({force:true})
-          manageUsersPage.getcheckbox1().contains(this.data6.ServiceType3).click({force:true})
-          manageUsersPage.getservice().type('T')
-          cy.wait(3000)
-          manageUsersPage.getTransactionCorrection().contains(this.data6.ServiceType4).click({force:true})*/
-          //manageUsersPage.getApplyFilterButton().click({force:true})
-          //manageUsersPage.getSearchTransactionId().type(this.data6.TransactionId3)
-          cy.readFile(TransactionFleO2C).then((data) => {
-            const TransactionID = data.TransactionID2
-            cy.log(TransactionID2)
-          manageUsersPage.getSearchTransactionId().type(TransactionID2)
-          manageUsersPage.getserachicon().click({force:true})
-        })
-        cy.wait(3000)
-        manageUsersPage.getreversetransaction().eq(0).click()
-          manageUsersPage.getreason().type('NIL')
-         // manageUsersPage.getreverseservicecharge().click({ force: true })
-          cy.wait(2000)
-          manageUsersPage.getreversecommission().click({ force: true })
-          cy.wait(2000)
-          manageUsersPage.getReverYes().click({ force: true })
-          cy.wait(3000)
-         /* manageUsersPage.gettransactionId().eq(1).then((data=>{    
-            var transid = data.text()
-            cy.writeFile(TransactionFile,{TransactionId : transid })
-            cy.log(transid)   
-           
-           })) */ 
-        })
-        
-        When('Navigate to Transaction Correction and click on Transaction Approval', function () {
-          welcomePage.getTransactionCorrection().click()
-          welcomePage.getTransactionCorrectionApproval().click()
-          cy.wait(3000)
-          tranCorrPage.getcolumn().within(function(){
-            cy.wait(3000) 
-            cy.readFile(TransactionFleO2C).then((data) => {
-              var transID = data.TransactionID
-              cy.log(transID)
-                cy.get('td').contains(transID)
-              
-                  tranCorrPage.getradiobutton().check()
-                  tranCorrPage.getsubmit().click({force:true})
-                })
-                  cy.wait(3000)
-                   
-                 })
-          tranCorrPage.getcolumn().within(function(){
-          cy.get('td').within(function(){
-            tranCorrPage.getapprove().click({force:true})
-          })
-          })
-        })
-        When('Navigate to Transaction Correction and click on Transaction Approval1', function () {
-          welcomePage.getTransactionCorrection().click()
-          welcomePage.getTransactionCorrectionApproval().click()
-          cy.wait(3000)
-          tranCorrPage.getcolumn().within(function(){
-            cy.wait(3000)    
-            cy.readFile(TransactionFleO2C).then((data) => {
-              var transID1 = data.TransactionID1
-              cy.log(transID1)
-                cy.get('td').contains(transID1)
-              
-                  tranCorrPage.getradiobutton().check()
-                  tranCorrPage.getsubmit().click({force:true})
-                })
-                  cy.wait(3000)
-                   
-                 })
-          tranCorrPage.getcolumn().within(function(){
-          cy.get('td').within(function(){
-            tranCorrPage.getapprove().click({force:true})
-          })
-          })
-        })
-        When('Navigate to Transaction Correction and click on Transaction Approval2', function () {
-          welcomePage.getTransactionCorrection().click()
-          welcomePage.getTransactionCorrectionApproval().click()
-          cy.wait(3000)
-          tranCorrPage.getcolumn().within(function(){
-            cy.wait(3000)    
-            cy.readFile(TransactionFleO2C).then((data) => {
-              var transID2 = data.TransactionID2
-              cy.log(transID2)
-                cy.get('td').contains(transID2)
-              
-                  tranCorrPage.getradiobutton().check()
-                  tranCorrPage.getsubmit().click({force:true})
-                })
-                  cy.wait(3000)
-                   
-                 })
-          tranCorrPage.getcolumn().within(function(){
-          cy.get('td').within(function(){
-            tranCorrPage.getapprove().click({force:true})
-          })
-          })
-        })
+      tranCorrPage.getradiobutton().check()
+      tranCorrPage.getsubmit().click({ force: true })
+    })
+    cy.wait(3000)
 
-        ////////////////////////////// SUDHEER ////////////////////////////////////////
+  })
+  tranCorrPage.getcolumn().within(function () {
+    cy.get('td').within(function () {
+      tranCorrPage.getapprove().click({ force: true })
+    })
+  })
+})
+When('Navigate to Transaction Correction and click on Transaction Approval1', function () {
+  welcomePage.getTransactionCorrection().click()
+  welcomePage.getTransactionCorrectionApproval().click()
+  cy.wait(3000)
+  tranCorrPage.getcolumn().within(function () {
+    cy.wait(3000)
+    cy.readFile(TransactionFleO2C).then((data) => {
+      var transID1 = data.TransactionID1
+      cy.log(transID1)
+      cy.get('td').contains(transID1)
 
-        //----------TC_129-------To verify that Admin user can view all the transaction details under Order details menu------------
+      tranCorrPage.getradiobutton().check()
+      tranCorrPage.getsubmit().click({ force: true })
+    })
+    cy.wait(3000)
+
+  })
+  tranCorrPage.getcolumn().within(function () {
+    cy.get('td').within(function () {
+      tranCorrPage.getapprove().click({ force: true })
+    })
+  })
+})
+When('Navigate to Transaction Correction and click on Transaction Approval2', function () {
+  welcomePage.getTransactionCorrection().click()
+  welcomePage.getTransactionCorrectionApproval().click()
+  cy.wait(3000)
+  tranCorrPage.getcolumn().within(function () {
+    cy.wait(3000)
+    cy.readFile(TransactionFleO2C).then((data) => {
+      var transID2 = data.TransactionID2
+      cy.log(transID2)
+      cy.get('td').contains(transID2)
+
+      tranCorrPage.getradiobutton().check()
+      tranCorrPage.getsubmit().click({ force: true })
+    })
+    cy.wait(3000)
+
+  })
+  tranCorrPage.getcolumn().within(function () {
+    cy.get('td').within(function () {
+      tranCorrPage.getapprove().click({ force: true })
+    })
+  })
+})
+
+////////////////////////////// SUDHEER ////////////////////////////////////////
+
+//----------TC_129-------To verify that Admin user can view all the transaction details under Order details menu------------
 
 
 When('Click on user management and Manage users', function () {
@@ -701,7 +721,7 @@ When('Click on user management and Manage users', function () {
 
 And('Enter Mobile numberin search Menu', function () {
   cy.wait(3000)
- cy.getBusinessUserMobNum()
+  cy.getBusinessUserMobNum()
 })
 
 And('Click on view Details', function () {
@@ -714,7 +734,7 @@ Then('Click on order details', function () {
   manageUsersPage.getOrderDetailsButton().click({ force: true })
   cy.wait(3000)
 
-manageUsersPage.getWalletExpandButton().click({ force: true })
+  manageUsersPage.getWalletExpandButton().click({ force: true })
   manageUsersPage.getViewMoreDetailsButton().click({ force: true })
 })
 
@@ -732,7 +752,7 @@ When('Click on user management and Manage users', function () {
 And('Enter Mobile number and KYC number in search menu for customer/ business users', function () {
   cy.wait(3000)
 
- cy.getBusinessUserMobNum()
+  cy.getBusinessUserMobNum()
   manageUsersPage.getBusinessUserDetail().should('have.text', ' Business')
 })
 
@@ -886,4 +906,3 @@ Then('Click on view Details based on the Date range', function () {
   manageUsersPage.getViewMoreDetailsButton().click({ force: true })
   manageUsersPage.getDateRangeAssert().should('contain.text', 'More Details')
 })
-      

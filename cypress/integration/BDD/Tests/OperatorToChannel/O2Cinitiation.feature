@@ -41,12 +41,6 @@ Given Login into Mobiquity Portal as System admin Maker
 When Navigate to Operator to channel and click on O2C transfer initiate
 And Enter All the Details
 And Click on submit and Confirm
-And logout the user
-Given Login into Mobiquity Portal as another System admin Checker1 after logout
-When Navigate to Operator to channel and click on O2C transfer Approval1
-And logout the user
-Given Login into Mobiquity Portal as System admin Checker2
-When Navigate to Operator to channel and click on O2C transfer Approval2
 And Confirm the displayed Error Message
 
 
@@ -98,7 +92,6 @@ When Navigate to Operator to channel and click on O2C transfer Approval2
 # Test Case_ID : TC_85
 # 
 @test
-
 
 Scenario:To Verify that Channel admin can do O2C Enquiry.
 Given Login into Mobiquity Portal as System admin Maker
