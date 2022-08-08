@@ -14,6 +14,8 @@ And click on Browse Files
 And Click on bd-demo-reports 
 And open Customer Registration Report
 And Select the format and click on View Report and User should be able to Dowload that Files
+# Scenario_ID : TC_195
+And Download Commoission Report
 
 Scenario:To verify that the Pentaho User should be able to open and download User Registration Details Report1.
 # Scenario_ID : TC_190
@@ -28,8 +30,7 @@ And Download Customer Blocked Access Report
 And Download Deleted Users Report
 # Scenario_ID : TC_193
 And Download Suspend Customers Report
-# Scenario_ID : TC_195
-And Download Commoission Report
+
 
 Scenario:To verify that the Pentaho User should be able to open and download User Registration Details Report2.
 # Scenario_ID : TC_196
