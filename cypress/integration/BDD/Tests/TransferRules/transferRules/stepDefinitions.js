@@ -4,22 +4,22 @@
 //----------------Imports---------------------------------------------------------------------
 import 'cypress-iframe'
 import { Given, When, Then, And, Before } from "cypress-cucumber-preprocessor/steps";
-import loginPage from '../../../../support/pageObjects/loginPage';
-import homePage from '../../../../support/pageObjects/homePage';
+import loginPage from '../../../../../support/pageObjects/loginPage';
+import homePage from '../../../../../support/pageObjects/homePage';
 
-import "../../../../support/commands";
-import register from '../../../../support/pageObjects/UserManagement/register';
-import approvals from '../../../../support/pageObjects/UserManagement/approvals';
-import manageUsers from '../../../../support/pageObjects/UserManagement/manageUsers';
-import DomainFieldspage from '../../../../support/pageObjects/DomainManagement/DomainFieldspage';
+import "../../../../../support/commands";
+import register from '../../../../../support/pageObjects/UserManagement/register';
+import approvals from '../../../../../support/pageObjects/UserManagement/approvals';
+import manageUsers from '../../../../../support/pageObjects/UserManagement/manageUsers';
+import DomainFieldspage from '../../../../../support/pageObjects/DomainManagement/DomainFieldspage';
 import CircularJSON from 'circular-json';
 import Flatted from 'flatted';
-import TransferRulePage from '../../../../support/pageObjects/TransferRules/TransferRulePage';
-import Approval from '../../../../support/pageObjects/TransferRules/Approval';
-import O2C from '../../../../support/pageObjects/TransferRules/O2C';
-import O2CTransferInitiate from '../../../../support/pageObjects/OperatorToChannel/O2CTransferInitiate';
-import DownloadAmb from '../../../../support/pageObjects/AmbiguousTransaction/DownloadAmb';
-import BulkSettlement from '../../../../support/pageObjects/AmbiguousTransaction/BulkSettlement';
+import TransferRulePage from '../../../../../support/pageObjects/TransferRules/TransferRulePage';
+import Approval from '../../../../../support/pageObjects/TransferRules/Approval';
+import O2C from '../../../../../support/pageObjects/TransferRules/O2C';
+import O2CTransferInitiate from '../../../../../support/pageObjects/OperatorToChannel/O2CTransferInitiate';
+import DownloadAmb from '../../../../../support/pageObjects/AmbiguousTransaction/DownloadAmb';
+import BulkSettlement from '../../../../../support/pageObjects/AmbiguousTransaction/BulkSettlement';
 
 
 //----------------Object Declaration----------------------------------------------------------

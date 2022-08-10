@@ -1,0 +1,483 @@
+[
+  {
+    "description": "    This feature includes registering, Modifying and Approval of Business Admin and\n    Customer Support Admin Users by System Admin",
+    "keyword": "Feature",
+    "name": "User Management : Administrator/Business/Subscriber",
+    "line": 1,
+    "id": "user-management-:-administrator/business/subscriber",
+    "tags": [],
+    "uri": "Users.feature",
+    "elements": [
+      {
+        "id": "user-management-:-administrator/business/subscriber;registration-of-business-administrator",
+        "keyword": "Scenario",
+        "line": 14,
+        "name": "Registration of Business Administrator",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 13
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 15,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 16994000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 16,
+            "name": "Navigate to User Management and Click on register",
+            "result": {
+              "status": "passed",
+              "duration": 474000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 17,
+            "name": "Select User type as Adminstrator and click on BusinessAdmin",
+            "result": {
+              "status": "passed",
+              "duration": 6128000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "Enter all the required details",
+            "result": {
+              "status": "passed",
+              "duration": 10870000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 19,
+            "name": "Confirmation message is displayed",
+            "result": {
+              "status": "failed",
+              "duration": 15152000000,
+              "error_message": "AssertionError: Timed out retrying after 15000ms: expected '[ <h2.text-center.text-danger>, 1 more... ]' to have text ' SUCCESS Service is successfully paused. Kindly contact admin for approval', but the text was ' ERROR Error occurred'\n    + expected - actual\n\n    -' ERROR Error occurred'\n    +' SUCCESS Service is successfully paused. Kindly contact admin for approval'\n\n    at Context.eval (http://125.16.139.20:8023/__cypress/tests?p=cypress\\integration\\BDD\\CreationOfUsers\\Users.feature:239:38)\n    at Context.resolveAndRunStepDefinition (http://125.16.139.20:8023/__cypress/tests?p=cypress\\integration\\BDD\\CreationOfUsers\\Users.feature:15362:29)\n    at Context.eval (http://125.16.139.20:8023/__cypress/tests?p=cypress\\integration\\BDD\\CreationOfUsers\\Users.feature:14683:35)"
+            },
+            "embeddings": [
+              {
+                "mime_type": "image/png"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 20,
+            "name": "Navigate to My Activity and Aplly required filters",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 21,
+            "name": "Assert Created Business Admin Mobile Number and Write Created on time",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-management-:-administrator/business/subscriber;approval-of-registered-business-administrator",
+        "keyword": "Scenario",
+        "line": 31,
+        "name": "Approval of registered Business Administrator",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 29
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 32,
+            "name": "Login into Mobiquity Portal as System admin Checker1",
+            "result": {
+              "status": "passed",
+              "duration": 15944000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 33,
+            "name": "Navigate to Approvals and filter by Submitted status",
+            "result": {
+              "status": "passed",
+              "duration": 9777000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 34,
+            "name": "User click on submitted user data",
+            "result": {
+              "status": "passed",
+              "duration": 1998000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 35,
+            "name": "Approve the Users",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `button[id=\"approve-expanded-record\"]`, but never found it. Queried from element: <body>\n    at approvals.getApproveButton (http://125.16.139.20:8023/__cypress/tests?p=cypress\\integration\\BDD\\CreationOfUsers\\Users.feature:3437:26)\n    at Context.eval (http://125.16.139.20:8023/__cypress/tests?p=cypress\\integration\\BDD\\CreationOfUsers\\Users.feature:307:16)\n    at Context.resolveAndRunStepDefinition (http://125.16.139.20:8023/__cypress/tests?p=cypress\\integration\\BDD\\CreationOfUsers\\Users.feature:15362:29)\n    at Context.eval (http://125.16.139.20:8023/__cypress/tests?p=cypress\\integration\\BDD\\CreationOfUsers\\Users.feature:14683:35)"
+            },
+            "embeddings": [
+              {
+                "mime_type": "image/png"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 36,
+            "name": "User status is approved",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 37,
+            "name": "Logout",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 38,
+            "name": "Login into Mobiquity Portal as System admin Maker after Logout",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 39,
+            "name": "Navigate to Manage User, and search Business Admin",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 40,
+            "name": "Assert Created Business Admin Mobile Number",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-management-:-administrator/business/subscriber;to-verify-that-valid-system-admin/business-admin-is-able-to-initiate-businsess-user-creation.",
+        "keyword": "Scenario",
+        "line": 52,
+        "name": "To verify that valid System admin/Business Admin is able to initiate businsess user creation.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 50
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 53,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 12433000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 54,
+            "name": "Navigate to User Management and Click on register",
+            "result": {
+              "status": "passed",
+              "duration": 1142000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 55,
+            "name": "Select User type as Business and Select user role",
+            "result": {
+              "status": "passed",
+              "duration": 4635000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 56,
+            "name": "Enter all the required business user details",
+            "result": {
+              "status": "failed",
+              "error_message": "CypressError: `cy.request()` failed trying to load:\n\nhttp://172.25.48.237:3133/otpservice/internal/genotp/3aebc90c-0eb3-4bc4-a63b-6977b8c4616a\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ETIMEDOUT 172.25.48.237:3133\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: http://172.25.48.237:3133/otpservice/internal/genotp/3aebc90c-0eb3-4bc4-a63b-6977b8c4616a\n\n-----------------------------------------------------------\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n    at http://125.16.139.20:8023/__cypress/runner/cypress_runner.js:165463:78\nFrom previous event:\n    at Context.request (http://125.16.139.20:8023/__cypress/runner/cypress_runner.js:165460:15)\nFrom Your Spec Code:\n    at Context.eval (http://125.16.139.20:8023/__cypress/tests?p=cypress\\integration\\BDD\\CreationOfUsers\\Users.feature:1620:8)\n\nFrom Node.js Internals:\n  RequestError: Error: connect ETIMEDOUT 172.25.48.237:3133\n      at new RequestError (C:\\Users\\ravi.narendra\\AppData\\Local\\Cypress\\Cache\\9.7.0\\Cypress\\resources\\app\\node_modules\\request-promise-core\\lib\\errors.js:14:15)\n      at Request.plumbing.callback (C:\\Users\\ravi.narendra\\AppData\\Local\\Cypress\\Cache\\9.7.0\\Cypress\\resources\\app\\node_modules\\request-promise-core\\lib\\plumbing.js:87:29)\n      at Request.RP$callback [as _callback] (C:\\Users\\ravi.narendra\\AppData\\Local\\Cypress\\Cache\\9.7.0\\Cypress\\resources\\app\\node_modules\\request-promise-core\\lib\\plumbing.js:46:31)\n      at self.callback (C:\\Users\\ravi.narendra\\AppData\\Local\\Cypress\\Cache\\9.7.0\\Cypress\\resources\\app\\node_modules\\@cypress\\request\\request.js:183:22)\n      at Request.emit (node:events:390:28)\n      at Request.onRequestError (C:\\Users\\ravi.narendra\\AppData\\Local\\Cypress\\Cache\\9.7.0\\Cypress\\resources\\app\\node_modules\\@cypress\\request\\request.js:869:8)\n      at ClientRequest.emit (node:events:402:35)\n      at Socket.socketErrorListener (node:_http_client:447:9)\n      at Socket.emit (node:events:390:28)\n      at emitErrorNT (node:internal/streams/destroy:157:8)\n      at emitErrorCloseNT (node:internal/streams/destroy:122:3)\n      at processTicksAndRejections (node:internal/process/task_queues:83:21)\n  "
+            },
+            "embeddings": [
+              {
+                "mime_type": "image/png"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 57,
+            "name": "Confirmation message is displayed",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-management-:-administrator/business/subscriber;to-verify-that-another-system-admin/businsess-user--is-able-to-approve-the-initiated-business-user-creation.",
+        "keyword": "Scenario",
+        "line": 67,
+        "name": "To verify that another System Admin/businsess User  is able to approve the initiated business user creation.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 65
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 68,
+            "name": "Login into Mobiquity Portal as System admin Checker1",
+            "result": {
+              "status": "passed",
+              "duration": 14958000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 69,
+            "name": "Navigate to Approvals and filter by Submitted status",
+            "result": {
+              "status": "passed",
+              "duration": 10878000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 70,
+            "name": "User click on submitted user data",
+            "result": {
+              "status": "passed",
+              "duration": 3106000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 71,
+            "name": "Approve the Users",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `button[id=\"approve-expanded-record\"]`, but never found it. Queried from element: <body>\n    at approvals.getApproveButton (http://125.16.139.20:8023/__cypress/tests?p=cypress\\integration\\BDD\\CreationOfUsers\\Users.feature:3437:26)\n    at Context.eval (http://125.16.139.20:8023/__cypress/tests?p=cypress\\integration\\BDD\\CreationOfUsers\\Users.feature:307:16)\n    at Context.resolveAndRunStepDefinition (http://125.16.139.20:8023/__cypress/tests?p=cypress\\integration\\BDD\\CreationOfUsers\\Users.feature:15362:29)\n    at Context.eval (http://125.16.139.20:8023/__cypress/tests?p=cypress\\integration\\BDD\\CreationOfUsers\\Users.feature:14683:35)"
+            },
+            "embeddings": [
+              {
+                "mime_type": "image/png"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 72,
+            "name": "User status is approved",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-management-:-administrator/business/subscriber;to-verify-that-valid-systemadmin/businsess-user-is-able-to-initiate-subscriber-creation.",
+        "keyword": "Scenario",
+        "line": 82,
+        "name": "To verify that valid SystemAdmin/businsess User is able to initiate Subscriber creation.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 80
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 83,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 14857000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 84,
+            "name": "Navigate to User Management and Click on register",
+            "result": {
+              "status": "passed",
+              "duration": 1791000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 85,
+            "name": "Select User type as Subscriber and click on Subscribers",
+            "result": {
+              "status": "passed",
+              "duration": 6811000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 86,
+            "name": "Enter all the required subscriber details",
+            "result": {
+              "status": "failed",
+              "error_message": "CypressError: `cy.request()` failed trying to load:\n\nhttp://172.25.48.237:3133/otpservice/internal/genotp/a1546a7e-cde2-47ba-b78d-6af6f336cf6a\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ETIMEDOUT 172.25.48.237:3133\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: http://172.25.48.237:3133/otpservice/internal/genotp/a1546a7e-cde2-47ba-b78d-6af6f336cf6a\n\n-----------------------------------------------------------\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n    at http://125.16.139.20:8023/__cypress/runner/cypress_runner.js:165463:78\nFrom previous event:\n    at Context.request (http://125.16.139.20:8023/__cypress/runner/cypress_runner.js:165460:15)\nFrom Your Spec Code:\n    at Context.eval (http://125.16.139.20:8023/__cypress/tests?p=cypress\\integration\\BDD\\CreationOfUsers\\Users.feature:1620:8)\n\nFrom Node.js Internals:\n  RequestError: Error: connect ETIMEDOUT 172.25.48.237:3133\n      at new RequestError (C:\\Users\\ravi.narendra\\AppData\\Local\\Cypress\\Cache\\9.7.0\\Cypress\\resources\\app\\node_modules\\request-promise-core\\lib\\errors.js:14:15)\n      at Request.plumbing.callback (C:\\Users\\ravi.narendra\\AppData\\Local\\Cypress\\Cache\\9.7.0\\Cypress\\resources\\app\\node_modules\\request-promise-core\\lib\\plumbing.js:87:29)\n      at Request.RP$callback [as _callback] (C:\\Users\\ravi.narendra\\AppData\\Local\\Cypress\\Cache\\9.7.0\\Cypress\\resources\\app\\node_modules\\request-promise-core\\lib\\plumbing.js:46:31)\n      at self.callback (C:\\Users\\ravi.narendra\\AppData\\Local\\Cypress\\Cache\\9.7.0\\Cypress\\resources\\app\\node_modules\\@cypress\\request\\request.js:183:22)\n      at Request.emit (node:events:390:28)\n      at Request.onRequestError (C:\\Users\\ravi.narendra\\AppData\\Local\\Cypress\\Cache\\9.7.0\\Cypress\\resources\\app\\node_modules\\@cypress\\request\\request.js:869:8)\n      at ClientRequest.emit (node:events:402:35)\n      at Socket.socketErrorListener (node:_http_client:447:9)\n      at Socket.emit (node:events:390:28)\n      at emitErrorNT (node:internal/streams/destroy:157:8)\n      at emitErrorCloseNT (node:internal/streams/destroy:122:3)\n      at processTicksAndRejections (node:internal/process/task_queues:83:21)\n  "
+            },
+            "embeddings": [
+              {
+                "mime_type": "image/png"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 87,
+            "name": "SubscrigReg Confirmation message is displayed",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-management-:-administrator/business/subscriber;to-verify-that-another-system-admin/businsess-user-is-able-to-approve-the-initiated-subscriber-creation.",
+        "keyword": "Scenario",
+        "line": 96,
+        "name": "To verify that another System Admin/businsess User is able to approve the initiated Subscriber creation.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 94
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 97,
+            "name": "Login into Mobiquity Portal as System admin Checker1",
+            "result": {
+              "status": "passed",
+              "duration": 17846000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 98,
+            "name": "Navigate to Approvals and filter by Submitted status",
+            "result": {
+              "status": "passed",
+              "duration": 15310000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 99,
+            "name": "User click on submitted user data",
+            "result": {
+              "status": "passed",
+              "duration": 5621000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 100,
+            "name": "Approve the Users",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `button[id=\"approve-expanded-record\"]`, but never found it. Queried from element: <body>\n    at approvals.getApproveButton (http://125.16.139.20:8023/__cypress/tests?p=cypress\\integration\\BDD\\CreationOfUsers\\Users.feature:3437:26)\n    at Context.eval (http://125.16.139.20:8023/__cypress/tests?p=cypress\\integration\\BDD\\CreationOfUsers\\Users.feature:307:16)\n    at Context.resolveAndRunStepDefinition (http://125.16.139.20:8023/__cypress/tests?p=cypress\\integration\\BDD\\CreationOfUsers\\Users.feature:15362:29)\n    at Context.eval (http://125.16.139.20:8023/__cypress/tests?p=cypress\\integration\\BDD\\CreationOfUsers\\Users.feature:14683:35)"
+            },
+            "embeddings": [
+              {
+                "mime_type": "image/png"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 101,
+            "name": "Added User status is approved",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

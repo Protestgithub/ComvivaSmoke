@@ -1,0 +1,112 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Transfer rules",
+    "line": 1,
+    "id": "transfer-rules",
+    "tags": [],
+    "uri": "transferRules.feature",
+    "elements": [
+      {
+        "id": "transfer-rules;to-verify-that-system-admin-should-be-able-to-add-initiate-transfer-rule-successfully.",
+        "keyword": "Scenario",
+        "line": 12,
+        "name": "To verify that System admin should be able to add initiate Transfer Rule successfully.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 10
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 13,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 6890000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 14,
+            "name": "User Click on Transfer Rule.",
+            "result": {
+              "status": "passed",
+              "duration": 6424000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "Select the Service Name and from details.",
+            "result": {
+              "status": "failed",
+              "duration": 2068000000,
+              "error_message": "TypeError: Cannot read properties of undefined (reading '2')\n\nBecause this error occurred during a `after each` hook we are skipping all of the remaining tests.\n    at Context.eval (http://125.16.139.20:8023/__cypress/tests?p=cypress\\support\\index.js:1434:72)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "Select the To details.",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 17,
+            "name": "Select the From & To category.",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 18,
+            "name": "Click on Add Transfer Rule button.",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 19,
+            "name": "Select Status,Fixed Trf Level,Transfer type,Geographical Domain and Controlled Trf Level",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 20,
+            "name": "Click on submit button.",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 21,
+            "name": "Click on confirm button.",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

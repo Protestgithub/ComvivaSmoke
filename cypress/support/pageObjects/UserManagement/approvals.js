@@ -16,7 +16,10 @@ class approvals {
     getApplyFilter() {
         return cy.iframe().find('button[id="apply-filter"]')
     }
-
+    getCreatedOnTime() {
+        return cy.iframe().find('[class="mat-cell cdk-cell cdk-column-createdOn mat-column-createdOn ng-star-inserted"]')
+    }    
+    
     getCurrentDateRowData() {
         const dayjs = require("dayjs")
         return cy.iframe().find('mat-cell[role="gridcell"]') ///.contains(dayjs().format('DD/MM/YYYY'))

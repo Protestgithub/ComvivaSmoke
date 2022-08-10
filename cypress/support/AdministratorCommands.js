@@ -4,6 +4,7 @@ import register from './pageObjects/UserManagement/register';
 import manageUsers from './pageObjects/UserManagement/manageUsers';
 import 'cypress-file-upload';
 import approvals from './pageObjects/UserManagement/approvals';
+import { eq } from 'lodash';
 //-------------------------Object Declaration----------------------------------------------------------
 const approvalPage = new approvals
 const pageLogin = new loginPage()
@@ -163,3 +164,30 @@ Cypress.Commands.add('getMessage', (apiURL) => {
         })
     })
 })
+
+
+Cypress.Commands.add('getBAApproval',() =>
+cy.readFile(filename).then((user)  => {
+    let Time = user.CreatedOnTime
+    let shouldStop = false
+    cy.iframe().find('.mat-table.cdk-table.mat-sort>mat-row').each(($row=>{
+        cy.then(() => {
+            if(shouldStop){
+                return
+            }
+        cy.wrap($row).within(function(){
+            cy.get('mat-cell').each(($el=>{
+                cy.log($el.text())
+                if($el.text().includes(Time)&& $el.text().includes())
+                {
+                cy.get('[role="gridcell"]').eq(0).click({force: true})    
+                cy.wait(5000)
+                shouldStop = true
+                }
+            }))
+
+        })
+    })
+}))
+})
+)

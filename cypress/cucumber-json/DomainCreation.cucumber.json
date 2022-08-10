@@ -1,0 +1,68 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Domain Creation",
+    "line": 1,
+    "id": "domain-creation",
+    "tags": [],
+    "uri": "DomainCreation.feature",
+    "elements": [
+      {
+        "id": "domain-creation;to-verify-that-only-system-admin-will-be-able-to-approve/reject-the-initiated-category.",
+        "keyword": "Scenario",
+        "line": 10,
+        "name": "To verify that only System admin will be able to approve/reject the initiated category.",
+        "tags": [
+          {
+            "name": "@prerequisite",
+            "line": 8
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 11,
+            "name": "Login into Mobiquity Portal as System admin Checker1",
+            "result": {
+              "status": "passed",
+              "duration": 10570000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "Click Add category approval.",
+            "result": {
+              "status": "passed",
+              "duration": 284000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 13,
+            "name": "Select Category approval.",
+            "result": {
+              "status": "passed",
+              "duration": 3289000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 14,
+            "name": "Select the category that needs to be approved",
+            "result": {
+              "status": "failed",
+              "duration": 3158000000,
+              "error_message": "TypeError: Cannot read properties of undefined (reading '3')\n\nBecause this error occurred during a `after each` hook we are skipping all of the remaining tests.\n    at Context.eval (http://125.16.139.20:8023/__cypress/tests?p=cypress\\support\\index.js:1434:72)"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

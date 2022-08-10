@@ -21,7 +21,7 @@ const registerPage = new register()
 const manageUsersPage = new manageUsers()
 const APIPage = new API()
 var name,SubMobile
-
+var subRegistration = 'cypress/fixtures/userData/subscriberReg.json'
 
 function getRandomName() {
   name = "";
@@ -119,6 +119,8 @@ Cypress.Commands.add('getSubscriberMobNum', () => {
 		manageUsersPage.getSearchUserButton().click({ force: true })
 	})
 })
+
+
 
 
 // Cypress.Commands.add('getAdminSecurityProfileName',() => {

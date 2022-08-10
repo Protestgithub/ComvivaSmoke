@@ -63,6 +63,8 @@ class myActivity{
     {
         return cy.iframe().find('#yes')
     }
-
+    getCreatedOnTime(){
+        return cy.iframe().find('[class="mat-tooltip-trigger auto-scroll user-select-all ng-star-inserted"]')
+    }
 }
 export default myActivity

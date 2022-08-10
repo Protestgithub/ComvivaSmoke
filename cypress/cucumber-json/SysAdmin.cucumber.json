@@ -1,0 +1,557 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "System admin Creation",
+    "line": 1,
+    "id": "system-admin-creation",
+    "tags": [],
+    "uri": "SysAdmin.feature",
+    "elements": [
+      {
+        "id": "system-admin-creation;to-verify-that-security-profiles-can-be-configured-in-the-system-for-different-type-of-users-under-different-workspaces.",
+        "keyword": "Scenario",
+        "line": 13,
+        "name": "To verify that security profiles can be configured in the system for different type of users under different workspaces.",
+        "tags": [
+          {
+            "name": "@prerequisite",
+            "line": 10
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 14,
+            "name": "Login into Mobiquity Portal as Super admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 8788000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 15,
+            "name": "Navigate to Security and click to select security profile",
+            "result": {
+              "status": "passed",
+              "duration": 3002000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "Click on add profile select user type as subscriber and fill the details",
+            "result": {
+              "status": "passed",
+              "duration": 1419000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 17,
+            "name": "Fill the details-Subscriber Profile Name",
+            "result": {
+              "status": "passed",
+              "duration": 1515000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "Fill the details-PasswordRestrictios",
+            "result": {
+              "status": "passed",
+              "duration": 4465000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 19,
+            "name": "Fill the details-AuthRestrictions",
+            "result": {
+              "status": "passed",
+              "duration": 22000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 20,
+            "name": "Fill the details-loginRestrictions",
+            "result": {
+              "status": "passed",
+              "duration": 4545000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 21,
+            "name": "Click on add and confirm",
+            "result": {
+              "status": "passed",
+              "duration": 7103000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "system-admin-creation;to-verify-that-master-user-can-initiate-add-request-of-system-admin",
+        "keyword": "Scenario",
+        "line": 32,
+        "name": "To verify that Master user can initiate add request of System admin",
+        "tags": [
+          {
+            "name": "@prerequisite",
+            "line": 31
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 33,
+            "name": "Login into Mobiquity Portal as Super admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 7345000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 34,
+            "name": "Navigate to User Management and click on Register",
+            "result": {
+              "status": "passed",
+              "duration": 557000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 35,
+            "name": "Click On System Admin and select Single User",
+            "result": {
+              "status": "passed",
+              "duration": 3541000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 36,
+            "name": "Enter all required Fields",
+            "result": {
+              "status": "passed",
+              "duration": 7350000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 37,
+            "name": "Confirmation message is displayed",
+            "result": {
+              "status": "passed",
+              "duration": 1280000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "system-admin-creation;to-verify-that-master-user-can-approve-add-initiation-request-of-system-admin.",
+        "keyword": "Scenario",
+        "line": 47,
+        "name": "To verify that Master user can approve add initiation request of System admin.",
+        "tags": [
+          {
+            "name": "@prerequisite",
+            "line": 45
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 48,
+            "name": "Login into Mobiquity Portal as Super admin Checker",
+            "result": {
+              "status": "passed",
+              "duration": 6764000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 49,
+            "name": "Navigate to Approvals and filter by Submitted status",
+            "result": {
+              "status": "passed",
+              "duration": 6053000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 50,
+            "name": "User click on submitted user data",
+            "result": {
+              "status": "passed",
+              "duration": 247000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 51,
+            "name": "Approve the Users and save loginID",
+            "result": {
+              "status": "passed",
+              "duration": 7560000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 52,
+            "name": "User status is approved",
+            "result": {
+              "status": "passed",
+              "duration": 166000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "system-admin-creation;checking-whether-we-are-able-to-login-with-created-systemadmin-crendentials",
+        "keyword": "Scenario",
+        "line": 60,
+        "name": "Checking whether we are able to login with created systemadmin crendentials",
+        "tags": [
+          {
+            "name": "@prerequisite",
+            "line": 58
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 61,
+            "name": "Login into Mobiquity Portal as System admin Created by Master",
+            "result": {
+              "status": "passed",
+              "duration": 14632000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "system-admin-creation;to-create-system-admin2",
+        "keyword": "Scenario",
+        "line": 65,
+        "name": "To create System Admin2",
+        "tags": [
+          {
+            "name": "@prerequisite",
+            "line": 63
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 66,
+            "name": "Login into Mobiquity Portal as Super admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 6906000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 67,
+            "name": "Navigate to User Management and click on Register",
+            "result": {
+              "status": "passed",
+              "duration": 392000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 68,
+            "name": "Click On System Admin and select Single User",
+            "result": {
+              "status": "passed",
+              "duration": 1234000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 69,
+            "name": "Enter all required Fields",
+            "result": {
+              "status": "passed",
+              "duration": 7565000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 70,
+            "name": "Confirmation message is displayed",
+            "result": {
+              "status": "passed",
+              "duration": 910000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 71,
+            "name": "Logout",
+            "result": {
+              "status": "passed",
+              "duration": 1105000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 72,
+            "name": "Login into Mobiquity Portal as Super admin Checker after Logout",
+            "result": {
+              "status": "passed",
+              "duration": 9002000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 73,
+            "name": "Navigate to Approvals and filter by Submitted status",
+            "result": {
+              "status": "passed",
+              "duration": 4959000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 74,
+            "name": "User click on submitted user data",
+            "result": {
+              "status": "passed",
+              "duration": 397000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 75,
+            "name": "Approve the Users and save loginID2",
+            "result": {
+              "status": "passed",
+              "duration": 7997000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 76,
+            "name": "User status is approved",
+            "result": {
+              "status": "passed",
+              "duration": 196000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 77,
+            "name": "Logout",
+            "result": {
+              "status": "passed",
+              "duration": 1463000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 78,
+            "name": "Login into Mobiquity Portal as System admin Created by Master2",
+            "result": {
+              "status": "passed",
+              "duration": 19045000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "system-admin-creation;to-create-system-admins3",
+        "keyword": "Scenario",
+        "line": 82,
+        "name": "To create System Admins3",
+        "tags": [
+          {
+            "name": "@prerequisite",
+            "line": 80
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 83,
+            "name": "Login into Mobiquity Portal as Super admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 7018000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 84,
+            "name": "Navigate to User Management and click on Register",
+            "result": {
+              "status": "passed",
+              "duration": 442000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 85,
+            "name": "Click On System Admin and select Single User",
+            "result": {
+              "status": "passed",
+              "duration": 1129000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 86,
+            "name": "Enter all required Fields",
+            "result": {
+              "status": "passed",
+              "duration": 7244000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 87,
+            "name": "Confirmation message is displayed",
+            "result": {
+              "status": "passed",
+              "duration": 727000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 88,
+            "name": "Logout",
+            "result": {
+              "status": "passed",
+              "duration": 898000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 89,
+            "name": "Login into Mobiquity Portal as Super admin Checker after Logout",
+            "result": {
+              "status": "passed",
+              "duration": 8695000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 90,
+            "name": "Navigate to Approvals and filter by Submitted status",
+            "result": {
+              "status": "passed",
+              "duration": 4613000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 91,
+            "name": "User click on submitted user data",
+            "result": {
+              "status": "passed",
+              "duration": 609000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 92,
+            "name": "Approve the Users and save loginID3",
+            "result": {
+              "status": "passed",
+              "duration": 7951000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 93,
+            "name": "User status is approved",
+            "result": {
+              "status": "passed",
+              "duration": 197000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 94,
+            "name": "Logout",
+            "result": {
+              "status": "passed",
+              "duration": 1131000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 95,
+            "name": "Login into Mobiquity Portal as System admin Created by Master3",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `button[class=\"change-password-btn\"]`, but never found it. Queried from element: <body>\n    at loginPage.getchangepassword (http://125.16.139.20:8023/__cypress/tests?p=cypress\\integration\\BDD\\CreationOfUsers\\SysAdmin.feature:5875:26)\n    at Context.eval (http://125.16.139.20:8023/__cypress/tests?p=cypress\\integration\\BDD\\CreationOfUsers\\SysAdmin.feature:1091:13)"
+            },
+            "embeddings": [
+              {
+                "mime_type": "image/png"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

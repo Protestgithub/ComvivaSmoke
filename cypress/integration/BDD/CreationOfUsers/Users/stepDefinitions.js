@@ -30,17 +30,19 @@ const manageUsersPage = new manageUsers()
 const APIPage = new API()
 const myActivityPage = new myActivity()
 const uuid = () => Cypress._.random(1e8)
+const uuid1 = () => Cypress._.random(1e8)
 const uuuid = () => Cypress._.random(1e3)
 amount = uuuid()
 var loginId, mobile, BusinessMobile, KycValue, amount, name, ifscnum, accnumber, BankData
 const kycid = () => Cypress._.random(1e8)
 const timestamp = (new Date).getTime()
   KycValue = "A" + timestamp
-mobile = "77" + uuid()
+mobile = "77" + uuid1()
 var lid, eid, CIF, mobile1, Mobile, Submobile, loginId, name
 mobile1 = "77" + uuid()
 var filename = 'cypress/fixtures/userData/AdministratorData.json'
 var subRegistration = 'cypress/fixtures/userData/subscriberReg.json'
+var BuisnessReg = 'cypress/fixtures/userData/BusinessUsersData.json'
 var SubProfileName = 'cypress/fixtures/profileData/Profile.json'
 let Profile
 var BankData = 'cypress/fixtures/userData/BankData.json'
@@ -182,12 +184,77 @@ When('Navigate to Approvals and filter by Submitted status', function () {
 })
 
 //------------------------------------Approve----------------------------------------------------------
-
-And('User click on submitted user data', function () {
-  approvalPage.getCurrentDateRowData().eq(0).click({ force: true })
-
+And('Navigate to My Activity and Aplly required filters', function () {
+  welcomePage.getMyActivity().click()
+  myActivityPage.getFilter().click({ force: true })
+  cy.wait(2000)
+  myActivityPage.getAddUser().click({ force: true })
+  myActivityPage.getSubmittedStatus().click()
+  myActivityPage.getApply().click()
 })
-
+//--------------------------------------------------------------------------------------------------------
+And('Assert Created Business Admin Mobile Number and Write Created on time', function(){
+  cy.wait(2000)
+  cy.readFile(filename).then((user) => {
+  let BAMobile = user.BAMobileNumber
+  var BBAMobile = " "+BAMobile
+  manageUsersPage.getAssertMobile().eq(1).should('have.text',BBAMobile)
+})
+cy.wait(2000)
+myActivityPage.getCreatedOnTime().eq(0).invoke('text').then((time)=>{
+  time= time.trim()
+  cy.log(time)
+  cy.readFile(filename).then((data) => {
+  data.CreatedOnTime = time
+  cy.writeFile(filename,data)
+  })
+})
+})
+And('Assert Created Subscriber Mobile Number and Write Created on time', function(){
+  cy.wait(2000)
+  cy.readFile(subRegistration).then((user) => {
+  let SubMobile = user.subscriberMobile
+  var SUBMobile = " "+SubMobile
+  manageUsersPage.getAssertMobile().eq(1).should('have.text',SUBMobile)
+})
+cy.wait(2000)
+myActivityPage.getCreatedOnTime().eq(0).invoke('text').then((time)=>{
+  time= time.trim()
+  cy.log(time)
+  cy.readFile(subRegistration).then((data) => {
+  data.CreatedOnTime = time
+  cy.writeFile(subRegistration,data)
+  })
+})
+})
+And('Assert Created Buissness User Mobile Number and Write Created on time', function(){
+  cy.wait(2000)
+  cy.readFile(BuisnessReg).then((user) => {
+  let BUMobile = user.registeredMobile
+  var BUDMobile = " "+BUMobile
+  manageUsersPage.getAssertMobile().eq(1).should('have.text',BUDMobile)
+})
+cy.wait(2000)
+myActivityPage.getCreatedOnTime().eq(0).invoke('text').then((time)=>{
+  time= time.trim()
+  cy.log(time)
+  cy.readFile(BuisnessReg).then((data) => {
+  data.CreatedOnTime = time
+  cy.writeFile(BuisnessReg,data)
+  })
+})
+})
+//-----------------------------------------------------------------------------------------------
+And('User click on Buissness Admin submitted user data', function () {
+  cy.getApproval(filename)
+})
+And('User click on Subscriber submitted user data', function () {
+  cy.getSubscriberApproval(subRegistration)
+})
+And('User click on Buisness User submitted user data', function () {
+  cy.getSubscriberApproval(BuisnessReg)
+})
+//---------------------------------------------------------------------------------------------
 And('Approve the Users', function () {
   approvalPage.getApproveButton().click({ force: true })
   approvalPage.getApproveRequest().click({ force: true })
@@ -317,7 +384,7 @@ Then('SubscrigReg Confirmation message is displayed', function () {
 
   registerPage.getNextButtonBasic2().click({ force: true })
   registerPage.getSubmitButton().click({ force: true })
-  registerPage.getConfirmationText()
+  approvalPage.getApproveConfirmationMessage().contains(this.data2.confirmationMessage.addUser)
 })
 
 
