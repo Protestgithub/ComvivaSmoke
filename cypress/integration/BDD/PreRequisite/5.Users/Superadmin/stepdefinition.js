@@ -227,6 +227,13 @@ Then('Confirmation message is displayed', function() {
 When('Navigate to Approvals and filter by Submitted status', function () {
  // welcomePage.getUserManagementOption().scrollIntoView()
   welcomePage.getApprovaltab().click()
+  
+  //-------------------------------Added wait until------------------------------
+  cy.waitUntil(()=>{
+    return cy.iframe().find('h4.text-secondary').contains('Approvals')
+  })
+  
+  
   //------------------------------------Filter the data--------------------------------------------------
   pageLogin.getiFrame()
   approvalPage.getFilter().click({ force: true })
