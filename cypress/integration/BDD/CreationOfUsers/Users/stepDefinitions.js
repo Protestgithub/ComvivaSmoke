@@ -172,7 +172,14 @@ When('Navigate to Approvals and filter by Submitted status', function () {
   //welcomePage.getUserManagementOption().scrollIntoView()
   welcomePage.getApprovalTab().click()
  cy.wait(2000)
+ 
+ //----------------------------------Added waituntil------------------------
+ 
  welcomePage.getApprovalButtonTab().click()
+ cy.waitUntil(()=>{
+    return cy.iframe().find('h4.text-secondary').contains('Approvals')
+  })
+  
  cy.wait(2000)
   //------------------------------------Filter the data--------------------------------------------------
   pageLogin.getiFrame()
