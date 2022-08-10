@@ -164,6 +164,13 @@ When('Navigate to Approvals and filter by Submitted status', function () {
   welcomePage.getApprovalTab().click()
  cy.wait(2000)
  welcomePage.getApprovalButtonTab().click()
+ 
+ //------------------------------Added wait until------------------------------------------------
+ 
+ cy.waitUntil(()=>{
+    return cy.iframe().find('h4.text-secondary').contains('Approvals')
+  })
+  
  cy.wait(2000)
   //------------------------------------Filter the data--------------------------------------------------
   pageLogin.getiFrame()
@@ -838,6 +845,12 @@ When('Navigate to Approvals and filter by Modification of user status', function
   welcomePage.getApprovalTab().click()
    cy.wait(2000)
  welcomePage.getApprovalButtonTab().click()
+ 
+ //-----------------------------------added waituntil-------------------------------------
+ cy.waitUntil(()=>{
+    return cy.iframe().find('h4.text-secondary').contains('Approvals')
+  })
+  
  cy.wait(2000)
   //----------Filter the data
   cy.wait(8000)
@@ -1301,6 +1314,13 @@ When('Navigate to Approvals and filter by Submitted status', function () {
   welcomePage.getApprovalTab().click()
    cy.wait(2000)
  welcomePage.getApprovalButtonTab().click()
+ 
+ //--------------------------------Added wait until-----------------------------
+ 
+ cy.waitUntil(()=>{
+    return cy.iframe().find('h4.text-secondary').contains('Approvals')
+  })
+  
  cy.wait(2000)
   //------------------------------------Filter the data--------------------------------------------------
   pageLogin.getiFrame()
