@@ -567,3 +567,86 @@ accnumber="4239346"+uuidbkd()
 
 
 })
+
+//--------------------------------------Kalyani---------------------------------------------------/
+
+
+Given('Login into Mobiquity Portal as Business admin User1', function () {
+  cy.launchURL(Cypress.env('Adminurl'))
+  cy.wait(8000)
+  cy.readFile('cypress/fixtures/userData/AdministratorData.json').then((data)=>{
+    var BALogin
+    BALogin = data.BALoginID
+    cy.login(BALogin, this.data1.DefaultPassword)
+    cy.login1(this.data1.BAPassword)
+    cy.wait(2000)
+    cy.Passwordchange(this.data1.UserCreationSuccessMessage)
+    pageLogin.getloginbtn1().click({force:true})
+    cy.wait(5000)
+    cy.login(BALogin, this.data1.BAPassword)
+    })
+    cy.checkWelcomeText(this.data1.BAAdminText)
+
+})
+
+Given('Login into Mobiquity Portal as Business admin User2', function () {
+  cy.launchURL(Cypress.env('Adminurl'))
+  cy.wait(8000)
+  cy.readFile('cypress/fixtures/userData/AdministratorData.json').then((data) => {
+    var BALogin
+    BALogin = data.BALoginID
+    cy.login(BALogin, this.data1.BAPassword)
+  })
+  cy.checkWelcomeText(this.data1.BAAdminText)
+
+})
+
+When('Navigate to User Management and Click on manage user', function () {
+  welcomePage.getUserManagementOption().scrollIntoView()
+  welcomePage.getUserManagementOption().click()
+  welcomePage.getManageUsersLink().click()
+
+})
+
+And('Enter Mobile number or KYC number in search', function () {
+  pageLogin.getiFrame()
+  manageUsersPage.getSearchUser().click({ force: true })
+  //manageUsersPage.getdropdown().select(this.data2.business.userType, { force: true })
+  //Fetching Business Admin mobile Number to see his details
+  cy.readFile('cypress/fixtures/userData/AdministratorData.json').then((data) => {
+    var Mobile
+    Mobile = data.BAMobileNumber 
+    cy.log(mobile)
+  manageUsersPage.getSearchUser().type(Mobile, { force: true })
+})
+  manageUsersPage.getSearchUserButton().click({ force: true })
+
+})
+
+When('User Click on eye button', function () {
+
+  manageUsersPage.getEyeIcon().click({ force: true })
+
+})
+
+Then('Verify View Details Page', function () {
+
+  manageUsersPage.getViewDetails().should("contain", this.data2.confirmationMessage.viewDetails)
+})
+
+
+And('Enter Mobile number or KYC number in Search', function () {
+  pageLogin.getiFrame()
+  manageUsersPage.getSearchUser().click({ force: true })
+  //Reading Subscriber mobile number from Subscriber registration Fixture to check his details
+  cy.readFile('cypress/fixtures/userData/subscriberReg.json').then((data) => {
+    Submobile = data.subscriberMobile
+    cy.log(Submobile)
+    manageUsersPage.getSearchUser().type(Submobile, { force: true })
+  })
+  manageUsersPage.getSearchUserButton().click({ force: true })
+
+})
+
+
+

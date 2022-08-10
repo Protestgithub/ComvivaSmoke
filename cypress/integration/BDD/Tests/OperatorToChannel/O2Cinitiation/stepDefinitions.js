@@ -580,7 +580,7 @@ When('User Click on eye button for WalletHistory1', function () {
   //manageUsersPage.getApplyFilterButton().click({force:true})
   //manageUsersPage.getSearchTransactionId().type(this.data6.TransactionId2)
   cy.readFile(TransactionFleO2C).then((data) => {
-    const TransactionID = data.TransactionID1
+    const TransactionID1 = data.TransactionID1
     cy.log(TransactionID1)
     manageUsersPage.getSearchTransactionId().type(TransactionID1)
     manageUsersPage.getserachicon().click({ force: true })

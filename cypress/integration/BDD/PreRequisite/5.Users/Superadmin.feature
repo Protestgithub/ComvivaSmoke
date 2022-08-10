@@ -80,7 +80,7 @@ When User Click on eye button
 And Click on edit
 And Edit the required details >> Click on Next
 And Click on save
-Then Verify Sucess Message
+#Then Verify Sucess Message
 Then Logout 
 Given Login into Mobiquity Portal as Super admin Checker after Logout
 When Navigate to Approvals and filter by Submitted status
