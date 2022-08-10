@@ -29,6 +29,7 @@ import register from './pageObjects/UserManagement/register';
 import PricingEnginePage from './pageObjects/PricingEngine/PricingEnginePage';
 import DateUtils from './Utility/DateUtils';
 import 'cypress-file-upload';
+import 'cypress-wait-until';
 import API from './pageObjects/API';
 import RegulatoryProfile from './pageObjects/UserManagement/RegulatoryProfile';
 import MarketingProfile from './pageObjects/UserManagement/MarketingProfile';
