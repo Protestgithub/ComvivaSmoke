@@ -186,6 +186,11 @@ Given('Login into Mobiquity Portal as Business admin User1', function () {
  cy.wait(2000)
  welcomePage.getApprovalButtonTab().click()
  cy.wait(2000)
+ //--------------------------------------------Added Waituntil---------------------------------------
+ 
+ cy.waitUntil(()=>{
+    return cy.iframe().find('h4.text-secondary').contains('Approvals')
+  })
   
     //------------------------------------Filter the data--------------------------------------------------
     pageLogin.getiFrame()
