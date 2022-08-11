@@ -27,7 +27,7 @@
             "name": "Login into Mobiquity Portal as Super admin Maker",
             "result": {
               "status": "passed",
-              "duration": 8788000000
+              "duration": 9197000000
             }
           },
           {
@@ -37,7 +37,7 @@
             "name": "Navigate to Security and click to select security profile",
             "result": {
               "status": "passed",
-              "duration": 3002000000
+              "duration": 3445000000
             }
           },
           {
@@ -47,7 +47,7 @@
             "name": "Click on add profile select user type as subscriber and fill the details",
             "result": {
               "status": "passed",
-              "duration": 1419000000
+              "duration": 1518000000
             }
           },
           {
@@ -57,7 +57,7 @@
             "name": "Fill the details-Subscriber Profile Name",
             "result": {
               "status": "passed",
-              "duration": 1515000000
+              "duration": 1565000000
             }
           },
           {
@@ -67,7 +67,7 @@
             "name": "Fill the details-PasswordRestrictios",
             "result": {
               "status": "passed",
-              "duration": 4465000000
+              "duration": 4240000000
             }
           },
           {
@@ -77,7 +77,7 @@
             "name": "Fill the details-AuthRestrictions",
             "result": {
               "status": "passed",
-              "duration": 22000000
+              "duration": 30000000
             }
           },
           {
@@ -87,7 +87,7 @@
             "name": "Fill the details-loginRestrictions",
             "result": {
               "status": "passed",
-              "duration": 4545000000
+              "duration": 5502000000
             }
           },
           {
@@ -96,9 +96,15 @@
             "line": 21,
             "name": "Click on add and confirm",
             "result": {
-              "status": "passed",
-              "duration": 7103000000
-            }
+              "status": "failed",
+              "duration": 20826000000,
+              "error_message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `.mat-button-wrapper`, but never found it. Queried from element: <body>\n    at SecurityProfilePage.getConfirmButton (http://125.16.139.20:8023/__cypress/tests?p=cypress\\integration\\BDD\\CreationOfUsers\\SysAdmin.feature:3447:26)\n    at Context.eval (http://125.16.139.20:8023/__cypress/tests?p=cypress\\integration\\BDD\\CreationOfUsers\\SysAdmin.feature:334:23)\n    at Context.resolveAndRunStepDefinition (http://125.16.139.20:8023/__cypress/tests?p=cypress\\integration\\BDD\\CreationOfUsers\\SysAdmin.feature:16671:29)\n    at Context.eval (http://125.16.139.20:8023/__cypress/tests?p=cypress\\integration\\BDD\\CreationOfUsers\\SysAdmin.feature:15992:35)"
+            },
+            "embeddings": [
+              {
+                "mime_type": "image/png"
+              }
+            ]
           }
         ]
       },
@@ -122,7 +128,7 @@
             "name": "Login into Mobiquity Portal as Super admin Maker",
             "result": {
               "status": "passed",
-              "duration": 7345000000
+              "duration": 8641000000
             }
           },
           {
@@ -132,7 +138,7 @@
             "name": "Navigate to User Management and click on Register",
             "result": {
               "status": "passed",
-              "duration": 557000000
+              "duration": 954000000
             }
           },
           {
@@ -142,18 +148,23 @@
             "name": "Click On System Admin and select Single User",
             "result": {
               "status": "passed",
-              "duration": 3541000000
+              "duration": 4600000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 36,
-            "name": "Enter all required Fields",
+            "name": "Enter all Maker required Fields",
             "result": {
-              "status": "passed",
-              "duration": 7350000000
-            }
+              "status": "failed",
+              "error_message": "CypressError: Timed out retrying after 15000ms: `cy.select()` failed because it could not find a single `<option>` with value, index, or text matching: `sYWsR`\n    at getOptions (http://125.16.139.20:8023/__cypress/runner/cypress_runner.js:157888:80)\nFrom previous event:\n    at retryOptions (http://125.16.139.20:8023/__cypress/runner/cypress_runner.js:157926:67)\n    at whenStable (http://125.16.139.20:8023/__cypress/runner/cypress_runner.js:173835:65)\n    at http://125.16.139.20:8023/__cypress/runner/cypress_runner.js:173290:14\nFrom Your Spec Code:\n    at Context.eval (http://125.16.139.20:8023/__cypress/tests?p=cypress\\integration\\BDD\\CreationOfUsers\\SysAdmin.feature:476:39)"
+            },
+            "embeddings": [
+              {
+                "mime_type": "image/png"
+              }
+            ]
           },
           {
             "arguments": [],
@@ -161,8 +172,7 @@
             "line": 37,
             "name": "Confirmation message is displayed",
             "result": {
-              "status": "passed",
-              "duration": 1280000000
+              "status": "skipped"
             }
           }
         ]
@@ -187,7 +197,7 @@
             "name": "Login into Mobiquity Portal as Super admin Checker",
             "result": {
               "status": "passed",
-              "duration": 6764000000
+              "duration": 9310000000
             }
           },
           {
@@ -197,7 +207,7 @@
             "name": "Navigate to Approvals and filter by Submitted status",
             "result": {
               "status": "passed",
-              "duration": 6053000000
+              "duration": 7464000000
             }
           },
           {
@@ -207,7 +217,7 @@
             "name": "User click on submitted user data",
             "result": {
               "status": "passed",
-              "duration": 247000000
+              "duration": 612000000
             }
           },
           {
@@ -217,7 +227,7 @@
             "name": "Approve the Users and save loginID",
             "result": {
               "status": "passed",
-              "duration": 7560000000
+              "duration": 8532000000
             }
           },
           {
@@ -226,9 +236,14 @@
             "line": 52,
             "name": "User status is approved",
             "result": {
-              "status": "passed",
-              "duration": 166000000
-            }
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 15000ms: Expected to find content: 'User Registration has been completed successfully with the mobileNumber' within the element: <span> but never did.\n    at Context.eval (http://125.16.139.20:8023/__cypress/tests?p=cypress\\integration\\BDD\\CreationOfUsers\\SysAdmin.feature:638:48)\n    at Context.resolveAndRunStepDefinition (http://125.16.139.20:8023/__cypress/tests?p=cypress\\integration\\BDD\\CreationOfUsers\\SysAdmin.feature:16671:29)\n    at Context.eval (http://125.16.139.20:8023/__cypress/tests?p=cypress\\integration\\BDD\\CreationOfUsers\\SysAdmin.feature:15992:35)"
+            },
+            "embeddings": [
+              {
+                "mime_type": "image/png"
+              }
+            ]
           }
         ]
       },
@@ -251,9 +266,14 @@
             "line": 61,
             "name": "Login into Mobiquity Portal as System admin Created by Master",
             "result": {
-              "status": "passed",
-              "duration": 14632000000
-            }
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `button[class=\"change-password-btn\"]`, but never found it. Queried from element: <body>\n    at loginPage.getchangepassword (http://125.16.139.20:8023/__cypress/tests?p=cypress\\integration\\BDD\\CreationOfUsers\\SysAdmin.feature:5969:26)\n    at Context.eval (http://125.16.139.20:8023/__cypress/tests?p=cypress\\integration\\BDD\\CreationOfUsers\\SysAdmin.feature:1142:13)"
+            },
+            "embeddings": [
+              {
+                "mime_type": "image/png"
+              }
+            ]
           }
         ]
       },
@@ -277,7 +297,7 @@
             "name": "Login into Mobiquity Portal as Super admin Maker",
             "result": {
               "status": "passed",
-              "duration": 6906000000
+              "duration": 9515000000
             }
           },
           {
@@ -287,7 +307,7 @@
             "name": "Navigate to User Management and click on Register",
             "result": {
               "status": "passed",
-              "duration": 392000000
+              "duration": 1366000000
             }
           },
           {
@@ -297,7 +317,7 @@
             "name": "Click On System Admin and select Single User",
             "result": {
               "status": "passed",
-              "duration": 1234000000
+              "duration": 4615000000
             }
           },
           {
@@ -306,9 +326,14 @@
             "line": 69,
             "name": "Enter all required Fields",
             "result": {
-              "status": "passed",
-              "duration": 7565000000
-            }
+              "status": "failed",
+              "error_message": "CypressError: Timed out retrying after 15000ms: `cy.select()` failed because it could not find a single `<option>` with value, index, or text matching: `sYWsR`\n    at getOptions (http://125.16.139.20:8023/__cypress/runner/cypress_runner.js:157888:80)\nFrom previous event:\n    at retryOptions (http://125.16.139.20:8023/__cypress/runner/cypress_runner.js:157926:67)\n    at whenStable (http://125.16.139.20:8023/__cypress/runner/cypress_runner.js:173835:65)\n    at http://125.16.139.20:8023/__cypress/runner/cypress_runner.js:173290:14\nFrom Your Spec Code:\n    at Context.eval (http://125.16.139.20:8023/__cypress/tests?p=cypress\\integration\\BDD\\CreationOfUsers\\SysAdmin.feature:529:39)"
+            },
+            "embeddings": [
+              {
+                "mime_type": "image/png"
+              }
+            ]
           },
           {
             "arguments": [],
@@ -316,8 +341,7 @@
             "line": 70,
             "name": "Confirmation message is displayed",
             "result": {
-              "status": "passed",
-              "duration": 910000000
+              "status": "skipped"
             }
           },
           {
@@ -326,8 +350,7 @@
             "line": 71,
             "name": "Logout",
             "result": {
-              "status": "passed",
-              "duration": 1105000000
+              "status": "skipped"
             }
           },
           {
@@ -336,8 +359,7 @@
             "line": 72,
             "name": "Login into Mobiquity Portal as Super admin Checker after Logout",
             "result": {
-              "status": "passed",
-              "duration": 9002000000
+              "status": "skipped"
             }
           },
           {
@@ -346,8 +368,7 @@
             "line": 73,
             "name": "Navigate to Approvals and filter by Submitted status",
             "result": {
-              "status": "passed",
-              "duration": 4959000000
+              "status": "skipped"
             }
           },
           {
@@ -356,8 +377,7 @@
             "line": 74,
             "name": "User click on submitted user data",
             "result": {
-              "status": "passed",
-              "duration": 397000000
+              "status": "skipped"
             }
           },
           {
@@ -366,8 +386,7 @@
             "line": 75,
             "name": "Approve the Users and save loginID2",
             "result": {
-              "status": "passed",
-              "duration": 7997000000
+              "status": "skipped"
             }
           },
           {
@@ -376,8 +395,7 @@
             "line": 76,
             "name": "User status is approved",
             "result": {
-              "status": "passed",
-              "duration": 196000000
+              "status": "skipped"
             }
           },
           {
@@ -386,8 +404,7 @@
             "line": 77,
             "name": "Logout",
             "result": {
-              "status": "passed",
-              "duration": 1463000000
+              "status": "skipped"
             }
           },
           {
@@ -396,8 +413,7 @@
             "line": 78,
             "name": "Login into Mobiquity Portal as System admin Created by Master2",
             "result": {
-              "status": "passed",
-              "duration": 19045000000
+              "status": "skipped"
             }
           }
         ]
@@ -422,7 +438,7 @@
             "name": "Login into Mobiquity Portal as Super admin Maker",
             "result": {
               "status": "passed",
-              "duration": 7018000000
+              "duration": 10521000000
             }
           },
           {
@@ -432,7 +448,7 @@
             "name": "Navigate to User Management and click on Register",
             "result": {
               "status": "passed",
-              "duration": 442000000
+              "duration": 1390000000
             }
           },
           {
@@ -442,7 +458,7 @@
             "name": "Click On System Admin and select Single User",
             "result": {
               "status": "passed",
-              "duration": 1129000000
+              "duration": 3437000000
             }
           },
           {
@@ -451,9 +467,15 @@
             "line": 86,
             "name": "Enter all required Fields",
             "result": {
-              "status": "passed",
-              "duration": 7244000000
-            }
+              "status": "failed",
+              "duration": 1000000,
+              "error_message": "CypressError: Timed out retrying after 15000ms: `cy.select()` failed because it could not find a single `<option>` with value, index, or text matching: `sYWsR`\n    at getOptions (http://125.16.139.20:8023/__cypress/runner/cypress_runner.js:157888:80)\nFrom previous event:\n    at retryOptions (http://125.16.139.20:8023/__cypress/runner/cypress_runner.js:157926:67)\n    at whenStable (http://125.16.139.20:8023/__cypress/runner/cypress_runner.js:173835:65)\n    at http://125.16.139.20:8023/__cypress/runner/cypress_runner.js:173290:14\nFrom Your Spec Code:\n    at Context.eval (http://125.16.139.20:8023/__cypress/tests?p=cypress\\integration\\BDD\\CreationOfUsers\\SysAdmin.feature:529:39)"
+            },
+            "embeddings": [
+              {
+                "mime_type": "image/png"
+              }
+            ]
           },
           {
             "arguments": [],
@@ -461,8 +483,7 @@
             "line": 87,
             "name": "Confirmation message is displayed",
             "result": {
-              "status": "passed",
-              "duration": 727000000
+              "status": "skipped"
             }
           },
           {
@@ -471,8 +492,7 @@
             "line": 88,
             "name": "Logout",
             "result": {
-              "status": "passed",
-              "duration": 898000000
+              "status": "skipped"
             }
           },
           {
@@ -481,8 +501,7 @@
             "line": 89,
             "name": "Login into Mobiquity Portal as Super admin Checker after Logout",
             "result": {
-              "status": "passed",
-              "duration": 8695000000
+              "status": "skipped"
             }
           },
           {
@@ -491,8 +510,7 @@
             "line": 90,
             "name": "Navigate to Approvals and filter by Submitted status",
             "result": {
-              "status": "passed",
-              "duration": 4613000000
+              "status": "skipped"
             }
           },
           {
@@ -501,8 +519,7 @@
             "line": 91,
             "name": "User click on submitted user data",
             "result": {
-              "status": "passed",
-              "duration": 609000000
+              "status": "skipped"
             }
           },
           {
@@ -511,8 +528,7 @@
             "line": 92,
             "name": "Approve the Users and save loginID3",
             "result": {
-              "status": "passed",
-              "duration": 7951000000
+              "status": "skipped"
             }
           },
           {
@@ -521,8 +537,7 @@
             "line": 93,
             "name": "User status is approved",
             "result": {
-              "status": "passed",
-              "duration": 197000000
+              "status": "skipped"
             }
           },
           {
@@ -531,8 +546,7 @@
             "line": 94,
             "name": "Logout",
             "result": {
-              "status": "passed",
-              "duration": 1131000000
+              "status": "skipped"
             }
           },
           {
@@ -541,14 +555,8 @@
             "line": 95,
             "name": "Login into Mobiquity Portal as System admin Created by Master3",
             "result": {
-              "status": "failed",
-              "error_message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `button[class=\"change-password-btn\"]`, but never found it. Queried from element: <body>\n    at loginPage.getchangepassword (http://125.16.139.20:8023/__cypress/tests?p=cypress\\integration\\BDD\\CreationOfUsers\\SysAdmin.feature:5875:26)\n    at Context.eval (http://125.16.139.20:8023/__cypress/tests?p=cypress\\integration\\BDD\\CreationOfUsers\\SysAdmin.feature:1091:13)"
-            },
-            "embeddings": [
-              {
-                "mime_type": "image/png"
-              }
-            ]
+              "status": "skipped"
+            }
           }
         ]
       }

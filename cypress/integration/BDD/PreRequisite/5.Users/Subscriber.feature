@@ -8,7 +8,7 @@ Feature: User Management : Subscriber
 
 ##################################### Chethan ###########################################################
 
-
+ 
 
 # Author: Chetan.S
 # Last Updated: 25-04-2022
@@ -23,6 +23,9 @@ When Navigate to User Management and Click on register
 And Select User type as Subscriber and click on Subscriber
 And Enter all the required subscriber details for suspension and Resumption
 Then SubscrigReg Confirmation message is displayed
+And Navigate to My Activity and Apply Add User filters
+Then Assert Suspension creation Subscriber Mobile Number and Write Created on time
+
 
 # Author: Chetan.S
 # Last Updated: 25-04-2022
@@ -43,35 +46,6 @@ Then Added User status is approved
 # Last Updated: 25-04-2022
 # Comments 
 # Scenario_ID :
-# TC_70
-@test
-
-Scenario:To verify that System Admin/businsess user is able to modify Subscriber successfully.
-Given Login into Mobiquity Portal as System admin Maker
-When Navigate to User Management and Click on manage user
-And enter user mobile number and search the user
-And System Admin is able to view details
-And System Admin is able to edit subscriber details
-Then Confirm the edit details
-
-# Author: Chetan.S
-# Last Updated: 25-04-2022
-# Comments 
-# Scenario_ID :
-# TC_71
-@test
-
-Scenario:To verify that another System Admin/businsess User is able to approve the Modified Subscriber Data.
-Given Login into Mobiquity Portal as System admin Checker1
-When Navigate to Approvals and filter by Modification of user status
-And User click on submitted user data
-And Approve the Users
-Then Edited User status is approved
- 
-# Author: Chetan.S
-# Last Updated: 25-04-2022
-# Comments 
-# Scenario_ID :
 # TC_73
 @test
 
@@ -83,6 +57,8 @@ And enter user mobile number and search the SuspendResume user
 And System Admin is able to view details
 And Suspend the user by giving the comment
 Then Verify the user suspend Confirmation message
+And Navigate to My Activity and Apply Modified User filters
+Then Assert Suspension of Subscriber Mobile Number and Write Created on time
 
 # Author: Chetan.S
 # Last Updated: 25-04-2022
@@ -99,6 +75,7 @@ And Admin click on Suspended user data
 And Approve to suspended the Users
 Then Verify the user Suspended approval message
 
+
 # Author: Chetan.S
 # Last Updated: 25-04-2022
 # Comments 
@@ -113,6 +90,9 @@ When Navigate to User Management and Click on manage user
 And enter user mobile number and search the SuspendResume user
 And Resume the user by giving the comment
 Then Verify the user resume Confirmation message
+And Navigate to My Activity and Apply Modified User filters
+Then Assert Suspension of Subscriber Mobile Number and Write Created on time
+
 
 # Author: Chetan.S
 # Last Updated: 25-04-2022
@@ -130,6 +110,38 @@ And Approve the Resumed User
 Then Verify the user Resumed approval message
 
 
+
+# Author: Chetan.S
+# Last Updated: 25-04-2022
+# Comments 
+# Scenario_ID :
+# TC_70
+@test
+
+Scenario:To verify that System Admin/businsess user is able to modify Subscriber successfully.
+Given Login into Mobiquity Portal as System admin Maker
+When Navigate to User Management and Click on manage user
+And enter user mobile number and search the user
+And System Admin is able to view details
+And System Admin is able to edit subscriber details
+Then Confirm the edit details
+And Navigate to My Activity and Apply Modified User filters
+Then Assert Created Subscriber Mobile Number and Write Created on time
+
+
+# Author: Chetan.S
+# Last Updated: 25-04-2022
+# Comments 
+# Scenario_ID :
+# TC_71
+@test
+
+Scenario:To verify that another System Admin/businsess User is able to approve the Modified Subscriber Data.
+Given Login into Mobiquity Portal as System admin Checker1
+When Navigate to Approvals and filter by Modification of user status
+And User click on submitted user data
+And Approve the Users
+Then Edited User status is approved
 ############################################## Kalyani ####################################################
 
 

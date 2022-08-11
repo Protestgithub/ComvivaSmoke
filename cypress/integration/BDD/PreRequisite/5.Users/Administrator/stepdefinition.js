@@ -166,13 +166,67 @@ When('Navigate to Approvals and filter by Submitted status', function () {
   approvalPage.getApplyFilter().click({ force: true })
 
 })
+//------------------------------------Approve----------------------------------------------------------
+And('Navigate to My Activity and Apply Add User filters', function () {
+  welcomePage.getMyActivity().click()
+  myActivityPage.getFilter().click({ force: true })
+  cy.wait(2000)
+  myActivityPage.getAddUser().click({ force: true })
+  myActivityPage.getSubmittedStatus().click()
+  myActivityPage.getApply().click()
+})
 
+And('Navigate to My Activity and Apply Modified User filters', function () {
+  welcomePage.getMyActivity().click()
+  myActivityPage.getFilter().click({ force: true })
+  cy.wait(2000)
+  myActivityPage.getModificationOfUser().click({ force: true })
+  myActivityPage.getSubmittedStatus().click()
+  myActivityPage.getApply().click()
+})
+//--------------------------------------------------------------------------------------------------------
+And('Assert Created Business Admin Mobile Number and Write Created on time', function(){
+  cy.wait(2000)
+  cy.readFile(filename).then((user) => {
+  let BAMobile = user.BAMobileNumber
+  var BBAMobile = " "+BAMobile
+  manageUsersPage.getAssertMobile().eq(1).should('have.text',BBAMobile)
+})
+cy.wait(2000)
+myActivityPage.getCreatedOnTime().eq(0).invoke('text').then((time)=>{
+  time= time.trim()
+  cy.log(time)
+  cy.readFile(filename).then((data) => {
+  data.CreatedOnTime = time
+  cy.writeFile(filename,data)
+  })
+})
+})
+
+And('Assert Created Customer care Admin Mobile Number and Write Created on time', function(){
+  cy.wait(2000)
+  cy.readFile(filename).then((user) => {
+  let CAMobile = user.CCAMobileNumber
+  var CCAMobile = " "+CAMobile
+  manageUsersPage.getAssertMobile().eq(1).should('have.text',CCAMobile)
+})
+cy.wait(2000)
+myActivityPage.getCreatedOnTime().eq(0).invoke('text').then((time)=>{
+  time= time.trim()
+  cy.log(time)
+  cy.readFile(filename).then((data) => {
+  data.CreatedOnTime = time
+  cy.writeFile(filename,data)
+  })
+})
+})
+
+//-----------------------------------------------------------------------------------------------
+And('User click on submitted user data', function () {
+  cy.getApproval(filename)
+})
 //------------------------------------Approve----------------------------------------------------------
 
-And('User click on submitted user data', function () {
-  approvalPage.getCurrentDateRowData().eq(0).click({ force: true })
-
-})
 
 And('Approve the Users', function () {
   approvalPage.getApproveButton().click({ force: true })
@@ -224,10 +278,10 @@ And('System Admin is able to view details', function () {
 
 And('System Admin is able to edit details', function () {
   manageUsersPage.getEditToolTip().eq(0).click({ force: true })
-  registerPage.getLastName().type(getRandomName(), { force: true })
+  registerPage.getLastName().clear().type(getRandomName(), { force: true })
   recurse(
     () => registerPage.getFirstName().clear().type(getRandomName(), { force: true }),
-    () => cy.getrandomUserEmailID(),
+    () =>  registerPage.getLastName().clear().type(getRandomName(), { force: true }),
     (uniqueness) => (uniqueness) == registerPage.getuniqueness()
   )
 

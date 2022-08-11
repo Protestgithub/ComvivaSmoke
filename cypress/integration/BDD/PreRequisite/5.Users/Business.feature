@@ -18,6 +18,8 @@ And Enter all the mandatory Basic information details and click on next
 Then Enter all the mandatory Profile details like marketing profile,regulatory profile,Operator profile.
 And Click on Next >> click on Confirm
 Then Confirmation message
+And Navigate to My Activity and Apply Add User filters
+Then Assert Created Telco-Operator Mobile Number and Write Created on time
 Then Logout
 Given Login into Mobiquity Portal as another System admin Checker1 after logout
 When Navigate to Approvals and filter by Submitted status
@@ -41,6 +43,8 @@ And Click on edit
 And Edit the required details >> Click on Next
 And Click on save
 Then Confirmation modify message
+And Navigate to My Activity and Apply Modified User filters
+Then Assert Created Telco-Operator Mobile Number and Write Created on time
 Then Logout
 Given Login into Mobiquity Portal as another System admin Checker1 after logout
 When Navigate to Approvals and filter by Submitted status
@@ -61,6 +65,8 @@ When Navigate to User Management and Click on register
 And Select User type as Business and Select user role
 And Enter all the required business user details
 Then Confirmation message is displayed
+And Navigate to My Activity and Apply Add User filters
+Then Assert Created Buissness User Mobile Number and Write Created on time
 Then Logout
 Given Login into Mobiquity Portal as another System admin Checker1 after logout
 When Navigate to Approvals and filter by Submitted status
@@ -138,6 +144,8 @@ And Search with the Mobile Number
 And System Admin is able to view details
 And System Admin is able to edit details of the user
 Then Confirm the edit details
+And Navigate to My Activity and Apply Modified User filters
+Then Assert Created Buissness User Mobile Number and Write Created on time
 # When Navigate to Manage User, and search Business Admin
 #And Search with the EmailID
 #And System Admin is able to view details
@@ -215,9 +223,6 @@ And Enter registered email id value
 Then Email Error message is displayed
 
 
-
-
-
 ###################################### Kalyani ####################################################
 
 # Author: Kalyani M
@@ -234,10 +239,12 @@ When Navigate to User Management and Click on register
 And Select User type as Business and Select user role
 And Enter all the required business user details1
 Then Confirmation message is displayed
+And Navigate to My Activity and Apply Add User filters
+And Assert Created Buissness User Mobile Number for Suspension and Write Created on time
 Then Logout
 Given Login into Mobiquity Portal as another System admin Checker1 after logout
 When Navigate to Approvals and filter by Submitted status 
-And User click on submitted user data
+And User click on Suspended submitted user data
 And Approve the Users
 Then User status is approved
 Then Logout
@@ -250,6 +257,9 @@ Then Click on Suspend user icon
 And  write comments to Suspend user
 And  click on yes
 Then Verify the user resume Confirmation message
+And Navigate to My Activity and Apply Modified User filters
+And Assert Buissness User Mobile Number for Suspension and Write Created on time
+
 
 # Author: Kalyani M
 # Last Updated:
@@ -261,8 +271,8 @@ Then Verify the user resume Confirmation message
 
 Scenario: To verify that SystemAdmin/Business Admin can initiate resumption of an suspended businsess user.
 Given Login into Mobiquity Portal as System admin Checker1
-When Navigate to Approvals and filter by Submitted status
-And User click on submitted user data
+When Navigate to Approvals and  click on suspended data
+And User click on Suspended submitted user data
 And Approve the Users
 Then User status is Suspended
 
@@ -287,6 +297,9 @@ Then Click on Suspend user icon
 And  write comments to Suspend user
 And  click on yes
 Then Verify the user resume Confirmation message
+And Navigate to My Activity and Apply Modified User filters
+And Assert Buissness User Mobile Number for Suspension and Write Created on time
+
 
 # Author: Kalyani M
 # Last Updated:
@@ -298,7 +311,7 @@ Then Verify the user resume Confirmation message
 Scenario: System Admin/Business Admin can approve resumption initiate of an suspended businsess user.
 Given Login into Mobiquity Portal as System admin Checker1
 When Navigate to Approvals and filter by Submitted status
-And User click on submitted user data
+And User click on Suspended submitted user data
 And Approve the Users
 Then User status is Resumed
 
@@ -324,3 +337,5 @@ When Navigate to Approvals and filter by Submitted status
 And User click on submitted user data
 And Approve the Users
 Then User status is approved
+
+

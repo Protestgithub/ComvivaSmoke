@@ -12,6 +12,7 @@ import "../../../../../support/BusinessUserCommands";
 import approvals from '../../../../../support/pageObjects/UserManagement/approvals';
 import manageUsers from '../../../../../support/pageObjects/UserManagement/manageUsers';
 import register from '../../../../../support/pageObjects/UserManagement/register';
+import myActivity from '../../../../../support/pageObjects/MyActivity/myActivity';
 import { recurse } from 'cypress-recurse';
 
 
@@ -22,6 +23,7 @@ const welcomePage = new homePage()
 const registerPage = new register()
 const approvalPage = new approvals()
 const manageUsersPage = new manageUsers()
+const myActivityPage = new myActivity()
 const uuuid = () => Cypress._.random(1e3)
 const SubMob='userData/subscriberReg.json'
 amount = uuuid()
@@ -35,7 +37,8 @@ var SubProfileName = 'cypress/fixtures/profileData/Profile.json'
 var SubAuthProfileName ='cypress/fixtures/userData/AuthorizationProfile.json'
 var RegulatoryMarketingProfile = 'cypress/fixtures/userData/Regulatory&MarketingProfile.json'
 var BankData = 'cypress/fixtures/userData/BankData.json'
-
+var BuisnessReg = 'cypress/fixtures/userData/BusinessUsersData.json'
+var BuisnessRegSuspension = 'cypress/fixtures/userData/BusinessUserSuspensionData.json'
 function getRandomName() {
   name = "";
   var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
@@ -159,27 +162,64 @@ Then('Confirmation message is displayed', function () {
   registerPage.getDoneButton().click()
 })
 
-When('Navigate to Approvals and filter by Submitted status', function () {
+When('Navigate to Approvals and  click on suspended data', function () {
  // welcomePage.getUserManagementOption().scrollIntoView()
   welcomePage.getApprovalTab().click()
  cy.wait(2000)
  welcomePage.getApprovalButtonTab().click()
  cy.wait(2000)
   //------------------------------------Filter the data--------------------------------------------------
-  pageLogin.getiFrame()
-  approvalPage.getFilter().click({ force: true })
-  cy.wait(2000)
-  approvalPage.getAddUserCheckBox().click({ force: true })
-  approvalPage.getApplyFilter().click({ force: true })
+ 
 
 })
 
 //------------------------------------Approve----------------------------------------------------------
-
-And('User click on submitted user data', function () {
-  approvalPage.getCurrentDateRowData().eq(0).click({ force: true })
-
+And('Navigate to My Activity and Apply Add User filters', function () {
+  welcomePage.getMyActivity().click()
+  myActivityPage.getFilter().click({ force: true })
+  cy.wait(2000)
+  myActivityPage.getAddUser().click({ force: true })
+  myActivityPage.getSubmittedStatus().click()
+  myActivityPage.getApply().click()
 })
+
+And('Navigate to My Activity and Apply Modified User filters', function () {
+  welcomePage.getMyActivity().click()
+  myActivityPage.getFilter().click({ force: true })
+  cy.wait(2000)
+  myActivityPage.getModificationOfUser().click({ force: true })
+  myActivityPage.getSubmittedStatus().click()
+  myActivityPage.getApply().click()
+})
+//--------------------------------------------------------------------------------------------------------
+
+And('Assert Created Buissness User Mobile Number and Write Created on time', function(){
+  cy.wait(2000)
+  cy.readFile(BuisnessReg).then((user) => {
+  let BUMobile = user.registeredMobile
+  var BUDMobile = " "+BUMobile
+  manageUsersPage.getAssertMobile().eq(1).should('have.text',BUDMobile)
+})
+cy.wait(2000)
+myActivityPage.getCreatedOnTime().eq(0).invoke('text').then((time)=>{
+  time= time.trim()
+  cy.log(time)
+  cy.readFile(BuisnessReg).then((data) => {
+  data.CreatedOnTime = time
+  cy.writeFile(BuisnessReg,data)
+  })
+})
+})
+
+
+//-----------------------------------------------------------------------------------------------
+And('User click on submitted user data', function () {
+  cy.getApproval(BuisnessReg)
+})
+And('User click on Suspended submitted user data', function () {
+  cy.getApproval(BuisnessRegSuspension)
+})
+
 
 And('Approve the Users', function () {
   approvalPage.getApproveButton().click({ force: true })
@@ -359,6 +399,24 @@ And('Click on Next >> click on Confirm', function () {
 })
 Then('Confirmation message', function () {
   registerPage.getConfirmationText().should('have.text', this.data2.personalInfo.successConfirmationMessage)
+})
+
+And('Assert Created Telco-Operator Mobile Number and Write Created on time', function(){
+  cy.wait(2000)
+  cy.readFile(BuisnessReg).then((user) => {
+  let TEMobile = user.telcoMobile
+  var TOMobile = " "+TEMobile
+  manageUsersPage.getAssertMobile().eq(1).should('have.text',TOMobile)
+})
+cy.wait(2000)
+myActivityPage.getCreatedOnTime().eq(0).invoke('text').then((time)=>{
+  time= time.trim()
+  cy.log(time)
+  cy.readFile(BuisnessReg).then((data) => {
+  data.CreatedOnTime = time
+  cy.writeFile(BuisnessReg,data)
+  })
+})
 })
 
 /*----------------------------Modify--telco operator----------------------------------*/
@@ -853,8 +911,7 @@ When('Navigate to Approvals and filter by Modification of user status', function
 //-----------Approve
 And('Admin click on Modified user data', function () {
   cy.wait(4000)
-  approvalPage.getCurrentDateRowData().eq(0).click({ force: true })
-
+  cy.getApproval(BuisnessReg)
 })
 
 
@@ -1258,7 +1315,40 @@ And('Enter Mobile number and KYC number in search for suspension', function () {
   manageUsersPage.getSearchUserButton().click({ force: true })
 
 })
-
+And('Assert Created Buissness User Mobile Number for Suspension and Write Created on time', function(){
+  cy.wait(2000)
+  cy.readFile(BuisnessRegSuspension).then((user) => {
+  let BUMobile = user.registeredMobile
+  var BUDMobile = " "+BUMobile
+  manageUsersPage.getAssertMobile().eq(1).should('have.text',BUDMobile)
+})
+cy.wait(2000)
+myActivityPage.getCreatedOnTime().eq(0).invoke('text').then((time)=>{
+  time= time.trim()
+  cy.log(time)
+  cy.readFile(BuisnessRegSuspension).then((data) => {
+  data.CreatedOnTime = time
+  cy.writeFile(BuisnessRegSuspension,data)
+  })
+})
+})
+And('Assert Buissness User Mobile Number for Suspension and Write Created on time', function(){
+  cy.wait(2000)
+  cy.readFile(BuisnessRegSuspension).then((user) => {
+  let BUMobile = user.registeredMobile
+  var BUDMobile = " "+BUMobile
+  manageUsersPage.getAssertMobile().eq(1).should('have.text',BUDMobile)
+})
+cy.wait(2000)
+myActivityPage.getCreatedOnTime().eq(1).invoke('text').then((time)=>{
+  time= time.trim()
+  cy.log(time)
+  cy.readFile(BuisnessRegSuspension).then((data) => {
+  data.CreatedOnTime = time
+  cy.writeFile(BuisnessRegSuspension,data)
+  })
+})
+})
 And('Select user type & enter Mobile number or KYC number in search', function () {
   pageLogin.getiFrame()
   manageUsersPage.getSearchUser().click({ force: true })

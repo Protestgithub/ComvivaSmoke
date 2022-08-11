@@ -253,23 +253,14 @@ Cypress.Commands.add('getrandomUserEmailID', () => {
 })
 
 Cypress.Commands.add('getrandomUserEmailID1', () => {
-
     let num = Math.floor((Math.random() * 100))
-
     let userID = getRandomName().concat(getRandomName() + num)
-
     let emailId = userID.concat('@comviva.com')
-
     registerPage.getLoginID().type(userID, { force: true })
-
     registerPage.getEmailID().type(emailId, { force: true })
-
     cy.readFile(Sysfilelogin).then((data) => {
-
     data.SYSEmailId = emailId
-
     cy.writeFile(Sysfilelogin, data)
-
     })
 
     })

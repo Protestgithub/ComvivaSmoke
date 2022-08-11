@@ -327,6 +327,45 @@ And('Click On System Admin and select Single User',function(){
   registerPage.getRegistrationMode().eq(0).click({force: true})
 
 })
+And('Enter all Maker required Fields',function(){
+  const uuid = () => Cypress._.random(1e8)
+  mobile = "77" + uuid()
+  loginId = "SY" + mobile
+  let lastname=getRandomName()
+  let firstname=getRandomName()
+registerPage.getLastName().type(lastname, {force: true})
+cy.getrandomUserEmailID1()
+registerPage.getLoginID().clear()
+registerPage.getLoginID().type(loginId)
+recurse(
+  () => registerPage.getMobileNumber().clear().type(mobile, { force: true }),
+  () => registerPage.getFirstName().clear().type(firstname, { force: true }),
+
+  (uniqueness) => (uniqueness) == registerPage.getuniqueness()
+)
+cy.readFile(Sysfilelogin).then((data) => {
+  data.SysAdminName = firstname + '' + lastname
+  cy.writeFile(Sysfilelogin, data)
+  })
+
+cy.writeFile('userData/SystemAdminLogin.json',{MobileNumber:mobile})
+cy.iframe().find('select[data-test-id="preferredLanguage"]')
+.select(this.data2.personalInfo.preferredLang,{force: true})
+registerPage.getCountry().select(this.data2.personalInfo.country,{force: true})
+registerPage.getNextButtonBasic().click({force: true})
+
+//----------------------Profile Data-----------------------------------------------------------------
+
+cy.readFile(SubProfileName).then((user) => {
+        SecurityProfile= user.SystemAdminSecuirtyProfile
+        registerPage.getSecurityProfile().select(SecurityProfile, {force: true})
+    })
+
+registerPage.getAuthProfile().select(this.data2.personalInfo.authProfile2, {force: true})
+registerPage.getNextButtonProfile().click({force: true})
+registerPage.getSubmitButton().click({force: true})
+
+})
 
 And('Enter all required Fields',function(){
   const uuid = () => Cypress._.random(1e8)

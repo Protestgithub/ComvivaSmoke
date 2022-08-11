@@ -33,7 +33,7 @@ Scenario: To verify that Master user can initiate add request of System admin
 Given Login into Mobiquity Portal as Super admin Maker
 When Navigate to User Management and click on Register
 And Click On System Admin and select Single User
-And Enter all required Fields
+And Enter all Maker required Fields
 Then Confirmation message is displayed
 
 # Author: Kalyani M

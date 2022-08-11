@@ -11,6 +11,7 @@ import "../../../../../support/subscriberCommands";
 import register from '../../../../../support/pageObjects/UserManagement/register';
 import approvals from '../../../../../support/pageObjects/UserManagement/approvals';
 import manageUsers from '../../../../../support/pageObjects/UserManagement/manageUsers';
+import myActivity from '../../../../../support/pageObjects/MyActivity/myActivity';
 import { recurse } from 'cypress-recurse';
 import "../../../../../support/BusinessUserCommands";
 //----------------Object Declaration-----------------------------------------------------------------
@@ -19,6 +20,7 @@ const pageLogin = new loginPage()
 const welcomePage = new homePage()
 const registerPage = new register()
 const approvalPage = new approvals()
+const myActivityPage = new myActivity()
 const manageUsersPage = new manageUsers()
 const uuid = () => Cypress._.random(1e8)
 const SubMob = 'userData/subscriberReg.json'
@@ -210,10 +212,7 @@ When('Navigate to Approvals and filter by Submitted status', function () {
 
 //------------------------------------Approve----------------------------------------------------------
 
-And('User click on submitted user data', function () {
-  approvalPage.getCurrentDateRowData().eq(0).click({ force: true })
 
-})
 
 And('Approve the Users', function () {
   approvalPage.getApproveButton().click({ force: true })
@@ -494,6 +493,83 @@ Then('SubscrigReg Confirmation message is displayed', function () {
 
 
 //-----TC_69-------------------------Approve(Subscriber)--------------------------------------------------
+And('Navigate to My Activity and Apply Add User filters', function () {
+  welcomePage.getMyActivity().click()
+  myActivityPage.getFilter().click({ force: true })
+  cy.wait(2000)
+  myActivityPage.getAddUser().click({ force: true })
+  myActivityPage.getSubmittedStatus().click()
+  myActivityPage.getApply().click()
+})
+
+And('Navigate to My Activity and Apply Modified User filters', function () {
+  welcomePage.getMyActivity().click()
+  myActivityPage.getFilter().click({ force: true })
+  cy.wait(2000)
+  myActivityPage.getModificationOfUser().click({ force: true })
+  myActivityPage.getSubmittedStatus().click()
+  myActivityPage.getApply().click()
+})
+
+//--------------------------------------------------------------------------------------------------------
+
+And('Assert Created Subscriber Mobile Number and Write Created on time', function(){
+  cy.wait(2000)
+  cy.readFile(subRegistration).then((user) => {
+  let SubMobile = user.subscriberMobile
+  var SUBMobile = " "+SubMobile
+  manageUsersPage.getAssertMobile().eq(1).should('have.text',SUBMobile)
+})
+cy.wait(2000)
+myActivityPage.getCreatedOnTime().eq(0).invoke('text').then((time)=>{
+  time= time.trim()
+  cy.log(time)
+  cy.readFile(subRegistration).then((data) => {
+  data.CreatedOnTime = time
+  cy.writeFile(subRegistration,data)
+  })
+})
+})
+And('Assert Suspension creation Subscriber Mobile Number and Write Created on time', function(){
+  cy.wait(2000)
+  cy.readFile(subRegistration).then((user) => {
+  let SubMobile = user.subscriberMobileSuspend
+  var SUBMobile = " "+SubMobile
+  manageUsersPage.getAssertMobile().eq(1).should('have.text',SUBMobile)
+})
+cy.wait(2000)
+myActivityPage.getCreatedOnTime().eq(0).invoke('text').then((time)=>{
+  time= time.trim()
+  cy.log(time)
+  cy.readFile(subRegistration).then((data) => {
+  data.CreatedOnTime = time
+  cy.writeFile(subRegistration,data)
+  })
+})
+})
+And('Assert Suspension of Subscriber Mobile Number and Write Created on time', function(){
+  cy.wait(2000)
+  cy.readFile(subRegistration).then((user) => {
+  let SubMobile = user.subscriberMobileSuspend
+  var SUBMobile = " "+SubMobile
+  manageUsersPage.getAssertMobile().eq(1).should('have.text',SUBMobile)
+})
+cy.wait(2000)
+myActivityPage.getCreatedOnTime().eq(1).invoke('text').then((time)=>{
+  time= time.trim()
+  cy.log(time)
+  cy.readFile(subRegistration).then((data) => {
+  data.CreatedOnTime = time
+  cy.writeFile(subRegistration,data)
+  })
+})
+})
+
+//-----------------------------------------------------------------------------------------------
+
+And('User click on submitted user data', function () {
+  cy.getApproval(subRegistration)
+})
 
 Then('Added User status is approved', function () {
   approvalPage.getApproveConfirmationMessage().contains(this.data2.confirmationMessage.addUser)
@@ -696,7 +772,7 @@ When('Navigate to Approvals', function () {
 })
 
 And('Admin click on Suspended user data', function () {
-  approvalPage.getCurrentDateRowData().eq(0).click({ force: true })
+  cy.getApproval(subRegistration)
 
 })
 And('Approve to suspended the Users', function () {
@@ -719,7 +795,7 @@ And('Resume the user by giving the comment', function () {
   manageUsersPage.getSubmitSuspendResumeButton().click({ force: true })
 })
 And('Admin click on Resumeded user data', function () {
-  approvalPage.getCurrentDateRowData().eq(0).click({ force: true })
+  cy.getApproval(subRegistration)
 })
 Then('Verify the user resume Confirmation message', function () {
   approvalPage.getApproveConfirmationMessage().contains(this.data2.suspendResumeConfirmationMessage.suspendResumeUser)
@@ -800,10 +876,7 @@ When('Navigate to Approvals and filter by Submitted status', function () {
   approvalPage.getApplyFilter().click({ force: true })
 
 })
-And('User click on submitted user data', function () {
-  approvalPage.getCurrentDateRowData().eq(0).click({ force: true })
 
-})
 When('User Click on eye button', function () {
   manageUsersPage.getEyeIcon().click({ force: true })
 })

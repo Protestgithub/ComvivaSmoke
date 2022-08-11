@@ -36,7 +36,7 @@ const pageLogin = new loginPage()
 const welcomePage = new homePage()
 const domainPage = new DomainFieldspage()
 const uuid = () => Cypress._.random(1e3)
-const uid = () => Cypress._.random(1e2)
+const uid = () => Cypress._.random(1e5)
 const id = () => Cypress._.random(1e2)
 var DomainName = uuid()
 var code = uid()
@@ -187,8 +187,7 @@ And('Enter Domain Name and Domain Code.',function(){
   cy.wait(3000)
  domainPage.getDomainName().type(this.data4.domainData.domainName+DomainName,{force:true})
  cy.writeFile(DataFile,{Domainname:this.data4.domainData.domainName+DomainName})
-var ab =this.data4.domainData.domainCode+code
- domainPage.getDomainCode().type(ab,{force:true})
+ domainPage.getDomainCode().type(code,{force:true})
  cy.readFile(DataFile).then((data) => {
      data.DomainCode = ab
      cy.writeFile(DataFile, data)

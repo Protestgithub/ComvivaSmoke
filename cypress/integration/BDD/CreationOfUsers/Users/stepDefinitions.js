@@ -249,10 +249,10 @@ And('User click on Buissness Admin submitted user data', function () {
   cy.getApproval(filename)
 })
 And('User click on Subscriber submitted user data', function () {
-  cy.getSubscriberApproval(subRegistration)
+  cy.getApproval(subRegistration)
 })
 And('User click on Buisness User submitted user data', function () {
-  cy.getSubscriberApproval(BuisnessReg)
+  cy.getApproval(BuisnessReg)
 })
 //---------------------------------------------------------------------------------------------
 And('Approve the Users', function () {
@@ -379,15 +379,10 @@ And('Enter all the required subscriber details', function () {
   // let Profile = data.MarketingProfileName
   registerPage.getMarketingProfile().select("SUBSDefaultMP", { force: true })
   //  })
-})
-Then('SubscrigReg Confirmation message is displayed', function () {
-
+  
   registerPage.getNextButtonBasic2().click({ force: true })
   registerPage.getSubmitButton().click({ force: true })
-  approvalPage.getApproveConfirmationMessage().contains(this.data2.confirmationMessage.addUser)
 })
-
-
 
 
 //-----TC_69-------------------------Approve(Subscriber)--------------------------------------------------
