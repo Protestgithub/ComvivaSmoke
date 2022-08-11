@@ -115,52 +115,8 @@ When('User Click on Transfer Rule.', function () {
   cy.wait(2000)
 })
 //---------------------------creation ---------------
-
-And('Select the Service Name and from detailss.', function () {
-
-
-  cy.wait(2000)
-
-  transferrulepage.getServiceName().select(this.data3.TransferRuleDataCreation.servicename, { force: true })
-  cy.wait(4000)
-  //cy.mfsprovider()
-  transferrulepage.getFromMFSProvider().select(this.data3.TransferRuleDataCreation.FromMFSprovider, { force: true })
-  cy.readFile(DataFile).then((data) => {
-    let Domain = data.Doaminname
-    transferrulepage.getFromeDomain().select(Domain, { force: true })
-  })
-  transferrulepage.getFromPaymentInstrument().select(this.data3.TransferRuleDataCreation.FromPaymentInstrument, { force: true })
-  transferrulepage.getFromWallettype().select(this.data3.TransferRuleDataCreation.FromWallet, { force: true })
-})
-
-
-And('Select the To detailss.', function () {
-  cy.wait(2000)
-  transferrulepage.getToMFSProvider().select(this.data3.TransferRuleDataCreation.ToMFSprovider, { force: true })
-  transferrulepage.getToDomain().select(this.data3.TransferRuleDataCreation.ToDomain, { force: true })
-  cy.wait(2000)
-  transferrulepage.getToPaymentInstrument().select(this.data3.TransferRuleDataCreation.ToPaymentInstrument, { force: true })
-  transferrulepage.getToWallettype().select(this.data3.TransferRuleDataCreation.ToWallet, { force: true })
-  transferrulepage.getSubmitbttn().click()
-  cy.wait(2000)
-})
-And('Select the From & To categoryy.', function () {
-
-  cy.wait(2000)
-
-  transferrulepage.getFromCategory().select(this.data3.TransferRuleDataCreation.FromCategory, { force: true })
-  transferrulepage.getToCategory().select(this.data3.TransferRuleDataCreation.ToCategory, { force: true })
-
-  transferrulepage.getFromGrade().select(this.data3.TransferRuleDataCreation.FromGrade, { force: true })
-  transferrulepage.getToGrade().select(this.data3.TransferRuleDataCreation.ToGrade, { force: true })
-
-})
-//-----------------------------------------------------------------------------------
 And('Select the Service Name and from details.', function () {
-
-
   cy.wait(2000)
-
   transferrulepage.getServiceName().select(this.data3.TransferRuleData.servicename, { force: true })
   cy.wait(4000)
   //cy.mfsprovider()
@@ -174,7 +130,7 @@ And('Select the Service Name and from details.', function () {
 })
 
 
-And('Select the To details.', function () {
+And('Select the To details for Initiaion', function () {
   cy.wait(2000)
   transferrulepage.getToMFSProvider().select(this.data3.TransferRuleData.ToMFSprovider, { force: true })
   transferrulepage.getToDomain().select(this.data3.TransferRuleData.ToDomain, { force: true })
@@ -183,6 +139,33 @@ And('Select the To details.', function () {
   transferrulepage.getSubmitbttn().click()
   cy.wait(2000)
 })
+
+And('Select the Service Name and from Details for Transfer to Bank', function () {
+  cy.wait(2000)
+  transferrulepage.getServiceName().select(this.data3.TransferRuleDataCreation.servicename1, { force: true })
+  cy.wait(4000)
+  transferrulepage.getFromMFSProvider().select(this.data3.TransferRuleDataCreation.FromMFSprovider, { force: true })
+  transferrulepage.getFromeDomain().select(this.data3.TransferRuleDataCreation.FromDomain, { force: true })
+  transferrulepage.getFromPaymentInstrument().select(this.data3.TransferRuleDataCreation.FromPaymentInstrument, { force: true })
+  transferrulepage.getFromWallettype().select(this.data3.TransferRuleDataCreation.FromWallet, { force: true })
+})
+
+
+And('Select the To details for Transfer to Bank', function () {
+  cy.wait(2000)
+  transferrulepage.getToMFSProvider().select(this.data3.TransferRuleDataCreation.ToMFSprovider, { force: true })
+  cy.readFile(DataFile).then((data) => {
+    let Domain = data.Doaminname
+    transferrulepage.getToDomain().select(Domain, { force: true })
+  })
+  cy.wait(2000)
+  transferrulepage.getToPaymentInstrument().select(this.data3.TransferRuleDataCreation.ToPaymentInstrument1, { force: true })
+  transferrulepage.getToWallettype().select(this.data3.TransferRuleDataCreation.ToWallet1, { force: true })
+  transferrulepage.getSubmitbttn().click()
+  cy.wait(2000)
+})
+
+//-----------------------------------------------------------------------------------
 
 And('Select the From & To category.', function () {
   cy.wait(2000)
@@ -196,6 +179,21 @@ And('Select the From & To category.', function () {
     transferrulepage.getFromGrade().select(Grade, { force: true })
   })
   transferrulepage.getToGrade().select(this.data3.TransferRuleData.ToGrade, { force: true })
+
+})
+
+And('Select the From & To category for Transfer to Bank', function () {
+  cy.wait(2000)
+  transferrulepage.getFromCategory().select(this.data3.TransferRuleData.FromCategory, { force: true })
+  cy.readFile(DataFile).then((data) => {
+    let Domain = data.Domainname
+    transferrulepage.getToCategory().select(Domain, { force: true })
+  })
+  transferrulepage.getFromGrade().select(this.data3.TransferRuleData.FromGrade, { force: true })
+  cy.readFile(GradeFile).then((data) => {
+    let Grade = data.GradeName
+    transferrulepage.getToGrade().select(Grade, { force: true })
+  })
 
 })
 
@@ -256,46 +254,7 @@ When('User clicks on Delete option.', function () {
 })
 //----------------------------suspend-----------------------------//
 
-And('Select the Service Name and from detailsss.', function () {
 
-
-  cy.wait(2000)
-
-  transferrulepage.getServiceName().select(this.data3.TransferRuleDataSuspend.servicename, { force: true })
-  cy.wait(4000)
-  //cy.mfsprovider()
-  transferrulepage.getFromMFSProvider().select(this.data3.TransferRuleDataSuspend.FromMFSprovider, { force: true })
-  transferrulepage.getFromeDomain().select(this.data3.TransferRuleDataSuspend.FromDomain, { force: true })
-  transferrulepage.getFromPaymentInstrument().select(this.data3.TransferRuleDataSuspend.FromPaymentInstrument, { force: true })
-  transferrulepage.getFromWallettype().select(this.data3.TransferRuleDataSuspend.FromWallet, { force: true })
-})
-
-
-And('Select the To detailsss.', function () {
-
-  cy.wait(2000)
-
-  transferrulepage.getToMFSProvider().select(this.data3.TransferRuleDataSuspend.ToMFSprovider, { force: true })
-  transferrulepage.getToDomain().select(this.data3.TransferRuleDataSuspend.ToDomain, { force: true })
-  cy.wait(2000)
-  transferrulepage.getToPaymentInstrument().select(this.data3.TransferRuleDataSuspend.ToPaymentInstrument, { force: true })
-  transferrulepage.getToWallettype().select(this.data3.TransferRuleDataSuspend.ToWallet, { force: true })
-
-
-  transferrulepage.getSubmitbttn().click()
-  cy.wait(2000)
-})
-And('Select the From & To categoryyy.', function () {
-
-  cy.wait(2000)
-
-  transferrulepage.getFromCategory().select(this.data3.TransferRuleDataSuspend.FromCategory, { force: true })
-  transferrulepage.getToCategory().select(this.data3.TransferRuleDataSuspend.ToCategory, { force: true })
-
-  transferrulepage.getFromGrade().select(this.data3.TransferRuleDataSuspend.FromGrade, { force: true })
-  transferrulepage.getToGrade().select(this.data3.TransferRuleDataSuspend.ToGrade, { force: true })
-
-})
 And('Suspend the status in transfer rule', function () {
   cy.wait(2000)
 
@@ -321,7 +280,23 @@ And('Select rule and approve', function () {
       .as('windowConfirm')
     cy.stub($win.console, 'log').as('consoleLog')
     cy.wrap($body)
-    transferruleapprovalpage.getFirstApproval().contains("Approve").click()
+    transferruleapprovalpage.getFirstApproval().last().contains("Approve").click()
+    // .should(function () {
+    //  expect(this.windowConfirm).to.be.calledWith('Are you sure you want to Reject?')
+    //     //expect(this.consoleLog).to.be.calledWith('CONFIRMED')  // passes
+    //   })
+  })
+})
+And('Select rule and Reject', function () {
+  cy.wait(3000)
+  cy.get('.fd-page.iframeContainer.svelte-1v5e28n > iframe').then(($iframe) => {
+    const $body = $iframe.contents().find('body')
+    const $win = $iframe[0].contentWindow
+    cy.stub($win, 'confirm', () => true)
+      .as('windowConfirm')
+    cy.stub($win.console, 'log').as('consoleLog')
+    cy.wrap($body)
+    transferruleapprovalpage.getReject().last().contains("REJECT").click()
     // .should(function () {
     //  expect(this.windowConfirm).to.be.calledWith('Are you sure you want to Reject?')
     //     //expect(this.consoleLog).to.be.calledWith('CONFIRMED')  // passes

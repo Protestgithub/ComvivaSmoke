@@ -1,12 +1,12 @@
 {
+
+    "errorMessage": "Transfer rule defined has direct transfer and channel bypass is inactive",
+
     "Currency": {
-        "value": "Indian Rupee"
+        "value": "US Dollar"
     },
     "wallettype": {
         "value": "Normal"
-    },
-    "accountnumber": {
-        "number": "ICICI - 7470771987261649"
     }
  
 }

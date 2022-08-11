@@ -1,3 +1,4 @@
+
 class OrderDetailsCreation{
    
    
@@ -18,7 +19,7 @@ class OrderDetailsCreation{
     }
 
     getTransferButtonSubmit() {
-        return cy.iframe().find('input[id="submit-form"]')
+        return cy.iframe().find('[class="button-primary btn-rounded"]')
     }
 
      getBankServices() {
@@ -29,9 +30,14 @@ class OrderDetailsCreation{
         return cy.get('[data-testid="menu.bank_service"]').find('[title="Transfer to Bank"]')
 
     }
+    getConfirmSubmitButton() {
+        return cy.iframe().find('[class="button-primary btn-rounded sm-button ml-4"]')
+    }
 
+    getAssertMessage(){
+        return cy.iframe().find('[class="snackbar flex items-center"]')
 
-
-   
+    }
+    
 }
 export default OrderDetailsCreation

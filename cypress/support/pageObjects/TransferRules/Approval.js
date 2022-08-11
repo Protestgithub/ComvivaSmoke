@@ -4,6 +4,10 @@ getFirstApproval(){
     return cy.iframe().find('.wwFormTableC .tabcol').eq(11)
    
 }
+getReject(){
+    return cy.iframe().find('.wwFormTableC .tabcol').eq(12)
+   
+}
 getSubmitbttn(){
     return cy.iframe().find('#trView_button_submit')
 }

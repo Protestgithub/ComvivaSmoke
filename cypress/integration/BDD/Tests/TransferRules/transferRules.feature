@@ -13,7 +13,7 @@ Scenario: To verify that System admin should be able to add initiate Transfer Ru
 Given Login into Mobiquity Portal as System admin Maker
 When User Click on Transfer Rule.
 And Select the Service Name and from details.
-And Select the To details.
+And Select the To details for Initiaion
 And Select the From & To category.
 When Click on Add Transfer Rule button.
 And Select Status,Fixed Trf Level,Transfer type,Geographical Domain and Controlled Trf Level
@@ -45,7 +45,7 @@ Scenario: To verify the error meessage when the System admin Tries to add initia
 Given Login into Mobiquity Portal as System admin Maker
 When User Click on Transfer Rule.
 And Select the Service Name and from details.
-And Select the To details.
+And Select the To details for Initiaion
 And Select the From & To category.
 When Click on Add Transfer Rule button.
 And Confirm the Error Message
@@ -61,7 +61,7 @@ Scenario: To verify that System admin should be able to Modify Transfer Rule suc
 Given Login into Mobiquity Portal as System admin Maker
 When User Click on Transfer Rule.
 And Select the Service Name and from details.
-And Select the To details.
+And Select the To details for Initiaion
 And Select the From & To category.
 When User clicks on edit option.
 Then Click on submit button.
@@ -91,7 +91,7 @@ Scenario: To verify that System admin should be able to View Transfer Rule succe
 Given Login into Mobiquity Portal as System admin Maker
 When User Click on Transfer Rule.
 And Select the Service Name and from details.
-And Select the To details.
+And Select the To details for Initiaion
 And Select the From & To category.
 When User clicks on view option.
 
@@ -108,13 +108,13 @@ Scenario: To verify that System admin should be able to Delete Transfer Rule suc
 Given Login into Mobiquity Portal as System admin Maker
 When User Click on Transfer Rule.
 And Select the Service Name and from details.
-And Select the To details.
+And Select the To details for Initiaion
 And Select the From & To category.
 When User clicks on Delete option.
 Then Logout
 Given Login into Mobiquity Portal as another System admin Checker1 after logout
 When User clicks on transfer rule approval
-And Select rule and approve
+And Select rule and Reject
 Then click on submit
 
 # Author: Likith R
@@ -128,7 +128,7 @@ Scenario: To verify that System admin should be able to Suspend Transfer Rule su
 Given Login into Mobiquity Portal as System admin Maker
 When User Click on Transfer Rule.
 And Select the Service Name and from details.
-And Select the To details.
+And Select the To details for Initiaion
 And Select the From & To category.
 When Click on Add Transfer Rule button.
 And Suspend the status in transfer rule
@@ -188,3 +188,29 @@ And Select MFS Provider,Payment Instrument.
 Then Enter First Approval Limit
 And Click on submit.
 And confirm the displayed Error Message
+
+
+########################################## Sudheer #######################################################
+
+
+# Author: Sudheer
+# Last Updated:
+# Comments 
+# Test Case_ID : TC_164
+# 
+@test
+Scenario: Transfer rule Creation for Transfer to Bank
+Given Login into Mobiquity Portal as System admin Maker
+When User Click on Transfer Rule.
+And Select the Service Name and from Details for Transfer to Bank
+And Select the To details for Transfer to Bank
+And Select the From & To category for Transfer to Bank
+When Click on Add Transfer Rule button.
+And Select Status,Fixed Trf Level,Transfer type,Geographical Domain and Controlled Trf Level
+Then Click on submit button.
+Then Click on confirm button.
+Then Logout
+And Login into Mobiquity Portal as another System admin Checker1 after logout
+When User clicks on transfer rule approval
+And Select rule and approve
+Then click on submit
