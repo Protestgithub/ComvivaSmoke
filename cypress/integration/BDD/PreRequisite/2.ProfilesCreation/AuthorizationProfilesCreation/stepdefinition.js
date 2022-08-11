@@ -232,6 +232,11 @@ Then('User approval for Authorization profile', function () {
   authorizationProfilePage.getApprovals().click({ force: true })
     cy.wait(2000)
   authorizationProfilePage.getApprovalButtonTab().click()
+  
+  //-------------------Added wait until------------------------
+  cy.waitUntil(()=>{
+    return cy.iframe().find('h4.text-secondary').contains('Approvals')
+  })
   cy.wait(2000)
   authorizationProfilePage.getApproveButton().click({ force: true })
   authorizationProfilePage.getApproveButtonSubmit().click({ force: true })
