@@ -123,7 +123,7 @@ Then Verify View Details Page
 # Author: Kalyani M
 # Last Updated:
 # Comments 
-# Test Case_ID : TC_52_Business admin_LowerHierarchy
+# Test Case_ID : TC_52_Business admin_LowerHierarchy/TC_90
 # 
 @test
 
