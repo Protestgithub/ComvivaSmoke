@@ -145,34 +145,6 @@ Then Edited User status is approved
 ############################################## Kalyani ####################################################
 
 
-# Author: Kalyani M
-# Last Updated:
-# Comments 
-# Test Case_ID : TC_52_Business admin_LowerHierarchy
-# 
-@test
-
-Scenario: To verify that Business admin is able to  view Lower_Hierarchy details 
-Given Login into Mobiquity Portal as Business admin User2
-When Navigate to User Management and Click on manage user
-And Enter Mobile number or KYC number in Search
-When User Click on eye button 
-Then Verify View Details Page
-
-# Author: Kalyani M
-# Last Updated:
-# Comments  :Business admin able to  View Subscriber Details
-# Test Case_ID : TC_90
-# 
-@test
-
-
-Scenario:To verify that Business admin able to view subscriber details
-Given Login into Mobiquity Portal as Business admin User2
-When Navigate to User Management and Click on manage user
-And Enter Mobile number or KYC number in Search
-When User Click on eye button 
-Then Verify View Details Page
 
 # Author: Kalyani M
 # Last Updated:
@@ -196,7 +168,7 @@ Then Verify View Details Page
 # 
 @test
 
-Scenario:To verify that Super admin maker able to view subscriber details
+Scenario:To verify that Super admin maker able to view Subscriber details
 Given Login into Mobiquity Portal as Super admin Maker
 When Navigate to User Management and Click on manage user
 And Enter Mobile number or KYC number in Search
