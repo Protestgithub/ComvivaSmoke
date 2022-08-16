@@ -151,21 +151,6 @@ And User click on submitted user data
 And Approve the Users
 Then User modified is approved
 
-# Author: Kalyani M
-# Last Updated:
-# Comments 
-# Test Case_ID : TC_51_Business admin
-# 
-@test
-
-Scenario: To verify that Business admin is able to  view Self details 
-Given Login into Mobiquity Portal as Business admin User1
-When Navigate to User Management and Click on manage user
-And Enter Mobile number or KYC number in search
-When User Click on eye button 
-Then Verify View Details Page
-
-
 
 # Author: Narendra
 # Last Updated: 22/04/2022
