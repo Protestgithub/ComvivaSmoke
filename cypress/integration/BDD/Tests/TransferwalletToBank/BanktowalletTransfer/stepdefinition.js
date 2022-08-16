@@ -4,19 +4,18 @@
 //----------------Imports---------------------------------------------------------------------
 import 'cypress-iframe'
 import { Given, When, Then, And, Before } from "cypress-cucumber-preprocessor/steps";
-import loginPage from '../../../../support/pageObjects/loginPage';
-import homePage from '../../../../support/pageObjects/homePage';
-import OrderDetailsCreation from '../../../../support/pageObjects/OrderDetailsCreation/OrderDetailsCreation';
+import loginPage from '../../../../../support/pageObjects/loginPage';
+import homePage from '../../../../../support/pageObjects/homePage';
+import OrderDetailsCreation from '../../../../../support/pageObjects/OrderDetailsCreation/OrderDetailsCreation';
+import "../../../../../support/commands";
 
-import "../../../../support/commands";
 
-
-import O2CTransferInitiate from '../../../../support/pageObjects/OperatorToChannel/O2CTransferInitiate';
-import TransferRulePage from '../../../../support/pageObjects/TransferRules/TransferRulePage';
-import Approval from '../../../../support/pageObjects/TransferRules/Approval';
-import manageUsers from '../../../../support/pageObjects/UserManagement/manageUsers';
-import register from '../../../../support/pageObjects/UserManagement/register';
-import approvals from '../../../../support/pageObjects/UserManagement/approvals';
+import O2CTransferInitiate from '../../../../../support/pageObjects/OperatorToChannel/O2CTransferInitiate';
+import TransferRulePage from '../../../../../support/pageObjects/TransferRules/TransferRulePage';
+import Approval from '../../../../../support/pageObjects/TransferRules/Approval';
+import manageUsers from '../../../../../support/pageObjects/UserManagement/manageUsers';
+import register from '../../../../../support/pageObjects/UserManagement/register';
+import approvals from '../../../../../support/pageObjects/UserManagement/approvals';
 
 
 //----------------Object Declaration-----------------------------------------------------------------
