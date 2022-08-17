@@ -32,6 +32,9 @@ var name
 var RegulatoryMarketingProfile = 'cypress/fixtures/userData/Regulatory&MarketingProfile.json'
 var loginId
 var KycValue
+var CsvFile = 'cypress/fixtures/templates/ChurnUserInitiation.csv'
+var JSONFile = 'cypress/fixtures/churnData/ChurnUserInitiation.json'
+
 
 function getRandomName() {
   name = "";
