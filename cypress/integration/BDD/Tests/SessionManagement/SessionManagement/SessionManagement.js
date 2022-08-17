@@ -8,13 +8,11 @@ import homePage from '../../../../../support/pageObjects/homePage';
 import "../../../../../support/commands";
 import loginPage from '../../../../../support/pageObjects/loginPage';
 import SessionManagement from '../../../../../support/pageObjects/SessionManagement/SessionManagement';
-import API from '../../../../../support/pageObjects/API';
 //----------------Object Declaration----------------------------------------------------------
 
 const welcomePage = new homePage()
 const session = new SessionManagement()
 const login = new loginPage()
-const APIPage = new API()
 const SubMob='userData/subscriberReg.json'
 
 //----------------BDD Hooks-----------------------------------------------------------------

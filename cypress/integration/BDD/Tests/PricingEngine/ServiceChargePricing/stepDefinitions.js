@@ -4,15 +4,12 @@
 //----------------Imports---------------------------------------------------------------------
 import 'cypress-iframe'
 import { Given, When, Then, And, Before } from "cypress-cucumber-preprocessor/steps";
-import loginPage from '../../../../../support/pageObjects/loginPage';
 import homePage from '../../../../../support/pageObjects/homePage';
-
 import "../../../../../support/commands";
 import PricingEnginePage from '../../../../../support/pageObjects/PricingEngine/PricingEnginePage';
 
 //----------------Object Declaration----------------------------------------------------------
 
-const pageLogin = new loginPage()
 const welcomePage = new homePage()
 const pricingEnginePage = new PricingEnginePage()
 var fileis = 'cypress/fixtures/userData/Aservice.json'
@@ -28,14 +25,8 @@ Before(() => {
   cy.fixture('PricingEngine').then(function (data5) {
     this.data5 = data5;
   })
-  cy.fixture('BankManagement').then(function (data3) {
-    this.data3 = data3;
-  })
-  // cy.fixture('PEngineRuleName').then(function (data6){
-
-  //       this.data6=data6;
-  //   })
-
+  
+  
 });
 
 var name
@@ -337,11 +328,8 @@ cy.writeFile(fileis,{ServiceRuleName:nameone})
   Cypress._.times(4, () => {
     pricingEnginePage.getnextmonth().click()
   })
-   //pricingEnginePage.getMonthNamerStart().contains(this.data5.month).click({ force: true })//(this.data5.month,{force: true}).click()
-  //pricingEnginePage.getYearNameStart().contains(this.data5.year).click({ force: true })
-  pricingEnginePage.getCurrentDateSelect().click({ force: true })
-  //pricingEnginePage.getCalanderDaysStart().filter(':visible').contains(Date).click()
-pricingEnginePage.getWhoPays().select(this.data5.WhoPays, { force: true })
+    pricingEnginePage.getCurrentDateSelect().click({ force: true })
+  pricingEnginePage.getWhoPays().select(this.data5.WhoPays, { force: true })
   pricingEnginePage.getSVAType().select(this.data5.SenderSVAtype, { force: true })
   pricingEnginePage.getWhomeToPay().select(this.data5.WhomeToPay, { force: true })
   pricingEnginePage.getChargeStatmentPricing().click({ force: true })
@@ -367,40 +355,6 @@ And('Click on commission', function () {
 And('select the service  to add commission profile for.', function () {
   pricingEnginePage.getCashIN().click()
 })
-Then('User should be able to make commission profile with the same pricing engine module.', function () {
-
-
-  pricingEnginePage.getAddNewRuleBtn().click()
-  pricingEnginePage.getRuleName().type(getRandomName(), { force: true })
-  pricingEnginePage.getMinCharge().type(this.data5.MinCharge)
-  pricingEnginePage.getMaxCharge().type(this.data5.MaxCharge)
-  pricingEnginePage.getDatePickerStart().dblclick({ force: true })
-  cy.wait(2000)
-  pricingEnginePage.getCalanderStart().should('be.visible', { force: true })
-  pricingEnginePage.getCurrentDateSelect().click({ force: true })
-  pricingEnginePage.getDatePickerEnd().dblclick({ force: true })
-  //added
-  // ERM.getvalidTo().click()
-  // ERM.getnextyear().click()
-  // ERM.getnextmonth().click
-  //  ERM.getdates().click({force:true})
-  //cy.selectYear(2023) 
-  //cy.selectMonth('January')
-  //cy.selectDay(17)  
-  pricingEnginePage.getMonthNamerStart().contains(this.data5.month).click({ force: true })//(this.data5.month,{force: true}).click() 
-  pricingEnginePage.getYearNameStart().contains(this.data5.year).click({ force: true })
-  cy.wait(3000)
-  pricingEnginePage.getCalanderDaysStart().filter(':visible').contains(this.data5.day).click({ force: true })
-  pricingEnginePage.getWhoPays().select(this.data5.WhoPays, { force: true })
-  pricingEnginePage.getSVAType().select(this.data5.SenderSVAtype, { force: true })
-  pricingEnginePage.getWhomeToPay().select(this.data5.WhomeToPay, { force: true })
-  pricingEnginePage.getChargeStatmentPricing().click({ force: true })
-  pricingEnginePage.getPricingPercntage().type(this.data5.Percentage)
-  pricingEnginePage.getPricingFixedAmt().type(this.data5.FixedAmt)
-  pricingEnginePage.getSaveDraftBtn().trigger('mouseover').click({ force: true })
-
-
-})
 
 And('Click on commission and select the service you want to add commission profile for', function () {
   const uuid = () => Cypress._.random(1e2)
@@ -421,19 +375,10 @@ And('Click on commission and select the service you want to add commission profi
   pricingEnginePage.getCalanderStart().should('be.visible', { force: true })
   pricingEnginePage.getCurrentDateSelect().click({ force: true })
   pricingEnginePage.getDatePickerEnd().dblclick({ force: true })
-  //added
-  // ERM.getvalidTo().click()
-  //ERM.getnextyear().click()
-  //ERM.getnextmonth().click
-  // ERM.getdates().click({force:true})
   pricingEnginePage.getMonthNamerStart().contains(this.data5.month).click({ force: true })//(this.data5.month,{force: true}).click() 
   pricingEnginePage.getYearNameStart().contains(this.data5.year).click({ force: true })
   cy.wait(3000)
   pricingEnginePage.getCalanderDaysStart().filter(':visible').contains(this.data5.day).click({ force: true })
-  //pricingEnginePage.getSenderRole().select(this.data5.SenderRole, { force: true })
-  //pricingEnginePage.getSenderHierarchy().select(this.data5.SenderHierarchy, { force: true })
-  //cy.wait(2000)
-  // pricingEnginePage.getSenderGrade().select(this.data5.SenderGrade, { force: true })
   pricingEnginePage.getSenderRoleCom().select(this.data5.SenderRole, { force: true })
   pricingEnginePage.getSenderHierarchyCom().select(this.data5.SenderHierarchy, { force: true })
   cy.wait(2000)
@@ -454,9 +399,7 @@ And('Click on commission and select the service you want to add commission profi
   pricingEnginePage.getSubmitPolicy().dblclick({ force: true })
   cy.wait(4000)
   pricingEnginePage.getSubmitBtn().dblclick({ force: true })
-  //cy.wait(4000)
-  //pricingEnginePage.getCommHeader().should('have.text', this.data5.textmsg2)
-
+  
 
 })
 

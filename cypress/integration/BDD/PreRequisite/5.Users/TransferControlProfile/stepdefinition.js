@@ -4,12 +4,9 @@ import 'cypress-iframe'
 import { Given, When, Then, And, Before } from "cypress-cucumber-preprocessor/steps";
 import loginPage from '../../../../../support/pageObjects/loginPage';
 import homePage from '../../../../../support/pageObjects/homePage';
-
 import "../../../../../support/commands";
 import "../../../../../support/TransferControlProfileCommand";
 import TransferControlProfile from '../../../../../support/pageObjects/TransferControlProfile';
-import { first } from 'lodash';
-import { forEachChild } from 'typescript';
 import MarketingProfile from '../../../../../support/pageObjects/UserManagement/MarketingProfile';
 import RegulatoryProfile from '../../../../../support/pageObjects/UserManagement/RegulatoryProfile';
 
@@ -28,8 +25,7 @@ const filenameTCP1 = 'userData/TCPdata1.json'
 const CustTCPdata1 = 'userData/CustTCPdata1.json'
 const fileRegulatoryProfile = 'userData/Regulatory&MarketingProfile.json'
 var Tcpname
-var Tcpname1,TcpnameSub,TcpnameSub1
-var RName
+var Tcpname1,TcpnameSub,TcpnameSub1, RName
 
 
 Before(() => {
@@ -228,32 +224,6 @@ Then('Approve the TCP', function () {
   }))
   tcpPage.getApproveTCP1().click({ force: true })
 })
-//-----------------------Editing TCP value for existing Marketing Profile--------/////
-When('Navigate to User Management and Click on Marketing Profile', function () {
-  welcomePage.getUserManagementOption().scrollIntoView()
-  welcomePage.getUserManagementOption().click()
-  welcomePage.getMarketingProfileLink().click()
-
-})
-Then('Click on Edit Marketing Profile and associate the created TCP with Marketing Profile', function () {
-
-  MarketingProfile1.getEditMArketingProfile().click({ force: true })
-  MarketingProfile1.getMarketingProfileMFSProvider().click()
-  MarketingProfile1.getMarketingProfileMFSProvider1().click()
-  MarketingProfile1.getMarketingProfileWalletType().click()
-  MarketingProfile1.getMarketingProfileWalletType2().click()
-  MarketingProfile1.getMarketingProfileGrade().click()
-  MarketingProfile1.getMarketingProfileGrade2().click()
-  MarketingProfile1.getMarketingProfileInstrumentTCP().click()
-  cy.fixture(filenameTCP).then((user) => {
-    Tcpname = user.TcpProfileName
-    cy.log(Tcpname)
-    MarketingProfile1.getMarketingProfileInstrumentTCP2().contains(Tcpname).click()
-  })
-  MarketingProfile1.getsave().click({ force: true })
-
-})
-//-----------------------------End of MarketingProfile----------------------------//
 
 Then('Click on delete icon', function () {
 
@@ -263,26 +233,3 @@ Then('Click on delete icon', function () {
     cy.DeleteDetails1(Tcpname)
    
 })
-//------------------------Regulatory Profile Creation ----------------------//
-When('Navigate to UserManagement And Click on Regulatory Profile', function () {
-
-  welcomePage.getUserManagementOption().scrollIntoView()
-  welcomePage.getUserManagementOption().click()
-  welcomePage.getregulatoryprofile().click()
-  cy.wait(3000)
-})
-And('click on Add Regulatory Profile and Enter Profile Code and Profile Name', function () {
-
-  RegulatoryProfile1.getaddregulatoryprofile().click()
-  RegulatoryProfile1.getregulatoryprofilecode().type(id, { force: true })
-  cy.RPRandomName()
-})
-
-Then('Click On Save Regulatory Profile', function () {
-
-  RegulatoryProfile1.getregulatorysavebtn().click()
-  RegulatoryProfile1.getrpsuccess().contains(this.data2.Sucess)
-  cy.wait(3000)
-
-})
-//-----------------------End Regulatory Profile--------------------//

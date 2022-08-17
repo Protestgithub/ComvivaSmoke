@@ -23,45 +23,18 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-import loginPage from './pageObjects/loginPage';
-import homePage from './pageObjects/homePage';
-import register from './pageObjects/UserManagement/register';
-import PricingEnginePage from './pageObjects/PricingEngine/PricingEnginePage';
-import DateUtils from './Utility/DateUtils';
-import 'cypress-file-upload';
-import API from './pageObjects/API';
-import RegulatoryProfile from './pageObjects/UserManagement/RegulatoryProfile';
-import MarketingProfile from './pageObjects/UserManagement/MarketingProfile';
-import manageUsers from './pageObjects/UserManagement/manageUsers';
 import TransferControlProfile from './pageObjects/TransferControlProfile';
-import AddGrades from './pageObjects/GradeManagement/AddGrades';
+
 
 //-------------------------Object Declaration----------------------------------------------------------
 
-const pageLogin = new loginPage()
-const welcomePage = new homePage()
-const registerPage = new register()
 const tcpPage = new TransferControlProfile()
-const AddGradePage = new AddGrades()
-const APIPage = new API()
-var pricingEnginePage = new PricingEnginePage()
-var dateUtils = new DateUtils()
 var name
-var RegulatoryFile = 'cypress/fixtures/userData/Regulatory&MarketingProfile.json'
-var MarketingFile = 'cypress/fixtures/userData/MarketingProfile.json'
-const RegulatoryProfile1 = new RegulatoryProfile()
-const MarketingProfile1 = new MarketingProfile()
-const manageUsersPage = new manageUsers()
 const filenameTCP = 'userData/TCPdata.json'
 const filenameTCP1 = 'userData/TCPdata1.json'
 const CustTCPdata = 'userData/CustTCPdata.json'
 const CustTCPdata1 = 'userData/CustTCPdata1.json'
-const fileRegulatoryProfile = 'userData/Regulatory&MarketingProfile.json'
 var Tcpname, Tcpname1,TcpnameSub,TcpnameSub1
-const Password1 = 'Com@135'
-var name
-let Sysfilelogin = 'cypress/fixtures/userData/SystemAdminLogin.json'
-let loginId, mobile, Password
 const timestamp = (new Date).getMilliseconds()
 
 

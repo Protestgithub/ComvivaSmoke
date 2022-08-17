@@ -32,9 +32,6 @@ const uuid = () => Cypress._.random(1e8)
 const timestamp = (new Date).getTime()
 const kycid = timestamp
 mobile = "77" + uuid()
-var subRegistration = 'cypress/fixtures/userData/subscriberReg.json'
-var SubProfileName = 'cypress/fixtures/profileData/Profile.json'
-var SubAuthProfileName ='cypress/fixtures/userData/AuthorizationProfile.json'
 var RegulatoryMarketingProfile = 'cypress/fixtures/userData/Regulatory&MarketingProfile.json'
 var BankData = 'cypress/fixtures/userData/BankData.json'
 var BuisnessReg = 'cypress/fixtures/userData/BusinessUsersData.json'
@@ -127,8 +124,7 @@ Given('Login into Mobiquity Portal as Business admin User1', function () {
     cy.wait(2000)
     cy.Passwordchange(this.data1.UserCreationSuccessMessage)
     pageLogin.getloginbtn1().click({force:true})
-    //cy.wait(8000)
-    //cy.login(SuspendedId, this.data1.businessAdmin.businessadminPwd1)
+       
 
 })
 })
@@ -250,19 +246,6 @@ When('Navigate to UserManagement And Click on Manage Users', function () {
 
 })
 
-And('Search Business Admin', function () {
-  pageLogin.getiFrame()
-  manageUsersPage.getSearchUser().click({ force: true })
-  cy.readFile('cypress/fixtures/userData/AdministratorData.json').then((data) => {
-    var Mobile
-    Mobile = data.BAMobileNumber 
-    cy.log(mobile)
-  manageUsersPage.getSearchUser().type(Mobile, { force: true })
-})
-  //manageUsersPage.getSearchUser().type(this.data2.manageUserInfo.mobile, { force: true })
-  manageUsersPage.getSearchUserButton().click({ force: true })
-
-})
 
 And('System Admin is able to view details', function () {
   (manageUsersPage.getViewIcon().eq(0).click({ force: true }))
@@ -602,15 +585,7 @@ And('Enter all the required business user details', function () {
   cy.wait(2000)
   registerPage.getNextButtonBasic1().click({ force: true })
 
-  //-----------------------------Hierarchy---------------------------------------------------
-//  registerPage.getParent().type(this.data2.personalInfo.Parent, { force: true })
-  //registerPage.getGo().click({ force: true })
- // registerPage.getRadioButton().click({ force: true })
- // registerPage.getNextButtonBasic2().click({ force: true })
-
-
-
-
+  
   //-----------------------------Profile---------------------------------------------------------------
 
   cy.wait(5000)
@@ -652,8 +627,6 @@ accnumber="4239346"+uuidbkd()
 
 
  registerPage.getBankName().select(this.data2.Bank.BankName, {force:true})
-
- //cy.writeFile(BankData,{BankNameDetail:BankName})
  cy.wait(3000)
  
  cy.readFile(BankData).then((data) => {
@@ -662,9 +635,7 @@ accnumber="4239346"+uuidbkd()
 })
  
  registerPage.getAccountNum().type(accnumber, { force: true })
- 
- //cy.writeFile(BankData,{Accnum:accnumber})
- cy.wait(3000)
+   cy.wait(3000)
  cy.readFile(BankData).then((data) => {
   data.Accnum= accnumber
   cy.writeFile(BankData, data)
@@ -673,8 +644,6 @@ accnumber="4239346"+uuidbkd()
  
  registerPage.getNickName().type(getRandomName(), { force: true })
  registerPage.getBankAccountType().select(this.data2.Bank.BankAccountType,{force:true})
-// cy.writeFile(BankData,{BankAccountTYpeDetail:BankAccountType})
-
  cy.readFile(BankData).then((data) => {
   data.BankAccountTYpeDetail= this.data2.Bank.BankAccountType
   cy.writeFile(BankData, data)
@@ -682,15 +651,13 @@ accnumber="4239346"+uuidbkd()
  cy.wait(3000)
  
  registerPage.getBankIFSC().type(ifscnum, { force: true })
- //registerPage.getNextButtonBasic4().click({force:true})
- 
- 
- registerPage.getNextButtonBasic3().click({force:true})
+  registerPage.getNextButtonBasic3().click({force:true})
  registerPage.getSubmitButton().click({ force: true })
 
 
 
 })
+
 //####Creating Business User For Suspension
 And('Enter all the required business user details1', function () {
 
@@ -741,16 +708,7 @@ And('Enter all the required business user details1', function () {
   cy.wait(2000)
   registerPage.getNextButtonBasic1().click({ force: true })
 
-  //-----------------------------Hierarchy---------------------------------------------------
- // registerPage.getParent().type(this.data2.personalInfo.Parent, { force: true })
-  //registerPage.getGo().click({ force: true })
-  //registerPage.getRadioButton().click({ force: true })
-  //registerPage.getNextButtonBasic2().click({ force: true })
-
-
-
-
-  //-----------------------------Profile---------------------------------------------------------------
+   //-----------------------------Profile---------------------------------------------------------------
 
   cy.wait(5000)
   //cy.readFile(SubProfileName).then((data) => {
@@ -792,8 +750,6 @@ accnumber="4239346"+uuidbkd()
 
 
  registerPage.getBankName().select(this.data2.Bank.BankName, {force:true})
-
- //cy.writeFile(BankData,{BankNameDetail:BankName})
  cy.wait(3000)
  
  cy.readFile(BankData).then((data) => {
@@ -802,8 +758,7 @@ accnumber="4239346"+uuidbkd()
 })
  
  registerPage.getAccountNum().type(accnumber, { force: true })
- 
- //cy.writeFile(BankData,{Accnum:accnumber})
+  
  cy.wait(3000)
  cy.readFile(BankData).then((data) => {
   data.Accnum= accnumber
@@ -813,8 +768,6 @@ accnumber="4239346"+uuidbkd()
  
  registerPage.getNickName().type(getRandomName(), { force: true })
  registerPage.getBankAccountType().select(this.data2.Bank.BankAccountType,{force:true})
-// cy.writeFile(BankData,{BankAccountTYpeDetail:BankAccountType})
-
  cy.readFile(BankData).then((data) => {
   data.BankAccountTYpeDetail= this.data2.Bank.BankAccountType
   cy.writeFile(BankData, data)
@@ -822,10 +775,7 @@ accnumber="4239346"+uuidbkd()
  cy.wait(3000)
  
  registerPage.getBankIFSC().type(ifscnum, { force: true })
- //registerPage.getNextButtonBasic4().click({force:true})
- 
- 
- registerPage.getNextButtonBasic3().click({force:true})
+  registerPage.getNextButtonBasic3().click({force:true})
  registerPage.getSubmitButton().click({ force: true })
 
 
@@ -843,8 +793,7 @@ accnumber="4239346"+uuidbkd()
 And('Search with the Mobile Number', function () {
   pageLogin.getiFrame()
   manageUsersPage.getSearchUser().click({ force: true })
-  //manageUsersPage.getSearchUser().type(this.data2.manageUserInfo8.mobileNumber, {force:true})
-  cy.getBusinessUserMobileNumber()
+    cy.getBusinessUserMobileNumber()
   manageUsersPage.getSearchUserButton().click({ force: true })
 
 })
@@ -899,7 +848,7 @@ And('Search with the KYC Number', function () {
 
 //---------------------------TC57----------Approve the Modification of the Businsess User.----------------------------------------------------------------------------
 When('Navigate to Approvals and filter by Modification of user status', function () {
-  //welcomePage.getUserManagementOption().scrollIntoView()
+ 
   welcomePage.getApprovalTab().click()
    cy.wait(2000)
  welcomePage.getApprovalButtonTab().click()
@@ -1436,13 +1385,6 @@ Then('User status is Suspended', function () {
 
 Then('User status is Resumed', function () {
   approvalPage.getApproveConfirmationMessage().should("contain", this.data2.suspendResumeConfirmationMessage.userResumed)
-})
-
-And('Assert the user login', function () {
-  pageLogin.getLoginError().should("contain", this.data1.ErrorMessageLogin)
-  cy.frameLoaded(pageLogin.getiFrame()).should("not.contain", "DIST7779064594")
-  cy.wait(10000)
-  cy.url().should("not.contain", "/business");
 })
 
 

@@ -10,8 +10,7 @@ import "../../../../../support/commands";
 import ApproveRejectExchangeRate from '../../../../../support/pageObjects/ExchangeRateManagement/ApproveRejectExchangeRate';
 import UpdateExchangeRate from '../../../../../support/pageObjects/ExchangeRateManagement/UpdateExchangeRate';
 import UpdatedApproveRejectExchangeRate from '../../../../../support/pageObjects/ExchangeRateManagement/UpdatedApproveRejectExchangeRate';
-import { times } from 'lodash';
-//import { when } from 'cypress/types/jquery';
+
 //----------------Object Declaration----------------------------------------------------------
 
 const welcomePage = new homePage ()

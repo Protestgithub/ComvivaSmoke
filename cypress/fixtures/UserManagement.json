@@ -227,5 +227,5 @@
   "Sucess": "Success",
   "Marketing": "Marketing profile added successfully",
   "LockOutgoing":"All Outgoing Payments locked successfully",
-  "UnlockOutgoing":"umc.paymentsUnlocked"
+  "UnlockOutgoing":"All Outgoing Payments unlocked successfully"
 }

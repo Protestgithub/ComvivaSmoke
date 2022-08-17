@@ -11,12 +11,6 @@ import "../../../../../support/commands";
 import register from '../../../../../support/pageObjects/UserManagement/register';
 import approvals from '../../../../../support/pageObjects/UserManagement/approvals';
 import manageUsers from '../../../../../support/pageObjects/UserManagement/manageUsers';
-import DomainFieldspage from '../../../../../support/pageObjects/DomainManagement/DomainFieldspage';
-import CircularJSON from 'circular-json';
-import Flatted from 'flatted';
-import TransferRulePage from '../../../../../support/pageObjects/TransferRules/TransferRulePage';
-import TransferControlProfile from '../../../../../support/pageObjects/TransferControlProfile';
-import TransactionCorrection from '../../../../../support/pageObjects/TransactionCorrection';
 import ErrorMessage from '../../../../../support/pageObjects/UserManagement/ErrorMessage';
 
 //----------------Object Declaration----------------------------------------------------------
@@ -56,10 +50,7 @@ Before(() => {
   cy.fixture('UserManagement').then(function (data2) {
     this.data2 = data2;
   })
-  cy.fixture('TransferControlProfile').then(function (data5) {
-    this.data5 = data5;
-  })
-  cy.fixture('userData/SystemAdminLogin.json').then(function (data6) {
+   cy.fixture('userData/SystemAdminLogin.json').then(function (data6) {
     this.data6 = data6;
   })
 }); 
@@ -167,20 +158,6 @@ And('Click on delete',function(){
   manageUsersPage.getcomment().type(this.data2.comment)
   manageUsersPage.getreasonforclosure().select(this.data2.Reason)
   manageUsersPage.getintiatedelete().click({force:true})
-})
-
-
-When('Navigate to User Management and click on Register',function(){
-
-  welcomePage.getUserManagementOption().click()
-  welcomePage.getRegisterOption().click()
-
-})
-
-And('Click On System Admin and select Single User',function(){
-  registerPage.getUserRole().contains(this.data2.userRole4).click({force:true})
-  registerPage.getRegistrationMode().eq(0).click({force: true})
-
 })
 
 And('Enter all required Fields',function(){

@@ -8,20 +8,7 @@ import "../../../../../support/commands";
 import approvals from '../../../../../support/pageObjects/UserManagement/approvals';
 import manageUsers from '../../../../../support/pageObjects/UserManagement/manageUsers';
 import register from '../../../../../support/pageObjects/UserManagement/register';
-import DomainFieldspage from '../../../../../support/pageObjects/DomainManagement/DomainFieldspage.js';
-import CircularJSON from 'circular-json';
-import Flatted from 'flatted';
-import PricingEnginePage from '../../../../../support/pageObjects/PricingEngine/PricingEnginePage';
-import SecurityProfilePage from '../../../../../support/pageObjects/SecurityProfile/SecurityProfilePage';
-import TransferRulePage from '../../../../../support/pageObjects/TransferRules/TransferRulePage';
-import TransferControlProfile from '../../../../../support/pageObjects/TransferControlProfile';
-import { random } from 'lodash';
-import stockInitiation from '../../../../../support/pageObjects/StockManagement/stockInitiation';
 import Approval from '../../../../../support/pageObjects/TransferRules/Approval';
-import O2C from '../../../../../support/pageObjects/TransferRules/O2C';
-import DownloadAmb from '../../../../../support/pageObjects/AmbiguousTransaction/DownloadAmb';
-import BulkSettlement from '../../../../../support/pageObjects/AmbiguousTransaction/BulkSettlement';
-import myActivity from '../../../../../support/pageObjects/MyActivity/myActivity';
 import BulkPayout from '../../../../../support/pageObjects/BulkPayout';
 import O2CTransferInitiate from '../../../../../support/pageObjects/OperatorToChannel/O2CTransferInitiate';
 
@@ -30,43 +17,19 @@ import O2CTransferInitiate from '../../../../../support/pageObjects/OperatorToCh
 
 const pageLogin = new loginPage()
 const welcomePage = new homePage()
-const registerPage = new register()
-const approvalPage = new approvals()
-const manageUsersPage = new manageUsers()
-const transferrulepage = new TransferRulePage()
-const domainPage = new DomainFieldspage()
-const pricingEnginePage = new PricingEnginePage()
-const securityProfilePage = new SecurityProfilePage()
-const stockInitiationPage = new stockInitiation()
-const myActivityPage = new myActivity()
-const transferruleapprovalpage = new Approval()
-const transferrulepageO2C = new O2C()
-const tcpPage = new TransferControlProfile()
 const O2CTransferInitiatePage = new O2CTransferInitiate()
-const DownloadAmbpage = new DownloadAmb()
-const BulkSettlementpage = new BulkSettlement()
 const BptPage=new BulkPayout()
 const TransferRuleApproval = new Approval()
+const transferruleapprovalpage = new Approval()
 
-
-
-var loginId
-var mobile 
-var ProfileName
-var KycValue
-var O2CMsisdn
 var CsvFile='cypress/fixtures/templates/BULK_O2C-template.csv';
 var JsonFile='cypress/fixtures/BulkData/BULK_O2C-template.json';
-
-
 const uid = () => Cypress._.random(1e10)
 const uuid = () => Cypress._.random(1e5)
 var TransferAmount = uuid()
 var ReferenceNumber = uuid()
 var number = uuid()
-var Amount = uid()
 var name
-var filename="cypress/fixtures/userData/O2CBulkData.json"
 var BusinessMoBileData="userData/BusinessUsersData.json"
 function getRandomName() {
   name = "";

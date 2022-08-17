@@ -7,7 +7,6 @@ import { Given, When, Then, And, Before } from "cypress-cucumber-preprocessor/st
 import loginPage from '../../../../support/pageObjects/loginPage';
 import homePage from '../../../../support/pageObjects/homePage';
 import { recurse } from 'cypress-recurse';
-
 import "../../../../support/commands";
 import "../../../../support/subscriberCommands";
 import "../../../../support/AdministratorCommands"
@@ -481,15 +480,7 @@ And('Enter all the required business user details', function () {
   cy.wait(2000)
   registerPage.getNextButtonBasic1().click({ force: true })
 
-  //-----------------------------Hierarchy---------------------------------------------------
-//  registerPage.getParent().type(this.data2.personalInfo.Parent, { force: true })
-  //registerPage.getGo().click({ force: true })
- // registerPage.getRadioButton().click({ force: true })
- // registerPage.getNextButtonBasic2().click({ force: true })
-
-
-
-
+  
   //-----------------------------Profile---------------------------------------------------------------
 
   cy.wait(5000)
@@ -530,8 +521,6 @@ accnumber="4239346"+uuidbkd()
 
 
  registerPage.getBankName().select(this.data2.Bank.BankName, {force:true})
-
- //cy.writeFile(BankData,{BankNameDetail:BankName})
  cy.wait(3000)
  
  cy.readFile(BankData).then((data) => {
@@ -540,9 +529,7 @@ accnumber="4239346"+uuidbkd()
 })
  
  registerPage.getAccountNum().type(accnumber, { force: true })
- 
- //cy.writeFile(BankData,{Accnum:accnumber})
- cy.wait(3000)
+  cy.wait(3000)
  cy.readFile(BankData).then((data) => {
   data.Accnum= accnumber
   cy.writeFile(BankData, data)
@@ -551,8 +538,6 @@ accnumber="4239346"+uuidbkd()
  
  registerPage.getNickName().type(getRandomName(), { force: true })
  registerPage.getBankAccountType().select(this.data2.Bank.BankAccountType,{force:true})
-// cy.writeFile(BankData,{BankAccountTYpeDetail:BankAccountType})
-
  cy.readFile(BankData).then((data) => {
   data.BankAccountTYpeDetail= this.data2.Bank.BankAccountType
   cy.writeFile(BankData, data)
@@ -560,10 +545,7 @@ accnumber="4239346"+uuidbkd()
  cy.wait(3000)
  
  registerPage.getBankIFSC().type(ifscnum, { force: true })
- //registerPage.getNextButtonBasic4().click({force:true})
- 
- 
- registerPage.getNextButtonBasic3().click({force:true})
+  registerPage.getNextButtonBasic3().click({force:true})
  registerPage.getSubmitButton().click({ force: true })
 
 
@@ -613,8 +595,7 @@ When('Navigate to User Management and Click on manage user', function () {
 And('Enter Mobile number or KYC number in search', function () {
   pageLogin.getiFrame()
   manageUsersPage.getSearchUser().click({ force: true })
-  //manageUsersPage.getdropdown().select(this.data2.business.userType, { force: true })
-  //Fetching Business Admin mobile Number to see his details
+    //Fetching Business Admin mobile Number to see his details
   cy.readFile('cypress/fixtures/userData/AdministratorData.json').then((data) => {
     var Mobile
     Mobile = data.BAMobileNumber 

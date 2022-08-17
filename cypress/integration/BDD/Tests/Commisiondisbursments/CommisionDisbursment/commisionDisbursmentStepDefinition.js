@@ -16,7 +16,6 @@ import commisionDisbursment from '../../../../../support/pageObjects/CommisionDi
 
 //----------------Object Declaration----------------------------------------------------------
 
-const pageLogin = new loginPage()
 const commisionDisbursmentPage = new commisionDisbursment()
 
 

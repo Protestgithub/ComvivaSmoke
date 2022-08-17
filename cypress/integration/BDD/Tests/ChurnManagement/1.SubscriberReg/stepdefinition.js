@@ -31,12 +31,9 @@ const churnSubRegistration = 'cypress/fixtures/userData/churnSubscriberReg.json'
 var mobile
 var CIF
 var name
-var SubProfileName = 'cypress/fixtures/profileData/Profile.json'
 var RegulatoryMarketingProfile = 'cypress/fixtures/userData/Regulatory&MarketingProfile.json'
 var loginId
 var KycValue
-var CsvFile = 'cypress/fixtures/ChurnUserInitiation.csv'
-var JSONFile = 'cypress/fixtures/churnData/ChurnUserInitiation.json'
 function getRandomName() {
   name = "";
   var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";

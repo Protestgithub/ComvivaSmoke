@@ -6,7 +6,7 @@ import 'cypress-iframe'
 import{Given,When,Then,And,Before}from "cypress-cucumber-preprocessor/steps";
 import "../../../../../support/commands";
 import ReportingSuite from '../../../../../support/pageObjects/ReportingSuite/ReportingSuite';
-//import { when } from 'cypress/types/jquery';
+
 //----------------Object Declaration----------------------------------------------------------
 
 const Report = new ReportingSuite()

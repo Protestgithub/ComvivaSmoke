@@ -6,13 +6,11 @@ import 'cypress-iframe'
 import { Given, When, Then, And, Before } from "cypress-cucumber-preprocessor/steps";
 import homePage from '../../../../../support/pageObjects/homePage';
 import { recurse } from 'cypress-recurse';
-
 import "../../../../../support/commands";
 import "../../../../../support/securityCommands";
-import "../../../../../support/TransferControlProfileCommand";
 import 'cypress-file-upload'
 import SecurityProfilePage from '../../../../../support/pageObjects/SecurityProfile/SecurityProfilePage';
-import "../../../../../support/authourizationcommands"
+
 
 //----------------Object Declaration----------------------------------------------------------
 

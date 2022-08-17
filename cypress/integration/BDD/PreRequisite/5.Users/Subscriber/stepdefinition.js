@@ -13,7 +13,7 @@ import approvals from '../../../../../support/pageObjects/UserManagement/approva
 import manageUsers from '../../../../../support/pageObjects/UserManagement/manageUsers';
 import myActivity from '../../../../../support/pageObjects/MyActivity/myActivity';
 import { recurse } from 'cypress-recurse';
-import "../../../../../support/BusinessUserCommands";
+
 //----------------Object Declaration-----------------------------------------------------------------
 
 const pageLogin = new loginPage()
@@ -97,16 +97,6 @@ Given('Login into Mobiquity Portal as Super admin Maker', function () {
   // cy.checkWelcomeText(this.data2.superadminm.superadminmaker)
 })
 
-//DIST7779064594
-Given('Login into Mobiquity Portal as Business admin User', function () {
-  cy.launchURL(Cypress.env('Adminurl'))
-  cy.launchURL(Cypress.env('Adminurl')) + '/dfscontainer/#/business/'
-  cy.wait(8000)
-  cy.login(this.data1.businessAdmin.businessadminUser1, this.data1.businessAdmin.businessadminPwd1)
-  cy.wait(10000)
-  cy.checkWelcomeText(this.data2.business.distributerUser)
-})
-
 Given('Login into Mobiquity Portal as Business admin User2', function () {
   cy.launchURL(Cypress.env('Adminurl'))
   cy.wait(8000)
@@ -156,44 +146,6 @@ And('Select User type as Adminstrator and click on BusinessAdmin', function () {
 
 })
 //----------------------Basic Data---------------------------------------------------------------
-And('Enter all the required details', function () {
-
-  //-------------------Random Data-----------------------------------------------------------------
-  cy.wait(2000)
-  registerPage.getLastName().type(getRandomName(), { force: true })
-  cy.getrandomUserEmailID()
-  recurse(
-    () => registerPage.getMobileNumber().type(mobile, { force: true }),
-    () => registerPage.getFirstName().type(getRandomName(), { force: true }),
-    (uniqueness) => (uniqueness) == registerPage.getuniqueness()
-  )
-  cy.iframe().find('select[data-test-id="preferredLanguage"]').select(this.data2.personalInfo.preferredLang, { force: true })
-  cy.wait(3000)
-  registerPage.getCountry().select(this.data2.personalInfo.country)
-  registerPage.getNextButtonBasic().click({ force: true })
-
-  //----------------------Profile Data-----------------------------------------------------------------
-  //  cy.readFile(SubProfileName).then((data) => {
-  //  let Profile = data.businesAadmin
-  registerPage.getSecurityProfile().select("subscriberSecurityProfile", { force: true })
-  //  })
-  // cy.readFile(SubProfileName).then((data) => {
-  //let Profile = data.CustomercareAdmin1
-  // registerPage.getAuthProfile().select(Profile, { force: true })
-  // })
-  registerPage.getAuthProfile().select("SubsDefault Profile", { force: true })
-  registerPage.getNextButtonProfile().click({ force: true })
-  registerPage.getSubmitButton().click({ force: true })
-
-})
-
-//-------------------------Confirmation Message displayed---------------------------------------------
-Then('Confirmation message is displayed', function () {
-
-  registerPage.getConfirmationText().should('have.text', this.data2.personalInfo.successConfirmationMessage)
-  registerPage.getDoneButton().click()
-})
-
 
 When('Navigate to Approvals and filter by Submitted status', function () {
   welcomePage.getUserManagementOption().scrollIntoView()
@@ -219,67 +171,15 @@ When('Navigate to Approvals and filter by Submitted status', function () {
 //------------------------------------Approve----------------------------------------------------------
 
 
-
 And('Approve the Users', function () {
   approvalPage.getApproveButton().click({ force: true })
   approvalPage.getApproveRequest().click({ force: true })
 })
 
-Then('User status is approved', function () {
-  approvalPage.getApproveConfirmationMessage().contains(this.data2.confirmationMessage.addUser)
-})
-
-When('Navigate to Manage User, and search Business Admin', function () {
-  welcomePage.getUserManagementOption().scrollIntoView()
-  welcomePage.getUserManagementOption().click()
-  welcomePage.getManageUsersLink().click()
-
-})
-
-And('Search Business Admin', function () {
-  cy.wait(2000)
-  cy.getBAMobileNumber()
-  manageUsersPage.getSearchUserButton().click({ force: true })
-})
 
 And('System Admin is able to view details', function () {
   (manageUsersPage.getViewIcon().click({ force: true }))
   cy.wait(3000)
-})
-
-And('System Admin is able to edit details', function () {
-  manageUsersPage.getEditToolTip().eq(0).click({ force: true })
-  registerPage.getLastName().type(getRandomName(), { force: true })
-  recurse(
-    () => registerPage.getFirstName().type(getRandomName(), { force: true }),
-    () => cy.getrandomUserEmailID(),
-    (uniqueness) => (uniqueness) == registerPage.getuniqueness()
-  )
-
-  cy.iframe().find('select[data-test-id="preferredLanguage"]')
-    .select(this.data2.personalInfo.preferredLang, { force: true })
-  registerPage.getCountry().select(this.data2.personalInfo.country, { force: true })
-  registerPage.getNextButtonBasic().click({ force: true })
-
-  // cy.readFile(SubProfileName).then((data) => {
-  // let Profile = data.subscriber
-  registerPage.getSecurityProfile().select("subscriberSecurityProfile", { force: true })
-  // })
-  //cy.readFile(SubProfileName).then((data) => {
-  //   let Profile = data.SubscriberProfileName1
-  registerPage.getAuthProfile().select("SubsDefault Profile", { force: true })
-  // })
-  //  registerPage.getReguProfile().select(this.data2.KycInfo.ReguProfile, { force: true })
-  // cy.readFile(RegulatoryMarketingProfile).then((data) => {
-  //  let Profile = data.RegulatoryProfileName
-  registerPage.getReguProfile().select("NoKycprofile", { force: true })
-  // })
-  //registerPage.getMarketingProfile().select(this.data2.KycInfo.MarketProfile, { force: true })
-  //cy.readFile(RegulatoryMarketingProfile).then((data) => {
-  //  let Profile = data.MarketingProfileName
-  registerPage.getMarketingProfile().select("SUBSDefaultMP", { force: true })
-  // })
-  registerPage.getNextButtonProfile().click({ force: true })
 })
 
 Then('Confirm the edit details', function () {

@@ -9,8 +9,6 @@ import homePage from '../../../../../support/pageObjects/homePage';
 import { recurse } from 'cypress-recurse';
 
 import "../../../../../support/commands";
-import "../../../../../support/securityCommands";
-import "../../../../../support/TransferControlProfileCommand";
 import BankManagement from '../../../../../support/pageObjects/BankManagement';
 import 'cypress-file-upload'
 import register from '../../../../../support/pageObjects/UserManagement/register';
@@ -19,8 +17,6 @@ import manageUsers from '../../../../../support/pageObjects/UserManagement/manag
 import DomainFieldspage from '../../../../../support/pageObjects/DomainManagement/DomainFieldspage';
 import "../../../../../support/authourizationcommands"
 import authorizationManagement from '../../../../../support/pageObjects/AuthorizationProfileManagement/authorizationManagement';
-import RegulatoryProfile from '../../../../../support/pageObjects/UserManagement/RegulatoryProfile';
-import MarketingProfile from '../../../../../support/pageObjects/UserManagement/MarketingProfile';
 import AddCategory from '../../../../../support/pageObjects/CategoryManagement/AddCategory';
 import AddGrades from '../../../../../support/pageObjects/GradeManagement/AddGrades';
 

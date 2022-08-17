@@ -12,11 +12,6 @@ import securityQuestion from '../../../../../support/pageObjects/SecurityQuestio
 import "../../../../../support/SecurityQuestionCommands";
 import { recurse } from 'cypress-recurse';
 
-
-import { should } from 'chai';
-
-
-
 //----------------Object Declaration----------------------------------------------------------
 
 const pageLogin = new loginPage()
@@ -127,8 +122,8 @@ And('User click on add questions and question is already existing', function () 
   cy.wait(2000)
   securityPage.getAddQuestion().click({ force: true })
   cy.readFile(SecurityQuetion).then((data) => {
-    q3 = data.SecurityQuestion1
-    securityPage.getOtherLanguageQuestion().type(q1, { force: true })
+    q1 = data.SecurityQuestion1
+    securityPage.getSearchBox().type(q1, { force: true })
    })
  
 

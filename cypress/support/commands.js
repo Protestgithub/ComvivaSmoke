@@ -265,48 +265,6 @@ Cypress.Commands.add('getrandomUserEmailID1', () => {
     })
 
     })
-Cypress.Commands.add('TcpName', (Text) => {
-
-    cy.fixture(filenameTCP).then((user) => {
-        Tcpname = user.TcpProfileName
-        cy.log(Tcpname)
-    })
-
-})
-Cypress.Commands.add('TcpName1', (Text) => {
-
-    cy.fixture(CustTCPdata).then((user) => {
-        Tcpname1 = user.CustTCPProfileName
-        cy.log(Tcpname1)
-    })
-
-})
-Cypress.Commands.add('TCPRandomName', () => {
-    let hi = getRandomName()
-    tcpPage.getprofilename().type(hi, { force: true })
-    cy.writeFile('cypress/fixtures/userData/TCPdata.json', { TcpProfileName: hi })
-    function getRandomName() {
-        name = "";
-        var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-        for (var i = 0; i < 5; i++)
-            name += possible.charAt(Math.floor(Math.random() * possible.length));
-        return name;
-    }
-
-})
-Cypress.Commands.add('TCPMasRandomName', () => {
-    let hi = getRandomName()
-    tcpPage.getprofilename().type(hi, { force: true })
-    cy.writeFile('cypress/fixtures/userData/CustTCPdata.json', { CustTCPProfileName: hi })
-    function getRandomName() {
-        name = "";
-        var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-        for (var i = 0; i < 5; i++)
-            name += possible.charAt(Math.floor(Math.random() * possible.length));
-        return name;
-    }
-
-})
 
 Cypress.Commands.add('FirstName', () => {
     let hi = getRandomName()

@@ -7,52 +7,17 @@ import { Given, When, Then, And, Before } from "cypress-cucumber-preprocessor/st
 import loginPage from '../../../../../support/pageObjects/loginPage';
 import homePage from '../../../../../support/pageObjects/homePage';
 import { recurse } from 'cypress-recurse';
-
 import "../../../../../support/commands";
-import "../../../../../support/securityCommands";
 import "../../../../../support/TransferControlProfileCommand";
-import BankManagement from '../../../../../support/pageObjects/BankManagement';
-import 'cypress-file-upload'
-import register from '../../../../../support/pageObjects/UserManagement/register';
-import approvals from '../../../../../support/pageObjects/UserManagement/approvals';
-import manageUsers from '../../../../../support/pageObjects/UserManagement/manageUsers';
-import DomainFieldspage from '../../../../../support/pageObjects/DomainManagement/DomainFieldspage';
-import CircularJSON from 'circular-json';
-import Flatted from 'flatted';
-import TransferRulePage from '../../../../../support/pageObjects/TransferRules/TransferRulePage';
 import TransferControlProfile from '../../../../../support/pageObjects/TransferControlProfile';
-import TransactionCorrection from '../../../../../support/pageObjects/TransactionCorrection';
-import ErrorMessage from '../../../../../support/pageObjects/UserManagement/ErrorMessage';
-import walletManagement from '../../../../../support/pageObjects/WalletManagement/walletManagement';
-import AddGrades from '../../../../../support/pageObjects/GradeManagement/AddGrades';
-import ModifyGrades from '../../../../../support/pageObjects/GradeManagement/ModifyGrades';
-import DeleteGrades from '../../../../../support/pageObjects/GradeManagement/DeleteGrades';
-import AddCategory from '../../../../../support/pageObjects/CategoryManagement/AddCategory';
-import SecurityProfilePage from '../../../../../support/pageObjects/SecurityProfile/SecurityProfilePage';
-import "../../../../../support/authourizationcommands"
-import authorizationManagement from '../../../../../support/pageObjects/AuthorizationProfileManagement/authorizationManagement';
 import RegulatoryProfile from '../../../../../support/pageObjects/UserManagement/RegulatoryProfile';
 import MarketingProfile from '../../../../../support/pageObjects/UserManagement/MarketingProfile';
-
-
-
 
 //----------------Object Declaration----------------------------------------------------------
 
 const pageLogin = new loginPage()
 const welcomePage = new homePage()
-const registerPage = new register()
-const approvalPage = new approvals()
-const manageUsersPage = new manageUsers()
-const ErrorM=new ErrorMessage()
-const AddCategoryPage = new AddCategory()
-const BankManagementPage = new BankManagement()
-const WalletManagementPage = new walletManagement()
-const domainPage = new DomainFieldspage()
-const AddGradePage = new AddGrades()
 const tcpPage = new TransferControlProfile()
-const securityProfilePage = new SecurityProfilePage()
-const authorizationProfilePage = new authorizationManagement()
 const uid1 = () => Cypress._.random(1e2)
 const Id = uid1()
 const profilename = `testname${id}`
@@ -63,34 +28,17 @@ const RegulatoryProfile1 = new RegulatoryProfile()
 var number
 const uid = () => Cypress._.random(0, 1e6)
 const id = uid()
+const uuid12 = () => Cypress._.random(1e8)
+var LoginId1
+LoginId1 = uuid12()
 const filenameTCP = 'userData/TCPdata.json'
 const filenameTCP1 = 'userData/TCPdata1.json'
-
 const CustTCPdata = 'userData/CustTCPdata.json'
 const CustTCPdata1= 'userData/CustTCPdata1.json'
 const fileRegulatoryProfile = 'userData/Regulatory&MarketingProfile.json'
-var Tcpname
-var Tcpname1
-var TcpnameSub,TcpnameSub1
-var RName
+var Tcpname, Tcpname1,TcpnameSub,TcpnameSub1, RName
 const ITCP="userData/TCPdata.json"
 const ITCP1="userData/TCPdata1.json"
-
-
-
-var filename1 = 'cypress/fixtures/WalletManagementdata.json'
-const uuid = () => Cypress._.random(1e10)
-const uud = () => Cypress._.random(1e3)
-PoolAccountNo =  uuid()
-BankID = uuid()
-Priority = uud()
-var name
-var PoolAccountNo
-var BankID
-var Priority
-var LoginId1
-const uuid12 = () => Cypress._.random(1e8)
-LoginId1= uuid12()
 
 
 
@@ -104,29 +52,10 @@ Before(() => {
   cy.fixture('UserManagement').then(function (data2) {
     this.data2 = data2;
   })
-  cy.fixture('BankManagement').then(function(data03)
-  {
-     this.data03 = data03;
-  })
-  cy.fixture('Domain&CategoryManagement').then(function(data4)
-  {
-      this.data4 = data4;
-  })
   cy.fixture('TransferControlProfile').then(function (data5) {
     this.data5 = data5;
   })
-
-  cy.fixture('GradeManagement').then(function(data01)
-  {
-      this.data01 = data01;
-  })
-  cy.fixture('SecurityProfile').then(function (data6) {
-    this.data6 = data6;
-  })
-  cy.fixture('authorizationProfile').then(function (data7) {
-    this.data7 = data7;
-  })
-
+  
 }); 
 
 //---------------------------------------------Login----------------------------------------------------
@@ -243,17 +172,8 @@ Then('Enter required Fields', function () {
   tcpPage.getpaymentinstrument().select(this.data5.TransferControlProfile.PaymentInstrument, { force: true })
   tcpPage.getwallettype().select(this.data5.TransferControlProfile.Wallet, { force: true })
   cy.TCPRandomName()
-  //tcpPage.getProfileName().type(getRandomName(), { force: true })
   tcpPage.getdescription().type(this.data5.TransferControlProfile.Description, { force: true })
-  /* recurse( 
-     ()=> getRandomName(), 
-     ()=>tcpPage.getdescription().type(this.data5.TransferControlProfile.Description, { force: true }), 
-     ()=>cy.wait(200),  
-     (uniqueness) => (uniqueness) == tcpPage.getErrorMessage().contains 
-     ('Please select another profile name as this profile name is being used by an active profile').should('be.visible'), 
-     tcpPage.getdescription().type(this.data5.TransferControlProfile.Description, { force: true })    
-   )*/
-})
+  })
 Then('Enter required Fields for Subscriber domain', function () {
 
   tcpPage.getprovider().select(this.data5.TransferControlProfile.Provider, { force: true })
@@ -278,16 +198,7 @@ And('Click on New Button', function () {
     tcpPage.getregulatorytype().select(RName, { force: true })
   })
   cy.TCPMasRandomName()
-  //tcpPage.getProfileName(getRandomName(),{force:true})
   tcpPage.getdescription().type(this.data5.TransferControlProfile.Description)
-  /* recurse( 
-     ()=> getRandomName(), 
-     ()=>tcpPage.getdescription().type(this.data5.TransferControlProfile.Description, { force: true }), 
-     ()=>cy.wait(200),   
-     (uniqueness) => (uniqueness) == tcpPage.getErrorMessage().contains 
-     ('Please select another profile name as this profile name is being used by an active profile').should('be.visible'), 
-     tcpPage.getdescription().type(this.data5.TransferControlProfile.Description, { force: true })    
-    )*/
   tcpPage.getadd().click({ force: true })
   cy.wait(3000)
   const uuid = () => Cypress._.random(1e3)
@@ -460,15 +371,6 @@ Then('Verify Success Message Subscriber domain', function () {
     tcpPage.getsucessmessage().should("contain", this.data5.confimationMessage.successfulTcpIntiation + TcpnameSub + this.data5.confimationMessage.successpart2Sub)
   })
 })
-And('Verify Add Intiation Message for Master', function () {
-  cy.fixture(CustTCPdata).then((user) => {
-    Tcpname1 = user.CustTCPProfileName
-    cy.log(Tcpname1)
-    tcpPage.getReqtoAddIntiationMaster().should("contain", this.data5.confimationMessage.sucessMasterTcpIntiation + Tcpname1 + this.data5.confimationMessage.successpart2Master)
-    cy.wait(3000)
-  })
-})  
-
 And('Click on New Button for Subscriber', function () {
 
   tcpPage.getNew().click({ force: true })
