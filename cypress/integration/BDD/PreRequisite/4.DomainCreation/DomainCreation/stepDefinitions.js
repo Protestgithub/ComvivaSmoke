@@ -186,7 +186,7 @@ And('Enter Domain Name and Domain Code.', function () {
   cy.writeFile(DataFile, { Domainname: this.data4.domainData.domainName + DomainName })
   domainPage.getDomainCode().type(code, { force: true })
   cy.readFile(DataFile).then((data) => {
-    data.DomainCode = ab
+    data.DomainCode = code 
     cy.writeFile(DataFile, data)
   })
   domainPage.getDomainCategories().type(Category, { force: true })
@@ -257,6 +257,8 @@ And('logout the user', function () {
   welcomePage.getLogOutYesbttn().click()
 })
 And('Click Add category approval.', function () {
+  welcomePage.getCAtegoryApprovalOption().click({ force: true })
+  cy.wait(2000)
   welcomePage.getCAtegoryApprovalOption().click({ force: true })
 })
 Then('Select Category approval.', function () {

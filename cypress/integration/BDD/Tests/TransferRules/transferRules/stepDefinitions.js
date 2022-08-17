@@ -121,6 +121,7 @@ And('Select the Service Name and from details.', function () {
   cy.wait(4000)
   //cy.mfsprovider()
   transferrulepage.getFromMFSProvider().select(this.data3.TransferRuleData.FromMFSprovider, { force: true })
+  cy.wait(2000)
   cy.readFile(DataFile).then((data) => {
     let Domain = data.Domainname
     transferrulepage.getFromeDomain().select(Domain, { force: true })
@@ -280,23 +281,8 @@ And('Select rule and approve', function () {
       .as('windowConfirm')
     cy.stub($win.console, 'log').as('consoleLog')
     cy.wrap($body)
-    transferruleapprovalpage.getFirstApproval().last().contains("Approve").click()
-    // .should(function () {
-    //  expect(this.windowConfirm).to.be.calledWith('Are you sure you want to Reject?')
-    //     //expect(this.consoleLog).to.be.calledWith('CONFIRMED')  // passes
-    //   })
-  })
-})
-And('Select rule and Reject', function () {
-  cy.wait(3000)
-  cy.get('.fd-page.iframeContainer.svelte-1v5e28n > iframe').then(($iframe) => {
-    const $body = $iframe.contents().find('body')
-    const $win = $iframe[0].contentWindow
-    cy.stub($win, 'confirm', () => true)
-      .as('windowConfirm')
-    cy.stub($win.console, 'log').as('consoleLog')
-    cy.wrap($body)
-    transferruleapprovalpage.getReject().last().contains("REJECT").click()
+    cy.getTransferApproval()
+    //transferruleapprovalpage.getFirstApproval().contains("Approve").click()
     // .should(function () {
     //  expect(this.windowConfirm).to.be.calledWith('Are you sure you want to Reject?')
     //     //expect(this.consoleLog).to.be.calledWith('CONFIRMED')  // passes
@@ -305,7 +291,6 @@ And('Select rule and Reject', function () {
 })
 Then('click on submit', function () {
   cy.wait(2000)
-
     transferruleapprovalpage.getSubmitbttn().click()
 })
 

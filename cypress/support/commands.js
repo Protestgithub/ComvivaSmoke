@@ -744,3 +744,33 @@ cy.readFile(filename).then((user)  => {
 }))
 })
 )
+
+
+
+Cypress.Commands.add('getTransferApproval',(filename) =>
+cy.readFile('cypress/fixtures/userData/Domain&CAT.json').then((user)  => {
+    let Time = user.Domainname
+    let shouldStop = false
+    cy.iframe().find('.wwFormTableC>tbody>tr').each(($row=>{
+        cy.then(() => {
+            if(shouldStop){
+                return
+            }
+        cy.wrap($row).within(function(){
+            cy.get('td').each(($el=>{
+                cy.log($el.text())
+                if($el.text().includes(Time))
+                {
+                cy.get('[class="tabcol"]').contains("Approve").click({force: true})    
+                cy.wait(5000)
+                shouldStop = true
+                }
+            }))
+
+        })
+    })
+}))
+})
+)
+
+

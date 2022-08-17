@@ -97,25 +97,6 @@ When User clicks on view option.
 
 
 
-# Author: Likith R
-# Last Updated:
-# Comments 
-# Test Case_ID : TC_17
-# 
-@test
-
-Scenario: To verify that System admin should be able to Delete Transfer Rule successfully.
-Given Login into Mobiquity Portal as System admin Maker
-When User Click on Transfer Rule.
-And Select the Service Name and from details.
-And Select the To details for Initiaion
-And Select the From & To category.
-When User clicks on Delete option.
-Then Logout
-Given Login into Mobiquity Portal as another System admin Checker1 after logout
-When User clicks on transfer rule approval
-And Select rule and Reject
-Then click on submit
 
 # Author: Likith R
 # Last Updated:
@@ -130,7 +111,7 @@ When User Click on Transfer Rule.
 And Select the Service Name and from details.
 And Select the To details for Initiaion
 And Select the From & To category.
-When Click on Add Transfer Rule button.
+When User clicks on edit option.
 And Suspend the status in transfer rule
 Then Click on submit button.
 Then Click on confirm button.
@@ -148,6 +129,25 @@ When User clicks on transfer rule approval
 And Select rule and approve
 Then click on submit
 
+
+# Author: Likith R
+# Last Updated:
+# Comments 
+# Test Case_ID : TC_17
+# 
+@test
+
+Scenario: To verify that System admin should be able to Delete Transfer Rule successfully.
+Given Login into Mobiquity Portal as System admin Maker
+When User Click on Transfer Rule.
+And Select the Service Name and from details.
+And Select the To details for Initiaion
+And Select the From & To category.
+When User clicks on Delete option.
+Then Logout
+Given Login into Mobiquity Portal as another System admin Checker1 after logout
+When User clicks on transfer rule approval
+And Select rule and approve
 
 # Author: Likith R
 # Last Updated:

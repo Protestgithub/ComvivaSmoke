@@ -11,6 +11,7 @@ import "../../../../../support/subscriberCommands";
 import register from '../../../../../support/pageObjects/UserManagement/register';
 import approvals from '../../../../../support/pageObjects/UserManagement/approvals';
 import manageUsers from '../../../../../support/pageObjects/UserManagement/manageUsers';
+import myActivity from '../../../../../support/pageObjects/MyActivity/myActivity';
 import { recurse } from 'cypress-recurse';
 import "../../../../../support/BusinessUserCommands";
 //----------------Object Declaration-----------------------------------------------------------------
@@ -20,6 +21,7 @@ const welcomePage = new homePage()
 const registerPage = new register()
 const approvalPage = new approvals()
 const manageUsersPage = new manageUsers()
+const myActivityPage = new myActivity()
 const uuid = () => Cypress._.random(1e8)
 const SubMob='userData/subscriberReg.json'
 var lid
@@ -203,10 +205,40 @@ Given('Login into Mobiquity Portal as Business admin User1', function () {
   
   //------------------------------------Approve----------------------------------------------------------
   
-  And('User click on submitted user data', function () {
-    approvalPage.getCurrentDateRowData().eq(0).click({ force: true })
-  
+  And('Navigate to My Activity and Aplly required filters', function () {
+    welcomePage.getMyActivity().click()
+    myActivityPage.getFilter().click({ force: true })
+    cy.wait(2000)
+    myActivityPage.getAddUser().click({ force: true })
+    myActivityPage.getSubmittedStatus().click()
+    myActivityPage.getApply().click()
   })
+  //--------------------------------------------------------------------------------------------------------
+
+  And('Assert Created Subscriber Mobile Number and Write Created on time', function(){
+    cy.wait(2000)
+    cy.readFile(subRegistration).then((user) => {
+    let SubMobile = user.subscriberMobileBankingActivation
+    var SUBMobile = " "+SubMobile
+    manageUsersPage.getAssertMobile().eq(1).should('have.text',SUBMobile)
+  })
+  cy.wait(2000)
+  myActivityPage.getCreatedOnTime().eq(0).invoke('text').then((time)=>{
+    time= time.trim()
+    cy.log(time)
+    cy.readFile(subRegistration).then((data) => {
+    data.CreatedOnTime = time
+    cy.writeFile(subRegistration,data)
+    })
+  })
+  })
+
+  //-----------------------------------------------------------------------------------------------
+
+  And('User click on Subscriber submitted user data', function () {
+    cy.getApproval(subRegistration)
+  })
+  
   
   And('Approve the Users', function () {
     approvalPage.getApproveButton().click({ force: true })

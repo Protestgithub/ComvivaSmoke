@@ -12,11 +12,14 @@
         And Select User type as Subscriber and click on Subscriber
         And Enter all the required subscriber details
         Then SubscrigReg Confirmation message is displayed
+        When Navigate to My Activity and Aplly required filters
+        Then Assert Created Subscriber Mobile Number and Write Created on time
+
         Then Logout
     #Approval
         Given Login into Mobiquity Portal as another System admin Checker1 after logout
         When Navigate to Approvals and filter by Submitted status
-        And User click on submitted user data
+        And User click on Subscriber submitted user data
         And Approve the Users
         Then Added User status is approved
 
@@ -33,11 +36,13 @@
         And Select User type as Subscriber and click on Subscriber
         And Enter all the required subscriber details for bulk upload
         Then SubscrigReg Confirmation message is displayed
+        When Navigate to My Activity and Aplly required filters
+        Then Assert Created Subscriber Mobile Number for Bulk and Write Created on time
         Then Logout
     #Approval
         Given Login into Mobiquity Portal as another System admin Checker1 after logout
         When Navigate to Approvals and filter by Submitted status
-        And User click on submitted user data
+        And User click on Subscriber submitted user data
         And Approve the Users
         Then Added User status is approved
 
@@ -54,10 +59,12 @@
         And Select User type as Subscriber and click on Subscriber
         And Enter all the required subscriber details for churn approve or reject
         Then SubscrigReg Confirmation message is displayed
+        When Navigate to My Activity and Aplly required filters
+        Then Assert Created Subscriber Mobile Number for ApprRej and Write Created on time
         Then Logout
     #Approval
         Given Login into Mobiquity Portal as another System admin Checker1 after logout
         When Navigate to Approvals and filter by Submitted status
-        And User click on submitted user data
+        And User click on Subscriber submitted user data
         And Approve the Users
         Then Added User status is approved

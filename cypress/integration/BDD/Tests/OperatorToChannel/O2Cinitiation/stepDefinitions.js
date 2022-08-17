@@ -183,6 +183,7 @@ And('Enter All the Mandatory details and type Invalid Character in Transfer amou
 
 
 Then('Click on submit and Confirm Error Message', function () {
+  cy.wait(2000)
   O2CTransferInitiatePage.getSubmitButton().click({ force: true })
   cy.wait(2000)
   O2CTransferInitiatePage.getErrorMessage().should('have.text', this.data5.O2CTransferInitiate.ErrorMessage, { force: true })
@@ -341,36 +342,7 @@ And('logout the user', function () {
   cy.wait(2000)
   welcomePage.getLogOutYesbttn().click()
 })
-When('Navigate to Operator to channel and click on O2C transfer Approval1', function () {
 
-  welcomePage.getOperatorToChannelOption().scrollIntoView()
-
-  welcomePage.getOperatorToChannelOption().click()
-
-  welcomePage.getOperatorToChannelApproval1().click()
-  cy.wait(4000)
-
-  O2CTransferInitiatePage.getRecentDatainO2C()
-  TransferRuleApproval.getsubmitbttnTransferrule().click({ force: true })
-  cy.wait(2000)
-  transferruleapprovalpage.getApprovalTransferrule().click({ force: true })
-})
-
-//-------------------------O2C approal2------------------------------------
-When('Navigate to Operator to channel and click on O2C transfer Approval2', function () {
-
-  welcomePage.getOperatorToChannelOption().scrollIntoView()
-
-  welcomePage.getOperatorToChannelOption().click()
-
-  welcomePage.getOperatorToChannelApproval2().click()
-  cy.wait(4000)
-
-  O2CTransferInitiatePage.getRecentDatainO2C()
-  TransferRuleApproval.getsubmitbttnTransferrule().click({ force: true })
-  cy.wait(2000)
-  transferruleapprovalpage.getApprovalTransferrule().click({ force: true })
-})
 var O2CMsisdn
 And('Enter All the Mandatory Details1', function () {
   cy.wait(3000)
@@ -505,7 +477,8 @@ When('Navigate to Operator to channel and click on O2C transfer Approval2', func
 
   welcomePage.getOperatorToChannelApproval2().click()
   cy.wait(4000)
-
+  welcomePage.getOperatorToChannelApproval2().click()
+  cy.wait(4000)
   O2CTransferInitiatePage.getRecentDatainO2C()
   TransferRuleApproval.getsubmitbttnTransferrule().click({ force: true })
   cy.wait(2000)

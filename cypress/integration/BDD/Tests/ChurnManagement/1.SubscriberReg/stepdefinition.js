@@ -14,8 +14,8 @@ import register from '../../../../../support/pageObjects/UserManagement/register
 import approvals from '../../../../../support/pageObjects/UserManagement/approvals';
 import { recurse } from 'cypress-recurse';
 import "../../../../../support/ChurnCommands";
-
-
+import myActivity from '../../../../../support/pageObjects/MyActivity/myActivity';
+import manageUsers from '../../../../../support/pageObjects/UserManagement/manageUsers';
 //----------------Object Declaration-----------------------------------------------------------
 
 const pageLogin = new loginPage()
@@ -23,6 +23,8 @@ const churnManagementPage = new ChurnManagement()
 const welcomePage = new homePage()
 const registerPage = new register()
 const approvalPage = new approvals()
+const myActivityPage = new myActivity()
+const manageUsersPage = new manageUsers()
 
 
 const churnSubRegistration = 'cypress/fixtures/userData/churnSubscriberReg.json'
@@ -35,7 +37,6 @@ var loginId
 var KycValue
 var CsvFile = 'cypress/fixtures/ChurnUserInitiation.csv'
 var JSONFile = 'cypress/fixtures/churnData/ChurnUserInitiation.json'
-
 function getRandomName() {
   name = "";
   var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
@@ -120,9 +121,74 @@ When('Navigate to Approvals and filter by Submitted status', function () {
   approvalPage.getApplyFilter().click({ force: true })
 
 })
-And('User click on submitted user data', function () {
-  approvalPage.getCurrentDateRowData().eq(0).click({ force: true })
+  
+And('Navigate to My Activity and Aplly required filters', function () {
+  welcomePage.getMyActivity().click()
+  myActivityPage.getFilter().click({ force: true })
+  cy.wait(2000)
+  myActivityPage.getAddUser().click({ force: true })
+  myActivityPage.getSubmittedStatus().click()
+  myActivityPage.getApply().click()
 })
+//--------------------------------------------------------------------------------------------------------
+
+And('Assert Created Subscriber Mobile Number and Write Created on time', function(){
+  cy.wait(2000)
+  cy.readFile(churnSubRegistration).then((user) => {
+  let SubMobile = user.churnSubscriberRegistration
+  var SUBMobile = " "+SubMobile
+  manageUsersPage.getAssertMobile().eq(1).should('have.text',SUBMobile)
+})
+cy.wait(2000)
+myActivityPage.getCreatedOnTime().eq(0).invoke('text').then((time)=>{
+  time= time.trim()
+  cy.log(time)
+  cy.readFile(churnSubRegistration).then((data) => {
+  data.CreatedOnTime = time
+  cy.writeFile(churnSubRegistration,data)
+  })
+})
+})
+And('Assert Created Subscriber Mobile Number for Bulk and Write Created on time', function(){
+  cy.wait(2000)
+  cy.readFile(churnSubRegistration).then((user) => {
+  let SubMobile = user.churnSubscriberRegistrationBulkUpload
+  var SUBMobile = " "+SubMobile
+  manageUsersPage.getAssertMobile().eq(1).should('have.text',SUBMobile)
+})
+cy.wait(2000)
+myActivityPage.getCreatedOnTime().eq(0).invoke('text').then((time)=>{
+  time= time.trim()
+  cy.log(time)
+  cy.readFile(churnSubRegistration).then((data) => {
+  data.CreatedOnTime = time
+  cy.writeFile(churnSubRegistration,data)
+  })
+})
+})
+And('Assert Created Subscriber Mobile Number for ApprRej and Write Created on time', function(){
+  cy.wait(2000)
+  cy.readFile(churnSubRegistration).then((user) => {
+  let SubMobile = user.churnSubscriberRegistrationChurnAprRej
+  var SUBMobile = " "+SubMobile
+  manageUsersPage.getAssertMobile().eq(1).should('have.text',SUBMobile)
+})
+cy.wait(2000)
+myActivityPage.getCreatedOnTime().eq(0).invoke('text').then((time)=>{
+  time= time.trim()
+  cy.log(time)
+  cy.readFile(churnSubRegistration).then((data) => {
+  data.CreatedOnTime = time
+  cy.writeFile(churnSubRegistration,data)
+  })
+})
+})
+//-----------------------------------------------------------------------------------------------
+
+And('User click on Subscriber submitted user data', function () {
+  cy.getApproval(churnSubRegistration)
+})
+
 And('Approve the Users', function () {
   approvalPage.getApproveButton().click({ force: true })
   approvalPage.getApproveRequest().click({ force: true })

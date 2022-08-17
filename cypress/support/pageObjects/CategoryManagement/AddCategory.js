@@ -32,10 +32,9 @@ class AddCategory{
     
             })
     
+            cy.wait(6000)
+            cy.get('input[id="wallet_button_next"]').click({force:true})
             cy.wait(4000)
-    
-            cy.get("#wallet_button_next").click({force:true})
-    
           })
     
     }

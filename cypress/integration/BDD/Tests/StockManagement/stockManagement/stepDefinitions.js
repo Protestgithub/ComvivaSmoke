@@ -150,6 +150,8 @@ When('Navigate to Stock Management and Click on Stock Approval 2', function () {
   welcomePage.getStockManagementOption().scrollIntoView()
   welcomePage.getStockManagementOption().click()
   welcomePage.getApproval_2Option().click()
+  cy.wait(1000)
+  welcomePage.getApproval_2Option().click()
 })
 
 Then('Click on Submit and Approve the Stock at level 2', function () {

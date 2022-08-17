@@ -1,20 +1,20 @@
 {
   "Errormsg":"Domain Name already exists in systemDomain Code already exists in system",
     "domainData":{
-        "domainName":"ATM",
-        "domainCode":"ATM",
+        "domainName":"Wholesaler",
+        "domainCode":"Wholesaler",
         "domainCategories":""
       },
       "domainData1":{
-        "domainName":"ATM",
-        "domainCode":"ATM",
+        "domainName":"Wholesaler",
+        "domainCode":"Wholesaler",
         "domainCategories":""
       },
       "CategoryData":{
-        "categoryname":"ATM",
-        "categoryCode":"ATM",
-        "Domain":"ATM",
-        "ParentCategory":"ATM"
+        "categoryname":"Wholesaler",
+        "categoryCode":"Wholesaler",
+        "Domain":"Wholesaler",
+        "ParentCategory":"Wholesaler"
 
       }
 }

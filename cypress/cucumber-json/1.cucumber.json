@@ -1,0 +1,447 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Subscriber Registration for churn",
+    "line": 1,
+    "id": "subscriber-registration-for-churn",
+    "tags": [],
+    "uri": "1.SubscriberReg.feature",
+    "elements": [
+      {
+        "id": "subscriber-registration-for-churn;to-verify-that-valid-systemadmin/businsess-user-is-able-to-initiate-subscriber-creation.",
+        "keyword": "Scenario",
+        "line": 9,
+        "name": "To verify that valid SystemAdmin/businsess User is able to initiate Subscriber creation.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 7
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 10,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 8891000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 11,
+            "name": "Navigate to User Management and Click on register",
+            "result": {
+              "status": "passed",
+              "duration": 382000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "Select User type as Subscriber and click on Subscriber",
+            "result": {
+              "status": "passed",
+              "duration": 7707000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "Enter all the required subscriber details",
+            "result": {
+              "status": "passed",
+              "duration": 14186000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 14,
+            "name": "SubscrigReg Confirmation message is displayed",
+            "result": {
+              "status": "passed",
+              "duration": 1082000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 15,
+            "name": "Navigate to My Activity and Aplly required filters",
+            "result": {
+              "status": "passed",
+              "duration": 6073000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 16,
+            "name": "Assert Created Subscriber Mobile Number and Write Created on time",
+            "result": {
+              "status": "passed",
+              "duration": 4772000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 18,
+            "name": "Logout",
+            "result": {
+              "status": "passed",
+              "duration": 1234000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 20,
+            "name": "Login into Mobiquity Portal as another System admin Checker1 after logout",
+            "result": {
+              "status": "passed",
+              "duration": 9267000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 21,
+            "name": "Navigate to Approvals and filter by Submitted status",
+            "result": {
+              "status": "passed",
+              "duration": 11155000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 22,
+            "name": "User click on Subscriber submitted user data",
+            "result": {
+              "status": "passed",
+              "duration": 6358000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 23,
+            "name": "Approve the Users",
+            "result": {
+              "status": "passed",
+              "duration": 686000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 24,
+            "name": "Added User status is approved",
+            "result": {
+              "status": "passed",
+              "duration": 930000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "subscriber-registration-for-churn;to-verify-that-valid-systemadmin/businsess-user-is-able-to-initiate-subscriber-creation-for-bulk",
+        "keyword": "Scenario",
+        "line": 33,
+        "name": "To verify that valid SystemAdmin/businsess User is able to initiate Subscriber creation for bulk",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 31
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 34,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 7397000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 35,
+            "name": "Navigate to User Management and Click on register",
+            "result": {
+              "status": "passed",
+              "duration": 353000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 36,
+            "name": "Select User type as Subscriber and click on Subscriber",
+            "result": {
+              "status": "passed",
+              "duration": 5147000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 37,
+            "name": "Enter all the required subscriber details for bulk upload",
+            "result": {
+              "status": "passed",
+              "duration": 12767000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 38,
+            "name": "SubscrigReg Confirmation message is displayed",
+            "result": {
+              "status": "passed",
+              "duration": 1101000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 39,
+            "name": "Navigate to My Activity and Aplly required filters",
+            "result": {
+              "status": "passed",
+              "duration": 4046000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 40,
+            "name": "Assert Created Subscriber Mobile Number for Bulk and Write Created on time",
+            "result": {
+              "status": "passed",
+              "duration": 4743000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 41,
+            "name": "Logout",
+            "result": {
+              "status": "passed",
+              "duration": 1230000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 43,
+            "name": "Login into Mobiquity Portal as another System admin Checker1 after logout",
+            "result": {
+              "status": "passed",
+              "duration": 9601000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 44,
+            "name": "Navigate to Approvals and filter by Submitted status",
+            "result": {
+              "status": "passed",
+              "duration": 8631000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 45,
+            "name": "User click on Subscriber submitted user data",
+            "result": {
+              "status": "passed",
+              "duration": 6144000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 46,
+            "name": "Approve the Users",
+            "result": {
+              "status": "passed",
+              "duration": 606000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 47,
+            "name": "Added User status is approved",
+            "result": {
+              "status": "passed",
+              "duration": 1241000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "subscriber-registration-for-churn;to-verify-that-valid-systemadmin/businsess-user-is-able-to-initiate-subscriber-creation-for-churn-approve-or-reject",
+        "keyword": "Scenario",
+        "line": 56,
+        "name": "To verify that valid SystemAdmin/businsess User is able to initiate Subscriber creation for churn approve or reject",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 54
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 57,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 7556000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 58,
+            "name": "Navigate to User Management and Click on register",
+            "result": {
+              "status": "passed",
+              "duration": 368000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 59,
+            "name": "Select User type as Subscriber and click on Subscriber",
+            "result": {
+              "status": "passed",
+              "duration": 5062000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 60,
+            "name": "Enter all the required subscriber details for churn approve or reject",
+            "result": {
+              "status": "passed",
+              "duration": 13140000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 61,
+            "name": "SubscrigReg Confirmation message is displayed",
+            "result": {
+              "status": "passed",
+              "duration": 1110000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 62,
+            "name": "Navigate to My Activity and Aplly required filters",
+            "result": {
+              "status": "passed",
+              "duration": 3795000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 63,
+            "name": "Assert Created Subscriber Mobile Number for ApprRej and Write Created on time",
+            "result": {
+              "status": "passed",
+              "duration": 4755000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 64,
+            "name": "Logout",
+            "result": {
+              "status": "passed",
+              "duration": 1163000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 66,
+            "name": "Login into Mobiquity Portal as another System admin Checker1 after logout",
+            "result": {
+              "status": "passed",
+              "duration": 9208000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 67,
+            "name": "Navigate to Approvals and filter by Submitted status",
+            "result": {
+              "status": "passed",
+              "duration": 8589000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 68,
+            "name": "User click on Subscriber submitted user data",
+            "result": {
+              "status": "passed",
+              "duration": 6475000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 69,
+            "name": "Approve the Users",
+            "result": {
+              "status": "passed",
+              "duration": 636000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 70,
+            "name": "Added User status is approved",
+            "result": {
+              "status": "passed",
+              "duration": 1281000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
