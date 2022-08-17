@@ -22,6 +22,9 @@ Before(() => {
   cy.fixture('UserManagement').then(function (data2) {
     this.data2 = data2;
   })
+  cy.fixture('BankManagement').then(function (data3) {
+    this.data3 = data3;
+  })
   cy.fixture('PricingEngine').then(function (data5) {
     this.data5 = data5;
   })
