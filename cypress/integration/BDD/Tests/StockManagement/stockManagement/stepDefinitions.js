@@ -31,7 +31,7 @@ const uuuid = () => Cypress._.random(1e3)
 amount = uuuid()
 
 var amount1
-const uuuuid = () => Cypress._.random(1e13)
+const uuuuid = () => Cypress._.random(1e4)
 amount1 = uuuuid()
 
 const uid = () => Cypress._.random(1e2)
