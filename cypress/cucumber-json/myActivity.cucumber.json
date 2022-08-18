@@ -1,0 +1,493 @@
+[
+  {
+    "description": "    This feature includes registering, Modifying and Approval of Business Admin and \n    Customer Support Admin Users by System Admin",
+    "keyword": "Feature",
+    "name": "My Activity",
+    "line": 1,
+    "id": "my-activity",
+    "tags": [],
+    "uri": "myActivity.feature",
+    "elements": [
+      {
+        "id": "my-activity;to-verify-that-system-user-can-manage-user-registration-application,-which-are-not-approved-like-saved,submitted-users-and-rejected-users",
+        "keyword": "Scenario",
+        "line": 17,
+        "name": "To verify that system user can manage user registration application, which are not approved like saved,submitted users and rejected users",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 15
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 18,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 9901000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 19,
+            "name": "Navigate to User Management and Click on register",
+            "result": {
+              "status": "passed",
+              "duration": 423000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 20,
+            "name": "Select User type as Adminstrator and click on Customer care Admin",
+            "result": {
+              "status": "passed",
+              "duration": 8717000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 21,
+            "name": "Enter all the User details",
+            "result": {
+              "status": "passed",
+              "duration": 10442000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 22,
+            "name": "Navigate to My Activity and Add the required filter",
+            "result": {
+              "status": "passed",
+              "duration": 7454000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 23,
+            "name": "Click on Expand and View Details button",
+            "result": {
+              "status": "passed",
+              "duration": 4056000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "my-activity;to-verify-that-system-user-can-view-existing-details-of-user's-under-saved-filter-whose-registration-initiation-is-incomplete",
+        "keyword": "Scenario",
+        "line": 32,
+        "name": "To verify that system user can view existing details of user's under saved filter whose registration initiation is incomplete",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 30
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 33,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 7589000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 34,
+            "name": "Navigate to My Activity and Add the required filter",
+            "result": {
+              "status": "passed",
+              "duration": 3748000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 35,
+            "name": "Click on Expand and View Details button",
+            "result": {
+              "status": "passed",
+              "duration": 3546000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "my-activity;to-verify-that-system-user-can-add/edit-details-of-user's-whose-registration-is-incomplete",
+        "keyword": "Scenario",
+        "line": 46,
+        "name": "To verify that system user can Add/edit details of user's whose registration is incomplete",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 44
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 47,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 8175000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 48,
+            "name": "Navigate to My Activity and Add the required filter",
+            "result": {
+              "status": "passed",
+              "duration": 3430000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 49,
+            "name": "Click on Expand and Resume button",
+            "result": {
+              "status": "passed",
+              "duration": 5741000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 50,
+            "name": "Enter all the required details of the user",
+            "result": {
+              "status": "passed",
+              "duration": 7539000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "my-activity;to-verify-that-system-user-can-send-for-approval-of-user's-whose-registration-is-incomplete",
+        "keyword": "Scenario",
+        "line": 61,
+        "name": "To verify that system user can Send for approval of user's whose registration is Incomplete",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 59
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 62,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 7646000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 63,
+            "name": "Navigate to My Activity and Add the required filter",
+            "result": {
+              "status": "passed",
+              "duration": 3265000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 64,
+            "name": "Click on Expand and Resume button",
+            "result": {
+              "status": "passed",
+              "duration": 5809000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 65,
+            "name": "Enter all the required details of the user",
+            "result": {
+              "status": "passed",
+              "duration": 7089000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 66,
+            "name": "Click the >> Submit Button",
+            "result": {
+              "status": "passed",
+              "duration": 2475000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 67,
+            "name": "Confirmation message is displayed",
+            "result": {
+              "status": "passed",
+              "duration": 910000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "my-activity;to-verify-that-system-user-can-withdraw-application-of-user's-whose-registration-is-incomplete-and-sent-for-approval",
+        "keyword": "Scenario",
+        "line": 76,
+        "name": "To verify that system user can Withdraw application of user's whose registration is incomplete and sent for Approval",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 74
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 77,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 8060000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 78,
+            "name": "Navigate to My Activity and Add the not Approved filters",
+            "result": {
+              "status": "passed",
+              "duration": 3410000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 79,
+            "name": "Click on Expand and Withdraw button",
+            "result": {
+              "status": "passed",
+              "duration": 2553000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "my-activity;to-verify-that-system-user-can-send-for-approval-of-user's-whose-registration-rejected-by-approver.",
+        "keyword": "Scenario",
+        "line": 89,
+        "name": "To verify that system user can Send for approval of user's whose Registration rejected by approver.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 87
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 90,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 7657000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 91,
+            "name": "Navigate to User Management and Click on register",
+            "result": {
+              "status": "passed",
+              "duration": 450000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 92,
+            "name": "Select User type as Adminstrator and click on Customer care Admin",
+            "result": {
+              "status": "passed",
+              "duration": 5387000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 93,
+            "name": "Enter all the details",
+            "result": {
+              "status": "passed",
+              "duration": 7155000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 94,
+            "name": "Confirmation message is displayed",
+            "result": {
+              "status": "passed",
+              "duration": 899000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 95,
+            "name": "Logout",
+            "result": {
+              "status": "passed",
+              "duration": 1121000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 96,
+            "name": "Login into Mobiquity Portal as another System admin Checker1 after logout",
+            "result": {
+              "status": "passed",
+              "duration": 10317000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 97,
+            "name": "Navigate to Approvals and filter by Submitted status",
+            "result": {
+              "status": "passed",
+              "duration": 11031000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 98,
+            "name": "User click on submitted user data",
+            "result": {
+              "status": "passed",
+              "duration": 521000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 99,
+            "name": "Reject the Users",
+            "result": {
+              "status": "passed",
+              "duration": 2499000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 100,
+            "name": "Logout",
+            "result": {
+              "status": "passed",
+              "duration": 1638000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 101,
+            "name": "Login into Mobiquity Portal as System admin Maker after Logout",
+            "result": {
+              "status": "passed",
+              "duration": 11078000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 102,
+            "name": "Navigate to My Activity and Add the Reject filter",
+            "result": {
+              "status": "passed",
+              "duration": 5394000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 103,
+            "name": "Click on Expand and Resume button",
+            "result": {
+              "status": "passed",
+              "duration": 6807000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 104,
+            "name": "Enter all the required details of the user",
+            "result": {
+              "status": "passed",
+              "duration": 10474000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 105,
+            "name": "Click the >> Submit Button",
+            "result": {
+              "status": "passed",
+              "duration": 2878000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 106,
+            "name": "Confirmation message is displayed",
+            "result": {
+              "status": "passed",
+              "duration": 2426000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -4,43 +4,24 @@
 //----------------Imports---------------------------------------------------------------------
 import 'cypress-iframe'
 import { Given, When, Then, And, Before } from "cypress-cucumber-preprocessor/steps";
-import loginPage from '../../../../../support/pageObjects/loginPage';
 import homePage from '../../../../../support/pageObjects/homePage';
 
 import "../../../../../support/commands";
-import register from '../../../../../support/pageObjects/UserManagement/register';
-import approvals from '../../../../../support/pageObjects/UserManagement/approvals';
-import manageUsers from '../../../../../support/pageObjects/UserManagement/manageUsers';
-import DomainFieldspage from '../../../../../support/pageObjects/DomainManagement/DomainFieldspage';
-import CircularJSON from 'circular-json';
-import Flatted from 'flatted';
 import TransferRulePage from '../../../../../support/pageObjects/TransferRules/TransferRulePage';
 import Approval from '../../../../../support/pageObjects/TransferRules/Approval';
 import O2C from '../../../../../support/pageObjects/TransferRules/O2C';
-import O2CTransferInitiate from '../../../../../support/pageObjects/OperatorToChannel/O2CTransferInitiate';
-import DownloadAmb from '../../../../../support/pageObjects/AmbiguousTransaction/DownloadAmb';
-import BulkSettlement from '../../../../../support/pageObjects/AmbiguousTransaction/BulkSettlement';
 
 
 //----------------Object Declaration----------------------------------------------------------
 
-const pageLogin = new loginPage()
 const welcomePage = new homePage()
-const registerPage = new register()
-const approvalPage = new approvals()
-const manageUsersPage = new manageUsers()
 const transferrulepage = new TransferRulePage()
 const transferruleapprovalpage = new Approval()
 const transferrulepageO2C = new O2C()
-const domainPage = new DomainFieldspage()
-const O2CTransferInitiatePage = new O2CTransferInitiate()
-const DownloadAmbpage = new DownloadAmb()
-const BulkSettlementpage = new BulkSettlement()
-const TransferRuleApproval = new Approval()
 var DataFile = "cypress/fixtures/userData/Domain&CAT.json"
 var GradeFile = 'cypress/fixtures/userData/Gradedata.json'
 
-var mobile, name
+var  name
 function getRandomName() {
   name = "";
   var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
@@ -61,15 +42,7 @@ Before(() => {
   cy.fixture('TransferRules').then(function (data3) {
     this.data3 = data3;
   })
-  cy.fixture('Domain&CategoryManagement').then(function (data4) {
-    this.data4 = data4;
-  })
-  cy.fixture('OperatorToChannel').then(function (data5) {
-    this.data5 = data5;
-  })
-  cy.fixture('AmbOrderTransaction').then(function (data6) {
-    this.data6 = data6;
-  })
+
 });
 
 
@@ -155,6 +128,7 @@ And('Select the Service Name and from Details for Transfer to Bank', function ()
 And('Select the To details for Transfer to Bank', function () {
   cy.wait(2000)
   transferrulepage.getToMFSProvider().select(this.data3.TransferRuleDataCreation.ToMFSprovider, { force: true })
+  cy.wait(2000)
   cy.readFile(DataFile).then((data) => {
     let Domain = data.Doaminname
     transferrulepage.getToDomain().select(Domain, { force: true })

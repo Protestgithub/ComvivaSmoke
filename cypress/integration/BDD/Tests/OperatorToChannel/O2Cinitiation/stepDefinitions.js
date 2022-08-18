@@ -150,7 +150,7 @@ And('Enter All the Mandatory details and type Invalid Character in Transfer amou
     let BsnuserMobile = usermobile.registeredMobile
     O2CTransferInitiatePage.getMSISDN().type(BsnuserMobile, { force: true })
   })
-  cy.wait(6000)
+  cy.wait(2000)
 
   cy.get('.fd-page.iframeContainer.svelte-1v5e28n > iframe').then(($iframe) => {
     const $body = $iframe.contents().find('body')
@@ -196,7 +196,7 @@ And('Enter All the Details', function () {
     let BsnuserMobile = usermobile.registeredMobile
     O2CTransferInitiatePage.getMSISDN().type(BsnuserMobile, { force: true })
   })
-  cy.wait(6000)
+  cy.wait(2000)
   cy.get('.fd-page.iframeContainer.svelte-1v5e28n > iframe').then(($iframe) => {
     const $body = $iframe.contents().find('body')
     const $win = $iframe[0].contentWindow
@@ -248,21 +248,18 @@ When('Navigate to Operator to channel and click on O2C transfer initiate', funct
 })
 
 And('Enter All the Mandatory Details', function () {
-  cy.wait(3000)
-
   cy.wait(2000)
   var BBAFile = "cypress/fixtures/userData/BusinessUsersData.json"
   var O2CFile = "cypress/fixtures/userData/O2Cdata.json"
   cy.readFile(BBAFile).then((data) => {
     var O2CMsisdn = data.registeredMobile
     //O2CTransferInitiatePage.getMSISDN().type("7735575036", {force: true})
-
     O2CTransferInitiatePage.getMSISDN().type(O2CMsisdn, { force: true })
     data.O2CMsisdn1 = O2CMsisdn
     cy.writeFile(O2CFile, data)
   })
 
-  cy.wait(6000)
+  cy.wait(2000)
   cy.get('.fd-page.iframeContainer.svelte-1v5e28n > iframe').then(($iframe) => {
     const $body = $iframe.contents().find('body')
     const $win = $iframe[0].contentWindow
@@ -357,7 +354,7 @@ And('Enter All the Mandatory Details1', function () {
     data.O2CMsisdn1 = O2CMsisdn
     cy.writeFile(O2CFile, data)
   })
-  cy.wait(6000)
+  cy.wait(2000)
   cy.get('.fd-page.iframeContainer.svelte-1v5e28n > iframe').then(($iframe) => {
     const $body = $iframe.contents().find('body')
     const $win = $iframe[0].contentWindow
@@ -373,64 +370,45 @@ And('Enter All the Mandatory Details1', function () {
       cy.wrap($body)
         .find('input[name="amount"]').click({ force: true })
         .should(function () {
-
           expect(this.windowConfirm).to.be.calledWith("Channel User Does Not Exist")
-
         })
     }
-
   })
-
   O2CTransferInitiatePage.getTransferAmount().type(TransferAmount, { force: true })
   O2CTransferInitiatePage.getReferenceNumber().type(ReferenceNumber, { force: true })
   O2CTransferInitiatePage.getType().select(this.data5.O2CTransferInitiate.type, { force: true })
   O2CTransferInitiatePage.getNumber().type(number, { force: true })
   O2CTransferInitiatePage.getRemarks().type(getRandomName(), { force: true })
   cy.writeFile(filename, { msidnValue: O2CMsisdn, TransferAmt: TransferAmount, RefNum: ReferenceNumber })
-
-
-
 })
 
 Then('Click on submit and Confirm00', function () {
-
   O2CTransferInitiatePage.getSubmitButton().click({ force: true })
-
   cy.wait(2000)
-
   O2CTransferInitiatePage.getConfirmButton().click({ force: true })
   cy.wait(3000)
   cy.O2CTransactionWriteData()
 })
 
 Then('Click on submit and Confirm0', function () {
-
   O2CTransferInitiatePage.getSubmitButton().click({ force: true })
-
   cy.wait(2000)
-
   O2CTransferInitiatePage.getConfirmButton().click({ force: true })
   cy.wait(3000)
   cy.O2CTransactionWriteData()
 })
 
 Then('Click on submit and Confirm1', function () {
-
   O2CTransferInitiatePage.getSubmitButton().click({ force: true })
-
   cy.wait(2000)
-
   O2CTransferInitiatePage.getConfirmButton().click({ force: true })
   cy.wait(3000)
   cy.O2CTransactionWriteData1()
 })
 
 Then('Click on submit and Confirm2', function () {
-
   O2CTransferInitiatePage.getSubmitButton().click({ force: true })
-
   cy.wait(2000)
-
   O2CTransferInitiatePage.getConfirmButton().click({ force: true })
   cy.wait(3000)
   cy.O2CTransactionWriteData2()
@@ -442,11 +420,8 @@ And('click wallet Payment history.', function () {
 })
 And('Enter TransactionID and check', function () {
   cy.O2CTransactionReadData()
-
-
 })
 And('logout the user', function () {
-
   welcomePage.getProfileIcon().click()
   cy.wait(2000)
   welcomePage.getLogOutbttn().click()
@@ -454,14 +429,10 @@ And('logout the user', function () {
   welcomePage.getLogOutYesbttn().click()
 })
 When('Navigate to Operator to channel and click on O2C transfer Approval1', function () {
-
   welcomePage.getOperatorToChannelOption().scrollIntoView()
-
   welcomePage.getOperatorToChannelOption().click()
-
   welcomePage.getOperatorToChannelApproval1().click()
   cy.wait(4000)
-
   O2CTransferInitiatePage.getRecentDatainO2C()
   TransferRuleApproval.getsubmitbttnTransferrule().click({ force: true })
   cy.wait(2000)
@@ -470,11 +441,8 @@ When('Navigate to Operator to channel and click on O2C transfer Approval1', func
 
 //-------------------------O2C approal2------------------------------------
 When('Navigate to Operator to channel and click on O2C transfer Approval2', function () {
-
   welcomePage.getOperatorToChannelOption().scrollIntoView()
-
   welcomePage.getOperatorToChannelOption().click()
-
   welcomePage.getOperatorToChannelApproval2().click()
   cy.wait(4000)
   welcomePage.getOperatorToChannelApproval2().click()

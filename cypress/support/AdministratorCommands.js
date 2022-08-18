@@ -105,7 +105,7 @@ Cypress.Commands.add('getCCAMobileNumber', () => {
 Cypress.Commands.add('getUpdatedCCAMobileNumber', () => {
     pageLogin.getiFrame()
     manageUsersPage.getSearchUser().click({ force: true })
-        cy.fixture(filename).then((user) => {
+    cy.fixture(filename).then((user) => {
         BAMobile = user.updatedCCAMobileNumber
         manageUsersPage.getSearchUser().type(BAMobile, { force: true })
     })
@@ -159,35 +159,34 @@ Cypress.Commands.add('getMessage', (apiURL) => {
             }
         }).then((res) => {
             let res1 = res.body
-                cy.writeFile(MsgFile,{ModifyMessage:res1 })
-            
+            cy.writeFile(MsgFile, { ModifyMessage: res1 })
+
         })
     })
 })
 
 
-Cypress.Commands.add('getBAApproval',() =>
-cy.readFile(filename).then((user)  => {
-    let Time = user.CreatedOnTime
-    let shouldStop = false
-    cy.iframe().find('.mat-table.cdk-table.mat-sort>mat-row').each(($row=>{
-        cy.then(() => {
-            if(shouldStop){
-                return
-            }
-        cy.wrap($row).within(function(){
-            cy.get('mat-cell').each(($el=>{
-                cy.log($el.text())
-                if($el.text().includes(Time)&& $el.text().includes())
-                {
-                cy.get('[role="gridcell"]').eq(0).click({force: true})    
-                cy.wait(5000)
-                shouldStop = true
+Cypress.Commands.add('getBAApproval', () =>
+    cy.readFile(filename).then((user) => {
+        let Time = user.CreatedOnTime
+        let shouldStop = false
+        cy.iframe().find('.mat-table.cdk-table.mat-sort>mat-row').each(($row => {
+            cy.then(() => {
+                if (shouldStop) {
+                    return
                 }
-            }))
+                cy.wrap($row).within(function () {
+                    cy.get('mat-cell').each(($el => {
+                        cy.log($el.text())
+                        if ($el.text().includes(Time) && $el.text().includes()) {
+                            cy.get('[role="gridcell"]').eq(0).click({ force: true })
+                            cy.wait(5000)
+                            shouldStop = true
+                        }
+                    }))
 
-        })
+                })
+            })
+        }))
     })
-}))
-})
 )

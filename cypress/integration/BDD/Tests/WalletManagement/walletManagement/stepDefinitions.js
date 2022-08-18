@@ -16,7 +16,6 @@ import walletManagement from '../../../../../support/pageObjects/WalletManagemen
 
 const WalletManagementPage = new walletManagement()
 var filename = 'cypress/fixtures/WalletManagementdata.json'
-var filename1 = 'cypress/fixtures/WalletManagementdata.json'
 
 function getRandomName() {
   name = "";

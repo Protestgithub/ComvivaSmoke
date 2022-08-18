@@ -24,5 +24,5 @@ And Click on confirm button.
 
 Scenario:To verify that master can delete grade successfully
 Given Login into Mobiquity Portal as masteradmin Maker
-When Click on User Profile Management >> Delete Grade
+#When Click on User Profile Management >> Delete Grade
 

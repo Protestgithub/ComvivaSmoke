@@ -18,7 +18,7 @@ const pageLogin = new loginPage()
 const welcomePage = new homePage()
 const stockInitiationPage = new stockInitiation()
 const stockManagementPage = new stockManagement()
-var name
+
 var mobile
 const uuid = () => Cypress._.random(1e8)
 mobile = "77" + uuid()
@@ -37,7 +37,7 @@ amount1 = uuuuid()
 const uid = () => Cypress._.random(1e2)
 const id = uid()
 const testname = `testname${id}`
-let message
+
 //----------------BDD Hooks-----------------------------------------------------------------
 Before(() => {
   cy.fixture('login').then(function (data1) {

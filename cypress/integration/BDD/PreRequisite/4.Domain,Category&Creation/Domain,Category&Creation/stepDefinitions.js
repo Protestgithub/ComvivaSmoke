@@ -71,10 +71,6 @@ Before(() => {
   cy.fixture('TransferControlProfile').then(function (data5) {
     this.data5 = data5;
   })
-
-  cy.fixture('GradeManagement').then(function (data01) {
-    this.data01 = data01;
-  })
   cy.fixture('SecurityProfile').then(function (data6) {
     this.data6 = data6;
   })
@@ -182,7 +178,7 @@ And('Enter Domain Name and Domain Code.', function () {
   cy.writeFile(DataFile, { Domainname: this.data4.domainData.domainName + DomainName })
   domainPage.getDomainCode().type(code, { force: true })
   cy.readFile(DataFile).then((data) => {
-    data.DomainCode = code 
+    data.DomainCode = code
     cy.writeFile(DataFile, data)
   })
   domainPage.getDomainCategories().type(Category, { force: true })
@@ -341,7 +337,7 @@ And('Select the domain & category for which grade needs to be added.', function 
     cy.writeFile(Gradedata, data)
   })
   AddGradePage.getSavebttn().click({ force: true })
-
   cy.wait(2000)
   AddGradePage.getConfirmbttn().click({ force: true })
+  cy.wait(2000)
 })    

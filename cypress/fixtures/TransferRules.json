@@ -1,7 +1,6 @@
 {
   "TransferRuleData":{
       "servicename":"Cash in",
-      "servicename1":"SVA to Bank Transfer",
       "FromMFSprovider":"MFS2",
       "FromDomain":"Wholesaler",
       "FromPaymentInstrument":"WALLET",
@@ -24,6 +23,7 @@
     },
     "TransferRuleDataCreation":{
       "servicename":"Debit SVA",
+      "servicename1":"SVA to Bank Transfer",
       "FromMFSprovider":"MFS2",
       "FromDomain":"Wholesaler",
       "FromPaymentInstrument":"WALLET",
@@ -32,6 +32,7 @@
       "ToDomain":"Bank",
       "ToPaymentInstrument":"BANK",
       "ToWallet":"STATE BANK",
+      "ToWallet1":"TB101",
       "FromCategory":"Wholesaler",
       "ToCategory":"Bank",
       "FromGrade":"Gold Wholesaler",

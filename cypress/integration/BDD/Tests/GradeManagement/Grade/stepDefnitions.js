@@ -4,15 +4,9 @@
 //----------------Imports---------------------------------------------------------------------
 import 'cypress-iframe'
 import { Given, When, Then, And, Before } from "cypress-cucumber-preprocessor/steps";
-import loginPage from '../../../../../support/pageObjects/loginPage';
 import homePage from '../../../../../support/pageObjects/homePage';
 
 import "../../../../../support/commands";
-import register from '../../../../../support/pageObjects/UserManagement/register';
-import approvals from '../../../../../support/pageObjects/UserManagement/approvals';
-import manageUsers from '../../../../../support/pageObjects/UserManagement/manageUsers';
-import DomainFieldspage from '../../../../../support/pageObjects/DomainManagement/DomainFieldspage';
-import AddCategory from '../../../../../support/pageObjects/CategoryManagement/AddCategory';
 import AddGrades from '../../../../../support/pageObjects/GradeManagement/AddGrades';
 import ModifyGrades from '../../../../../support/pageObjects/GradeManagement/ModifyGrades';
 import DeleteGrades from '../../../../../support/pageObjects/GradeManagement/DeleteGrades';
@@ -26,7 +20,6 @@ var DataFile = "cypress/fixtures/userData/Domain&CAT.json"
 var Gradedata = "cypress/fixtures/userData/Gradedata.json"
 
 
-let GradeCode
 Before(() => {
 
     cy.fixture('login').then(function (data1) {
@@ -34,10 +27,6 @@ Before(() => {
     })
     cy.fixture('UserManagement').then(function (data2) {
         this.data2 = data2;
-    })
-
-    cy.fixture('GradeManagement').then(function (data01) {
-        this.data01 = data01;
     })
 
 });

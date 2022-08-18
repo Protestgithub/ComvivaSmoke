@@ -27,11 +27,6 @@ const uuid = () => Cypress._.random(1e8)
 mobile = "77" + uuid()
 var mobile
 var name
-var filename = 'cypress/fixtures/userData/BAdata.json'
-var SubProfileName = 'cypress/fixtures/profileData/Profile.json'
-
-
-
 
 
 function getRandomName() {

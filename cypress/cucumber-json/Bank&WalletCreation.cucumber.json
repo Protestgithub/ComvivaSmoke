@@ -1,0 +1,102 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Bank Creation",
+    "line": 1,
+    "id": "bank-creation",
+    "tags": [],
+    "uri": "Bank&WalletCreation.feature",
+    "elements": [
+      {
+        "id": "bank-creation;to-verify-that-master-is-able-to-add-bank-successfully",
+        "keyword": "Scenario",
+        "line": 12,
+        "name": "To verify that master is able to Add Bank successfully",
+        "tags": [
+          {
+            "name": "@prerequisite",
+            "line": 10
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 13,
+            "name": "Login with Master Admin Checker",
+            "result": {
+              "status": "passed",
+              "duration": 6924000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 14,
+            "name": "Navigate to Bank Master and Click on it",
+            "result": {
+              "status": "passed",
+              "duration": 3499000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "Enter All the Required Details",
+            "result": {
+              "status": "passed",
+              "duration": 13706000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "bank-creation;to-verify-that-system-admin-is-able-to-add-wallet-successfully.",
+        "keyword": "Scenario",
+        "line": 27,
+        "name": "To verify that System admin is able to Add wallet successfully.",
+        "tags": [
+          {
+            "name": "@prerequisite",
+            "line": 25
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 28,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 7673000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 29,
+            "name": "Navigate Multiple Wallet Management and Click on Add Wallet",
+            "result": {
+              "status": "passed",
+              "duration": 2510000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 30,
+            "name": "Enter Wallet name and click on save",
+            "result": {
+              "status": "passed",
+              "duration": 3726000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
