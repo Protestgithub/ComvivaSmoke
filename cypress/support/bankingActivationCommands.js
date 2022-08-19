@@ -12,6 +12,7 @@ const APIPage = new API()
 Cypress.Commands.add('getMobBankingActivationMessage', (apiURL) => {
     cy.intercept('/mobiquitypay/serviceRequest/resume/any').as('getmessage')
     bankingActivationPage.getConfirmButton().contains('Confirm').click({force:true})
+    cy.wait(2000)
     bankingActivationPage.getConfirmButton().contains('Done').click({force:true})
     cy.wait(2000)
     //approvalPage.getApproveConfirmationMessage().contains(this.data2.confirmationMessage.editUser)
@@ -50,6 +51,7 @@ Cypress.Commands.add('getMobBankingActivationMessage', (apiURL) => {
 Cypress.Commands.add('getInternetBankingActivationMessage', (apiURL) => {
     cy.intercept('/mobiquitypay/serviceRequest/resume/any').as('getmessage')
     bankingActivationPage.getConfirmButton().contains('Confirm').click({force:true})
+    cy.wait(2000)
     bankingActivationPage.getConfirmButton().contains('Done').click({force:true})
     cy.wait(2000)
     //approvalPage.getApproveConfirmationMessage().contains(this.data2.confirmationMessage.editUser)

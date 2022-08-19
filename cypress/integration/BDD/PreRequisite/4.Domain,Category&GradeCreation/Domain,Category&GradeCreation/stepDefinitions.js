@@ -31,26 +31,12 @@ var name
 const pageLogin = new loginPage()
 const welcomePage = new homePage()
 const domainPage = new DomainFieldspage()
-const uuid = () => Cypress._.random(1e3)
+const uuid = () => Cypress._.random(1e4)
 const uid = () => Cypress._.random(1e5)
 const id = () => Cypress._.random(1e2)
 var DomainName = uuid()
 var code = uid()
 var Category = id()
-function getbankName() {
-  name = "";
-  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  for (var i = 0; i < 5; i++)
-    name += possible.charAt(Math.floor(Math.random() * possible.length));
-  return name;
-}
-function getRandomName() {
-  name = "";
-  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-  for (var i = 0; i < 5; i++)
-    name += possible.charAt(Math.floor(Math.random() * possible.length));
-  return name;
-}
 
 
 
@@ -62,20 +48,9 @@ Before(() => {
   cy.fixture('UserManagement').then(function (data2) {
     this.data2 = data2;
   })
-  cy.fixture('BankManagement').then(function (data03) {
-    this.data03 = data03;
-  })
+
   cy.fixture('Domain&CategoryManagement').then(function (data4) {
     this.data4 = data4;
-  })
-  cy.fixture('TransferControlProfile').then(function (data5) {
-    this.data5 = data5;
-  })
-  cy.fixture('SecurityProfile').then(function (data6) {
-    this.data6 = data6;
-  })
-  cy.fixture('authorizationProfile').then(function (data7) {
-    this.data7 = data7;
   })
   if (Cypress.browser.isHeadless) {
     cy.clearCookie('shouldStop')

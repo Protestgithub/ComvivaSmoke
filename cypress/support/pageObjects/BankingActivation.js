@@ -20,10 +20,10 @@ class BankingActivation
         return cy.iframe().find('div>button[class="unblock-btn btn"]')
     }
     getMobActivatedMsg(){
-        return cy.iframe().find('[class="action-btn btn activated-text ng-star-inserted"]')
+        return cy.iframe().find('[class="action-btn btn activated-text ng-star-inserted"]').contains(' Mobile Banking Activated ')
     }
-    getInternetActivatedMsg(){
-        return cy.iframe().find('[type="button"]').contains(' Intrernet Banking Activated ')
+     getInternetActivatedMsg(){
+        return cy.iframe().find('[class="action-btn btn activated-text ng-star-inserted"]').contains(' Internet Banking Activated ')
     }
     getNextBtn(){
         return cy.iframe().find('[class="btn next-btn"]')

@@ -731,4 +731,29 @@ cy.readFile('cypress/fixtures/userData/Domain&CAT.json').then((user)  => {
 })
 )
 
+Cypress.Commands.add('getRecentDatainO2C',(filename) =>
+cy.readFile('cypress/fixtures/userData/TransactionFile.json').then((data)  => {
+   let ID = data.TransactionID
+   let shouldStop = false
+    cy.iframe().find('#o2cApproval1_displayTransactionDetails .wwFormTableC>tbody>tr','{force:true}').each(($row=>{
+        cy.then(() => {
+            if(shouldStop){
+                return
+            }
+        cy.wrap($row).within(function(){
+            cy.get('td').eq(4).each(($el=>{
+                cy.log($el.text())
+                if($el.text().includes(ID))
+                {
+                    cy.wait(2000)
+                    cy.get('input[type="radio"]').last().click()
+                    cy.wait(2000)
+                shouldStop = true
+                }
+             })
+            )
+         }) 
+    })
+    }))
+}))
 

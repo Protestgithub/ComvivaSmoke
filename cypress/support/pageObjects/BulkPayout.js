@@ -7,7 +7,7 @@ class BulkPayout{
 
     getBulkPayoutInitiateLink()
     {
-       return cy.get('[data-testid="menu.bulkpay"] > .fd-nested-list > :nth-child(1) > [data-testid="test-undefined"]')
+       return cy.get('[data-testid="menu.bulkpay"]').find('[title="Bulk Payout Initiate"]')
 
        
     }
@@ -41,7 +41,7 @@ class BulkPayout{
     }
     getBulkApprove()
     {
-        return cy.get('[data-testid="menu.bulkpay"] > .fd-nested-list > :nth-child(3) > [data-testid="test-undefined"] > .fd-nested-list__title')
+        return cy.get('[data-testid="menu.bulkpay"]').find('[title="Bulk Payout Approve"]')
        
     }
 
@@ -63,7 +63,7 @@ class BulkPayout{
 
     getBulkDashboard()
     {
-        return cy.get('[data-testid="menu.bulkpay"] > .fd-nested-list > :nth-child(4) > [data-testid="test-undefined"]')
+        return cy.get('[data-testid="menu.bulkpay"]').find('[title="Bulk Payout Dashboard"]')
     }
 
     getNumberOfEntries()

@@ -94,7 +94,7 @@ And('Select the Service Name and from details.', function () {
   cy.wait(4000)
   //cy.mfsprovider()
   transferrulepage.getFromMFSProvider().select(this.data3.TransferRuleData.FromMFSprovider, { force: true })
-  cy.wait(2000)
+  cy.wait(4000)
   cy.readFile(DataFile).then((data) => {
     let Domain = data.Domainname
     transferrulepage.getFromeDomain().select(Domain, { force: true })
@@ -115,10 +115,11 @@ And('Select the To details for Initiaion', function () {
 })
 
 And('Select the Service Name and from Details for Transfer to Bank', function () {
-  cy.wait(2000)
+  cy.wait(4000)
   transferrulepage.getServiceName().select(this.data3.TransferRuleDataCreation.servicename1, { force: true })
   cy.wait(4000)
   transferrulepage.getFromMFSProvider().select(this.data3.TransferRuleDataCreation.FromMFSprovider, { force: true })
+    cy.wait(4000)
   transferrulepage.getFromeDomain().select(this.data3.TransferRuleDataCreation.FromDomain, { force: true })
   transferrulepage.getFromPaymentInstrument().select(this.data3.TransferRuleDataCreation.FromPaymentInstrument, { force: true })
   transferrulepage.getFromWallettype().select(this.data3.TransferRuleDataCreation.FromWallet, { force: true })
@@ -126,15 +127,15 @@ And('Select the Service Name and from Details for Transfer to Bank', function ()
 
 
 And('Select the To details for Transfer to Bank', function () {
-  cy.wait(2000)
+  cy.wait(4000)
   transferrulepage.getToMFSProvider().select(this.data3.TransferRuleDataCreation.ToMFSprovider, { force: true })
-  cy.wait(2000)
+  cy.wait(3000)
   cy.readFile(DataFile).then((data) => {
-    let Domain = data.Doaminname
+    let Domain = data.Domainname
     transferrulepage.getToDomain().select(Domain, { force: true })
   })
   cy.wait(2000)
-  transferrulepage.getToPaymentInstrument().select(this.data3.TransferRuleDataCreation.ToPaymentInstrument1, { force: true })
+  transferrulepage.getToPaymentInstrument().select(this.data3.TransferRuleDataCreation.ToPaymentInstrument, { force: true })
   transferrulepage.getToWallettype().select(this.data3.TransferRuleDataCreation.ToWallet1, { force: true })
   transferrulepage.getSubmitbttn().click()
   cy.wait(2000)
@@ -149,11 +150,11 @@ And('Select the From & To category.', function () {
     transferrulepage.getFromCategory().select(Domain, { force: true })
   })
   transferrulepage.getToCategory().select(this.data3.TransferRuleData.ToCategory, { force: true })
-  cy.readFile(GradeFile).then((data) => {
+  /*cy.readFile(GradeFile).then((data) => {
     let Grade = data.GradeName
     transferrulepage.getFromGrade().select(Grade, { force: true })
   })
-  transferrulepage.getToGrade().select(this.data3.TransferRuleData.ToGrade, { force: true })
+  transferrulepage.getToGrade().select(this.data3.TransferRuleData.ToGrade, { force: true })*/
 
 })
 
@@ -164,11 +165,11 @@ And('Select the From & To category for Transfer to Bank', function () {
     let Domain = data.Domainname
     transferrulepage.getToCategory().select(Domain, { force: true })
   })
-  transferrulepage.getFromGrade().select(this.data3.TransferRuleData.FromGrade, { force: true })
+  /*transferrulepage.getFromGrade().select(this.data3.TransferRuleData.FromGrade, { force: true })
   cy.readFile(GradeFile).then((data) => {
     let Grade = data.GradeName
     transferrulepage.getToGrade().select(Grade, { force: true })
-  })
+  })*/
 
 })
 
@@ -179,7 +180,7 @@ When('Click on Add Transfer Rule button.', function () {
 
 And('Select Status,Fixed Trf Level,Transfer type,Geographical Domain and Controlled Trf Level', function () {
 const uuid = () => Cypress._.random(1e3)
-const uuid1 = () => Cypress._.random(1e3)
+const uuid1 = () => Cypress._.random(1e4)
 MinimumTransferAmount = uuid()
 MaximumTransferAmount = uuid1()
 let MinimumTransferAmount,MaximumTransferAmount

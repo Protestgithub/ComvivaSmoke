@@ -107,6 +107,7 @@ And('Enter the Activated CIF number and search for the user', function () {
 Then('verify admin is able to see the Activated Message', function () {
 
   bankingActivationPage.getMobActivatedMsg().eq(0).should('have.text', ' Mobile Banking Activated ')
+  cy.wait(3000)
   bankingActivationPage.getInternetActivatedMsg().should('have.text', ' Internet Banking Activated ')
 
 })

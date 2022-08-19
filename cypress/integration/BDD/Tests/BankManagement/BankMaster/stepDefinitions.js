@@ -74,7 +74,7 @@ BankManagementPage.getBankType().select(this.data2.bankMaster.BankType, {force:t
 BankManagementPage.getPoolAccountType().select(this.data2.bankMaster.PoolAccountType, {force:true})
 BankManagementPage.getCBSType().select(this.data2.bankMaster.CBSType, {force:true})
 BankManagementPage.getPriority().type(Priority)
-BankManagementPage.getChooseFile().attachFile('AddBranches.csv')
+BankManagementPage.getChooseFile().attachFile('templates/AddBranches.csv')
 BankManagementPage.getSubmitButton().click({force: true})
 cy.wait(5000)
 BankManagementPage.getAssert().should('have.text',this.data2.bankMaster.assert)
@@ -122,7 +122,7 @@ And ('Enter all the details Except Bank Name', function(){
   BankManagementPage.getPoolAccountType().select(this.data2.bankMaster.PoolAccountType, {force:true})
   BankManagementPage.getCBSType().select(this.data2.bankMaster.CBSType, {force:true})
   BankManagementPage.getPriority().type(Priority)
-  BankManagementPage.getChooseFile().attachFile('AddBranches.csv')
+  BankManagementPage.getChooseFile().attachFile('templates/AddBranches.csv')
   BankManagementPage.getSubmitButton().click({force: true})
 }) 
 

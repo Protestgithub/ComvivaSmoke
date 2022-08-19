@@ -6,12 +6,13 @@ import 'cypress-iframe'
 import { Given, When, Then, And, Before } from "cypress-cucumber-preprocessor/steps";
 import OrderDetailsCreation from '../../../../../support/pageObjects/OrderDetailsCreation/OrderDetailsCreation';
 import "../../../../../support/commands";
+import loginPage from '../../../../../support/pageObjects/loginPage';
 
 
 
 //----------------Object Declaration-----------------------------------------------------------------
 
-
+const pageLogin = new loginPage()
 const orderDetailsCreationPage = new OrderDetailsCreation()
 
 

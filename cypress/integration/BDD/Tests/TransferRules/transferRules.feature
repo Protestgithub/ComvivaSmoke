@@ -1,5 +1,45 @@
 Feature: Transfer rules
 
+# Author: Likith R
+# Last Updated:
+# Comments 
+# Test Case_ID : TC_20
+# 
+@test
+
+Scenario: To verify that System admin is able to add O2C Transfer Rule successfully.
+Given Login into Mobiquity Portal as System admin Maker
+When User clicks on O2C transfer rules
+And Select Domain Name.
+And Select Category Name.
+And Select MFS Provider,Payment Instrument.
+Then Enter First Approval Limit.
+And Click on submit.
+And Click on confirm.
+
+
+
+############################################ Narendra #########################################
+
+
+
+# Author: Narendra
+# Last Updated:
+# Comments 
+# Test Case_ID : TC_164
+# 
+@test
+
+Scenario: To verify that proper error message should be displayed when invalid character is entered in the amount.
+Given Login into Mobiquity Portal as System admin Maker
+When User clicks on O2C transfer rules
+And Select Domain Name.
+And Select Category Name.
+And Select MFS Provider,Payment Instrument.
+Then Enter First Approval Limit
+And Click on submit.
+And confirm the displayed Error Message
+
 
 
 # Author: Likith R
@@ -149,46 +189,6 @@ Given Login into Mobiquity Portal as another System admin Checker1 after logout
 When User clicks on transfer rule approval
 And Select rule and approve
 
-# Author: Likith R
-# Last Updated:
-# Comments 
-# Test Case_ID : TC_20
-# 
-@test
-
-Scenario: To verify that System admin is able to add O2C Transfer Rule successfully.
-Given Login into Mobiquity Portal as System admin Maker
-When User clicks on O2C transfer rules
-And Select Domain Name.
-And Select Category Name.
-And Select MFS Provider,Payment Instrument.
-Then Enter First Approval Limit.
-And Click on submit.
-And Click on confirm.
-
-
-
-############################################ Narendra #########################################
-
-
-
-# Author: Narendra
-# Last Updated:
-# Comments 
-# Test Case_ID : TC_164
-# 
-@test
-
-Scenario: To verify that proper error message should be displayed when invalid character is entered in the amount.
-Given Login into Mobiquity Portal as System admin Maker
-When User clicks on O2C transfer rules
-And Select Domain Name.
-And Select Category Name.
-And Select MFS Provider,Payment Instrument.
-Then Enter First Approval Limit
-And Click on submit.
-And confirm the displayed Error Message
-
 
 ########################################## Sudheer #######################################################
 
@@ -214,3 +214,4 @@ And Login into Mobiquity Portal as another System admin Checker1 after logout
 When User clicks on transfer rule approval
 And Select rule and approve
 Then click on submit
+

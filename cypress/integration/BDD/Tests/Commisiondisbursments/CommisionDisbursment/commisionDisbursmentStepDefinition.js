@@ -17,9 +17,7 @@ import commisionDisbursment from '../../../../../support/pageObjects/CommisionDi
 //----------------Object Declaration----------------------------------------------------------
 
 const commisionDisbursmentPage = new commisionDisbursment()
-
-
-const cdCSVFile = 'bulk-upload-BA220510.csv'
+const cdCSVFile = 'templates/CommissionDisbursement.csv'
 
 //----------------BDD Hooks-----------------------------------------------------------------
 Before(() => {

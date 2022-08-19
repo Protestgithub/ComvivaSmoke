@@ -34,8 +34,6 @@ var name,SecurityProfile
 var LoginId1
 const uuid12 = () => Cypress._.random(1e8)
 var LoginId1= uuid12()
-const Password='000000'
-const Password1 = 'Com@13579'
 var loginId
 function getRandomName() {
 name = "";
@@ -60,7 +58,9 @@ Before(() => {
   cy.fixture('SecurityProfile').then(function (data6) {
     this.data6 = data6;
   })
-
+  cy.fixture('userData/SystemAdminLogin').then(function (data3) {
+    this.data3 = data3;
+  })
 }); 
 
 //---------------------------------------------Login----------------------------------------------------
@@ -207,9 +207,9 @@ And('Fill the details-loginRestrictions', function () {
 Given('Login into Mobiquity Portal as System admin Created by Master', function () {
   cy.launchURL(Cypress.env('Adminurl'))
   cy.log(loginId)
-  cy.login(loginId,Password)
+  cy.login(loginId,this.data3.Password)
   cy.log(loginId)
-  cy.login1(Password1)
+  cy.login1(this.data3.Password1)
   cy.wait(2000)
   cy.Passwordchange(this.data1.UserCreationSuccessMessage)
   cy.readFile(Sysfilelogin).then((data) => {
@@ -217,7 +217,7 @@ Given('Login into Mobiquity Portal as System admin Created by Master', function 
     cy.writeFile(Sysfilelogin, data)
     })
     cy.readFile(Sysfilelogin).then((data) => {
-    data.ChangePassword = Password1
+    data.ChangePassword = this.data3.Password1
     cy.writeFile(Sysfilelogin, data)
     })
     cy.readFile(Sysfilelogin).then((data) => {
@@ -227,9 +227,9 @@ Given('Login into Mobiquity Portal as System admin Created by Master', function 
 
 Given('Login into Mobiquity Portal as System admin Created by Master2', function () {
   cy.log(loginId)
-  cy.loginAgain(loginId,Password)
+  cy.loginAgain(loginId,this.data3.Password)
   cy.log(loginId)
-  cy.login1Again(Password1)
+  cy.login1Again(this.data3.Password1)
   cy.wait(2000)
   cy.Passwordchange(this.data1.UserCreationSuccessMessage)
   cy.readFile(Sysfilelogin).then((data) => {
@@ -237,7 +237,7 @@ Given('Login into Mobiquity Portal as System admin Created by Master2', function
     cy.writeFile(Sysfilelogin, data)
     })
     cy.readFile(Sysfilelogin).then((data) => {
-    data.ChangePassword2 = Password1
+    data.ChangePassword2 = this.data3.Password1
     cy.writeFile(Sysfilelogin, data)
     })
     cy.readFile(Sysfilelogin).then((data) => {
@@ -247,9 +247,9 @@ Given('Login into Mobiquity Portal as System admin Created by Master2', function
 
 Given('Login into Mobiquity Portal as System admin Created by Master3', function () {
   cy.log(loginId)
-  cy.loginAgain(loginId,Password)
+  cy.loginAgain(loginId,this.data3.Password)
   cy.log(loginId)
-  cy.login1Again(Password1)
+  cy.login1Again(this.data3.Password1)
   cy.wait(2000)
   cy.Passwordchange(this.data1.UserCreationSuccessMessage)  
   cy.readFile(Sysfilelogin).then((data) => {
@@ -257,7 +257,7 @@ Given('Login into Mobiquity Portal as System admin Created by Master3', function
     cy.writeFile(Sysfilelogin, data)
     })
     cy.readFile(Sysfilelogin).then((data) => {
-    data.ChangePassword3 = Password1
+    data.ChangePassword3 = this.data3.Password1
     cy.writeFile(Sysfilelogin, data)
     })
     cy.readFile(Sysfilelogin).then((data) => {
@@ -398,7 +398,7 @@ And('Approve the Users and save loginID', function () {
     cy.writeFile(Sysfilelogin, data)
     })
     cy.readFile(Sysfilelogin).then((data) => {
-    data.DefaultPassword = Password
+    data.DefaultPassword = this.data3.Password
     cy.writeFile(Sysfilelogin, data)
     })
     cy.readFile(Sysfilelogin).then((data) => {
@@ -417,7 +417,7 @@ And('Approve the Users and save loginID2', function () {
     cy.writeFile(Sysfilelogin, data)
     })
     cy.readFile(Sysfilelogin).then((data) => {
-    data.ChangePassword2 = Password1
+    data.ChangePassword2 = this.data3.Password1
     cy.writeFile(Sysfilelogin, data)
     })
     cy.readFile(Sysfilelogin).then((data) => {
@@ -436,7 +436,7 @@ And('Approve the Users and save loginID3', function () {
     cy.writeFile(Sysfilelogin, data)
     })
     cy.readFile(Sysfilelogin).then((data) => {
-    data.ChangePassword3 = Password1
+    data.ChangePassword3 = this.data3.Password1
     cy.writeFile(Sysfilelogin, data)
     })
     cy.readFile(Sysfilelogin).then((data) => {

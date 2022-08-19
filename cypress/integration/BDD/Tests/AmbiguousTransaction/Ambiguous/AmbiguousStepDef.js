@@ -69,10 +69,7 @@ Before(() => {
    {
        this.data6 = data6;
    })
-    cy.fixture('GradeManagement').then(function(data01)
-     {
-         this.data01 = data01;
-     })
+
 });
 
 //----------------Launch Mobiquity Portal URL and Login--------------------------------------
