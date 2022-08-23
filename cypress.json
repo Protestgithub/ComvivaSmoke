@@ -5,6 +5,8 @@
     "viewportWidth": 1200,
     "viewportHeight": 900,
     "trashAssetsBeforeRun": true,
+    "videoCompression":false,
+    "videoUploadOnPasses":false,
     "downloadsFolder":"cypress/fixtures/templates",
 
     "env": {
@@ -17,7 +19,6 @@
     "retries": {
       "runMode": 0,
       "openMode": 0
-    },
-    "video":false
+    }
 
   }
