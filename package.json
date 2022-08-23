@@ -19,7 +19,7 @@
   "license": "ISC",
   "devDependencies": {
     "@types/cypress-cucumber-preprocessor": "^4.0.1",
-    "cypress": "^9.7.0",
+    "cypress": "^9.6.1",
     "cypress-cucumber-attach-screenshots-to-failed-steps": "^1.0.0",
     "cypress-cucumber-preprocessor": "^4.3.1",
     "cypress-fail-fast": "^5.0.0",
