@@ -47,6 +47,9 @@ var Amount = uid()
 var name, BAMobileNumber
 var TransactionFleO2C = "cypress/fixtures/userData/TransactionFile.json"
 var filename = "cypress/fixtures/userData/O2CBulkData.json"
+var BBAFile = "cypress/fixtures/userData/BusinessUserSuspensionData.json"
+var O2CFile = "cypress/fixtures/userData/O2Cdata.json"
+
 function getRandomName() {
   name = "";
   var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
@@ -125,6 +128,31 @@ When('Navigate to Operator to channel and click on O2C transfer initiate', funct
 And('Enter All the Mandatory details', function () {
   cy.wait(3000)
   O2CTransferInitiatePage.getMSISDN().type(this.data5.O2CTransferInitiate.msisdn, { force: true })
+  cy.wait(2000)
+
+  cy.get('.fd-page.iframeContainer.svelte-1v5e28n > iframe').then(($iframe) => {
+    const $body = $iframe.contents().find('body')
+    const $win = $iframe[0].contentWindow
+
+    const stub = cy.stub()
+    if (cy.stub($win, 'alert', () => false)
+      .as('windowConfirm')) {
+
+    }
+
+    else {
+      cy.stub($win.console, 'log').as('consoleLog')
+      cy.wrap($body)
+        .find('input[name="amount"]').click({ force: true })
+        .should(function () {
+
+          expect(this.windowConfirm).to.be.calledWith("Channel User Does Not Exist")
+
+        })
+    }
+
+  })
+
   O2CTransferInitiatePage.getTransferAmount().type(TransferAmount, { force: true })
   O2CTransferInitiatePage.getReferenceNumber().type(ReferenceNumber, { force: true })
   O2CTransferInitiatePage.getType().select(this.data5.O2CTransferInitiate.type, { force: true })
@@ -249,8 +277,6 @@ When('Navigate to Operator to channel and click on O2C transfer initiate', funct
 
 And('Enter All the Mandatory Details', function () {
   cy.wait(2000)
-  var BBAFile = "cypress/fixtures/userData/BusinessUsersData.json"
-  var O2CFile = "cypress/fixtures/userData/O2Cdata.json"
   cy.readFile(BBAFile).then((data) => {
     var O2CMsisdn = data.registeredMobile
     //O2CTransferInitiatePage.getMSISDN().type("7735575036", {force: true})
@@ -344,8 +370,6 @@ var O2CMsisdn
 And('Enter All the Mandatory Details1', function () {
   cy.wait(3000)
   cy.wait(2000)
-  var BBAFile = "cypress/fixtures/userData/BusinessUsersData.json"
-  var O2CFile = "cypress/fixtures/userData/O2Cdata.json"
   cy.readFile(BBAFile).then((data) => {
     O2CMsisdn = data.registeredMobile
     O2CTransferInitiatePage.getMSISDN().type("7735575036", { force: true })
