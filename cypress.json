@@ -4,7 +4,7 @@
     "pageLoadTimeout": 15000,
     "viewportWidth": 1200,
     "viewportHeight": 900,
-    "trashAssetsBeforeRun": true,
+    "trashAssetsBeforeRuns": true,
     "videoCompression":false,
     "videoUploadOnPasses":false,
     "video":false,
