@@ -3,25 +3,6 @@ Feature: User Management : Subscriber
     This feature includes registering, Modifying and Approval of Business Admin and
     Customer Support Admin Users by System Admin
 
-
-# Author: Chetan.S
-# Last Updated: 25-04-2022
-# Comments 
-# Scenario_ID :
-# TC_70
-@test
-
-Scenario:To verify that System Admin/businsess user is able to modify Subscriber successfully.
-Given Login into Mobiquity Portal as System admin Maker
-When Navigate to User Management and Click on manage user
-And enter user mobile number and search the user
-And System Admin is able to view details
-And System Admin is able to edit subscriber details
-Then Confirm the edit details
-And Navigate to My Activity and Apply Modified User filters
-Then Assert Created Subscriber Mobile Number and Write Created on time
-
-
 # Author: Chetan.S
 # Last Updated: 25-04-2022
 # Comments 
@@ -113,3 +94,16 @@ And Click on view Details and Click on Account info
 And select either Lock outgoing payments or Lock incoming payments or Lock both
 Then Click On lock all
     
+# Author:
+# Last Updated:
+# Comments 
+# Scenario_ID : TC_142
+# 
+@test
+
+Scenario:To verify that admin user can reset the credentials of Business user and customer's successfully.
+Given Login into Mobiquity Portal as System admin Maker
+When Navigate to User Management and Click on manage user
+And Enter Mobile number and KYC number in search menu1
+And Click on view Details and Click on Credentials
+And Click on refresh icon corresponding to the respective authentication factor
