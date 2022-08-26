@@ -16,7 +16,7 @@
     },
     "projectId": "yizpik",
     "chromeWebSecurity": false,
-  
+  "numTestsKeptInMemory": 0,
     "retries": {
       "runMode": 0,
       "openMode": 0
