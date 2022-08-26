@@ -3,20 +3,6 @@ Feature: User Management : Subscriber
     This feature includes registering, Modifying and Approval of Business Admin and
     Customer Support Admin Users by System Admin
 
-# Author:
-# Last Updated:
-# Comments 
-# Scenario_ID : TC_142
-# 
-@test
-
-Scenario:To verify that admin user can reset the credentials of Business user and customer's successfully.
-Given Login into Mobiquity Portal as System admin Maker
-When Navigate to User Management and Click on manage user
-And Enter Mobile number and KYC number in search menu1
-And Click on view Details and Click on Credentials
-And Click on refresh icon corresponding to the respective authentication factor
-
 # Author:Monica
 # Last Updated:
 # Comments 
