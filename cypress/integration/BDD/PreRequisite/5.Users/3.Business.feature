@@ -1,33 +1,12 @@
-Feature: User Management : Buissness
+Feature: User Management : 3.Buissness
 
 ###################################### Kalyani ####################################################
+
 
 # Author: Kalyani M
 # Last Updated:
 # Comments : Business User Suspension
 # Test Case_ID : TC_59
-# 
-
-@test
-
-Scenario: To Verify that System Admin/Business Admin can initiate suspension of the businsess user.
-Given Login into Mobiquity Portal as System admin Maker
-When Navigate to User Management and Click on register
-And Select User type as Business and Select user role
-And Enter all the required business user details1
-Then Confirmation message is displayed
-And Navigate to My Activity and Apply Add User filters
-And Assert Created Buissness User Mobile Number for Suspension and Write Created on time
-Then Logout
-
-
-Scenario: To Verify that System Admin/Business Admin can approve suspension of the businsess user.
-Given Login into Mobiquity Portal as another System admin Checker1 after logout
-When Navigate to Approvals and filter by Submitted status 
-And User click on Suspended submitted user data
-And Approve the Users
-Then User status is approved
-Then Logout
 
 Scenario: To Verify that System Admin/Business Admin can resume suspension of the businsess user.
 Given Login into Mobiquity Portal as System admin Maker after Logout
