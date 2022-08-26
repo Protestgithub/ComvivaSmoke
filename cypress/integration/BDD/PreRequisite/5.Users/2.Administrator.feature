@@ -1,4 +1,4 @@
-Feature: User Management : Administrator
+Feature: User Management : 2.Administrator
 
     This feature includes registering, Modifying and Approval of Business Admin and
     Customer Support Admin Users by System Admin
