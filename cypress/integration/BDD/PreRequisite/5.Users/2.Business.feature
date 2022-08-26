@@ -1,60 +1,4 @@
-Feature: User Management : Buissness
-
-################################# Likith   #########################################################
-
-# Author: Likith R
-# Last Updated:
-# Comments
-# Test Case_ID : TC_63
-#
-@test
-
-Scenario: To verify that the Proper error message should get displayed on WEB if user trying to modify businsess user for which request is already in approval stage.
-Given Login into Mobiquity Portal as System admin Maker
-When Navigate to User Management and Click on manage user
-And enter user mobile number and search
-When User Click on eye button
-And Click on edit
-And Edit the required details >> Click on Next
-And Click on save
-
-##################################### Arpitha ####################################################
-
-
-
-
-# Author: Arpitha C
-# Last Updated: 25/04/2022
-# Comments : refered here is narendra 
-# Scenario_ID : TC_56 
-@test
-
-Scenario: System admin should be able to Initite modification searching with all values (Mobile, KYC, Email and Login)
-Given Login into Mobiquity Portal as System admin Maker
-When Navigate to Manage User, and search Business Admin
-And Search with the Mobile Number
-And System Admin is able to view details
-And System Admin is able to edit details of the user
-Then Confirm the edit details
-And Navigate to My Activity and Apply Modified User filters
-Then Assert Created Buissness User Mobile Number and Write Created on time
-# When Navigate to Manage User, and search Business Admin
-#And Search with the EmailID
-#And System Admin is able to view details
-#And System Admin is able to edit details of the user
-#Then Confirm the edit details
-#When Navigate to Manage User, and search Business Admin
-#And Search with the LoginID
-#And System Admin is able to view details
-#And System Admin is able to edit details of the user
-#Then Confirm the edit details
-#When Navigate to Manage User, and search Business Admin
-#And Search with the KYC Number
-#And System Admin is able to view details
-#And System Admin is able to edit details of the user
-#Then Confirm the edit details
-
-
+Feature: User Management : 2.Buissness
 
 # Author: Arpitha C
 # Last Updated: 25/04/2022
@@ -112,3 +56,33 @@ When Navigate to User Management and Click on register
 And Select User type as Business and Select user role
 And Enter registered email id value
 Then Email Error message is displayed
+
+###################################### Kalyani ####################################################
+
+
+# Author: Kalyani M
+# Last Updated:
+# Comments : Business User Suspension
+# Test Case_ID : TC_59
+# 
+
+@test
+
+Scenario: To Verify that System Admin/Business Admin can initiate suspension of the businsess user.
+Given Login into Mobiquity Portal as System admin Maker
+When Navigate to User Management and Click on register
+And Select User type as Business and Select user role
+And Enter all the required business user details1
+Then Confirmation message is displayed
+And Navigate to My Activity and Apply Add User filters
+And Assert Created Buissness User Mobile Number for Suspension and Write Created on time
+Then Logout
+
+
+Scenario: To Verify that System Admin/Business Admin can approve suspension of the businsess user.
+Given Login into Mobiquity Portal as another System admin Checker1 after logout
+When Navigate to Approvals and filter by Submitted status 
+And User click on Suspended submitted user data
+And Approve the Users
+Then User status is approved
+Then Logout
