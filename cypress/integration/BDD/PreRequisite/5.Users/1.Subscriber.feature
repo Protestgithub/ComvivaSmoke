@@ -104,3 +104,21 @@ When Navigate to Approvals
 And Admin click on Resumeded user data
 And Approve the Resumed User
 Then Verify the user Resumed approval message
+
+
+# Author: Chetan.S
+# Last Updated: 25-04-2022
+# Comments 
+# Scenario_ID :
+# TC_70
+@test
+
+Scenario:To verify that System Admin/businsess user is able to modify Subscriber successfully.
+Given Login into Mobiquity Portal as System admin Maker
+When Navigate to User Management and Click on manage user
+And enter user mobile number and search the user
+And System Admin is able to view details
+And System Admin is able to edit subscriber details
+Then Confirm the edit details
+And Navigate to My Activity and Apply Modified User filters
+Then Assert Created Subscriber Mobile Number and Write Created on time
