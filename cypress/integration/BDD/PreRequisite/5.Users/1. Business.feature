@@ -46,7 +46,7 @@ And Navigate to My Activity and Apply Modified User filters
 Then Assert Created Telco-Operator Mobile Number and Write Created on time
 Then Logout
 Given Login into Mobiquity Portal as another System admin Checker1 after logout
-#When Navigate to Approvals and filter by Submitted status
+When Navigate to Approvals and filter by Modification of user status
 And User click on submitted user data
 Then Approve the Users
 
