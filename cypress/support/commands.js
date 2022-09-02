@@ -118,12 +118,12 @@ Cypress.Commands.add('login1Again', (Password) => {
     pageLogin.getchangepassword().click({ force: true })
     cy.wait(3000)
 })
-
+const word ="Com@13579"
 Cypress.Commands.add('SysAdminlogin', () => {
     cy.frameLoaded(pageLogin.getiFrame())
     cy.readFile(Sysfilelogin).then((data) => {
         let loginID = data.LoginId
-        let word = data.ChangePassword
+        //let word = data.ChangePassword
         pageLogin.getInputForm().eq(0).type(loginID)
         pageLogin.getInputForm().eq(1).type(word)
         pageLogin.getLoginBtn().eq(0).click()
@@ -133,7 +133,7 @@ Cypress.Commands.add('SysAdminlogin', () => {
 Cypress.Commands.add('SysAdminloginAgain', () => {
     cy.readFile(Sysfilelogin).then((data) => {
         let loginID = data.LoginId
-        let word = data.ChangePassword
+       // let word = data.ChangePassword
         pageLogin.getInputForm().eq(0).type(loginID)
         pageLogin.getInputForm().eq(1).type(word)
         pageLogin.getLoginBtn().eq(0).click()
@@ -144,7 +144,7 @@ Cypress.Commands.add('SysAdminlogin2', () => {
     cy.frameLoaded(pageLogin.getiFrame())
     cy.readFile(Sysfilelogin).then((data) => {
         let loginID = data.LoginId2
-        let word = data.ChangePassword2
+      //  let word = data.ChangePassword2
         pageLogin.getInputForm().eq(0).type(loginID)
         pageLogin.getInputForm().eq(1).type(word)
         pageLogin.getLoginBtn().eq(0).click()
@@ -154,7 +154,7 @@ Cypress.Commands.add('SysAdminlogin2', () => {
 Cypress.Commands.add('SysAdminlogin2Again', () => {
     cy.readFile(Sysfilelogin).then((data) => {
         let loginID = data.LoginId2
-        let word = data.ChangePassword2
+       // let word = data.ChangePassword2
         pageLogin.getInputForm().eq(0).type(loginID)
         pageLogin.getInputForm().eq(1).type(word)
         pageLogin.getLoginBtn().eq(0).click()
@@ -164,7 +164,7 @@ Cypress.Commands.add('SysAdminlogin2Again', () => {
 Cypress.Commands.add('SysAdminlogin3', () => {
     cy.readFile(Sysfilelogin).then((data) => {
         let loginID = data.LoginId3
-        let word = data.ChangePassword3
+    //    let word = data.ChangePassword3
         pageLogin.getInputForm().eq(0).type(loginID)
         pageLogin.getInputForm().eq(1).type(word)
         pageLogin.getLoginBtn().eq(0).click()

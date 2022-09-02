@@ -1,6 +1,6 @@
 {
-  "MSISDN*": "771560022",
+  "MSISDN*": "",
   "IMSI": "",
-  "CHURN_SUBSCRIBER*": "Y",
-  "CHURN_CHANNEL_USER*": "N"
+  "CHURN_SUBSCRIBER*": "",
+  "CHURN_CHANNEL_USER*": ""
 }

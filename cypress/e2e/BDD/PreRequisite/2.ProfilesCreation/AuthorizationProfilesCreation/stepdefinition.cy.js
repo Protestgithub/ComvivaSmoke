@@ -1,0 +1,157 @@
+/// <reference types="Cypress" />
+/// <reference types = "Cypress-iframe"/>
+
+//----------------Imports---------------------------------------------------------------------
+import 'cypress-iframe'
+import { Given, When, Then, And,Before} from "@badeball/cypress-cucumber-preprocessor";
+import loginPage from '../../../../../support/pageObjects/loginPage';
+import homePage from '../../../../../support/pageObjects/homePage';
+import { recurse } from 'cypress-recurse';
+import "../../../../../support/commands";
+import "../../../../../support/securityCommands";
+import register from '../../../../../support/pageObjects/UserManagement/register';
+import approvals from '../../../../../support/pageObjects/UserManagement/approvals';
+import manageUsers from '../../../../../support/pageObjects/UserManagement/manageUsers';
+import SecurityProfilePage from '../../../../../support/pageObjects/SecurityProfile/SecurityProfilePage';
+import "../../../../../support/authourizationcommands"
+import authorizationManagement from '../../../../../support/pageObjects/AuthorizationProfileManagement/authorizationManagement';
+
+//----------------Object Declaration----------------------------------------------------------
+
+const pageLogin = new loginPage()
+const welcomePage = new homePage()
+const securityProfilePage = new SecurityProfilePage()
+const authorizationProfilePage = new authorizationManagement()
+var AuthProfileName = 'cypress/fixtures/profileData/AuthProfile.json'
+var profName
+
+
+function getRandomName() {
+  profName = "";
+  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+  for (var i = 0; i < 5; i++)
+  profName += possible.charAt(Math.floor(Math.random() * possible.length));
+  return profName;
+}
+
+
+
+
+//----------------BDD Hooks-----------------------------------------------------------------
+Before(() => {
+  cy.fixture('login').then(function (data1) {
+    this.data1 = data1;
+  })
+  cy.fixture('UserManagement').then(function (data2) {
+    this.data2 = data2;
+  })
+  cy.fixture('authorizationProfile').then(function (data7) {
+    this.data7 = data7;
+  })
+});
+
+//---------------------------------------------Login----------------------------------------------------
+//---------------------------------------------System Admin Login----------------------------------------------------
+
+//----------------------------------------------------------------------------------------------------
+
+
+//------------------------ Authorization Profile Management----------------------------------
+
+//------------------------ Authorization Profile Management----------------------------------
+
+//----------TC_149-----To verify that system admin should be able to add authorization profile------------------------------
+
+When('Select Authorization profile and add profile', function () {
+
+  authorizationProfilePage.getAuthorizationProfileManagement().scrollIntoView()
+  authorizationProfilePage.getAuthorizationProfileManagement().click({ force: true })
+  authorizationProfilePage.getAddProfile().click({ force: true })
+})
+
+And('select Subscriber user type and select user role', function () {
+  cy.wait(2000)
+  authorizationProfilePage.getAuthorizationUserType().click({ force: true })
+  cy.wait(2000)
+  authorizationProfilePage.getAdministratorType().focused() 
+  cy.wait(2000)
+  authorizationProfilePage.getAuthorizationUserRole().contains('Subscriber').click({ force: true })
+
+})
+//-----------------------SubscriberM1S1----------------------
+
+Then('Fill all Details and Create Subscriber authorization profile', function () {
+  cy.wait(3000)
+  authorizationProfilePage.getProfileName().clear({ force: true }).type(getRandomName(), { force: true }),
+    authorizationProfilePage.getUserServicePreferences().contains('ALL').click({ force: true })
+  recurse(
+    () => authorizationProfilePage.getProfileName().clear({ force: true }).type(getRandomName(), { force: true }),
+    () => authorizationProfilePage.getUserServicePreferences().contains('ALL').click({ force: true }),
+    (uniqueness) => (uniqueness) == authorizationProfilePage.getProfileNameExist().contains
+      ('Authorization profile name already exists,please try with different name').should('be.visible'),
+    authorizationProfilePage.getUserServicePreferences().contains('ALL').click({ force: true }),
+
+  )
+  cy.readFile(AuthProfileName).then((data) => {
+    data.SubscriberProfileName = profName
+    cy.writeFile(AuthProfileName, data)
+  })
+  cy.selectModule()
+  cy.wait(3000)
+  authorizationProfilePage.getAdd().click({ force: true })
+  cy.wait(5000)
+  authorizationProfilePage.getConfirm().click({ force: true })
+  // authorizationProfilePage.getProfileSuccessMessage().should('contain.text', this.data5.authorizationprofilesuccess)
+  authorizationProfilePage.getProfileDoneButton().click({ force: true })
+
+})
+
+
+
+//----------------------Approvals------------------------
+Then('User approval for Authorization profile', function () {
+  cy.wait(3000)
+  authorizationProfilePage.getApprovals().scrollIntoView()
+  authorizationProfilePage.getApprovals().click({ force: true })
+    cy.wait(2000)
+  authorizationProfilePage.getApprovalButtonTab().click()
+  
+  //-------------------Added wait until------------------------
+  cy.waitUntil(()=>{
+    return cy.iframe().find('h4.text-secondary').contains('Approvals')
+  })
+  cy.wait(2000)
+  authorizationProfilePage.getApproveButton().click({ force: true })
+  authorizationProfilePage.getApproveButtonSubmit().click({ force: true })
+  //authorizationProfilePage.getApproveConfirmationMessage().should('contain.text'.this.data5.addconfirmationMessage)
+})
+
+//----------------------Administrator--------BusinessAdmin-----------------------------------
+//----------------------Administrator--------CustomercareAdmin-----------------------------------
+
+//----------------------Business-------------Distributor---------------------------------------------------
+
+
+//----------TC_150-----To verify that system admin should be able to ViewAuthorization profile for the selected category------------------------------
+When('Select Authorization profile', function () {
+  cy.wait(3000)
+  authorizationProfilePage.getAuthorizationProfileManagement().click({ force: true })
+})
+
+Then('View Profiles', function () {
+  cy.wait(3000)
+  // authorizationProfilePage.getViewProfile().any().click({ force: true });
+  authorizationProfilePage.getViewProfile().click({ force: true })
+  authorizationProfilePage.getViewProfileSuccess().should('have.text', this.data5.viewprofile)
+
+})
+
+
+//----------TC_151----To verify that system admin should be able to modify an already created authorization profile-------------------------------
+
+
+//----------------------Approvals------------------------
+
+//----------TC_152-------To verify that System admin should be able to delete an authorization profile----------------------------
+
+

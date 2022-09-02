@@ -12,6 +12,10 @@ class manageUsers {
         return cy.iframe().find('span.font-weight-bold')
 
     }
+    getBusinessUserDetail() {
+
+        return cy.iframe().find('.mat-cell.cdk-cell.cdk-column-user-type.mat-column-user-type.ng-star-inserted')
+        }
 getDateRangeAssert() {
         return cy.iframe().find('.modal-label.more-details-header')
     }

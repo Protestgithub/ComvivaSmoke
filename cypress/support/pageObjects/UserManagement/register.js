@@ -161,6 +161,19 @@ class register {
         return cy.iframe().find('button[data-test-id="next"]').eq(3)
 
     }
+//Newly added methods for business
+
+    getErrorDone()
+    {
+        return cy.iframe().find('button#done.mat-focus-indicator.button-primary.done.mx-auto.next-button.mat-button.mat-button-base')
+    }
+
+    getErrorMessage()
+    {
+        return cy.iframe().find('p.text-center')
+    }
+
+//-------------End-------------------------------------/
 
     getSubmitButton()
     {
