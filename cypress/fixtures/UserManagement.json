@@ -1,6 +1,8 @@
 {
   "personalInfo": {
     "firstName": "Beta",
+    "securityProfile3": "BusinessAdminSecurityProfile",
+    "authProfile3": "BusinessAdminDefault Profile",
     "lastName": "Mobiquity",
     "emailID": "randy@gmail.com",
     "preferredLang": "English",
@@ -82,6 +84,7 @@
   "userRole2": "Telco Operator",
   "userRole3": "AtmMachine",
   "userRole4": "System Admin",
+  "userRole5": "Business Admin",
   "registrationMode": "Single User",
   "mob70": "7782356712",
   "mob": "7718797551",
@@ -226,6 +229,6 @@
   "InvalidLoginId": "!@#$%^&*()",
   "Sucess": "Success",
   "Marketing": "Marketing profile added successfully",
-  "LockOutgoing":"All Outgoing Payments locked successfully",
-  "UnlockOutgoing":"All Outgoing Payments unlocked successfully"
+  "LockOutgoing":"User Wallet Locked successfully",
+  "UnlockOutgoing":"User Wallet Unlocked successfully"
 }

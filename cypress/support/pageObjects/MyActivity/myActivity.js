@@ -66,5 +66,9 @@ class myActivity{
     getCreatedOnTime(){
         return cy.iframe().find('[class="mat-tooltip-trigger auto-scroll user-select-all ng-star-inserted"]')
     }
+
+    getAuthCreatedOnTime(){
+        return cy.iframe().find('.mat-cell.cdk-cell.cdk-column-created-on.mat-column-created-on.ng-star-inserted')
+    }
 }
 export default myActivity

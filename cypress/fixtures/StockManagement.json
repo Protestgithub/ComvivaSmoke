@@ -1,42 +1,49 @@
 {
-    "stockInitiation":
-    {
-        "provider": "MFS1",
-        "stockFrom": "TB101"
-    },
-    
-         "trasanctionid": {
-            "id1": "XX220712.1807.A45021"
-        },
-        "msisdn": {
-            "subscribermsisdn": "7799184364"
-        },
-        "date": {
-            "fromdate": "01/07/2022",
-            "todate": "12/07/2022"
-        },
-        "stocktypeA": {
-            "value": "Stock Creation"
-        },
-        "stockEnq_loadDetails_status": {
-            "value": "Transaction Success"
-        },
-        "usertype": {
-            "value": "Subscriber"
-        },
-        "wallettype": {
-            "value": "Normal"
-        },
-        "selectBank": {
-            "bankname": "TB101"
-        },
-        "bankaccnumber": {
-            "number": "XXX598229"
-        },
-        "stockwithdrawerrormessage": "Transfer Amount should be less than the Available balance",
-        "stockwithdrawerrormessage2": "Transfer Amount should be numeric",
-        "stockInitErrorMessage": "Please enter a valid Requested Amount",
-        "stockEAInitiated": "Stock initiated with Transaction ID",
-        "reimbursementinitiated": "Reimbursement is successfully initiated for user  for transactionId",
-        "stockReimbursementApproval": "Stock Reimbursement for user Network for currency"
-    }
+  "stockInitiation": {
+    "provider": "MFS1",
+    "stockFrom": "TB101"
+  },
+  "trasanctionid": "XX221021.1634.A30204",
+  "msisdn": {
+    "subscribermsisdn": "7799184364"
+  },
+  "date": {
+    "fromdate": "01/07/2022",
+    "todate": "12/07/2022"
+  },
+  "stocktypeA": {
+    "value": "Stock Creation"
+  },
+  "stockEnq_loadDetails_status": {
+    "value": "Transaction Initiated"
+  },
+  "usertype": {
+    "value": "Channel"
+  },
+  "wallettype": {
+    "value": "Normal"
+  },
+  "selectBank": {
+    "bankname": "TB101"
+  },
+  "bankaccnumber": {
+    "number": "XXX598229"
+  },
+  "stockwithdrawerrormessage": "Transfer Amount should be less than the Available balance",
+  "stockwithdrawerrormessage2": "Transfer Amount should be numeric",
+  "stockInitErrorMessage": "Please enter a valid Requested Amount",
+  "reimbursementinitiated": "Reimbursement is successfully initiated for user  for transactionId",
+  "stockReimbursementApproval": "Stock Reimbursement for user Network for currency",
+  "stockReimbursementApprovalErrorMessage": "No transactions available currently for approval at this level",
+  "stockInitiationAssertion": "Stock transfer is successfully initiated with the transaction ID:",
+  "stockApproval1Msg": "Approval from the second level is needed,Transaction ID :",
+  "stockApproval2Msg": "Stock is approved with Transaction ID :",
+  "transferAmount": 540,
+  "stockEAInitiated": "Stock initiated with Transaction ID",
+  "stockEAapproval1message": "Approval from the second level is needed",
+  "stockEAapprovedmessage": "Stock is approved",
+  "stockReimbursementErrorMessage": "Balance can not be negative",
+  "Balance": "145786939.13",
+  "Amount": 712,
+  "CreditedStock": 145786227.13
+}

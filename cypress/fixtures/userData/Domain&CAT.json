@@ -1,9 +1,16 @@
 {
-  "Domainname": "Wholesaler2929",
-  "DomainCode": 77104,
-  "CategoryNum": 28,
-  "CategoryName": "Wholesaler2929",
-  "CategoryCode": 77104,
-  "CategoryDomainName": "Wholesaler2929",
-  "ParentCategoryName": "Wholesaler2929"
+  "Domainname": "Telco Operator6513",
+  "DomainCode": 21112,
+  "CategoryNum": 41,
+  "CategoryName": "Telco Operator6513",
+  "CategoryCode": "Telco Operator6513",
+  "CategoryDomainName": "Telco Operator6513",
+  "ParentCategoryName": "Telco Operator6513",
+  "BADomainname": "Distributer4146",
+  "BADomainCode": 33891,
+  "BACategoryNum": 41,
+  "BACategoryName": "Distributer4146",
+  "BACategoryCode": "Distributer4146",
+  "BACategoryDomainName": "Distributer4146",
+  "BAParentCategoryName": "Distributer4146"
 }

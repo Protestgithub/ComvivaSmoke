@@ -1,20 +1,24 @@
 {
   "Errormsg":"Domain Name already exists in systemDomain Code already exists in system",
-    "domainData":{
-        "domainName":"Wholesaler",
-        "domainCode":"Wholesaler",
+  "Successmsg":" Domain Added Successfully",
+  "Successmsg1":"Category Add Initiated Successfully",
+  "Successmsg2":"Category Approved Successfully",
+  
+  "domainData":{
+        "domainName":"Merchant",
+        "domainCode":"Merchant",
         "domainCategories":""
       },
       "domainData1":{
-        "domainName":"Wholesaler",
-        "domainCode":"Wholesaler",
+        "domainName":"Merchant",
+        "domainCode":"Merchant",
         "domainCategories":""
       },
       "CategoryData":{
-        "categoryname":"Wholesaler",
-        "categoryCode":"Wholesaler",
-        "Domain":"Wholesaler",
-        "ParentCategory":"Wholesaler"
+        "categoryname":"Merchant",
+        "categoryCode":"Merchant",
+        "Domain":"Merchant",
+        "ParentCategory":"Merchant"
 
       }
 }

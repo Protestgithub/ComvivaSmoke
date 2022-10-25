@@ -6,7 +6,7 @@ class authorizationManagement {
         return cy.get('#collapsible_listnode_18 > .fd-nested-list__title')
     }
     getApprovalButtonTab() {
-        return cy.get('[data-testid="menu.ums_approvals"] > .fd-nested-list > :nth-child(1) > [data-testid="test-undefined"]')
+        return cy.get('[data-testid="menu.approvals"] > .fd-nested-list > :nth-child(1) > [data-testid="test-undefined"]')
     } 
 
 
@@ -86,7 +86,7 @@ class authorizationManagement {
     }
 
     getEditProfile() {
-        return cy.iframe().find('[id="edit-profile-1"]')
+        return cy.iframe().find('.mat-icon.notranslate.viewProfileEditIcon.mat-icon-no-color')
     }
 
     getModifyProfile() {
@@ -156,6 +156,6 @@ class authorizationManagement {
         ('Authorization profile name already exists,please try with different name')
     }
 
-
+   
 }
 export default authorizationManagement

@@ -1,7 +1,7 @@
 {
     "SerialNumber" : "28",
-    "MFSProvider" : "103",
-    "ReceiverSVATypeID" :"89264570",
+    "MFSProvider" : "101",
+    "ReceiverSVATypeID" :"12",
     "TransferDate" :"17-06-2022",
     "PaymentType":"Cash",
     "Remarks":"testuser",
