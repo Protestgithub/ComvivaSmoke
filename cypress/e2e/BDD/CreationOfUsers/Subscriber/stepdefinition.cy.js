@@ -4,15 +4,15 @@
 //----------------Imports---------------------------------------------------------------------
 import 'cypress-iframe'
 import { Given, When, Then, And, Before } from "@badeball/cypress-cucumber-preprocessor";
-import loginPage from '../../../../../support/pageObjects/loginPage';
-import homePage from '../../../../../support/pageObjects/homePage';
-import "../../../../../support/utils/Generic";
-import "../../../../../support/utils/subscriberCommands";
-import register from '../../../../../support/pageObjects/UserManagement/register';
-import approvals from '../../../../../support/pageObjects/UserManagement/approvals';
-import manageUsers from '../../../../../support/pageObjects/UserManagement/manageUsers';
-import myActivity from '../../../../../support/pageObjects/MyActivity/myActivity';
-import { recurse } from 'cypress-recurse';
+import loginPage from '../../../../support/pageObjects/loginPage';
+import homePage from '../../../../support/pageObjects/homePage';
+import "../../../../support/utils/Generic";
+import "../../../../support/utils/subscriberCommands";
+import register from '../../../../support/pageObjects/UserManagement/register';
+import approvals from '../../../../support/pageObjects/UserManagement/approvals';
+import manageUsers from '../../../../support/pageObjects/UserManagement/manageUsers';
+import myActivity from '../../../../support/pageObjects/MyActivity/myActivity';
+
 
 //----------------Object Declaration-----------------------------------------------------------------
 
