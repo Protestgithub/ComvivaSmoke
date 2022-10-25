@@ -51,60 +51,6 @@ cy.fixture('BankManagement').then(function (data03) {
 
 //---------------------------------------------Login----------------------------------------------------
 //---------------------------------------------System Admin Login----------------------------------------------------
-//-------------------------------------Bank Creation-------------------------------------------------
-
-Given('Login with Master Admin Checker', function () {
-    cy.launchURL(Cypress.env('Adminurl'))
-    cy.login(this.data1.masteradminchecker.sysAdminUser1, this.data1.masteradminchecker.sysAdminPwd1)
-    cy.wait(2000)
-  })
-When('Navigate to Bank Master and Click on it', function () {
-  BankManagementPage.getBankMaster().click({ force: true })
-  BankManagementPage.getAddBank().click()
-  cy.wait(3000)
-})
-
-And('Enter All the Required Details', function () {
-    cy.wait(3000)
-  cy.getCSVfile()
-  BankManagementPage.getProvider().select(this.data03.bankMaster.Provider, { force: true })
-  BankManagementPage.getBankName().type(getbankName(), { force: true })
-  cy.readFile(filename).then((data) => {
-    data.BankName = name
-    cy.writeFile(filename, data)
-  })
-  BankManagementPage.getPoolAccountNo().type(PoolAccountNo)
-  BankManagementPage.getBankId().type(BankID)
-  BankManagementPage.getBankType().select(this.data03.bankMaster.BankType, { force: true })
-  BankManagementPage.getPoolAccountType().select(this.data03.bankMaster.PoolAccountType, { force: true })
-  BankManagementPage.getCBSType().select(this.data03.bankMaster.CBSType, { force: true })
-  BankManagementPage.getPriority().type(Priority)
-  BankManagementPage.getChooseFile().attachFile('templates/AddBranches.csv')
-  BankManagementPage.getSubmitButton().click({ force: true })
-  cy.wait(5000)
-  // BankManagementPage.getAssert().should('have.text',this.data03.bankMaster.assert)
-})
-
-
-//--------------------------------------Wallet Creation----------------------------------------------
-
-
-//------------------------------------Add Wallet------------------------------------------------------
-
-When('Navigate Multiple Wallet Management and Click on Add Wallet', function () {
-  WalletManagementPage.getMultipleWalletManagement().click()
-  WalletManagementPage.getAddWallet().click()
-  cy.wait(2000)
-})
-
-And('Enter Wallet name and click on save', function () {
-  WalletManagementPage.getWalletName().type(getRandomName(), { force: true })
-  WalletManagementPage.getSaveButton().click({ force: true })
-  cy.wait(3000)
-  cy.writeFile(filename1, { WalletName: name })
-
-})
-
 
 
 When('Navigate Multiple Wallet Management and Click on View Wallet', function () {
