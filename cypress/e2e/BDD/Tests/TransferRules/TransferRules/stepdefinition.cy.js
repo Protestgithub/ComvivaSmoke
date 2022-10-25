@@ -214,3 +214,7 @@ And('Click on confirm.', function () {
   cy.wait(5000)
   transferrulepageO2C.getconfirmbtn().click()
 })
+Then('Verify O2C Transfer rule success Message', function () {
+  cy.wait(2000)
+  transferrulepage.getAssertMessage().should('have.text','Transfer rule successfully defined')
+})
