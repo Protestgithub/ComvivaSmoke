@@ -105,15 +105,3 @@ And('Enter Wallet name and click on save', function () {
 
 })
 
-
-
-When('Navigate Multiple Wallet Management and Click on View Wallet', function () {
-    WalletManagementPage.getMultipleWalletManagement().click()
-    WalletManagementPage.getViewWallet().click()
-    cy.wait(2000)
-  })
-
-  And('Navigate to MFS provider Wallet Type Master and click Add Wallet',function(){
-    welcomePage.getMFSProviderwalletType().click()
-    welcomePage.getMFSModifyWallet().click()
-  })
