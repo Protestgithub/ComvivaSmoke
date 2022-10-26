@@ -23,6 +23,16 @@ class register {
     getUserRole(){
         return  cy.iframe().find('.mat-radio-label-content')
     }
+    getmerchantbutton()
+  {
+    return cy.iframe().find('div[class="mat-radio-outer-circle"]').eq(3)
+  }
+
+  getAgentButton()
+  {
+    return cy.iframe().find('div[class="mat-radio-outer-circle"]').eq(7)
+
+  }
     getRegistrationMode()
     {
         return cy.iframe().find('.mat-button-focus-overlay')
@@ -49,6 +59,10 @@ class register {
     }
     getAdressLine1(){
         return cy.iframe().find('#address1')
+    }
+    getDOB()
+    {
+        return cy.iframe().find('input[id="dateOfBirth"]')
     }
 
     getAdressLine1(){
@@ -123,6 +137,10 @@ class register {
     getNextButtonBasic1(){
         return cy.iframe().find('button[data-test-id="next"]').eq(1)
     }
+    getNextButtonBasic212()
+    {
+        return cy.iframe().find('button[data-test-id="next"]').eq(1)
+    }
     getMakeThisPrimaryButton(){
         return cy.iframe().find('[class="slider round"]')
     }
@@ -161,6 +179,26 @@ class register {
         return cy.iframe().find('button[data-test-id="next"]').eq(3)
 
     }
+    getBillerServiceLevel()
+    {
+        return cy.iframe().find('select[id="serviceLevel"]')
+    }
+    getBillerCategoryName()
+    {
+        return cy.iframe().find('select[id="merCategoryCode"]')
+    }
+
+    getProcessType()
+    {
+        return cy.iframe().find('select[id="processType"]')
+    }
+
+    getBillerType()
+    {
+        return cy.iframe().find('select[id="billerType"]')
+    }
+
+
 //Newly added methods for business
 
     getErrorDone()
@@ -174,7 +212,14 @@ class register {
     }
 
 //-------------End-------------------------------------/
+getSuccesstext(){
+    return cy.iframe().find('h2[class="text-center text-success"]')
+}
 
+
+getNextButtonBasic212(){
+        return cy.iframe().find('button[data-test-id="next"]').eq(1)
+}
     getSubmitButton()
     {
         return cy.iframe().find('#submit')
@@ -219,6 +264,10 @@ class register {
     getGo()
     {
         return cy.iframe().find('#go')
+    }
+    getmerchantCode()
+    {
+      return cy.iframe().find('input[id="merchantCode"]')
     }
 
    getRadioButton()
@@ -344,6 +393,11 @@ getErrorMaxKycReached(){
 getNextButtonBasic4(){
 
         return cy.iframe().find('button[data-test-id="next"]').eq(4)
+
+    }
+    getNextButtonBasic5(){
+
+        return cy.iframe().find('button[data-test-id="next"]').eq(5)
 
     }
 getBankName()

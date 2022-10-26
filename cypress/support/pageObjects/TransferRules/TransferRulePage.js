@@ -115,6 +115,9 @@ class TransferRulePage {
   getErrorMessage() {
     return cy.iframe().find(".errorMessage")
   }
+  getAssertMessage() {
+    return cy.iframe().find(".actionMessage")
+  }
 }
 export default TransferRulePage
 

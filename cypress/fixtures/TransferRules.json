@@ -70,5 +70,6 @@
       "FirstApproval":"170949",
       "ErrorMessage": "Please enter correct value in Minimum Transfer Amount"
       
-    }
+    },
+    "SuccessMessage": "Transfer Rule is Successfully Add Initiated with ID"
 }

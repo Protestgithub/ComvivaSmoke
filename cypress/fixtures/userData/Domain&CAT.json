@@ -1,9 +1,16 @@
 {
-  "Domainname": "Wholesaler2929",
-  "DomainCode": 77104,
-  "CategoryNum": 28,
-  "CategoryName": "Wholesaler2929",
-  "CategoryCode": 77104,
-  "CategoryDomainName": "Wholesaler2929",
-  "ParentCategoryName": "Wholesaler2929"
+  "Domainname": "Agent1619",
+  "DomainCode": 50205,
+  "CategoryNum": 27,
+  "CategoryName": "Agent1619",
+  "CategoryCode": "Agent1619",
+  "CategoryDomainName": "Agent1619",
+  "ParentCategoryName": "Agent1619",
+  "BADomainname": "Head Merchant7437",
+  "BADomainCode": 85995,
+  "BACategoryNum": 27,
+  "BACategoryName": "Head Merchant7437",
+  "BACategoryCode": "Head Merchant7437",
+  "BACategoryDomainName": "Head Merchant7437",
+  "BAParentCategoryName": "Head Merchant7437"
 }

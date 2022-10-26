@@ -1,6 +1,5 @@
 Feature: System admin Creation
 
-
 ##################################### Security Profile Creation ################################################
 # Author: Chetan.S
 # Last Updated:
@@ -69,12 +68,16 @@ And Click On System Admin and select Single User
 And Enter all required Fields
 Then Confirmation message is displayed
 Then Logout
+
+Scenario:Approval of System Admin2
 Given Login into Mobiquity Portal as Super admin Checker after Logout
 When Navigate to Approvals and filter by Submitted status for SystemAdmin
 And User click on System admin submitted user data
 And Approve the Users and save loginID2
 Then User status is approved
 Then Logout
+
+Scenario: Login in as System Admin2
 Given Login into Mobiquity Portal as System admin Created by Master2
 
 @prerequisite
@@ -86,12 +89,58 @@ And Click On System Admin and select Single User
 And Enter all required Fields
 Then Confirmation message is displayed
 Then Logout
+
+Scenario: Approval of System Admin3
 Given Login into Mobiquity Portal as Super admin Checker after Logout
 When Navigate to Approvals and filter by Submitted status for SystemAdmin
 And User click on System admin submitted user data
 And Approve the Users and save loginID3
 Then User status is approved
 Then Logout
+
+Scenario: Login of System Admin3
 Given Login into Mobiquity Portal as System admin Created by Master3
 
+
+
+# Author: Rakesh SV
+# Last Updated:
+# Comments    :
+# Test Case_ID : TC_41_sysadmin
+Scenario: To create System Admin5
+Given Login into Mobiquity Portal as Super admin Maker
+When Navigate to User Management and click on Register
+And Click On System Admin and select Single User
+And Enter all required Fields
+Then Confirmation message is displayed
+Then Logout
+
+Scenario:Approval of System Admin5
+Given Login into Mobiquity Portal as Super admin Checker after Logout
+When Navigate to Approvals and filter by Submitted status
+And User click on submitted user data
+And Approve the Users and save loginID5
+Then User status is approved
+Then Logout
+
+Scenario: Login in as System Admin5
+Given Login into Mobiquity Portal as System admin Created by Master5
+
+
+
+##############################  Change Password  ###################################
+# Author: Rakesh SV
+# Last Updated:
+# Comments    :
+# Test Case_ID : TC_38
+# 
+
+@test
+Scenario: To verify that user should be able to change his/her password by entering his/her old password successfully.
+Given Login into Mobiquity Portal as Systemadmin5
+When Navigate to Profile icon and Click on Profile icon
+And Click On Setting and click on Change Password
+And Enter Old password and Enter New Password and Confirm New Password
+Then Click on the change Password Button
+Given Login into Mobiquity Portal as System admin with newly created Password
 

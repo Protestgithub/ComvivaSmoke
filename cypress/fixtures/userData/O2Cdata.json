@@ -1,8 +1,11 @@
 {
-  "registeredMobile": "7716602080",
-  "LoginId": "uePHJQGifG78",
-  "EmailID": "uePHJQGifG78@comviva.com",
-  "RegisteredKyc": "A1660208030790",
-  "CreatedOnTime": "11/08/2022 2:24 PM",
-  "O2CMsisdn1": "7716602080"
+  "registeredMobileO2C": "7716668075",
+  "LoginId": "suiwdUaVhL21",
+  "EmailID": "suiwdUaVhL21@comviva.com",
+  "CurrencyDetail": "US Dollar - $",
+  "BankNameDetail": "TB101",
+  "Accnum": "4239346206855646",
+  "BankAccountTYpeDetail": "Savings",
+  "CreatedOnTime": "26/10/2022 11:38 PM",
+  "O2CMsisdn1": "7716668075"
 }
