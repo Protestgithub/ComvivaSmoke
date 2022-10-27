@@ -1,6 +1,8 @@
 {
   "personalInfo": {
     "firstName": "Beta",
+    "securityProfile3": "BusinessAdminSecurityProfile",
+    "authProfile3": "BusinessAdminDefault Profile",
     "lastName": "Mobiquity",
     "emailID": "randy@gmail.com",
     "preferredLang": "English",
@@ -11,7 +13,7 @@
     "successConfirm": " SUCCESS Service is successfully paused. Kindly contact admin for approval",
     "title": "Mr",
     "InterfaceId": "9959676595",
-    "regulatory": "abc123",
+    "regulatory": "FullKycprofile",
     "marketing": "TELOPTDefaultMP",
     "smscid": "Pretups Smsc",
     "topupid": "PretupsTOPUP",
@@ -41,8 +43,45 @@
     "notUnique": " Value is not unique ",
     "securityProfile2": "NWADM44550",
     "ServiceName":"O2C Transfer",
-    "authProfile2": "NetadminDefault Profile"
+    "authProfile2": "NetadminDefault Profile",
+    "mcode":"98765",
+    "MerchParent":"7716663405",
+    "AgentParent":"7716662613"
   },
+  "OSecurityProfile":"WholesalerDefaultSecurityProfile",
+  "OAuthProfile":"WholesalerDefault Profile",
+  "OReguProfile":"FullKycprofile",
+  "OMarketingProfile":"WHSDefaultMP",
+  "ATMSecurityProfile":"ATMMachineDefaultSecurityProfile",
+  "ATMReguProfile":"FullKycprofile",
+  "ATMMarketingProfile":"ATMDefaultMP",
+  "CorpSecurityProfile":"CorporateDefaultSecurityProfile",
+  "CorpAuthProfile":"EnterpriseDefault Profile",
+  "CorpMarketingProfile":"EntDefaultMP",
+  "HMSecurityProfile":"HeadMerchantDefaultSecurityProfile",
+  "HMAuthProfile":"HeadMerchantDefault Profile",
+  "HMMarketingProfile":"HMERDefaultMP",
+  "MSecurityProfile":"MerchantDefaultSecurityProfile",
+  "MAuthProfile":"MerchantDefault Profile",
+  "MReguProfile":"NoKycprofile",
+  "MMarketingProfile":"MERDefaultMP",
+  "ASecurityProfile":"RetailerDefaultSecurityProfile",
+  "AAuthProfile":"RetailerDefault Profile",
+  "AMarketingProfile":"RTDefaultMP",
+  "SASecurityProfile":"SuperAgentDefaultSecurityProfile",
+  "SAAuthProfile":"SSADefault Profile",
+  "SAMarketingProfile":"SSADefaultMP",
+  "BSecurityProfile":"BillerDefaultSecurityProfile",
+  "BAuthProfile":"BillerDefault Profile",
+  "BMarketingProfile":"BILLRDefaultMP",
+  "BillerServiceLevel":"Adhoc",
+  "BillerCategoryName":"Utility",
+  "ProcessType":"Online",
+  "BillerType":"Adhoc Bill Available",
+  "PGMarketingProfile":"PGCATDefaultMP",
+  "dob":"1/06/1990",
+
+
   "mobilenumber": {
     "mobile": "7786113685"
   },
@@ -82,6 +121,7 @@
   "userRole2": "Telco Operator",
   "userRole3": "AtmMachine",
   "userRole4": "System Admin",
+  "userRole5": "Business Admin",
   "registrationMode": "Single User",
   "mob70": "7782356712",
   "mob": "7718797551",
@@ -163,7 +203,15 @@
     "ReguProfile": "FKYC",
     "MarketProfile": "PKYC"
   },
+  "userRole7": "Payment Gateway",
+  "preferredLang": "English",
   "userRole8": "Distributer",
+  "userRole008":"Agent",
+  "userRole9": "AtmMachine",
+  "userRole10":"Corporate",
+  "userRole11":"Head Merchant",
+  "userRole13":"Merchant",
+  "userRole0012":"Biller",
   "userType": "Administrator",
   "userRole": "Business Admin",
   "modifyPersonalInfo8": {
@@ -226,6 +274,6 @@
   "InvalidLoginId": "!@#$%^&*()",
   "Sucess": "Success",
   "Marketing": "Marketing profile added successfully",
-  "LockOutgoing":"All Outgoing Payments locked successfully",
-  "UnlockOutgoing":"All Outgoing Payments unlocked successfully"
+  "LockOutgoing":"User Wallet Locked successfully",
+  "UnlockOutgoing":"User Wallet Unlocked successfully"
 }

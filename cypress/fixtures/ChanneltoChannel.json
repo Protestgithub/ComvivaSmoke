@@ -1,0 +1,11 @@
+{
+
+    "FromMFSprovider":"MFS1",
+    "FromDomain":"Wholesaler",
+    "ToDomain":"Wholesaler",
+    "Wallet":"Normal",
+    "ToWallet":"Salary",
+    "SucessMessage":"C2C Transfer Done successfully",
+    "InverseIntiatedMessage":"Your transaction request has been initiated"
+    
+}

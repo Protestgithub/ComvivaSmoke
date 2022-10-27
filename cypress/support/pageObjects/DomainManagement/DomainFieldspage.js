@@ -25,5 +25,9 @@ class DomainFieldspage{
         return cy.iframe().find('li .errorMessage')
     
     }
+    getSuccessMsg()
+    {
+    return cy.iframe().find('.actionMessage')
+    }
    }
    export default DomainFieldspage

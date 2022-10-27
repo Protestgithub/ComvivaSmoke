@@ -1,5 +1,5 @@
 {
-  "BankName": "REGLX",
+  "BankName": "VVCEA",
   "bankMaster": {
     "Provider": "MFS1",
     "BankType": "Trust",
@@ -7,6 +7,6 @@
     "CBSType": "Flex",
     "Assert": "Bank Mapping Modified Successfully",
     "ErrorMessage": "Bank Name is mandatory",
-    "assert": "0 Branches Added Successfully and 1 branches found duplicate"
+    "assert": "All Branches are added successfully"
   }
 }

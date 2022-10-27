@@ -70,5 +70,26 @@
       "FirstApproval":"170949",
       "ErrorMessage": "Please enter correct value in Minimum Transfer Amount"
       
+    },
+    "SuccessMessage": "Transfer Rule is Successfully Add Initiated with ID",
+    "TransferRuleForC2C":{
+      "Servicename":"C2C Transfer",
+      "Servicename1":"Inverse C2C Transfer",
+      "FromMFSprovider":"MFS1",
+      "FromDomain":"Wholesaler",
+      "FromPaymentInstrument":"WALLET",
+      "FromWallet":"Normal",
+      "ToMFSprovider":"MFS1",
+      "ToDomain":"Wholesaler",
+      "ToPaymentInstrument":"WALLET",
+      "ToWallet":"Normal",
+      "Towallet1":"Salary",
+      "Towallet2":"Commission",
+      "FromCategory":"Wholesaler",
+      "ToCategory":"Wholesaler",
+      "Status":"Initiated",
+      "TransferType":"Transfer",
+      "GeographicalDomain":"Mobiquity"
+      
     }
 }

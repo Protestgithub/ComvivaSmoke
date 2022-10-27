@@ -7,12 +7,35 @@ class homePage {
     getWelcomeText() {
         return cy.iframe().get('.fd-menu > ul > li > span')
     }
+    getSettings() {
+        return cy.get('[data-testid="test-settings"]')
+    }
+    getChangePassword() {
+        return cy.iframe().find('div>button.btn-settings').eq(0)
+    }
 
     getUserManagementOption() {
 
         return cy.get('[data-testid="menu.user_management"]')
     }
 
+    getCashinOrCashout() {
+
+        return cy.get('[title="Cash In/Cash Out"]')
+
+    }
+
+    getCashin() {
+
+        return cy.get('[title="Cash In"]')
+
+    }
+
+    getCashOut() {
+
+        return cy.get('[title="Cash Out"]')
+
+    }
     getRegisterOption() {
         return cy.get('[data-testid="menu.user_management"]').find('[title="Register"]')
     }
@@ -34,13 +57,18 @@ class homePage {
     
     }
         getApprovalTab() {
-        return cy.get('#collapsible_listnode_18 > .fd-nested-list__title')
+            return cy.get('[title="Approval Management"]')
+
+    }
+    getCategoryManagement(){
+        return cy.get('[title="Category Management"]')
     }
     getApprovalButtonTab(){
-        return cy.get('[data-testid="menu.ums_approvals"] > ul > li > a').contains("Approvals")
+        return cy.get('[title="Approvals"]').contains("Approvals")
+
     }
     getApprovaltab() {
-        return cy.get('[data-testid="test-UMS_APPROVALS"]')
+        return cy.get('[title="Approval Management"]')
     }
     getLogoutButton() {
 
@@ -258,6 +286,36 @@ getBankingChannelActivation() {
 
         return cy.get('[title="Banking Channel Activation"]')
 
+    }
+    getMFSProviderwalletType(){
+        return cy.get('[data-testid="menu.mfswtm"]')
+    }    
+    getMFSModifyWallet(){
+        return cy.get('[title="Modify/Delete Wallet"]')
+    }
+    getmfs1(){
+        return cy.iframe().find('tbody > tr input[id="MfsModifyType_mfsProviderList_mfsProviderType101"]')
+    }
+    getmfsmodify(){
+        return cy.iframe().find('#MfsModifyType_mfsProviderList_button_modify')
+    }
+    getmodify(){
+        return cy.iframe().find('#MfsModifyType_modify_button_modify')
+    }
+    getselectall(){
+        return cy.iframe().find('tbody > tr >td input[id="MfsModifyType_displayServicesForUpdate_checkAll"]')
+    }
+    getsubmit(){
+        return cy.iframe().find('#MfsModifyType_displayServicesForUpdate_button_submit')
+    }
+    getmessage(){
+        return cy.iframe().find('span.actionMessage')
+    }
+    getChanneltoChannel(){
+        return cy.get('[data-testid="test-C2C"]')
+    }
+    getInverseChanneltoChannel(){
+        return cy.get('[data-testid="test-INVC2C"]')
     }
 }
 export default homePage

@@ -1,9 +1,16 @@
 {
-  "Domainname": "Wholesaler2929",
-  "DomainCode": 77104,
-  "CategoryNum": 28,
-  "CategoryName": "Wholesaler2929",
-  "CategoryCode": 77104,
-  "CategoryDomainName": "Wholesaler2929",
-  "ParentCategoryName": "Wholesaler2929"
+  "Domainname": "AtmMachine1177",
+  "DomainCode": 87365,
+  "CategoryNum": 82,
+  "CategoryName": "AtmMachine1177",
+  "CategoryCode": "AtmMachine1177",
+  "CategoryDomainName": "AtmMachine1177",
+  "ParentCategoryName": "AtmMachine1177",
+  "BADomainname": "Distributer2849",
+  "BADomainCode": 59549,
+  "BACategoryNum": 82,
+  "BACategoryName": "Distributer2849",
+  "BACategoryCode": "Distributer2849",
+  "BACategoryDomainName": "Distributer2849",
+  "BAParentCategoryName": "Distributer2849"
 }

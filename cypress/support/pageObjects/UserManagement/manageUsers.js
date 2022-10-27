@@ -12,11 +12,17 @@ class manageUsers {
         return cy.iframe().find('span.font-weight-bold')
 
     }
+    getSucess() {
+        return cy.iframe().find('[role="gridcell"]').eq(6)
+    }
+    getintiatedmessage(){
+        return cy.iframe().find('simple-snack-bar.mat-simple-snackbar.ng-star-inserted > span:nth-child(1)')
+    }
     getBusinessUserDetail() {
 
         return cy.iframe().find('.mat-cell.cdk-cell.cdk-column-user-type.mat-column-user-type.ng-star-inserted')
-        }
-getDateRangeAssert() {
+    }
+    getDateRangeAssert() {
         return cy.iframe().find('.modal-label.more-details-header')
     }
     getViewIcon() {
@@ -25,8 +31,8 @@ getDateRangeAssert() {
     getViewDetails() {
         return cy.iframe().find('span.font-weight-bold')
     }
-    getAssertMobile(){
-    return cy.iframe().find('[class="mat-tooltip-trigger ng-star-inserted"]')
+    getAssertMobile() {
+        return cy.iframe().find('[class="mat-tooltip-trigger ng-star-inserted"]')
     }
 
     getSuspendIcon() {
@@ -38,10 +44,10 @@ getDateRangeAssert() {
     getconfirm() {
         return cy.iframe().find('#confirm')
     }
-     getWalletHistory(){
+    getWalletHistory() {
         return cy.iframe().find('.mat-tab-label-content')
     }
-  getSearchTransactionID(){
+    getSearchTransactionID() {
         return cy.iframe().find('#search-transaction-id')
     }
     getsucessSYS() {
@@ -113,16 +119,16 @@ getDateRangeAssert() {
         return cy.iframe().find('#lock-unlock')
     }
     getLockOutgoingPayements() {
-        return cy.iframe().find('.mat-dialog-actions button[type="submit"]')
+        return cy.iframe().find('[data-test-id="outgoing-payments-INR"]')
     }
     getLockIncomingPayements() {
-        return cy.iframe().find('mat-radio-button[id="Lock incoming payments"]')
+        return cy.iframe().find('[data-test-id="incoming-payments-INR"]')
     }
     getLockBothPayements() {
         return cy.iframe().find('mat-radio-button[id="Lock both"]')
     }
     getlockallbtn() {
-        return cy.iframe().find('button[id="submit-lock"]')
+        return cy.iframe().find('[data-test-id="submit-unlock"]')
     }
     getconfirmationlock() {
         return cy.iframe().find('#reason')
@@ -146,7 +152,7 @@ getDateRangeAssert() {
         return cy.iframe().find('mat-radio-button[id="Unlock outgoing payments"]')
     }
     getunlockbtn() {
-        return cy.iframe().find('button[id="submit-unlock"]')
+        return cy.iframe().find('[data-test-id="submit-lock"]')
     }
     getlockunclockWallets() {
         return cy.iframe().find('#lock-unlock')
@@ -309,6 +315,15 @@ getDateRangeAssert() {
     }
     getoptions() {
         return cy.iframe().find('.mat-autocomplete-panel')
+    }
+
+    //----------------------------
+
+    getWalletDetails() {
+        return cy.iframe().find('.div.currency-grid-display > span')
+    }
+    getChurndelete() {
+        return cy.iframe().find('button[id="delete-user"]')
     }
 }
 export default manageUsers

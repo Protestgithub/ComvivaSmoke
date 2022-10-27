@@ -16,6 +16,16 @@ class approvals {
     getApplyFilter() {
         return cy.iframe().find('button[id="apply-filter"]')
     }
+    getUpload() {
+        return cy.iframe().find('#upload')
+    }
+    getClickHere() {
+        return cy.iframe().find('.click-here')
+    }
+    getUploadDocument() {
+        return cy.iframe().find('#upload-document')
+    }
+
     getCreatedOnTime() {
         return cy.iframe().find('[class="mat-cell cdk-cell cdk-column-createdOn mat-column-createdOn ng-star-inserted"]')
     }    
@@ -48,6 +58,10 @@ class approvals {
     }
     getSuccessMessage() {
         return cy.iframe().find('.text-center.text-success')
+    }
+
+    getModifiedSubscriberCheckBox() {
+        return cy.iframe().find('.mat-checkbox-label').contains('Subscriber')
     }
 
 }

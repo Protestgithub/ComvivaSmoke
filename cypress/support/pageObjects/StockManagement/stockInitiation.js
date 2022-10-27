@@ -43,6 +43,24 @@ class stockInitiation{
     {
         return cy.iframe().find('#stockApprove2_confirmApproval_button_approve')
     }
+    getSuccessMsg()
+    {
+    return cy.iframe().find('.actionMessage')
+    }
+    getBalance()
+    {
+    return cy.iframe().find('.wwFormTableC>tbody>tr:nth-child(4)>.tabcol')
+    }
+    getApprovalLimit1()
+{
+return cy.iframe().find('#StockApprovalTransferLimitAction_insertApprovalLimit_approvalLimit1')
+}
+
+getsubmitbutton()
+{
+return cy.iframe().find('[name="button.submit"]')
+}
+
 }
 
 export default stockInitiation

@@ -25,5 +25,9 @@ class TransactionCorrection{
     {
     return cy.iframe().find('#txnCorrectionApp_viewTxnDetails td.tabcol:nth-child(2)')
     }
+    getsuccessmessage()
+    {
+        return cy.iframe().find('.actionMessage')
+    }
 }
 export default TransactionCorrection

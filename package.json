@@ -8,12 +8,18 @@
     "start": "node ./serve.js",
     "cy:open": "cypress open",
     "cy:report": "node cucumber-html-report.js",
-    "cy:run": "cypress run --browser chrome",
+    "cy:run": "cypress run",
+    "allure:report": "allure generate allure-results --clean -o allure-report",
+    "allure:clear": "if exist allure-results rmdir /q /s allure-results && if exist allure-report rmdir /q /s allure-report && if exist cypress\\screenshots rmdir /q /s cypress\\screenshots && if exist cypress\\videos rmdir /q /s cypress\\videos",
+    "pretest": "npm run allure:clear",
+    "test": "npm run cy:run || npm run posttest",
+    "posttest": "npm run allure:report",
+ 
     "cy:Prerequisite": "npx cypress-tags run -e 'TAGS=@prerequisite' --browser chrome",
     "cy:Test": "npx cypress-tags run -e 'TAGS=@test' --browser chrome",
-    "cy:parallel": "cypress-parallel -s cy:run -t 1 -d 'cypress/integration/BDD/CreationOfUsers/**/*.feature'",
-    "cy:parallel:many1": "cypress-parallel -s cy:run -t 2 -d 'cypress/integration/BDD/Tests/**/*.feature'",
-    "cy:parallel:many": "cypress-parallel -s cy:run -t 2 -d 'cypress/integration/BDD/PreRequisite/**/*.feature'"
+    "cy:parallel": "cypress-parallel -s cy:run -t 1 -d 'cypress/e2e/BDD/CreationOfUsers/**/*.feature'",
+    "cy:parallel:many1": "cypress-parallel -s cy:run -t 2 -d 'cypress/e2e/BDD/Tests/**/*.feature'",
+    "cy:parallel:many": "cypress-parallel -s cy:run -t 2 -d 'cypress/e2e/BDD/PreRequisite/**/*.feature'"
   },
   "author": "",
   "license": "ISC",
@@ -21,6 +27,7 @@
     "@badeball/cypress-cucumber-preprocessor": "^12.1.0",
     "@bahmutov/cypress-esbuild-preprocessor": "^2.1.3",
     "@esbuild-plugins/node-modules-polyfill": "^0.1.4",
+    "@shelex/cypress-allure-plugin": "^2.30.3",
     "@types/cypress-cucumber-preprocessor": "^4.0.1",
     "cypress": "^10.6.0",
     "cypress-cucumber-attach-screenshots-to-failed-steps": "^1.0.0",
@@ -39,7 +46,7 @@
     "webpack": "^5.70.0"
   },
   "cypress-cucumber-preprocessor": {
-    "stepDefinitions": "cypress/e2e/BDD/**/*.{js,ts}",
+    "stepDefinitions": "cypress/e2e/**/*.{js,ts}",
     "cucumberJson": {
       "generate": true
     }

@@ -17,6 +17,9 @@
       "MaxTranAmount":"50000",
       "MaxPerAllowed":"25"
   },
+  "O2CTransferInitiate":{
+    "type":"Cash"
+  },
 
     "confimationMessage":{
 
