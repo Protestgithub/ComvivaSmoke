@@ -1,0 +1,19 @@
+{
+
+    "O2CTransferInitiate" : 
+    {
+        "msisdn": "7783709006",
+        "msisdn1": "7786848641",
+        "payeeProvider" : "MFS1",
+        "payeeWalletType": "Commission",
+        "type": "Cash",
+        "errorMessage": "Receiver has been suspended",
+        "ErrorMessage":  "Please enter a valid Transfer Amount",
+        "ErrorMessage1":  "Transfer amount more than maximum allowed transfer amount."
+    },
+
+    "O2CInitiateMsg":"O2C is successfully initiated with transaction ID: ",
+    "O2CApproval1Msg":"Owner to Channel transaction completed with Transaction ID :"
+
+
+}

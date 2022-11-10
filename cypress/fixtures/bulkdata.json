@@ -1,0 +1,21 @@
+{
+    "SerialNumber" : "28",
+    "MFSProvider" : "101",
+    "ReceiverSVATypeID" :"12",
+    "TransferDate" :"11-09-2022",
+    "PaymentType":"Cash",
+    "Remarks":"testuser",
+    "PaymentNumber":"79056676",
+    "PaymentDate":"11/09/2022",
+    "IndividualRemarks":"testuser123",
+    "AdditionalParameter1":"",
+   "AdditionalParameter2":"",
+    "AdditionalParameter3":"",
+    "AdditionalParameter4":"",
+    "AdditionalParameter5":"",
+    "AdditionalParameter6":"",
+    "AdditionalParameter7":"",
+    "AdditionalParameter8":"",
+    "AdditionalParameter9":"",
+   "AdditionalParameter10":""
+    }

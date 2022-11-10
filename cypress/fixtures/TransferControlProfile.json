@@ -1,0 +1,52 @@
+{
+  "TransferControlProfile":{
+      "Provider":"MFS1",
+      "Domain":"Wholesaler",
+      "Category":"Wholesaler",
+      "Grade":"Gold Wholesaler",
+      "Domain1":"Subscriber",
+      "Category1":"Subscriber",
+      "Grade1":"Gold Subscriber",
+      "PaymentInstrument":"WALLET",
+      "Wallet":"Normal",
+      "Description":"Test description",
+      "RegulatoryType":"KYC",
+      "UserMinBal":"5000",
+      "UserMaxBal":"500000",
+      "MinTranAmount":"10000",
+      "MaxTranAmount":"50000",
+      "MaxPerAllowed":"25"
+  },
+
+    "confimationMessage":{
+
+      "successfulTcpIntiation": "Addition of Instrument Level TCP - ",
+      "sucessMasterTcpIntiation":"Addition of Customer Level TCP - ",
+      "successpart2Master":" for the Wholesaler domain and Wholesaler category has been initiated and sent for approval",    
+      "successpart2": " for the Wholesaler domain and Wholesaler category has been initiated and sent for approval",
+      "successpart2Sub":" for the Subscriber domain and Subscriber category has been initiated and sent for approval",
+      "addIntiationPart1":"Request to add Instrument Level TCP with name:",
+      "addIntiationPart1Master":"Request to add Customer Level TCP with name:",
+      "addIntiationPart2Master":" for the Wholesaler domain and Wholesaler category has been approved successfully",
+      "addIntiationPart2":" for the Wholesaler domain and Wholesaler category has been approved successfully",
+      "addIntiationPart3":" for the Subscriber domain and Subscriber category has been approved successfully",
+      "Deletesuccess" : "Deletion of Instrument Level TCP - ",
+      "Deletesucesspart2" :" for the Wholesaler domain and Wholesaler category has been initiated and sent for approval",
+      "DeletionError":"One or more Instrument level Type transfer control profile(s) already exists for the given customer level profile type. You have to first delete this/these Instrument level Type profiles before deleting this Customer level profile",
+      "editSucesspart1" : "Modification of Customer Level TCP - ",
+      "editSucesspart2": " for the Wholesaler domain and Wholesaler category has been initiated and sent for approval",
+      "editapproval1":"Request to modify Customer Level TCP with name:",
+      "editapproval2":" for the Wholesaler domain and Wholesaler category has been approved successfully",
+      "ErrorMessageApproval" : "Please select another profile name as this profile name is being used by an active profile",
+        "ErrorMessMarketing" : "Instrument Level TCP cannot be deleted as it has associated with Marketing Profile",
+        "Providererror":"Provider is required",
+        "Domainerror" : "Domain is required",
+        "Categoryerror":"Category is required",
+        "Gradeerror" :"Grade is required"
+    }
+
+
+      
+      
+    
+}

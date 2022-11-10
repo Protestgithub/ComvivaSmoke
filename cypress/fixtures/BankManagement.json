@@ -1,0 +1,13 @@
+{
+  "BankName": "GCBQE",
+  "bankMaster": {
+    "Provider": "MFS1",
+    "BankType": "Trust",
+    "PoolAccountType": "Saving Account",
+    "CBSType": "Flex",
+    "Assert": "Bank Mapping Modified Successfully",
+    "ErrorMessage": "Bank Name is mandatory",
+    "assert": "All Branches are added successfully",
+    "assertone": "Bank Name*:"
+  }
+}

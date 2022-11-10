@@ -1,0 +1,12 @@
+{
+    "Status": "Success",
+    "ServiceType1": "P2P",
+    "ServiceType2": "Cash In",
+    "ServiceType3": "Cash Out",
+    "ServiceType4": "Transaction Correction",
+    "TransactionId1":"CI220623.1521.A72541",
+    "TransactionId2":"CI220623.1740.A72571",
+    "TransactionId3":"PP220620.1242.A72049",
+    "initiatedMessage": "Your transaction request has been initiated, and is now pending confirmation",
+    "successmessage":"Transaction Correction approved"
+}

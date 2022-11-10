@@ -1,0 +1,8 @@
+{
+    "AmbType":"Payment Ambiguous",
+    "PartyType":"Bank",
+    "FromDate":"13/04/2022",
+    "ToDate":"10/05/2022",
+    "OperationName":"Fulfillment Ambiguous"
+    
+}

@@ -1,0 +1,6 @@
+{
+    "initiatemessage": "Churn initiation is completed",
+    "approvalmessage": "Approval of the batch",
+    "rejectmessage": "Reject of the batch",
+    "cashInSucsessMsg":"CASHIN  done successfully toTransaction id: "
+}

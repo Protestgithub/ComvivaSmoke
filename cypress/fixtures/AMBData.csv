@@ -1,0 +1,2 @@
+Order Id*,Internal Reference Id*,Status(true/false)*,Phase*,Payment ReferenceId,Fulfillment ReferenceId*,Payment Reversal ReferenceId,Fulfilment Reversal ReferenceId,Bank TransactionId,
+"165088-447259-246165","46792ab4-f85b-43e5-afed-7eb2941d57b4","true","FULFILLMENT",,"46792ab4-f85b-43e5-afed-7eb2941d57b4",

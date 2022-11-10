@@ -1,0 +1,14 @@
+{
+
+    "errorMessage": "Transfer rule defined has direct transfer and channel bypass is inactive",
+
+    "Currency": {
+        "value": "US Dollar"
+    },
+    "wallettype": {
+        "value": "Normal"
+    },
+ 
+ 
+ "insufficientBalanceMessage": "Please enter an amount that is lesser or equal to your wallet balance"
+}

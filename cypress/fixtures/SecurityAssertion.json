@@ -1,0 +1,8 @@
+{
+    "addquestion": "Questions have been added succesfully !",
+    "questionpresent": "question is already present in the system",
+    "languages": {
+      "language1": "Arabic",
+      "language2": "French"
+    }
+  }
