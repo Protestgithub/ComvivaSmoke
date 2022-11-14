@@ -308,7 +308,7 @@ And('Add Marketing Profile', function () {
   cy.iframe().find('[id="profileCode"]').type(id)
   recurse(
     () => cy.iframe().find('[id="profileCode"]').clear().type(id),
-    () => cy.iframe().find('.MuiButton-label').contains("Search").click({force: true}),
+    () => cy.iframe().find('.MuiButton-label').eq(1).click({force: true}),
     (uniqueness) => (uniqueness) == cy.iframe().find('table > tbody').should('have.length', "1")
   )
   MarketingProfile1.getAddMarketingProfile().click()
@@ -340,7 +340,7 @@ And('Add Marketing Profile Wholesaler', function () {
   cy.iframe().find('[id="profileCode"]').type(LoginId1)
   recurse(
     () => cy.iframe().find('[id="profileCode"]').clear().type(LoginId1),
-    () => cy.iframe().find('.MuiButton-label').contains("Search").click({force: true}),
+    () => cy.iframe().find('.MuiButton-label').eq(1).click({force: true}),
     (uniqueness) => (uniqueness) == cy.iframe().find('table > tbody').should('have.length', "1")
   )
   MarketingProfile1.getAddMarketingProfile().click()
