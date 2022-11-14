@@ -324,12 +324,8 @@ And('Add Marketing Profile', function () {
   MarketingProfile1.getMarketingProfileWalletType1().click()
   MarketingProfile1.getMarketingProfileGrade().click()
   MarketingProfile1.getMarketingProfileGrade1().click()
-  cy.fixture(ITCP1).then((user)=>{
-    var SITCP=user.TcpProfileNameSub
-    cy.log(SITCP)
-    MarketingProfile1.getMarketingProfileInstrumentTCP().click()
-    MarketingProfile1.getMarketingProfileInstrumentTCP1().contains(SITCP).click()
-  })
+  MarketingProfile1.getMarketingProfileInstrumentTCP().click()
+  MarketingProfile1.getMarketingProfileInstrumentTCP1().click()
   MarketingProfile1.getMarketingProfileAddBtn().click()
   cy.wait(3000)
   cy.readFile(RegulatoryFile).then((data) => {
@@ -360,12 +356,8 @@ And('Add Marketing Profile Wholesaler', function () {
   MarketingProfile1.getMarketingProfileWalletType1().click()
   MarketingProfile1.getMarketingProfileGrade().click()
   MarketingProfile1.getMarketingProfileGradeWholesaler().click()
-  cy.fixture(ITCP).then((user)=>{
-    var WITCP=user.TcpProfileName
-    cy.log(WITCP)
-    MarketingProfile1.getMarketingProfileInstrumentTCP().click()
-    MarketingProfile1.getMarketingProfileInstrumentTCP1().contains(WITCP).click()
-  })
+  MarketingProfile1.getMarketingProfileInstrumentTCP().click()
+  MarketingProfile1.getMarketingProfileInstrumentTCP1().click()
   MarketingProfile1.getMarketingProfileAddBtn1().click()
   cy.wait(3000)
   cy.readFile(RegulatoryFile).then((data) => {
