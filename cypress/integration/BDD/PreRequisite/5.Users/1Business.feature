@@ -118,41 +118,41 @@ And click on yes
 Then Verify the user suspend Confirmation message
 
 
-################################# Likith   #########################################################
+# ################################# Likith   #########################################################
 
-# Author: Likith R
-# Last Updated:
-# Comments
-# Test Case_ID : TC_63
-#
-@test
+# # Author: Likith R
+# # Last Updated:
+# # Comments
+# # Test Case_ID : TC_63
+# #
+# @test
 
-Scenario: To verify that the Proper error message should get displayed on WEB if user trying to modify businsess user for which request is already in approval stage.
-Given Login into Mobiquity Portal as System admin Maker
-When Navigate to User Management and Click on manage user
-And enter user mobile number and search
-When User Click on eye button
-And Click on edit
-And Edit the required details >> Click on Next
-And Click on save
-Then Verify Error message
-##################################### Arpitha ####################################################
-
-
+# Scenario: To verify that the Proper error message should get displayed on WEB if user trying to modify businsess user for which request is already in approval stage.
+# Given Login into Mobiquity Portal as System admin Maker
+# When Navigate to User Management and Click on manage user
+# And enter user mobile number and search
+# When User Click on eye button
+# And Click on edit
+# And Edit the required details >> Click on Next
+# And Click on save
+# Then Verify Error message
+# ##################################### Arpitha ####################################################
 
 
-# Author: Arpitha C
-# Last Updated: 25/04/2022
-# Comments : refered here is narendra 
-# Scenario_ID : TC_56 
-@test
 
-Scenario: System admin should be able to Initite modification searching with all values (Mobile, KYC, Email and Login)
-Given Login into Mobiquity Portal as System admin Maker
-When Navigate to Manage User, and search Business Admin
-And Search with the Mobile Number
-And System Admin is able to view details
-And System Admin is able to edit details of the user
-Then Confirm the edit details
-And Navigate to My Activity and Apply Modified User filters
-Then Assert Created Buissness User Mobile Number and Write Created on time
+
+# # Author: Arpitha C
+# # Last Updated: 25/04/2022
+# # Comments : refered here is narendra 
+# # Scenario_ID : TC_56 
+# @test
+
+# Scenario: System admin should be able to Initite modification searching with all values (Mobile, KYC, Email and Login)
+# Given Login into Mobiquity Portal as System admin Maker
+# When Navigate to Manage User, and search Business Admin
+# And Search with the Mobile Number
+# And System Admin is able to view details
+# And System Admin is able to edit details of the user
+# Then Confirm the edit details
+# And Navigate to My Activity and Apply Modified User filters
+# Then Assert Created Buissness User Mobile Number and Write Created on time
