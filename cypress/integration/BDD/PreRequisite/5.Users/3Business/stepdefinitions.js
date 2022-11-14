@@ -598,29 +598,6 @@ And('Enter all the required business user details', function () {
   registerPage.getMakeThisPrimaryButton().eq(2).click({ force: true })
   cy.wait(2000)
   registerPage.getNextButtonBasic1().click({ force: true })
-  
-    cy.wait(5000)
-  //cy.readFile(SubProfileName).then((data) => {
-  //  let Profile = data.Distributer
-    registerPage.getSecurityProfile().select('WholesalerDefaultSecurityProfile', { force: true })
- // })
- // cy.readFile(SubAuthProfileName).then((data) => {
-  //  let Profile1 = data.BusinessDistributor
-    registerPage.getAuthProfile().select('WholesalerDefault Profile', { force: true })
-  //})
- // registerPage.getReguProfile().select(this.data2.personalInfo.ReguProfile, { force: true })
- // cy.readFile(RegulatoryMarketingProfile).then((data) => {
-   //    let RegProfile = data.RegulatoryProfileName
-     registerPage.getReguProfile().select('FullKycprofile', { force: true })
-    // })
-  //registerPage.getMarketingProfile().select(this.data2.personalInfo.MarketProfile, { force: true })
- // cy.readFile(RegulatoryMarketingProfile).then((data) => {
-   //   let MarProfile = data.MarketingProfileNameDistributer
-       registerPage.getMarketingProfile().select('WHSDefaultMP', { force: true })
-   //  })
-  
- registerPage.getNextButtonBasic2().click({force:true})
-  
    const t = parseInt(Date.now()/1000);
 
    ifscnum="S"+t
@@ -662,13 +639,34 @@ accnumber="4239346"+uuidbkd()
  cy.wait(3000)
  
  registerPage.getBankIFSC().type(ifscnum, { force: true })
+ registerPage.getNextButtonBasic2().click({force:true})
+  
   //-----------------------------Profile---------------------------------------------------------------
 
-
+  cy.wait(5000)
+  //cy.readFile(SubProfileName).then((data) => {
+  //  let Profile = data.Distributer
+    registerPage.getSecurityProfile().select('WholesalerDefaultSecurityProfile', { force: true })
+ // })
+ // cy.readFile(SubAuthProfileName).then((data) => {
+  //  let Profile1 = data.BusinessDistributor
+    registerPage.getAuthProfile().select('WholesalerDefault Profile', { force: true })
+  //})
+ // registerPage.getReguProfile().select(this.data2.personalInfo.ReguProfile, { force: true })
+ // cy.readFile(RegulatoryMarketingProfile).then((data) => {
+   //    let RegProfile = data.RegulatoryProfileName
+     registerPage.getReguProfile().select('FullKycprofile', { force: true })
+    // })
+  //registerPage.getMarketingProfile().select(this.data2.personalInfo.MarketProfile, { force: true })
+ // cy.readFile(RegulatoryMarketingProfile).then((data) => {
+   //   let MarProfile = data.MarketingProfileNameDistributer
+       registerPage.getMarketingProfile().select('WHSDefaultMP', { force: true })
+   //  })
    
    
   registerPage.getNextButtonBasic3().click({force:true})
  registerPage.getSubmitButton().click({ force: true })
+
 
 
 
