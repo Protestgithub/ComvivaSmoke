@@ -13,7 +13,7 @@ Scenario: To verify that System admin should be able to view/delete/modify the M
 Given Login into Mobiquity Portal as System admin Maker
 When Navigate Multiple Wallet Management and Click on Modify Wallet
 And Click on Added Wallet and Click on Update
-And Verify the success message text
+#And Verify the success message text
 
 
 # Author: Narendra
