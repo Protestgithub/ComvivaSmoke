@@ -48,7 +48,7 @@ class MarketingProfile {
         return cy.iframe().find('[id="mui-component-select-marketingProfileDetails[0].instrumentLevelTCP"]')
     }
     getMarketingProfileInstrumentTCP1() {
-        return cy.iframe().find('div .MuiList-root.MuiMenu-list.MuiList-padding')
+        return cy.iframe().find('div>ul[class="MuiList-root MuiMenu-list MuiList-padding"]>li').eq(1)
     }
     
     getMarketingProfileAddBtn() {
