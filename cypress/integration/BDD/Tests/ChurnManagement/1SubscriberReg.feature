@@ -32,7 +32,7 @@
     # # # Scenario_ID :Pre Requisit
     @test
 
-Scenario: To verify that Business admin is able to Perform Cash in for Subscriber
+Scenario: To verify that Business admin is able to Perform Cash in for Subscriber1
 Given Login into Mobiquity Portal as Business admin User3
 When Navigate to Cash in or Cash out and Click on Cash in
 And Enter all Mandatory details
@@ -44,7 +44,7 @@ Then Click on Submit and Click on Confirm Button
     # # # Scenario_ID :Pre Requisit
     @test
 
-Scenario: To verify that Business admin is able to Perform Cash in for Subscriber
+Scenario: To verify that Business admin is able to Perform Cash in for Subscriber2
 Given Login into Mobiquity Portal as Business admin User4
 When Navigate to Cash in or Cash out and Click on Cash in
 And Enter all Mandatory details
@@ -56,7 +56,7 @@ Then Click on Submit and Click on Confirm Button1
     # # # Scenario_ID :Pre Requisit
     @test
     
-Scenario: To verify that Business admin is able to Perform Cash in for Subscriber
+Scenario: To verify that Business admin is able to Perform Cash in for Subscriber3
 Given Login into Mobiquity Portal as Business admin User4
 When Navigate to Cash in or Cash out and Click on Cash in
 And Enter all Mandatory details
