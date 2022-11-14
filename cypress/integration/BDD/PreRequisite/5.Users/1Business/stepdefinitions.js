@@ -406,7 +406,7 @@ And('Enter all the required business user details', function () {
   registerPage.getMakeThisPrimaryButton().eq(2).click({ force: true })
   cy.wait(2000)
   registerPage.getNextButtonBasic1().click({ force: true })
-  
+  registerPage.getNextButtonBasic2().click({force:true})
 
   
   //-----------------------------Profile---------------------------------------------------------------
@@ -416,7 +416,7 @@ And('Enter all the required business user details', function () {
     registerPage.getAuthProfile().select('WholesalerDefault Profile', { force: true })
     registerPage.getReguProfile().select('FullKycprofile', { force: true })
     registerPage.getMarketingProfile().select('WHSDefaultMP', { force: true })
-   registerPage.getNextButtonBasic2().click({force:true})
+   
     registerPage.getNextButtonBasic3().click({force:true})
     registerPage.getSubmitButton().click({ force: true })
 })
