@@ -230,7 +230,7 @@ And('click on Add Regulatory Profile and Enter Profile Code and Profile Name', f
   cy.iframe().find('[id="profileCode"]').type(id)
   recurse(
     () => cy.iframe().find('[id="profileCode"]').clear().type(id),
-    () => cy.iframe().find('.MuiButton-label').contains("Search").click({force: true}),
+    () => cy.iframe().find('.MuiButton-label').eq(1).click({force: true}),
     (uniqueness) => (uniqueness) == cy.iframe().find('table > tbody').should('have.length', "1")
   )
   cy.log(id)
