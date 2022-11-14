@@ -114,6 +114,23 @@ And('Select User type', function () {
 
 And('Enter MSISDN,Provider,Wallet Type,Reference Number and Remarks', function () {
   cy.getMobileNumber()
+    cy.get('.fd-page.iframeContainer.svelte-1v5e28n > iframe').then(($iframe) => {
+    const $body = $iframe.contents().find('body')
+    const $win = $iframe[0].contentWindow
+    const stub = cy.stub()
+    if (cy.stub($win, 'alert', () => false)
+      .as('windowConfirm')) {
+    }
+    else {
+      cy.stub($win.console, 'log').as('consoleLog')
+      cy.wrap($body)
+        .find('input[name="amount"]').click({ force: true })
+        .should(function () {
+          expect(this.windowConfirm).to.be.calledWith("Channel User Does Not Exist")
+        })
+    }
+  })
+
   cy.wait(3000)
   stockManagementPage.getReimbursementReferenceNumber().type(refno, { force: true })
   stockManagementPage.getRemark().type(testname, { force: true })
