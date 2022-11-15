@@ -109,6 +109,54 @@ class TransferControlProfile{
     {
         return cy.iframe().find('.style_even>td:nth-child(3) [thresholdtype="Per Transaction"]')
     }
+     getcount1()
+    {
+        return cy.iframe().find('tr.style_even:nth-child(5) td.count_def.amount:nth-child(3) > input.allserv')
+    }
+getcount2()
+    {
+        return cy.iframe().find('tr.style_even:nth-child(5) td.count_def.amount:nth-child(5) > input.allserv')
+    }
+getcount3()
+    {
+        return cy.iframe().find('tr.style_even:nth-child(5) td.count_def.amount:nth-child(7) > input.allserv')
+    }
+
+getcount4()
+    {
+        return cy.iframe().find('tr.style_even:nth-child(5) td.count_def.amount:nth-child(9) > input.allserv')
+    }
+
+getcount5()
+    {
+        return cy.iframe().find('tr.style_even:nth-child(5) td.count_def.amount:nth-child(11) > input.allserv')
+    }
+
+getcount6()
+    {
+        return cy.iframe().find('tr.style_even:nth-child(5) td.count_def.amount:nth-child(13) > input.allserv')
+    }
+
+getcount7()
+    {
+        return cy.iframe().find('tr.style_even:nth-child(5) td.count_def.amount:nth-child(15) > input.allserv')
+    }
+
+getcount8()
+    {
+        return cy.iframe().find('tr.style_even:nth-child(5) td.count_def.amount:nth-child(17) > input.allserv')
+    }
+
+getcount9()
+    {
+        return cy.iframe().find('tr.style_even:nth-child(5) td.count_def.amount:nth-child(19) > input.allserv')
+    }
+
+getcount10()
+    {
+        return cy.iframe().find('tr.style_even:nth-child(5) td.count_def.amount:nth-child(21) > input.allserv')
+    }
+
     getcountmaster()
     {
         return cy.iframe().find('.user_input [thresholdsubtype="count"]')
