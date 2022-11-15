@@ -39,6 +39,13 @@ class TransferRulePage {
     return cy.iframe().find('input[id="selectForm_button_submit"]')
   }
   /*--------------------------------*/
+  getDirectTransferAllowed()
+    {
+        return cy.iframe().find("#trRule_confirmCoU_directTransferAllowedtrue")
+    }
+    getBypassAllowed(){
+        return cy.iframe().find("#trRule_confirmCoU_bypassAllowedtrue")
+    }
 
   getFromCategory() {
     return cy.iframe().find('select[id="payerCategoryCode"]')
@@ -114,6 +121,9 @@ class TransferRulePage {
   }
   getErrorMessage() {
     return cy.iframe().find(".errorMessage")
+  }
+  getAssertMessage() {
+    return cy.iframe().find(".actionMessage")
   }
 }
 export default TransferRulePage

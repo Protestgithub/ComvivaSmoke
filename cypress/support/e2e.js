@@ -13,17 +13,12 @@
 // https://on.cypress.io/configuration
 // ***********************************************************
 import "cypress-cucumber-attach-screenshots-to-failed-steps"
+import '@shelex/cypress-allure-plugin';
 
 // Import commands.js using ES2015 syntax:
-import './commands'
-import './StockCommands'
-import './AdministratorCommands'
-import './BankCommands'
-import './authourizationcommands'
-import './comissioncommands'
-import './securityCommands'
-import './subscriberCommands'
-//import 'cypress-failed-log'
+
+import './utils/Generic'
+
 
 module.exports = (on, config) => {
     on("file:preprocessor", cucumber());

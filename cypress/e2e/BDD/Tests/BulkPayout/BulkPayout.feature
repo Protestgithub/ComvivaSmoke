@@ -17,13 +17,13 @@ And Enter All the Mandatory Details for bulkpayout
 Then Click on submit and Confirm2 for bulk
 And logout the user
 
+
+
+
 Scenario:To verify that system is able to approve
 
 Given Login into Mobiquity Portal as System admin Checker1
 When Navigate to Operator to channel and click on O2C transfer Approval1
-And logout the user
-Given Login into Mobiquity Portal as System admin Checker2
-When Navigate to Operator to channel and click on O2C transfer Approval2
 And logout the user
 
 Scenario:To verify that system is able to initiate the Bulk Payout
@@ -31,8 +31,11 @@ Scenario:To verify that system is able to initiate the Bulk Payout
 Given Login into Mobiquity Portal as System admin Maker
 When Click on BulkPayout tool
 And Click on Bulk Payout Initiate
-Then update the json data
-And Upload the data
+And Select service from dropdown list
+And Download a blank .csv file from Download a File template link
+And Enter Common Remarks
+Then update the json data for initiate the Bulk Payout
+And Upload a .csv file with valid details
 Then Logout
 
    
@@ -54,7 +57,7 @@ And Click on Approve button.
 And Click on BulkPayout tool
 And Click on Bulk Payout Dashboard
 And Click on number of entries
-Then Verify Batch Id
+And Verify Batch Id
 Then Verify success
 
 

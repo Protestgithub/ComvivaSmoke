@@ -234,5 +234,28 @@ getSubmitClickBtn()
     getCloneButton1() {
         return cy.iframe().find('[class="modal-action modal-close center-align submit-for-approval-btn"]').eq(1)
     }
+    getApproval() {
+        return cy.iframe().find('[id="main-menu-approval"]')
+    }
+    getApprovalRuleName() {
+        return cy.iframe().find('.col.s3.truncate')
+    }
+    getApprovalBtn() {
+        return cy.iframe().find('[title="Approve"]')
+    }
+    getApprovalSubmitBtn() {
+        return cy.iframe().find('.btn.col.s12.policy-approve-btn.policy-approve-btn-enabled')
+    }
+    getApprovalConfirmBtn() {
+        return cy.iframe().find('.modal-action.modal-close.waves-effect.center.submit-for-approval-btn')
+    }
+    getApprovalsuccessText() {
+        return cy.iframe().find('.alert.alert-success')
+    }
+    getApprovalpolicy() {
+        return cy.iframe().find('.collapsible-header.pending-policy-header')
+    }
+    
+
 }
 export default PricingEnginePage

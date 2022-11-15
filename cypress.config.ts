@@ -1,6 +1,15 @@
 import { defineConfig } from 'cypress'
 
-export default defineConfig({
+const createEsbuildPlugin =
+  require('@badeball/cypress-cucumber-preprocessor/esbuild').createEsbuildPlugin
+const createBundler = require('@bahmutov/cypress-esbuild-preprocessor')
+const nodePolyfills =
+  require('@esbuild-plugins/node-modules-polyfill').NodeModulesPolyfillPlugin
+const addCucumberPreprocessorPlugin =
+  require('@badeball/cypress-cucumber-preprocessor').addCucumberPreprocessorPlugin
+  const allureWriter = require("@shelex/cypress-allure-plugin/writer");
+
+module.exports =  defineConfig({
   defaultCommandTimeout: 15000,
   pageLoadTimeout: 20000,
   viewportWidth: 1200,
@@ -11,8 +20,8 @@ export default defineConfig({
   video: false,
   downloadsFolder: 'cypress/fixtures/templates',
   env: {
-    Adminurl: 'http://172.25.49.185',
-    apiBaseURL: 'http://172.25.49.185:3133',
+    "Adminurl": "http://172.25.48.150",
+    "apiBaseURL": "http://172.25.48.150:3133"
   },
   projectId: 'yizpik',
   chromeWebSecurity: false,
@@ -24,8 +33,16 @@ export default defineConfig({
     // We've imported your old cypress plugins here.
     // You may want to clean this up later by importing these.
     setupNodeEvents(on, config) {
-      return require('./cypress/plugins/index.js')(on, config)
+      on(
+        'file:preprocessor',
+        createBundler({
+          plugins: [nodePolyfills(), createEsbuildPlugin(config)],
+        })
+      )
+      allureWriter(on, config);
+
     },
+      
     specPattern: 'cypress/e2e/**/*.feature',
   },
 })

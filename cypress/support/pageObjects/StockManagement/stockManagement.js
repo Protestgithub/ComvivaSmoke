@@ -138,7 +138,7 @@ class stockManagement {
     }
 
     getTrasanctionIDRadioButton() {
-        return cy.iframe().find('input[type="radio"][name="check"]')
+        return cy.iframe().find('input[type="radio"][name="check"]').eq(0)
     }
     getStockEnqRViewButtonSubmit() {
 
@@ -309,5 +309,70 @@ class stockManagement {
        
     }
     
+    getReimbursementErrorMessage()
+    {
+        return cy.iframe().find('.errorMessage')
+    }
+    //----------------------- Stock Transfer EA Approval 1-------------------
+
+
+
+    getStockEAApproval1() {
+
+        return cy.get('[data-testid="menu.stock"]').find('[title="Stock Transfer to EA Approval -1"]')
+
+
+
+    }
+
+
+
+    getEAApprovalSubmitButton() {
+
+
+
+        return cy.iframe().find('#stockTransferApprove1_approve_button_submit')
+
+
+
+    }
+
+
+
+    getEAApprovalConfirmButton() {
+
+        return cy.iframe().find('[id="stockTransferApprove1_confirmApproval_button_approve"]')
+
+    }
+
+
+
+    //-------------------EA Approval 2---------------
+
+
+
+    getStockEAApproval2() {
+
+        return cy.get('[data-testid="menu.stock"]').find('[title="Stock Transfer to EA Approval -2"]')
+
+
+
+    }
+
+    getEAApproval2SubmitButton() {
+
+
+
+        return cy.iframe().find('#stockTransferApprove2_approve_button_submit')
+
+    }
+
+
+
+    getEAApproval2ConfirmButton() {
+
+        return cy.iframe().find('[id="stockTransferApprove2_confirmApproval_button_approve"]')
+
+    }
 }
 export default stockManagement
