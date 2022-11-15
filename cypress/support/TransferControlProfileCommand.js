@@ -218,6 +218,7 @@ Cypress.Commands.add('DeleteDetails1',()=>{
             }
             else{
               cy.log('data unavailable')
+               shouldStop = true
             }
           })
         })
