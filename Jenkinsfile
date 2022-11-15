@@ -28,7 +28,9 @@ pipeline {
         }
         stage('Prerequisites'){
             steps{
-               bat "npm install cypress@10.6.0"
+                 bat ".\node_modules\.bin\cypress.cmd install --force"
+                 bat "npm install cypress@10.6.0"
+               
                 bat  "npm i -D cypress-wait-until"
                 bat "npm run cy:parallel --env Adminurl=http://125.16.139.20:8023 ,apiBaseURL=http://172.25.48.237:3133 --browser ${BROWSER} --spec ${SPEC}  "
             }
