@@ -116,6 +116,7 @@ And('Click on New Button', function () {
   cy.fixture(fileRegulatoryProfile).then((user) => {
     RName = user.RegulatoryProfileName
     cy.log(RName)
+    cy.wait(2000)
     tcpPage.getregulatorytype().select(RName, { force: true })
   })
   cy.TCPMasRandomName()
@@ -184,6 +185,7 @@ And('Click on New Button for Subscriber', function () {
   cy.fixture(fileRegulatoryProfile).then((user) => {
     RName = user.RegulatoryProfileName
     cy.log(RName)
+    cy.wait(2000)
     tcpPage.getregulatorytype().select(RName, { force: true })
   })
   cy.TCPMasRandomNameSub()
