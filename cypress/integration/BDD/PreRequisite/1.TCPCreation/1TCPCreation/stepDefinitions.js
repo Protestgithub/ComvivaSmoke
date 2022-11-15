@@ -108,7 +108,7 @@ When('Navigate to Transfer Control Profile', function () {
 })
 
 And('Click on New Button', function () {
-
+cy.wait(2000)
   tcpPage.getNew().click({ force: true })
   tcpPage.getprovider().select(this.data5.TransferControlProfile.Provider, { force: true })
   tcpPage.getdomain().select(this.data5.TransferControlProfile.Domain, { force: true })
