@@ -51,10 +51,10 @@ Feature: Customer level TCP edit,delete
 # # 
 # @test
 
-# Scenario:To verify the error message when instrument level TCP added with same Profile Name.
-# Given Login into Mobiquity Portal as System admin Maker
-# When Navigate to Transfer Control Profile and Click on Manage Transfer Level TCP
-# And  Click on Add New Button
-# Then Enter required Fields for error message
-# And  Click on Create Button
-# Then Verify Error Message
+ Scenario:To verify the error message when instrument level TCP added with same Profile Name.
+ Given Login into Mobiquity Portal as System admin Maker
+ When Navigate to Transfer Control Profile and Click on Manage Transfer Level TCP
+ And  Click on Add New Button
+ Then Enter required Fields for error message
+ And  Click on Create Button
+ Then Verify Error Message
