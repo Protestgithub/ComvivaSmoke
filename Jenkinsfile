@@ -28,7 +28,7 @@ pipeline {
         }
         stage('Prerequisites'){
             steps{
-                
+                bat "npm install"
                  bat "npm install cypress@10.6.0"
                bat "npm install -D @badeball/cypress-cucumber-preprocessor"
                 bat  "npm i -D cypress-wait-until"
