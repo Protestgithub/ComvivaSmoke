@@ -225,3 +225,40 @@ Cypress.Commands.add('DeleteDetails1',()=>{
       })
       }))
 })
+
+Cypress.Commands.add('getcumulativeamountpertransaction', () => {
+  const uuid = () => Cypress._.random(1e3)
+  var number = uuid()
+  tcpPage.getcount1().each((e1, index, list) => {
+      cy.wrap(e1).type(number)
+    })
+  tcpPage.getcount2().each((e1, index, list) => {
+      cy.wrap(e1).type(number)
+    })
+  tcpPage.getcount3().each((e1, index, list) => {
+      cy.wrap(e1).type(number)
+    })
+  tcpPage.getcount4().each((e1, index, list) => {
+      cy.wrap(e1).type(number)
+    })
+  tcpPage.getcount5().each((e1, index, list) => {
+      cy.wrap(e1).type(number)
+    })
+  tcpPage.getcount6().each((e1, index, list) => {
+      cy.wrap(e1).type(number)
+    })
+  tcpPage.getcount7().each((e1, index, list) => {
+      cy.wrap(e1).type(number)
+    })
+  tcpPage.getcount8().each((e1, index, list) => {
+      cy.wrap(e1).type(number)
+    })
+  tcpPage.getcount9().each((e1, index, list) => {
+      cy.wrap(e1).type(number)
+    })
+  tcpPage.getcount10().each((e1, index, list) => {
+      cy.wrap(e1).type(number)
+    })
+  })
+  
+  
