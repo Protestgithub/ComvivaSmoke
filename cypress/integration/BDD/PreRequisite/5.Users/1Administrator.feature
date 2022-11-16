@@ -66,6 +66,8 @@ And User click on submitted user data for CCA
 And Approve the Users
 Then User status is approved
 Then Logout
+
+Scenario: Assertion of created Customer Care Admin
 Given Login into Mobiquity Portal as System admin Maker
 When Navigate to Manage User, and search Business Admin
 And Assert Created Customer Admin Mobile Number
@@ -87,6 +89,8 @@ Then Confirm the edit details Of the User
 And Navigate to My Activity and Apply Modified User filters
 Then Assert Created Customer care Admin Mobile Number and Write Created on time
 Then Logout
+
+Scenario: To verify approval of initiated modification request
 Given Login into Mobiquity Portal as System admin Checker1
 When Navigate to Approvals and filter by Submitted status
 And User click on submitted user data
