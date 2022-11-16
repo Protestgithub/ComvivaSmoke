@@ -92,7 +92,7 @@ Then('Fill all Details and Create CustomercareAdmin authorization profile', func
     cy.writeFile(AuthProfileName, data)
   })
 
-  cy.selectModule()
+ // cy.selectModule()
   cy.wait(3000)
   authorizationProfilePage.getAdd().click({ force: true })
   authorizationProfilePage.getConfirm().click({ force: true })
