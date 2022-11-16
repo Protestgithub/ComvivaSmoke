@@ -264,15 +264,11 @@ And('Enter all the required business user details', function () {
 //-----------------------------Profile---------------------------------------------------------------
 
   cy.wait(5000)
-  registerPage.getNextButtonBasic2().click({force:true})
-
-    registerPage.getSecurityProfile().select('WholesalerDefaultSecurityProfile', { force: true })
+  registerPage.getSecurityProfile().select('WholesalerDefaultSecurityProfile', { force: true })
     registerPage.getAuthProfile().select('WholesalerDefault Profile', { force: true })
     registerPage.getReguProfile().select('FullKycprofile', { force: true })
     registerPage.getMarketingProfile().select('WHSDefaultMP', { force: true })
-    
-    
- 
+    registerPage.getNextButtonBasic2().click({force:true})
     registerPage.getNextButtonBasic3().click({force:true})
     registerPage.getSubmitButton().click({ force: true })
 })
@@ -325,8 +321,15 @@ And('Enter all the required business user details for O2C', function () {
   registerPage.getNextButtonBasic1().click({ force: true }) 
   //-----------------------------BANK Details---------------------------------------------------------------
 
-  cy.wait(5000)
-
+   cy.wait(5000)
+   registerPage.getSecurityProfile().select('WholesalerDefaultSecurityProfile', { force: true })
+   registerPage.getAuthProfile().select('WholesalerDefault Profile', { force: true })
+   registerPage.getReguProfile().select('FullKycprofile', { force: true })
+   registerPage.getMarketingProfile().select('WHSDefaultMP', { force: true })
+   
+   registerPage.getNextButtonBasic2().click({force:true})
+   
+   //----------------------------------PROFILE------------------------------------------------------------
 
     const t = parseInt(Date.now()/1000);
     ifscnum="S"+t
@@ -361,13 +364,6 @@ And('Enter all the required business user details for O2C', function () {
    })
    cy.wait(3000)
    registerPage.getBankIFSC().type(ifscnum, { force: true })
-   registerPage.getNextButtonBasic2().click({force:true})
-   
-   //----------------------------------PROFILE------------------------------------------------------------
-   registerPage.getSecurityProfile().select('WholesalerDefaultSecurityProfile', { force: true })
-   registerPage.getAuthProfile().select('WholesalerDefault Profile', { force: true })
-   registerPage.getReguProfile().select('FullKycprofile', { force: true })
-   registerPage.getMarketingProfile().select('WHSDefaultMP', { force: true })
    registerPage.getNextButtonBasic3().click({force:true})
    registerPage.getSubmitButton().click({ force: true })
    })
