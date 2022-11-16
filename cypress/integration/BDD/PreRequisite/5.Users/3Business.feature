@@ -100,6 +100,8 @@ Then Verify the user resume Confirmation message
 And Navigate to My Activity and Apply Modified User filters
 And Assert Buissness User Mobile Number for Suspension and Write Created on time
 Then Logout
+
+Scenario: Approval of Suspended User
 Given Login into Mobiquity Portal as another System admin Checker1 after logout
 When Navigate to Approvals and  click on suspended data
 And User click on Suspended submitted user data
@@ -123,6 +125,8 @@ Then Confirmation message is displayed
 When Navigate to My Activity and Apply Add User filters
 Then Assert Created Buissness User Mobile Number and Write Created on time
 Then Logout
+
+Scenario: To verify notification sent on approval
 Given Login into Mobiquity Portal as another System admin Checker1 after logout
 When Navigate to Approvals and filter by Submitted status 
 And User click on submitted user data
