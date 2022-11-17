@@ -122,7 +122,7 @@ getDateRangeAssert() {
         return cy.iframe().find('mat-radio-button[id="Lock both"]')
     }
     getlockallbtn() {
-        return cy.iframe().find('[data-test-id="submit-lock"]')
+        return cy.iframe().find('[data-test-id="submit-unlock"]')
     }
     getconfirmationlock() {
         return cy.iframe().find('#reason')
