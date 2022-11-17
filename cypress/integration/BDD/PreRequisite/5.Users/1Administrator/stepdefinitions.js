@@ -294,7 +294,9 @@ And('Assert Created Customer Admin Mobile Number', function () {
   cy.readFile(filename).then((user) => {
     let CCAMobile = user.CCAMobileNumber
     var CAMobile = " " + CCAMobile
-    manageUsersPage.getAssertMobile().eq(1).should('have.text', CAMobile)
+    cy.waitUntil(()=>{
+      return cy.iframe().find('[class="mat-tooltip-trigger ng-star-inserted"]').eq(1).should('have.text', CAMobile)
+    })
     cy.wait(2000)
   })
 })
