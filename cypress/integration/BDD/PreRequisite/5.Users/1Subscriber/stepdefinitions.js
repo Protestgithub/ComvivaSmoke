@@ -131,7 +131,8 @@ Then('SubscrigReg Confirmation message is displayed', function () {
 
   registerPage.getNextButtonBasic2().click({ force: true })
   registerPage.getSubmitButton().click({ force: true })
-  registerPage.getConfirmationText()
+  registerPage.getConfirmationText().should('have.text', this.data2.personalInfo.successConfirmationMessage)
+  registerPage.getDoneButton().click()
 })
 
 //-----TC_69-------------------------Approve(Subscriber)--------------------------------------------------
