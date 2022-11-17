@@ -477,7 +477,8 @@ And('Enter all the required subscriber details for churn approve or reject',func
 mobile = "77" + uuid()*/
 let mobileut3;
 const m = parseInt(Date.now()/100000);
-mobileut3 = "77" + m
+let k = m+3
+mobileut3 = "77" + k
 const lgid = () => Cypress._.random(1e5)
 loginId = this.data2.personalInfo.firstName + lgid()
 CIF = lgid()
