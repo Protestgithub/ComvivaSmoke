@@ -95,60 +95,60 @@ Cypress.Commands.add('launchURL', (URL) => {
 })
 
 Cypress.Commands.add('login', (Username, Password) => {
-    cy.frameLoaded(pageLogin.getiFrame())
-     cy.wait(2000)
-     cy.readFile(ApiService).then((data) =>{
-        let dataapi= data.loginurl
-        cy.intercept(dataapi).as('all')
-    pageLogin.getInputForm().eq(0).type(Username)
-    pageLogin.getInputForm().eq(1).type(Password)
-    pageLogin.getLoginBtn().eq(0).click()
-    cy.checkAPI(dataapi)
-    cy.wait(3000)
-})
-})
+      cy.frameLoaded(pageLogin.getiFrame())
+       cy.wait(2000)
+    //   cy.readFile(ApiService).then((data) =>{
+      //    let dataapi= data.loginurl
+   //       cy.intercept(dataapi).as('all')
+      pageLogin.getInputForm().eq(0).type(Username)
+      pageLogin.getInputForm().eq(1).type(Password)
+      pageLogin.getLoginBtn().eq(0).click()
+   //   cy.checkAPI(dataapi)
+      cy.wait(3000)
+ // })
+  })
 Cypress.Commands.add('loginAgain', (Username, Password) => {
     cy.wait(2000) 
-    cy.readFile(ApiService).then((data) =>{
-        let dataapi= data.loginurl
-        cy.intercept(dataapi).as('all')
+  //  cy.readFile(ApiService).then((data) =>{
+ //       let dataapi= data.loginurl
+ //       cy.intercept(dataapi).as('all')
     pageLogin.getInputForm().eq(0).type(Username)
     pageLogin.getInputForm().eq(1).type(Password)
     pageLogin.getLoginBtn().eq(0).click()
-    cy.checkAPI(dataapi)
+//    cy.checkAPI(dataapi)
     cy.wait(3000)
-})
+//})
 })
 Cypress.Commands.add('login1', (Password) => {
     cy.frameLoaded(pageLogin.getiFrame())
      cy.wait(2000)
-     cy.readFile(ApiService).then((data) =>{
-        let dataapi= data.loginurl
-        cy.intercept(dataapi).as('all')
+    // cy.readFile(ApiService).then((data) =>{
+    //    let dataapi= data.loginurl
+   //     cy.intercept(dataapi).as('all')
     pageLogin.getInputForm().eq(0).type(Password)
     pageLogin.getInputForm().eq(1).type(Password)
     pageLogin.getchangepassword().click({ force: true })
-    cy.checkAPI(dataapi)
+  //  cy.checkAPI(dataapi)
     cy.wait(3000)
-})
+//})
 })
 Cypress.Commands.add('login1Again', (Password) => {
      cy.wait(2000)
-     cy.readFile(ApiService).then((data) =>{
-        let dataapi= data.loginurl
-        cy.intercept(dataapi).as('all')
+ //    cy.readFile(ApiService).then((data) =>{
+  //      let dataapi= data.loginurl
+  //      cy.intercept(dataapi).as('all')
     pageLogin.getInputForm().eq(0).type(Password)
     pageLogin.getInputForm().eq(1).type(Password)
     pageLogin.getchangepassword().click({ force: true })
-    cy.checkAPI(dataapi)
+ //   cy.checkAPI(dataapi)
     cy.wait(3000)
-})
+//})
 })
 
 Cypress.Commands.add('SysAdminlogin', () => {
-    cy.readFile(ApiService).then((data1) =>{
-        let dataapi= data1.loginurl
-        cy.intercept(dataapi).as('all')
+  //  cy.readFile(ApiService).then((data1) =>{
+  //      let dataapi= data1.loginurl
+   //     cy.intercept(dataapi).as('all')
     cy.frameLoaded(pageLogin.getiFrame())
      cy.wait(2000)
     cy.readFile(Sysfilelogin).then((data) => {
@@ -157,17 +157,17 @@ Cypress.Commands.add('SysAdminlogin', () => {
         pageLogin.getInputForm().eq(0).type(loginID)
         pageLogin.getInputForm().eq(1).type(word)
         pageLogin.getLoginBtn().eq(0).click()
-        cy.checkAPI(dataapi)
+  //      cy.checkAPI(dataapi)
         cy.wait(3000)
     })
-})
+//})
 })
 
 Cypress.Commands.add('BAlogin', () => {
 
-    cy.readFile(ApiService).then((data2) =>{
-        let dataapi= data2.loginurl
-        cy.intercept(dataapi).as('all')
+  //  cy.readFile(ApiService).then((data2) =>{
+  //      let dataapi= data2.loginurl
+  //      cy.intercept(dataapi).as('all')
     cy.frameLoaded(pageLogin.getiFrame())
      cy.wait(2000)
     cy.readFile(BAlogin).then((data) => {
@@ -176,15 +176,15 @@ Cypress.Commands.add('BAlogin', () => {
         pageLogin.getInputForm().eq(0).type(loginID)
         pageLogin.getInputForm().eq(1).type(word)
         pageLogin.getLoginBtn().eq(0).click()
-        cy.checkAPI(dataapi)
+   //     cy.checkAPI(dataapi)
         cy.wait(3000)
-    })
+  //  })
 })
 })
 Cypress.Commands.add('SysAdminloginAgain', () => {
-    cy.readFile(ApiService).then((data3) =>{
-        let dataapi= data3.loginurl
-        cy.intercept(dataapi).as('all')
+   // cy.readFile(ApiService).then((data3) =>{
+    //    let dataapi= data3.loginurl
+  //      cy.intercept(dataapi).as('all')
     cy.readFile(Sysfilelogin).then((data) => {
         let loginID = data.LoginId
         let word = data.ChangePassword
@@ -192,15 +192,15 @@ Cypress.Commands.add('SysAdminloginAgain', () => {
         pageLogin.getInputForm().eq(0).type(loginID)
         pageLogin.getInputForm().eq(1).type(word)
         pageLogin.getLoginBtn().eq(0).click()
-        cy.checkAPI(dataapi)
+   //     cy.checkAPI(dataapi)
         cy.wait(3000)
-    })
+  //  })
 })
 })
 Cypress.Commands.add('SysAdminlogin2', () => {
-    cy.readFile(ApiService).then((data4) =>{
-        let dataapi= data4.loginurl
-        cy.intercept(dataapi).as('all')
+  //  cy.readFile(ApiService).then((data4) =>{
+  //      let dataapi= data4.loginurl
+  //      cy.intercept(dataapi).as('all')
     cy.frameLoaded(pageLogin.getiFrame())
     cy.readFile(Sysfilelogin).then((data) => {
         let loginID = data.LoginId2
@@ -209,15 +209,15 @@ Cypress.Commands.add('SysAdminlogin2', () => {
         pageLogin.getInputForm().eq(0).type(loginID)
         pageLogin.getInputForm().eq(1).type(word)
         pageLogin.getLoginBtn().eq(0).click()
-        cy.checkAPI(dataapi)
+  //      cy.checkAPI(dataapi)
         cy.wait(3000)
-    })
+  //  })
 })
 })
 Cypress.Commands.add('SysAdminlogin2Again', () => {
-    cy.readFile(ApiService).then((data4) =>{
-        let dataapi= data4.loginurl
-        cy.intercept(dataapi).as('all')
+   // cy.readFile(ApiService).then((data4) =>{
+     //   let dataapi= data4.loginurl
+    //    cy.intercept(dataapi).as('all')
     cy.readFile(Sysfilelogin).then((data) => {
         let loginID = data.LoginId2
         let word = data.ChangePassword2
@@ -225,15 +225,15 @@ Cypress.Commands.add('SysAdminlogin2Again', () => {
         pageLogin.getInputForm().eq(0).type(loginID)
         pageLogin.getInputForm().eq(1).type(word)
         pageLogin.getLoginBtn().eq(0).click()
-        cy.checkAPI(dataapi)
+    //    cy.checkAPI(dataapi)
         cy.wait(3000)
-    })
+   // })
 })
 })
 Cypress.Commands.add('SysAdminlogin3', () => {
-    cy.readFile(ApiService).then((data4) =>{
-        let dataapi= data4.loginurl
-        cy.intercept(dataapi).as('all')
+  //  cy.readFile(ApiService).then((data4) =>{
+  //      let dataapi= data4.loginurl
+  //      cy.intercept(dataapi).as('all')
     cy.readFile(Sysfilelogin).then((data) => {
         let loginID = data.LoginId3
         let word = data.ChangePassword3
@@ -242,8 +242,8 @@ Cypress.Commands.add('SysAdminlogin3', () => {
         pageLogin.getInputForm().eq(1).type(word)
         pageLogin.getLoginBtn().eq(0).click()
         cy.wait(3000)
-        cy.checkAPI(dataapi)
-    })
+    //    cy.checkAPI(dataapi)
+  //  })
     })
 })
 
