@@ -314,7 +314,9 @@ And('Suspend the user by giving the comment', function () {
 })
 
 Then('Verify the user suspend Confirmation message', function () {
-  approvalPage.getApproveConfirmationMessage().contains(this.data2.suspendResumeConfirmationMessage.suspendResumeUser)
+  cy.waitUntil(()=>{
+    return cy.iframe().find('.mat-simple-snackbar.ng-star-inserted > span').contains(this.data2.suspendResumeConfirmationMessage.suspendResumeUser)
+  })
 })
 
 
@@ -342,7 +344,9 @@ And('Approve to suspended the Users', function () {
 })
 
 Then('Verify the user Suspended approval message', function () {
-  approvalPage.getApproveConfirmationMessage().contains(this.data2.suspendResumeConfirmationMessage.userSuspended)
+  cy.waitUntil(()=>{
+    return cy.iframe().find('.mat-simple-snackbar.ng-star-inserted > span').contains(this.data2.suspendResumeConfirmationMessage.userSuspended)
+  })
 })
 
 
@@ -365,7 +369,9 @@ And('Approve the Resumed User', function () {
   approvalPage.getApproveRequest().click({ force: true })
 })
 Then('Verify the user Resumed approval message', function () {
-  approvalPage.getApproveConfirmationMessage().contains(this.data2.suspendResumeConfirmationMessage.userResumed)
+  cy.waitUntil(()=>{
+    return cy.iframe().find('.mat-simple-snackbar.ng-star-inserted > span').contains(this.data2.suspendResumeConfirmationMessage.userResumed)
+})
 })
 
 
@@ -377,5 +383,7 @@ When('Navigate to User Management and Click on manage user', function () {
 })
 
 Then('Verify the user resume Confirmation message', function () {
-  approvalPage.getApproveConfirmationMessage().should("contain", this.data2.suspendResumeConfirmationMessage.suspendResumeUser)
+ cy.waitUntil(()=>{
+    return cy.iframe().find('.mat-simple-snackbar.ng-star-inserted > span').should("contain", this.data2.suspendResumeConfirmationMessage.suspendResumeUser)
+})
 })
