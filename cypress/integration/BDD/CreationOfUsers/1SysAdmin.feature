@@ -49,7 +49,6 @@ When Navigate to User Management and click on Register
 And Click On System Admin and select Single User
 And Enter all required Fields
 Then Confirmation message is displayed
-Then Logout
 
 Scenario:Approval of System Admin2
 Given Login into Mobiquity Portal as Super admin Checker
@@ -57,7 +56,6 @@ When Navigate to Approvals and filter by Submitted status
 And User click on submitted user data
 And Approve the Users and save loginID2
 Then User status is approved
-Then Logout
 
 Scenario: Login in as System Admin2
 Given Login into Mobiquity Portal as System admin Created by Master2
@@ -70,7 +68,6 @@ When Navigate to User Management and click on Register
 And Click On System Admin and select Single User
 And Enter all required Fields
 Then Confirmation message is displayed
-Then Logout
 
 Scenario: Approval of System Admin3
 Given Login into Mobiquity Portal as Super admin Checker
@@ -78,7 +75,6 @@ When Navigate to Approvals and filter by Submitted status
 And User click on submitted user data
 And Approve the Users and save loginID3
 Then User status is approved
-Then Logout
 
 Scenario: Login of System Admin3
 Given Login into Mobiquity Portal as System admin Created by Master3
