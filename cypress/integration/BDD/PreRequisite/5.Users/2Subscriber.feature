@@ -13,7 +13,7 @@ Feature: Lock and Unlock Wallets of Subscriber
 Scenario:To verify that another System Admin/businsess User is able to approve the Modified Subscriber Data.
 Given Login into Mobiquity Portal as System admin Checker1
 When Navigate to Approvals and filter by Modification of user status
-# And User click on submitted user data
+And User click on submitted user data for approval of subscriber modification
 And Approve the Users
 Then Edited User status is approved
 ############################################## Kalyani ####################################################
