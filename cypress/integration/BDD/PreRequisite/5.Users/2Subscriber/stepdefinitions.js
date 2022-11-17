@@ -168,6 +168,8 @@ And('Enter Mobile number of subscriber in search', function () {
 
 })
 
+
+
 //------------------------------------Monica----------------------------------------------------------
 
 //-----------------------------Test Scripts-----------------------------------------------------------------------------
@@ -212,4 +214,9 @@ And('Click on refresh icon corresponding to the respective authentication factor
   manageUsersPage.getresetcredentials().eq(0).click({ force: true })
   manageUsersPage.getresetconfirmation().click({ force: true })
   manageUsersPage.getsuccessresetconfirmation().click({ force: true })
+})
+//------------Added method for approval of suspended subscriber--------------------
+
+And('User click on submitted user data for suspension', function () {
+  cy.getApproval(subRegistration)
 })
