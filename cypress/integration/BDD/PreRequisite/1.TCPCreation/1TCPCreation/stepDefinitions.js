@@ -109,15 +109,16 @@ When('Navigate to Transfer Control Profile', function () {
 
 And('Click on New Button', function () {
 cy.wait(2000)
-  tcpPage.getNew().click({ force: true })
+  tcpPage.getNew().should('be.visible').click({ force: true })
   tcpPage.getprovider().select(this.data5.TransferControlProfile.Provider, { force: true })
   tcpPage.getdomain().select(this.data5.TransferControlProfile.Domain, { force: true })
   tcpPage.getcategory().select(this.data5.TransferControlProfile.Category, { force: true })
   cy.fixture(fileRegulatoryProfile).then((user) => {
     RName = user.RegulatoryProfileName
     cy.log(RName)
-    cy.wait(2000)
-    tcpPage.getregulatorytype().select(RName, { force: true })
+    cy.waitUntil(()=>{
+      return cy.iframe().find('#registrationType').select(RName, { force: true })
+      })
   })
   cy.TCPMasRandomName()
   tcpPage.getdescription().type(this.data5.TransferControlProfile.Description)
@@ -178,15 +179,16 @@ Then('Approve the TCP', function () {
 
 And('Click on New Button for Subscriber', function () {
 
-  tcpPage.getNew().click({ force: true })
+  tcpPage.getNew().should('be.visible').click({ force: true })
   tcpPage.getprovider().select(this.data5.TransferControlProfile.Provider, { force: true })
   tcpPage.getdomain().select(this.data5.TransferControlProfile.Domain1, { force: true })
   tcpPage.getcategory().select(this.data5.TransferControlProfile.Category1, { force: true })
   cy.fixture(fileRegulatoryProfile).then((user) => {
     RName = user.RegulatoryProfileName
     cy.log(RName)
-    cy.wait(2000)
-    tcpPage.getregulatorytype().select(RName, { force: true })
+    cy.waitUntil(()=>{
+      return cy.iframe().find('#registrationType').select(RName, { force: true })
+      })
   })
   cy.TCPMasRandomNameSub()
     tcpPage.getdescription().type(this.data5.TransferControlProfile.Description)
