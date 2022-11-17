@@ -293,8 +293,8 @@ And('System Admin is able to edit subscriber details', function () {
 })
 
 Then('Confirm the edit details', function () {
-  manageUsersPage.getConfirmButton().click({ force: true })
-  approvalPage.getSuccessMessage().should('have.text', this.data2.confirmationMessage.successMessage)
+   manageUsersPage.getConfirmButton().click({ force: true })
+  approvalPage.getSuccessMessage().should('have.text', this.data2.confirmationMessage.editUser1)
   manageUsersPage.getDoneButton().click({ force: true })
 })
 
