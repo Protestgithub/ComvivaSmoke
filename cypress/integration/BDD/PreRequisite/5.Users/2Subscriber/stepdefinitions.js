@@ -215,8 +215,8 @@ And('Click on refresh icon corresponding to the respective authentication factor
   manageUsersPage.getresetconfirmation().click({ force: true })
   manageUsersPage.getsuccessresetconfirmation().click({ force: true })
 })
-//------------Added method for approval of suspended subscriber--------------------
+//------------Added method for approval of modified subscriber--------------------
 
-And('User click on submitted user data for suspension', function () {
+And('User click on submitted user data for approval of subscriber modification', function () {
   cy.getApproval(subRegistration)
 })
