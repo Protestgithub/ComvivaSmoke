@@ -826,7 +826,7 @@ cy.readFile('cypress/fixtures/userData/TransactionFile.json').then((data)  => {
 Cypress.Commands.add('checkAPI', (API) => {
     //cy.visit(URL + '/dfscontainer/#/')
     cy.intercept(API).as('all')
-    cy.wait('@all', { timeout: 70000 }).then(inter => {
+    cy.wait('@all', { timeout: 10000 }).then(inter => {
         if (inter.response.statusCode == 200) {
             cy.log('statusCode loop entered now')
             cy.log(JSON.stringify(inter.response.statusCode))
