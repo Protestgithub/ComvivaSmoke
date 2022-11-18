@@ -30,15 +30,15 @@ And  Click on Add New Button
 And  Click on Create Button
 Then Verify Error Message for Domain
 
-# Author: Kalyani M
-# Last Updated:
-# Comments : View
-# Test Case_ID : TC_25
-#
-@test
+# # Author: Kalyani M
+# # Last Updated:
+# # Comments : View
+# # Test Case_ID : TC_25
+# #
+# @test
 
-Scenario:To verify that master is able to View customer level TCP..
-Given Login into Mobiquity Portal as Super admin Maker
-When  Navigate to Transfer Control Profile to View Details
+# Scenario:To verify that master is able to View customer level TCP..
+# Given Login into Mobiquity Portal as Super admin Maker
+# When  Navigate to Transfer Control Profile to View Details
 
 
