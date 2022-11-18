@@ -331,39 +331,39 @@ And('Enter all the required business user details for O2C', function () {
    
    //----------------------------------PROFILE------------------------------------------------------------
 
-    const t = parseInt(Date.now()/1000);
-    ifscnum="S"+t
-    const uuidbkd = () => Cypress._.random(1e9)
-    accnumber="4239346"+uuidbkd()
-    registerPage.getCurrency().select(this.data2.Bank.Currency, { force: true })
-    cy.wait(3000)
-    cy.readFile(BankData).then((data) => {
-    data.CurrencyDetail= this.data2.Bank.Currency
-    cy.writeFile(BankData, data)
-  })
-   cy.wait(3000)
-   registerPage.getBankName().select(this.data2.Bank.BankName, {force:true})
-   cy.wait(3000)
-   cy.readFile(BankData).then((data) => {
-   data.BankNameDetail= this.data2.Bank.BankName
-   cy.writeFile(BankData, data)
-  })
+    //const t = parseInt(Date.now()/1000);
+    //ifscnum="S"+t
+    //const uuidbkd = () => Cypress._.random(1e9)
+    //accnumber="4239346"+uuidbkd()
+    //registerPage.getCurrency().select(this.data2.Bank.Currency, { force: true })
+    //cy.wait(3000)
+    //cy.readFile(BankData).then((data) => {
+    //data.CurrencyDetail= this.data2.Bank.Currency
+    //cy.writeFile(BankData, data)
+  //})
+   //cy.wait(3000)
+   //registerPage.getBankName().select(this.data2.Bank.BankName, {force:true})
+   //cy.wait(3000)
+   //cy.readFile(BankData).then((data) => {
+   //data.BankNameDetail= this.data2.Bank.BankName
+   //cy.writeFile(BankData, data)
+  //})
  
-   registerPage.getAccountNum().type(accnumber, { force: true })
-   cy.wait(3000)
-   cy.readFile(BankData).then((data) => {
-   data.Accnum= accnumber
-   cy.writeFile(BankData, data)
-  })
-   registerPage.getConfirmAccNum().type(accnumber, { force: true })
-   registerPage.getNickName().type(getRandomName(), { force: true })
-   registerPage.getBankAccountType().select(this.data2.Bank.BankAccountType,{force:true})
-   cy.readFile(BankData).then((data) => {
-   data.BankAccountTYpeDetail= this.data2.Bank.BankAccountType
-   cy.writeFile(BankData, data)
-   })
-   cy.wait(3000)
-   registerPage.getBankIFSC().type(ifscnum, { force: true })
+   //registerPage.getAccountNum().type(accnumber, { force: true })
+   //cy.wait(3000)
+   //cy.readFile(BankData).then((data) => {
+   //data.Accnum= accnumber
+   //cy.writeFile(BankData, data)
+  //})
+   //registerPage.getConfirmAccNum().type(accnumber, { force: true })
+   //registerPage.getNickName().type(getRandomName(), { force: true })
+   //registerPage.getBankAccountType().select(this.data2.Bank.BankAccountType,{force:true})
+   //cy.readFile(BankData).then((data) => {
+   //data.BankAccountTYpeDetail= this.data2.Bank.BankAccountType
+   //cy.writeFile(BankData, data)
+   //})
+   //cy.wait(3000)
+   //registerPage.getBankIFSC().type(ifscnum, { force: true })
    registerPage.getNextButtonBasic3().click({force:true})
    registerPage.getSubmitButton().click({ force: true })
    })
