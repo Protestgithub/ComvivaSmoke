@@ -309,6 +309,24 @@ myActivityPage.getCreatedOnTime().eq(0).invoke('text').then((time)=>{
 })
 })
 
+And('Assert Created Buissness User Mobile Number and Write Created on time for UnRegisteredMobile', function(){
+  cy.wait(2000)
+  cy.readFile(BuisnessReg).then((user) => {
+  let BUMobile = user.UnregisteredMobile
+  var BUDMobile = " "+BUMobile
+  manageUsersPage.getAssertMobile().eq(1).should('have.text',BUDMobile)
+})
+cy.wait(2000)
+myActivityPage.getCreatedOnTime().eq(0).invoke('text').then((time)=>{
+  time= time.trim()
+  cy.log(time)
+  cy.readFile(BuisnessReg).then((data) => {
+  data.CreatedOnTime = time
+  cy.writeFile(BuisnessReg,data)
+  })
+})
+})
+
 /*----------------------------Modify--telco operator----------------------------------*/
 And('Enter Telco operator Mobile number and KYC number in search menu', function () {
   manageUsersPage.getSearchUser().click({ force: true })
@@ -370,12 +388,17 @@ And('Enter all the required business user details', function () {
     () => registerPage.getFirstName().clear().type(getRandomName(), { force: true }),
     (uniqueness) => (uniqueness) == registerPage.getuniqueness()
   )
-  cy.writeFile('cypress/fixtures/userData/BusinessUsersData.json',{registeredMobile:mobileut})
+  cy.readFile('cypress/fixtures/userData/BusinessUsersData.json').then((data) => {
+    data.UnregisteredMobile = mobileut
+    cy.writeFile('cypress/fixtures/userData/BusinessUsersData.json', data)
+  
+    })
+  //cy.writeFile('cypress/fixtures/userData/BusinessUsersData.json',{registeredMobile:mobileut})
   registerPage.getLastName().type(getRandomName(), { force: true })
   cy.OTP(Cypress.env('apiBaseURL'))
   cy.wait(2000)
   //----------------email id otp---------------------------------------------------//
-  cy.getBusinessrandomUserEmailID()
+  cy.getrandomUserEmailID()
   cy.iframe().find('select[data-test-id="preferredLanguage"]').select(this.data2.personalInfo.preferredLang, { force: true })
  cy.OTP(Cypress.env('apiBaseURL'))
   cy.wait(2000)
