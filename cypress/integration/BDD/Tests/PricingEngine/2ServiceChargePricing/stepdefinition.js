@@ -74,7 +74,7 @@ When('Click on Pricing Engine', function () {
 
 And('Click on the Service Policy', function () {
   cy.wait(2000)
-  pricingEnginePage.getCashIN().click({ force: true })
+  pricingEnginePage.getCashIN().should('be.visible').click({ force: true })
   cy.wait(4000)
 })
 Then('Set Status Active or Inactive', function () {
