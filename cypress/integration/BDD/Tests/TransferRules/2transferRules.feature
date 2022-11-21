@@ -82,12 +82,12 @@ And Select the Service Name and from details.
 And Select the To details for Initiaion
 And Select the From & To category.
 When User clicks on Delete option.
-Then Verify Delete initiate Message
+#Then Verify Delete initiate Message
 Then Logout
 Given Login into Mobiquity Portal as System admin Checker1
 When User clicks on transfer rule approval
 And Select rule and approve
-Then Verify Delete Approval Message
+#Then Verify Delete Approval Message
 
 
 ########################################## Sudheer #######################################################
