@@ -12,7 +12,7 @@ Feature: Bank Management
 Scenario: To verify that the Proper error message should get generated on screen if user add bank on web without entering Bank Name
 Given Login with Master Admin Checker
 When Navigate to Bank Master and Click on it
-Then Verify the Text
+#Then Verify the Text
 
 
 # Author: Narendra
