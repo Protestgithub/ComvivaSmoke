@@ -7,12 +7,12 @@ Feature: Modification and Supension of Business User
 
 @test
 
-Scenario:To verify that another System Admin/Business Admin User is able to approve the modified  businsess user deatails.
-Given Login into Mobiquity Portal as System admin Checker1
-When Navigate to Approvals and filter by Modification of user status
-And Admin click on Modified user data
-And Approve the Users
-Then User modified is approved
+#Scenario:To verify that another System Admin/Business Admin User is able to approve the modified  businsess user deatails.
+#Given Login into Mobiquity Portal as System admin Checker1
+#When Navigate to Approvals and filter by Modification of user status
+#And Admin click on Modified user data
+#And Approve the Users
+#Then User modified is approved
 
 
 # Author: Arpitha C
