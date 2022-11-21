@@ -78,7 +78,7 @@ And Select User type as Business and Select user role
 And Enter all the required business user details
 Then Confirmation message is displayed
 And Navigate to My Activity and Apply Add User filters
-Then Assert Created Buissness User Mobile Number and Write Created on time
+Then Assert Created Buissness User Mobile Number and Write Created on time for UnRegisteredMobile
 Then Logout
 
 Scenario: To verify the approval of initiation request
