@@ -457,7 +457,7 @@ Then('SubscrigReg Confirmation message is displayed', function () {
 
   registerPage.getNextButtonBasic2().click({ force: true })
   registerPage.getSubmitButton().click({ force: true })
-  registerPage.getConfirmationText()
+  registerPage.getConfirmationText().should('have.text', this.data2.confirmationMessage.addUser)
   cy.wait(15000)
 })
 
