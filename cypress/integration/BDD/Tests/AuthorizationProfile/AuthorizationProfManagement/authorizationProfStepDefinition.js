@@ -92,7 +92,6 @@ Then('Click on Modify Icon in front of authorization profile to modify', functio
   cy.wait(3000)
   authorizationProfilePage.getViewProfile().click({ force: true })
   authorizationProfilePage.getEditProfile().click({ force: true })
-  authorizationProfilePage.getUserServicePreferences().contains('ALL').click({ force: true })
   authorizationProfilePage.getModifyProfile().click({ force: true })
   authorizationProfilePage.getConfirm().click({ force: true })
   authorizationProfilePage.getViewProfileModifyDone().click({ force: true })
