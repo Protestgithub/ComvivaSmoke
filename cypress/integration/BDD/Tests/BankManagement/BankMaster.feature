@@ -40,4 +40,4 @@ Scenario: To verify that the master should be able to associate or disassociate 
 Given Login with Master Admin Checker
 When Navigate to MFS provider Bank type master and Click on Modify or Delete Bank
 Then Select the bank and associate new services
-Then Verify the Success Message
+#Then Verify the Success Message
