@@ -12,6 +12,7 @@ import "../../../../../support/TransferControlProfileCommand";
 import TransferControlProfile from '../../../../../support/pageObjects/TransferControlProfile';
 import RegulatoryProfile from '../../../../../support/pageObjects/UserManagement/RegulatoryProfile';
 import MarketingProfile from '../../../../../support/pageObjects/UserManagement/MarketingProfile';
+  
 
 //----------------Object Declaration----------------------------------------------------------
 
