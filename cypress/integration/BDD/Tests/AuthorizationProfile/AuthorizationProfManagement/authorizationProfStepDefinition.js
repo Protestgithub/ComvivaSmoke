@@ -8,9 +8,7 @@ import loginPage from '../../../../../support/pageObjects/loginPage';
 import homePage from '../../../../../support/pageObjects/homePage';
 import "../../../../../support/commands";
 import "../../../../../support/authourizationcommands";
-
 import authorizationManagement from '../../../../../support/pageObjects/AuthorizationProfileManagement/authorizationManagement';
-import { recurse } from 'cypress-recurse';
 
 
 //----------------Object Declaration----------------------------------------------------------
@@ -28,7 +26,6 @@ Before(() => {
   cy.fixture('login').then(function (data1) {
     this.data1 = data1;
   })
-
   cy.fixture('authorizationProfile').then(function (data5) {
     this.data5 = data5;
   })
@@ -38,13 +35,6 @@ Before(() => {
 });
 
 
-function getRandomName() {
-  profName = "";
-  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  for (var i = 0; i < 6; i++)
-    profName += possible.charAt(Math.floor(Math.random() * possible.length));
-  return profName;
-}
 
 //----------------Test Scripts---------------------------------------------------------------
 
@@ -54,16 +44,18 @@ function getRandomName() {
 Given('Login into Mobiquity Portal as System admin Maker', function () {
   cy.launchURL(Cypress.env('Adminurl'))
   cy.SysAdminlogin()
-  cy.wait(2000)
-  cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
+  cy.fixture('userData/SystemAdminLogin.json').then((data)=>{
+    let Name = data.SysAdminMakerName
+    cy.checkWelcomeText(Name)
+  })
 })
-
-Given('Login into Mobiquity Portal as another System admin Checker1 after logout', function () {
+Given('Login into Mobiquity Portal as System admin Checker1', function () {
   cy.launchURL(Cypress.env('Adminurl'))
-  cy.wait(2000)
   cy.SysAdminlogin2()
-  cy.wait(2000)
-  cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
+  cy.fixture('userData/SystemAdminLogin.json').then((data)=>{
+    let Name = data.SysAdminChecker1Name
+    cy.checkWelcomeText(Name)
+  })
 })
 Then('Logout', function () {
   welcomePage.getUserMenu().click()
@@ -74,12 +66,10 @@ Then('Logout', function () {
 
 //----------TC_150-----To verify that system admin should be able to ViewAuthorization profile for the selected category------------------------------
 When('Select Authorization profile', function () {
-  cy.wait(3000)
   authorizationProfilePage.getAuthorizationProfileManagement().click({ force: true })
 })
 
 Then('View Profiles', function () {
-  cy.wait(3000)
   authorizationProfilePage.getViewProfile().click({ force: true })
   authorizationProfilePage.getViewProfileSuccess().should('have.text', this.data5.viewprofile)
 
@@ -89,7 +79,6 @@ Then('View Profiles', function () {
 //----------TC_151----To verify that system admin should be able to modify an already created authorization profile-------------------------------
 
 Then('Click on Modify Icon in front of authorization profile to modify', function () {
-  cy.wait(3000)
   authorizationProfilePage.getViewProfile().click({ force: true })
   authorizationProfilePage.getEditProfile().click({ force: true })
   authorizationProfilePage.getModifyProfile().click({ force: true })
@@ -99,12 +88,9 @@ Then('Click on Modify Icon in front of authorization profile to modify', functio
 
 //----------------------Approvals------------------------
 Then('User approval for modified Authorization profile', function () {
-  cy.wait(3000)
   authorizationProfilePage.getApprovals().scrollIntoView()
   authorizationProfilePage.getApprovals().click({ force: true })
-  cy.wait(2000)
   authorizationProfilePage.getApprovalButtonTab().click()
-  cy.wait(2000)
   authorizationProfilePage.getApproveButton().click({ force: true })
   authorizationProfilePage.getApproveButtonSubmit().click({ force: true })
 })
@@ -113,7 +99,6 @@ Then('User approval for modified Authorization profile', function () {
 //----------TC_152-------To verify that System admin should be able to delete an authorization profile----------------------------
 
 Then('Click on Modify Icon in front of authorization profile to delete', function () {
-  cy.wait(3000)
   authorizationProfilePage.getDeleteProfile().click({ force: true })
   authorizationProfilePage.getYesDeleteProfile().click({ force: true })
 })

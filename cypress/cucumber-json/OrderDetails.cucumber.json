@@ -1,0 +1,138 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "OrdersDetails",
+    "line": 1,
+    "id": "ordersdetails",
+    "tags": [],
+    "uri": "OrderDetails.feature",
+    "elements": [
+      {
+        "id": "ordersdetails;to-verify-that-admin-user-can-view-all-the-transaction-details-under-order-details-menu.",
+        "keyword": "Scenario",
+        "line": 11,
+        "name": "To verify that Admin user can view all the transaction details under Order details menu.",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 12,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 15462000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 13,
+            "name": "Click on user management and Manage users",
+            "result": {
+              "status": "passed",
+              "duration": 371000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "Enter Mobile numberin search Menu",
+            "result": {
+              "status": "passed",
+              "duration": 5095000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "Click on view Details",
+            "result": {
+              "status": "passed",
+              "duration": 527000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 16,
+            "name": "Click on order details",
+            "result": {
+              "status": "failed",
+              "duration": 30673000000,
+              "error_message": "AssertionError: Timed out retrying after 30000ms: Expected to find element: `[id=\"view-more\"]`, but never found it. Queried from element: <body>\n    at manageUsers.getWalletExpandButton (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\TransferwalletToBank\\OrderDetails.feature:3339:26)\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\TransferwalletToBank\\OrderDetails.feature:98:19)\n    at Context.resolveAndRunStepDefinition (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\TransferwalletToBank\\OrderDetails.feature:14938:29)\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\TransferwalletToBank\\OrderDetails.feature:14259:35)"
+            }
+          }
+        ]
+      },
+      {
+        "id": "ordersdetails;to-verify-that-latest-order-transactions-will-be-displayed-on-the-first-page-of-order-details-screen.",
+        "keyword": "Scenario",
+        "line": 28,
+        "name": "To verify that latest order transactions will be displayed on the first page of Order details screen.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 26
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 29,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 13373000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 30,
+            "name": "Click on user management and Manage users",
+            "result": {
+              "status": "passed",
+              "duration": 637000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 31,
+            "name": "Enter Mobile numberin search Menu",
+            "result": {
+              "status": "passed",
+              "duration": 1221000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 32,
+            "name": "Click on view Details",
+            "result": {
+              "status": "passed",
+              "duration": 428000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 33,
+            "name": "Click on order details for latest order transactions",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 30000ms: Expected to find element: `[id=\"view-more\"]`, but never found it. Queried from element: <body>\n    at manageUsers.getWalletExpandButton (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\TransferwalletToBank\\OrderDetails.feature:3339:26)\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\TransferwalletToBank\\OrderDetails.feature:110:19)\n    at Context.resolveAndRunStepDefinition (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\TransferwalletToBank\\OrderDetails.feature:14938:29)\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\TransferwalletToBank\\OrderDetails.feature:14259:35)"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

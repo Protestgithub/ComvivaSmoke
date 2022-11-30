@@ -83,7 +83,10 @@ Cypress.Commands.add('TcpName1', (Text) => {
 Cypress.Commands.add('TCPRandomName', () => {
     let hi ="InstTCP" +"" +getRandomName() + timestamp
     tcpPage.getprofilename().type(hi, { force: true })
-    cy.writeFile('cypress/fixtures/userData/TCPdata.json', { TcpProfileName: hi })
+    cy.readFile('cypress/fixtures/userData/TCPdata.json').then((data)=>{
+      data.TcpProfileName=hi
+      cy.writeFile('cypress/fixtures/userData/TCPdata.json', data)
+    })
     function getRandomName() {
         name = "";
         var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
@@ -96,7 +99,10 @@ Cypress.Commands.add('TCPRandomName', () => {
 Cypress.Commands.add('TCPRandomNameSub', () => {
   let hi ="InstTCP" +"" +getRandomName() + timestamp
   tcpPage.getprofilename().type(hi, { force: true })
-   cy.writeFile('cypress/fixtures/userData/TCPdata1.json', { TcpProfileNameSub: hi })
+  cy.readFile('cypress/fixtures/userData/TCPdata1.json').then((data)=>{
+    data.TcpProfileNameSub=hi
+   cy.writeFile('cypress/fixtures/userData/TCPdata1.json', data)
+  })
   function getRandomName() {
       name = "";
       var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
@@ -109,7 +115,10 @@ Cypress.Commands.add('TCPRandomNameSub', () => {
 Cypress.Commands.add('TCPMasRandomName', () => {
     let hi = "CustTCP" +"" +getRandomName() + timestamp
     tcpPage.getprofilename().type(hi, { force: true })
-    cy.writeFile('cypress/fixtures/userData/CustTCPdata.json', { CustTCPProfileName: hi })
+    cy.readFile('cypress/fixtures/userData/CustTCPdata.json').then((data)=>{
+      data.CustTCPProfileName=hi
+    cy.writeFile('cypress/fixtures/userData/CustTCPdata.json',data)
+    })
     function getRandomName() {
         name = "";
         var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
@@ -122,7 +131,10 @@ Cypress.Commands.add('TCPMasRandomName', () => {
 Cypress.Commands.add('TCPMasRandomNameSub', () => {
   let hi = "CustTCP" +"" +getRandomName() + timestamp
   tcpPage.getprofilename().type(hi, { force: true })
-  cy.writeFile('cypress/fixtures/userData/CustTCPdata1.json', { CustTCPProfileNameSub: hi })
+  cy.readFile('cypress/fixtures/userData/CustTCPdata1.json').then((data)=>{
+    data.CustTCPProfileNameSub=hi
+  cy.writeFile('cypress/fixtures/userData/CustTCPdata1.json', data)
+  })
   function getRandomName() {
       name = "";
       var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";

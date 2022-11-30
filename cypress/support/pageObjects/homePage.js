@@ -3,13 +3,10 @@ class homePage {
     getUserMenu() {
         return cy.get('.fd-shellbar__button--user-menu > button')
     }
-
     getWelcomeText() {
         return cy.iframe().get('.fd-menu > ul > li > span')
     }
-
     getUserManagementOption() {
-
         return cy.get('[data-testid="menu.user_management"]')
     }
 
@@ -17,33 +14,24 @@ class homePage {
         return cy.get('[data-testid="menu.user_management"]').find('[title="Register"]')
     }
     getSessionManagementOption(){
-
         return cy.get('[data-testid="menu.session_management"]')
-    
     }
-    
     getmysessionoption(){
-    
         return cy.get('[title="My Sessions"]')
-    
     }
-    
     getAllSessionsOption(){
-    
         return cy.get('[title="All Sessions"]')
-    
     }
-        getApprovalTab() {
-        return cy.get('[title="Approval Management"]')
+    getApprovalTab() {
+        return cy.get('[title="Approvals"]')
     }
     getApprovalButtonTab(){
-        return cy.get('[title="Approvals"]').contains("Approvals")
+        return cy.get('[title="Approvals"]')
     }
     getApprovaltab() {
-        return cy.get('[title="Approval Management"]')
+        return cy.get('[title="Approvals"]')
     }
     getLogoutButton() {
-
         return cy.get('a[data-testid="logout-link"]')
     }
     getConfirmLogout() {
@@ -104,8 +92,6 @@ class homePage {
     getMyActivity() {
         return cy.get('a[title="My Activity"]')
     }
-
-
     getTransferRuleOption() {
         return cy.get('[data-testid="menu.trules"]')
     }
@@ -202,11 +188,8 @@ class homePage {
         return cy.get('[data-testid="test-CAT_APPRL"] > .fd-nested-list__title')
     }
     getUserprofileManagementOption() {
-
         return cy.get('#collapsible_listnode_3')
-
     }
-
     getADDGrades() {
         return cy.get('[data-testid="menu.chgrades"] > .fd-nested-list > :nth-child(1) > [data-testid="test-undefined"] > .fd-nested-list__title')
     }
@@ -229,58 +212,44 @@ class homePage {
         return cy.get('[data-testid="menu.churnmgmt"]').find('[title="Churn Approval"]')
     }
     getTransactionCorrection() {
-
         return cy.get('[data-testid="menu.txn_corr"]')
-
     }
-
     getreconcilationpage() {
-
         return cy.get('[data-testid="test-MNREC"]')
-
     }
-
     getTransactionCorrectionApproval() {
-
         return cy.get('[data-testid="menu.txn_corr"]').find('[title="Transaction Correction Approval"]')
-
     }
     getMarketingProfileLink() {
-
         return cy.get('[data-testid="menu.user_management"]').find('[title="Marketing Profile"]')
-
     }
     getTransferControlProfileSA()
-{
+    {
     return cy.get('[data-testid="test-TCPROFILE"]')
-}
-getBankingChannelActivation() {
-
-        return cy.get('[title="Banking Channel Activation"]')
-
     }
-    
+    getBankingChannelActivation() {
+        return cy.get('[title="Banking Channel Activation"]')
+    }
     getCashinOrCashout() {
         return cy.get('[title="Cash In/Cash Out"]')
     }
     getCashin() {
         return cy.get('[title="Cash In"]')
     }
-
-
     getStockLimit()
-{
-return cy.get('[title="Stock Withdrawl Limit"]')
-}
-getCategoryManagement(){
-    return cy.get('[title="Category Management"]')
-}
-getServiceCharge(){
-    return cy.get('[title="Service Charge"]')
-}
-getNewSubscriberCommissionRule(){
-    return cy.get('[title="New Subscriber Commission Rule"]')
-}
+    {
+    return cy.get('[title="Stock Withdrawl Limit"]')
+    }
+    getCategoryManagement(){
+        return cy.get('[title="Category Management"]')
+    }
+    getServiceCharge(){
+        return cy.get('[title="Service Charge"]')
+    }
+    getNewSubscriberCommissionRule(){
+        return cy.get('[title="New Subscriber Commission Rule"]')
+    }
+    
 }
 
 export default homePage

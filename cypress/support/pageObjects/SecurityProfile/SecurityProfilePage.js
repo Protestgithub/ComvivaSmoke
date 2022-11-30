@@ -16,7 +16,7 @@ class SecurityProfilePage{
         return cy.iframe().find('#maxPwdLength')
     }
     getCheckBox(){
-        return cy.iframe().find('.mat-checkbox-label')
+        return cy.iframe().find('span.mat-checkbox-label')
     }
     getFailedPwdLoginCAPTCHA(){
         return cy.iframe().find('#failedPwdAttemptsForCaptcha')
@@ -37,7 +37,7 @@ class SecurityProfilePage{
         return cy.iframe().find('#numberOfLastPwds')
     }
     getPIN(){
-        return cy.iframe().find('.ng-star-inserted').contains('Pin')
+        return cy.iframe().find('#mat-tab-label-0-1')
     }
     getSequentialNumberCheckBox(){
         return cy.iframe().find('[for="allowSeqDigForPin-input"]')
@@ -59,19 +59,19 @@ class SecurityProfilePage{
         return cy.iframe().find('#noOfLastPins')
     }
     getTwoFactorAuth(){
-        return cy.iframe().find('.ng-star-inserted').contains('Two Factor Authentication')
+        return cy.iframe().find('#mat-tab-label-0-2')
     }
     getEverytime(){
         return cy.iframe().find('.mat-checkbox-inner-container').eq(0)
     }
     getLoginRestrictions(){
-        return cy.iframe().find('.ng-star-inserted').contains('Login')
+        return cy.iframe().find('#mat-tab-label-0-3')
     }
     getMultipleLoginsAllowedCount(){
         return cy.iframe().find('#multipleLoginsAllowedCount')
     }
     getSelectAllorClearLink(){
-        return cy.iframe().find('.btn.btn-link.px-0').contains('Select All')
+        return cy.iframe().find('.btn.btn-link.px-0').eq(0)
     }
     getIpRangeRadioButton(){
         return cy.iframe().find('.mat-radio-outer-circle').eq(2)
@@ -116,7 +116,7 @@ class SecurityProfilePage{
         return cy.iframe().find('#mat-select-value-7')
     }
     getSelectFromDropDown(){
-        return cy.iframe().find('.mat-option-text').contains("20")
+        return cy.iframe().find('span.mat-option-text').eq(2)
     }
     getCreatedBy(){
         return cy.iframe().find('.mat-cell.cdk-cell.cdk-column-createdBy.mat-column-createdBy.ng-star-inserted')
@@ -126,7 +126,7 @@ class SecurityProfilePage{
         return cy.iframe().find('#ngb-nav-0')
     }
     getUserRole(){
-        return  cy.iframe().find('.mat-radio-label-content')
+        return  cy.iframe().find('span.mat-radio-label-content')
     }
     getSelectAdminUserTypeTab()
     {
@@ -149,7 +149,7 @@ class SecurityProfilePage{
         return cy.iframe().find('.mat-cell.cdk-cell.cdk-column-CATEGORY.mat-column-CATEGORY.ng-star-inserted')
     }
     getConfirmButton(){
-        return cy.iframe().find('.mat-button-wrapper').contains('CONFIRM')
+        return cy.iframe().find('span.mat-button-wrapper').eq(2)
     }
     getSuccessMessage(){
         return cy.iframe().find('.text-center.text-success')
@@ -164,13 +164,11 @@ class SecurityProfilePage{
         return cy.iframe().find('.mat-cell.cdk-cell.cdk-column-profileType.mat-column-profileType.ng-star-inserted')
     }
     getIpAddress(){
-
         return cy.iframe().find('#ipGroup')
     }
 
     getProfileNameExist(){
-        return cy.iframe().find('.textcolor.alert.alert-light.ng-star-inserted').contains
-        ( 'Profile with same name already exists. Try another!')
+        return cy.iframe().find('.textcolor.alert.alert-light.ng-star-inserted')       
     }
     getIpGroupRadioButton(){
         return cy.iframe().find('.font-weight-700.form-label.label-text').eq(0)

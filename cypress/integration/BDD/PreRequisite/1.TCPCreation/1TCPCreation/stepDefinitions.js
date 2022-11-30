@@ -62,17 +62,19 @@ Before(() => {
 //---------------------------------------------System Admin Login----------------------------------------------------
 Given('Login into Mobiquity Portal as System admin Maker', function () {
   cy.launchURL(Cypress.env('Adminurl'))
-  cy.wait(2000)
   cy.SysAdminlogin()
-  cy.wait(2000)
-  cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
+  cy.fixture('userData/SystemAdminLogin.json').then((data) => {
+    let Name = data.SysAdminMakerName
+    cy.checkWelcomeText(Name)
+  })
 })
 Given('Login into Mobiquity Portal as System admin Checker1', function () {
   cy.launchURL(Cypress.env('Adminurl'))
-  cy.wait(2000)
   cy.SysAdminlogin2()
-  cy.wait(2000)
-  cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
+  cy.fixture('userData/SystemAdminLogin.json').then((data) => {
+    let Name = data.SysAdminChecker1Name
+    cy.checkWelcomeText(Name)
+  })
 })
 
 Then('Logout', function(){
@@ -86,17 +88,16 @@ Then('Logout', function(){
 //superadminm
 Given('Login into Mobiquity Portal as Super admin Maker', function () {
   cy.launchURL(Cypress.env('Adminurl'))
-  cy.wait(2000)
-  cy.login(this.data1.masteradminmaker.sysAdminUser1, this.data1.masteradminmaker.sysAdminPwd1)
-  cy.wait(2000)
-  })
+  cy.login(this.data1.masteradminmaker.superadminm, this.data1.masteradminmaker.superadminmPwd)
+  cy.checkWelcomeText(this.data1.superadminm.superadminmaker)
+})
+
 //superadminc
 Given('Login into Mobiquity Portal as Super admin Checker', function () {
   cy.launchURL(Cypress.env('Adminurl'))
   cy.wait(2000)
-  cy.login(this.data1.masteradminchecker.sysAdminUser1, this.data1.masteradminchecker.sysAdminPwd1)
-  cy.wait(2000)
- 
+  cy.login(this.data1.masteradminchecker.superadminc, this.data1.masteradminchecker.superadmincPwd)
+  cy.checkWelcomeText(this.data1.superadminc.superadminchecker)
 })
 
 //--------------------------------------TCP creation---------------------------------------------------

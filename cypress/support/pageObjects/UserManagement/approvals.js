@@ -1,17 +1,19 @@
+import { eq } from "lodash"
+
 class approvals {
 
     getFilter() {
         return cy.iframe().find('.mat-button-wrapper > mat-icon[data-mat-icon-name="filter"]')
     }
     getAddUserCheckBox() {
-        return cy.iframe().find('.mat-checkbox-label').contains('Add User')
+        return cy.iframe().find('span.mat-checkbox-label').eq(1)
     }
 
     getSubmittedCheckBox() {
-        return cy.iframe().find('.mat-checkbox-label').contains('Submitted')
+        return cy.iframe().find('span.mat-checkbox-label').eq(5)
     }
     getModificationUserCheckBox() {
-        return cy.iframe().find('.mat-checkbox-label').contains('Modification Of User')
+        return cy.iframe().find('span.mat-checkbox-label').eq(2)
     }
     getApplyFilter() {
         return cy.iframe().find('button[id="apply-filter"]')

@@ -1,0 +1,242 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Domain,Category and Grade Creation",
+    "line": 1,
+    "id": "domain,category-and-grade-creation",
+    "tags": [],
+    "uri": "Domain,Category&GradeCreation.feature",
+    "elements": [
+      {
+        "id": "domain,category-and-grade-creation;to-verify-that-system-admin-should-be-able-to-add-domain-in-the-system.",
+        "keyword": "Scenario",
+        "line": 17,
+        "name": "To verify that System admin should be able to add domain in the system.",
+        "tags": [
+          {
+            "name": "@prerequisite",
+            "line": 15
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 18,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 15580000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 19,
+            "name": "User Click on Domain Management >> Add Domain",
+            "result": {
+              "status": "passed",
+              "duration": 331000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 20,
+            "name": "Enter Domain Name and Domain Code.",
+            "result": {
+              "status": "passed",
+              "duration": 5553000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 21,
+            "name": "Click on submit button.",
+            "result": {
+              "status": "passed",
+              "duration": 2392000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "domain,category-and-grade-creation;to-verify-that-system-admin-should-be-able-to-add-category-in-the-system.",
+        "keyword": "Scenario",
+        "line": 34,
+        "name": "To verify that System admin should be able to add Category in the system.",
+        "tags": [
+          {
+            "name": "@prerequisite",
+            "line": 32
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 35,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 12484000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 36,
+            "name": "Click Category Management.",
+            "result": {
+              "status": "passed",
+              "duration": 229000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 37,
+            "name": "Select Add Category.",
+            "result": {
+              "status": "passed",
+              "duration": 165000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 38,
+            "name": "Enter Category Code and Category Name.",
+            "result": {
+              "status": "passed",
+              "duration": 5102000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 39,
+            "name": "Select Domain and Parent Category.",
+            "result": {
+              "status": "passed",
+              "duration": 866000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 40,
+            "name": "Click on Submit & confirm button.",
+            "result": {
+              "status": "passed",
+              "duration": 4807000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "domain,category-and-grade-creation;to-verify-that-only-system-admin-will-be-able-to-approve/reject-the-initiated-category.",
+        "keyword": "Scenario",
+        "line": 49,
+        "name": "To verify that only System admin will be able to approve/reject the initiated category.",
+        "tags": [
+          {
+            "name": "@prerequisite",
+            "line": 47
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 50,
+            "name": "Login into Mobiquity Portal as System admin Checker1",
+            "result": {
+              "status": "passed",
+              "duration": 13260000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 51,
+            "name": "Click Add category approval.",
+            "result": {
+              "status": "passed",
+              "duration": 226000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 52,
+            "name": "Select Category approval.",
+            "result": {
+              "status": "passed",
+              "duration": 5216000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 53,
+            "name": "Select the category that needs to be approved",
+            "result": {
+              "status": "passed",
+              "duration": 38041000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "domain,category-and-grade-creation;to-verify-that-master-user-can-create-grade,-if-all-fields-in-contains-value-upto-their-maximum-length.",
+        "keyword": "Scenario",
+        "line": 65,
+        "name": "To verify that Master user can create grade, if all fields in contains value upto their maximum length.",
+        "tags": [
+          {
+            "name": "@prerequisite",
+            "line": 63
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 66,
+            "name": "Login into Mobiquity Portal as Super admin Checker",
+            "result": {
+              "status": "passed",
+              "duration": 11880000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 67,
+            "name": "Click on User Profile Management >> Add Grade",
+            "result": {
+              "status": "passed",
+              "duration": 192000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 68,
+            "name": "Select the domain & category for which grade needs to be added.",
+            "result": {
+              "status": "passed",
+              "duration": 8946000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

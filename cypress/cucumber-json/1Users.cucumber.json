@@ -1,0 +1,353 @@
+[
+  {
+    "description": "    This feature includes registering, Modifying and Approval of Subscriber and  Business Admin\n    Users by System Admin",
+    "keyword": "Feature",
+    "name": "Subscriber and Business Admin Creation",
+    "line": 1,
+    "id": "subscriber-and-business-admin-creation",
+    "tags": [],
+    "uri": "1Users.feature",
+    "elements": [
+      {
+        "id": "subscriber-and-business-admin-creation;registration-of-business-administrator",
+        "keyword": "Scenario",
+        "line": 14,
+        "name": "Registration of Business Administrator",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 13
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 15,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 15577000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 16,
+            "name": "Navigate to User Management and Click on register",
+            "result": {
+              "status": "passed",
+              "duration": 386000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 17,
+            "name": "Select User type as Adminstrator and click on BusinessAdmin",
+            "result": {
+              "status": "passed",
+              "duration": 5474000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "Enter all the required details",
+            "result": {
+              "status": "passed",
+              "duration": 5009000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 19,
+            "name": "Confirmation message is displayed",
+            "result": {
+              "status": "passed",
+              "duration": 794000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 20,
+            "name": "Navigate to My Activity and Apply required filters",
+            "result": {
+              "status": "passed",
+              "duration": 5171000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 21,
+            "name": "Assert Created Business Admin Mobile Number and Write Created on time",
+            "result": {
+              "status": "passed",
+              "duration": 469000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "subscriber-and-business-admin-creation;approval-of-registered-business-administrator",
+        "keyword": "Scenario",
+        "line": 31,
+        "name": "Approval of registered Business Administrator",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 29
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 32,
+            "name": "Login into Mobiquity Portal as System admin Checker1",
+            "result": {
+              "status": "passed",
+              "duration": 12232000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 33,
+            "name": "Navigate to Approvals and filter by Submitted status",
+            "result": {
+              "status": "passed",
+              "duration": 5026000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 34,
+            "name": "User click on Buissness Admin submitted user data",
+            "result": {
+              "status": "passed",
+              "duration": 303000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 35,
+            "name": "Approve the Users",
+            "result": {
+              "status": "passed",
+              "duration": 952000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 36,
+            "name": "User status is approved",
+            "result": {
+              "status": "passed",
+              "duration": 1326000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 37,
+            "name": "Logout",
+            "result": {
+              "status": "passed",
+              "duration": 992000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 38,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 12510000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 39,
+            "name": "Navigate to Manage User, and search Business Admin",
+            "result": {
+              "status": "passed",
+              "duration": 688000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 40,
+            "name": "Assert Created Business Admin Mobile Number",
+            "result": {
+              "status": "passed",
+              "duration": 2825000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "subscriber-and-business-admin-creation;to-verify-that-valid-systemadmin/businsess-user-is-able-to-initiate-subscriber-creation.",
+        "keyword": "Scenario",
+        "line": 49,
+        "name": "To verify that valid SystemAdmin/businsess User is able to initiate Subscriber creation.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 47
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 50,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 12256000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 51,
+            "name": "Navigate to User Management and Click on register",
+            "result": {
+              "status": "passed",
+              "duration": 423000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 52,
+            "name": "Select User type as Subscriber and click on Subscribers",
+            "result": {
+              "status": "passed",
+              "duration": 1663000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 53,
+            "name": "Enter all the required subscriber details",
+            "result": {
+              "status": "passed",
+              "duration": 11449000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 54,
+            "name": "Confirmation message is displayed",
+            "result": {
+              "status": "passed",
+              "duration": 1063000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 55,
+            "name": "Navigate to My Activity and Apply required filters",
+            "result": {
+              "status": "passed",
+              "duration": 2428000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 56,
+            "name": "Assert Created Subscriber Mobile Number and Write Created on time",
+            "result": {
+              "status": "passed",
+              "duration": 620000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "subscriber-and-business-admin-creation;to-verify-that-another-system-admin/businsess-user-is-able-to-approve-the-initiated-subscriber-creation.",
+        "keyword": "Scenario",
+        "line": 65,
+        "name": "To verify that another System Admin/businsess User is able to approve the initiated Subscriber creation.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 63
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 66,
+            "name": "Login into Mobiquity Portal as System admin Checker1",
+            "result": {
+              "status": "passed",
+              "duration": 12041000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 67,
+            "name": "Navigate to Approvals and filter by Submitted status",
+            "result": {
+              "status": "passed",
+              "duration": 1343000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 68,
+            "name": "User click on Subscriber submitted user data",
+            "result": {
+              "status": "passed",
+              "duration": 508000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 69,
+            "name": "Approve the Users",
+            "result": {
+              "status": "passed",
+              "duration": 380000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 70,
+            "name": "Added User status is approved",
+            "result": {
+              "status": "passed",
+              "duration": 1407000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

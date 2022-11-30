@@ -1,0 +1,92 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Auth Profile Creation for Business User",
+    "line": 1,
+    "id": "auth-profile-creation-for-business-user",
+    "tags": [],
+    "uri": "BusinessAuthProfile.feature",
+    "elements": [
+      {
+        "id": "auth-profile-creation-for-business-user;to-verify-that-system-admin-should-be-able-to-add-business-user-authorization-profile",
+        "keyword": "Scenario",
+        "line": 11,
+        "name": "To verify that system admin should be able to add Business User authorization profile",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 14,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 15414000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 15,
+            "name": "Select Authorization profile and add profile",
+            "result": {
+              "status": "passed",
+              "duration": 4038000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "select Distributor user type and select user role",
+            "result": {
+              "status": "passed",
+              "duration": 500000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 17,
+            "name": "Fill all Details and Create Distributor authorization profile",
+            "result": {
+              "status": "passed",
+              "duration": 5569000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "auth-profile-creation-for-business-user;approval-of-added-business-user-profile",
+        "keyword": "Scenario",
+        "line": 19,
+        "name": "Approval of added Business User profile",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 20,
+            "name": "Login into Mobiquity Portal as System admin Checker1",
+            "result": {
+              "status": "passed",
+              "duration": 11956000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 21,
+            "name": "User approval for Authorization profile",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 30000ms: Expected to find element: `#collapsible_listnode_18 > .fd-nested-list__title`, but never found it.\n    at authorizationManagement.getApprovals (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\PreRequisite\\2.ProfilesCreation\\BusinessAuthProfile.feature:1334:17)\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\PreRequisite\\2.ProfilesCreation\\BusinessAuthProfile.feature:143:28)\n    at Context.resolveAndRunStepDefinition (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\PreRequisite\\2.ProfilesCreation\\BusinessAuthProfile.feature:15198:29)\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\PreRequisite\\2.ProfilesCreation\\BusinessAuthProfile.feature:14519:35)"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

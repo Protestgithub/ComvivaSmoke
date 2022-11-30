@@ -1,0 +1,62 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Instrument Level TCP Creation",
+    "line": 1,
+    "id": "instrument-level-tcp-creation",
+    "tags": [],
+    "uri": "2TCPCreation.feature",
+    "elements": [
+      {
+        "id": "instrument-level-tcp-creation;to-verify-that-system-admin-user-can-add-marketing-profile.",
+        "keyword": "Scenario",
+        "line": 67,
+        "name": "To verify that system admin user can Add Marketing Profile.",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 68,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 14888000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 69,
+            "name": "Navigate to UserManagement And Click on Marketing Profile",
+            "result": {
+              "status": "passed",
+              "duration": 3489000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 70,
+            "name": "Add Marketing Profile",
+            "result": {
+              "status": "passed",
+              "duration": 10370000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 71,
+            "name": "Add Marketing Profile Wholesaler",
+            "result": {
+              "status": "passed",
+              "duration": 10381000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

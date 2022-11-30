@@ -112,7 +112,7 @@
     "addUser": "User Registration has been completed successfully with the mobileNumber",
     "editUser": "User Modification has been completed successfully",
     "editUser1": " SUCCESS Service is successfully paused. Kindly contact admin for approval",
-    "successMessage": "SUCCESS",
+    "successMessage": " SUCCESS ",
     "viewDetails": " View Details",
     "EdituserSys":" Service is successfully paused. Kindly contact admin for approval"
   },
@@ -233,6 +233,6 @@
   "InvalidLoginId": "!@#$%^&*()",
   "Sucess": "Success",
   "Marketing": "Marketing profile added successfully",
- "LockOutgoing":"User Wallet Locked successfully",
-  "UnlockOutgoing":"User Wallet Unlocked successfully"
+ "LockOutgoing":"All Outgoing Payments locked successfully",
+  "UnlockOutgoing":"All Outgoing Payments unlocked successfully"
 }

@@ -1,8 +1,4 @@
 class API{
-
-
-   
-
 getOTPicon(){
     return cy.iframe().find('[id="generate-otp-icon"]')
 }

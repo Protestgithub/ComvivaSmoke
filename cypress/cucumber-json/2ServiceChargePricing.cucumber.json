@@ -1,0 +1,401 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "ServiceChargePricing Service Policy",
+    "line": 1,
+    "id": "servicechargepricing-service-policy",
+    "tags": [],
+    "uri": "2ServiceChargePricing.feature",
+    "elements": [
+      {
+        "id": "servicechargepricing-service-policy;to-verify-that-user-should-be-able-to-set-the-status-of-the-service-policy-as-active-or-inactive..",
+        "keyword": "Scenario",
+        "line": 10,
+        "name": "To verify that user should be able to set the status of the service policy as active or inactive..",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 8
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 11,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 14867000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 12,
+            "name": "Click on Pricing Engine",
+            "result": {
+              "status": "passed",
+              "duration": 179000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "Click on the Service Policy",
+            "result": {
+              "status": "passed",
+              "duration": 3900000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 14,
+            "name": "Set Status Active or Inactive",
+            "result": {
+              "status": "passed",
+              "duration": 2162000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "servicechargepricing-service-policy;search-for-rules-to-verify-that-user-is-able-to-search-for-rules-from-anywhere-in-the-pricing-engine.",
+        "keyword": "Scenario",
+        "line": 23,
+        "name": "Search for Rules To verify that user is able to search for rules from anywhere in the Pricing Engine.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 21
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 24,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 12274000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 25,
+            "name": "Click on Pricing Engine",
+            "result": {
+              "status": "passed",
+              "duration": 87000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 26,
+            "name": "Click on the Search Tab & Search by Rule Name",
+            "result": {
+              "status": "passed",
+              "duration": 3553000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 27,
+            "name": "Verify Search results should give the list of rule name with Condition,status,Validity,rule & Policytype",
+            "result": {
+              "status": "passed",
+              "duration": 247000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "servicechargepricing-service-policy;to-verify-that-user-is-able-to-view-the-previous-versions-of-the-policy.",
+        "keyword": "Scenario",
+        "line": 35,
+        "name": "To verify that user is able to view the previous versions of the policy.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 34
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 37,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 12602000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 38,
+            "name": "Click on Pricing Engine",
+            "result": {
+              "status": "passed",
+              "duration": 179000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 39,
+            "name": "Click on the Service Policy",
+            "result": {
+              "status": "passed",
+              "duration": 3376000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 40,
+            "name": "Click on any service to add service charge.",
+            "result": {
+              "status": "passed",
+              "duration": 8101000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 41,
+            "name": "Logout",
+            "result": {
+              "status": "passed",
+              "duration": 943000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 42,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 12686000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 43,
+            "name": "Click on Pricing Engine",
+            "result": {
+              "status": "passed",
+              "duration": 194000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 44,
+            "name": "Click on the Service Policy",
+            "result": {
+              "status": "passed",
+              "duration": 2629000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 45,
+            "name": "Click on View Previous Version Link, Enter available Ver no and Proceed to View the details",
+            "result": {
+              "status": "passed",
+              "duration": 5879000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "servicechargepricing-service-policy;to-verify-that-if-the-user-has-saved-any-policy-as-draft-he-should-be-able-to-view-the-saved-draft.",
+        "keyword": "Scenario",
+        "line": 54,
+        "name": "To verify that if the user has saved any policy as draft he should be able to view the saved draft.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 52
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 55,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 12473000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 56,
+            "name": "Click on Pricing Engine",
+            "result": {
+              "status": "passed",
+              "duration": 183000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 57,
+            "name": "Click on the Service Policy",
+            "result": {
+              "status": "passed",
+              "duration": 2932000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 58,
+            "name": "Click on add new rule buttton,add New service charge and save the policy as draft",
+            "result": {
+              "status": "passed",
+              "duration": 7473000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 59,
+            "name": "Check if user is able to view the saved draft",
+            "result": {
+              "status": "passed",
+              "duration": 269000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "servicechargepricing-service-policy;to-verify-that-user-should-be-able-to-reject-the-policy-pending-for-approval.",
+        "keyword": "Scenario",
+        "line": 70,
+        "name": "To verify that user should be able to reject the policy pending for approval.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 68
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 71,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 12362000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 72,
+            "name": "Click on Pricing Engine",
+            "result": {
+              "status": "passed",
+              "duration": 135000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 73,
+            "name": "Click on the Service Policy",
+            "result": {
+              "status": "passed",
+              "duration": 2487000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "servicechargepricing-service-policy;to-verify-that-user-can-easily-create-a-duplicate-service-charge-by-clicking-on-the-clone-option-from-the-available-service-charge.",
+        "keyword": "Scenario",
+        "line": 82,
+        "name": "To verify that user can easily create a duplicate service charge by clicking on the clone option from the available service charge.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 80
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 83,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 12911000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 84,
+            "name": "Click on Pricing Engine",
+            "result": {
+              "status": "passed",
+              "duration": 82000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 85,
+            "name": "Click on the Service Policy",
+            "result": {
+              "status": "passed",
+              "duration": 2797000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 86,
+            "name": "Click on Existing Service Policy Rule edit and save",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 30000ms: Expected to find element: `div.col.s6.input-field.no-margin.no-padding`, but never found it. Queried from element: <body>\n    at PricingEnginePage.getPricingPercntage (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\PricingEngine\\2ServiceChargePricing.feature:2037:26)\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\PricingEngine\\2ServiceChargePricing.feature:348:21)\n    at Context.resolveAndRunStepDefinition (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\PricingEngine\\2ServiceChargePricing.feature:14784:29)\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\PricingEngine\\2ServiceChargePricing.feature:14105:35)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 87,
+            "name": "clone the edited Service Policy Rule with other service Policy",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

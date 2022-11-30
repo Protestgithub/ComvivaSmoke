@@ -14,26 +14,35 @@ const welcomePage = new homePage()
 var DataFile = "cypress/fixtures/userData/Domain&CAT.json"
 
 Before(() => {
-
- 
   cy.fixture('UserManagement').then(function (data2) {
     this.data2 = data2;
   })
-
   cy.fixture('Domain&CategoryManagement').then(function (data4) {
     this.data4 = data4;
   })
-
+  cy.fixture('API/APIEndPoints').then(function (data20) {
+    this.data20 = data20;
+  })
 });
 
 //---------------------------------------------System Admin Login----------------------------------------------------
 Given('Login into Mobiquity Portal as System admin Maker', function () {
   cy.launchURL(Cypress.env('Adminurl'))
-  cy.wait(2000)
   cy.SysAdminlogin()
-  cy.wait(2000)
-  cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
+  cy.fixture('userData/SystemAdminLogin.json').then((data) => {
+    let Name = data.SysAdminMakerName
+    cy.checkWelcomeText(Name)
+  })
 })
+Given('Login into Mobiquity Portal as System admin Checker1', function () {
+  cy.launchURL(Cypress.env('Adminurl'))
+  cy.SysAdminlogin2()
+  cy.fixture('userData/SystemAdminLogin.json').then((data) => {
+    let Name = data.SysAdminChecker1Name
+    cy.checkWelcomeText(Name)
+  })
+})
+//-------------------------------------------------------------------------------------------------------
 
 When('User Click on Domain Management >> Add Domain', function () {
   welcomePage.getDomainManagementOption().click()
@@ -51,13 +60,13 @@ And('Enter Domain Name and Domain code.', function () {
   cy.readFile(DataFile).then((data) => {
     var Category = data.CategoryNum
     domainPage.getDomainCategories().type(Category, { force: true })
-
   })
 })
 //-------------------------------------Error-------------------------------------------
 
 Then('Click on submit buttonn', function () {
+  cy.intercept(this.data20.DomainSubmitbtn).as('getdomainsubmit')
   domainPage.getDomainSubmitbtn().click({ force: true })
-  cy.wait(2000)
+  cy.wait('@getdomainsubmit')
   domainPage.getErrormsg().should('have.text', this.data4.Errormsg)
 })

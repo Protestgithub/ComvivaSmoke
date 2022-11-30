@@ -1,0 +1,122 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "SecurityProfile",
+    "line": 1,
+    "id": "securityprofile",
+    "tags": [],
+    "uri": "securityProfile.feature",
+    "elements": [
+      {
+        "id": "securityprofile;to-verify-that-for-each-workspace-there-will-be-one-default-security-profile",
+        "keyword": "Scenario",
+        "line": 10,
+        "name": "To verify that for each workspace there will be one default security profile",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 8
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 11,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 15066000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 12,
+            "name": "Navigate to Security and click to select security profile",
+            "result": {
+              "status": "passed",
+              "duration": 4054000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "Filter by slecting Default",
+            "result": {
+              "status": "passed",
+              "duration": 2053000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 14,
+            "name": "Assert each workspace have one default Profile",
+            "result": {
+              "status": "passed",
+              "duration": 3403000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "securityprofile;security-profile-should-be-associated-with-the-user-at-the-time-of-on-boarding",
+        "keyword": "Scenario",
+        "line": 24,
+        "name": "Security profile should be associated with the user at the time of on-boarding",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 22
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 25,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 12509000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 26,
+            "name": "Navigate to User Management and Click on register",
+            "result": {
+              "status": "passed",
+              "duration": 357000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 27,
+            "name": "Select User type as Subscriber and click on Subscriber",
+            "result": {
+              "status": "passed",
+              "duration": 5549000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 28,
+            "name": "Verify User registration have security profile",
+            "result": {
+              "status": "passed",
+              "duration": 307000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

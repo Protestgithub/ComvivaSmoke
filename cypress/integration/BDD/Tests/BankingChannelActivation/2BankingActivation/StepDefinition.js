@@ -25,6 +25,9 @@ Before(() => {
   cy.fixture('userData/subscriberReg').then(function (data6) {
     this.data6 = data6;
   })
+  cy.fixture('API/APIEndPoints').then(function (data20) {
+    this.data20 = data20;
+  })
 });
 //----------------------------------------POC - CODE-------------------------------------------------------
 //---------------------------------------------System Admin Login----------------------------------------------------
@@ -52,7 +55,7 @@ Then('Logout', function () {
 
 When('Navigate to Banking Channel Activation and click', function () {
 
-  cy.intercept('/assistedactivationui/').as('getBankingActivationPage')
+  cy.intercept(this.data20.BankingChannelActivation).as('getBankingActivationPage')
    welcomePage.getBankingChannelActivation().click({ force: true })
   cy.wait('@getBankingActivationPage')
       cy.frameLoaded(pageLogin.getiFrame())
@@ -62,28 +65,35 @@ When('Navigate to Banking Channel Activation and click', function () {
 And('Enter the CIF number and search for the user', function () {
  
   bankingActivationPage.getEnterCIFNumber().type(this.data6.CIFnumberBanking, { force: true })
-  cy.wait(2000)
+  //cy.wait(2000)
+  cy.intercept(this.data20.SearchButton).as('getcifsearch')
   bankingActivationPage.getSearchButton().click()
+  cy.wait('@getcifsearch')
 })
 And('Click on Mobile Banking Activation', function () {
-  cy.wait(2000)
+  //cy.wait(2000)
   bankingActivationPage.getMobileBankingButton().click({ force: true })
 })
 Then('Confirm and Verify the Mob Banking Activtion Message sent to user', function () {
-  cy.wait(2000)
+  //cy.wait(2000)
   cy.getMobBankingActivationMessage(Cypress.env('Adminurl'))
 
 })
 //----------TC_156--------------------------------------------------------------------------------------
 
 And('Click on Internet Banking Activation', function () {
-  cy.wait(2000)
+  //cy.wait(2000)
+  cy.waitUntil(()=>{
+
+    return cy.iframe().find('h3.add-user-reports-title.panel-title.ng-star-inserted').should('be.visible', { force: true })
+    
+     })
   bankingActivationPage.getInternetBankingButton().click({ force: true })
 
 })
 
 Then('Confirm and Verify the Internet Banking Activtion Message sent to user', function () {
-  cy.wait(2000)
+  //cy.wait(2000)
   cy.getInternetBankingActivationMessage(Cypress.env('Adminurl'))
 
 })

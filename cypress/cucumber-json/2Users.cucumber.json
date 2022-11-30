@@ -1,0 +1,434 @@
+[
+  {
+    "description": "    This feature includes registering and approval of Business User",
+    "keyword": "Feature",
+    "name": "Business User Creation",
+    "line": 1,
+    "id": "business-user-creation",
+    "tags": [],
+    "uri": "2Users.feature",
+    "elements": [
+      {
+        "id": "business-user-creation;to-verify-that-valid-system-admin/business-admin-is-able-to-initiate-businsess-user-creation-for-o2c",
+        "keyword": "Scenario",
+        "line": 14,
+        "name": "To verify that valid System admin/Business Admin is able to initiate businsess user creation for O2C",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 12
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 15,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 15126000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 16,
+            "name": "Navigate to User Management and Click on register",
+            "result": {
+              "status": "passed",
+              "duration": 504000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 17,
+            "name": "Select User type as Business and Select user role",
+            "result": {
+              "status": "passed",
+              "duration": 5749000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "Enter all the required business user details for O2C",
+            "result": {
+              "status": "passed",
+              "duration": 16606000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 19,
+            "name": "Confirmation message is displayed",
+            "result": {
+              "status": "passed",
+              "duration": 1301000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 20,
+            "name": "Navigate to My Activity and Aplly required filters",
+            "result": {
+              "status": "passed",
+              "duration": 5536000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 21,
+            "name": "Assert Created Buissness User Mobile Number and Write Created on time for O2C",
+            "result": {
+              "status": "passed",
+              "duration": 627000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "business-user-creation;to-verify-approval-business-user-created-for-o2c",
+        "keyword": "Scenario",
+        "line": 24,
+        "name": "To verify approval business user created for o2c",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 25,
+            "name": "Login into Mobiquity Portal as System admin Checker1",
+            "result": {
+              "status": "passed",
+              "duration": 12335000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 26,
+            "name": "Navigate to Approvals and filter by Submitted status",
+            "result": {
+              "status": "passed",
+              "duration": 4717000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 27,
+            "name": "User click on Buissness User submitted user data for O2C",
+            "result": {
+              "status": "passed",
+              "duration": 273000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 28,
+            "name": "Approve the Users",
+            "result": {
+              "status": "passed",
+              "duration": 1594000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 29,
+            "name": "User status is approved",
+            "result": {
+              "status": "passed",
+              "duration": 1423000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "business-user-creation;to-verify-that-valid-system-admin/business-admin-is-able-to-initiate-businsess-user-creation.",
+        "keyword": "Scenario",
+        "line": 39,
+        "name": "To verify that valid System admin/Business Admin is able to initiate businsess user creation.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 37
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 40,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 12331000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 41,
+            "name": "Navigate to User Management and Click on register",
+            "result": {
+              "status": "passed",
+              "duration": 406000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 42,
+            "name": "Select User type as Business and Select user role",
+            "result": {
+              "status": "passed",
+              "duration": 1827000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 43,
+            "name": "Enter all the required business user details",
+            "result": {
+              "status": "passed",
+              "duration": 16465000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 44,
+            "name": "Confirmation message is displayed",
+            "result": {
+              "status": "passed",
+              "duration": 1048000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 45,
+            "name": "Navigate to My Activity and Aplly required filters",
+            "result": {
+              "status": "passed",
+              "duration": 2167000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 46,
+            "name": "Assert Created Buissness User Mobile Number and Write Created on time",
+            "result": {
+              "status": "passed",
+              "duration": 661000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "business-user-creation;to-verify-that-another-system-admin/businsess-user--is-able-to-approve-the-initiated-business-user-creation.",
+        "keyword": "Scenario",
+        "line": 56,
+        "name": "To verify that another System Admin/businsess User  is able to approve the initiated business user creation.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 54
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 57,
+            "name": "Login into Mobiquity Portal as System admin Checker1",
+            "result": {
+              "status": "passed",
+              "duration": 12405000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 58,
+            "name": "Navigate to Approvals and filter by Submitted status",
+            "result": {
+              "status": "passed",
+              "duration": 1465000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 59,
+            "name": "User click on Buisness User submitted user data",
+            "result": {
+              "status": "passed",
+              "duration": 596000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 60,
+            "name": "Approve the Users",
+            "result": {
+              "status": "passed",
+              "duration": 276000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 61,
+            "name": "User status is approved",
+            "result": {
+              "status": "passed",
+              "duration": 1417000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "business-user-creation;to-verify-that-business-admin-is-able-to--view-self-details",
+        "keyword": "Scenario",
+        "line": 74,
+        "name": "To verify that Business admin is able to  view Self details",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 72
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 75,
+            "name": "Login into Mobiquity Portal as Business admin User1",
+            "result": {
+              "status": "failed",
+              "error_message": "CypressError: Timed out retrying after 30000ms: `cy.type()` failed because this element is detached from the DOM.\n\n`<input class=\"form-input\" type=\"password\" placeholder=\"Enter new password\" name=\"newPassword\">`\n\nCypress requires elements be attached in the DOM to interact with them.\n\nThe previous command that ran was:\n\n  > `cy.eq()`\n\nThis DOM element likely became detached somewhere between the previous and current command.\n\nCommon situations why this happens:\n  - Your JS framework re-rendered asynchronously\n  - Your app code reacted to an event firing and removed the element\n\nYou typically need to re-query for the element or add 'guards' which delay Cypress from running new commands.\n\nhttps://on.cypress.io/element-has-detached-from-dom\n    at $Cy.ensureAttached (http://172.25.48.177/__cypress/runner/cypress_runner.js:168765:76)\n    at runAllChecks (http://172.25.48.177/__cypress/runner/cypress_runner.js:154675:12)\n    at retryActionability (http://172.25.48.177/__cypress/runner/cypress_runner.js:154755:16)\n    at tryCatcher (http://172.25.48.177/__cypress/runner/cypress_runner.js:13022:23)\n    at Promise.attempt.Promise.try (http://172.25.48.177/__cypress/runner/cypress_runner.js:10296:29)\n    at whenStable (http://172.25.48.177/__cypress/runner/cypress_runner.js:173835:65)\n    at http://172.25.48.177/__cypress/runner/cypress_runner.js:173290:14\n    at tryCatcher (http://172.25.48.177/__cypress/runner/cypress_runner.js:13022:23)\n    at Promise._settlePromiseFromHandler (http://172.25.48.177/__cypress/runner/cypress_runner.js:10957:31)\n    at Promise._settlePromise (http://172.25.48.177/__cypress/runner/cypress_runner.js:11014:18)\n    at Promise._settlePromise0 (http://172.25.48.177/__cypress/runner/cypress_runner.js:11059:10)\n    at Promise._settlePromises (http://172.25.48.177/__cypress/runner/cypress_runner.js:11139:18)\n    at Promise._fulfill (http://172.25.48.177/__cypress/runner/cypress_runner.js:11083:18)\n    at http://172.25.48.177/__cypress/runner/cypress_runner.js:12697:46\nFrom Your Spec Code:\n    at eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\CreationOfUsers\\2Users.feature:1305:52)\n    at resolveValue (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\CreationOfUsers\\2Users.feature:17086:20)\n    at Context.waitUntil (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\CreationOfUsers\\2Users.feature:17096:10)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 76,
+            "name": "Navigate to User Management and Click on manage user",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 77,
+            "name": "Enter Mobile number or KYC number in search",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 78,
+            "name": "User Click on eye button",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 79,
+            "name": "Verify View Details Page",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "business-user-creation;to-verify-that-business-admin-is-able-to--view-lower_hierarchy/subscriber-details",
+        "keyword": "Scenario",
+        "line": 88,
+        "name": "To verify that Business admin is able to  view Lower_Hierarchy/Subscriber details",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 86
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 89,
+            "name": "Login into Mobiquity Portal as Business admin User2",
+            "result": {
+              "status": "passed",
+              "duration": 2601000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 90,
+            "name": "Navigate to User Management and Click on manage user",
+            "result": {
+              "status": "passed",
+              "duration": 701000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 91,
+            "name": "Enter Mobile number or KYC number in Search",
+            "result": {
+              "status": "passed",
+              "duration": 1158000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 92,
+            "name": "User Click on eye button",
+            "result": {
+              "status": "passed",
+              "duration": 317000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 93,
+            "name": "Verify View Details Page",
+            "result": {
+              "status": "passed",
+              "duration": 10000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

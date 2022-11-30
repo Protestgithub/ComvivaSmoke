@@ -1,0 +1,61 @@
+[
+  {
+    "description": "    This feature creates order details for customer and Business Admin ",
+    "keyword": "Feature",
+    "name": "Transfer To Bank",
+    "line": 1,
+    "id": "transfer-to-bank",
+    "tags": [],
+    "uri": "BanktowalletTransfer.feature",
+    "elements": [
+      {
+        "id": "transfer-to-bank;to-verify-that-business-admin-is-able-to-transfer-wallet-to-bank",
+        "keyword": "Scenario",
+        "line": 12,
+        "name": "To verify that Business admin is able to transfer wallet to bank",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 13,
+            "name": "Login into Mobiquity Portal as Business admin User3",
+            "result": {
+              "status": "failed",
+              "duration": 51350000000,
+              "error_message": "AssertionError: Timed out retrying after 30000ms: expected '<span#username.lui-username.fd-has-type-1.svelte-yfds2b>' to contain text 'Text ', but the text was 'uWIzj yCOBF'\n    + expected - actual\n\n    -'uWIzj yCOBF'\n    +'Text '\n\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\TransferwalletToBank\\BanktowalletTransfer.feature:600:32)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 14,
+            "name": "Navigate to Transfer to Bank",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "Enter all the information for Bank to Wallet transfer",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 16,
+            "name": "Click on Transfer Button",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

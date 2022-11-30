@@ -105,7 +105,6 @@ When Navigate to Approvals and filter by Submitted status
 And User click on submitted user data for deletion
 And Approve the Users and save loginID4
 Then User status is approved
-Then Logout
 
 Scenario:To verify deletion of system admin
 Given Login into Mobiquity Portal as Super admin Maker

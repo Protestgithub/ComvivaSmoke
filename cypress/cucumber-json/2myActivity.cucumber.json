@@ -1,0 +1,241 @@
+[
+  {
+    "description": "    This feature includes registering, Modifying and Approval of Business Admin and \n    Customer Support Admin Users by System Admin",
+    "keyword": "Feature",
+    "name": "Sys Admin My Activity",
+    "line": 1,
+    "id": "sys-admin-my-activity",
+    "tags": [],
+    "uri": "2myActivity.feature",
+    "elements": [
+      {
+        "id": "sys-admin-my-activity;to-verify-that-system-user-can-withdraw-application-of-user's-whose-registration-is-incomplete-and-sent-for-approval",
+        "keyword": "Scenario",
+        "line": 17,
+        "name": "To verify that system user can Withdraw application of user's whose registration is incomplete and sent for Approval",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 15
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 18,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 16874000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 19,
+            "name": "Navigate to My Activity and Add the not Approved filters",
+            "result": {
+              "status": "passed",
+              "duration": 6725000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 20,
+            "name": "Click on Expand and Withdraw button",
+            "result": {
+              "status": "passed",
+              "duration": 2573000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "sys-admin-my-activity;to-verify-that-system-user-can-send-for-approval-of-user's-whose-registration-rejected-by-approver.",
+        "keyword": "Scenario",
+        "line": 30,
+        "name": "To verify that system user can Send for approval of user's whose Registration rejected by approver.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 28
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 31,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 12210000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 32,
+            "name": "Navigate to User Management and Click on register",
+            "result": {
+              "status": "passed",
+              "duration": 430000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 33,
+            "name": "Select User type as Adminstrator and click on Customer care Admin",
+            "result": {
+              "status": "passed",
+              "duration": 6267000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 34,
+            "name": "Enter all the details",
+            "result": {
+              "status": "passed",
+              "duration": 5814000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 35,
+            "name": "Confirmation message is displayed",
+            "result": {
+              "status": "passed",
+              "duration": 979000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 36,
+            "name": "Logout",
+            "result": {
+              "status": "passed",
+              "duration": 1183000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 37,
+            "name": "Login into Mobiquity Portal as System admin Checker1",
+            "result": {
+              "status": "passed",
+              "duration": 12949000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 38,
+            "name": "Navigate to Approvals and filter by Submitted status",
+            "result": {
+              "status": "passed",
+              "duration": 7535000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 39,
+            "name": "User click on submitted user data",
+            "result": {
+              "status": "passed",
+              "duration": 291000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 40,
+            "name": "Reject the Users",
+            "result": {
+              "status": "passed",
+              "duration": 1795000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 41,
+            "name": "Logout",
+            "result": {
+              "status": "passed",
+              "duration": 922000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 42,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 13865000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 43,
+            "name": "Navigate to My Activity and Add the Reject filter",
+            "result": {
+              "status": "passed",
+              "duration": 2765000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 44,
+            "name": "Click on Expand and Resume button",
+            "result": {
+              "status": "passed",
+              "duration": 3230000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 45,
+            "name": "Enter all the required details of the user",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 30000ms: Expected to find element: `input[id=\"lastName\"]`, but never found it. Queried from element: <body>\n    at register.getLastName (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\MyActivity\\2myActivity.feature:3804:26)\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\MyActivity\\2myActivity.feature:216:16)\n    at Context.resolveAndRunStepDefinition (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\MyActivity\\2myActivity.feature:15042:29)\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\MyActivity\\2myActivity.feature:14363:35)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 46,
+            "name": "Click the >> Submit Button",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 47,
+            "name": "Confirmation message is displayed",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

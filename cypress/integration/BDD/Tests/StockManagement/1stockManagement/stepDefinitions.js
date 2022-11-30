@@ -52,52 +52,60 @@ Before(() => {
   cy.fixture('StockManagement').then(function (data10) {
     this.data10 = data10;
   })
+  cy.fixture('API/APIEndPoints').then(function (data20) {
+    this.data20 = data20;
+  })
 });
 
 //---------------------------------------------System Admin Login----------------------------------------------------
 Given('Login into Mobiquity Portal as System admin Maker', function () {
   cy.launchURL(Cypress.env('Adminurl'))
-  cy.wait(2000)
   cy.SysAdminlogin()
-  cy.wait(2000)
-  cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
+  cy.fixture('userData/SystemAdminLogin.json').then((data) => {
+    let Name = data.SysAdminMakerName
+    cy.checkWelcomeText(Name)
+  })
 })
 Given('Login into Mobiquity Portal as System admin Checker1', function () {
   cy.launchURL(Cypress.env('Adminurl'))
-  cy.wait(2000)
   cy.SysAdminlogin2()
-  cy.wait(2000)
-  cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
+  cy.fixture('userData/SystemAdminLogin.json').then((data) => {
+    let Name = data.SysAdminChecker1Name
+    cy.checkWelcomeText(Name)
+  })
 })
 
 Given('Login into Mobiquity Portal as System admin Checker2', function () {
   cy.launchURL(Cypress.env('Adminurl'))
-  cy.wait(2000)
   cy.SysAdminlogin3()
-  cy.wait(3000)
 })
 
 
 //---------------------------------------TC_75--------------------------------------------------
 
 When('Navigate to Stock Management and Click on Stock initiation', function () {
-  cy.wait(3000)
   welcomePage.getStockManagementOption().scrollIntoView()
   welcomePage.getStockManagementOption().click()
+  cy.intercept(this.data20.StockIni).as('StckInitiation')
   welcomePage.getStockInitiationOption().click()
+  cy.wait('@StckInitiation')
 })
 
 And('Select MFS provider and Enter Reference number and Amount', function () {
-  cy.wait(5000)
   stockInitiationPage.getProvider().select(this.data10.stockInitiation.provider, { force: true })
   stockInitiationPage.getStockFrom().select(this.data10.stockInitiation.stockFrom, { force: true })
   stockInitiationPage.getReferenceNumber().type(mobile, { force: true })
+  cy.readFile(filenamestock).then((data) => {
+    data.ReferenceNumber = mobile
+    cy.writeFile(filenamestock, data)
+  })
   stockInitiationPage.getRequestedAmount().type(amount, { force: true })
 })
+
 Then('click on Submit and Confirm button', function () {
-  cy.wait(5000)
+  cy.intercept(this.data20.SubmitButtonSI).as('submittBtn')
   stockInitiationPage.getSubmitButton().click({ force: true })
-  cy.wait(5000)
+  cy.wait('@submittBtn')
   stockInitiationPage.getBalance().eq(3).invoke('text').then((text) => {
     text = text.trim()
     cy.readFile(filenamestock).then((data) => {
@@ -111,16 +119,12 @@ Then('click on Submit and Confirm button', function () {
       const num1 = x * 1
       const num2 = y * 1
       const sum = num1 + num2
-
       data.CreditedStock = sum
       cy.log(parseFloat(sum))
       cy.writeFile(filenamestock, data)
     })
   })
-  cy.wait(5000)
   stockInitiationPage.getConfirmButton().click({ force: true })
-  cy.wait(5000)
-  cy.StockTransactionWriteData()
   cy.wait(5000)
   stockInitiationPage.getSuccessMsg().contains(this.data10.stockInitiationAssertion)
 })
@@ -130,9 +134,9 @@ Then('click on Submit and Confirm button', function () {
 When('Navigate to Stock Management and Click on Stock Approval 1', function () {
   welcomePage.getStockManagementOption().scrollIntoView()
   welcomePage.getStockManagementOption().click()
+  cy.intercept(this.data20.Approval_1Opt).as('stockAproval1')
   welcomePage.getApproval_1Option().click()
-  cy.wait(3000)
-
+  cy.wait('@stockAproval1')
 })
 Then('Assert Credit Stock', function () {
   stockInitiationPage.getSubmitButton().click({ force: true })
@@ -143,18 +147,18 @@ Then('Assert Credit Stock', function () {
   })
 })
 And('Click on Submit Button', function () {
+  cy.StockTransactionWriteData()
   cy.wait(5000)
   stockInitiationPage.getSubmitButton_1().click({ force: true })
 })
 
 Then('Click on Approve button', function () {
-  cy.wait(5000)
+  cy.wait(3000)
   stockInitiationPage.getApproveButton_1().click({ force: true })
-  cy.wait(5000)
+  cy.wait(3000)
   cy.readFile(filenamestock).then((data) => {
     let Msg = data.trasanctionid
     stockInitiationPage.getSuccessMsg().should('have.text', this.data10.stockApproval1Msg + Msg)
-    cy.wait(1000)
   })
 })
 
@@ -162,7 +166,7 @@ Then('Click on Approve button', function () {
 //--------------------------------------------------TC_77---------------------------------------------
 And('Select MFS provider and Enter reference number and amount', function () {
   cy.wait(3000)
-  cy.getprovider()
+  stockInitiationPage.getProvider().select(this.data10.stockInitiation.provider)
   stockInitiationPage.getStockFrom().select(this.data10.stockInitiation.stockFrom, { force: true })
   stockInitiationPage.getReferenceNumber().type(mobile, { force: true })
   stockInitiationPage.getRequestedAmount().type(amount1, { force: true })
@@ -171,26 +175,25 @@ And('Select MFS provider and Enter reference number and amount', function () {
 When('Navigate to Stock Management and Click on Stock Approval 2', function () {
   welcomePage.getStockManagementOption().scrollIntoView()
   welcomePage.getStockManagementOption().click()
+  cy.intercept(this.data20.Approval_2Opt).as('ApprBtn2')
   welcomePage.getApproval_2Option().click()
-  cy.wait(3000)
-  welcomePage.getApproval_2Option().click()
-  cy.wait(3000)
-
+  cy.wait('@ApprBtn2')
 })
 
 Then('Click on Submit and Approve the Stock at level 2', function () {
-  cy.wait(5000)
+  cy.intercept(this.data20.SubmitButton2).as('submitBtn2')
   stockInitiationPage.getSubmitButton_2().click({ force: true })
-  cy.wait(5000)
+  cy.wait('@submitBtn2')
+  
+  cy.intercept(this.data20.ApproveButton).as('ApprvBtn2')
   stockInitiationPage.getApproveButton_2().click({ force: true })
+  cy.wait('@ApprvBtn2')
   cy.wait(3000)
   cy.readFile(filenamestock).then((data) => {
     let Msg = data.trasanctionid
     stockInitiationPage.getSuccessMsg().should('have.text', this.data10.stockApproval2Msg + Msg)
   })
-  cy.wait(1000)
   welcomePage.getStockManagementOption().click()
-
 })
 
 
@@ -201,33 +204,39 @@ Then('Click on Submit and Approve the Stock at level 2', function () {
 When('Navigate to Stock Management and Stock Transfer to EA', function () {
   stockManagementPage.getStockManagement().scrollIntoView()
   stockManagementPage.getStockManagement().click()
+  cy.intercept(this.data20.StockTransferToEA).as('stockTransferEA')
   stockManagementPage.getStockTransferToEA().click()
+  cy.wait('@stockTransferEA')
 })
 
 And('User Select MFS Provider', function () {
-  cy.wait(3000)
+ 
   cy.mfsprovider()
 })
 
 And('User Should Enter Reference number', function () {
-  cy.wait(3000)
+  
   stockManagementPage.getReferenceNumber().type(refno, { force: true })
 })
 
 And('User Should Enter Amount', function () {
-  cy.wait(3000)
+  
   stockManagementPage.getTransferAmount().type(amount, { force: true })
 })
 
 And('User Click on Submit button', function () {
-  cy.wait(1000)
+
+  cy.intercept(this.data20.EASubmit).as('EASubmitBtn')
   stockManagementPage.getEASubmitButton().type("{enter}").focused().click({ force: true })
+  cy.wait('@EASubmitBtn')
 })
 
 Then('User Click on Confirm button', function () {
-  cy.wait(1000)
+  
+  cy.intercept(this.data20.EAConfirm).as('EAConfirmBtn')
   stockManagementPage.getEAConfirmButton().click({ force: true })
-  cy.wait(3000)
+  cy.wait('@EAConfirmBtn')
+  
   stockManagementPage.getStockInitiated().should('contain.text', this.data10.stockEAInitiated)
 })
 
@@ -239,35 +248,41 @@ When('Navigate to Stock Management and Stock Transfer to RA', function () {
 
   stockManagementPage.getStockManagement().scrollIntoView()
   stockManagementPage.getStockManagement().click()
+  cy.intercept(this.data20.StockTrans).as('stockTransferRA')
   stockManagementPage.getStockTransferToRA().click()
+  cy.wait('@stockTransferRA')
 })
 
 And('Enter Reference number', function () {
-  cy.wait(3000)
+  
   stockManagementPage.getRAReferenceNumber().type(refno, { force: true })
 })
 
 And('Select MFS Provider', function () {
-  cy.wait(3000)
+  
   cy.mfsproviders()
 })
 
 
 And('Enter Amount', function () {
-  cy.wait(3000)
+  
   stockManagementPage.getRARequestedAmount().type(amount, { force: true })
 
 })
 
 And('Click on Submit button', function () {
-  cy.wait(3000)
+  
+  cy.intercept(this.data20.RASubmit).as('RAsubmitBtn')
   stockManagementPage.getRASubmitButton().click({ force: true })
+  cy.wait('@RAsubmitBtn')
 })
 
 Then('Click on Confirm button', function () {
-  cy.wait(3000)
+  
+  cy.intercept(this.data20.RAConfirm).as('RAConfirmBtn')
   stockManagementPage.getRAConfirmButton().click({ force: true })
-  cy.wait(3000)
+  cy.wait('@RAConfirmBtn')
+  
   stockManagementPage.getStockInitiated().should('contain.text', this.data10.stockEAInitiated)
 })
 
@@ -279,42 +294,47 @@ When('Navigate to Stock Management and Stock Enquiry', function () {
 
   stockManagementPage.getStockManagement().scrollIntoView()
   stockManagementPage.getStockManagement().click()
+  cy.intercept(this.data20.StockEn).as('stockEnquiry')
   stockManagementPage.getStockEnquiry().click()
+  cy.wait('@stockEnquiry')
 })
 
 And('Select any Transaction ID from the displayed list', function () {
-  cy.wait(3000)
+  
   cy.readFile(filenamestock).then((data) => {
     var transID = data.trasanctionid
-    stockManagementPage.getTrasanctionID().type(transID, { force: true })
+    stockManagementPage.getTrasanctionID().type('XX221125.0922.A85005', { force: true })
   })
   cy.wait(3000)
   stockManagementPage.getStockTypes().select(this.data10.stocktypeA.value, { force: true })
 })
 
 Then('Click on Enquiry Submit button', function () {
+  cy.intercept(this.data20.StockEnquirySub).as('stockEnquirySubmit')
   stockManagementPage.getStockEnquirySubmit().click({ force: true })
-  cy.wait(3000)
+  cy.wait('@stockEnquirySubmit')
+  
+  cy.intercept(this.data20.StockEnquiryView).as('stockEnquiryViewSubmit')
   stockManagementPage.getStockEnquiryViewSubmit().click({ force: true })
+  cy.wait(2000)
 })
 
 //---------------- Stock Transfer EA Enquiry---------------------------------------------------------------------
 
 Then('click on approve button', function () {
-  cy.wait(3000)
   stockManagementPage.getConfirmApprove().click({ force: true })
-  cy.wait(3000)
   stockManagementPage.getReimbursementApproveMessage().should('contain.text', this.data10.stockReimbursementApproval)
-
 })
 
 
 //--------------------------------------------------------------------------------------
 When('Navigate to Stock Management and Click on Stock Limit', function () {
-  cy.wait(3000)
+ 
   welcomePage.getStockManagementOption().scrollIntoView()
   welcomePage.getStockManagementOption().click()
+  //cy.intercept('/CoreWeb/stock/StockApprovalTransferLimitActionWithdraw_input.action').as('getStockLIMIT')
   welcomePage.getStockLimit().click()
+  //cy.wait('@getStockLIMIT', { timeout: 5000 })
 })
 
 And('Enter the value for Approval Limit 1', function () {

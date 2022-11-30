@@ -13,7 +13,6 @@ import PricingEnginePage from '../../../../../support/pageObjects/PricingEngine/
 const welcomePage = new homePage()
 const pricingEnginePage = new PricingEnginePage()
 var fileis = 'cypress/fixtures/userData/Aservice.json'
-var fileis='cypress/fixtures/userData/Aservice.json'
 //----------------BDD Hooks-----------------------------------------------------------------
 Before(() => {
   cy.fixture('login').then(function (data1) {
@@ -43,20 +42,33 @@ function getRandomName() {
 Given('Login into Mobiquity Portal as System admin Maker', function () {
   cy.launchURL(Cypress.env('Adminurl'))
   cy.SysAdminlogin()
-  cy.wait(2000)
-  cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
+  cy.fixture('userData/SystemAdminLogin.json').then((data) => {
+    let Name = data.SysAdminMakerName
+    cy.checkWelcomeText(Name)
+  })
 })
 Given('Login into Mobiquity Portal as System admin Checker1', function () {
   cy.launchURL(Cypress.env('Adminurl'))
   cy.SysAdminlogin2()
-  cy.wait(2000)
-  cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
+  cy.fixture('userData/SystemAdminLogin.json').then((data) => {
+    let Name = data.SysAdminChecker1Name
+    cy.checkWelcomeText(Name)
+  })
 })
-Given('Login into Mobiquity Portal as Super admin', function () {
 
+//superadminm
+Given('Login into Mobiquity Portal as Super admin Maker', function () {
   cy.launchURL(Cypress.env('Adminurl'))
-  cy.login(this.data1.masteradminmaker.sysAdminUser1, this.data1.masteradminmaker.sysAdminPwd1)
+  cy.login(this.data1.masteradminmaker.superadminm, this.data1.masteradminmaker.superadminmPwd)
+  cy.checkWelcomeText(this.data1.superadminm.superadminmaker)
+})
+
+//superadminc
+Given('Login into Mobiquity Portal as Super admin Checker', function () {
+  cy.launchURL(Cypress.env('Adminurl'))
   cy.wait(2000)
+  cy.login(this.data1.masteradminchecker.superadminc, this.data1.masteradminchecker.superadmincPwd)
+  cy.checkWelcomeText(this.data1.superadminc.superadminchecker)
 })
 
 
@@ -156,7 +168,11 @@ And('Click on any service to add service charge.', function () {
   var nameone=getRandomName()
   pricingEnginePage.getRuleName().type(nameone, { force: true })
   cy.wait(5000)
-cy.writeFile(fileis,{ServiceRuleName:nameone})
+  cy.readFile(fileis).then((data)=>{
+    data.ServiceRuleName=nameone
+    cy.writeFile(fileis,data)
+
+  })
   cy.wait(5000)
   pricingEnginePage.getMinCharge().type(number)
   pricingEnginePage.getMaxCharge().type(numberone)

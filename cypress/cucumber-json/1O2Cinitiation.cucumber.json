@@ -1,0 +1,827 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Operator To Channel Initiation",
+    "line": 1,
+    "id": "operator-to-channel-initiation",
+    "tags": [],
+    "uri": "1O2Cinitiation.feature",
+    "elements": [
+      {
+        "id": "operator-to-channel-initiation;to-verify-that-system-admin-can-initiate-the-o2c-successfully-if-valid-details-are-entered.",
+        "keyword": "Scenario",
+        "line": 13,
+        "name": "To verify that System admin can initiate the O2C successfully if valid details are entered.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 11
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 14,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 16198000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 15,
+            "name": "Navigate to Stock Management and Click on Stock initiation",
+            "result": {
+              "status": "passed",
+              "duration": 646000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "Select MFS provider and Enter Reference number and Amount",
+            "result": {
+              "status": "passed",
+              "duration": 5718000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 17,
+            "name": "click on Submit and Confirm button",
+            "result": {
+              "status": "passed",
+              "duration": 1539000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 18,
+            "name": "Navigate to Operator to channel and click on O2C transfer initiate",
+            "result": {
+              "status": "passed",
+              "duration": 616000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 19,
+            "name": "Enter All the Mandatory Details",
+            "result": {
+              "status": "passed",
+              "duration": 7110000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 20,
+            "name": "Click on submit and Confirm O2C",
+            "result": {
+              "status": "passed",
+              "duration": 2815000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "operator-to-channel-initiation;to-verify-that-o2c-transfer-after-initiation-for-amount-transfer-should-go-for-approval-1.",
+        "keyword": "Scenario",
+        "line": 32,
+        "name": "To verify that O2C transfer after initiation for amount transfer should go for Approval 1.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 30
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 33,
+            "name": "Login into Mobiquity Portal as System admin Checker1",
+            "result": {
+              "status": "passed",
+              "duration": 13233000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 34,
+            "name": "Navigate to Operator to channel and click on O2C transfer Approval1",
+            "result": {
+              "status": "passed",
+              "duration": 11104000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 35,
+            "name": "Assert Initiated O2C for Transaction1",
+            "result": {
+              "status": "passed",
+              "duration": 328000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 36,
+            "name": "Navigate to Stock Management and Click on Stock initiation",
+            "result": {
+              "status": "passed",
+              "duration": 912000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 37,
+            "name": "Select MFS provider and Enter Reference number and Amount",
+            "result": {
+              "status": "passed",
+              "duration": 6608000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 38,
+            "name": "Assert Debited Stock",
+            "result": {
+              "status": "passed",
+              "duration": 2037000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "operator-to-channel-initiation;to-verify-that-channel-admin-can-do-o2c-enquiry.",
+        "keyword": "Scenario",
+        "line": 48,
+        "name": "To Verify that Channel admin can do O2C Enquiry.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 46
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 49,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 13951000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 50,
+            "name": "Navigate to User Management and Click on manage user",
+            "result": {
+              "status": "passed",
+              "duration": 700000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 51,
+            "name": "enter user mobile number and search",
+            "result": {
+              "status": "passed",
+              "duration": 5048000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 52,
+            "name": "User Click on eye button",
+            "result": {
+              "status": "passed",
+              "duration": 873000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 53,
+            "name": "click wallet Payment history.",
+            "result": {
+              "status": "passed",
+              "duration": 648000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 54,
+            "name": "Enter TransactionID and check",
+            "result": {
+              "status": "passed",
+              "duration": 1255000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "operator-to-channel-initiation;to-verify-that-the-o2c-transaction-should-go-for-approval-1-only-if-transaction-amount-is-less-than-the-o2c-limit.",
+        "keyword": "Scenario",
+        "line": 64,
+        "name": "To verify that the O2C transaction should go for approval 1 only if transaction amount is less than the O2C limit.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 62
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 65,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 13063000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 66,
+            "name": "Navigate to Stock Management and Click on Stock initiation",
+            "result": {
+              "status": "passed",
+              "duration": 558000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 67,
+            "name": "Select MFS provider and Enter Reference number and Amount",
+            "result": {
+              "status": "passed",
+              "duration": 5992000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 68,
+            "name": "click on Submit and Confirm button",
+            "result": {
+              "status": "passed",
+              "duration": 1340000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 69,
+            "name": "Navigate to Operator to channel and click on O2C transfer initiate",
+            "result": {
+              "status": "passed",
+              "duration": 574000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 70,
+            "name": "Enter All the Mandatory Details",
+            "result": {
+              "status": "passed",
+              "duration": 6716000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 71,
+            "name": "Click on submit and Confirm O2C",
+            "result": {
+              "status": "passed",
+              "duration": 2908000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 72,
+            "name": "logout the user",
+            "result": {
+              "status": "passed",
+              "duration": 1264000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 73,
+            "name": "Login into Mobiquity Portal as System admin Checker1",
+            "result": {
+              "status": "passed",
+              "duration": 14437000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 74,
+            "name": "Navigate to Operator to channel and click on O2C transfer Approval1",
+            "result": {
+              "status": "passed",
+              "duration": 15500000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 75,
+            "name": "Assert Initiated O2C for Transaction1",
+            "result": {
+              "status": "passed",
+              "duration": 690000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 76,
+            "name": "Navigate to Stock Management and Click on Stock initiation",
+            "result": {
+              "status": "passed",
+              "duration": 1161000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 77,
+            "name": "Select MFS provider and Enter Reference number and Amount",
+            "result": {
+              "status": "passed",
+              "duration": 7853000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 78,
+            "name": "Assert Debited Stock",
+            "result": {
+              "status": "passed",
+              "duration": 1568000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "operator-to-channel-initiation;to-verify-that-the-o2c-transaction-initiated-and-approved-to-perform-transaction-correction",
+        "keyword": "Scenario",
+        "line": 89,
+        "name": "To verify that the O2C transaction initiated and Approved to perform Transaction correction",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 87
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 90,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 13427000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 91,
+            "name": "Navigate to Stock Management and Click on Stock initiation",
+            "result": {
+              "status": "passed",
+              "duration": 623000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 92,
+            "name": "Select MFS provider and Enter Reference number and Amount",
+            "result": {
+              "status": "passed",
+              "duration": 5695000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 93,
+            "name": "click on Submit and Confirm button",
+            "result": {
+              "status": "passed",
+              "duration": 1285000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 94,
+            "name": "Navigate to Operator to channel and click on O2C transfer initiate",
+            "result": {
+              "status": "passed",
+              "duration": 553000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 95,
+            "name": "Enter All the Mandatory Details",
+            "result": {
+              "status": "passed",
+              "duration": 6693000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 96,
+            "name": "Click on submit and Confirm O2C",
+            "result": {
+              "status": "passed",
+              "duration": 2632000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 97,
+            "name": "logout the user",
+            "result": {
+              "status": "passed",
+              "duration": 1064000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 98,
+            "name": "Login into Mobiquity Portal as System admin Checker1",
+            "result": {
+              "status": "passed",
+              "duration": 13955000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 99,
+            "name": "Navigate to Operator to channel and click on O2C transfer Approval1 for TransactionID1",
+            "result": {
+              "status": "passed",
+              "duration": 16085000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 100,
+            "name": "Assert Initiated O2C for Transaction2",
+            "result": {
+              "status": "passed",
+              "duration": 573000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 101,
+            "name": "Navigate to Stock Management and Click on Stock initiation",
+            "result": {
+              "status": "passed",
+              "duration": 1191000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 102,
+            "name": "Select MFS provider and Enter Reference number and Amount",
+            "result": {
+              "status": "passed",
+              "duration": 7053000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 103,
+            "name": "Assert Debited Stock",
+            "result": {
+              "status": "passed",
+              "duration": 1489000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "operator-to-channel-initiation;to-verify-that-the-o2c-transaction-initiated-and-approved-to-view-all-the-wallet-transactions",
+        "keyword": "Scenario",
+        "line": 114,
+        "name": "To verify that the O2C transaction initiated and Approved to view all the wallet transactions",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 112
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 115,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 13669000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 116,
+            "name": "Navigate to Stock Management and Click on Stock initiation",
+            "result": {
+              "status": "passed",
+              "duration": 560000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 117,
+            "name": "Select MFS provider and Enter Reference number and Amount",
+            "result": {
+              "status": "passed",
+              "duration": 6078000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 118,
+            "name": "click on Submit and Confirm button",
+            "result": {
+              "status": "passed",
+              "duration": 1607000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 119,
+            "name": "Navigate to Operator to channel and click on O2C transfer initiate",
+            "result": {
+              "status": "passed",
+              "duration": 490000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 120,
+            "name": "Enter All the Mandatory Details",
+            "result": {
+              "status": "passed",
+              "duration": 6666000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 121,
+            "name": "Click on submit and Confirm O2C",
+            "result": {
+              "status": "passed",
+              "duration": 2639000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 122,
+            "name": "logout the user",
+            "result": {
+              "status": "passed",
+              "duration": 928000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 123,
+            "name": "Login into Mobiquity Portal as System admin Checker1",
+            "result": {
+              "status": "passed",
+              "duration": 13938000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 124,
+            "name": "Navigate to Operator to channel and click on O2C transfer Approval1 for TransactionID2",
+            "result": {
+              "status": "passed",
+              "duration": 15507000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 125,
+            "name": "Assert Initiated O2C for Transaction3",
+            "result": {
+              "status": "passed",
+              "duration": 1256000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 126,
+            "name": "Navigate to Stock Management and Click on Stock initiation",
+            "result": {
+              "status": "passed",
+              "duration": 945000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 127,
+            "name": "Select MFS provider and Enter Reference number and Amount",
+            "result": {
+              "status": "passed",
+              "duration": 7411000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 128,
+            "name": "Assert Debited Stock",
+            "result": {
+              "status": "passed",
+              "duration": 2643000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "operator-to-channel-initiation;to-verify-that-if-approval-1-current-status-should-be-'passed'-then-,-it-go-for-next-approval-as-'o2c-transfer-approval-2'.",
+        "keyword": "Scenario",
+        "line": 141,
+        "name": "To verify that if Approval 1 current status should be 'Passed' then , it go for next Approval as 'O2C transfer Approval 2'.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 139
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 142,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 13813000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 143,
+            "name": "Navigate to Operator to channel and click on O2C transfer initiate",
+            "result": {
+              "status": "passed",
+              "duration": 452000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 144,
+            "name": "Enter All the Mandatory Details",
+            "result": {
+              "status": "passed",
+              "duration": 6869000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 145,
+            "name": "Click on submit and Confirm O2C",
+            "result": {
+              "status": "passed",
+              "duration": 2352000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 146,
+            "name": "logout the user",
+            "result": {
+              "status": "passed",
+              "duration": 1004000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 147,
+            "name": "Login into Mobiquity Portal as System admin Checker1",
+            "result": {
+              "status": "passed",
+              "duration": 13522000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 148,
+            "name": "Navigate to Operator to channel and click on O2C transfer Approval1 for TransactionID3",
+            "result": {
+              "status": "passed",
+              "duration": 8038000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 149,
+            "name": "logout the user",
+            "result": {
+              "status": "passed",
+              "duration": 993000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 150,
+            "name": "Login into Mobiquity Portal as System admin Checker2",
+            "result": {
+              "status": "passed",
+              "duration": 5184000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 151,
+            "name": "Navigate to Operator to channel and click on O2C transfer Approval2",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 30000ms: Expected to find element: `input[type=\"radio\"]`, but never found it.\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\OperatorToChannel\\1O2Cinitiation.feature:2137:12)"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

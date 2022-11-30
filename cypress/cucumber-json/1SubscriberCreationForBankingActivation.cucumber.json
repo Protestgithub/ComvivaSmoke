@@ -1,0 +1,163 @@
+[
+  {
+    "description": "    This feature includes Banking Activation of Subscribers",
+    "keyword": "Feature",
+    "name": "SubScriberCreationForBankingActivation",
+    "line": 1,
+    "id": "subscribercreationforbankingactivation",
+    "tags": [],
+    "uri": "1SubscriberCreationForBankingActivation.feature",
+    "elements": [
+      {
+        "id": "subscribercreationforbankingactivation;to-verify-that-valid-systemadmin/businsess-user-is-able-to-initiate-subscriber-creation.",
+        "keyword": "Scenario",
+        "line": 13,
+        "name": "To verify that valid SystemAdmin/businsess User is able to initiate Subscriber creation.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 11
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 14,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 13146000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 15,
+            "name": "Navigate to User Management and Click on register",
+            "result": {
+              "status": "passed",
+              "duration": 414000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "Select User type as Subscriber and click on Subscriber",
+            "result": {
+              "status": "passed",
+              "duration": 3344000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 17,
+            "name": "Enter all the required subscriber details",
+            "result": {
+              "status": "passed",
+              "duration": 19146000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 18,
+            "name": "SubscrigReg Confirmation message is displayed",
+            "result": {
+              "status": "passed",
+              "duration": 1250000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 19,
+            "name": "Navigate to My Activity and Aplly required filters",
+            "result": {
+              "status": "passed",
+              "duration": 9664000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 20,
+            "name": "Assert Created Subscriber Mobile Number and Write Created on time",
+            "result": {
+              "status": "passed",
+              "duration": 5525000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "subscribercreationforbankingactivation;to-verify-that-another-system-admin/businsess-user-is-able-to-approve-the-initiated-subscriber-creation.",
+        "keyword": "Scenario",
+        "line": 30,
+        "name": "To verify that another System Admin/businsess User is able to approve the initiated Subscriber creation.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 28
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 31,
+            "name": "Login into Mobiquity Portal as System admin Checker1",
+            "result": {
+              "status": "passed",
+              "duration": 13077000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 32,
+            "name": "Navigate to Approvals and filter by Submitted status",
+            "result": {
+              "status": "passed",
+              "duration": 7745000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 33,
+            "name": "User click on Subscriber submitted user data",
+            "result": {
+              "status": "passed",
+              "duration": 552000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 34,
+            "name": "Approve the Users",
+            "result": {
+              "status": "passed",
+              "duration": 3226000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 35,
+            "name": "Added User status is approved",
+            "result": {
+              "status": "passed",
+              "duration": 306000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

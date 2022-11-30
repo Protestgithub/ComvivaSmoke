@@ -1,0 +1,747 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "System Admin Deletion and view Self Details",
+    "line": 1,
+    "id": "system-admin-deletion-and-view-self-details",
+    "tags": [],
+    "uri": "Superadmin.feature",
+    "elements": [
+      {
+        "id": "system-admin-deletion-and-view-self-details;to-verify-that-proper-error-message-should-be-when-login-id-is-already-present-in-the-system.",
+        "keyword": "Scenario",
+        "line": 16,
+        "name": "To verify that proper error message should be when login id is already present in the system.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 14
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 17,
+            "name": "Login into Mobiquity Portal as Super admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 14854000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 18,
+            "name": "Navigate to User Management and click on Register",
+            "result": {
+              "status": "passed",
+              "duration": 382000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 19,
+            "name": "Click On System Admin and select Single User",
+            "result": {
+              "status": "passed",
+              "duration": 5635000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 20,
+            "name": "Fill All Required Fields and Enter Registered LoginID",
+            "result": {
+              "status": "passed",
+              "duration": 3097000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 21,
+            "name": "Error Message Should be displayed",
+            "result": {
+              "status": "passed",
+              "duration": 54000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "system-admin-deletion-and-view-self-details;to-verify-that-proper-error-message-should-be-display-when-contact-number/-email--is-registered-in-the-system.",
+        "keyword": "Scenario",
+        "line": 31,
+        "name": "To verify that proper error message should be display when contact number/ email  is registered in the system.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 29
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 32,
+            "name": "Login into Mobiquity Portal as Super admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 11644000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 33,
+            "name": "Navigate to User Management and click on Register",
+            "result": {
+              "status": "passed",
+              "duration": 523000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 34,
+            "name": "Click On System Admin and select Single User",
+            "result": {
+              "status": "passed",
+              "duration": 1445000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 35,
+            "name": "Fill All Required Fields and Enter Registered EmailID",
+            "result": {
+              "status": "passed",
+              "duration": 2617000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 36,
+            "name": "Email Id Error Message Should be dispalyed",
+            "result": {
+              "status": "passed",
+              "duration": 141000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "system-admin-deletion-and-view-self-details;to-verify-that-proper-error-message-should--be-displayed-when-email-id/contact-number-is-not-verified.",
+        "keyword": "Scenario",
+        "line": 45,
+        "name": "To verify that proper error message should  be displayed when email id/contact number is not verified.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 43
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 46,
+            "name": "Login into Mobiquity Portal as Super admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 11872000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 47,
+            "name": "Navigate to User Management and click on Register",
+            "result": {
+              "status": "passed",
+              "duration": 349000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 48,
+            "name": "Click On System Admin and select Single User",
+            "result": {
+              "status": "passed",
+              "duration": 1302000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 49,
+            "name": "Fill All Required Fields and Enter Not Verified EmailID",
+            "result": {
+              "status": "passed",
+              "duration": 2623000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 50,
+            "name": "Not Registered EmailId Error Message",
+            "result": {
+              "status": "passed",
+              "duration": 121000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "system-admin-deletion-and-view-self-details;to-verify-that-immidiate-error-message-should-be-displayed-whne-any-invalid-value-is-entered-by-the-user.",
+        "keyword": "Scenario",
+        "line": 60,
+        "name": "TO verify that immidiate error message should be displayed whne any invalid value is entered by the user.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 58
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 61,
+            "name": "Login into Mobiquity Portal as Super admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 11145000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 62,
+            "name": "Navigate to User Management and click on Register",
+            "result": {
+              "status": "passed",
+              "duration": 336000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 63,
+            "name": "Click On System Admin and select Single User",
+            "result": {
+              "status": "passed",
+              "duration": 1411000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 64,
+            "name": "enter invalid value in mandatory field",
+            "result": {
+              "status": "passed",
+              "duration": 3710000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 65,
+            "name": "Invaild Value Error Message",
+            "result": {
+              "status": "passed",
+              "duration": 100000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "system-admin-deletion-and-view-self-details;to-verify-that-master-admin-can-initiate-and-approve-modification-request-of-an-system-admin/-bank-admin.",
+        "keyword": "Scenario",
+        "line": 75,
+        "name": "To verify that master admin can initiate and approve modification request of an System admin/ Bank admin.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 73
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 76,
+            "name": "Login into Mobiquity Portal as Super admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 11670000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 77,
+            "name": "Navigate to User Management and Click on manage user",
+            "result": {
+              "status": "passed",
+              "duration": 401000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 78,
+            "name": "Enter Mobile number or KYC number of System admin in Search",
+            "result": {
+              "status": "passed",
+              "duration": 1799000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 79,
+            "name": "User Click on eye button",
+            "result": {
+              "status": "passed",
+              "duration": 352000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 80,
+            "name": "Click on edit",
+            "result": {
+              "status": "passed",
+              "duration": 245000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 81,
+            "name": "Edit the required details >> Click on Next",
+            "result": {
+              "status": "passed",
+              "duration": 964000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 82,
+            "name": "Click on save",
+            "result": {
+              "status": "passed",
+              "duration": 145000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 84,
+            "name": "Logout",
+            "result": {
+              "status": "passed",
+              "duration": 603000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 85,
+            "name": "Login into Mobiquity Portal as Super admin Checker",
+            "result": {
+              "status": "passed",
+              "duration": 12427000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 86,
+            "name": "Navigate to Approvals and filter by Submitted status",
+            "result": {
+              "status": "passed",
+              "duration": 5129000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 87,
+            "name": "User click on submitted user data",
+            "result": {
+              "status": "passed",
+              "duration": 260000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 88,
+            "name": "User click on approve",
+            "result": {
+              "status": "passed",
+              "duration": 2596000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "system-admin-deletion-and-view-self-details;to-verify-that-master-user-is-able-to-initiate-deletion-of-an-existing-system-admin.",
+        "keyword": "Scenario",
+        "line": 96,
+        "name": "To verify that Master user is able to initiate deletion of an existing System admin.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 94
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 97,
+            "name": "Login into Mobiquity Portal as Super admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 11560000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 98,
+            "name": "Navigate to User Management and click on Register",
+            "result": {
+              "status": "passed",
+              "duration": 244000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 99,
+            "name": "Click On System Admin and select Single User",
+            "result": {
+              "status": "passed",
+              "duration": 1259000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 100,
+            "name": "Enter all required Fields",
+            "result": {
+              "status": "failed",
+              "error_message": "ReferenceError: firstname is not defined\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\PreRequisite\\5.Users\\Superadmin.feature:151:30)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 101,
+            "name": "Confirmation message is displayed",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 102,
+            "name": "Logout",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 103,
+            "name": "Login into Mobiquity Portal as Super admin Checker",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 104,
+            "name": "Navigate to Approvals and filter by Submitted status",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 105,
+            "name": "User click on submitted user data for deletion",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 106,
+            "name": "Approve the Users and save loginID4",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 107,
+            "name": "User status is approved",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 108,
+            "name": "Logout",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "system-admin-deletion-and-view-self-details;to-verify-deletion-of-system-admin",
+        "keyword": "Scenario",
+        "line": 110,
+        "name": "To verify deletion of system admin",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 111,
+            "name": "Login into Mobiquity Portal as Super admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 11048000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 112,
+            "name": "Navigate to User Management and Click on manage user",
+            "result": {
+              "status": "passed",
+              "duration": 516000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 113,
+            "name": "Enter Mobile number4 or KYC number of System admin in Search",
+            "result": {
+              "status": "failed",
+              "error_message": "CypressError: `cy.type()` can only accept a string or number. You passed in: `undefined`\n\nhttps://on.cypress.io/type\n    at Context.type (http://172.25.48.177/__cypress/runner/cypress_runner.js:158845:76)\n    at Context.<anonymous> (http://172.25.48.177/__cypress/runner/cypress_runner.js:178437:19)\nFrom Your Spec Code:\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\PreRequisite\\5.Users\\Superadmin.feature:335:37)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 114,
+            "name": "User Click on eye button",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 115,
+            "name": "Click on delete",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 117,
+            "name": "Logout",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 118,
+            "name": "Login into Mobiquity Portal as Super admin Checker",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 119,
+            "name": "Navigate to Approvals and filter by Submitted status",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 120,
+            "name": "User click on submitted user data",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 121,
+            "name": "User click on approve delete request",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "system-admin-deletion-and-view-self-details;to-verify-that-super-admin-is-able-to--view-lower_hierarchy-details",
+        "keyword": "Scenario",
+        "line": 130,
+        "name": "To verify that Super admin is able to  view Lower_Hierarchy details",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 128
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 131,
+            "name": "Login into Mobiquity Portal as Super admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 11711000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 132,
+            "name": "Navigate to User Management and Click on manage user",
+            "result": {
+              "status": "passed",
+              "duration": 595000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 133,
+            "name": "Enter Mobile number or KYC number of System admin in Search",
+            "result": {
+              "status": "passed",
+              "duration": 1535000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 134,
+            "name": "User Click on eye button",
+            "result": {
+              "status": "passed",
+              "duration": 421000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "system-admin-deletion-and-view-self-details;to-verify-that-super-admin-is-able-to--view-self-details",
+        "keyword": "Scenario",
+        "line": 144,
+        "name": "To verify that Super admin is able to  view Self details",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 142
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 145,
+            "name": "Login into Mobiquity Portal as Super admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 13340000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 146,
+            "name": "Navigate to User Management and Click on manage user",
+            "result": {
+              "status": "passed",
+              "duration": 569000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 147,
+            "name": "Enter Mobile number or KYC number of superadmin in search",
+            "result": {
+              "status": "passed",
+              "duration": 1476000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 148,
+            "name": "User Click on eye button",
+            "result": {
+              "status": "passed",
+              "duration": 589000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

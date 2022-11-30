@@ -15,20 +15,27 @@ const manageUsersPage = new manageUsers()
 
 //----------------BDD Hooks-----------------------------------------------------------------
 Before(() => {
- 
   cy.fixture('UserManagement').then(function (data2) {
     this.data2 = data2;
   })
-
 });
 
 //---------------------------------------------System Admin Login----------------------------------------------------
 Given('Login into Mobiquity Portal as System admin Maker', function () {
   cy.launchURL(Cypress.env('Adminurl'))
-  cy.wait(2000)
   cy.SysAdminlogin()
-  cy.wait(2000)
-  cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
+  cy.fixture('userData/SystemAdminLogin.json').then((data) => {
+    let Name = data.SysAdminMakerName
+    cy.checkWelcomeText(Name)
+  })
+})
+Given('Login into Mobiquity Portal as System admin Checker1', function () {
+  cy.launchURL(Cypress.env('Adminurl'))
+  cy.SysAdminlogin2()
+  cy.fixture('userData/SystemAdminLogin.json').then((data) => {
+    let Name = data.SysAdminChecker1Name
+    cy.checkWelcomeText(Name)
+  })
 })
 
 ////////////////////////////// SUDHEER ////////////////////////////////////////
@@ -44,19 +51,19 @@ When('Click on user management and Manage users', function () {
 })
 
 And('Enter Mobile numberin search Menu', function () {
-  cy.wait(3000)
+
   cy.getBankMobNum()
 })
 
 And('Click on view Details', function () {
-  cy.wait(3000)
+
   manageUsersPage.getViewAllDetailsButton().click({ force: true })
 })
 
 Then('Click on order details', function () {
 
   manageUsersPage.getOrderDetailsButton().click({ force: true })
-  cy.wait(3000)
+
   manageUsersPage.getWalletExpandButton().click({ force: true })
   manageUsersPage.getViewMoreDetailsButton().click({ force: true })
 })
@@ -66,7 +73,7 @@ Then('Click on order details', function () {
 // //---------TC_131------To verify that latest order transactions will be displayed on the first page of Order details screen.------------
 
 Then('Click on order details for latest order transactions', function () {
-  cy.wait(3000)
+
   manageUsersPage.getOrderDetailsButton().click({ force: true })
   manageUsersPage.getWalletExpandButton().click({ force: true })
   manageUsersPage.getViewMoreDetailsButton().click({ force: true })

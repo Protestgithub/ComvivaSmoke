@@ -17,15 +17,10 @@ import myActivity from '../../../../../support/pageObjects/MyActivity/myActivity
 
 const pageLogin = new loginPage()
 const welcomePage = new homePage()
-const registerPage = new register()
 const approvalPage = new approvals()
-const myActivityPage = new myActivity()
 const manageUsersPage = new manageUsers()
-const uuid = () => Cypress._.random(1e8)
 const SubMob = 'userData/subscriberReg.json'
-var lid, eid, CIF, mobile, Mobile, Submobile, loginId, KycValue, name
-mobile = "77" + uuid()
-Mobile = "77" + uuid()
+var  Submobile,name
 var subRegistration = 'cypress/fixtures/userData/subscriberReg.json'
 
 
@@ -55,21 +50,24 @@ Before(() => {
 Given('Login into Mobiquity Portal as System admin Maker', function () {
   cy.launchURL(Cypress.env('Adminurl'))
   cy.SysAdminlogin()
-  cy.wait(2000)
-  cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
+  cy.fixture('userData/SystemAdminLogin.json').then((data)=>{
+    let Name = data.SysAdminMakerName
+    cy.checkWelcomeText(Name)
+  })
 })
 Given('Login into Mobiquity Portal as System admin Checker1', function () {
   cy.launchURL(Cypress.env('Adminurl'))
   cy.SysAdminlogin2()
-  cy.wait(2000)
-  cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
+  cy.fixture('userData/SystemAdminLogin.json').then((data)=>{
+    let Name = data.SysAdminChecker1Name
+    cy.checkWelcomeText(Name)
+  })
 })
 //superadminm
 Given('Login into Mobiquity Portal as Super admin Maker', function () {
   cy.launchURL(Cypress.env('Adminurl'))
-  cy.login(this.data1.masteradminmaker.sysAdminUser1, this.data1.masteradminmaker.sysAdminPwd1)
-  cy.wait(2000)
-  
+  cy.login(this.data1.masteradminmaker.superadminm, this.data1.masteradminmaker.superadminmPwd)
+  cy.checkWelcomeText(this.data1.superadminm.superadminmaker)
 })
 
 //------------------------------------Approve----------------------------------------------------------
@@ -92,33 +90,30 @@ When('Navigate to User Management and Click on manage user', function () {
   welcomePage.getUserManagementOption().scrollIntoView()
   welcomePage.getUserManagementOption().click()
   welcomePage.getManageUsersLink().click()
-
 })
 
 //--TC_71------------------------------------Approve Modified Subscriber-----------------------------------------
 When('Navigate to Approvals and filter by Modification of user status', function () {
   welcomePage.getUserManagementOption().scrollIntoView()
   welcomePage.getApprovalTab().click()
- cy.wait(2000)
- welcomePage.getApprovalButtonTab().click()
- cy.wait(2000)
+  welcomePage.getApprovalButtonTab().click()
  
  //-------------------Added waitUntil----------------------------------------------
  cy.waitUntil(()=>{
-    return cy.iframe().find('h4.text-secondary').contains('Approvals')
+    return cy.iframe().find('h4.text-secondary').should('be.visible')
   })
-  
   //----------Filter the data
   pageLogin.getiFrame()
   approvalPage.getFilter().click({ force: true })
-  cy.wait(2000)
   approvalPage.getModificationUserCheckBox().click({ force: true })
   approvalPage.getApplyFilter().click({ force: true })
-
 })
-Then('Edited User status is approved', function () {
 
-  approvalPage.getApproveConfirmationMessage().should('have.text', this.data2.confirmationMessage.editUser)
+Then('Edited User status is approved', function () {
+  cy.waitUntil(()=>{
+    return cy.iframe().find('.mat-simple-snackbar.ng-star-inserted > span').should('be.visible')
+  })
+  approvalPage.getApproveConfirmationMessage().contains(this.data2.confirmationMessage.editUser)
 })
 
 //---------------------------------------------------Kalyani----------------------------------------------
@@ -126,33 +121,26 @@ Then('Edited User status is approved', function () {
 And('Enter Mobile number or KYC number in Search', function () {
   pageLogin.getiFrame()
   manageUsersPage.getSearchUser().click({ force: true })
-  //Reading Subscriber mobile number from Subscriber registration Fixture to check his details
   cy.readFile('cypress/fixtures/userData/subscriberReg.json').then((data) => {
     Submobile = data.subscriberMobile
     cy.log(Submobile)
     manageUsersPage.getSearchUser().type(Submobile, { force: true })
   })
   manageUsersPage.getSearchUserButton().click({ force: true })
-
 })
+
 When('User Click on eye button', function () {
   manageUsersPage.getEyeIcon().click({ force: true })
 })
+
 Then('Verify View Details Page', function () {
-  manageUsersPage.getViewDetails().should("contain", this.data2.confirmationMessage.viewDetails)
+  cy.waitUntil(()=>{
+    return cy.iframe().find('span.font-weight-bold').should('be.visible')
+  })
+  manageUsersPage.getViewDetails().contains(this.data2.confirmationMessage.viewDetails)
 })
 
-//-------------------------------------------TC_169------------------------------------------------------------------------------------
-And('Select User type as Business and Select Corporate', function () {
-  pageLogin.getiFrame()
-  cy.wait(2000)
-  registerPage.getregisterPageTitle().should('have.text', this.data2.registerPageTitle)
-  registerPage.getSelectUserTypeTab().contains(this.data2.userType2).click({ force: true })
-  registerPage.getSelectUserTypeTab().contains(this.data2.userType2).focused()
-  registerPage.getUserRole().contains(this.data2.UserLoginId).click({ force: true })
-  registerPage.getRegistrationMode().eq(0).click({ force: true })
 
-})
 
 //--------------------------Search Subscriber Mobile NUmber---------------------------------------------
 And('Enter Mobile number of subscriber in search', function () {
@@ -165,7 +153,6 @@ And('Enter Mobile number of subscriber in search', function () {
     manageUsersPage.getSearchUser().type(mobile, { force: true })
   })
   manageUsersPage.getSearchUserButton().click({ force: true })
-
 })
 
 
@@ -185,36 +172,38 @@ And('Enter Mobile number and KYC number in search menu1', function () {
   })
   manageUsersPage.getSearchUserButton().click({ force: true })
 })
-And('Click on view Details and Click on Account info', function () {
 
+And('Click on view Details and Click on Account info', function () {
   manageUsersPage.getViewIcon().eq(0).click({ force: true })
   manageUsersPage.getAccountInfo().click({ force: true })
 })
 
 Then('Check All Wallet Details', function () {
-  cy.wait(3000)
 })
-And('select either Lock outgoing payments or Lock incoming payments or Lock both', function () {
 
+And('select either Lock outgoing payments or Lock incoming payments or Lock both', function () {
   manageUsersPage.getlockunclockWallets().click({ force: true })
-  manageUsersPage.getLockOutgoingPayements().click({ force: true })
+  // manageUsersPage.getLockOutgoingPayements().click({ force: true })
 })
+
 Then('Click On lock all', function () {
   manageUsersPage.getlockallbtn().click({ force: true })
   manageUsersPage.getconfirmationlock().type(getRandomName(), { force: true })
   manageUsersPage.getconfirmationbtn().click({ force: true })
   manageUsersPage.getlockedmessage().should('have.text', this.data2.LockOutgoing)
 })
-And('Click on view Details and Click on Credentials', function () {
 
+And('Click on view Details and Click on Credentials', function () {
   manageUsersPage.getViewIcon().eq(0).click({ force: true })
   manageUsersPage.getcredentials().click({ force: true })
 })
+
 And('Click on refresh icon corresponding to the respective authentication factor', function () {
   manageUsersPage.getresetcredentials().eq(0).click({ force: true })
   manageUsersPage.getresetconfirmation().click({ force: true })
   manageUsersPage.getsuccessresetconfirmation().click({ force: true })
 })
+
 //------------Added method for approval of modified subscriber--------------------
 
 And('User click on submitted user data for approval of subscriber modification', function () {

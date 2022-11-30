@@ -1,0 +1,132 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Ambiguous profile",
+    "line": 1,
+    "id": "ambiguous-profile",
+    "tags": [],
+    "uri": "Ambiguous.feature",
+    "elements": [
+      {
+        "id": "ambiguous-profile;to-verify-that-system-admin-should-able-to-see-all-ambiguous-transactions-from-third-party.",
+        "keyword": "Scenario",
+        "line": 10,
+        "name": "To verify that System admin should able to see all Ambiguous Transactions from third party.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 8
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 11,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 14935000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 12,
+            "name": "Click on Ambiguous Order Transaction >> Download Ambiguous Order",
+            "result": {
+              "status": "passed",
+              "duration": 2021000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "Select Ambiguous Type and party type and party name",
+            "result": {
+              "status": "passed",
+              "duration": 1988000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 14,
+            "name": "Click on Download button.",
+            "result": {
+              "status": "passed",
+              "duration": 188000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "ambiguous-profile;to-verify-that-the-valid-user-should-be-able-to-upload-all-ambiguous-transactions-and-able-to-settle-them-from-third-party.",
+        "keyword": "Scenario",
+        "line": 24,
+        "name": "To verify that the Valid User should be able to upload all Ambiguous Transactions and able to settle them from third party.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 22
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 25,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 12413000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 26,
+            "name": "Click on Ambiguous Order Transaction >> Bulk settlement initiation",
+            "result": {
+              "status": "passed",
+              "duration": 8011000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 27,
+            "name": "Select operation name",
+            "result": {
+              "status": "passed",
+              "duration": 202000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 28,
+            "name": "Click on Download template and enter remark",
+            "result": {
+              "status": "passed",
+              "duration": 519000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 29,
+            "name": "Upload file",
+            "result": {
+              "status": "passed",
+              "duration": 469000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

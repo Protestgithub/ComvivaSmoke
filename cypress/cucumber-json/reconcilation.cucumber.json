@@ -1,0 +1,47 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Reconcilation Page",
+    "line": 1,
+    "id": "reconcilation-page",
+    "tags": [],
+    "uri": "reconcilation.feature",
+    "elements": [
+      {
+        "id": "reconcilation-page;to-verify-that-the-system-admin-should-able-to-view-reconciliation-screen.",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "To verify that the System admin should able to view Reconciliation screen.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 2
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 15619000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 6,
+            "name": "Click on Reconcilation",
+            "result": {
+              "status": "passed",
+              "duration": 12578000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

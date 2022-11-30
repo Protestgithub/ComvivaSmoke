@@ -1,0 +1,232 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Repoting Suite",
+    "line": 1,
+    "id": "repoting-suite",
+    "tags": [],
+    "uri": "reportingSuite.feature",
+    "elements": [
+      {
+        "id": "repoting-suite;to-verify-that-the-pentaho-user-should-be-able-to-open-and-download-user-registration-details-report.",
+        "keyword": "Scenario",
+        "line": 11,
+        "name": "To verify that the Pentaho User should be able to open and download User Registration Details Report.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 9
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 12,
+            "name": "Login into Mobiquity Portal as System admin User and Launch Pentaho Portal",
+            "result": {
+              "status": "failed",
+              "duration": 46691000000,
+              "error_message": "AssertionError: Timed out retrying after 30000ms: expected '<span#username.lui-username.fd-has-type-1.svelte-yfds2b>' to contain text undefined, but the text was 'nifLx tYcUD'\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\ReportingSuite\\reportingSuite.feature:329:32)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "click on Browse Files",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "Click on bd-demo-reports",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "open Customer Registration Report",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "Select the format and click on View Report and User should be able to Dowload that Files",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "Download Commoission Report",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "repoting-suite;to-verify-that-the-pentaho-user-should-be-able-to-open-and-download-user-registration-details-report1.",
+        "keyword": "Scenario",
+        "line": 20,
+        "name": "To verify that the Pentaho User should be able to open and download User Registration Details Report1.",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 22,
+            "name": "Login into Mobiquity Portal as System admin User and Launch Pentaho Portal1",
+            "result": {
+              "status": "failed",
+              "duration": 1000000,
+              "error_message": "AssertionError: Timed out retrying after 30000ms: expected '<span#username.lui-username.fd-has-type-1.svelte-yfds2b>' to contain text undefined, but the text was 'yZSjr zhZRJ'\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\ReportingSuite\\reportingSuite.feature:329:32)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 23,
+            "name": "click on Browse Files",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 24,
+            "name": "Click on bd-demo-reports",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 26,
+            "name": "Download Customer Banking Activation Report",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 28,
+            "name": "Download Customer Blocked Access Report",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 30,
+            "name": "Download Deleted Users Report",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 32,
+            "name": "Download Suspend Customers Report",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "repoting-suite;to-verify-that-the-pentaho-user-should-be-able-to-open-and-download-user-registration-details-report2.",
+        "keyword": "Scenario",
+        "line": 35,
+        "name": "To verify that the Pentaho User should be able to open and download User Registration Details Report2.",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 37,
+            "name": "Login into Mobiquity Portal as System admin User and Launch Pentaho Portal2",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 30000ms: expected '<span#username.lui-username.fd-has-type-1.svelte-yfds2b>' to contain text undefined, but the text was 'ekfHV UsqXl'\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\ReportingSuite\\reportingSuite.feature:329:32)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 38,
+            "name": "click on Browse Files",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 39,
+            "name": "Click on bd-demo-reports",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 40,
+            "name": "Download Reimbursment Report",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 43,
+            "name": "Download Service Charge Report",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 45,
+            "name": "Download Stock Management Report",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 47,
+            "name": "Download User Transaction Report",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -48,14 +48,12 @@ function getRandomName() {
 
 //----------------BDD Hooks-----------------------------------------------------------------
 Before(() => {
-  
   cy.fixture('login').then(function (data1) {
     this.data1 = data1;
   })
   cy.fixture('UserManagement').then(function (data2) {
     this.data2 = data2;
   })
-
 });
 //----------------Test Scripts---------------------------------------------------------------------------
 
@@ -64,17 +62,19 @@ Before(() => {
 //---------------------------------------------System Admin Login----------------------------------------------------
 Given('Login into Mobiquity Portal as System admin Maker', function () {
   cy.launchURL(Cypress.env('Adminurl'))
-  cy.wait(2000)
   cy.SysAdminlogin()
-  cy.wait(2000)
-  cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
+  cy.fixture('userData/SystemAdminLogin.json').then((data)=>{
+    let Name = data.SysAdminMakerName
+    cy.checkWelcomeText(Name)
+  })
 })
 Given('Login into Mobiquity Portal as System admin Checker1', function () {
   cy.launchURL(Cypress.env('Adminurl'))
-  cy.wait(2000)
   cy.SysAdminlogin2()
-  cy.wait(2000)
-  cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
+  cy.fixture('userData/SystemAdminLogin.json').then((data)=>{
+    let Name = data.SysAdminChecker1Name
+    cy.checkWelcomeText(Name)
+  })
 })
 
 Then('Logout', function(){
@@ -84,7 +84,6 @@ Then('Logout', function(){
 })
 //----------------Navigate to User Management tab and Click on Register---------------------------------
 When('Navigate to User Management and Click on register', function () {
-  welcomePage.getUserManagementOption().scrollIntoView()
   welcomePage.getUserManagementOption().click()
   welcomePage.getRegisterOption().click()
 })
@@ -93,19 +92,21 @@ When('Navigate to User Management and Click on register', function () {
 //-----------------Select User Type-----------------------------------------------------------
 And('Select User type as Adminstrator and click on BusinessAdmin', function () {
   pageLogin.getiFrame()
-  cy.wait(2000)
-  registerPage.getregisterPageTitle().should('have.text', this.data2.registerPageTitle)
-  registerPage.getSelectUserTypeTab().contains(this.data2.userType).click({ force: true })
-  registerPage.getSelectUserTypeTab().contains(this.data2.userType).focused()
-  registerPage.getUserRole().contains(this.data2.userRole).click({ force: true })
+  registerPage.getregisterPageTitle().should('be.visible')
+  registerPage.getSelectUserTypeTab().eq(1).click({ force: true })
+  registerPage.getSelectUserTypeTab().eq(1).focused()
+  cy.waitUntil(() => {
+    return cy.iframe().find('div.mat-radio-label-content').should('be.visible')
+  })
+  registerPage.getUserRole().eq(0).click({ force: true })
   registerPage.getRegistrationMode().eq(0).click({ force: true })
-
 })
 //----------------------Basic Data---------------------------------------------------------------
 And('Enter all the required details', function () {
-
   //-------------------Random Data-----------------------------------------------------------------
-  cy.wait(2000)
+ cy.waitUntil(()=>{ 
+  return cy.iframe().find('input[id="lastName"]').should('be.visible')
+ })
   registerPage.getLastName().type(getRandomName(), { force: true })
   cy.getBArandomUserEmailID()
   recurse(
@@ -118,20 +119,20 @@ And('Enter all the required details', function () {
     cy.writeFile(filename, data)
   })
   cy.iframe().find('select[data-test-id="preferredLanguage"]').select(this.data2.personalInfo.preferredLang, { force: true })
-  cy.wait(3000)
   registerPage.getCountry().select(this.data2.personalInfo.country)
   registerPage.getNextButtonBasic().click({ force: true })
-
   //----------------------Profile Data-----------------------------------------------------------------
     registerPage.getSecurityProfile().select('BusinessAdminSecurityProfile', { force: true })
     registerPage.getAuthProfile().select('BusinessAdminDefault Profile', { force: true })
     registerPage.getNextButtonProfile().click({ force: true })
     registerPage.getSubmitButton().click({ force: true })
-
 })
 
 //-------------------------Confirmation Message displayed---------------------------------------------
 Then('Confirmation message is displayed', function () {
+  cy.waitUntil(()=>{
+    return cy.iframe().find('.text-center').should('be.visible')
+  })
   registerPage.getConfirmationText().should('have.text', this.data2.personalInfo.successConfirmationMessage)
   registerPage.getDoneButton().click()
 })
@@ -139,40 +140,33 @@ Then('Confirmation message is displayed', function () {
 
 When('Navigate to Approvals and filter by Submitted status', function () {
  welcomePage.getApprovalTab().click()
- cy.wait(2000)
  //----------------------------------Added waituntil------------------------
  welcomePage.getApprovalButtonTab().click()
  cy.waitUntil(()=>{
-    return cy.iframe().find('h4.text-secondary').contains('Approvals')
+    return cy.iframe().find('h4.text-secondary').should('be.visible')
   })
- cy.wait(2000)
   //------------------------------------Filter the data--------------------------------------------------
   pageLogin.getiFrame()
   approvalPage.getFilter().click({ force: true })
-  cy.wait(2000)
   approvalPage.getAddUserCheckBox().click({ force: true })
   approvalPage.getApplyFilter().click({ force: true })
-
 })
 
 //------------------------------------Approve----------------------------------------------------------
 And('Navigate to My Activity and Apply required filters', function () {
   welcomePage.getMyActivity().click()
   myActivityPage.getFilter().click({ force: true })
-  cy.wait(2000)
   myActivityPage.getAddUser().click({ force: true })
   myActivityPage.getSubmittedStatus().click()
   myActivityPage.getApply().click()
 })
 //--------------------------------------------------------------------------------------------------------
 And('Assert Created Business Admin Mobile Number and Write Created on time', function(){
-  cy.wait(2000)
   cy.readFile(filename).then((user) => {
   let BAMobile = user.BAMobileNumber
   var BBAMobile = " "+BAMobile
   manageUsersPage.getAssertMobile().eq(1).should('have.text',BBAMobile)
 })
-cy.wait(2000)
 myActivityPage.getCreatedOnTime().eq(0).invoke('text').then((time)=>{
   time= time.trim()
   cy.log(time)
@@ -183,13 +177,11 @@ myActivityPage.getCreatedOnTime().eq(0).invoke('text').then((time)=>{
 })
 })
 And('Assert Created Subscriber Mobile Number and Write Created on time', function(){
-  cy.wait(2000)
   cy.readFile(subRegistration).then((user) => {
   let SubMobile = user.subscriberMobile
   var SUBMobile = " "+SubMobile
   manageUsersPage.getAssertMobile().eq(1).should('have.text',SUBMobile)
 })
-cy.wait(2000)
 myActivityPage.getCreatedOnTime().eq(0).invoke('text').then((time)=>{
   time= time.trim()
   cy.log(time)
@@ -211,14 +203,14 @@ And('User click on Subscriber submitted user data', function () {
 
 //---------------------------------------------------------------------------------------------
 And('Approve the Users', function () {
-cy.wait(2000)
   approvalPage.getApproveButton().click({ force: true })
   approvalPage.getApproveRequest().click({ force: true })
-  cy.wait(2000)
-
 })
 
 Then('User status is approved', function () {
+  cy.waitUntil(()=>{
+    return cy.iframe().find('.mat-simple-snackbar.ng-star-inserted > span').should('be.visible')
+  })
   approvalPage.getApproveConfirmationMessage().contains(this.data2.confirmationMessage.addUser)
 })
 
@@ -229,12 +221,10 @@ When('Navigate to Manage User, and search Business Admin', function () {
 })
 
 And('Search Business Admin', function () {
-  cy.wait(2000)
   cy.getBAMobileNumber()
   manageUsersPage.getSearchUserButton().click({ force: true })
 })
 And('Assert Created Business Admin Mobile Number', function(){
-  cy.wait(2000)
   cy.getBAMobileNumber()
   manageUsersPage.getSearchUserButton().click({ force: true })
   cy.readFile(filename).then((user) => {
@@ -249,13 +239,14 @@ And('Select User type as Subscriber and click on Subscribers', function () {
   welcomePage.getUserManagementOption().scrollIntoView()
   welcomePage.getUserManagementOption().click()
   welcomePage.getRegisterOption().click()
-  cy.wait(2000)
+  pageLogin.getiFrame()
   registerPage.getregisterPageTitle().should('have.text', this.data2.registerPageTitle)
-  registerPage.getSelectSubUserTypeTab().contains(this.data2.subPersonalInfo.subUserType).click({ force: true })
-  registerPage.getSelectSubUserTypeTab().contains(this.data2.subPersonalInfo.subUserType).focused()
-  registerPage.getUserRole().contains(this.data2.subPersonalInfo.subUserRole).click({ force: true })
+  registerPage.getSelectSubUserTypeTab().click({ force: true })
+  registerPage.getSelectSubUserTypeTab().focused()
+  registerPage.getUserRole().click({ force: true })
   registerPage.getRegistrationMode().eq(0).click({ force: true })
 })
+
 //----------------------Basic Data---------------------------------------------------------------
 And('Enter all the required subscriber details', function () {
 
@@ -263,7 +254,9 @@ And('Enter all the required subscriber details', function () {
   const lgid = () => Cypress._.random(1e5)
   loginId = this.data2.personalInfo.firstName + lgid()
   CIF = "1" + lgid()
-  cy.wait(2000)
+  cy.waitUntil(()=>{ 
+    return cy.iframe().find('input[id="lastName"]').should('be.visible')
+   })
   registerPage.getFirstName().type(getRandomName(), { force: true })
   registerPage.getLastName().type(getRandomName(), { force: true })
   cy.iframe().find('select[data-test-id="preferredLanguage"]').select(this.data2.personalInfo.preferredLang, { force: true })
@@ -276,14 +269,11 @@ And('Enter all the required subscriber details', function () {
   let mobileut1;
   const m = parseInt(Date.now()/100000);
   mobileut1 = "77" + m
-
-
   registerPage.getCIF().type(CIF, { force: true })
   cy.readFile(subRegistration).then((data) => {
     data.CIFnumber = CIF
     cy.writeFile(subRegistration, data)
   })
-
   recurse(
     () => registerPage.getMobileNumber().clear().type(mobileut1, { force: true }),
     () => registerPage.getAdressLine1().click({ force: true }),
@@ -314,7 +304,6 @@ And('Enter all the required subscriber details', function () {
   registerPage.getNextButtonBasic1().click({ force: true })
 
   //-----------------------Profile------------------------------------------------------------------------
-  cy.wait(2000)
   registerPage.getSecurityProfile().select("subscriberSecurityProfile", { force: true })
   registerPage.getAuthProfile().select("SubsDefault Profile", { force: true })
   registerPage.getReguProfile().select("FullKycprofile", { force: true })
@@ -327,6 +316,9 @@ And('Enter all the required subscriber details', function () {
 //-----TC_69-------------------------Approve(Subscriber)--------------------------------------------------
 
 Then('Added User status is approved', function () {
+  cy.waitUntil(()=>{
+    return cy.iframe().find('.mat-simple-snackbar.ng-star-inserted > span').should('be.visible')
+  })
   approvalPage.getApproveConfirmationMessage().contains(this.data2.confirmationMessage.addUser)
 })
 

@@ -23,8 +23,6 @@ Before(() => {
    cy.fixture('UserManagement').then(function (data2) {
     this.data2 = data2;
   })
-   
-
 });
 
 
@@ -33,17 +31,19 @@ Before(() => {
 //---------------------------------------------System Admin Login----------------------------------------------------
 Given('Login into Mobiquity Portal as System admin Maker', function () {
   cy.launchURL(Cypress.env('Adminurl'))
-  cy.wait(2000)
   cy.SysAdminlogin()
-  cy.wait(2000)
-  cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
+  cy.fixture('userData/SystemAdminLogin.json').then((data) => {
+    let Name = data.SysAdminMakerName
+    cy.checkWelcomeText(Name)
+  })
 })
 Given('Login into Mobiquity Portal as System admin Checker1', function () {
   cy.launchURL(Cypress.env('Adminurl'))
-  cy.wait(2000)
   cy.SysAdminlogin2()
-  cy.wait(2000)
-  cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
+  cy.fixture('userData/SystemAdminLogin.json').then((data) => {
+    let Name = data.SysAdminChecker1Name
+    cy.checkWelcomeText(Name)
+  })
 })
 
 Then('Logout', function(){
@@ -54,12 +54,10 @@ Then('Logout', function(){
 Given('Login into Mobiquity Portal as Subscriber', function () {
   cy.visit(Cypress.env("Adminurl") + "/dfscontainer/#/subscriber/") 
   cy.visit(Cypress.env("Adminurl") + "/dfscontainer/#/subscriber/")   
-  cy.wait(3000)
   cy.readFile('cypress/fixtures/userData/subscriberReg.json').then((data)=>{
   var SubLogin
   SubLogin = data.subscriberLoginId
   cy.login(SubLogin, this.data.subscriber.subpwd)
-  cy.wait(2000)
   })
 })
 And('Change Password', function () {
@@ -71,7 +69,6 @@ And('Change Password', function () {
 And('Login into Mobiquity Portal as Subscriber1', function () {
   cy.launchURL(Cypress.env('Adminurl'))
   cy.visit(Cypress.env("Adminurl") + "/dfscontainer/#/subscriber/")   
-  cy.wait(3000)
   cy.intercept("/mobiquitypay/ums/v3/user/auth/web/login").as('getPwd')
   cy.readFile('cypress/fixtures/userData/subscriberReg.json').then((data)=>{
     var SubLogin
@@ -81,9 +78,7 @@ And('Login into Mobiquity Portal as Subscriber1', function () {
     cy.stub(win, 'open').as('open')
      })
   })
-  
   cy.wait(10000)
-
 })
 When('Navigate to SessionManagement', function () {
   welcomePage.getSessionManagementOption().scrollIntoView()
@@ -91,7 +86,6 @@ When('Navigate to SessionManagement', function () {
 })
 Then('Click On My Sessions', function () {
   welcomePage.getmysessionoption().click()
-  cy.wait(3000)
 })
 And('Click On All Session and Enter Number to search', function () {
   welcomePage.getAllSessionsOption().click()
@@ -100,7 +94,7 @@ And('Click On All Session and Enter Number to search', function () {
     cy.log(SubMob1)
     session.getSearchUser().type(SubMob1)
   })
-  //session.getimg().click()
+  session.getimg().click()
   session.getSearchBtn().click()
 })
 Then('Delete Devices', function () {

@@ -15,8 +15,7 @@ Feature: Auth Profile Creation for Business Admin
           When  Select Authorization profile and add profile
           And  select BusinessAdmin user type and select user role
           Then Fill all Details and Create BusinessAdmin authorization profile
-          Then Logout
 
           Scenario: Approval of added Business Admin profile
-          Given Login into Mobiquity Portal as another System admin User after logout
+          Given Login into Mobiquity Portal as System admin Checker1
           Then User approval for Authorization profile

@@ -159,7 +159,10 @@ Cypress.Commands.add('getMessage', (apiURL) => {
             }
         }).then((res) => {
             let res1 = res.body
-            cy.writeFile(MsgFile, { ModifyMessage: res1 })
+            cy.readFile(MsgFile).then((data)=>{
+                data.ModifyMessage=res1
+                cy.writeFile(MsgFile,res1)
+            })
 
         })
     })

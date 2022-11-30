@@ -56,9 +56,11 @@ Before(() => {
   cy.fixture('UserManagement').then(function (data2) {
     this.data2 = data2;
   })
-
   cy.fixture('Domain&CategoryManagement').then(function (data4) {
     this.data4 = data4;
+  })
+  cy.fixture('API/APIEndPoints.json').then(function(data20){
+    this.data20 = data20;
   })
 });
 
@@ -67,41 +69,45 @@ Before(() => {
 Given('Login into Mobiquity Portal as System admin Maker', function () {
   cy.launchURL(Cypress.env('Adminurl'))
   cy.SysAdminlogin()
-  cy.wait(2000)
-  cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
+  cy.fixture('userData/SystemAdminLogin.json').then((data)=>{
+    let Name = data.SysAdminMakerName
+    cy.checkWelcomeText(Name)
+  })
 })
-
 Given('Login into Mobiquity Portal as System admin Checker1', function () {
   cy.launchURL(Cypress.env('Adminurl'))
   cy.SysAdminlogin2()
-  cy.wait(2000)
-  cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
+  cy.fixture('userData/SystemAdminLogin.json').then((data)=>{
+    let Name = data.SysAdminChecker1Name
+    cy.checkWelcomeText(Name)
+  })
 })
-
-
 //----------------------------------------------------------------------------------------------------
 Given('Login into Mobiquity Portal as Super admin Maker', function () {
   cy.launchURL(Cypress.env('Adminurl'))
-  cy.wait(2000)
-  cy.login(this.data1.masteradminmaker.sysAdminUser1, this.data1.masteradminmaker.sysAdminPwd1)
-  cy.wait(2000)
+  cy.login(this.data1.masteradminmaker.superadminm, this.data1.masteradminmaker.superadminmPwd)
+  cy.checkWelcomeText(this.data1.superadminm.superadminmaker)
 })
 Given('Login into Mobiquity Portal as Super admin Checker', function () {
   cy.launchURL(Cypress.env('Adminurl'))
-  cy.wait(2000)
-  cy.login(this.data1.masteradminchecker.sysAdminUser1, this.data1.masteradminchecker.sysAdminPwd1)
-  cy.wait(2000)
+  cy.login(this.data1.masteradminchecker.superadminc, this.data1.masteradminchecker.superadmincPwd)
+  cy.checkWelcomeText(this.data1.superadminc.superadminchecker)
 })
 //----------------------------------------Domain Creation---------------------------------------------
 
 When('User Click on Domain Management >> Add Domain', function () {
-  welcomePage.getDomainManagementOption().click()
+  welcomePage.getDomainManagementOption().should('be.visible').click()
 })
 And('Enter Domain Name and Domain Code.', function () {
-  cy.wait(3000)
   let Name = domainName + DomainName
-  domainPage.getDomainName().type(Name, { force: true })
-  cy.writeFile(DataFile, { Domainname: Name })
+  cy.wait(4000)
+  cy.waitUntil(()=>{
+    return cy.iframe().find('#confirmAddDomain_viewDetail_domainName').type(Name, { force: true })
+  })
+  cy.readFile(DataFile).then((data)=>{
+    data.Domainname = Name
+    cy.writeFile(DataFile,data)
+  })
   domainPage.getDomainCode().type(code, { force: true })
   cy.readFile(DataFile).then((data) => {
     data.DomainCode = code
@@ -112,19 +118,23 @@ And('Enter Domain Name and Domain Code.', function () {
     data.CategoryNum = Category
     cy.writeFile(DataFile, data)
   })
-
 })
 Then('Click on submit button.', function () {
+  cy.intercept(this.data20.domainSubmit).as('getdomainsubmit')
   domainPage.getDomainSubmitbtn().click({ force: true })
-  cy.wait(2000)
-  domainPage.getSUbMIT2().click({ force: true })
-  cy.wait(2000)
+  cy.wait('@getdomainsubmit')
+  cy.intercept(this.data20.domainConfirm).as('getconfirm')
+  cy.waitUntil(()=>{
+    return cy.iframe().find('#confirmAddDomain_getNonFinancialSerForCat_button_submit').click({ force: true })
+  })
+  cy.wait('@getconfirm')
   cy.readFile(DataFile).then((data) => {
     let domain
     domain = data.Domainname
-    domainPage.getSuccessMsg().contains(domain + this.data4.Successmsg)
+    cy.waitUntil(()=>{
+      return cy.iframe().find('.actionMessage').should('be.visible').contains(domain + this.data4.Successmsg)
+    })
   })
-
 })
 //-----------------------------------------------------------------------------------------
 
@@ -135,7 +145,7 @@ Then('Select Add Category.', function () {
   welcomePage.getAddCategory().click({ force: true })
 })
 And('Enter Category Code and Category Name.', function () {
-  cy.wait(2000)
+  cy.wait(4000)
   cy.readFile(DataFile).then((data) => {
     var CatNam = data.Domainname
     AddCategoryPage.getCategoryName().type(CatNam, { force: true })
@@ -150,7 +160,6 @@ And('Enter Category Code and Category Name.', function () {
   })
 })
 Then('Select Domain and Parent Category.', function () {
-  cy.wait(2000)
   cy.readFile(DataFile).then((data) => {
     var CatNam = data.Domainname
     AddCategoryPage.getDomainName().select(CatNam, { force: true })
@@ -166,17 +175,17 @@ Then('Select Domain and Parent Category.', function () {
 })
 And('Click on Submit & confirm button.', function () {
   AddCategoryPage.getCategorySubmit().click({ force: true })
-  cy.wait(2000)
-  AddCategoryPage.getConfirmbttn().click({ force: true })
   cy.wait(3000)
+  cy.intercept(this.data20.categorySubmit).as('getConfirm')
+  AddCategoryPage.getConfirmbttn().click({ force: true })
+  cy.wait('@getConfirm')
   domainPage.getSuccessMsg().contains(this.data4.Successmsg1)
 })
 //--------------------------------------Approval-----------------------------------------
 
 And('Click Add category approval.', function () {
   welcomePage.getCAtegoryApprovalOption().click({ force: true })
-  cy.wait(4000)
-  welcomePage.getCAtegoryApprovalOption().click({ force: true })
+  welcomePage.getCAtegoryApprovalOption().should('be.visible').click({ force: true })
 })
 Then('Select Category approval.', function () {
   cy.wait(4000)
@@ -201,13 +210,11 @@ Then('Select Category approval.', function () {
 })
 Then('Select the category that needs to be approved', function () {
   AddCategoryPage.getApprovalCategory().click({ force: true })
-  cy.wait(5000)
+  cy.wait(4000)
   AddCategoryPage.getAllCheckBox()
-  cy.wait(5000)
   AddCategoryPage.getAllCheckBox()
-  cy.wait(5000)
   AddCategoryPage.getAllCheckBox()
-  cy.wait(5000)
+  cy.wait(4000)
   AddCategoryPage.getFinalSubmit()
 })
 
@@ -218,12 +225,11 @@ Then('Select the category that needs to be approved', function () {
 When('Click on User Profile Management >> Add Grade', function () {
   welcomePage.getUserprofileManagementOption().click({ force: true })
   welcomePage.getADDGrades().click({ force: true })
-
 })
 And('Select the domain & category for which grade needs to be added.', function () {
   const uuid = () => Cypress._.random(1e4)
   GradeCode = uuid()
-  cy.wait(2000)
+  cy.wait(3000)
   AddGradePage.getAddbttn().click({ force: true })
   cy.wait(2000)
   cy.GradeName()
@@ -233,7 +239,6 @@ And('Select the domain & category for which grade needs to be added.', function 
     cy.readFile(Gradedata).then((grade) => {
       grade.DomainName = CatNam
       cy.writeFile(Gradedata, grade)
-
     })
   })
   cy.readFile(DataFile).then((data) => {
@@ -252,7 +257,7 @@ And('Select the domain & category for which grade needs to be added.', function 
   AddGradePage.getSavebttn().click({ force: true })
   cy.wait(2000)
   AddGradePage.getConfirmbttn().click({ force: true })
-  cy.wait(2000)
+
 })
 
 

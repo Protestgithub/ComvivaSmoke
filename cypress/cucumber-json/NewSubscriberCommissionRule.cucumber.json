@@ -1,0 +1,47 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "New Subscriber Commission Rule",
+    "line": 1,
+    "id": "new-subscriber-commission-rule",
+    "tags": [],
+    "uri": "NewSubscriberCommissionRule.feature",
+    "elements": [
+      {
+        "id": "new-subscriber-commission-rule;to-verify-that-channel-user-should-get-commission-as-per-the-rule-define-in-new-subscriber-commission-rule",
+        "keyword": "Scenario",
+        "line": 14,
+        "name": "To verify that channel user should get commission as per the rule define in new subscriber commission rule",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 11
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 15,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 13337000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 16,
+            "name": "Navigate to Service Charge>>New Subscriber Commission Rule",
+            "result": {
+              "status": "passed",
+              "duration": 4143000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

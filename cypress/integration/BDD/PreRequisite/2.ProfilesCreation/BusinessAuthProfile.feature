@@ -15,8 +15,7 @@ Feature: Auth Profile Creation for Business User
           When Select Authorization profile and add profile
             And  select Distributor user type and select user role
           Then Fill all Details and Create Distributor authorization profile
-          Then Logout
 
           Scenario: Approval of added Business User profile
-          Given Login into Mobiquity Portal as another System admin User after logout
+          Given Login into Mobiquity Portal as System admin Checker1
         Then User approval for Authorization profile

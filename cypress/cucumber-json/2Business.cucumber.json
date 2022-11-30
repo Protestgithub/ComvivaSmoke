@@ -1,0 +1,356 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Modification and Supension of Business User",
+    "line": 1,
+    "id": "modification-and-supension-of-business-user",
+    "tags": [],
+    "uri": "2Business.feature",
+    "elements": [
+      {
+        "id": "modification-and-supension-of-business-user;to-verify-that-system-admin/business-admin-is-able-to-view-the-businsess-user-details.",
+        "keyword": "Scenario",
+        "line": 25,
+        "name": "To verify that System Admin/Business Admin is able to view the businsess user details.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 8
+          },
+          {
+            "name": "@test",
+            "line": 23
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 26,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 15282000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 27,
+            "name": "Navigate to Manage User, and search Business Admin",
+            "result": {
+              "status": "passed",
+              "duration": 554000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 28,
+            "name": "Search with the Mobile Number",
+            "result": {
+              "status": "passed",
+              "duration": 5541000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 29,
+            "name": "System Admin is able to view details",
+            "result": {
+              "status": "passed",
+              "duration": 500000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "modification-and-supension-of-business-user;to-verify-that-proper-error-message-should-be-displayed-when-login-id-is-already-registered-in-the-system.",
+        "keyword": "Scenario",
+        "line": 39,
+        "name": "To verify that proper error message should be displayed when login id is already registered in the system.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 36
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 40,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 12600000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 41,
+            "name": "Navigate to User Management and Click on register",
+            "result": {
+              "status": "passed",
+              "duration": 445000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 42,
+            "name": "Select User type as Business and Select user role",
+            "result": {
+              "status": "passed",
+              "duration": 2454000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 43,
+            "name": "Enter registered login id value",
+            "result": {
+              "status": "passed",
+              "duration": 1400000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 44,
+            "name": "Login id Error message is displayed",
+            "result": {
+              "status": "passed",
+              "duration": 226000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "modification-and-supension-of-business-user;to-verify-that-proper-error-message-should-be-displayed-when-email-id--is-registered-in-the-system.",
+        "keyword": "Scenario",
+        "line": 53,
+        "name": "To verify that proper error message should be displayed when Email Id  is registered in the system.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 50
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 54,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 12774000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 55,
+            "name": "Navigate to User Management and Click on register",
+            "result": {
+              "status": "passed",
+              "duration": 471000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 56,
+            "name": "Select User type as Business and Select user role",
+            "result": {
+              "status": "passed",
+              "duration": 1116000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 57,
+            "name": "Enter registered email id value",
+            "result": {
+              "status": "passed",
+              "duration": 1439000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 58,
+            "name": "Email Error message is displayed",
+            "result": {
+              "status": "passed",
+              "duration": 193000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "modification-and-supension-of-business-user;to-verify-that-system-admin/business-admin-can-initiate-suspension-of-the-businsess-user.",
+        "keyword": "Scenario",
+        "line": 71,
+        "name": "To Verify that System Admin/Business Admin can initiate suspension of the businsess user.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 69
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 72,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 12013000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 73,
+            "name": "Navigate to User Management and Click on register",
+            "result": {
+              "status": "passed",
+              "duration": 333000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 74,
+            "name": "Select User type as Business and Select user role",
+            "result": {
+              "status": "passed",
+              "duration": 1219000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 75,
+            "name": "Enter all the required business user details1",
+            "result": {
+              "status": "passed",
+              "duration": 15795000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 76,
+            "name": "Confirmation message is displayed",
+            "result": {
+              "status": "passed",
+              "duration": 760000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 77,
+            "name": "Navigate to My Activity and Apply Add User filters",
+            "result": {
+              "status": "passed",
+              "duration": 5889000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 78,
+            "name": "Assert Created Buissness User Mobile Number for Suspension and Write Created on time",
+            "result": {
+              "status": "passed",
+              "duration": 626000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "modification-and-supension-of-business-user;to-verify-that-system-admin/business-admin-can-approve-suspension-of-the-businsess-user.",
+        "keyword": "Scenario",
+        "line": 81,
+        "name": "To Verify that System Admin/Business Admin can approve suspension of the businsess user.",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 82,
+            "name": "Login into Mobiquity Portal as System admin Checker1",
+            "result": {
+              "status": "passed",
+              "duration": 12084000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 83,
+            "name": "Navigate to Approvals and filter by Submitted status",
+            "result": {
+              "status": "passed",
+              "duration": 4786000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 84,
+            "name": "User click on Suspended submitted user data for Suspension",
+            "result": {
+              "status": "passed",
+              "duration": 284000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 85,
+            "name": "Approve the Users",
+            "result": {
+              "status": "passed",
+              "duration": 956000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 86,
+            "name": "User status is approved",
+            "result": {
+              "status": "passed",
+              "duration": 667000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 87,
+            "name": "Logout",
+            "result": {
+              "status": "passed",
+              "duration": 634000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

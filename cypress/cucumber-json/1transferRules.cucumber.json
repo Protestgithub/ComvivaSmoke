@@ -1,0 +1,521 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Transfer rules Validation Message Verification",
+    "line": 1,
+    "id": "transfer-rules-validation-message-verification",
+    "tags": [],
+    "uri": "1transferRules.feature",
+    "elements": [
+      {
+        "id": "transfer-rules-validation-message-verification;to-verify-that-system-admin-should-be-able-to-add-initiate-transfer-rule-successfully.",
+        "keyword": "Scenario",
+        "line": 15,
+        "name": "To verify that System admin should be able to add initiate Transfer Rule successfully.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 13
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 16,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 14998000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 17,
+            "name": "User Click on Transfer Rule.",
+            "result": {
+              "status": "passed",
+              "duration": 285000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "Select the Service Name and from details.",
+            "result": {
+              "status": "failed",
+              "duration": 33912000000,
+              "error_message": "CypressError: Timed out retrying after 30000ms: `cy.select()` failed because it could not find a single `<option>` with value, index, or text matching: `Biller7572`\n\nhttps://on.cypress.io/select\n    at getOptions (http://172.25.48.177/__cypress/runner/cypress_runner.js:157888:80)\n    at tryCatcher (http://172.25.48.177/__cypress/runner/cypress_runner.js:13022:23)\n    at Promise.attempt.Promise.try (http://172.25.48.177/__cypress/runner/cypress_runner.js:10296:29)\n    at retryOptions (http://172.25.48.177/__cypress/runner/cypress_runner.js:157926:67)\n    at tryCatcher (http://172.25.48.177/__cypress/runner/cypress_runner.js:13022:23)\n    at Promise.attempt.Promise.try (http://172.25.48.177/__cypress/runner/cypress_runner.js:10296:29)\n    at whenStable (http://172.25.48.177/__cypress/runner/cypress_runner.js:173835:65)\n    at http://172.25.48.177/__cypress/runner/cypress_runner.js:173290:14\n    at tryCatcher (http://172.25.48.177/__cypress/runner/cypress_runner.js:13022:23)\n    at Promise._settlePromiseFromHandler (http://172.25.48.177/__cypress/runner/cypress_runner.js:10957:31)\n    at Promise._settlePromise (http://172.25.48.177/__cypress/runner/cypress_runner.js:11014:18)\n    at Promise._settlePromise0 (http://172.25.48.177/__cypress/runner/cypress_runner.js:11059:10)\n    at Promise._settlePromises (http://172.25.48.177/__cypress/runner/cypress_runner.js:11139:18)\n    at Promise._fulfill (http://172.25.48.177/__cypress/runner/cypress_runner.js:11083:18)\n    at http://172.25.48.177/__cypress/runner/cypress_runner.js:12697:46\nFrom Your Spec Code:\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\TransferRules\\1transferRules.feature:126:39)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 19,
+            "name": "Select the To details for Initiaion",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 20,
+            "name": "Select the From & To category.",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 21,
+            "name": "Click on Add Transfer Rule button.",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 22,
+            "name": "Select Status,Fixed Trf Level,Transfer type,Geographical Domain and Controlled Trf Level",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 23,
+            "name": "Click on submit button.",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 24,
+            "name": "Click on confirm button.",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 25,
+            "name": "Verify initiate success Message",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "transfer-rules-validation-message-verification;to-verify-that-proper-error-message-should-be-displayed-when-invalid-character-is-entered-in-the-amount.",
+        "keyword": "Scenario",
+        "line": 34,
+        "name": "To verify that proper error message should be displayed when invalid character is entered in the amount.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 32
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 35,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 12784000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 36,
+            "name": "User clicks on O2C transfer rules",
+            "result": {
+              "status": "passed",
+              "duration": 328000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 37,
+            "name": "Select Domain Name.",
+            "result": {
+              "status": "passed",
+              "duration": 2502000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 38,
+            "name": "Select Category Name.",
+            "result": {
+              "status": "failed",
+              "duration": 1000000,
+              "error_message": "CypressError: Timed out retrying after 30000ms: `cy.select()` failed because it could not find a single `<option>` with value, index, or text matching: `Biller7572`\n\nhttps://on.cypress.io/select\n    at getOptions (http://172.25.48.177/__cypress/runner/cypress_runner.js:157888:80)\n    at tryCatcher (http://172.25.48.177/__cypress/runner/cypress_runner.js:13022:23)\n    at Promise.attempt.Promise.try (http://172.25.48.177/__cypress/runner/cypress_runner.js:10296:29)\n    at retryOptions (http://172.25.48.177/__cypress/runner/cypress_runner.js:157926:67)\n    at tryCatcher (http://172.25.48.177/__cypress/runner/cypress_runner.js:13022:23)\n    at Promise.attempt.Promise.try (http://172.25.48.177/__cypress/runner/cypress_runner.js:10296:29)\n    at whenStable (http://172.25.48.177/__cypress/runner/cypress_runner.js:173835:65)\n    at http://172.25.48.177/__cypress/runner/cypress_runner.js:173290:14\n    at tryCatcher (http://172.25.48.177/__cypress/runner/cypress_runner.js:13022:23)\n    at Promise._settlePromiseFromHandler (http://172.25.48.177/__cypress/runner/cypress_runner.js:10957:31)\n    at Promise._settlePromise (http://172.25.48.177/__cypress/runner/cypress_runner.js:11014:18)\n    at Promise._settlePromise0 (http://172.25.48.177/__cypress/runner/cypress_runner.js:11059:10)\n    at Promise._settlePromises (http://172.25.48.177/__cypress/runner/cypress_runner.js:11139:18)\n    at Promise._fulfill (http://172.25.48.177/__cypress/runner/cypress_runner.js:11083:18)\n    at http://172.25.48.177/__cypress/runner/cypress_runner.js:12697:46\nFrom Your Spec Code:\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\TransferRules\\1transferRules.feature:254:43)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 39,
+            "name": "Select MFS Provider,Payment Instrument.",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 40,
+            "name": "Enter First Approval Limit",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 41,
+            "name": "Click on submit.",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 42,
+            "name": "confirm the displayed Error Message",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "transfer-rules-validation-message-verification;to-verify-that-system-admin-should-be-able-to-add-approve-transfer-rule-successfully.",
+        "keyword": "Scenario",
+        "line": 52,
+        "name": "To verify that System admin should be able to add Approve Transfer Rule successfully.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 50
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 53,
+            "name": "Login into Mobiquity Portal as System admin Checker1",
+            "result": {
+              "status": "passed",
+              "duration": 13842000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 54,
+            "name": "User clicks on transfer rule approval",
+            "result": {
+              "status": "passed",
+              "duration": 403000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 55,
+            "name": "Select rule and approve",
+            "result": {
+              "status": "passed",
+              "duration": 2886000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 56,
+            "name": "click on submit",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 30000ms: Expected to find element: `#trView_button_submit`, but never found it. Queried from element: <body#page-home>\n    at Approval.getSubmitbttn (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\TransferRules\\1transferRules.feature:2536:26)\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\TransferRules\\1transferRules.feature:234:28)\n    at Context.resolveAndRunStepDefinition (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\TransferRules\\1transferRules.feature:14991:29)\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\TransferRules\\1transferRules.feature:14312:35)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 57,
+            "name": "Verify Approval success Message",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "transfer-rules-validation-message-verification;to-verify-that-system-admin-should-be-able-to-modify-transfer-rule-successfully.",
+        "keyword": "Scenario",
+        "line": 68,
+        "name": "To verify that System admin should be able to Modify Transfer Rule successfully.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 66
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 69,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 14537000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 70,
+            "name": "User Click on Transfer Rule.",
+            "result": {
+              "status": "passed",
+              "duration": 692000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 71,
+            "name": "Select the Service Name and from details.",
+            "result": {
+              "status": "failed",
+              "error_message": "CypressError: Timed out retrying after 30000ms: `cy.select()` failed because it could not find a single `<option>` with value, index, or text matching: `Biller7572`\n\nhttps://on.cypress.io/select\n    at getOptions (http://172.25.48.177/__cypress/runner/cypress_runner.js:157888:80)\n    at tryCatcher (http://172.25.48.177/__cypress/runner/cypress_runner.js:13022:23)\n    at Promise.attempt.Promise.try (http://172.25.48.177/__cypress/runner/cypress_runner.js:10296:29)\n    at retryOptions (http://172.25.48.177/__cypress/runner/cypress_runner.js:157926:67)\n    at tryCatcher (http://172.25.48.177/__cypress/runner/cypress_runner.js:13022:23)\n    at Promise.attempt.Promise.try (http://172.25.48.177/__cypress/runner/cypress_runner.js:10296:29)\n    at whenStable (http://172.25.48.177/__cypress/runner/cypress_runner.js:173835:65)\n    at http://172.25.48.177/__cypress/runner/cypress_runner.js:173290:14\n    at tryCatcher (http://172.25.48.177/__cypress/runner/cypress_runner.js:13022:23)\n    at Promise._settlePromiseFromHandler (http://172.25.48.177/__cypress/runner/cypress_runner.js:10957:31)\n    at Promise._settlePromise (http://172.25.48.177/__cypress/runner/cypress_runner.js:11014:18)\n    at Promise._settlePromise0 (http://172.25.48.177/__cypress/runner/cypress_runner.js:11059:10)\n    at Promise._settlePromises (http://172.25.48.177/__cypress/runner/cypress_runner.js:11139:18)\n    at Promise._fulfill (http://172.25.48.177/__cypress/runner/cypress_runner.js:11083:18)\n    at http://172.25.48.177/__cypress/runner/cypress_runner.js:12697:46\nFrom Your Spec Code:\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\TransferRules\\1transferRules.feature:126:39)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 72,
+            "name": "Select the To details for Initiaion",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 73,
+            "name": "Select the From & To category.",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 74,
+            "name": "User clicks on edit option.",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 75,
+            "name": "Click on submit button.",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 76,
+            "name": "Click on confirm button.",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 77,
+            "name": "Verify Modify success Message",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "transfer-rules-validation-message-verification;to-verify-the-error-message-when-the-system-admin-tries-to-add-initiate-existed-transfer-rule.",
+        "keyword": "Scenario",
+        "line": 86,
+        "name": "To verify the error message when the System admin Tries to add initiate Existed Transfer Rule.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 84
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 87,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 13954000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 88,
+            "name": "User Click on Transfer Rule.",
+            "result": {
+              "status": "passed",
+              "duration": 705000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 89,
+            "name": "Select the Service Name and from details.",
+            "result": {
+              "status": "failed",
+              "error_message": "CypressError: Timed out retrying after 30000ms: `cy.select()` failed because it could not find a single `<option>` with value, index, or text matching: `Biller7572`\n\nhttps://on.cypress.io/select\n    at getOptions (http://172.25.48.177/__cypress/runner/cypress_runner.js:157888:80)\n    at tryCatcher (http://172.25.48.177/__cypress/runner/cypress_runner.js:13022:23)\n    at Promise.attempt.Promise.try (http://172.25.48.177/__cypress/runner/cypress_runner.js:10296:29)\n    at retryOptions (http://172.25.48.177/__cypress/runner/cypress_runner.js:157926:67)\n    at tryCatcher (http://172.25.48.177/__cypress/runner/cypress_runner.js:13022:23)\n    at Promise.attempt.Promise.try (http://172.25.48.177/__cypress/runner/cypress_runner.js:10296:29)\n    at whenStable (http://172.25.48.177/__cypress/runner/cypress_runner.js:173835:65)\n    at http://172.25.48.177/__cypress/runner/cypress_runner.js:173290:14\n    at tryCatcher (http://172.25.48.177/__cypress/runner/cypress_runner.js:13022:23)\n    at Promise._settlePromiseFromHandler (http://172.25.48.177/__cypress/runner/cypress_runner.js:10957:31)\n    at Promise._settlePromise (http://172.25.48.177/__cypress/runner/cypress_runner.js:11014:18)\n    at Promise._settlePromise0 (http://172.25.48.177/__cypress/runner/cypress_runner.js:11059:10)\n    at Promise._settlePromises (http://172.25.48.177/__cypress/runner/cypress_runner.js:11139:18)\n    at Promise._fulfill (http://172.25.48.177/__cypress/runner/cypress_runner.js:11083:18)\n    at http://172.25.48.177/__cypress/runner/cypress_runner.js:12697:46\nFrom Your Spec Code:\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\TransferRules\\1transferRules.feature:126:39)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 90,
+            "name": "Select the To details for Initiaion",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 91,
+            "name": "Select the From & To category.",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 92,
+            "name": "Click on Add Transfer Rule button.",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 93,
+            "name": "Confirm the Error Message",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "transfer-rules-validation-message-verification;to-verify-that-system-admin-should-be-able-to--approve-transfer-rule-successfully.",
+        "keyword": "Scenario",
+        "line": 102,
+        "name": "To verify that System admin should be able to  Approve Transfer Rule successfully.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 100
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 103,
+            "name": "Login into Mobiquity Portal as System admin Checker1",
+            "result": {
+              "status": "passed",
+              "duration": 14888000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 104,
+            "name": "User clicks on transfer rule approval",
+            "result": {
+              "status": "passed",
+              "duration": 779000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 105,
+            "name": "Select rule and approve",
+            "result": {
+              "status": "passed",
+              "duration": 3293000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 106,
+            "name": "click on submit",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 30000ms: Expected to find element: `#trView_button_submit`, but never found it. Queried from element: <body#page-home>\n    at Approval.getSubmitbttn (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\TransferRules\\1transferRules.feature:2536:26)\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\TransferRules\\1transferRules.feature:234:28)\n    at Context.resolveAndRunStepDefinition (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\TransferRules\\1transferRules.feature:14991:29)\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\TransferRules\\1transferRules.feature:14312:35)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 107,
+            "name": "Verify Approval success Message",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

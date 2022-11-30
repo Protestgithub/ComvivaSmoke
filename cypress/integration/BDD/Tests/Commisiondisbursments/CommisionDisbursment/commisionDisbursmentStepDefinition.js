@@ -25,16 +25,28 @@ Before(() => {
   cy.fixture('CommisionDisbursment').then(function (data6) {
     this.data6 = data6;
   })
+  cy.fixture('API/APIEndPoints').then(function (data20) {
+    this.data20 = data20;
+  })
 });
 
 //----------------Test Scripts---------------------------------------------------------------
 //---------------------------------------------System Admin Login----------------------------------------------------
 Given('Login into Mobiquity Portal as System admin Maker', function () {
   cy.launchURL(Cypress.env('Adminurl'))
-  cy.wait(2000)
   cy.SysAdminlogin()
-  cy.wait(2000)
-  cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
+  cy.fixture('userData/SystemAdminLogin.json').then((data) => {
+    let Name = data.SysAdminMakerName
+    cy.checkWelcomeText(Name)
+  })
+})
+Given('Login into Mobiquity Portal as System admin Checker1', function () {
+  cy.launchURL(Cypress.env('Adminurl'))
+  cy.SysAdminlogin2()
+  cy.fixture('userData/SystemAdminLogin.json').then((data) => {
+    let Name = data.SysAdminChecker1Name
+    cy.checkWelcomeText(Name)
+  })
 })
 
 //----------TC_154------------Commision disbursment-----To verify that system admin should able to disburse commisson to channel users-----------------
@@ -42,34 +54,33 @@ Given('Login into Mobiquity Portal as System admin Maker', function () {
 When('Commission Disbursement Process and Commission Disbursement', function () {
   commisionDisbursmentPage.getCommisionDisbursmentProcess().scrollIntoView()
   commisionDisbursmentPage.getCommisionDisbursmentProcess().click()
+  cy.intercept(this.data20.CommisionDisbursment).as('getcommissionmang')
   commisionDisbursmentPage.getCommisionDisbursment().click()
-
+  cy.wait('@getcommissionmang')
 })
 
 And('Commision disbursment Select MFS provider and enter Mobile number', function () {
-  cy.wait(3000)
   commisionDisbursmentPage.getCDMFSProviders().select(this.data6.Provider, { force: true })
-  cy.wait(3000)
   commisionDisbursmentPage.getDomain().select(this.data6.domain, { force: true })
-  cy.wait(3000)
   commisionDisbursmentPage.getCategory().select(this.data6.category, { force: true })
+  cy.intercept(this.data20.CDButtonSubmit).as('getcommiciondisb')
   commisionDisbursmentPage.getCDButtonSubmit().click({ force: true })
+  cy.wait('@getcommiciondisb')
 })
 And('Commision disbursment Download the .csv file', function () {
-  cy.wait(3000)
   commisionDisbursmentPage.getCDCheckBox().check()
   commisionDisbursmentPage.getCDDownloadCSVButton().click({ force: true })
 })
 
 Then('Commision disbursment upload the downloaded file on bulk payout tool to initiate commision disbursement', function () {
-  cy.wait(3000)
   commisionDisbursmentPage.getBulkPayoutTool().scrollIntoView()
   commisionDisbursmentPage.getBulkPayoutTool().click()
+  cy.intercept(this.data20.BulkPayoutInitiate).as('getbulkinitiate')
   commisionDisbursmentPage.getBulkPayoutInitiate().click()
-  cy.wait(10000)
+  cy.wait('@getbulkinitiate', { timeout: 10000 })
   commisionDisbursmentPage.getFileUpload().attachFile(cdCSVFile)
+  cy.intercept(this.data20.FileUpload).as('getambiguous')
   commisionDisbursmentPage.getFileUploadSubmitButton().click({ force: true })
-  cy.wait(5000)
+  cy.wait('@getambiguous')
   commisionDisbursmentPage.getUploadCSVAlertSuccess().should('contain.text', this.data6.alertmessage)
-
 })

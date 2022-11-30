@@ -42,8 +42,18 @@ Before(() => {
 Given('Login into Mobiquity Portal as System admin Maker', function () {
   cy.launchURL(Cypress.env('Adminurl'))
   cy.SysAdminlogin()
-  cy.wait(2000)
-  cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
+  cy.fixture('userData/SystemAdminLogin.json').then((data) => {
+    let Name = data.SysAdminMakerName
+    cy.checkWelcomeText(Name)
+  })
+})
+Given('Login into Mobiquity Portal as System admin Checker1', function () {
+  cy.launchURL(Cypress.env('Adminurl'))
+  cy.SysAdminlogin2()
+  cy.fixture('userData/SystemAdminLogin.json').then((data) => {
+    let Name = data.SysAdminChecker1Name
+    cy.checkWelcomeText(Name)
+  })
 })
 
 
@@ -55,7 +65,6 @@ When('Navigate to security and click on security questions', function () {
 
 And('User click on add questions and Enter question in the textbox', function () {
   pageLogin.getiFrame()
-  cy.wait(2000)
   securityPage.getAddQuestion().click({ force: true })
   cy.RandomQuestions()
   recurse(
@@ -92,7 +101,6 @@ When('Navigate to security and click on security questions', function () {
 
 And('User click on add questions and question is already existing', function () {
   pageLogin.getiFrame()
-  cy.wait(2000)
   securityPage.getAddQuestion().click({ force: true })
   cy.readFile(SecurityQuetion).then((data) => {
     q1 = data.SecurityQuestion1
@@ -126,7 +134,6 @@ When('Navigate to security and click on security questions', function () {
 
 And('User click on add questions button and Enter question in the textbox', function () {
   pageLogin.getiFrame()
-  cy.wait(2000)
   securityPage.getAddQuestion().click({ force: true })
   securityPage.getDefaultSystemLanguage().should('be.disabled')
   cy.RandomQuestion()
@@ -160,7 +167,6 @@ When('Navigate to security and click on security questions', function () {
 
 And('User click on add questions Button', function () {
   pageLogin.getiFrame()
-  cy.wait(2000)
   securityPage.getAddQuestion().click({ force: true })
   cy.RandomQuestion2()
   recurse(
@@ -173,9 +179,7 @@ And('User click on add questions Button', function () {
 
 And('User click on other language and enter the questions other language in question textbox', function () {
   pageLogin.getiFrame()
-  cy.wait(2000)
   securityPage.getAddLanguage().click({ force: true })
-  cy.wait(2000)
   securityPage.getLanguageDropDowns().select(this.data3.languages.language1, { force: true })
   cy.readFile(SecurityQuetion).then((data) => {
     q3 = data.SecurityQuestion3

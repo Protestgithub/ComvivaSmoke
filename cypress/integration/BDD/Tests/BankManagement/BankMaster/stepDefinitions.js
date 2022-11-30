@@ -39,22 +39,21 @@ Before(() => {
 
 //-------------------------------------------------TC_04----------------------------------------------------
 
-Given ('Login with Master Admin Checker', function(){
+Given('Login into Mobiquity Portal as Super admin Checker', function () {
   cy.launchURL(Cypress.env('Adminurl'))
-  cy.login(this.data1.masteradminchecker.sysAdminUser1, this.data1.masteradminchecker.sysAdminPwd1)
-  cy.wait(2000)
+  cy.login(this.data1.masteradminchecker.superadminc, this.data1.masteradminchecker.superadmincPwd)
+  cy.checkWelcomeText(this.data1.superadminc.superadminchecker)
 })
+
 When ('Navigate to Bank Master and Click on it', function(){
   BankManagementPage.getBankMaster().click({force: true})
   BankManagementPage.getAddBank().click()
   cy.wait(3000)
-
 })
   
-
 And ('Navigate to MFS provider Bank type master and Click on Modify or Delete Bank', function(){
-cy.wait(2000)
   BankManagementPage.getMFSproviderBankTypeMaster().click()
+  cy.wait(2000)
   BankManagementPage.getModifyORDelete().click()
 })
 
@@ -73,13 +72,11 @@ Then ('Select the bank and associate new services', function(){
   cy.wait(2000)
   cy.getbankType()
   cy.getBox()
-  cy.wait(2000)
   BankManagementPage.getModify().click({force:true})
-  cy.wait(5000)
+  cy.wait(3000)
   BankManagementPage.getSelectAll().click()
   BankManagementPage.getSubmit().click()
   cy.wait(4000)
-  
 })    
 
   //--------------------------------------------TC_06-----------------------------------------------------
@@ -102,8 +99,5 @@ And ('Enter all the details Except Bank Name', function(){
 
 Then ('Confirm the Error message', function(){
   cy.wait(3000)
-  BankManagementPage.getErrorMessage().should('have.text',this.data2.bankMaster.ErrorMessage)
-
-})  
-
-  
+  BankManagementPage.getErrorMessage().contains(this.data2.bankMaster.ErrorMessage)
+})

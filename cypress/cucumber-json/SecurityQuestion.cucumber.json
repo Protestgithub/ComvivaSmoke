@@ -1,0 +1,282 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Security Questions",
+    "line": 1,
+    "id": "security-questions",
+    "tags": [],
+    "uri": "SecurityQuestion.feature",
+    "elements": [
+      {
+        "id": "security-questions;to-verify-that-master/network-admin-can-add-security-questions-in-the-mobiquity-system",
+        "keyword": "Scenario",
+        "line": 13,
+        "name": "To verify that master/network Admin can add security questions in the mobiquity System",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 11
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 14,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 14560000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 15,
+            "name": "Navigate to security and click on security questions",
+            "result": {
+              "status": "passed",
+              "duration": 363000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "User click on add questions and Enter question in the textbox",
+            "result": {
+              "status": "passed",
+              "duration": 9679000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 17,
+            "name": "User click on Add",
+            "result": {
+              "status": "passed",
+              "duration": 156000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 18,
+            "name": "User click on save",
+            "result": {
+              "status": "passed",
+              "duration": 762000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "security-questions;to-verify-that-master/network-admin-is-not-able-to-add-duplicate-question",
+        "keyword": "Scenario",
+        "line": 27,
+        "name": "To verify that master/network Admin is not able to add duplicate question",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 25
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 28,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 12362000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 29,
+            "name": "Navigate to security and click on security questions",
+            "result": {
+              "status": "passed",
+              "duration": 329000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 30,
+            "name": "User click on add questions and question is already existing",
+            "result": {
+              "status": "passed",
+              "duration": 1664000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 31,
+            "name": "User click on Add Button",
+            "result": {
+              "status": "passed",
+              "duration": 315000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 32,
+            "name": "User click on save Button",
+            "result": {
+              "status": "passed",
+              "duration": 580000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "security-questions;to-verify-that-security-question-which-are-added-by-the-user-will-be-added-in-default-system-language",
+        "keyword": "Scenario",
+        "line": 42,
+        "name": "To verify that security question which are added by the user will be added in default system language",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 40
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 43,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 12462000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 44,
+            "name": "Navigate to security and click on security questions",
+            "result": {
+              "status": "passed",
+              "duration": 532000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 45,
+            "name": "User click on add questions button and Enter question in the textbox",
+            "result": {
+              "status": "passed",
+              "duration": 5280000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 46,
+            "name": "User click on Button Add",
+            "result": {
+              "status": "passed",
+              "duration": 143000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 47,
+            "name": "User click on Button save",
+            "result": {
+              "status": "passed",
+              "duration": 655000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "security-questions;to-verify-that-if-other-language-is-selected-while-adding-the-security-question-then-it-is-mandatory-to-add-question-in-other-language-also",
+        "keyword": "Scenario",
+        "line": 57,
+        "name": "To verify that if other language is selected while adding the security question then it is mandatory to add question in other language also",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 55
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 58,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 12353000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 59,
+            "name": "Navigate to security and click on security questions",
+            "result": {
+              "status": "passed",
+              "duration": 384000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 60,
+            "name": "User click on add questions Button",
+            "result": {
+              "status": "passed",
+              "duration": 5072000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 61,
+            "name": "User click on other language and enter the questions other language in question textbox",
+            "result": {
+              "status": "passed",
+              "duration": 1025000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 62,
+            "name": "Click on add Button",
+            "result": {
+              "status": "passed",
+              "duration": 160000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 63,
+            "name": "Click on Confirm Button",
+            "result": {
+              "status": "passed",
+              "duration": 791000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

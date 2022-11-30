@@ -1,0 +1,418 @@
+[
+  {
+    "description": "    This feature includes Stock initiation,StockApproval1 and StockApproval2 by System Admin",
+    "keyword": "Feature",
+    "name": "Stock Management stock Transfer to EA",
+    "line": 1,
+    "id": "stock-management-stock-transfer-to-ea",
+    "tags": [],
+    "uri": "2stockManagement.feature",
+    "elements": [
+      {
+        "id": "stock-management-stock-transfer-to-ea;to-verify-that-system-admin-can-enquire-the-details-of-stock-transfer-to-ea",
+        "keyword": "Scenario",
+        "line": 12,
+        "name": "To verify that System admin can enquire the details of stock Transfer to EA",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 10
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 13,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "failed",
+              "duration": 47999000000,
+              "error_message": "AssertionError: Timed out retrying after 30000ms: expected '<span#username.lui-username.fd-has-type-1.svelte-yfds2b>' to contain text 'Network NWADM Admin', but the text was 'nifLx tYcUD'\n    + expected - actual\n\n    -'nifLx tYcUD'\n    +'Network NWADM Admin'\n\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\StockManagement\\2stockManagement.feature:652:32)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 14,
+            "name": "Navigate to Stock Management and Stock Transfer EA Enquiry",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "Select the From & To Dates and Transaction Status",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "Click on Submit",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 17,
+            "name": "Select any Transaction ID from displayed list",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 18,
+            "name": "Click on View Submit button",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "stock-management-stock-transfer-to-ea;to-verify-that-the-system-admin-is-able-to-initiate-the-reimbursement-through-web",
+        "keyword": "Scenario",
+        "line": 27,
+        "name": "To verify that the System admin is able to initiate the reimbursement through web",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 25
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 28,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 30000ms: expected '<span#username.lui-username.fd-has-type-1.svelte-yfds2b>' to contain text 'Network NWADM Admin', but the text was 'nifLx tYcUD'\n    + expected - actual\n\n    -'nifLx tYcUD'\n    +'Network NWADM Admin'\n\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\StockManagement\\2stockManagement.feature:652:32)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 29,
+            "name": "Click on Stock Management and Reimbursement",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 30,
+            "name": "Select User type",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 31,
+            "name": "Enter MSISDN,Provider,Wallet Type,Reference Number and Remarks",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 32,
+            "name": "Click on reimbursement submit",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 33,
+            "name": "Enter amount and click on confirm",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "stock-management-stock-transfer-to-ea;to-verify-that-system-admin-can-approve-any-stock-reimbursement-initiation-request",
+        "keyword": "Scenario",
+        "line": 42,
+        "name": "To verify that System admin can approve any stock reimbursement initiation request",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 40
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 43,
+            "name": "Login into Mobiquity Portal as System admin Checker1",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 30000ms: expected '<span#username.lui-username.fd-has-type-1.svelte-yfds2b>' to contain text 'Network NWADM Admin', but the text was 'yZSjr zhZRJ'\n    + expected - actual\n\n    -'yZSjr zhZRJ'\n    +'Network NWADM Admin'\n\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\StockManagement\\2stockManagement.feature:652:32)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 44,
+            "name": "Click on Stock management and stock reimbursement approval",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 45,
+            "name": "Select the initiated stock reimbursement request",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "stock-management-stock-transfer-to-ea;to-verify-that-proper-error-message-should-be-displayed-when-no-stock-is-present-in-wallet",
+        "keyword": "Scenario",
+        "line": 60,
+        "name": "To verify that proper error message should be displayed when no stock is present in wallet",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 58
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 61,
+            "name": "Login into Mobiquity Portal as System admin Checker1",
+            "result": {
+              "status": "failed",
+              "duration": 1000000,
+              "error_message": "AssertionError: Timed out retrying after 30000ms: expected '<span#username.lui-username.fd-has-type-1.svelte-yfds2b>' to contain text 'Network NWADM Admin', but the text was 'yZSjr zhZRJ'\n    + expected - actual\n\n    -'yZSjr zhZRJ'\n    +'Network NWADM Admin'\n\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\StockManagement\\2stockManagement.feature:652:32)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 62,
+            "name": "Navigate to Stock Management and Stock Withdrawal",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 63,
+            "name": "User Select Stock Withdraw Wallet Type",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 65,
+            "name": "User Should select Stock Withdraw Bank",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 66,
+            "name": "User Should Enter Stock Withdraw Bank Account Number",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 67,
+            "name": "User Should Enter Stock Withdraw Amount",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 68,
+            "name": "User Click on Stock Withdraw Submit button",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "stock-management-stock-transfer-to-ea;to-verify-that-proper-error-message-should-be-displayed-when-amount-field-contains-any-invalid-character",
+        "keyword": "Scenario",
+        "line": 78,
+        "name": "To verify that proper error message should be displayed when amount field contains any invalid character",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 76
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 79,
+            "name": "Login into Mobiquity Portal as System admin Checker1",
+            "result": {
+              "status": "failed",
+              "duration": 1000000,
+              "error_message": "AssertionError: Timed out retrying after 30000ms: expected '<span#username.lui-username.fd-has-type-1.svelte-yfds2b>' to contain text 'Network NWADM Admin', but the text was 'yZSjr zhZRJ'\n    + expected - actual\n\n    -'yZSjr zhZRJ'\n    +'Network NWADM Admin'\n\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\StockManagement\\2stockManagement.feature:652:32)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 80,
+            "name": "Navigate to Stock Management and Stock Withdrawal",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 81,
+            "name": "User Select Stock Withdraw Wallet Type",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 83,
+            "name": "User Should select Stock Withdraw Bank",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 84,
+            "name": "User Should Enter Stock Withdraw Bank Account Number",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 85,
+            "name": "User Should Enter Stock Withdraw invalid Amount",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 86,
+            "name": "User Click on Stock Withdraw invalid Amount Submit button",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "stock-management-stock-transfer-to-ea;to-verify-that-proper-error-message-should-be-displayed-when-amount-field-contains-any-invalid-characte",
+        "keyword": "Scenario",
+        "line": 96,
+        "name": "To verify that proper error message should be displayed when amount field contains any invalid characte",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 94
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 97,
+            "name": "Login into Mobiquity Portal as System admin Checker1",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 30000ms: expected '<span#username.lui-username.fd-has-type-1.svelte-yfds2b>' to contain text 'Network NWADM Admin', but the text was 'yZSjr zhZRJ'\n    + expected - actual\n\n    -'yZSjr zhZRJ'\n    +'Network NWADM Admin'\n\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\StockManagement\\2stockManagement.feature:652:32)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 98,
+            "name": "Navigate to Stock Management and Stock Initiation",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 100,
+            "name": "User Should Enter Stock Initiation Reference number",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 101,
+            "name": "User Should Enter Stock Initiation Amount",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 102,
+            "name": "User Click on Stock Initiation Submit button",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

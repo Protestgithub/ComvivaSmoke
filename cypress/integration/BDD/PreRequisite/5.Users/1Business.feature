@@ -19,11 +19,10 @@ And Click on Next >> click on Confirm
 Then Confirmation message
 And Navigate to My Activity and Apply Add User filters
 Then Assert Created Telco-Operator Mobile Number and Write Created on time
-Then Logout
 
 
 Scenario: To verify the approval of telco operator
-Given Login into Mobiquity Portal as another System admin Checker1 after logout
+Given Login into Mobiquity Portal as System admin Checker1
 When Navigate to Approvals and filter by Submitted status
 And User click on submitted user data for Telco-Operator
 And Approve the Users
@@ -50,17 +49,13 @@ And Click on save
 Then Confirmation modify message
 And Navigate to My Activity and Apply Modified User filters
 Then Assert Created Telco-Operator Mobile Number and Write Created on time
-Then Logout
 
 Scenario: To verify the approval of modification Request
-Given Login into Mobiquity Portal as another System admin Checker1 after logout
+Given Login into Mobiquity Portal as System admin Checker1
 When Navigate to Approvals and filter by Modification of user status
 And User click on submitted user data
 Then Approve the Users
 Then Edited User status is approved
-
-
-
 
 
 # Author: Likith R
@@ -79,10 +74,9 @@ And Enter all the required business user details
 Then Confirmation message is displayed
 And Navigate to My Activity and Apply Add User filters
 Then Assert Created Buissness User Mobile Number and Write Created on time for UnRegisteredMobile
-Then Logout
 
 Scenario: To verify the approval of initiation request
-Given Login into Mobiquity Portal as another System admin Checker1 after logout
+Given Login into Mobiquity Portal as System admin Checker1
 When Navigate to Approvals and filter by Submitted status
 When User click on submitted user data for Unregistered
 Then Approve the Users
@@ -140,9 +134,9 @@ Then Verify the user suspend Confirmation message
 # And Edit the required details >> Click on Next
 # And Click on save
 # Then Verify Error message
-# ##################################### Arpitha ####################################################
 
 
+###################################### Arpitha ####################################################
 
 
 # # Author: Arpitha C

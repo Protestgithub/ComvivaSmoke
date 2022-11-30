@@ -76,7 +76,6 @@ And Enter all the required business user details1
 Then Confirmation message is displayed
 And Navigate to My Activity and Apply Add User filters
 And Assert Created Buissness User Mobile Number for Suspension and Write Created on time
-Then Logout
 
 
 Scenario: To Verify that System Admin/Business Admin can approve suspension of the businsess user.

@@ -1,0 +1,301 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Another Subscriber Registration for churn",
+    "line": 1,
+    "id": "another-subscriber-registration-for-churn",
+    "tags": [],
+    "uri": "2SubscriberReg.feature",
+    "elements": [
+      {
+        "id": "another-subscriber-registration-for-churn;to-verify-that-valid-systemadmin/businsess-user-is-able-to-initiate-subscriber-creation-for-churn-approve-or-reject",
+        "keyword": "Scenario",
+        "line": 10,
+        "name": "To verify that valid SystemAdmin/businsess User is able to initiate Subscriber creation for churn approve or reject",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 8
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 11,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "failed",
+              "duration": 46979000000,
+              "error_message": "AssertionError: Timed out retrying after 30000ms: expected '<span#username.lui-username.fd-has-type-1.svelte-yfds2b>' to contain text 'Network NWADM Admin', but the text was 'nifLx tYcUD'\n    + expected - actual\n\n    -'nifLx tYcUD'\n    +'Network NWADM Admin'\n\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\ChurnManagement\\2SubscriberReg.feature:1028:32)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 12,
+            "name": "Navigate to User Management and Click on register",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "Select User type as Subscriber and click on Subscriber",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "Enter all the required subscriber details for churn approve or reject",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 15,
+            "name": "SubscrigReg Confirmation message is displayed",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 16,
+            "name": "Navigate to My Activity and Aplly required filters",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 17,
+            "name": "Assert Created Subscriber Mobile Number for ApprRej and Write Created on time",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 18,
+            "name": "Logout",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "another-subscriber-registration-for-churn;to-verify-that-valid-systemadmin/businsess-user-is-able-to-approve--subscriber-creation",
+        "keyword": "Scenario",
+        "line": 21,
+        "name": "To verify that valid SystemAdmin/businsess User is able to approve  Subscriber creation",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 22,
+            "name": "Login into Mobiquity Portal as another System admin Checker1 after logout",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 30000ms: expected '<span#username.lui-username.fd-has-type-1.svelte-yfds2b>' to contain text 'Network NWADM Admin', but the text was 'yZSjr zhZRJ'\n    + expected - actual\n\n    -'yZSjr zhZRJ'\n    +'Network NWADM Admin'\n\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\ChurnManagement\\2SubscriberReg.feature:1028:32)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 23,
+            "name": "Navigate to Approvals and filter by Submitted status",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 24,
+            "name": "User click on Subscriber submitted user data",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 25,
+            "name": "Approve the Users",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 26,
+            "name": "Added User status is approved",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "another-subscriber-registration-for-churn;to-verify-that-valid-systemadmin/businsess-user-is-able-to-initiate-subscriber-creation-for-batch-reject",
+        "keyword": "Scenario",
+        "line": 34,
+        "name": "To verify that valid SystemAdmin/businsess User is able to initiate Subscriber creation for Batch Reject",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 32
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 35,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 30000ms: expected '<span#username.lui-username.fd-has-type-1.svelte-yfds2b>' to contain text 'Network NWADM Admin', but the text was 'nifLx tYcUD'\n    + expected - actual\n\n    -'nifLx tYcUD'\n    +'Network NWADM Admin'\n\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\ChurnManagement\\2SubscriberReg.feature:1028:32)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 36,
+            "name": "Navigate to User Management and Click on register",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 37,
+            "name": "Select User type as Subscriber and click on Subscriber",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 38,
+            "name": "Enter all the required subscriber details for Batch Reject",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 39,
+            "name": "SubscrigReg Confirmation message is displayed",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 40,
+            "name": "Navigate to My Activity and Aplly required filters",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 41,
+            "name": "Assert Created Subscriber Mobile Number for Batch Reject and Write Created on time",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 42,
+            "name": "Logout",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "another-subscriber-registration-for-churn;to-verify-that-valid-systemadmin/businsess-user-is-able-to-approve--subscriber-creation-for-batch",
+        "keyword": "Scenario",
+        "line": 45,
+        "name": "To verify that valid SystemAdmin/businsess User is able to approve  Subscriber creation for Batch",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 46,
+            "name": "Login into Mobiquity Portal as another System admin Checker1 after logout",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 30000ms: expected '<span#username.lui-username.fd-has-type-1.svelte-yfds2b>' to contain text 'Network NWADM Admin', but the text was 'yZSjr zhZRJ'\n    + expected - actual\n\n    -'yZSjr zhZRJ'\n    +'Network NWADM Admin'\n\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\ChurnManagement\\2SubscriberReg.feature:1028:32)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 47,
+            "name": "Navigate to Approvals and filter by Submitted status",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 48,
+            "name": "User click on Subscriber submitted user data",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 49,
+            "name": "Approve the Users",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 50,
+            "name": "Added User status is approved",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

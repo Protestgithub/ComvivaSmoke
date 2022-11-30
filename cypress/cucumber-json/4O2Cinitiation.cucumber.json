@@ -1,0 +1,363 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "OrdersDetails",
+    "line": 1,
+    "id": "ordersdetails",
+    "tags": [],
+    "uri": "4O2Cinitiation.feature",
+    "elements": [
+      {
+        "id": "ordersdetails;to-verify-that-admin-user-can-check-all-the-order-details-of-a-customer/-business-users-successfully.",
+        "keyword": "Scenario",
+        "line": 12,
+        "name": "To verify that Admin user can check all the Order Details of a customer/ business users successfully.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 10
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 13,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 13766000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 14,
+            "name": "Click on user management and Manage users",
+            "result": {
+              "status": "passed",
+              "duration": 868000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "Enter Mobile number and KYC number in search menu for customer/ business users",
+            "result": {
+              "status": "passed",
+              "duration": 856000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "Click on view Details",
+            "result": {
+              "status": "passed",
+              "duration": 482000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 17,
+            "name": "Click on order details for customer/ business users",
+            "result": {
+              "status": "passed",
+              "duration": 414000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "ordersdetails;to-verify-that-user-can-able-to-view-all-the-wallet-transactions-by-entering-valid-transaction-id.",
+        "keyword": "Scenario",
+        "line": 47,
+        "name": "To verify that user can able to view all the wallet transactions by entering valid transaction id.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 38
+          },
+          {
+            "name": "@test",
+            "line": 45
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 48,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 24092000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 49,
+            "name": "Click on user management and Manage users",
+            "result": {
+              "status": "passed",
+              "duration": 1125000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 50,
+            "name": "Enter Mobile numberin search Menu",
+            "result": {
+              "status": "passed",
+              "duration": 847000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 51,
+            "name": "Click on view Details",
+            "result": {
+              "status": "passed",
+              "duration": 651000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 52,
+            "name": "Click on Wallet Payment History for valid transaction with id",
+            "result": {
+              "status": "passed",
+              "duration": 288000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 53,
+            "name": "Click on expand button on valid transaction with id",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 30000ms: Expected to find element: `[id=\"view-more\"]`, but never found it. Queried from element: <body>\n    at manageUsers.getWalletExpandButton (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\OperatorToChannel\\4O2Cinitiation.feature:3901:26)\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\OperatorToChannel\\4O2Cinitiation.feature:247:19)\n    at Context.resolveAndRunStepDefinition (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\OperatorToChannel\\4O2Cinitiation.feature:15500:29)\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\OperatorToChannel\\4O2Cinitiation.feature:14821:35)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 54,
+            "name": "Click on view Details for wallet transactions with id",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "ordersdetails;to-verify-that-user-can-able-to-fetch-the-statement-based-on-the-transaction-type-(success,-fail-etc.)",
+        "keyword": "Scenario",
+        "line": 63,
+        "name": "To verify that user can able to fetch the Statement based on the transaction type (success, fail etc.)",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 61
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 64,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 14672000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 65,
+            "name": "Click on user management and Manage users",
+            "result": {
+              "status": "passed",
+              "duration": 1324000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 66,
+            "name": "Enter Mobile numberin search Menu",
+            "result": {
+              "status": "passed",
+              "duration": 1206000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 67,
+            "name": "Click on view Details",
+            "result": {
+              "status": "passed",
+              "duration": 928000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 68,
+            "name": "Click on Wallet Payment History for transaction type",
+            "result": {
+              "status": "passed",
+              "duration": 422000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 69,
+            "name": "Click on filter and Select status type and Select apply",
+            "result": {
+              "status": "passed",
+              "duration": 2226000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 70,
+            "name": "Click on expand button for transaction type",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 30000ms: Expected to find element: `[id=\"view-more\"]`, but never found it. Queried from element: <body>\n    at manageUsers.getWalletExpandButton (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\OperatorToChannel\\4O2Cinitiation.feature:3901:26)\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\OperatorToChannel\\4O2Cinitiation.feature:282:19)\n    at Context.resolveAndRunStepDefinition (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\OperatorToChannel\\4O2Cinitiation.feature:15500:29)\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\OperatorToChannel\\4O2Cinitiation.feature:14821:35)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 71,
+            "name": "Click on view Details for transaction",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "ordersdetails;to-verify-that-user-can-able-to-fetch-the-statement-based-on-the-date-range.",
+        "keyword": "Scenario",
+        "line": 80,
+        "name": "To verify that user can able to fetch the Statement based on the Date range.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 78
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 81,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 15542000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 82,
+            "name": "Click on user management and Manage users",
+            "result": {
+              "status": "passed",
+              "duration": 1626000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 83,
+            "name": "Enter Mobile numberin search Menu",
+            "result": {
+              "status": "passed",
+              "duration": 1457000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 84,
+            "name": "Click on view Details",
+            "result": {
+              "status": "passed",
+              "duration": 1240000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 85,
+            "name": "Click on Wallet Payment History based on the Date",
+            "result": {
+              "status": "passed",
+              "duration": 891000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 86,
+            "name": "Click on filter",
+            "result": {
+              "status": "passed",
+              "duration": 1319000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 87,
+            "name": "Select start date and end date and  Click apply",
+            "result": {
+              "status": "passed",
+              "duration": 3293000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 88,
+            "name": "Click on expand button based on the Date",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 30000ms: Expected to find element: `[id=\"view-more\"]`, but never found it. Queried from element: <body>\n    at manageUsers.getWalletExpandButton (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\OperatorToChannel\\4O2Cinitiation.feature:3901:26)\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\OperatorToChannel\\4O2Cinitiation.feature:318:19)\n    at Context.resolveAndRunStepDefinition (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\OperatorToChannel\\4O2Cinitiation.feature:15500:29)\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\OperatorToChannel\\4O2Cinitiation.feature:14821:35)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 89,
+            "name": "Click on view Details based on the Date range",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

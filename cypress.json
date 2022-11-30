@@ -11,8 +11,8 @@
     "downloadsFolder":"cypress/fixtures/templates",
 
     "env": {
-     "Adminurl": "172.25.49.185",
-     "apiBaseURL": "172.25.49.185:3133"
+     "Adminurl": "172.25.48.177",
+     "apiBaseURL": "172.25.48.177:3133"
     },
     "projectId": "yizpik",
     "chromeWebSecurity": false,

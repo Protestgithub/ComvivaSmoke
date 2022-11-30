@@ -1,0 +1,92 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Auth Profile Creation for CCA",
+    "line": 1,
+    "id": "auth-profile-creation-for-cca",
+    "tags": [],
+    "uri": "CCAAuthProfile.feature",
+    "elements": [
+      {
+        "id": "auth-profile-creation-for-cca;to-verify-that-system-admin-should-be-able-to-add-customercareadmin-authorization-profile",
+        "keyword": "Scenario",
+        "line": 11,
+        "name": "To verify that system admin should be able to add CustomercareAdmin authorization profile",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 13,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 14816000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 14,
+            "name": "Select Authorization profile and add profile",
+            "result": {
+              "status": "passed",
+              "duration": 4190000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "select CustomercareAdmin user type and select user role",
+            "result": {
+              "status": "failed",
+              "duration": 36886000000,
+              "error_message": "AssertionError: Timed out retrying after 30000ms: Expected to find element: `1`, but never found it. Queried from element: <span.mat-radio-label-content>\n    at authorizationManagement.getAdministratorCC (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\PreRequisite\\2.ProfilesCreation\\CCAAuthProfile.feature:1509:59)\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\PreRequisite\\2.ProfilesCreation\\CCAAuthProfile.feature:114:28)\n    at Context.resolveAndRunStepDefinition (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\PreRequisite\\2.ProfilesCreation\\CCAAuthProfile.feature:15197:29)\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\PreRequisite\\2.ProfilesCreation\\CCAAuthProfile.feature:14518:35)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 16,
+            "name": "Fill all Details and Create CustomercareAdmin authorization profile",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "auth-profile-creation-for-cca;approval-of-added-cca-profile",
+        "keyword": "Scenario",
+        "line": 18,
+        "name": "Approval of added CCA profile",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 19,
+            "name": "Login into Mobiquity Portal as System admin Checker1",
+            "result": {
+              "status": "passed",
+              "duration": 13000000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 20,
+            "name": "User approval for Authorization profile",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 30000ms: Expected to find element: `#collapsible_listnode_18 > .fd-nested-list__title`, but never found it.\n    at authorizationManagement.getApprovals (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\PreRequisite\\2.ProfilesCreation\\CCAAuthProfile.feature:1333:17)\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\PreRequisite\\2.ProfilesCreation\\CCAAuthProfile.feature:142:28)\n    at Context.resolveAndRunStepDefinition (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\PreRequisite\\2.ProfilesCreation\\CCAAuthProfile.feature:15197:29)\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\PreRequisite\\2.ProfilesCreation\\CCAAuthProfile.feature:14518:35)"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

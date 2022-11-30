@@ -41,6 +41,9 @@ Before(() => {
   cy.fixture('OperatorToChannel').then(function (data5) {
     this.data5 = data5;
   })
+  cy.fixture('API/APIEndPoints').then(function (data20) {
+    this.data20 = data20;
+  })
 });
 
 
@@ -48,25 +51,28 @@ Before(() => {
 Given('Login into Mobiquity Portal as System admin Maker', function () {
   cy.launchURL(Cypress.env('Adminurl'))
   cy.SysAdminlogin()
-  cy.wait(2000)
-  cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
+  cy.fixture('userData/SystemAdminLogin.json').then((data) => {
+    let Name = data.SysAdminMakerName
+    cy.checkWelcomeText(Name)
+  })
 })
 Given('Login into Mobiquity Portal as System admin Checker1', function () {
   cy.launchURL(Cypress.env('Adminurl'))
-  cy.wait(2000)
   cy.SysAdminlogin2()
-  cy.wait(2000)
-  cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
+  cy.fixture('userData/SystemAdminLogin.json').then((data) => {
+    let Name = data.SysAdminChecker1Name
+    cy.checkWelcomeText(Name)
+  })
 })
-
 //------------------------------------TC_186-------------------------------------------------
 When('Navigate to Operator to channel and click on O2C transfer initiate', function () {
   welcomePage.getOperatorToChannelOption().scrollIntoView()
   welcomePage.getOperatorToChannelOption().click()
+  cy.intercept(this.data20.O2CTransferInitiat).as('getO2CTransferInitiate')  
   welcomePage.getO2CTransferInitiateOption().click()
+  cy.wait('@getO2CTransferInitiate')
 })
 And('Enter All the Mandatory details', function () {
-  cy.wait(3000)
   cy.fixture('userData/BusinessUserSuspensionData.json').then((usermobile) => {
     let BsnuserMobile = usermobile.registeredMobile
     O2CTransferInitiatePage.getMSISDN().type(BsnuserMobile, { force: true })
@@ -95,14 +101,15 @@ And('Enter All the Mandatory details', function () {
   O2CTransferInitiatePage.getRemarks().type(getRandomName(), { force: true })
 })
 And('Click on submit and Confirm', function () {
+  cy.intercept(this.data20.SubBtnn).as('getsubmit')
   O2CTransferInitiatePage.getSubmitButton().click({ force: true })
-  cy.wait(3000)
+  cy.wait('@getsubmit')
+  cy.intercept(this.data20.ConfBtn).as('getconfirm')
   O2CTransferInitiatePage.getConfirmButton().click({ force: true })
+  cy.wait(2000)
 })
 Then('Confirm the Error message', function () {
-  cy.wait(2000)
   O2CTransferInitiatePage.getErrorMessage().should('have.text', this.data5.O2CTransferInitiate.errorMessage, { force: true })
-
 })
 
 //-------------------------------------------------TC_165-----------------------------------------------------
@@ -113,7 +120,6 @@ And('Enter All the Mandatory details and type Invalid Character in Transfer amou
     O2CTransferInitiatePage.getMSISDN().type(BsnuserMobile, { force: true })
   })
   cy.wait(2000)
-
   cy.get('.fd-page.iframeContainer.svelte-1v5e28n > iframe').then(($iframe) => {
     const $body = $iframe.contents().find('body')
     const $win = $iframe[0].contentWindow
@@ -139,20 +145,18 @@ And('Enter All the Mandatory details and type Invalid Character in Transfer amou
 
 
 Then('Click on submit and Confirm Error Message', function () {
-  cy.wait(2000)
+  cy.intercept(this.data20.SubmitBUTTON).as('getsubmit')
   O2CTransferInitiatePage.getSubmitButton().click({ force: true })
-  cy.wait(2000)
+  cy.wait('@getsubmit')
   O2CTransferInitiatePage.getErrorMessage().should('have.text', this.data5.O2CTransferInitiate.ErrorMessage, { force: true })
 })
 
 //-------------------------------------------------TC_166-----------------------------------------------------
 And('Enter All the Details', function () {
-  cy.wait(3000)
   cy.readFile(BBAFile).then((usermobile) => {
     let BsnuserMobile = usermobile.registeredMobileO2C
     O2CTransferInitiatePage.getMSISDN().type(BsnuserMobile, { force: true })
   })
-  cy.wait(2000)
   cy.get('.fd-page.iframeContainer.svelte-1v5e28n > iframe').then(($iframe) => {
     const $body = $iframe.contents().find('body')
     const $win = $iframe[0].contentWindow

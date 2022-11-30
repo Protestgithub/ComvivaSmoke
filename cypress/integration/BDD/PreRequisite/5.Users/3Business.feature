@@ -11,7 +11,7 @@ Feature: Resumption of Business User
 # Test Case_ID : TC_59
 
 Scenario: To Verify that System Admin/Business Admin can resume suspension of the businsess user.
-Given Login into Mobiquity Portal as System admin Maker after Logout
+Given Login into Mobiquity Portal as System admin Maker
 When Navigate to User Management and Click on manage user
 And  Enter Mobile number and KYC number in search for suspension
 When User Click on eye button 
@@ -88,7 +88,7 @@ Given Login into Mobiquity Portal as Business admin User1
 # Test Case_ID : TC_59
 
 Scenario:  Suspension of the businsess user for O2C
-Given Login into Mobiquity Portal as System admin Maker after Logout
+Given Login into Mobiquity Portal as System admin Maker
 When Navigate to User Management and Click on manage user
 And  Enter Mobile number and KYC number in search for suspension
 When User Click on eye button 
@@ -99,10 +99,9 @@ And  click on yes
 Then Verify the user resume Confirmation message
 And Navigate to My Activity and Apply Modified User filters
 And Assert Buissness User Mobile Number for Suspension and Write Created on time
-Then Logout
 
 Scenario: Approval of Suspended User
-Given Login into Mobiquity Portal as another System admin Checker1 after logout
+Given Login into Mobiquity Portal as System admin Checker1
 When Navigate to Approvals and  click on suspended data
 And User click on Suspended submitted user data
 And Approve the Users
@@ -124,10 +123,9 @@ And Enter all the required business user details
 Then Confirmation message is displayed
 When Navigate to My Activity and Apply Add User filters
 Then Assert Created Buissness User Mobile Number and Write Created on time
-Then Logout
 
 Scenario: To verify notification sent on approval
-Given Login into Mobiquity Portal as another System admin Checker1 after logout
+Given Login into Mobiquity Portal as System admin Checker1
 When Navigate to Approvals and filter by Submitted status 
 And User click on submitted user data
 And Approve the Users and Check for SMS Notification sent to user

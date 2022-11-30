@@ -11,7 +11,6 @@ Scenario:To verify that System admin should able to see all Ambiguous Transactio
 Given Login into Mobiquity Portal as System admin Maker
 When Click on Ambiguous Order Transaction >> Download Ambiguous Order
 And Select Ambiguous Type and party type and party name
-And Select From Date , To Date
 Then Click on Download button.
 
 

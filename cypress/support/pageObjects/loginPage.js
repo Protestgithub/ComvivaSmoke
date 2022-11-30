@@ -1,10 +1,8 @@
 class loginPage{
 
     getiFrame(){
-        return cy.frameLoaded('.fd-page.iframeContainer.svelte-1v5e28n > iframe')
-        
+        return cy.frameLoaded('.fd-page.iframeContainer.svelte-1v5e28n > iframe')   
     }
-
     getInputForm(){
         return cy.iframe().find('.form-input')
     }

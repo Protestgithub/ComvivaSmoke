@@ -16,30 +16,32 @@ const DeleteGradesPage = new DeleteGrades()
 
 
 Before(() => {
-
     cy.fixture('login').then(function (data1) {
         this.data1 = data1;
     })
     cy.fixture('UserManagement').then(function (data2) {
         this.data2 = data2;
     })
-
+    cy.fixture('API/APIEndPoints').then(function (data20) {
+        this.data20 = data20;
+      })
 });
 
-Given('Login into Mobiquity Portal as masteradmin Maker', function () {
-    cy.wait(3000)
+//superadminm
+Given('Login into Mobiquity Portal as Super admin Maker', function () {
     cy.launchURL(Cypress.env('Adminurl'))
-    cy.login(this.data1.masterAdmin2.masterchckr1, this.data1.masterAdmin2.mstAdminPwd1)
-    cy.wait(2000)
-    cy.checkWelcomeText(this.data2.SuperAdminChecker)
-})
-
-
-
-
+    cy.login(this.data1.masteradminmaker.superadminm, this.data1.masteradminmaker.superadminmPwd)
+    cy.checkWelcomeText(this.data1.superadminm.superadminmaker)
+  })
+  
+  //superadminc
+  Given('Login into Mobiquity Portal as Super admin Checker', function () {
+    cy.launchURL(Cypress.env('Adminurl'))
+    cy.login(this.data1.masteradminchecker.superadminc, this.data1.masteradminchecker.superadmincPwd)
+    cy.checkWelcomeText(this.data1.superadminc.superadminchecker)
+  })
+  
 //----------------------------Modify----------------------------------------
-
-
 When('Click on User Profile Management >> Modify Grade', function () {
     welcomePage.getUserprofileManagementOption().click({ force: true })
     welcomePage.getModifyGrades().click({ force: true })
@@ -48,29 +50,22 @@ When('Click on User Profile Management >> Modify Grade', function () {
 And('Do required changes.', function () {
     cy.wait(2000)
     cy.ModifyRecord()
-
 })
 And('Click on Modify.', function () {
-    cy.wait(2000)
     ModifyGradePage.getModifybttn().click({ force: true })
 })
 And('Click on confirm button.', function () {
-    cy.wait(4000)
     ModifyGradePage.getConfirmbttn().click({ force: true })
-    cy.wait(4000)
 })
 
 //-----------------------------delete-----------------------------------------
-
-
 When('Click on User Profile Management >> Delete Grade', function () {
     welcomePage.getUserprofileManagementOption().click({ force: true })
     welcomePage.getDeleteGrades().click({ force: true })
-    cy.wait(2000)
+    cy.wait(3000)
     DeleteGradesPage.getDeleteRecord()
+    cy.intercept(this.data20.DeleteBttn).as('getdeletegd')
     DeleteGradesPage.getDeleteBttn().click({ force: true })
-    cy.wait(2000)
+    cy.wait('@getdeletegd') 
     DeleteGradesPage.getDeleteConfirm().click({ force: true })
-    cy.wait(2000)
-
 })

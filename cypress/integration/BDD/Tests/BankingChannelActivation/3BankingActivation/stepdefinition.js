@@ -27,6 +27,9 @@ Before(() => {
   cy.fixture('userData/subscriberReg').then(function (data6) {
     this.data6 = data6;
   })
+  cy.fixture('API/APIEndPoints').then(function (data20) {
+    this.data20 = data20;
+  })
 });
 //----------------------------------------POC - CODE-------------------------------------------------------
 //---------------------------------------------System Admin Login----------------------------------------------------
@@ -53,7 +56,7 @@ Then('Logout', function () {
 //------------TC_155-------------------------------------------------------------------------------------
 
 When('Navigate to Banking Channel Activation and click', function () {
-  cy.intercept('/assistedactivationui/').as('getBankingActivationPage')
+  cy.intercept(this.data20.BankingChannel).as('getBankingActivationPage')
    welcomePage.getBankingChannelActivation().click({ force: true })
   cy.wait('@getBankingActivationPage')
  
@@ -61,9 +64,14 @@ When('Navigate to Banking Channel Activation and click', function () {
 
 //--------TC_158-----------------------------------------------------------------------------------------
 And('Enter the Full KYC mobile number and search for the user', function () {
-  cy.wait(2000)
+  //cy.wait(2000)
+  cy.waitUntil(()=>{
+
+    return cy.iframe().find('div.panel-heading').eq(0).should('be.visible', { force: true })
+
+  })
   bankingActivationPage.getEnterCIFNumber().type(mobileNumberCIF, { force: true })
-  cy.wait(2000)
+  //cy.wait(2000)
   bankingActivationPage.getSearchButton().click()
 })
 And('Click on next and activate mobile Banking', function () {
@@ -80,15 +88,20 @@ And('Click on next and activate mobile Banking', function () {
 
 And('Click on next and activate internet Banking', function () {
  cy.wait(2000)
-  bankingActivationPage.getInternetBankingButton().click({ force: true })
+bankingActivationPage.getInternetBankingButton().click({ force: true })
  // bankingActivationPage.getConfirmButton().contains('Confirm').click({force:true})
 
 })
 //--------TC_160-----------------------------------------------------------------------------------------
 And('Enter the mobile or CIF number which is not registered and search for the user', function () {
-  cy.wait(2000)
+  //cy.wait(2000)
+  cy.waitUntil(()=>{
+
+    return cy.iframe().find('div.panel-heading').eq(0).should('be.visible', { force: true })
+
+  })
   bankingActivationPage.getEnterCIFNumber().type(this.data6.NotRegisteredMSISDN, { force: true })
-  cy.wait(2000)
+  //cy.wait(2000)
   bankingActivationPage.getSearchButton().click()
 })
 

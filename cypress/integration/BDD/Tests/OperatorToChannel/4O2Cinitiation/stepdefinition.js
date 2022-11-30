@@ -78,19 +78,20 @@ Before(() => {
 //---------------------------------------------System Admin Login----------------------------------------------------
 Given('Login into Mobiquity Portal as System admin Maker', function () {
   cy.launchURL(Cypress.env('Adminurl'))
-  cy.wait(2000)
   cy.SysAdminlogin()
-  cy.wait(2000)
-  cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
+  cy.fixture('userData/SystemAdminLogin.json').then((data) => {
+    let Name = data.SysAdminMakerName
+    cy.checkWelcomeText(Name)
+  })
 })
 Given('Login into Mobiquity Portal as System admin Checker1', function () {
   cy.launchURL(Cypress.env('Adminurl'))
-    cy.wait(2000)
   cy.SysAdminlogin2()
-  cy.wait(2000)
-  cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
+  cy.fixture('userData/SystemAdminLogin.json').then((data) => {
+    let Name = data.SysAdminChecker1Name
+    cy.checkWelcomeText(Name)
+  })
 })
-
 
 Then('Logout', function () {
   welcomePage.getUserMenu().click()
@@ -100,29 +101,31 @@ Then('Logout', function () {
 
 
 
+
 ////////////////////////////// SUDHEER ////////////////////////////////////////
 
 //----------TC_129-------To verify that Admin user can view all the transaction details under Order details menu------------
 
 
 When('Click on user management and Manage users', function () {
-
   manageUsersPage.getUsermanagement().scrollIntoView()
   manageUsersPage.getUsermanagement().click()
+ // cy.intercept('/usermanagementui/assets/icons/search.svg').as('getManageUsers')
   manageUsersPage.getManageUsers().click()
+ // cy.wait('@getManageUsers')
+ cy.waitUntil(()=>{
+  return cy.iframe().find('h4.text-secondary').should('be.visible', { force: true })
+  }) 
 })
 
 And('Enter Mobile numberin search Menu', function () {
-  cy.wait(3000)
   cy.getBusinessUserMobNum()
 })
 
 
 Then('Click on order details', function () {
-
   manageUsersPage.getOrderDetailsButton().click({ force: true })
   cy.wait(3000)
-
   manageUsersPage.getWalletExpandButton().click({ force: true })
   manageUsersPage.getViewMoreDetailsButton().click({ force: true })
 })
@@ -131,19 +134,18 @@ Then('Click on order details', function () {
 
 
 And('Enter Mobile number and KYC number in search menu for customer/ business users', function () {
-  cy.wait(3000)
-
   cy.getBusinessUserMobNum()
   manageUsersPage.getBusinessUserDetail().should('contain.text', ' Business')
 })
 
 And('Click on view Details', function () {
-  cy.wait(3000)
   manageUsersPage.getViewAllDetailsButton().click({ force: true })
+  cy.waitUntil(()=>{
+    return cy.iframe().find('h3.font-weight-bold').eq(0).should('be.visible', { force: true })
+  }) 
 })
 
 Then('Click on order details for customer/ business users', function () {
-  cy.wait(3000)
   manageUsersPage.getOrderDetailsButton().click({ force: true })
   manageUsersPage.getOrderDetailsMessage().should('have.text', ' Manage Users  > View Details')
 })
@@ -181,7 +183,6 @@ Then('Click on wallet view Details', function () {
 
 
 And('Click on Wallet Payment History for valid transaction with id', function () {
-  cy.wait(3000)
   manageUsersPage.getWalletPaymentHistoryButton().click({ force: true })
 
 })
@@ -192,14 +193,14 @@ And('Click on expand button on valid transaction with id', function () {
     let TID = data.TransactionID
     manageUsersPage.getSearchTransactionId().type(TID, { force: true }).click({ force: true })
   })
-  cy.wait(3000)
   manageUsersPage.getWalletExpandButton().click({ force: true })
+  cy.waitUntil(()=>{
+    return cy.iframe().find('label.label-text.ng-star-inserted').eq(0).should('be.visible', { force: true })
+  }) 
 })
 
 Then('Click on view Details for wallet transactions with id', function () {
-  cy.wait(3000)
   manageUsersPage.getViewMoreDetailsButton().click({ force: true })
-  //  cy.get('.modal-content').should('have.text', 'Transaction ID')
 })
 
 
@@ -211,68 +212,65 @@ Then('Click on view Details for wallet transactions with id', function () {
 
 
 And('Click on Wallet Payment History for transaction type', function () {
-  cy.wait(3000)
   manageUsersPage.getWalletPaymentHistoryButton().click({ force: true })
-
 })
 
 And('Click on filter and Select status type and Select apply', function () {
-  //cy.wait(3000)
   manageUsersPage.getFilterStatementButton().click({ force: true })
   manageUsersPage.getStatus().click()
-  cy.wait(3000)
+  cy.waitUntil(()=>{
+    return cy.iframe().find('label.filter-header.ng-star-inserted').should('be.visible', { force: true })
+  }) 
   manageUsersPage.getApplyFilterButton().click({ force: true })
 })
 And('Click on expand button for transaction type', function () {
-  cy.wait(3000)
   manageUsersPage.getWalletExpandButton().click({ force: true })
+  cy.waitUntil(()=>{
+    return cy.iframe().find('label.label-text.ng-star-inserted').eq(0).should('be.visible', { force: true })
+  }) 
 })
 
 Then('Click on view Details for transaction', function () {
-  cy.wait(3000)
   manageUsersPage.getViewMoreDetailsButton().click({ force: true })
-
 })
 
 
 //-----TC_135-------To verify that user can able to fetch the Statement based on the Date range.------------
 
 And('Click on Wallet Payment History based on the Date', function () {
-  // cy.wait(3000)
   manageUsersPage.getWalletPaymentHistoryButton().click({ force: true })
-
+  cy.waitUntil(()=>{
+    return cy.iframe().find('div.filter-container').should('be.visible', { force: true })
+  }) 
 })
 
 And('Click on filter', function () {
-  cy.wait(3000)
   manageUsersPage.getFilterStatementButton().click({ force: true })
+  cy.waitUntil(()=>{
+    return cy.iframe().find('label.filter-header.ng-star-inserted').should('be.visible', { force: true })
+  }) 
 })
 
 
 And('Click on expand button based on the Date', function () {
-  cy.wait(3000)
   manageUsersPage.getWalletExpandButton().click({ force: true })
 })
 
 And('Select start date and end date and  Click apply', function () {
-  cy.wait(3000)
-
   manageUsersPage.getDatePickerStart().click({ force: true })
   manageUsersPage.getStartDate().contains(this.data2.usercalender.startday).click({ force: true })
-
   manageUsersPage.getDatePickerEnd().click({ force: true })
   manageUsersPage.getEndDate().click({ force: true })
-
   manageUsersPage.getApplyFilterButton().click({ force: true })
-
 })
 And('Click on expand button based on the Date', function () {
-  cy.wait(3000)
   manageUsersPage.getWalletExpandButton().click({ force: true })
+  cy.waitUntil(()=>{
+    return cy.iframe().find('label.label-text.ng-star-inserted').eq(0).should('be.visible', { force: true })
+  }) 
 })
 
 Then('Click on view Details based on the Date range', function () {
-  cy.wait(3000)
   manageUsersPage.getViewMoreDetailsButton().click({ force: true })
   manageUsersPage.getDateRangeAssert().should('contain.text', 'More Details')
 })

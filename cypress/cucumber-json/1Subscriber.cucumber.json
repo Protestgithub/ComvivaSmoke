@@ -1,0 +1,568 @@
+[
+  {
+    "description": "    This feature includes registering, Modifying and Approval of Business Admin and\n    Customer Support Admin Users by System Admin",
+    "keyword": "Feature",
+    "name": "Subscriber Suspension and Resumption",
+    "line": 1,
+    "id": "subscriber-suspension-and-resumption",
+    "tags": [],
+    "uri": "1Subscriber.feature",
+    "elements": [
+      {
+        "id": "subscriber-suspension-and-resumption;to-verify-that-valid-systemadmin/businsess-user-is-able-to-initiate-subscriber-creation-for-suspension-and-resumption",
+        "keyword": "Scenario",
+        "line": 16,
+        "name": "To verify that valid SystemAdmin/businsess User is able to initiate Subscriber creation for suspension and Resumption",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 14
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 17,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 14956000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 18,
+            "name": "Navigate to User Management and Click on register",
+            "result": {
+              "status": "passed",
+              "duration": 421000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 19,
+            "name": "Select User type as Subscriber and click on Subscriber",
+            "result": {
+              "status": "passed",
+              "duration": 4412000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 20,
+            "name": "Enter all the required subscriber details for suspension and Resumption",
+            "result": {
+              "status": "passed",
+              "duration": 10149000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 21,
+            "name": "SubscrigReg Confirmation message is displayed",
+            "result": {
+              "status": "passed",
+              "duration": 1652000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 22,
+            "name": "Navigate to My Activity and Apply Add User filters",
+            "result": {
+              "status": "passed",
+              "duration": 6313000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 23,
+            "name": "Assert Suspension creation Subscriber Mobile Number and Write Created on time",
+            "result": {
+              "status": "passed",
+              "duration": 705000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "subscriber-suspension-and-resumption;to-verify-that-another-system-admin/businsess-user-is-able-to-approve-the-initiated-subscriber-creation-for-suspension-and-resumption",
+        "keyword": "Scenario",
+        "line": 33,
+        "name": "To verify that another System Admin/businsess User is able to approve the initiated Subscriber creation for suspension and Resumption",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 31
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 34,
+            "name": "Login into Mobiquity Portal as System admin Checker1",
+            "result": {
+              "status": "passed",
+              "duration": 11973000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 35,
+            "name": "Navigate to Approvals and filter by Submitted status",
+            "result": {
+              "status": "passed",
+              "duration": 3922000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 36,
+            "name": "User click on submitted user data for suspension",
+            "result": {
+              "status": "passed",
+              "duration": 295000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 37,
+            "name": "Approve the Users",
+            "result": {
+              "status": "passed",
+              "duration": 1398000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 38,
+            "name": "Added User status is approved",
+            "result": {
+              "status": "passed",
+              "duration": 1416000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "subscriber-suspension-and-resumption;to-verify-that-the-system-admin-is-able-to-suspend-a-subscriber-successfully-through-web.",
+        "keyword": "Scenario",
+        "line": 49,
+        "name": "To verify that the System Admin is able to suspend a subscriber successfully through web.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 46
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 50,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 12229000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 51,
+            "name": "Navigate to User Management and Click on manage user",
+            "result": {
+              "status": "passed",
+              "duration": 550000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 52,
+            "name": "enter user mobile number and search the SuspendResume user",
+            "result": {
+              "status": "passed",
+              "duration": 1771000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 53,
+            "name": "System Admin is able to view details",
+            "result": {
+              "status": "passed",
+              "duration": 929000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 54,
+            "name": "Suspend the user by giving the comment",
+            "result": {
+              "status": "passed",
+              "duration": 853000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 55,
+            "name": "Verify the user suspend Confirmation message",
+            "result": {
+              "status": "passed",
+              "duration": 333000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 56,
+            "name": "Navigate to My Activity and Apply Modified User filters",
+            "result": {
+              "status": "passed",
+              "duration": 1930000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 57,
+            "name": "Assert Suspension of Subscriber Mobile Number and Write Created on time",
+            "result": {
+              "status": "passed",
+              "duration": 428000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "subscriber-suspension-and-resumption;to-verify-that-the-system-admin-is-able-to-approve-the-suspended-user",
+        "keyword": "Scenario",
+        "line": 67,
+        "name": "To verify that the System Admin is able to Approve the suspended user",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 64
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 68,
+            "name": "Login into Mobiquity Portal as System admin Checker1",
+            "result": {
+              "status": "passed",
+              "duration": 11940000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 69,
+            "name": "Navigate to Approvals",
+            "result": {
+              "status": "passed",
+              "duration": 1128000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 70,
+            "name": "Admin click on Suspended user data",
+            "result": {
+              "status": "passed",
+              "duration": 954000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 71,
+            "name": "Approve to suspended the Users",
+            "result": {
+              "status": "passed",
+              "duration": 231000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 72,
+            "name": "Verify the user Suspended approval message",
+            "result": {
+              "status": "passed",
+              "duration": 556000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "subscriber-suspension-and-resumption;to-verify-that-the-system-admin-is-able-to-resume-a-suspend-subscriber-successfully-through-web.",
+        "keyword": "Scenario",
+        "line": 83,
+        "name": "To verify that the System Admin is able to resume a suspend subscriber successfully through web.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 81
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 84,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 12344000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 85,
+            "name": "Navigate to User Management and Click on manage user",
+            "result": {
+              "status": "passed",
+              "duration": 475000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 86,
+            "name": "enter user mobile number and search the SuspendResume user",
+            "result": {
+              "status": "passed",
+              "duration": 1313000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 87,
+            "name": "Resume the user by giving the comment",
+            "result": {
+              "status": "passed",
+              "duration": 1277000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 88,
+            "name": "Verify the user resume Confirmation message",
+            "result": {
+              "status": "passed",
+              "duration": 155000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 89,
+            "name": "Navigate to My Activity and Apply Modified User filters",
+            "result": {
+              "status": "passed",
+              "duration": 1437000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 90,
+            "name": "Assert Suspension of Subscriber Mobile Number and Write Created on time",
+            "result": {
+              "status": "passed",
+              "duration": 413000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "subscriber-suspension-and-resumption;to-verify-that-the-system-admin-is-able-to-approve-the-resumed-user.",
+        "keyword": "Scenario",
+        "line": 101,
+        "name": "To verify that the System Admin is able to approve the resumed user.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 99
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 102,
+            "name": "Login into Mobiquity Portal as System admin Checker1",
+            "result": {
+              "status": "passed",
+              "duration": 12092000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 103,
+            "name": "Navigate to Approvals",
+            "result": {
+              "status": "passed",
+              "duration": 630000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 104,
+            "name": "Admin click on Resumeded user data",
+            "result": {
+              "status": "passed",
+              "duration": 869000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 105,
+            "name": "Approve the Resumed User",
+            "result": {
+              "status": "passed",
+              "duration": 293000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 106,
+            "name": "Verify the user Resumed approval message",
+            "result": {
+              "status": "passed",
+              "duration": 571000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "subscriber-suspension-and-resumption;to-verify-that-system-admin/businsess-user-is-able-to-modify-subscriber-successfully.",
+        "keyword": "Scenario",
+        "line": 116,
+        "name": "To verify that System Admin/businsess user is able to modify Subscriber successfully.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 114
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 117,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 12057000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 118,
+            "name": "Navigate to User Management and Click on manage user",
+            "result": {
+              "status": "passed",
+              "duration": 431000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 119,
+            "name": "enter user mobile number and search the user",
+            "result": {
+              "status": "passed",
+              "duration": 980000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 120,
+            "name": "System Admin is able to view details",
+            "result": {
+              "status": "passed",
+              "duration": 347000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 121,
+            "name": "System Admin is able to edit subscriber details",
+            "result": {
+              "status": "passed",
+              "duration": 3122000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 122,
+            "name": "Confirm the edit details",
+            "result": {
+              "status": "passed",
+              "duration": 776000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 123,
+            "name": "Navigate to My Activity and Apply Modified User filters",
+            "result": {
+              "status": "passed",
+              "duration": 1477000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 124,
+            "name": "Assert Created Subscriber Mobile Number and Write Created on time",
+            "result": {
+              "status": "passed",
+              "duration": 487000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

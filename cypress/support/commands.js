@@ -69,10 +69,12 @@ const Password1 = 'Com@135'
 var name
 let Sysfilelogin = 'cypress/fixtures/userData/SystemAdminLogin.json'
 let BAlogin = 'cypress/fixtures/userData/BusinessAdminLogin.json'
-let ApiService='cypress/fixtures/ApiEndPoint.json'
+let ApiService='cypress/fixtures/API/APIEndPoints.json'
+var O2Cfile = "cypress/fixtures/userData/O2Cdata.json"
+var TransactionFile = "cypress/fixtures/userData/TransactionFile.json"
 let loginId, mobile, Password
 
-
+//------------------------------------------------------------------------------
 function getRandomName() {
     name = "";
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
@@ -81,93 +83,109 @@ function getRandomName() {
     return name;
 }
 function getRandomInt(min, max) {
-
-
-
     return Math.floor(Math.random() * (max - min + 1)) + min;
-
-
-
 }
+//-----------------------------------------------------------------------------
 
 Cypress.Commands.add('launchURL', (URL) => {
-    cy.visit(URL + '/dfscontainer/#/')
+    cy.waitUntil(()=>{
+      return  cy.visit(URL + '/dfscontainer/#/')
+    })
 })
 
+  Cypress.Commands.add('checkWelcomeText', (Text) => {
+    cy.wait(3000)
+    cy.frameLoaded(pageLogin.getiFrame())
+    cy.wait(3000)
+    welcomePage.getUserMenu().should('be.visible').click()
+    cy.wait(2000)
+     welcomePage.getWelcomeText().should('contain.text',Text)
+    welcomePage.getUserMenu().click()
+})
 Cypress.Commands.add('login', (Username, Password) => {
-      cy.frameLoaded(pageLogin.getiFrame())
-       cy.wait(2000)
-    //   cy.readFile(ApiService).then((data) =>{
-      //    let dataapi= data.loginurl
-   //       cy.intercept(dataapi).as('all')
-      pageLogin.getInputForm().eq(0).type(Username)
-      pageLogin.getInputForm().eq(1).type(Password)
-      pageLogin.getLoginBtn().eq(0).click()
-   //   cy.checkAPI(dataapi)
-      cy.wait(3000)
- // })
-  })
-Cypress.Commands.add('loginAgain', (Username, Password) => {
-    cy.wait(2000) 
-  //  cy.readFile(ApiService).then((data) =>{
- //       let dataapi= data.loginurl
- //       cy.intercept(dataapi).as('all')
-    pageLogin.getInputForm().eq(0).type(Username)
+    cy.frameLoaded(pageLogin.getiFrame())
+     cy.readFile(ApiService).then((data) =>{
+        let dataapi= data.loginurl
+        cy.intercept(dataapi).as('all')
+    cy.waitUntil(()=>{
+        return cy.iframe().find('.form-input').eq(0).type(Username)
+    })
     pageLogin.getInputForm().eq(1).type(Password)
     pageLogin.getLoginBtn().eq(0).click()
-//    cy.checkAPI(dataapi)
-    cy.wait(3000)
-//})
+    cy.checkAPI(dataapi)
+})
 })
 Cypress.Commands.add('login1', (Password) => {
     cy.frameLoaded(pageLogin.getiFrame())
-     cy.wait(2000)
-    // cy.readFile(ApiService).then((data) =>{
-    //    let dataapi= data.loginurl
-   //     cy.intercept(dataapi).as('all')
-    pageLogin.getInputForm().eq(0).type(Password)
+     cy.readFile(ApiService).then((data) =>{
+        let dataapi= data.loginurl
+        cy.intercept(dataapi).as('all')
+        cy.waitUntil(()=>{
+            return cy.iframe().find('.form-input').eq(0).type(Password)
+        })
     pageLogin.getInputForm().eq(1).type(Password)
     pageLogin.getchangepassword().click({ force: true })
-  //  cy.checkAPI(dataapi)
-    cy.wait(3000)
-//})
+    cy.checkAPI(dataapi)
 })
-Cypress.Commands.add('login1Again', (Password) => {
-     cy.wait(2000)
- //    cy.readFile(ApiService).then((data) =>{
-  //      let dataapi= data.loginurl
-  //      cy.intercept(dataapi).as('all')
-    pageLogin.getInputForm().eq(0).type(Password)
-    pageLogin.getInputForm().eq(1).type(Password)
-    pageLogin.getchangepassword().click({ force: true })
- //   cy.checkAPI(dataapi)
-    cy.wait(3000)
-//})
+})
+
+Cypress.Commands.add('Passwordchange', (Text) => {
+    cy.frameLoaded(pageLogin.getiFrame())
+    cy.waitUntil(()=>{
+        return cy.iframe().find('p.text-content').should('contain', Text)
+    })
 })
 
 Cypress.Commands.add('SysAdminlogin', () => {
-  //  cy.readFile(ApiService).then((data1) =>{
-  //      let dataapi= data1.loginurl
-   //     cy.intercept(dataapi).as('all')
-    cy.frameLoaded(pageLogin.getiFrame())
-     cy.wait(2000)
+    cy.frameLoaded(cy.waitUntil(()=>{
+        return cy.frameLoaded('.fd-page.iframeContainer.svelte-1v5e28n > iframe')
+    }))
     cy.readFile(Sysfilelogin).then((data) => {
         let loginID = data.LoginId
         let word = data.ChangePassword
-        pageLogin.getInputForm().eq(0).type(loginID)
+        cy.wait(2000)
+        cy.waitUntil(()=>{
+            return cy.iframe().find('.form-input').eq(0).should('be.visible').type(loginID)
+        })
         pageLogin.getInputForm().eq(1).type(word)
         pageLogin.getLoginBtn().eq(0).click()
-  //      cy.checkAPI(dataapi)
-        cy.wait(3000)
     })
-//})
+})
+
+
+Cypress.Commands.add('SysAdminlogin2', () => {
+    cy.frameLoaded(cy.waitUntil(()=>{
+        return cy.frameLoaded('.fd-page.iframeContainer.svelte-1v5e28n > iframe')
+    }))
+        cy.readFile(Sysfilelogin).then((data) => {
+        let loginID = data.LoginId2
+        let word = data.ChangePassword2
+        cy.wait(2000)
+        cy.waitUntil(()=>{
+            return cy.iframe().find('.form-input').eq(0).should('be.visible').type(loginID)
+        })
+        pageLogin.getInputForm().eq(1).type(word)
+        pageLogin.getLoginBtn().eq(0).click()
+})
+})
+
+Cypress.Commands.add('SysAdminlogin3', () => {
+    cy.frameLoaded(cy.waitUntil(()=>{
+        return cy.frameLoaded('.fd-page.iframeContainer.svelte-1v5e28n > iframe')
+    }))
+    cy.readFile(Sysfilelogin).then((data) => {
+        let loginID = data.LoginId3
+        let word = data.ChangePassword3
+         cy.wait(2000)
+         cy.waitUntil(()=>{
+            return cy.iframe().find('.form-input').eq(0).should('be.visible').type(loginID)
+        })
+        pageLogin.getInputForm().eq(1).type(word)
+        pageLogin.getLoginBtn().eq(0).click()
+    })
 })
 
 Cypress.Commands.add('BAlogin', () => {
-
-  //  cy.readFile(ApiService).then((data2) =>{
-  //      let dataapi= data2.loginurl
-  //      cy.intercept(dataapi).as('all')
     cy.frameLoaded(pageLogin.getiFrame())
      cy.wait(2000)
     cy.readFile(BAlogin).then((data) => {
@@ -176,76 +194,10 @@ Cypress.Commands.add('BAlogin', () => {
         pageLogin.getInputForm().eq(0).type(loginID)
         pageLogin.getInputForm().eq(1).type(word)
         pageLogin.getLoginBtn().eq(0).click()
-   //     cy.checkAPI(dataapi)
         cy.wait(3000)
-  //  })
 })
 })
-Cypress.Commands.add('SysAdminloginAgain', () => {
-   // cy.readFile(ApiService).then((data3) =>{
-    //    let dataapi= data3.loginurl
-  //      cy.intercept(dataapi).as('all')
-    cy.readFile(Sysfilelogin).then((data) => {
-        let loginID = data.LoginId
-        let word = data.ChangePassword
-         cy.wait(2000)
-        pageLogin.getInputForm().eq(0).type(loginID)
-        pageLogin.getInputForm().eq(1).type(word)
-        pageLogin.getLoginBtn().eq(0).click()
-   //     cy.checkAPI(dataapi)
-        cy.wait(3000)
-  //  })
-})
-})
-Cypress.Commands.add('SysAdminlogin2', () => {
-  //  cy.readFile(ApiService).then((data4) =>{
-  //      let dataapi= data4.loginurl
-  //      cy.intercept(dataapi).as('all')
-    cy.frameLoaded(pageLogin.getiFrame())
-    cy.readFile(Sysfilelogin).then((data) => {
-        let loginID = data.LoginId2
-        let word = data.ChangePassword2
-         cy.wait(2000)
-        pageLogin.getInputForm().eq(0).type(loginID)
-        pageLogin.getInputForm().eq(1).type(word)
-        pageLogin.getLoginBtn().eq(0).click()
-  //      cy.checkAPI(dataapi)
-        cy.wait(3000)
-  //  })
-})
-})
-Cypress.Commands.add('SysAdminlogin2Again', () => {
-   // cy.readFile(ApiService).then((data4) =>{
-     //   let dataapi= data4.loginurl
-    //    cy.intercept(dataapi).as('all')
-    cy.readFile(Sysfilelogin).then((data) => {
-        let loginID = data.LoginId2
-        let word = data.ChangePassword2
-         cy.wait(2000)
-        pageLogin.getInputForm().eq(0).type(loginID)
-        pageLogin.getInputForm().eq(1).type(word)
-        pageLogin.getLoginBtn().eq(0).click()
-    //    cy.checkAPI(dataapi)
-        cy.wait(3000)
-   // })
-})
-})
-Cypress.Commands.add('SysAdminlogin3', () => {
-  //  cy.readFile(ApiService).then((data4) =>{
-  //      let dataapi= data4.loginurl
-  //      cy.intercept(dataapi).as('all')
-    cy.readFile(Sysfilelogin).then((data) => {
-        let loginID = data.LoginId3
-        let word = data.ChangePassword3
-         cy.wait(2000)
-        pageLogin.getInputForm().eq(0).type(loginID)
-        pageLogin.getInputForm().eq(1).type(word)
-        pageLogin.getLoginBtn().eq(0).click()
-        cy.wait(3000)
-    //    cy.checkAPI(dataapi)
-  //  })
-    })
-})
+//-------------------------------------------------------------------------------
 
 Cypress.Commands.add('csvToJSON', (CsvFile,JsonFile) => {
     let result = [];
@@ -253,22 +205,19 @@ Cypress.Commands.add('csvToJSON', (CsvFile,JsonFile) => {
     .then((data) => {
      var lines = data.split("\n")
      var headers = lines[0].split(",")
-     
      for(var i=0;i<lines.length;i++){
       var obj = {};
       var currentline=lines[i].split(",");
-      
       for(var j=0;j<headers.length;j++){
         obj[headers[j]] = '';
-        
     }
    cy.log(obj)
-
       }
       cy.writeFile('cypress/fixtures/BulkData/BULK_O2C-template.json', obj)
-      
   })
   // console.log(result
+
+
 
 })
   Cypress.Commands.add('jsonToCSV', (JsonFile, CsvFile)=>{
@@ -284,38 +233,19 @@ Cypress.Commands.add('csvToJSON', (CsvFile,JsonFile) => {
         let str2 = csv;
         let sl3 = str2.slice(0, 1)
         cy.writeFile('cypress/fixtures/templates/BULK_O2C-template.csv', sl2 + '\n' + sl3)
-        })
-        
+        })        
     })
 
 
 
-
-Cypress.Commands.add('Passwordchange', (Text) => {
-    cy.frameLoaded(pageLogin.getiFrame())
-    pageLogin.getchangepasswordmessage().should('contain', Text)
-    cy.wait(3000)
-})
-
-
-
-Cypress.Commands.add('checkWelcomeText', (Text) => {
-    cy.frameLoaded(pageLogin.getiFrame())
-    welcomePage.getUserMenu().click()
-    // welcomePage.getWelcomeText().should('contain.text',Text)
-    welcomePage.getUserMenu().click()
-})
-
-
+//----------------------------------------------------------------------------------------------
 
 Cypress.Commands.add('getrandomUserEmailID', () => {
-
     let num = Math.floor((Math.random() * 100))
     let userID = getRandomName().concat(getRandomName() + num)
     let emailId = userID.concat('@comviva.com')
     registerPage.getLoginID().type(userID, { force: true })
     registerPage.getEmailID().type(emailId, { force: true })
-
 })
 
 Cypress.Commands.add('getrandomUserEmailID1', () => {
@@ -328,13 +258,15 @@ Cypress.Commands.add('getrandomUserEmailID1', () => {
     data.SYSEmailId = emailId
     cy.writeFile(Sysfilelogin, data)
     })
-
-    })
+})
 
 Cypress.Commands.add('FirstName', () => {
     let hi = getRandomName()
     registerPage.getFirstName().type(hi, { force: true })
-    cy.writeFile('cypress/fixtures/userData/UserManagement.json', { firstName: hi })
+    cy.readFile('cypress/fixtures/userData/UserManagement.json').then((data) => {
+    data.firstName = hi
+    cy.writeFile('cypress/fixtures/userData/UserManagement.json',data)
+    })
     function getRandomName() {
         name = "";
         var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
@@ -347,16 +279,12 @@ Cypress.Commands.add('FirstName', () => {
 
 
 Cypress.Commands.add('selectYear', (yearName) => {
-
     const currentYear = new Date().getFullYear()
-
     pricingEnginePage.getYearNameStart().then(($year) => {
-
         if ($year.text == yearName) {
             cy.log(yearName + 'Year is Selected')
             return
         }
-
         else {
             if (yearName < currentYear) {
                 pricingEnginePage.getNavigateBackStart().click()
@@ -365,18 +293,14 @@ Cypress.Commands.add('selectYear', (yearName) => {
                 pricingEnginePage.getNavigateForwardStart().click()
             }
         }
-
         cy.selectYear(yearName)
     })
-
 })
-Cypress.Commands.add('selectMonth', (monthName) => {
 
+Cypress.Commands.add('selectMonth', (monthName) => {
     let currentMonth = new Date().getMonth() + 1
     let givenMonth = dateUtils.getMonthIndexFromName(monthName)
-
     pricingEnginePage.getMonthNamerStart().then(($month) => {
-
         if ($month.text().includes(monthName)) {
             cy.log(monthName + 'month is selected')
             return
@@ -387,11 +311,9 @@ Cypress.Commands.add('selectMonth', (monthName) => {
             }
             else if (givenMonth < currentMonth) {
                 pricingEnginePage.getNavigateBackStart().click()
-
             }
         }
         cy.selectMonth(monthName)
-
     })
 })
 
@@ -412,11 +334,8 @@ Cypress.Commands.add('MPRandomName1', () => {
 })
 
 Cypress.Commands.add('selectDay', (dayName) => {
-
     pricingEnginePage.getCalanderDaysStart().eq(dayName - 1).click()
     cy.log(dayName + 'day is selected')
-
-
 })
 
 
@@ -452,8 +371,6 @@ Cypress.Commands.add('selectDay', (dayName) => {
 
 // })
 Cypress.Commands.add('OTP',(apiURL) => {
-
-
     cy.intercept('/mobiquitypay/v2/otp/generate').as('getOTP')
     APIPage.getOTPicon().eq(0).click({ force: true })
     cy.wait('@getOTP').then((interception) => {
@@ -488,7 +405,6 @@ Cypress.Commands.add('getSubMessage', (apiURL) => {
     approvalPage.getApproveRequest().click({ force: true })
     cy.wait(2000)
     //approvalPage.getApproveConfirmationMessage().contains(this.data2.confirmationMessage.editUser)
-
     //  cy.iframe().find('[id="generate-otp-icon"]').eq(0).click()
     cy.wait('@getSubMessage').then((interception) => {
         let response = interception.response.body
@@ -513,33 +429,22 @@ Cypress.Commands.add('getSubMessage', (apiURL) => {
             }
         }).then((res) => {
             let res1 = res.body
-            cy.writeFile('cypress/fixtures/userData/subscriberMsg.json', { subscriberMessage: res1 })
+            cy.readFile('cypress/fixtures/userData/subscriberMsg.json').then((data)=>{
+                data.subscriberMessage=res1
+                cy.writeFile('cypress/fixtures/userData/subscriberMsg.json', data)
+            })
         })
     })
 })
 
 
-
-
-Cypress.Commands.add('RandomName', () => {
-
-    let hi = getRandomName()
-    tcpPage.getprofilename().type(hi, { force: true })
-    cy.writeFile(filename, { TcpProfileName: hi })
-    function getRandomName() {
-        name = "";
-        var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-        for (var i = 0; i < 5; i++)
-            name += possible.charAt(Math.floor(Math.random() * possible.length));
-        return name;
-    }
-
-})
-
 Cypress.Commands.add('RPRandomName', () => {
     let hi = getRandomName()
     RegulatoryProfile1.getregulatoryprofilename().type(hi, { force: true })
-    cy.writeFile(RegulatoryFile, { RegulatoryProfileName: hi })
+    cy.readFile(RegulatoryFile).then((data) => {
+        data.RegulatoryProfileName = hi
+    cy.writeFile(RegulatoryFile, data)
+    })
     function getRandomName() {
         name = "RP";
         var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
@@ -564,7 +469,38 @@ Cypress.Commands.add('RPRandomName1', () => {
         return name;
     }
 })
-
+Cypress.Commands.add('FolderCreation',()=>{
+    cy.writeFile('cypress/fixtures/userData/SystemAdminLogin.json',{SysAdminMakerName:' '})
+    cy.writeFile('cypress/fixtures/userData/TCPdata.json', { TcpProfileName: ' ' })
+    cy.writeFile('cypress/fixtures/userData/TCPdata1.json', { TcpProfileNameSub: ' ' })
+    cy.writeFile('cypress/fixtures/userData/CustTCPdata.json', { CustTCPProfileName: ' ' })
+    cy.writeFile('cypress/fixtures/userData/CustTCPdata1.json', { CustTCPProfileNameSub:' ' })
+    cy.writeFile('cypress/fixtures/userData/subscriberMsg.json', {subscriberMessage:' '})
+    cy.writeFile('cypress/fixtures/userData/UserManagement.json', { firstName: ' ' })
+    cy.writeFile('cypress/fixtures/userData/Regulatory&MarketingProfile.json', {RegulatoryProfileName: ' '})
+    cy.writeFile('cypress/fixtures/userData/Gradedata.json', {GradeName:' '})
+    cy.writeFile('cypress/fixtures/userData/AdministratorMsg.json', {ModifyMessage:' '})
+    cy.writeFile('cypress/fixtures/userData/BusinessUsersData.json',{registeredMobile: ' ' })
+    cy.writeFile("cypress/fixtures/userData/BusinessUsersDataO2C.json",{registeredMobileO2C: ' '})
+    cy.writeFile('cypress/fixtures/userData/BusinessUserSuspensionData.json', { registeredMobile: ' '})
+    cy.writeFile('cypress/fixtures/userData/churnSubscriberReg.json', { churnSubscriberRegistration: ' ' })
+    cy.writeFile('cypress/fixtures/userData/cashIn&cashout.json',{cashinTransactionID:' '} )
+    cy.writeFile('cypress/fixtures/userData/Aservice.json',{ServiceRuleName: ' '})
+    cy.writeFile('cypress/fixtures/userData/AdministratorData.json',{BAMobileNumber: ' '})
+    cy.writeFile('cypress/fixtures/userData/BankData.json',{BAMobileNumber: ' '})
+    cy.writeFile('cypress/fixtures/userData/BusinessAdminLogin.json',{BAMobileNumber: ' '})
+    cy.writeFile('cypress/fixtures/userData/Domain&CAT.json',{BAMobileNumber: ' '})
+    cy.writeFile('cypress/fixtures/userData/O2CBulkData.json',{BAMobileNumber: ' '})
+    cy.writeFile('cypress/fixtures/userData/O2Cdata.json',{BAMobileNumber: ' '})
+    cy.writeFile('cypress/fixtures/userData/subscriberReg.json',{BAMobileNumber: ' '})
+    cy.writeFile('cypress/fixtures/userData/TransactionFile.json',{BAMobileNumber: ' '})
+    cy.writeFile('cypress/fixtures/churnData/ChurnUserInitiation.json',{IMSI:' '})
+    cy.writeFile('cypress/fixtures/profileData/AuthProfile.json',{SubscriberProfileName:' '})
+    cy.writeFile('cypress/fixtures/profileData/Profile.json',{SystemAdminSecuirtyProfile: ' '})
+    cy.writeFile('cypress/fixtures/profileData/SecurityProfileName.json',{subscriber: ' '})
+    cy.writeFile('cypress/fixtures/userData/WalletManagementdata.json',{WalletName:' '})
+    cy.writeFile('cypress/fixtures/userData/WalletManagementdata.json',{BankName:' '})
+})
 
 Cypress.Commands.add('MPRandomName', () => {
     let hi = getRandomName()
@@ -607,54 +543,36 @@ Cypress.Commands.add('Password', (apiURL) => {
             const authenticationValue = str1[20]
             cy.log(authenticationValue)
         })
-
     })
-
 })
 
 //----------------------------------------------------------------
 var name
 Cypress.Commands.add('GradeName', () => {
-
         let hi = getRandomName()
-
         var GradeFile = 'cypress/fixtures/userData/Gradedata.json'
-
-
-
         AddGradePage.getGradeName().type(hi, { force: true })
-
-        cy.writeFile(GradeFile, { GradeName: hi })
-
-
-
+        cy.readFile(GradeFile).then((data) => {
+        data.GradeName = hi
+        cy.writeFile(GradeFile, data)
+        })
         function getRandomName() {
-
             name = "";
-
             var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-
             for (var i = 0; i < 5; i++)
-
                 name += possible.charAt(Math.floor(Math.random() * possible.length));
-
             return name;
-
         }
-
     })
 var GradeFile = 'cypress/fixtures/userData/Gradedata.json'
 Cypress.Commands.add('ModifyRecord', () => {
-
     cy.readFile('cypress/fixtures/userData/Gradedata.json').then((user) => {
         let Grad = user.GradeName
         cy.log(Grad)
-
         cy.wait(3000)
         ModifyGradePage.getModifyTable().each(($row => {
             cy.wrap($row).within(function () {
                 cy.get('td').each(($el => {
-
                     if ($el.text() == Grad) {
                         ModifyGradePage.getCheckBox().click()
                         ModifyGradePage.getModData().type(this.data01.ModifyGrade.Firstdata, { force: true })
@@ -664,6 +582,7 @@ Cypress.Commands.add('ModifyRecord', () => {
         }))
     })
 })
+//--------------------------------------------------------------------------------------
 Cypress.Commands.add('O2CTransactionWriteData', () => {
     O2CTransferInitiatePage.getSuccessMsg().then((al => {
         let q = al.text()
@@ -673,7 +592,6 @@ Cypress.Commands.add('O2CTransactionWriteData', () => {
         cy.log(b)
         cy.readFile(O2Cfile).then((data) => {
             data.TransactionID = b
-
             cy.writeFile(TransactionFile, data)
           })
     }))
@@ -702,13 +620,10 @@ Cypress.Commands.add('O2CTransactionWriteData2', () => {
         cy.log(b)
         cy.readFile(TransactionFile).then((data) => {
             data.TransactionID2 = b
-
             cy.writeFile(TransactionFile, data)
           })
     }))
 })
-var O2Cfile = "cypress/fixtures/userData/O2Cdata.json"
-var TransactionFile = "cypress/fixtures/userData/TransactionFile.json"
 
 Cypress.Commands.add('O2CTransactionReadData', () => {
     cy.readFile(TransactionFile).then((id => {
@@ -716,27 +631,17 @@ Cypress.Commands.add('O2CTransactionReadData', () => {
         manageUsersPage.getSearchTransactionID().type(data, "{force:true}", "{enter}")
     }))
 })
-
+//-------------------------------------------------------------------------------------------
 Cypress.Commands.add('getprovider', () => {
-
     ReconPage.getprovider1().then(listing => {
-
             const randomNumber = getRandomInt(1, listing.length - 1);
-
             ReconPage.getprovider1().eq(randomNumber).then(($select) => {
-
             const text = $select.index()
-
             cy.wait(5000)
-
             cy.log(text)
-
             ReconPage.getProviderSelect().select(text,{force:true})  
-
         });
-
     })
-
 })
 
 
@@ -757,11 +662,9 @@ cy.readFile(filename).then((user)  => {
                 if($el.text().includes(Time) /*&& $el.text().includes()*/)
                 {
                 cy.get('[role="gridcell"]').eq(0).click({force: true})    
-                cy.wait(5000)
                 shouldStop = true
                 }
             }))
-
         })
     })
 }))
@@ -789,16 +692,15 @@ cy.readFile('cypress/fixtures/userData/Domain&CAT.json').then((user)  => {
                 shouldStop = true
                 }
             }))
-
         })
     })
 }))
 })
 )
-
-Cypress.Commands.add('getRecentDatainO2C',(filename) =>
+//----------------------------------------O2C Transaction Approval ----------------------------
+Cypress.Commands.add('getO2CData',(filename) =>
 cy.readFile('cypress/fixtures/userData/TransactionFile.json').then((data)  => {
-   let ID = data.TransactionID
+   let ID = data.referenceNumber
    let shouldStop = false
     cy.iframe().find('#o2cApproval1_displayTransactionDetails .wwFormTableC>tbody>tr','{force:true}').each(($row=>{
         cy.then(() => {
@@ -806,12 +708,127 @@ cy.readFile('cypress/fixtures/userData/TransactionFile.json').then((data)  => {
                 return
             }
         cy.wrap($row).within(function(){
-            cy.get('td').eq(4).each(($el=>{
+            cy.get('td').eq(3).each(($el=>{
                 cy.log($el.text())
                 if($el.text().includes(ID))
                 {
+                    cy.get('.tabcol').eq(4).then((al)=>{
+                        let q = al.text()
+                        cy.log(q)
+                        let a = q.trim()
+                        cy.log(a)
+                        cy.readFile(TransactionFile).then((data) => {
+                            data.TransactionID = a
+                            cy.writeFile(TransactionFile, data)
+                          })
+                    })
                     cy.wait(2000)
-                    cy.get('input[type="radio"]').last().click()
+                    cy.get('input[type="radio"]').click()
+                    cy.wait(2000)
+                shouldStop = true
+                }
+             })
+            )
+         }) 
+    })
+    }))
+}))
+Cypress.Commands.add('getO2CData1',(filename) =>
+cy.readFile('cypress/fixtures/userData/TransactionFile.json').then((data)  => {
+   let ID = data.referenceNumber
+   let shouldStop = false
+    cy.iframe().find('#o2cApproval1_displayTransactionDetails .wwFormTableC>tbody>tr','{force:true}').each(($row=>{
+        cy.then(() => {
+            if(shouldStop){
+                return
+            }
+        cy.wrap($row).within(function(){
+            cy.get('td').eq(3).each(($el=>{
+                cy.log($el.text())
+                if($el.text().includes(ID))
+                {
+                    cy.get('.tabcol').eq(4).then((al)=>{
+                        let q = al.text()
+                        cy.log(q)
+                        let a = q.trim()
+                        cy.log(a)
+                        cy.readFile(TransactionFile).then((data) => {
+                            data.TransactionID1 = a
+                            cy.writeFile(TransactionFile, data)
+                          })
+                    })
+                    cy.wait(2000)
+                    cy.get('input[type="radio"]').click()
+                    cy.wait(2000)
+                shouldStop = true
+                }
+             })
+            )
+         }) 
+    })
+    }))
+}))
+Cypress.Commands.add('getO2CData2',(filename) =>
+cy.readFile('cypress/fixtures/userData/TransactionFile.json').then((data)  => {
+   let ID = data.referenceNumber
+   let shouldStop = false
+    cy.iframe().find('#o2cApproval1_displayTransactionDetails .wwFormTableC>tbody>tr','{force:true}').each(($row=>{
+        cy.then(() => {
+            if(shouldStop){
+                return
+            }
+        cy.wrap($row).within(function(){
+            cy.get('td').eq(3).each(($el=>{
+                cy.log($el.text())
+                if($el.text().includes(ID))
+                {
+                    cy.get('.tabcol').eq(4).then((al)=>{
+                        let q = al.text()
+                        cy.log(q)
+                        let a = q.trim()
+                        cy.log(a)
+                        cy.readFile(TransactionFile).then((data) => {
+                            data.TransactionID2 = a
+                            cy.writeFile(TransactionFile, data)
+                          })
+                    })
+                    cy.wait(2000)
+                    cy.get('input[type="radio"]').click()
+                    cy.wait(2000)
+                shouldStop = true
+                }
+             })
+            )
+         }) 
+    })
+    }))
+}))
+Cypress.Commands.add('getO2CData3',(filename) =>
+cy.readFile('cypress/fixtures/userData/TransactionFile.json').then((data)  => {
+   let ID = data.referenceNumber
+   let shouldStop = false
+    cy.iframe().find('#o2cApproval1_displayTransactionDetails .wwFormTableC>tbody>tr','{force:true}').each(($row=>{
+        cy.then(() => {
+            if(shouldStop){
+                return
+            }
+        cy.wrap($row).within(function(){
+            cy.get('td').eq(3).each(($el=>{
+                cy.log($el.text())
+                if($el.text().includes(ID))
+                {
+                    cy.get('.tabcol').eq(4).then((al)=>{
+                        let q = al.text()
+                        cy.log(q)
+                        let a = q.trim()
+                        cy.log(a)
+                        cy.readFile(TransactionFile).then((data) => {
+                            data.TransactionID3 = a
+                            cy.writeFile(TransactionFile, data)
+                          })
+                    })
+                    cy.wait(2000)
+                    cy.get('input[type="radio"]').click()
                     cy.wait(2000)
                 shouldStop = true
                 }
@@ -833,7 +850,6 @@ Cypress.Commands.add('checkAPI', (API) => {
             console.log(JSON.stringify(inter.response.statusCode))
             cy.log('statusCode loop exit now')
         }
-        
         else {
             cy.log('ERROR')
             cy.log(JSON.stringify(inter.response.statusCode))

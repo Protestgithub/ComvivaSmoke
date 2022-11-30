@@ -61,15 +61,18 @@ Before(() => {
 Given('Login into Mobiquity Portal as System admin Maker', function () {
   cy.launchURL(Cypress.env('Adminurl'))
   cy.SysAdminlogin()
-  cy.wait(2000)
-  cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
+  cy.fixture('userData/SystemAdminLogin.json').then((data)=>{
+    let Name = data.SysAdminMakerName
+    cy.checkWelcomeText(Name)
+  })
 })
-Given('Login into Mobiquity Portal as another System admin Checker1 after logout', function () {
+Given('Login into Mobiquity Portal as System admin Checker1', function () {
   cy.launchURL(Cypress.env('Adminurl'))
-  cy.wait(2000)
   cy.SysAdminlogin2()
-  cy.wait(2000)
-  cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
+  cy.fixture('userData/SystemAdminLogin.json').then((data)=>{
+    let Name = data.SysAdminChecker1Name
+    cy.checkWelcomeText(Name)
+  })
 })
 Then('Logout', function () {
   welcomePage.getUserMenu().click()
@@ -78,7 +81,6 @@ Then('Logout', function () {
 })
 //----------------Navigate to User Management tab and Click on Register---------------------------------
 When('Navigate to User Management and Click on register', function () {
-
   welcomePage.getUserManagementOption().scrollIntoView()
   welcomePage.getUserManagementOption().click()
   welcomePage.getRegisterOption().click()
@@ -87,7 +89,6 @@ When('Navigate to User Management and Click on register', function () {
 //------------------------------------Approve----------------------------------------------------------
 And('System Admin is able to view details', function () {
   (manageUsersPage.getViewIcon().click({ force: true }))
-  cy.wait(3000)
 })
 
 //---------------------------------------Narendra-------------------------------------------------
@@ -95,16 +96,14 @@ And('System Admin is able to view details', function () {
 
 And('Select User type as Subscriber and click on Subscriber', function () {
   pageLogin.getiFrame()
-  cy.wait(2000)
-  registerPage.getregisterPageTitle().should('have.text', this.data2.registerPageTitle)
-  registerPage.getSelectSubUserTypeTab().contains(this.data2.subPersonalInfo1.subUserType).click({ force: true })
-  registerPage.getSelectSubUserTypeTab().contains(this.data2.subPersonalInfo1.subUserType).focused()
-  registerPage.getUserRole().contains(this.data2.subPersonalInfo1.subUserRole).click({ force: true })
+  registerPage.getregisterPageTitle().should('be.visible')
+  registerPage.getSelectSubUserTypeTab().click({ force: true })
+  registerPage.getSelectSubUserTypeTab().focused()
+  registerPage.getUserRole().click({ force: true })
   registerPage.getRegistrationMode().eq(0).click({ force: true })
 })
 //----------------------Basic Data---------------------------------------------------------------
 And('Fill all required details and Enter Email and Contact Number which are not verified and confirm Error message', function () {
-  cy.wait(2000)
   registerPage.getLastName().type(getRandomName(), { force: true })
   cy.getrandomUserEmailID()
   recurse(
@@ -117,14 +116,11 @@ And('Fill all required details and Enter Email and Contact Number which are not 
   registerPage.getCountry().select(this.data2.personalInfo.country, { force: true })
   registerPage.getState().select(this.data2.subPersonalInfo1.state, { force: true })
   registerPage.getCity().select(this.data2.subPersonalInfo1.city, { force: true })
-
 })
 
 //---------------------------------------------TC_183--------------------------------------------------------
 And('Fill all required details and Enter Invalid value and confirm Error message', function () {
-
   //-------------------Random Data-----------------------------------------------------------------
-  cy.wait(2000)
   registerPage.getFirstName().type(this.data2.subPersonalInfo1.firstName, { force: true })
   cy.getrandomUserEmailID()
   recurse(
@@ -150,24 +146,18 @@ And('Enter all the mandatory KYC details and click on next', function () {
   registerPage.getMakeThisPrimaryButton().click({ force: true })
   registerPage.getNextButtonBasic1().click({ force: true })
 })
+
 Then('Enter all the marketing ,regulatory, authorization profile details and click on next', function () {
-
   registerPage.getSecurityProfile().select("subscriberSecurityProfile", { force: true })
-
   registerPage.getAuthProfile().select("SubsDefault Profile", { force: true })
-
   registerPage.getReguProfile().select("NoKycprofile", { force: true })
-
   registerPage.getMarketingProfile().select("SUBSDefaultMP", { force: true })
-
   registerPage.getNextButtonBasic2().click({ force: true })
 })
 
 //-------------------------------------TC_187-------------------------------------------------
 
 And('Fill all required details and enter registered EmailID and confirm Error message', function () {
-
-  cy.wait(2000)
   registerPage.getFirstName().type(this.data2.personalInfo.firstName, { force: true })
   registerPage.getLastName().type(this.data2.personalInfo.lastName, { force: true })
   cy.iframe().find('select[data-test-id="preferredLanguage"]')
@@ -193,18 +183,19 @@ When('Navigate to User Management and Click on manage user', function () {
   welcomePage.getUserManagementOption().scrollIntoView()
   welcomePage.getUserManagementOption().click()
   welcomePage.getManageUsersLink().click()
-
 })
 
 And('enter user mobile number and search the user', function () {
-
   cy.getSubscriberMobileNumber()
   manageUsersPage.getSearchUserButton().click({ force: true })
-
 })
+
 Then('Confirm the edit details', function () {
   manageUsersPage.getConfirmButton().click({ force: true })
-  approvalPage.getSuccessMessage().should('have.text', this.data2.confirmationMessage.successMessage)
+  cy.waitUntil(()=>{
+    return cy.iframe().find('.text-center.text-success').should('be.visible')
+  })
+  approvalPage.getSuccessMessage().contains( this.data2.confirmationMessage.successMessage)
   manageUsersPage.getDoneButton().click({ force: true })
 })
 
@@ -217,41 +208,32 @@ And('System Admin is able to edit KYC details', function () {
   manageUsersPage.getEditToolTip().eq(0).click({ force: true })
   registerPage.getNextButtonBasic().eq(0).click({ force: true })
   registerPage.getKycDropDownButton().eq(0).click({ force: true })
-  cy.wait(5000)
   registerPage.getMakeThisPrimaryButton().eq(0).click({ force: true })
   registerPage.getAddMoreButton().click({ force: true })
   registerPage.getKycDropDownButton().eq(1).click({ force: true })
-  cy.wait(5000)
   registerPage.getKycIDType().select(this.data2.ModifyKycInfo.KycIDType, { force: true })
-
   registerPage.getKycIDValue().clear({ force: true }).type(KycValue, { force: true })
   registerPage.getMakeThisPrimaryButton().eq(0).click({ force: true })
   registerPage.getNextButtonKYC().eq(1).click({ force: true })
   registerPage.getNextButtonBasic2().click({ force: true })
-  cy.wait(2000)
-
 })
+
 Then('verify message sent to user', () => {
   cy.getSubMessage(Cypress.env('Adminurl'))
-
 })
 
 When('Navigate to Approvals and filter by Submitted status', function () {
   welcomePage.getUserManagementOption().scrollIntoView()
   welcomePage.getApprovalTab().click()
-  cy.wait(2000)
   welcomePage.getApprovalButtonTab().click()
 
   //-----------------------------------------Added waituntil-------------------------------------------------
   cy.waitUntil(() => {
-    return cy.iframe().find('h4.text-secondary').contains('Approvals')
+    return cy.iframe().find('h4.text-secondary')
   })
-
-  cy.wait(2000)
   //------------------------------------Filter the data--------------------------------------------------
   pageLogin.getiFrame()
   approvalPage.getFilter().click({ force: true })
-  cy.wait(2000)
   approvalPage.getAddUserCheckBox().click({ force: true })
   approvalPage.getApplyFilter().click({ force: true })
 })
@@ -267,21 +249,23 @@ And('Enter Mobile number and KYC number in search menu1', function () {
   })
   manageUsersPage.getSearchUserButton().click({ force: true })
 })
-And('Click on view Details and Click on Account info', function () {
 
+And('Click on view Details and Click on Account info', function () {
   manageUsersPage.getViewIcon().eq(0).click({ force: true })
   manageUsersPage.getAccountInfo().click({ force: true })
 })
 And('select either UNLock outgoing payments or UNLock incoming payments or Lock both', function () {
-
   manageUsersPage.getlockunclockWallets().click({ force: true })
-  manageUsersPage.getLockOutgoingPayements().click({ force: true })
-
+  // manageUsersPage.getLockOutgoingPayements().click({ force: true })
 })
+
 Then('Click On UNLock', function () {
   manageUsersPage.getunlockbtn().click({ force: true })
   manageUsersPage.getconfirmationlock().type(getRandomName(), { force: true })
   manageUsersPage.getconfirmationbtn().click({ force: true })
+  cy.waitUntil(()=>{
+    return cy.iframe().find('div .cdk-overlay-pane >snack-bar-container>simple-snack-bar>span').should('be.visible')
+  })
   manageUsersPage.getlockedmessage().should('have.text', this.data2.UnlockOutgoing)
 })
 

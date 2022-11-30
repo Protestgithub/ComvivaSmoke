@@ -57,18 +57,21 @@ Before(() => {
 //---------------------------------------------System Admin Login----------------------------------------------------
 Given('Login into Mobiquity Portal as System admin Maker', function () {
   cy.launchURL(Cypress.env('Adminurl'))
-  cy.wait(2000)
   cy.SysAdminlogin()
-  cy.wait(2000)
-  cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
+  cy.fixture('userData/SystemAdminLogin.json').then((data)=>{
+    let Name = data.SysAdminMakerName
+    cy.checkWelcomeText(Name)
+  })
 })
 Given('Login into Mobiquity Portal as System admin Checker1', function () {
   cy.launchURL(Cypress.env('Adminurl'))
-  cy.wait(2000)
   cy.SysAdminlogin2()
-  cy.wait(2000)
-  cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
+  cy.fixture('userData/SystemAdminLogin.json').then((data)=>{
+    let Name = data.SysAdminChecker1Name
+    cy.checkWelcomeText(Name)
+  })
 })
+
 
 Then('Logout', function () {
   welcomePage.getUserMenu().click()
@@ -85,7 +88,6 @@ When('Navigate to User Management and Click on register', function () {
 
 //-------------------------Confirmation Message displayed---------------------------------------------
 Then('Confirmation message is displayed', function () {
-
   registerPage.getConfirmationText().should('have.text', this.data2.personalInfo.successConfirmationMessage)
   registerPage.getDoneButton().click()
 })
@@ -93,28 +95,23 @@ Then('Confirmation message is displayed', function () {
 
 When('Navigate to Approvals and filter by Submitted status', function () {
   welcomePage.getApprovalTab().click()
-  cy.wait(2000)
   welcomePage.getApprovalButtonTab().click()
 
   //-------------------------------------Added waituntil--------------------
   cy.waitUntil(() => {
-    return cy.iframe().find('h4.text-secondary').contains('Approvals')
+    return cy.iframe().find('h4.text-secondary')
   })
 
-  cy.wait(2000)
   //------------------------------------Filter the data--------------------------------------------------
   pageLogin.getiFrame()
   approvalPage.getFilter().click({ force: true })
-  cy.wait(2000)
   approvalPage.getSubmittedCheckBox().click({ force: true })
   approvalPage.getApplyFilter().click({ force: true })
-
 })
 //------------------------------------Approve----------------------------------------------------------
 And('Navigate to My Activity and Apply Add User filters', function () {
   welcomePage.getMyActivity().click()
   myActivityPage.getFilter().click({ force: true })
-  cy.wait(2000)
   myActivityPage.getAddUser().click({ force: true })
   myActivityPage.getSubmittedStatus().click()
   myActivityPage.getApply().click()
@@ -123,21 +120,18 @@ And('Navigate to My Activity and Apply Add User filters', function () {
 And('Navigate to My Activity and Apply Modified User filters', function () {
   welcomePage.getMyActivity().click()
   myActivityPage.getFilter().click({ force: true })
-  cy.wait(2000)
   myActivityPage.getModificationOfUser().click({ force: true })
   myActivityPage.getSubmittedStatus().click()
   myActivityPage.getApply().click()
 })
 //--------------------------------------------------------------------------------------------------------
 And('Assert Created Business Admin Mobile Number and Write Created on time', function () {
-  cy.wait(2000)
-  cy.readFile(filename).then((user) => {
+    cy.readFile(filename).then((user) => {
     let BAMobile = user.BAMobileNumber
     var BBAMobile = " " + BAMobile
     manageUsersPage.getAssertMobile().eq(1).should('have.text', BBAMobile)
   })
-  cy.wait(2000)
-  myActivityPage.getCreatedOnTime().eq(0).invoke('text').then((time) => {
+    myActivityPage.getCreatedOnTime().eq(0).invoke('text').then((time) => {
     time = time.trim()
     cy.log(time)
     cy.readFile(filename).then((data) => {
@@ -148,13 +142,12 @@ And('Assert Created Business Admin Mobile Number and Write Created on time', fun
 })
 
 And('Assert Created Customer care Admin Mobile Number and Write Created on time', function () {
-  cy.wait(2000)
-  cy.readFile(filename).then((user) => {
+    cy.readFile(filename).then((user) => {
     let CAMobile = user.CCAMobileNumber
     var CCAMobile = " " + CAMobile
     manageUsersPage.getAssertMobile().eq(1).should('have.text', CCAMobile)
   })
-  cy.wait(2000)
+
   myActivityPage.getCreatedOnTime().eq(0).invoke('text').then((time) => {
     time = time.trim()
     cy.log(time)
@@ -168,8 +161,7 @@ And('Assert Created Customer care Admin Mobile Number and Write Created on time'
 //-----------------------------------------------------------------------------------------------
 And('User click on submitted user data', function () {
   cy.getApproval(filename)
-  cy.wait(2000)
-})
+  })
 And('User click on submitted user data for CCA', function () {
   cy.getApproval(filename)
 })
@@ -177,14 +169,14 @@ And('User click on submitted user data for CCA', function () {
 
 
 And('Approve the Users', function () {
-  cy.wait(2000)
   approvalPage.getApproveButton().click({ force: true })
-  cy.wait(2000)
   approvalPage.getApproveRequest().click({ force: true })
 })
 
 Then('User status is approved', function () {
-  cy.wait(2000)
+  cy.waitUntil(() => {
+    return cy.iframe().find('.mat-simple-snackbar.ng-star-inserted > span').should('be.visible')
+  })
   approvalPage.getApproveConfirmationMessage().contains(this.data2.confirmationMessage.addUser)
 })
 
@@ -192,16 +184,13 @@ When('Navigate to Manage User, and search Business Admin', function () {
   welcomePage.getUserManagementOption().scrollIntoView()
   welcomePage.getUserManagementOption().click()
   welcomePage.getManageUsersLink().click()
-
 })
 
 And('Search Business Admin', function () {
-  cy.wait(2000)
   cy.getBAMobileNumber()
   manageUsersPage.getSearchUserButton().click({ force: true })
 })
 And('Assert Created Business Admin Mobile Number', function () {
-  cy.wait(2000)
   cy.getBAMobileNumber()
   manageUsersPage.getSearchUserButton().click({ force: true })
   cy.readFile(filename).then((user) => {
@@ -213,7 +202,6 @@ And('Assert Created Business Admin Mobile Number', function () {
 
 And('System Admin is able to view details', function () {
   (manageUsersPage.getViewIcon().click({ force: true }))
-  cy.wait(3000)
 })
 
 And('System Admin is able to edit details', function () {
@@ -234,8 +222,8 @@ And('System Admin is able to edit details', function () {
 Then('Confirm the edit details', function () {
   manageUsersPage.getConfirmButton().click({ force: true })
   manageUsersPage.getDoneButton().click({ force: true })
-
 })
+
 Then('User modified is approved', function () {
   approvalPage.getApproveConfirmationMessage()
 })
@@ -245,26 +233,23 @@ Then('User modified is approved', function () {
 
 //----------------Navigate to User Management tab and Click on Register------------------------------------
 
-
 And('Select User type as Adminstrator and click on Customer care Admin', function () {
   pageLogin.getiFrame()
-  cy.wait(2000)
-  registerPage.getregisterPageTitle().should('have.text', this.data2.registerPageTitle)
-  registerPage.getSelectUserTypeTab().contains(this.data2.userType).click({ force: true })
-  registerPage.getSelectUserTypeTab().contains(this.data2.userType).focused()
-  cy.wait(2000)
-  registerPage.getUserRole().contains(this.data2.userRole1).click({ force: true })
+  registerPage.getregisterPageTitle().should('be.visible')
+  registerPage.getSelectUserTypeTab().eq(1).click({ force: true })
+  registerPage.getSelectUserTypeTab().eq(1).focused()
+  cy.waitUntil(() => {
+    return cy.iframe().find('div.mat-radio-label-content').should('be.visible')
+  })
+  registerPage.getUserRole().eq(1).click({ force: true })
   registerPage.getRegistrationMode().eq(0).click({ force: true })
-
 })
 
-And('Enter all the details', function () {
 
-  //-------------------Random Data-----------------------------------------------------------------
+And('Enter all the details', function () {
+//-------------------Random Data-----------------------------------------------------------------
   const uuid = () => Cypress._.random(1e8)
   mobile = "77" + uuid()
-
-  cy.wait(2000)
   registerPage.getLastName().type(getRandomName(), { force: true })
   cy.getCCArandomUserEmailID()
   recurse(
@@ -279,16 +264,14 @@ And('Enter all the details', function () {
   cy.iframe().find('select[data-test-id="preferredLanguage"]').select(this.data2.personalInfo.preferredLang, { force: true })
   registerPage.getCountry().select(this.data2.personalInfo.country, { force: true })
   registerPage.getNextButtonBasic().click({ force: true })
-
-  //----------------------Profile Data-----------------------------------------------------------------
+//----------------------Profile Data-----------------------------------------------------------------
   registerPage.getSecurityProfile().select('CustomerCareAdminSecurityProfile', { force: true })
   registerPage.getAuthProfile().select('CCEDefault Profile', { force: true })
   registerPage.getNextButtonProfile().click({ force: true })
   registerPage.getSubmitButton().click({ force: true })
-
 })
+
 And('Assert Created Customer Admin Mobile Number', function () {
-  cy.wait(2000)
   cy.getCCAMobileNumber()
   manageUsersPage.getSearchUserButton().click({ force: true })
   cy.readFile(filename).then((user) => {
@@ -296,25 +279,21 @@ And('Assert Created Customer Admin Mobile Number', function () {
     var CAMobile = " " + CCAMobile
     cy.waitUntil(()=>{
       return cy.iframe().find('[class="mat-tooltip-trigger ng-star-inserted"]').eq(1).should('have.text', CAMobile)
-    })
-    cy.wait(2000)
+    })   
   })
 })
-//-----------------------------SC_45----------------------------------------------------------
-//---------------------------Login with another Admin credentials------------------------------------
+//----------------------------------------SC_45----------------------------------------------------------
+//-----------------------------Login with another Admin credentials------------------------------------
 
 //------------------------------------MobileNumber------------------------------------------------------
-And('Search with Mobile Number', function () {
-  cy.wait(2000)
+And('Search with Mobile Number', function () {  
   cy.getCCAMobileNumber()
   manageUsersPage.getSearchUserButton().click({ force: true })
-
 })
 
 And('System Admin is able to edit details of the user', function () {
   const uuid = () => Cypress._.random(1e8)
   mobile = "77" + uuid()
-
   manageUsersPage.getEditToolTip().eq(0).click({ force: true })
   recurse(
     () => registerPage.getFirstName().clear().type(getRandomName(), { force: true }),
@@ -329,21 +308,17 @@ And('System Admin is able to edit details of the user', function () {
 
 And('Confirm the edit details Of the User', function () {
   manageUsersPage.getConfirmButton().click({ force: true })
-  cy.wait(2000)
   registerPage.getConfirmationText1().should('have.text', this.data2.confirmationMessage.editUser1)
   manageUsersPage.getDoneButton().click({ force: true })
 })
+
 And('Navigate to the Approvals', function () {
   welcomePage.getApprovalTab().click()
-  cy.wait(2000)
   welcomePage.getApprovalButtonTab().click()
-
   //-------------------Added waituntil----------------------------------
   cy.waitUntil(() => {
-    return cy.iframe().find('h4.text-secondary').contains('Approvals')
+    return cy.iframe().find('h4.text-secondary')
   })
-
-  cy.wait(2000)
   pageLogin.getiFrame()
 })
 
@@ -351,13 +326,11 @@ And('Navigate to the Approvals', function () {
 //---------------------------EmailID------------------------------------------------------
 
 And('Search with EmailID', function () {
-  cy.wait(2000)
   cy.getCCAEmailID()
   manageUsersPage.getSearchUserButton().click({ force: true })
 })
-//---------------------LoginID-----------------------------------------------------------
-And('Search with LoginID', function () {
-  cy.wait(2000)
+//--------------------------LoginID--------------------------------------------------------
+And('Search with LoginID', function () { 
   cy.getCCALoginID()
   manageUsersPage.getSearchUserButton().click({ force: true })
 })

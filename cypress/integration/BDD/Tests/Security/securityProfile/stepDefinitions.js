@@ -38,13 +38,6 @@ Before(() => {
 });
 
 
-function getRandomName() {
-  profName = "";
-  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  for (var i = 0; i < 5; i++)
-    profName += possible.charAt(Math.floor(Math.random() * possible.length));
-  return profName;
-}
 
 
 //----------------------------------------POC - CODE-------------------------------------------------------
@@ -52,15 +45,24 @@ function getRandomName() {
 Given('Login into Mobiquity Portal as System admin Maker', function () {
   cy.launchURL(Cypress.env('Adminurl'))
   cy.SysAdminlogin()
-  cy.wait(2000)
-  cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
+  cy.fixture('userData/SystemAdminLogin.json').then((data) => {
+    let Name = data.SysAdminMakerName
+    cy.checkWelcomeText(Name)
+  })
+})
+Given('Login into Mobiquity Portal as System admin Checker1', function () {
+  cy.launchURL(Cypress.env('Adminurl'))
+  cy.SysAdminlogin2()
+  cy.fixture('userData/SystemAdminLogin.json').then((data) => {
+    let Name = data.SysAdminChecker1Name
+    cy.checkWelcomeText(Name)
+  })
 })
 
 //------------TC_109--------------------------Security Profile------------------------------------------------
 //----------------------------------------Subscriber----------------------------------------------------
 
 When('Navigate to Security and click to select security profile', function () {
-
   welcomePage.getSecurityLink().scrollIntoView()
   welcomePage.getSecurityLink().click({ force: true })
   welcomePage.getSecurityProfileLink().click({ force: true })
@@ -74,13 +76,9 @@ When('Navigate to Security and click to select security profile', function () {
 And('Filter by slecting Default', function () {
   pageLogin.getiFrame()
   securityProfilePage.getFilter().click({ force: true })
-  cy.wait(2000)
   securityProfilePage.getDefaultCheckBox().click()
-  cy.wait(3000)
   securityProfilePage.getApplyFilter().scrollIntoView()
-
   securityProfilePage.getApplyFilter().click()
-  cy.wait(3000)
   securityProfilePage.getShowDropDown().click({ force: true })
   securityProfilePage.getSelectFromDropDown().click({ force: true })
 
@@ -141,13 +139,11 @@ When('Navigate to User Management and Click on register', function () {
 
 And('Select User type as Subscriber and click on Subscriber', function () {
   pageLogin.getiFrame()
-  cy.wait(2000)
   registerPage.getregisterPageTitle().should('have.text', this.data2.registerPageTitle)
   registerPage.getSelectSubUserTypeTab().contains(this.data2.subPersonalInfo.subUserType, { force: true }).click({ force: true })
   registerPage.getSelectSubUserTypeTab().contains(this.data2.subPersonalInfo.subUserType).focused()
   registerPage.getUserRole().contains(this.data2.subPersonalInfo.subUserRole).click({ force: true })
   registerPage.getRegistrationMode().eq(0).click({ force: true })
-
   registerPage.getNextButtonBasic().click({ force: true })
   registerPage.getNextButtonBasic1().click({ force: true })
 })

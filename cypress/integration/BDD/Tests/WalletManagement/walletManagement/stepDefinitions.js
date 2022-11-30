@@ -21,16 +21,27 @@ Before(() => {
   cy.fixture('UserManagement').then(function (data2) {
     this.data2 = data2;
   })
-
+  cy.fixture('API/APIEndPoints').then(function (data20) {
+    this.data20 = data20;
+  })
 });
 
 //--------------------------------------Login-------------------------------------------------------
 Given('Login into Mobiquity Portal as System admin Maker', function () {
   cy.launchURL(Cypress.env('Adminurl'))
-  cy.wait(2000)
   cy.SysAdminlogin()
-  cy.wait(2000)
-  cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
+  cy.fixture('userData/SystemAdminLogin.json').then((data) => {
+    let Name = data.SysAdminMakerName
+    cy.checkWelcomeText(Name)
+  })
+})
+Given('Login into Mobiquity Portal as System admin Checker1', function () {
+  cy.launchURL(Cypress.env('Adminurl'))
+  cy.SysAdminlogin2()
+  cy.fixture('userData/SystemAdminLogin.json').then((data) => {
+    let Name = data.SysAdminChecker1Name
+    cy.checkWelcomeText(Name)
+  })
 })
 
 
@@ -40,15 +51,14 @@ Given('Login into Mobiquity Portal as System admin Maker', function () {
 When('Navigate Multiple Wallet Management and Click on Add Wallet', function () {
   WalletManagementPage.getMultipleWalletManagement().click()
   WalletManagementPage.getAddWallet().click()
-  cy.wait(2000)
 })
 And('Enter Wallet name and click on Save', function () {
+  cy.wait(2000)
   cy.readFile(filename).then((data) =>{
   let walletName = data.WalletName
   WalletManagementPage.getWalletName().type(walletName, { force: true })
   })
   WalletManagementPage.getSaveButton().click({ force: true })
-  cy.wait(3000)
 })
 
 And('Verify the success message text', function() { 
@@ -61,15 +71,15 @@ And('Verify the success message text', function() {
 When('Navigate Multiple Wallet Management and Click on Modify Wallet', function () {
   WalletManagementPage.getMultipleWalletManagement().click()
   WalletManagementPage.getModifyWallet().click()
-  cy.wait(2000)
 })
 
 And('Click on Added Wallet and Click on Update', function () {
   cy.wait(3000)
   WalletManagementPage.getModify().click({ force: true })
-  cy.wait(2000)
+  cy.intercept(this.data20.UpdateBtn).as('mwallet')
   WalletManagementPage.getUpdateButton().click({ force: true })
-  cy.wait(3000)
+  cy.wait('@mwallet')
+  cy.intercept(this.data20.SaveWal).as('updatewallet')
   WalletManagementPage.getSaveWallet().click({ force: true })
-  cy.wait(3000)
+  cy.wait('@updatewallet')
 })

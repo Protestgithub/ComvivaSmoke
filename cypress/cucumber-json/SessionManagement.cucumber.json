@@ -1,0 +1,202 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Session Management",
+    "line": 1,
+    "id": "session-management",
+    "tags": [],
+    "uri": "SessionManagement.feature",
+    "elements": [
+      {
+        "id": "session-management;login-as-subscriber",
+        "keyword": "Scenario",
+        "line": 12,
+        "name": "Login as Subscriber",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 10
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 13,
+            "name": "Login into Mobiquity Portal as Subscriber",
+            "result": {
+              "status": "passed",
+              "duration": 4920000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "Change Password",
+            "result": {
+              "status": "passed",
+              "duration": 1486000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "Login into Mobiquity Portal as Subscriber1",
+            "result": {
+              "status": "passed",
+              "duration": 11219000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "session-management;to-verify-that-master-admin/network-admin-can-delete-all-the-session-details-of-a-selected-user-successfully.",
+        "keyword": "Scenario",
+        "line": 25,
+        "name": "To verify that Master Admin/Network Admin can delete all the session details of a selected user successfully.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 23
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 26,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 12741000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 27,
+            "name": "Navigate to SessionManagement",
+            "result": {
+              "status": "passed",
+              "duration": 275000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 28,
+            "name": "Click On All Session and Enter Number to search",
+            "result": {
+              "status": "passed",
+              "duration": 4074000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 29,
+            "name": "Delete Devices",
+            "result": {
+              "status": "passed",
+              "duration": 1203000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "session-management;to-verify-that-master-admin/network-admin-can-check-details-of-all-his-own-session-through-session-management-.",
+        "keyword": "Scenario",
+        "line": 39,
+        "name": "To verify that Master Admin/Network Admin can check details of all his own session through session management .",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 37
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 40,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 12500000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 41,
+            "name": "Navigate to SessionManagement",
+            "result": {
+              "status": "passed",
+              "duration": 234000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 42,
+            "name": "Click On My Sessions",
+            "result": {
+              "status": "passed",
+              "duration": 165000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "session-management;to-verify-that-master-admin/network-admin-can-check-other-user's-session-details-successfully.",
+        "keyword": "Scenario",
+        "line": 52,
+        "name": "To verify that Master Admin/Network Admin can check other user's session details successfully.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 50
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 53,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 12272000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 54,
+            "name": "Navigate to SessionManagement",
+            "result": {
+              "status": "passed",
+              "duration": 210000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 55,
+            "name": "Click On All Session and Enter Number to search",
+            "result": {
+              "status": "passed",
+              "duration": 1850000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -16,9 +16,7 @@ function getRandomName() {
         name += possible.charAt(Math.floor(Math.random() * possible.length));
     return name;
 }
-function getRandomInt(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+
 
 Cypress.Commands.add('getbankType', () => {
     pageLogin.getiFrame()
@@ -69,7 +67,6 @@ Cypress.Commands.add('geCheckBox', () =>
 )
 
 Cypress.Commands.add('getCSVfile', () => {
-    cy.wait(3000)
     BankManagementPage.getDownloadFileTemplate().click({ force: true })
     cy.wait(2000)
     cy.readFile('cypress/fixtures/templates/AddBranches.csv')
@@ -101,9 +98,7 @@ Cypress.Commands.add('getCSVfile', () => {
             cy.writeFile('cypress/fixtures/AddBranches.json', obj)
         })
 
-    cy.readFile("cypress/fixtures/AddBranches.json", (data) => {
-
-    }).then((data) => {
+    cy.readFile("cypress/fixtures/AddBranches.json").then((data) => {
         data.BranchCode = Code
         data.BranchName = getRandomName()
         cy.writeFile("cypress/fixtures/AddBranches.json", data)

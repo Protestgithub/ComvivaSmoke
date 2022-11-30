@@ -50,24 +50,31 @@ Before(() => {
   cy.fixture('StockManagement').then(function (data10) {
     this.data10 = data10;
   })
+  cy.fixture('API/APIEndPoints').then(function (data20) {
+    this.data20 = data20;
+  })
 });
 
 //---------------------------------------------System Admin Login----------------------------------------------------
 Given('Login into Mobiquity Portal as System admin Maker', function () {
   cy.launchURL(Cypress.env('Adminurl'))
   cy.SysAdminlogin()
-  cy.wait(2000)
-  cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
+  cy.fixture('userData/SystemAdminLogin.json').then((data)=>{
+    let Name = data.SysAdminMakerName
+    cy.checkWelcomeText(Name)
+  })
 })
 Given('Login into Mobiquity Portal as System admin Checker1', function () {
   cy.launchURL(Cypress.env('Adminurl'))
   cy.SysAdminlogin2()
-  cy.wait(2000)
-  cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
+  cy.fixture('userData/SystemAdminLogin.json').then((data)=>{
+    let Name = data.SysAdminChecker1Name
+    cy.checkWelcomeText(Name)
+  })
 })
 
 Then('Click on Approve button', function () {
-  cy.wait(3000)
+  
   stockInitiationPage.getApproveButton_1().click({ force: true })
 })
 
@@ -77,25 +84,27 @@ Then('Click on Approve button', function () {
 When('Navigate to Stock Management and Stock Transfer EA Enquiry', function () {
   stockManagementPage.getStockManagement().scrollIntoView()
   stockManagementPage.getStockManagement().click()
+  cy.intercept(this.data20.StockTransferEAEn).as('stockenquiry')
   stockManagementPage.getStockTransferEAEnquiry().click()
+  cy.wait('@stockenquiry')
 })
 
 And('Select the From & To Dates and Transaction Status', function () {
-  cy.wait(3000)
   stockManagementPage.getStockEnqLoadDetailsStatuses().select(this.data10.stockEnq_loadDetails_status.value, { force: true })
 })
 
 And('Click on Submit', function () {
-  cy.wait(3000)
+  cy.intercept(this.data20.StockEnqLoadD).as('enquirysubmit')
   stockManagementPage.getStockEnqLoadDetailsButtonSubmit().click({ force: true })
+  cy.wait('@enquirysubmit')
 })
 And('Select any Transaction ID from displayed list', function () {
-  cy.wait(3000)
   stockManagementPage.getTrasanctionIDRadioButton().check()
 })
 Then('Click on View Submit button', function () {
-  cy.wait(3000)
+  cy.intercept(this.data20.StockEnqRView).as('enquiryconfirm')
   stockManagementPage.getStockEnqRViewButtonSubmit().click({ force: true })
+  cy.wait('@enquiryconfirm')
 })
 
 //--------------------------------reimbursement----------------------------------------------------------------
@@ -103,11 +112,12 @@ Then('Click on View Submit button', function () {
 When('Click on Stock Management and Reimbursement', function () {
   stockManagementPage.getStockManagement().scrollIntoView()
   stockManagementPage.getStockManagement().click()
+  cy.intercept(this.data20.Reimbursement).as('reimbursement')
   stockManagementPage.getReimbursement().click()
+  cy.wait('@reimbursement')
 })
 
 And('Select User type', function () {
-  cy.wait(3000)
   stockManagementPage.getUserTypes().select(this.data10.usertype.value, { force: true })
 })
 
@@ -130,22 +140,22 @@ And('Enter MSISDN,Provider,Wallet Type,Reference Number and Remarks', function (
         })
     }
   })
-
-  cy.wait(3000)
   stockManagementPage.getReimbursementReferenceNumber().type(refno, { force: true })
   stockManagementPage.getRemark().type(testname, { force: true })
   cy.selectInstrumentType()
 })
 
 And('Click on reimbursement submit', function () {
-  cy.wait(3000)
+  cy.intercept(this.data20.Withdrawconfirm).as('CDBSubmit')
   stockManagementPage.getWithdrawconfirmDisplayButtonSubmit().click({ force: true })
+  cy.wait('@CDBSubmit')
 })
 Then('Enter amount and click on confirm', function () {
-  cy.wait(3000)
   stockManagementPage.getWithdrawConfirmDisplayAmount().type(amount, { force: true })
+  cy.intercept(this.data20.WithdrawconfirmDis).as('ConfirmDisBtn')
   stockManagementPage.getWithdrawconfirmDisplayButn().click({ force: true })
-  cy.wait(3000)
+  cy.wait('@ConfirmDisBtn')
+
   stockManagementPage.getReimbursementMessage().should('contain.text', "Reimbursement is successfully initiated")
 })
 
@@ -156,11 +166,12 @@ Then('Enter amount and click on confirm', function () {
 When('Click on Stock management and stock reimbursement approval', function () {
   stockManagementPage.getStockManagement().scrollIntoView()
   stockManagementPage.getStockManagement().click()
+  cy.intercept(this.data20.StockReimb).as('ReimApproval')
   stockManagementPage.getStockReimbursementApproval().click()
+  cy.wait('@ReimApproval')
 })
 
 And('Select the initiated stock reimbursement request', function () {
-  cy.wait(3000)
   cy.iframe().find('.tabcol').then(($data) => {
     cy.log($data)
     if ($data.text().includes(this.data10.stockReimbursementApprovalErrorMessage)) {
@@ -168,10 +179,12 @@ And('Select the initiated stock reimbursement request', function () {
     }
     else {
       stockManagementPage.getReimbursementApproval().check();
+      cy.intercept(this.data20.WithdrawlActionApp).as('WAcApBtnSub')
       stockManagementPage.getWithdrawlActionApprovalButtonSubmit().click({ force: true })
-      cy.wait(3000)
+      cy.wait('@WAcApBtnSub')
+      cy.intercept(this.data20.ConfirmApp).as('confirmApprv')
       stockManagementPage.getConfirmApprove().click({ force: true })
-      cy.wait(3000)
+      cy.wait('@confirmApprv')
       stockManagementPage.getReimbursementApproveMessage().should('contain.text', "successful with the transaction ID")
     }
   })
@@ -184,43 +197,48 @@ And('Select the initiated stock reimbursement request', function () {
 When('Navigate to Stock Management and Stock Withdrawal', function () {
   stockManagementPage.getStockManagement().scrollIntoView()
   stockManagementPage.getStockManagement().click()
+  cy.intercept(this.data20.StockWithd).as('stockWithdrawal')
   stockManagementPage.getStockWithdraw().click()
+  cy.wait('@stockWithdrawal')
 })
 
 And('User Select Stock Withdraw Wallet Type', function () {
-  cy.wait(5000)
   stockManagementPage.getWithdrawWalletType().select('IND01', { force: true })
   stockManagementPage.getWithdrawAvailableBalance().click({ force: true })
+ 
 })
+And('User Should Enter Stock Withdraw Amount', function () {
+  
+  stockManagementPage.getWithdrawAmount().type(amount1, { force: true })
+  cy.waitUntil(()=>{
+    return cy.iframe().find('label[class="label"]').eq(3).should('be.visible',{force:true})
+  })
+})
+Then('User Click on Stock Withdraw Submit button', function () {
+  cy.intercept(this.data20.StockWithdrawBtn).as('stk')
+  stockManagementPage.getStockWithdrawButtonSubmit().click({ force: true })
+  cy.wait('@stk',{timeout:10000})
+  stockManagementPage.getStockWithdrwErrorMessage().should('have.text', this.data10.stockwithdrawerrormessage)
+})
+
+//---------TC_172------To verify that proper error message should be displayed when amount field contains any invalid character
+
 And('User Should select Stock Withdraw Bank', function () {
   cy.wait(3000)
   stockManagementPage.getWithdrawBankNames().select(this.data10.selectBank.bankname, { force: true })
 })
 And('User Should Enter Stock Withdraw Bank Account Number', function () {
-  cy.wait(3000)
+  cy.wait(2000)
   stockManagementPage.getWithdrawBankAccountNumbes().select(this.data10.bankaccnumber.number, { force: true })
 })
-And('User Should Enter Stock Withdraw Amount', function () {
-  cy.wait(3000)
-  stockManagementPage.getWithdrawAmount().type(amount1, { force: true })
-})
-Then('User Click on Stock Withdraw Submit button', function () {
-  cy.wait(3000)
-  stockManagementPage.getStockWithdrawButtonSubmit().click({ force: true })
-  cy.wait(10000)
-  stockManagementPage.getStockWithdrwErrorMessage().should('have.text', this.data10.stockwithdrawerrormessage)
-})
-
-
-//---------TC_172------To verify that proper error message should be displayed when amount field contains any invalid character
 
 And('User Should Enter Stock Withdraw invalid Amount', function () {
-  cy.wait(3000)
   stockManagementPage.getWithdrawAmount().type(testname, { force: true })
 })
 Then('User Click on Stock Withdraw invalid Amount Submit button', function () {
+  cy.intercept(this.data20.StockWithSubBtn).as('stk')
   stockManagementPage.getStockWithdrawButtonSubmit().click({ force: true })
-  cy.wait(5000)
+  cy.wait('@stk',{timeout:10000})
   stockManagementPage.getStockWithdrwErrorMessage().should('contain.text', this.data10.stockwithdrawerrormessage2)
 })
 
@@ -228,21 +246,21 @@ Then('User Click on Stock Withdraw invalid Amount Submit button', function () {
 When('Navigate to Stock Management and Stock Initiation', function () {
   stockManagementPage.getStockManagement().scrollIntoView()
   stockManagementPage.getStockManagement().click()
+  cy.intercept(this.data20.StockInit).as('stockinitiation')
   stockManagementPage.getStockInitiation().click()
+  cy.wait('@stockinitiation')
 })
 
 And('User Should Enter Stock Initiation Reference number', function () {
-  cy.wait(3000)
   stockManagementPage.getStockInitRefNo().type(refno, { force: true })
 })
 And('User Should Enter Stock Initiation Amount', function () {
-  cy.wait(3000)
   stockManagementPage.getStockInitWithdrawAmount().type(testname, { force: true })
 })
 
 Then('User Click on Stock Initiation Submit button', function () {
-  cy.wait(3000)
+  cy.intercept(this.data20.StockInitButtonSub).as('stockInitiationBtn')
   stockManagementPage.getStockInitButtonSubmit().click({ force: true })
-  cy.wait(5000)
+  cy.wait('@stockInitiationBtn')
   stockManagementPage.getStockInitErrorMessage().should('have.text', this.data10.stockInitErrorMessage)
 })

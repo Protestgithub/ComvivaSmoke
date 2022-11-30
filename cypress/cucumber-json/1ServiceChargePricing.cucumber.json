@@ -1,0 +1,322 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "ServiceChargePricing",
+    "line": 1,
+    "id": "servicechargepricing",
+    "tags": [],
+    "uri": "1ServiceChargePricing.feature",
+    "elements": [
+      {
+        "id": "servicechargepricing;to-verify-that-system-admin-should-be-able-to-view-pricing-engine-module-on-web.",
+        "keyword": "Scenario",
+        "line": 9,
+        "name": "To verify that System admin should be able to view pricing engine module on web.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 7
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 10,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 15479000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 11,
+            "name": "Click on Pricing Engine",
+            "result": {
+              "status": "passed",
+              "duration": 181000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 12,
+            "name": "System admin should be able to view pricing engine module on web.",
+            "result": {
+              "status": "passed",
+              "duration": 7139000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "servicechargepricing;to-verify-that-user-other-than-system-admin-should-not-able-to-view-pricing-engine-module-on-web.",
+        "keyword": "Scenario",
+        "line": 21,
+        "name": "To verify that User other than System admin should not able to view pricing engine module on web.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 19
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 22,
+            "name": "Login into Mobiquity Portal as Super admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 11334000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 23,
+            "name": "User other than System admin should not able to view pricing engine module on web.",
+            "result": {
+              "status": "passed",
+              "duration": 4109000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "servicechargepricing;to-verify-that-user-should-be-redirected-to-a-new-page-for-pricing-engine.",
+        "keyword": "Scenario",
+        "line": 32,
+        "name": "To verify that user should be redirected to a new page for pricing engine.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 30
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 33,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 12800000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 34,
+            "name": "Click on Pricing Engine",
+            "result": {
+              "status": "passed",
+              "duration": 188000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 35,
+            "name": "User should be redirected to a new page for pricing engine.",
+            "result": {
+              "status": "passed",
+              "duration": 7076000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "servicechargepricing;to-verify-that-system-admin-should-be-able-to-add-initiate-service-charge-through-pricing-engine-module-successfully.",
+        "keyword": "Scenario",
+        "line": 44,
+        "name": "To verify that System admin should be able to add initiate service charge through Pricing engine module successfully.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 42
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 45,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 12598000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 46,
+            "name": "Click on Pricing Engine",
+            "result": {
+              "status": "passed",
+              "duration": 83000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 47,
+            "name": "Click on the Service Policy",
+            "result": {
+              "status": "passed",
+              "duration": 6352000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 48,
+            "name": "Click on any service to add service charge.",
+            "result": {
+              "status": "passed",
+              "duration": 45237000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "servicechargepricing;to-verify-that-user-should-also-be-able-to-make-commission-profile-with-the-same-pricing-engine-module.",
+        "keyword": "Scenario",
+        "line": 60,
+        "name": "To verify that user should also be able to make commission profile with the same pricing engine module.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 57
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 61,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 12762000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 62,
+            "name": "Click on Pricing Engine",
+            "result": {
+              "status": "passed",
+              "duration": 93000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 63,
+            "name": "Click on commission",
+            "result": {
+              "status": "passed",
+              "duration": 3176000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 64,
+            "name": "Click on commission and select the service you want to add commission profile for",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 30000ms: expected '<span>' to have text 'Commission Policy has been applied successfully', but the text was ''\n    + expected - actual\n\n    +'Commission Policy has been applied successfully'\n\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\PricingEngine\\1ServiceChargePricing.feature:396:43)\n    at Context.resolveAndRunStepDefinition (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\PricingEngine\\1ServiceChargePricing.feature:14767:29)\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\PricingEngine\\1ServiceChargePricing.feature:14088:35)"
+            }
+          }
+        ]
+      },
+      {
+        "id": "servicechargepricing;to-verify-that-user-should-be-able-to-calculate-service-charge-using-pricing-calculator.",
+        "keyword": "Scenario",
+        "line": 73,
+        "name": "To verify that user should be able to calculate service charge using pricing calculator.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 71
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 74,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 13247000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 75,
+            "name": "Click on Pricing Engine",
+            "result": {
+              "status": "passed",
+              "duration": 268000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 76,
+            "name": "Click on Pricing Caluclator",
+            "result": {
+              "status": "passed",
+              "duration": 8425000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 77,
+            "name": "Enter the party Details",
+            "result": {
+              "status": "passed",
+              "duration": 5338000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 78,
+            "name": "Enter Other Details",
+            "result": {
+              "status": "passed",
+              "duration": 1164000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 79,
+            "name": "Calculate Service Charge",
+            "result": {
+              "status": "passed",
+              "duration": 624000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

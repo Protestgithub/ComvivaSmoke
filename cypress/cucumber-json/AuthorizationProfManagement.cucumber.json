@@ -1,0 +1,163 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Modify Authorization profile",
+    "line": 1,
+    "id": "modify-authorization-profile",
+    "tags": [],
+    "uri": "AuthorizationProfManagement.feature",
+    "elements": [
+      {
+        "id": "modify-authorization-profile;to-verify-that-system-admin-should-be-able-to-view-authorization-profile-for-the-selected-category",
+        "keyword": "Scenario",
+        "line": 13,
+        "name": "To verify that system admin should be able to View Authorization profile for the selected category",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 14,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 14733000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 15,
+            "name": "Select Authorization profile",
+            "result": {
+              "status": "passed",
+              "duration": 173000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 16,
+            "name": "View Profiles",
+            "result": {
+              "status": "passed",
+              "duration": 10081000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "modify-authorization-profile;to-verify-that-system-admin-should-be-able-to-modify-an-already-created-authorization-profile",
+        "keyword": "Scenario",
+        "line": 26,
+        "name": "To verify that system admin should be able to modify an already created authorization profile",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 27,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 12825000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 28,
+            "name": "Select Authorization profile",
+            "result": {
+              "status": "passed",
+              "duration": 84000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 29,
+            "name": "Click on Modify Icon in front of authorization profile to modify",
+            "result": {
+              "status": "passed",
+              "duration": 2395000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 30,
+            "name": "Logout",
+            "result": {
+              "status": "passed",
+              "duration": 540000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 31,
+            "name": "Login into Mobiquity Portal as System admin Checker1",
+            "result": {
+              "status": "passed",
+              "duration": 12317000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 32,
+            "name": "User approval for modified Authorization profile",
+            "result": {
+              "status": "failed",
+              "duration": 1000000,
+              "error_message": "AssertionError: Timed out retrying after 30000ms: Expected to find element: `#collapsible_listnode_18 > .fd-nested-list__title`, but never found it.\n    at authorizationManagement.getApprovals (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\AuthorizationProfile\\AuthorizationProfManagement.feature:1331:17)\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\AuthorizationProfile\\AuthorizationProfManagement.feature:135:28)\n    at Context.resolveAndRunStepDefinition (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\AuthorizationProfile\\AuthorizationProfManagement.feature:14829:29)\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\AuthorizationProfile\\AuthorizationProfManagement.feature:14150:35)"
+            }
+          }
+        ]
+      },
+      {
+        "id": "modify-authorization-profile;to-verify-that-system-admin-should-be-able-to-delete-an-authorization-profile",
+        "keyword": "Scenario",
+        "line": 41,
+        "name": "To verify that System admin should be able to delete an authorization profile",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 42,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 13723000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 43,
+            "name": "Select Authorization profile",
+            "result": {
+              "status": "passed",
+              "duration": 211000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 44,
+            "name": "Click on Modify Icon in front of authorization profile to delete",
+            "result": {
+              "status": "passed",
+              "duration": 1131000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

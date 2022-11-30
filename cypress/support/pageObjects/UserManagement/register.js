@@ -21,7 +21,7 @@ class register {
     }
 
     getUserRole(){
-        return  cy.iframe().find('.mat-radio-label-content')
+        return  cy.iframe().find('div.mat-radio-label-content')
     }
     getRegistrationMode()
     {
@@ -71,9 +71,7 @@ class register {
     }
      getCurrency()
     {
-
         return cy.iframe().find('select[name="currency"]')
-
     }
     getState(){
         return cy.iframe().find('select[id="state"]')
@@ -97,7 +95,7 @@ class register {
         return cy.iframe().find('#kycGracePeriod').eq(0)
     }
     getKycTab(){
-        return cy.iframe().find('.mat-step-text-label.ng-star-inserted').contains('KYC')
+        return cy.iframe().find('div.mat-step-text-label.ng-star-inserted').eq(1)
     }
     getMakeThisPrimaryButton(){
         return cy.iframe().find('[class="slider round"]')
@@ -329,44 +327,31 @@ getErrorMaxKycReached(){
     return cy.iframe().find('.text-center').eq(1).contains('Maximum accounts for the primary kyc reached')
 }
 getNextButtonBasic4(){
-
         return cy.iframe().find('button[data-test-id="next"]').eq(4)
-
     }
 getBankName()
     {
-
       return cy.iframe().find('select[name="bankName"]')
-
     }
 getAccountNum()
-
     {
-
      return cy.iframe().find('input[name="accNumber"]')
-
     }
 getConfirmAccNum()
     {
-
     return cy.iframe().find('input[name="confirmAccNumber"]')
-
     }
 getNickName()
     {
-
     return cy.iframe().find('input[name="nickname"]')
-
     }
 getBankAccountType()
     {
       return cy.iframe().find('select[name="bankAccountType"]')
-
     }
 getBankIFSC()
     {
     return cy.iframe().find('input[name="bankIfsc"]')
-
     }
 
 }

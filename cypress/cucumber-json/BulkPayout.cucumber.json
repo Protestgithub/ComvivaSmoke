@@ -1,0 +1,303 @@
+[
+  {
+    "description": "        Bulk initiate of Operator to Channel transfer",
+    "keyword": "Feature",
+    "name": "Bulk Payout",
+    "line": 1,
+    "id": "bulk-payout",
+    "tags": [],
+    "uri": "BulkPayout.feature",
+    "elements": [
+      {
+        "id": "bulk-payout;to-verify-that-system-admin-is-able-to-perform-o2c-transaction.",
+        "keyword": "Scenario",
+        "line": 12,
+        "name": "To verify that system admin is able to perform o2c transaction.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 10
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 14,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 15355000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 15,
+            "name": "Navigate to Operator to channel and click on O2C transfer initiate",
+            "result": {
+              "status": "passed",
+              "duration": 2259000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "Enter All the Mandatory Details",
+            "result": {
+              "status": "passed",
+              "duration": 3737000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 17,
+            "name": "Click on submit and Confirm2",
+            "result": {
+              "status": "passed",
+              "duration": 2756000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "logout the user",
+            "result": {
+              "status": "passed",
+              "duration": 668000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "bulk-payout;to-verify-that-system-is-able-to-approve",
+        "keyword": "Scenario",
+        "line": 20,
+        "name": "To verify that system is able to approve",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 22,
+            "name": "Login into Mobiquity Portal as System admin Checker1",
+            "result": {
+              "status": "passed",
+              "duration": 12382000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 23,
+            "name": "Navigate to Operator to channel and click on O2C transfer Approval1",
+            "result": {
+              "status": "passed",
+              "duration": 5144000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "bulk-payout;to-verify-that-system-is-able-to-initiate-the-bulk-payout",
+        "keyword": "Scenario",
+        "line": 26,
+        "name": "To verify that system is able to initiate the Bulk Payout",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 28,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 12395000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 29,
+            "name": "Click on BulkPayout tool",
+            "result": {
+              "status": "passed",
+              "duration": 83000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 30,
+            "name": "Click on Bulk Payout Initiate",
+            "result": {
+              "status": "passed",
+              "duration": 10156000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 31,
+            "name": "Select service from dropdown list",
+            "result": {
+              "status": "passed",
+              "duration": 275000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 32,
+            "name": "Download a blank .csv file from Download a File template link",
+            "result": {
+              "status": "passed",
+              "duration": 311000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 33,
+            "name": "Enter Common Remarks",
+            "result": {
+              "status": "passed",
+              "duration": 737000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 34,
+            "name": "update the json data",
+            "result": {
+              "status": "passed",
+              "duration": 34000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 35,
+            "name": "Upload a .csv file with valid details",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 30000ms: Expected to find element: `div.alert.alert-success`, but never found it. Queried from element: <body#page-home>\n    at BulkPayout.getTextBox (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\BulkPayout\\BulkPayout.feature:1460:26)\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\BulkPayout\\BulkPayout.feature:275:11)\n    at Context.resolveAndRunStepDefinition (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\BulkPayout\\BulkPayout.feature:14856:29)\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\BulkPayout\\BulkPayout.feature:14177:35)"
+            }
+          }
+        ]
+      },
+      {
+        "id": "bulk-payout;to-verify-that-system-should-be-able-to-approve-the-initiated-bulk-payout.",
+        "keyword": "Scenario",
+        "line": 47,
+        "name": "To verify that system should be able to approve the initiated Bulk Payout.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 45
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 48,
+            "name": "Login into Mobiquity Portal as System admin Checker1",
+            "result": {
+              "status": "passed",
+              "duration": 12894000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 49,
+            "name": "Click on BulkPayout tool",
+            "result": {
+              "status": "passed",
+              "duration": 206000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 50,
+            "name": "Click on Bulk Payout Approval link.",
+            "result": {
+              "status": "passed",
+              "duration": 5190000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 51,
+            "name": "Select initiated service.",
+            "result": {
+              "status": "passed",
+              "duration": 296000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 52,
+            "name": "Click on Approve button.",
+            "result": {
+              "status": "passed",
+              "duration": 370000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 53,
+            "name": "Click on BulkPayout tool",
+            "result": {
+              "status": "passed",
+              "duration": 130000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 54,
+            "name": "Click on Bulk Payout Dashboard",
+            "result": {
+              "status": "passed",
+              "duration": 195000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 55,
+            "name": "Click on number of entries",
+            "result": {
+              "status": "passed",
+              "duration": 10470000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 56,
+            "name": "Verify Batch Id",
+            "result": {
+              "status": "passed",
+              "duration": 82000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

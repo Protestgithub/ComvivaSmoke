@@ -14,10 +14,9 @@ Feature: Auth Profiles Creation for Subscriber
           When  Select Authorization profile and add profile
           And  select Subscriber user type and select user role
           Then Fill all Details and Create Subscriber authorization profile
-          Then Logout
 
           Scenario: Approval of added profile
-          Given Login into Mobiquity Portal as another System admin User after logout
+          Given Login into Mobiquity Portal as System admin Checker1
           Then User approval for Authorization profile
           
 

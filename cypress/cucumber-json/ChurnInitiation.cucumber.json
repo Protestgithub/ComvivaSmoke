@@ -1,0 +1,182 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Registering Churned Subscriber",
+    "line": 1,
+    "id": "registering-churned-subscriber",
+    "tags": [],
+    "uri": "ChurnInitiation.feature",
+    "elements": [
+      {
+        "id": "registering-churned-subscriber;to-verify-that-the-system-admin-can-initiated-churn-process-and-approve.",
+        "keyword": "Scenario",
+        "line": 10,
+        "name": "To verify that the System admin can initiated churn process and approve.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 8
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 11,
+            "name": "Login into Mobiquity Portal as System admin Checker1",
+            "result": {
+              "status": "passed",
+              "duration": 17868000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 12,
+            "name": "Click on Churn Management and Churn Initiation",
+            "result": {
+              "status": "passed",
+              "duration": 392000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "Download a File template",
+            "result": {
+              "status": "passed",
+              "duration": 3333000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "Convert csv To JSON file",
+            "result": {
+              "status": "passed",
+              "duration": 43000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "update the json data",
+            "result": {
+              "status": "passed",
+              "duration": 83000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "convert json to csv",
+            "result": {
+              "status": "passed",
+              "duration": 29000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 17,
+            "name": "Upload csv file with valid details",
+            "result": {
+              "status": "passed",
+              "duration": 3216000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "Click on Churn Management and Churn Approval",
+            "result": {
+              "status": "passed",
+              "duration": 377000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 19,
+            "name": "Select the initiated churn request and click on Batch Approve",
+            "result": {
+              "status": "passed",
+              "duration": 8604000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 20,
+            "name": "Confirm the initiated churn request",
+            "result": {
+              "status": "passed",
+              "duration": 191000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "registering-churned-subscriber;to-verify-that-user-should-not-be-able-to-view-wallet-in-manage-users-after-churning-that-user",
+        "keyword": "Scenario",
+        "line": 30,
+        "name": "To verify that user should not be able to view wallet in manage users after churning that user",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 28
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 31,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 12762000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 32,
+            "name": "Navigate to User Management and Click on manage user",
+            "result": {
+              "status": "passed",
+              "duration": 428000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 33,
+            "name": "Enter Mobile number or KYC number in Search",
+            "result": {
+              "status": "passed",
+              "duration": 5805000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 34,
+            "name": "User Click on Delete button and Verify wallet details are not available",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 30000ms: Expected to find element: `button[id=\"delete-user\"]`, but never found it. Queried from element: <body>\n    at manageUsers.getChurndelete (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\ChurnManagement\\ChurnInitiation.feature:3899:26)\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\ChurnManagement\\ChurnInitiation.feature:486:19)\n    at Context.resolveAndRunStepDefinition (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\ChurnManagement\\ChurnInitiation.feature:15358:29)\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\ChurnManagement\\ChurnInitiation.feature:14679:35)"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

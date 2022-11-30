@@ -110,7 +110,6 @@ And Select Status,Fixed Trf Level,Transfer type,Geographical Domain and Controll
 Then Click on submit button.
 Then Click on confirm button.
 Then Verify initiate success Message
-Then Logout
 
 # Author: Sudheer
 # Last Updated:

@@ -1,11 +1,7 @@
 import loginPage from '../support/pageObjects/loginPage';
-
 import homePage from './pageObjects/homePage';
-
 import register from './pageObjects/UserManagement/register';
 import approvals from './pageObjects/UserManagement/approvals';
-//import DateUtils from './Utility/DateUtils';
-
 import manageUsers from './pageObjects/UserManagement/manageUsers';
 import 'cypress-file-upload';
 import API from './pageObjects/API';
@@ -257,7 +253,10 @@ Cypress.Commands.add('getBusinessUserMessage', (apiURL) => {
             }
         }).then((res) => {
             let res1 = res.body
-            cy.writeFile(MsgFile, { ModifyMessage: res1 })
+            cy.readFile(MsgFile).then((data)=>{
+                data.ModifyMessage=res1
+                cy.writeFile(MsgFile, data)
+            })
 
         })
     })

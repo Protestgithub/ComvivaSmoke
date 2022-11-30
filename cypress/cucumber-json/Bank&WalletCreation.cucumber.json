@@ -1,0 +1,102 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Bank and Wallet Creation",
+    "line": 1,
+    "id": "bank-and-wallet-creation",
+    "tags": [],
+    "uri": "Bank&WalletCreation.feature",
+    "elements": [
+      {
+        "id": "bank-and-wallet-creation;to-verify-that-master-is-able-to-add-bank-successfully",
+        "keyword": "Scenario",
+        "line": 12,
+        "name": "To verify that master is able to Add Bank successfully",
+        "tags": [
+          {
+            "name": "@prerequisite",
+            "line": 10
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 13,
+            "name": "Login into Mobiquity Portal as Super admin Checker",
+            "result": {
+              "status": "passed",
+              "duration": 13789000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 14,
+            "name": "Navigate to Bank Master and Click on it",
+            "result": {
+              "status": "passed",
+              "duration": 392000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "Enter All the Required Details",
+            "result": {
+              "status": "passed",
+              "duration": 10405000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "bank-and-wallet-creation;to-verify-that-system-admin-is-able-to-add-wallet-successfully.",
+        "keyword": "Scenario",
+        "line": 27,
+        "name": "To verify that System admin is able to Add wallet successfully.",
+        "tags": [
+          {
+            "name": "@prerequisite",
+            "line": 25
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 28,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 12335000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 29,
+            "name": "Navigate Multiple Wallet Management and Click on Add Wallet",
+            "result": {
+              "status": "passed",
+              "duration": 479000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 30,
+            "name": "Enter Wallet name and click on save",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 30000ms: `cy.readFile(\"cypress/fixtures/userData/WalletManagementdata.json\")` failed because the file does not exist at the following path:\n\n`C:\\Users\\ravi.narendra\\Desktop\\X.04\\uiautomation\\cypress\\fixtures\\userData\\WalletManagementdata.json`\n\nhttps://on.cypress.io/readfile\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\PreRequisite\\3.Bank%2526WalletCreation\\Bank%2526WalletCreation.feature:193:6)\n    at Context.resolveAndRunStepDefinition (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\PreRequisite\\3.Bank%2526WalletCreation\\Bank%2526WalletCreation.feature:14918:29)\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\PreRequisite\\3.Bank%2526WalletCreation\\Bank%2526WalletCreation.feature:14239:35)"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

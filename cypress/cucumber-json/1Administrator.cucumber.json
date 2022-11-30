@@ -1,0 +1,538 @@
+[
+  {
+    "description": "    This feature includes registering, Modifying and Approval of Business Admin and\n    Customer Support Admin Users by System Admin",
+    "keyword": "Feature",
+    "name": "BA and CCA Modification and Approval",
+    "line": 1,
+    "id": "ba-and-cca-modification-and-approval",
+    "tags": [],
+    "uri": "1Administrator.feature",
+    "elements": [
+      {
+        "id": "ba-and-cca-modification-and-approval;system-admin-is-able-to-initiate-modification-request-of-business-admin",
+        "keyword": "Scenario",
+        "line": 14,
+        "name": "System Admin is able to initiate modification request of Business Admin",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 11
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 15,
+            "name": "Login into Mobiquity Portal as System admin Checker1",
+            "result": {
+              "status": "passed",
+              "duration": 15591000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 16,
+            "name": "Navigate to Manage User, and search Business Admin",
+            "result": {
+              "status": "passed",
+              "duration": 468000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 17,
+            "name": "Search Business Admin",
+            "result": {
+              "status": "passed",
+              "duration": 5456000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "System Admin is able to view details",
+            "result": {
+              "status": "passed",
+              "duration": 516000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 19,
+            "name": "System Admin is able to edit details",
+            "result": {
+              "status": "passed",
+              "duration": 4513000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 20,
+            "name": "Confirm the edit details",
+            "result": {
+              "status": "passed",
+              "duration": 595000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 21,
+            "name": "Navigate to My Activity and Apply Modified User filters",
+            "result": {
+              "status": "passed",
+              "duration": 5041000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 22,
+            "name": "Assert Created Business Admin Mobile Number and Write Created on time",
+            "result": {
+              "status": "passed",
+              "duration": 540000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "ba-and-cca-modification-and-approval;system-admin-is-able-to-approve-of-modification-request-of-business-admin",
+        "keyword": "Scenario",
+        "line": 31,
+        "name": "System Admin is able to approve of modification request of Business Admin",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 29
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 32,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 12131000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 33,
+            "name": "Navigate to Approvals and filter by Submitted status",
+            "result": {
+              "status": "passed",
+              "duration": 4595000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 34,
+            "name": "User click on submitted user data",
+            "result": {
+              "status": "passed",
+              "duration": 340000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 35,
+            "name": "Approve the Users",
+            "result": {
+              "status": "passed",
+              "duration": 1011000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 36,
+            "name": "User modified is approved",
+            "result": {
+              "status": "passed",
+              "duration": 670000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "ba-and-cca-modification-and-approval;registration-of-business-administrator-as-customer-care-admin",
+        "keyword": "Scenario",
+        "line": 46,
+        "name": "Registration of Business Administrator as Customer care Admin",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 44
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 47,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 12381000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 48,
+            "name": "Navigate to User Management and Click on register",
+            "result": {
+              "status": "passed",
+              "duration": 421000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 49,
+            "name": "Select User type as Adminstrator and click on Customer care Admin",
+            "result": {
+              "status": "passed",
+              "duration": 1860000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 50,
+            "name": "Enter all the details",
+            "result": {
+              "status": "passed",
+              "duration": 4780000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 51,
+            "name": "Confirmation message is displayed",
+            "result": {
+              "status": "passed",
+              "duration": 858000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 52,
+            "name": "Navigate to My Activity and Apply Add User filters",
+            "result": {
+              "status": "passed",
+              "duration": 1974000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 53,
+            "name": "Assert Created Customer care Admin Mobile Number and Write Created on time",
+            "result": {
+              "status": "passed",
+              "duration": 480000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "ba-and-cca-modification-and-approval;approval--to-create-customer-care-admin",
+        "keyword": "Scenario",
+        "line": 62,
+        "name": "Approval  to create Customer Care Admin",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 60
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 63,
+            "name": "Login into Mobiquity Portal as System admin Checker1",
+            "result": {
+              "status": "passed",
+              "duration": 12528000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 64,
+            "name": "Navigate to Approvals and filter by Submitted status",
+            "result": {
+              "status": "passed",
+              "duration": 1439000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 65,
+            "name": "User click on submitted user data for CCA",
+            "result": {
+              "status": "passed",
+              "duration": 506000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 66,
+            "name": "Approve the Users",
+            "result": {
+              "status": "passed",
+              "duration": 391000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 67,
+            "name": "User status is approved",
+            "result": {
+              "status": "passed",
+              "duration": 1123000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 68,
+            "name": "Logout",
+            "result": {
+              "status": "passed",
+              "duration": 735000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "ba-and-cca-modification-and-approval;assertion-of-created-customer-care-admin",
+        "keyword": "Scenario",
+        "line": 70,
+        "name": "Assertion of created Customer Care Admin",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 71,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 12457000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 72,
+            "name": "Navigate to Manage User, and search Business Admin",
+            "result": {
+              "status": "passed",
+              "duration": 316000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 73,
+            "name": "Assert Created Customer Admin Mobile Number",
+            "result": {
+              "status": "passed",
+              "duration": 1182000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "ba-and-cca-modification-and-approval;system-admin-should-be-able-to-initite-modification-searching-with-all-values-(mobile,email-and-login)",
+        "keyword": "Scenario",
+        "line": 82,
+        "name": "System admin should be able to Initite modification searching with all values (Mobile,Email and Login)",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 80
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 83,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 12205000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 84,
+            "name": "Navigate to Manage User, and search Business Admin",
+            "result": {
+              "status": "passed",
+              "duration": 438000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 85,
+            "name": "Search with EmailID",
+            "result": {
+              "status": "passed",
+              "duration": 1274000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 86,
+            "name": "System Admin is able to view details",
+            "result": {
+              "status": "passed",
+              "duration": 574000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 87,
+            "name": "System Admin is able to edit details of the user",
+            "result": {
+              "status": "passed",
+              "duration": 2998000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 88,
+            "name": "Confirm the edit details Of the User",
+            "result": {
+              "status": "passed",
+              "duration": 666000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 89,
+            "name": "Navigate to My Activity and Apply Modified User filters",
+            "result": {
+              "status": "passed",
+              "duration": 1666000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 90,
+            "name": "Assert Created Customer care Admin Mobile Number and Write Created on time",
+            "result": {
+              "status": "passed",
+              "duration": 448000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 91,
+            "name": "Logout",
+            "result": {
+              "status": "passed",
+              "duration": 872000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "ba-and-cca-modification-and-approval;to-verify-approval-of-initiated-modification-request",
+        "keyword": "Scenario",
+        "line": 93,
+        "name": "To verify approval of initiated modification request",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 94,
+            "name": "Login into Mobiquity Portal as System admin Checker1",
+            "result": {
+              "status": "passed",
+              "duration": 11866000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 95,
+            "name": "Navigate to Approvals and filter by Submitted status",
+            "result": {
+              "status": "passed",
+              "duration": 1456000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 96,
+            "name": "User click on submitted user data",
+            "result": {
+              "status": "passed",
+              "duration": 356000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 97,
+            "name": "Approve the Users",
+            "result": {
+              "status": "passed",
+              "duration": 324000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 98,
+            "name": "User modified is approved",
+            "result": {
+              "status": "passed",
+              "duration": 445000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

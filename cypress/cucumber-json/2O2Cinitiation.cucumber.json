@@ -1,0 +1,187 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Operator To Channel Validation Message Verification",
+    "line": 1,
+    "id": "operator-to-channel-validation-message-verification",
+    "tags": [],
+    "uri": "2O2Cinitiation.feature",
+    "elements": [
+      {
+        "id": "operator-to-channel-validation-message-verification;to-verify-that-proper-error-message-should-be-displayed-when-business-user-is-suspended-in-the-system",
+        "keyword": "Scenario",
+        "line": 12,
+        "name": "To verify that proper error message should be displayed when business user is suspended in the system",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 10
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 13,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 15562000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 14,
+            "name": "Navigate to Operator to channel and click on O2C transfer initiate",
+            "result": {
+              "status": "passed",
+              "duration": 1364000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "Enter All the Mandatory details",
+            "result": {
+              "status": "passed",
+              "duration": 5934000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "Click on submit and Confirm",
+            "result": {
+              "status": "passed",
+              "duration": 3656000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 17,
+            "name": "Confirm the Error message",
+            "result": {
+              "status": "passed",
+              "duration": 251000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "operator-to-channel-validation-message-verification;to-verify-that-proper-error-message-should-be-displayed-when-amount-field-contains-any-invalid-character",
+        "keyword": "Scenario",
+        "line": 26,
+        "name": "To verify that proper error message should be displayed when amount field contains any invalid character",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 24
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 27,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 13232000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 28,
+            "name": "Navigate to Operator to channel and click on O2C transfer initiate",
+            "result": {
+              "status": "passed",
+              "duration": 1801000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 29,
+            "name": "Enter All the Mandatory details and type Invalid Character in Transfer amount",
+            "result": {
+              "status": "passed",
+              "duration": 7785000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 30,
+            "name": "Click on submit and Confirm Error Message",
+            "result": {
+              "status": "passed",
+              "duration": 1503000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "operator-to-channel-validation-message-verification;to-verify-that-proper-error-message-should-be-displayed-when-no-stock-is-present-in-the-ind01-wallet.",
+        "keyword": "Scenario",
+        "line": 39,
+        "name": "To verify that proper error message should be displayed when no stock is present in the IND01 wallet.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 37
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 40,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 13459000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 41,
+            "name": "Navigate to Operator to channel and click on O2C transfer initiate",
+            "result": {
+              "status": "passed",
+              "duration": 1485000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 42,
+            "name": "Enter All the Details",
+            "result": {
+              "status": "passed",
+              "duration": 2679000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 43,
+            "name": "Click on submit and Confirm",
+            "result": {
+              "status": "passed",
+              "duration": 3431000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,261 @@
+[
+  {
+    "description": "    This feature includes registering, Modifying and Approval of Business Admin and \n    Customer Support Admin Users by System Admin",
+    "keyword": "Feature",
+    "name": "System Admin My Activity",
+    "line": 1,
+    "id": "system-admin-my-activity",
+    "tags": [],
+    "uri": "1myActivity.feature",
+    "elements": [
+      {
+        "id": "system-admin-my-activity;to-verify-that-system-user-can-manage-user-registration-application,-which-are-not-approved-like-saved,submitted-users-and-rejected-users",
+        "keyword": "Scenario",
+        "line": 17,
+        "name": "To verify that system user can manage user registration application, which are not approved like saved,submitted users and rejected users",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 15
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 18,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 16442000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 19,
+            "name": "Navigate to User Management and Click on register",
+            "result": {
+              "status": "passed",
+              "duration": 486000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 20,
+            "name": "Select User type as Adminstrator and click on Customer care Admin",
+            "result": {
+              "status": "passed",
+              "duration": 6560000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 21,
+            "name": "Enter all the User details",
+            "result": {
+              "status": "passed",
+              "duration": 5037000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 22,
+            "name": "Navigate to My Activity and Add the required filter",
+            "result": {
+              "status": "passed",
+              "duration": 5424000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 23,
+            "name": "Click on Expand and View Details button",
+            "result": {
+              "status": "passed",
+              "duration": 2965000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "system-admin-my-activity;to-verify-that-system-user-can-view-existing-details-of-user's-under-saved-filter-whose-registration-initiation-is-incomplete",
+        "keyword": "Scenario",
+        "line": 32,
+        "name": "To verify that system user can view existing details of user's under saved filter whose registration initiation is incomplete",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 30
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 33,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 12934000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 34,
+            "name": "Navigate to My Activity and Add the required filter",
+            "result": {
+              "status": "passed",
+              "duration": 2422000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 35,
+            "name": "Click on Expand and View Details button",
+            "result": {
+              "status": "passed",
+              "duration": 2941000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "system-admin-my-activity;to-verify-that-system-user-can-add/edit-details-of-user's-whose-registration-is-incomplete",
+        "keyword": "Scenario",
+        "line": 46,
+        "name": "To verify that system user can Add/edit details of user's whose registration is incomplete",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 44
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 47,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 12635000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 48,
+            "name": "Navigate to My Activity and Add the required filter",
+            "result": {
+              "status": "passed",
+              "duration": 1555000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 49,
+            "name": "Click on Expand and Resume button",
+            "result": {
+              "status": "passed",
+              "duration": 2886000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 50,
+            "name": "Enter all the required details of the user",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 30000ms: Expected to find element: `input[id=\"lastName\"]`, but never found it. Queried from element: <body>\n    at register.getLastName (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\MyActivity\\1myActivity.feature:3736:26)\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\MyActivity\\1myActivity.feature:229:16)\n    at Context.resolveAndRunStepDefinition (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\MyActivity\\1myActivity.feature:14974:29)\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\MyActivity\\1myActivity.feature:14295:35)"
+            }
+          }
+        ]
+      },
+      {
+        "id": "system-admin-my-activity;to-verify-that-system-user-can-send-for-approval-of-user's-whose-registration-is-incomplete",
+        "keyword": "Scenario",
+        "line": 61,
+        "name": "To verify that system user can Send for approval of user's whose registration is Incomplete",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 59
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 62,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 13495000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 63,
+            "name": "Navigate to My Activity and Add the required filter",
+            "result": {
+              "status": "passed",
+              "duration": 1888000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 64,
+            "name": "Click on Expand and Resume button",
+            "result": {
+              "status": "passed",
+              "duration": 3085000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 65,
+            "name": "Enter all the required details of the user",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 30000ms: Expected to find element: `input[id=\"lastName\"]`, but never found it. Queried from element: <body>\n    at register.getLastName (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\MyActivity\\1myActivity.feature:3736:26)\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\MyActivity\\1myActivity.feature:229:16)\n    at Context.resolveAndRunStepDefinition (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\MyActivity\\1myActivity.feature:14974:29)\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\MyActivity\\1myActivity.feature:14295:35)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 66,
+            "name": "Click the >> Submit Button",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 67,
+            "name": "Confirmation message is displayed",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

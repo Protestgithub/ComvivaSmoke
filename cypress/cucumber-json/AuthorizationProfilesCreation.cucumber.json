@@ -1,0 +1,92 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Auth Profiles Creation for Subscriber",
+    "line": 1,
+    "id": "auth-profiles-creation-for-subscriber",
+    "tags": [],
+    "uri": "AuthorizationProfilesCreation.feature",
+    "elements": [
+      {
+        "id": "auth-profiles-creation-for-subscriber;to-verify-that-system-admin-should-be-able-to-add-authorization-profile",
+        "keyword": "Scenario",
+        "line": 11,
+        "name": "To verify that system admin should be able to add authorization profile",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 13,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 20145000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 14,
+            "name": "Select Authorization profile and add profile",
+            "result": {
+              "status": "passed",
+              "duration": 4269000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "select Subscriber user type and select user role",
+            "result": {
+              "status": "passed",
+              "duration": 592000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 16,
+            "name": "Fill all Details and Create Subscriber authorization profile",
+            "result": {
+              "status": "passed",
+              "duration": 6329000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "auth-profiles-creation-for-subscriber;approval-of-added-profile",
+        "keyword": "Scenario",
+        "line": 18,
+        "name": "Approval of added profile",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 19,
+            "name": "Login into Mobiquity Portal as System admin Checker1",
+            "result": {
+              "status": "passed",
+              "duration": 13354000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 20,
+            "name": "User approval for Authorization profile",
+            "result": {
+              "status": "passed",
+              "duration": 5706000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

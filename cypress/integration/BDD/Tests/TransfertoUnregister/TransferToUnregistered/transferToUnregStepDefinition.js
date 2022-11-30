@@ -22,17 +22,28 @@ Before(() => {
   cy.fixture('transferedToUnregistered').then(function (data7) {
     this.data7 = data7;
   })
-
+  cy.fixture('API/APIEndPoints').then(function (data20) {
+    this.data20 = data20;
+  })
 });
 
 //----------------Test Scripts---------------------------------------------------------------
 //---------------------------------------------System Admin Login----------------------------------------------------
 Given('Login into Mobiquity Portal as System admin Maker', function () {
   cy.launchURL(Cypress.env('Adminurl'))
-  cy.wait(2000)
   cy.SysAdminlogin()
-  cy.wait(2000)
-  cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
+  cy.fixture('userData/SystemAdminLogin.json').then((data) => {
+    let Name = data.SysAdminMakerName
+    cy.checkWelcomeText(Name)
+  })
+})
+Given('Login into Mobiquity Portal as System admin Checker1', function () {
+  cy.launchURL(Cypress.env('Adminurl'))
+  cy.SysAdminlogin2()
+  cy.fixture('userData/SystemAdminLogin.json').then((data) => {
+    let Name = data.SysAdminChecker1Name
+    cy.checkWelcomeText(Name)
+  })
 })
 
 //----------TC_153------------Transfer to Unregistered------To verify that system admin should able to do enquiry of transaction 
@@ -46,17 +57,18 @@ When('Click on Transfer to Unregistered Users', function () {
 And('Transfer to Unregistered Select the service type', function () {
   cy.wait(3000)
   transferToUnregistredPage.getTransferToUnregistredServiceType().click()
+  cy.intercept(this.data20.TransferToUnreg).as('ttusubmit')
   transferToUnregistredPage.getTransferToUnregistredSubmit().click({ force: true })
-
+  cy.wait('@ttusubmit')
 })
 And('Transfer to Unregistered Enter subscriber Mobile number or transaction ID', function () {
-  cy.wait(3000)
+  
   transferToUnregistredPage.getTransferToUnregisteredMSISDN().type(this.data7.msisdn.transfertoungegmsisdn, { force: true })
 })
 
 Then('Transfer to Unregistered Click on submit', function () {
-  cy.wait(3000)
+  cy.intercept(this.data20.TransferToUnSubUp).as('ttusubmit1')
   transferToUnregistredPage.getTransferToUnregistredSubmitUpdate().click({ force: true })
-  cy.wait(3000)
-  transferToUnregistredPage.getAssertMessage().should('contain.text', this.data7.errorMessage +' "P2P Unregistered"')
+  cy.wait('@ttusubmit1')
+  transferToUnregistredPage.getAssertMessage().should('contains.text', this.data7.errorMessage +' "P2P Unregistered"')
 })

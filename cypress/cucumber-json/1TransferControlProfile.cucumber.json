@@ -1,0 +1,142 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Transfer Control Profile error message and customer level TCP view",
+    "line": 1,
+    "id": "transfer-control-profile-error-message-and-customer-level-tcp-view",
+    "tags": [],
+    "uri": "1TransferControlProfile.feature",
+    "elements": [
+      {
+        "id": "transfer-control-profile-error-message-and-customer-level-tcp-view;to-verify-the-error-message-when-provider-is-empty.",
+        "keyword": "Scenario",
+        "line": 12,
+        "name": "To verify the error message when Provider is empty.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 10
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 13,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 15166000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 14,
+            "name": "Navigate to Transfer Control Profile and Click on Manage Transfer Level TCP",
+            "result": {
+              "status": "passed",
+              "duration": 6367000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "Click on Add New Button",
+            "result": {
+              "status": "passed",
+              "duration": 3693000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "Click on Create Button",
+            "result": {
+              "status": "passed",
+              "duration": 114000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 17,
+            "name": "Verify Error Message for Provider",
+            "result": {
+              "status": "passed",
+              "duration": 45000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "transfer-control-profile-error-message-and-customer-level-tcp-view;to-verify-the-error-message-when-domain-is-empty.",
+        "keyword": "Scenario",
+        "line": 26,
+        "name": "To verify the error message when Domain is empty.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 24
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 27,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 12406000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 28,
+            "name": "Navigate to Transfer Control Profile and Click on Manage Transfer Level TCP",
+            "result": {
+              "status": "passed",
+              "duration": 6418000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 29,
+            "name": "Click on Add New Button",
+            "result": {
+              "status": "passed",
+              "duration": 3272000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 30,
+            "name": "Click on Create Button",
+            "result": {
+              "status": "passed",
+              "duration": 111000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 31,
+            "name": "Verify Error Message for Domain",
+            "result": {
+              "status": "passed",
+              "duration": 60000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

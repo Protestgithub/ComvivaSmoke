@@ -1,0 +1,193 @@
+[
+  {
+    "description": "    This feature includes Modifying of Profiles by System Admin",
+    "keyword": "Feature",
+    "name": "Regulatory and Marketing Profile Creation",
+    "line": 1,
+    "id": "regulatory-and-marketing-profile-creation",
+    "tags": [],
+    "uri": "Profiles.feature",
+    "elements": [
+      {
+        "id": "regulatory-and-marketing-profile-creation;to-verify-that-system-admin-user-can-view-the-list-of-profiles",
+        "keyword": "Scenario",
+        "line": 16,
+        "name": "To verify that system admin user can view the list of profiles",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 13
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 17,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 15315000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 18,
+            "name": "Navigate to UserManagement And Click on Regulatory Profile",
+            "result": {
+              "status": "passed",
+              "duration": 3405000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "regulatory-and-marketing-profile-creation;to-verify-that-system-admin-user-can-modify-the-name-of-the-regulatory-profile-only.",
+        "keyword": "Scenario",
+        "line": 28,
+        "name": "To verify that system admin user can modify the name of the regulatory profile only.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 25
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 29,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 12320000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 30,
+            "name": "Navigate to UserManagement And Click on Regulatory Profile",
+            "result": {
+              "status": "passed",
+              "duration": 3504000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 31,
+            "name": "Under Actions tab click on Modify Regulatory Profile icon and Enter Profile Name",
+            "result": {
+              "status": "passed",
+              "duration": 4947000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 32,
+            "name": "Click On Save Modified Regulatory Profile",
+            "result": {
+              "status": "passed",
+              "duration": 3347000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "regulatory-and-marketing-profile-creation;to-verify-that-system-admin-user-can-to-search-the-regulatory-profile-by-using-the-profile-code-or-profile-name.",
+        "keyword": "Scenario",
+        "line": 42,
+        "name": "To verify that system admin user can to search the regulatory profile by using the profile code or profile name.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 39
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 43,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 12480000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 44,
+            "name": "Navigate to UserManagement And Click on Regulatory Profile",
+            "result": {
+              "status": "passed",
+              "duration": 3467000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 45,
+            "name": "Enter detail to seach in textbox and click search",
+            "result": {
+              "status": "passed",
+              "duration": 749000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "regulatory-and-marketing-profile-creation;to-verify-that-that-system-admin-user-will-be-able-to-search-the-marketing-profile",
+        "keyword": "Scenario",
+        "line": 57,
+        "name": "To verify that That system admin user will be able to search the marketing profile",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 54
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 58,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 12284000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 59,
+            "name": "Navigate to UserManagement And Click on Marketing Profile",
+            "result": {
+              "status": "passed",
+              "duration": 3433000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 60,
+            "name": "Enter detail to search in textbox and click search",
+            "result": {
+              "status": "passed",
+              "duration": 826000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -16,51 +16,55 @@ const welcomePage = new homePage()
 const ReconPage = new Reconcilation()
 
 Before(() => {
-    cy.fixture('login').then(function (data1) {
-        this.data1 = data1;
+  cy.fixture('login').then(function (data1) {
+    this.data1 = data1;
 
-    })
-    cy.fixture('UserManagement').then(function (data2) {
-        this.data2 = data2;
-    })
-
+  })
+  cy.fixture('UserManagement').then(function (data2) {
+    this.data2 = data2;
+  })
+  cy.fixture('API/APIEndPoints').then(function (data20) {
+    this.data20 = data20;
+  })
 });
 
 
 //---------------------------------------------System Admin Login----------------------------------------------------
 Given('Login into Mobiquity Portal as System admin Maker', function () {
-    cy.launchURL(Cypress.env('Adminurl'))
-    cy.wait(2000)
-    cy.SysAdminlogin()
-    cy.wait(2000)
-    cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
+  cy.launchURL(Cypress.env('Adminurl'))
+  cy.SysAdminlogin()
+  cy.fixture('userData/SystemAdminLogin.json').then((data) => {
+    let Name = data.SysAdminMakerName
+    cy.checkWelcomeText(Name)
   })
-  Given('Login into Mobiquity Portal as System admin Checker1', function () {
-    cy.launchURL(Cypress.env('Adminurl'))
-    cy.wait(2000)
-    cy.SysAdminlogin2()
-    cy.wait(2000)
-    cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
+})
+Given('Login into Mobiquity Portal as System admin Checker1', function () {
+  cy.launchURL(Cypress.env('Adminurl'))
+  cy.SysAdminlogin2()
+  cy.fixture('userData/SystemAdminLogin.json').then((data) => {
+    let Name = data.SysAdminChecker1Name
+    cy.checkWelcomeText(Name)
   })
-  
-  Then('Logout', function(){
-    welcomePage.getUserMenu().click()
-    welcomePage.getLogoutButton().click()
-    welcomePage.getLogoutYesButton().click()  
+})
+
+Then('Logout', function () {
+  welcomePage.getUserMenu().click()
+  welcomePage.getLogoutButton().click()
+  welcomePage.getLogoutYesButton().click()
+})
+And('Click on Reconcilation', function () {
+  welcomePage.getreconcilationpage().click({ force: true })
+  cy.wait(4000)
+  ReconPage.getcolumn().within(function () {
+    cy.getprovider()
   })
-  And('Click on Reconcilation', function () {
-    welcomePage.getreconcilationpage().click({ force: true })
-    cy.wait(4000)
-    ReconPage.getcolumn().within(function () {
-        cy.wait(2000)
-        cy.getprovider()
-    })
-    ReconPage.getsubmit().click({ force: true })
-    cy.wait(5000)
-    pageLogin.getiFrame()      
-    ReconPage.getmismatch().within(function(){
-    ReconPage.getmismatchvalue().should("contain","No Mismatch found")
-      }) 
+  cy.intercept(this.data20.submit).as('getsubmit')
+  ReconPage.getsubmit().click({ force: true })
+  cy.wait('@getsubmit')
+  pageLogin.getiFrame()
+  ReconPage.getmismatch().within(function () {
+    ReconPage.getmismatchvalue().should("contain", "No Mismatch found")
+  })
 
 })
 

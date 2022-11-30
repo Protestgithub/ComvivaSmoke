@@ -1,0 +1,468 @@
+[
+  {
+    "description": "    This feature includes registering, Modifying and Approval of Business Admin and\n    Customer Support Admin Users by System Admin",
+    "keyword": "Feature",
+    "name": "Lock and Unlock Wallets of Subscriber",
+    "line": 1,
+    "id": "lock-and-unlock-wallets-of-subscriber",
+    "tags": [],
+    "uri": "2Subscriber.feature",
+    "elements": [
+      {
+        "id": "lock-and-unlock-wallets-of-subscriber;to-verify-that-another-system-admin/businsess-user-is-able-to-approve-the-modified-subscriber-data.",
+        "keyword": "Scenario",
+        "line": 13,
+        "name": "To verify that another System Admin/businsess User is able to approve the Modified Subscriber Data.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 11
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 14,
+            "name": "Login into Mobiquity Portal as System admin Checker1",
+            "result": {
+              "status": "passed",
+              "duration": 15215000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 15,
+            "name": "Navigate to Approvals and filter by Modification of user status",
+            "result": {
+              "status": "passed",
+              "duration": 5312000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "User click on submitted user data for approval of subscriber modification",
+            "result": {
+              "status": "passed",
+              "duration": 300000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 17,
+            "name": "Approve the Users",
+            "result": {
+              "status": "passed",
+              "duration": 1273000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 18,
+            "name": "Edited User status is approved",
+            "result": {
+              "status": "passed",
+              "duration": 1039000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "lock-and-unlock-wallets-of-subscriber;to-verify-that-system-admin-able-to-view-subscriber-details",
+        "keyword": "Scenario",
+        "line": 31,
+        "name": "To verify that System admin able to view subscriber details",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 28
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 32,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 12512000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 33,
+            "name": "Navigate to User Management and Click on manage user",
+            "result": {
+              "status": "passed",
+              "duration": 491000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 34,
+            "name": "Enter Mobile number or KYC number in Search",
+            "result": {
+              "status": "passed",
+              "duration": 5456000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 35,
+            "name": "User Click on eye button",
+            "result": {
+              "status": "passed",
+              "duration": 411000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 36,
+            "name": "Verify View Details Page",
+            "result": {
+              "status": "passed",
+              "duration": 109000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "lock-and-unlock-wallets-of-subscriber;to-verify-that-super-admin-maker-able-to-view-subscriber-details",
+        "keyword": "Scenario",
+        "line": 45,
+        "name": "To verify that Super admin maker able to view Subscriber details",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 43
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 46,
+            "name": "Login into Mobiquity Portal as Super admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 11772000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 47,
+            "name": "Navigate to User Management and Click on manage user",
+            "result": {
+              "status": "passed",
+              "duration": 575000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 48,
+            "name": "Enter Mobile number or KYC number in Search",
+            "result": {
+              "status": "passed",
+              "duration": 1311000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 49,
+            "name": "User Click on eye button",
+            "result": {
+              "status": "passed",
+              "duration": 259000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "lock-and-unlock-wallets-of-subscriber;to-verify-that-system-admin-is-able-to--lower-hierarchy-details",
+        "keyword": "Scenario",
+        "line": 58,
+        "name": "To verify that System admin is able to  Lower Hierarchy details",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 56
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 59,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 12502000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 60,
+            "name": "Navigate to User Management and Click on manage user",
+            "result": {
+              "status": "passed",
+              "duration": 392000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 61,
+            "name": "Enter Mobile number of subscriber in search",
+            "result": {
+              "status": "passed",
+              "duration": 919000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 62,
+            "name": "User Click on eye button",
+            "result": {
+              "status": "passed",
+              "duration": 324000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 63,
+            "name": "Verify View Details Page",
+            "result": {
+              "status": "passed",
+              "duration": 96000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "lock-and-unlock-wallets-of-subscriber;to-verify-that-user-can-view-details-of-all-wallets-associated-with-the-user-along-with-their-corresponding-balances-and-status-successfully.",
+        "keyword": "Scenario",
+        "line": 75,
+        "name": "To verify that user can view details of all wallets associated with the user along with their corresponding balances and status successfully.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 73
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 76,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 12413000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 77,
+            "name": "Navigate to User Management and Click on manage user",
+            "result": {
+              "status": "passed",
+              "duration": 388000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 78,
+            "name": "Enter Mobile number and KYC number in search menu1",
+            "result": {
+              "status": "passed",
+              "duration": 1162000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 79,
+            "name": "Click on view Details and Click on Account info",
+            "result": {
+              "status": "passed",
+              "duration": 596000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 80,
+            "name": "Check All Wallet Details",
+            "result": {
+              "status": "passed",
+              "duration": 3000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "lock-and-unlock-wallets-of-subscriber;to-verify-that-admin-user-can-lock-user-wallet-as-sender-or-receiver-or-both.",
+        "keyword": "Scenario",
+        "line": 89,
+        "name": "To verify that Admin user can lock user wallet as sender or receiver or both.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 87
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 90,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 12647000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 91,
+            "name": "Navigate to User Management and Click on manage user",
+            "result": {
+              "status": "passed",
+              "duration": 311000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 92,
+            "name": "Enter Mobile number and KYC number in search menu1",
+            "result": {
+              "status": "passed",
+              "duration": 1245000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 93,
+            "name": "Click on view Details and Click on Account info",
+            "result": {
+              "status": "passed",
+              "duration": 502000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 94,
+            "name": "select either Lock outgoing payments or Lock incoming payments or Lock both",
+            "result": {
+              "status": "passed",
+              "duration": 531000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 95,
+            "name": "Click On lock all",
+            "result": {
+              "status": "passed",
+              "duration": 988000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "lock-and-unlock-wallets-of-subscriber;to-verify-that-admin-user-can-reset-the-credentials-of-business-user-and-customer's-successfully.",
+        "keyword": "Scenario",
+        "line": 104,
+        "name": "To verify that admin user can reset the credentials of Business user and customer's successfully.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 102
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 105,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 12378000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 106,
+            "name": "Navigate to User Management and Click on manage user",
+            "result": {
+              "status": "passed",
+              "duration": 392000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 107,
+            "name": "Enter Mobile number and KYC number in search menu1",
+            "result": {
+              "status": "passed",
+              "duration": 1190000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 108,
+            "name": "Click on view Details and Click on Credentials",
+            "result": {
+              "status": "passed",
+              "duration": 532000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 109,
+            "name": "Click on refresh icon corresponding to the respective authentication factor",
+            "result": {
+              "status": "passed",
+              "duration": 841000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

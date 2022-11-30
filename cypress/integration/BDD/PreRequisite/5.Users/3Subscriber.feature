@@ -3,6 +3,7 @@ Feature: Validation Message Verification
     This feature includes registering, Modifying and Approval of Business Admin and
     Customer Support Admin Users by System Admin
 
+
 # Author:Monica
 # Last Updated:
 # Comments 
@@ -96,6 +97,7 @@ And Enter all the mandatory KYC details and click on next
 Then Enter all the marketing ,regulatory, authorization profile details and click on next
 
 
+
 # Author: Chetan.S
 # Last Updated: 25-04-2022
 # Comments 
@@ -113,7 +115,7 @@ And System Admin is able to view details
 And System Admin is able to edit KYC details
 Then Confirm the edit details
 Then Logout
-Given Login into Mobiquity Portal as another System admin Checker1 after logout
+Given Login into Mobiquity Portal as System admin Checker1
 When Navigate to Approvals and filter by Submitted status
 And User click on submitted user data
 Then verify message sent to user

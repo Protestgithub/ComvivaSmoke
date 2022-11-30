@@ -19,7 +19,7 @@ Then System admin should be able to view pricing engine module on web.
 @test
 
 Scenario:To verify that User other than System admin should not able to view pricing engine module on web.
-Given Login into Mobiquity Portal as Super admin
+Given Login into Mobiquity Portal as Super admin Maker
 Then User other than System admin should not able to view pricing engine module on web.
 
 

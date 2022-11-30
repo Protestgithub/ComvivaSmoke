@@ -1,0 +1,657 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Telco Operator Creation and Modification",
+    "line": 1,
+    "id": "telco-operator-creation-and-modification",
+    "tags": [],
+    "uri": "1Business.feature",
+    "elements": [
+      {
+        "id": "telco-operator-creation-and-modification;to-verify-that-the-system-admin-is-able-to-add-telco-operator-through-user-management-module.",
+        "keyword": "Scenario",
+        "line": 12,
+        "name": "To verify that the System admin is able to Add telco operator through user management module.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 10
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 13,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 15512000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 14,
+            "name": "Navigate to User Management and Click on register",
+            "result": {
+              "status": "passed",
+              "duration": 5861000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "Select User type as Business and click on Telco operator",
+            "result": {
+              "status": "passed",
+              "duration": 858000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "Enter all the mandatory Basic information details and click on next",
+            "result": {
+              "status": "passed",
+              "duration": 3102000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 17,
+            "name": "Enter all the mandatory Profile details like marketing profile,regulatory profile,Operator profile.",
+            "result": {
+              "status": "passed",
+              "duration": 1888000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "Click on Next >> click on Confirm",
+            "result": {
+              "status": "passed",
+              "duration": 365000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 19,
+            "name": "Confirmation message",
+            "result": {
+              "status": "passed",
+              "duration": 399000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 20,
+            "name": "Navigate to My Activity and Apply Add User filters",
+            "result": {
+              "status": "passed",
+              "duration": 5189000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 21,
+            "name": "Assert Created Telco-Operator Mobile Number and Write Created on time",
+            "result": {
+              "status": "passed",
+              "duration": 476000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "telco-operator-creation-and-modification;to-verify-the-approval-of-telco-operator",
+        "keyword": "Scenario",
+        "line": 24,
+        "name": "To verify the approval of telco operator",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 25,
+            "name": "Login into Mobiquity Portal as System admin Checker1",
+            "result": {
+              "status": "passed",
+              "duration": 12027000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 26,
+            "name": "Navigate to Approvals and filter by Submitted status",
+            "result": {
+              "status": "passed",
+              "duration": 5754000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 27,
+            "name": "User click on submitted user data for Telco-Operator",
+            "result": {
+              "status": "passed",
+              "duration": 260000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 28,
+            "name": "Approve the Users",
+            "result": {
+              "status": "passed",
+              "duration": 1159000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 29,
+            "name": "Added User status is approved",
+            "result": {
+              "status": "passed",
+              "duration": 1909000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "telco-operator-creation-and-modification;to-verify-that-the-system-admin-is-able-to-modify--telco-operator-through-user-management-module.",
+        "keyword": "Scenario",
+        "line": 41,
+        "name": "To verify that the System admin is able to Modify  telco operator through user management module.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 39
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 42,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 12432000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 43,
+            "name": "Navigate to User Management and Click on manage user",
+            "result": {
+              "status": "passed",
+              "duration": 434000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 44,
+            "name": "Enter Telco operator Mobile number and KYC number in search menu",
+            "result": {
+              "status": "passed",
+              "duration": 1865000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 45,
+            "name": "User Click on eye button",
+            "result": {
+              "status": "passed",
+              "duration": 232000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 46,
+            "name": "Click on edit",
+            "result": {
+              "status": "passed",
+              "duration": 170000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 47,
+            "name": "Edit the required details >> Click on Next",
+            "result": {
+              "status": "passed",
+              "duration": 1357000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 48,
+            "name": "Click on save",
+            "result": {
+              "status": "passed",
+              "duration": 660000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 49,
+            "name": "Confirmation modify message",
+            "result": {
+              "status": "passed",
+              "duration": 87000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 50,
+            "name": "Navigate to My Activity and Apply Modified User filters",
+            "result": {
+              "status": "passed",
+              "duration": 2289000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 51,
+            "name": "Assert Created Telco-Operator Mobile Number and Write Created on time",
+            "result": {
+              "status": "passed",
+              "duration": 446000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "telco-operator-creation-and-modification;to-verify-the-approval-of-modification-request",
+        "keyword": "Scenario",
+        "line": 53,
+        "name": "To verify the approval of modification Request",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 54,
+            "name": "Login into Mobiquity Portal as System admin Checker1",
+            "result": {
+              "status": "passed",
+              "duration": 12062000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 55,
+            "name": "Navigate to Approvals and filter by Modification of user status",
+            "result": {
+              "status": "passed",
+              "duration": 2471000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 56,
+            "name": "User click on submitted user data",
+            "result": {
+              "status": "passed",
+              "duration": 356000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 57,
+            "name": "Approve the Users",
+            "result": {
+              "status": "passed",
+              "duration": 341000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 58,
+            "name": "Edited User status is approved",
+            "result": {
+              "status": "passed",
+              "duration": 2538000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "telco-operator-creation-and-modification;to-verify-that-system-admin/business-admin-should-be-able-to-add-businsess-user-for-unregistered-mobile-number-only.",
+        "keyword": "Scenario",
+        "line": 69,
+        "name": "To verify that System admin/Business Admin should be able to Add businsess user for unregistered Mobile number only.",
+        "tags": [
+          {
+            "name": "@test1",
+            "line": 67
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 70,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 12428000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 71,
+            "name": "Navigate to User Management and Click on register",
+            "result": {
+              "status": "passed",
+              "duration": 1256000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 72,
+            "name": "Select User type as Business and Select user role",
+            "result": {
+              "status": "passed",
+              "duration": 607000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 73,
+            "name": "Enter all the required business user details",
+            "result": {
+              "status": "passed",
+              "duration": 18424000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 74,
+            "name": "Confirmation message is displayed",
+            "result": {
+              "status": "passed",
+              "duration": 1107000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 75,
+            "name": "Navigate to My Activity and Apply Add User filters",
+            "result": {
+              "status": "passed",
+              "duration": 2754000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 76,
+            "name": "Assert Created Buissness User Mobile Number and Write Created on time for UnRegisteredMobile",
+            "result": {
+              "status": "passed",
+              "duration": 558000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "telco-operator-creation-and-modification;to-verify-the-approval-of-initiation-request",
+        "keyword": "Scenario",
+        "line": 78,
+        "name": "To verify the approval of initiation request",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 79,
+            "name": "Login into Mobiquity Portal as System admin Checker1",
+            "result": {
+              "status": "passed",
+              "duration": 12299000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 80,
+            "name": "Navigate to Approvals and filter by Submitted status",
+            "result": {
+              "status": "passed",
+              "duration": 2343000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 81,
+            "name": "User click on submitted user data for Unregistered",
+            "result": {
+              "status": "passed",
+              "duration": 291000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 82,
+            "name": "Approve the Users",
+            "result": {
+              "status": "passed",
+              "duration": 305000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "telco-operator-creation-and-modification;to-verify-that-system-admin-is-able-to-reset-password-of-another-system-user-of-the-lower-hierarchy.",
+        "keyword": "Scenario",
+        "line": 92,
+        "name": "To verify that System admin is able to reset password of another system user of the lower hierarchy.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 90
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 93,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 12671000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 94,
+            "name": "Navigate to User Management and Click on manage user",
+            "result": {
+              "status": "passed",
+              "duration": 462000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 95,
+            "name": "enter user mobile number and search",
+            "result": {
+              "status": "passed",
+              "duration": 1504000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 96,
+            "name": "User Click on eye button",
+            "result": {
+              "status": "passed",
+              "duration": 478000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 97,
+            "name": "goto credencials submenu",
+            "result": {
+              "status": "passed",
+              "duration": 339000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 98,
+            "name": "Click on reset icon to reset password",
+            "result": {
+              "status": "passed",
+              "duration": 440000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "telco-operator-creation-and-modification;to-verify-that-system-admin/business-admin-can-initiate-barring-of-the-businsess-user.",
+        "keyword": "Scenario",
+        "line": 108,
+        "name": "To Verify that System Admin/Business Admin can initiate Barring of the businsess user.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 105
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 109,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 12415000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 110,
+            "name": "Navigate to User Management and Click on manage user",
+            "result": {
+              "status": "passed",
+              "duration": 359000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 111,
+            "name": "enter user mobile number and search",
+            "result": {
+              "status": "passed",
+              "duration": 1423000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 112,
+            "name": "User Click on eye button",
+            "result": {
+              "status": "passed",
+              "duration": 402000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 113,
+            "name": "Click on Suspend user icon",
+            "result": {
+              "status": "passed",
+              "duration": 149000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 114,
+            "name": "write comments to Suspend user",
+            "result": {
+              "status": "passed",
+              "duration": 490000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 115,
+            "name": "click on yes",
+            "result": {
+              "status": "passed",
+              "duration": 155000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 116,
+            "name": "Verify the user suspend Confirmation message",
+            "result": {
+              "status": "passed",
+              "duration": 308000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

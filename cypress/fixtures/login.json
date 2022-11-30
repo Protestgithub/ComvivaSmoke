@@ -1,42 +1,20 @@
 {  
-  "networkAdminWelcomeText" : "Network NWADM Admin",
-    "loginPageTitle": "Welcome to Mobiquity Pay",
-    "sysAdmin1" :{
-    "sysAdminUser1" : "SYSADM7774992569",
-    "sysAdminPwd1" : "Com@1357"
-
-  },
-
+  "loginPageTitle": "Welcome to Mobiquity Pay",
   "BAAdminText":"Text ",
   "DefaultPassword":"000000",
   "BAPassword":"Com@13579",
   
   "masteradminmaker" : {
-    "sysAdminUser1" : "superadminm",
-    "sysAdminPwd1" : "Com@135"
+    "superadminm" : "superadminm",
+    "superadminmPwd" : "Com@135"
   },
   "masteradminchecker" : {
-    "sysAdminUser1" : "superadminc",
-    "sysAdminPwd1" : "Com@135"
+    "superadminc" : "superadminc",
+    "superadmincPwd" : "Com@135"
   },
   "businessAdmin": {
-    "businessadminUser1": "DIST7779064594",
     "businessadminPwd1": "Com@1357",
     "DefaultPassword" :"000000"
-
-    },
-    "sysAdmin2" : {
-        "sysAdminUser1" : "SYSADM7777205592",
-        "sysAdminPwd1" : "Com@135"
-    },
-    "sysAdmin3" : {
-        "sysAdminUser1" : "NWADM7786118832",
-        "sysAdminPwd1" : "Com@135"
-    }, 
-
-    "masterAdmin2":{
-      "masterchckr1":"superadminc",
-      "mstAdminPwd1" : "Com@135"
     },
     "subscriber":{
       "sub1":"Beta88067",

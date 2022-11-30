@@ -3,13 +3,11 @@ class authorizationManagement {
         return cy.get('[data-testid="test-AUTH_PROFILE"]')
     }
     getApprovals() {
-        return cy.get('#collapsible_listnode_18 > .fd-nested-list__title')
+        return cy.get('[title="Approvals"]')
     }
     getApprovalButtonTab() {
-        return cy.get('[data-testid="menu.approvals"] > .fd-nested-list > :nth-child(1) > [data-testid="test-undefined"]')
-    } 
-
-
+        return cy.get('[title="Approvals"]')
+    }
     getAddProfile() {
         return cy.iframe().find('[id="add-profile"]')
     }
@@ -23,7 +21,7 @@ class authorizationManagement {
     }
 
     getAuthorizationUserType() {
-        return cy.iframe().find('.nav-item.ng-star-inserted > a').contains('Subscriber')
+        return cy.iframe().find('.nav-item.ng-star-inserted > a').eq(0)
     }
     getAuthorizationUserRole() {
         return cy.iframe().find('.mat-radio-label-content')
@@ -48,13 +46,12 @@ class authorizationManagement {
 
     }
     getChannelsAllowed1() {
-        //return cy.iframe().find('input[id="channels-allowed-3-input"]')
-        return cy.iframe().find('div.col-12 app-default.ng-star-inserted > div.container-fluid.ng-star-inserted')
+             return cy.iframe().find('div.col-12 app-default.ng-star-inserted > div.container-fluid.ng-star-inserted')
     }
 
     getUserServicePreferences() {
 
-        return cy.iframe().find('.mat-checkbox-label')
+        return cy.iframe().find('.mat-checkbox-label').eq(6)
 
     }
     getChannelsAllowed2() {
@@ -82,8 +79,7 @@ class authorizationManagement {
 
     getViewProfile() {
         return cy.iframe().find('[id="view-profile-detail-1"]')
-        // return cy.iframe().find('.mat-table.cdk-table.mat-sort',"{force:true}")
-    }
+        }
 
     getEditProfile() {
         return cy.iframe().find('.mat-icon.notranslate.viewProfileEditIcon.mat-icon-no-color')
@@ -136,19 +132,23 @@ class authorizationManagement {
     // ------------------Administrator---------------
 
     getAdministratorType() {
-        return cy.iframe().find('.nav-item.ng-star-inserted > a').contains('Administrator')
+        return cy.iframe().find('.nav-item.ng-star-inserted > a').eq(1)
     }
 
     getAdministratorBusinessAdmin() {
-        return cy.iframe().find('.mat-radio-label-content')
+        return cy.iframe().find('.mat-radio-label-content').eq(0)
+    }
+
+    getAdministratorCC() {
+        return cy.iframe().find('.mat-radio-label-content').eq(1)
     }
 
     getBusinessType() {
-        return cy.iframe().find('.nav-item.ng-star-inserted > a').contains('Business')
+        return cy.iframe().find('.nav-item.ng-star-inserted > a').eq(2)
     }
 
     getBusinessATMRole() {
-        return cy.iframe().find('.mat-radio-label-content')
+        return cy.iframe().find('.mat-radio-label-content').eq(10)
     }
 
     getProfileNameExist(){

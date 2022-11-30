@@ -2,12 +2,12 @@ import stockInitiation from './pageObjects/StockManagement/stockInitiation';
 import stockManagement from './pageObjects/StockManagement/stockManagement';
 import 'cypress-file-upload';
 import loginPage from '../support/pageObjects/loginPage';
-
 //-------------------------Object Declaration----------------------------------------------------------
 
 const stockInitiationPage = new stockInitiation()
 const stockManagementPage = new stockManagement()
 const pageLogin = new loginPage()
+var StockFile = 'cypress/fixtures/StockManagement.json'
 
 function getRandomInt(min, max) {
 	return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -97,23 +97,39 @@ Cypress.Commands.add('selectInstrumentType', () => {
 		})
 })
 
-
-
-
-Cypress.Commands.add('StockTransactionWriteData', () => {
-	let StockFile = 'cypress/fixtures/StockManagement.json'
-	cy.wait(3000)
-	stockInitiationPage.getSuccessMsg().then((al => {
-	let q = al.text()
-	cy.log(q)
-	let a = q.split(':')
-	let b = a[1].split(',')
-	let c = b[0].trim()
-	cy.log(c)
-	cy.readFile(StockFile).then((data) => {
-	data.trasanctionid = c
-	cy.writeFile(StockFile, data)
-	})
-	}))
-	})
 	
+Cypress.Commands.add('StockTransactionWriteData',(filename) =>
+	cy.readFile(StockFile).then((data)  => {
+	   let ID = data.ReferenceNumber
+	   let shouldStop = false
+		cy.iframe().find('#stockApprove1_approve .wwFormTableC>tbody>tr','{force:true}').each(($row=>{
+			cy.then(() => {
+				if(shouldStop){
+					return
+				}
+			cy.wrap($row).within(function(){
+				cy.get('td').each(($el=>{
+					cy.log($el.text())
+					if($el.text().includes(ID))
+					{
+						cy.get('.tabcol').eq(4).then((al)=>{
+							let q = al.text()
+							cy.log(q)
+							let a = q.trim()
+							cy.log(a)
+							cy.readFile(StockFile).then((data) => {
+								data.trasanctionid = a
+								cy.writeFile(StockFile, data)
+							})
+						})
+						cy.wait(2000)
+						cy.get('input[type="radio"]').click()
+						cy.wait(2000)
+					shouldStop = true
+					}
+				 })
+				)
+			 }) 
+		})
+	}))
+}))

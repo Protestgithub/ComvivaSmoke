@@ -52,26 +52,23 @@ Before(() => {
 Given('Login into Mobiquity Portal as System admin Maker', function () {
   cy.launchURL(Cypress.env('Adminurl'))
   cy.SysAdminlogin()
-  cy.wait(2000)
-  cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
+  cy.fixture('userData/SystemAdminLogin.json').then((data)=>{
+    let Name = data.SysAdminMakerName
+    cy.checkWelcomeText(Name)
+  })
 })
 Given('Login into Mobiquity Portal as System admin Checker1', function () {
   cy.launchURL(Cypress.env('Adminurl'))
   cy.SysAdminlogin2()
-  cy.wait(2000)
-  cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
+  cy.fixture('userData/SystemAdminLogin.json').then((data)=>{
+    let Name = data.SysAdminChecker1Name
+    cy.checkWelcomeText(Name)
+  })
 })
-Given('Login into Mobiquity Portal as another System admin Checker1 after logout', function () {
-  cy.launchURL(Cypress.env('Adminurl'))
-  cy.wait(2000)
-  cy.SysAdminlogin2()
-  cy.wait(2000)
-  cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
-})
+
 
 //----------------Navigate to User Management tab and Click on Register---------------------------------
 When('Navigate to User Management and Click on register', function () {
-
   welcomePage.getUserManagementOption().scrollIntoView()
   welcomePage.getUserManagementOption().click()
   welcomePage.getRegisterOption().click()
@@ -81,19 +78,16 @@ When('Navigate to User Management and Click on register', function () {
 When('Navigate to Approvals and filter by Submitted status', function () {
   welcomePage.getUserManagementOption().scrollIntoView()
   welcomePage.getApprovalTab().click()
-  cy.wait(2000)
   welcomePage.getApprovalButtonTab().click()
 
   //-------------------------------------------------Added wait until-------------------------------
   cy.waitUntil(() => {
-    return cy.iframe().find('h4.text-secondary').contains('Approvals')
+    return cy.iframe().find('h4.text-secondary')
   })
 
-  cy.wait(2000)
   //------------------------------------Filter the data--------------------------------------------------
   pageLogin.getiFrame()
   approvalPage.getFilter().click({ force: true })
-  cy.wait(2000)
   approvalPage.getSubmittedCheckBox().click({ force: true })
   approvalPage.getApplyFilter().click({ force: true })
 
@@ -103,22 +97,19 @@ When('Navigate to Approvals and filter by Submitted status', function () {
 And('Approve the Users', function () {
   approvalPage.getApproveButton().click({ force: true })
   approvalPage.getApproveRequest().click({ force: true })
-  cy.wait(2000)
 })
 
 
 And('System Admin is able to view details', function () {
   (manageUsersPage.getViewIcon().click({ force: true }))
-  cy.wait(3000)
 })
 
 And('Select User type as Subscriber and click on Subscriber', function () {
   pageLogin.getiFrame()
-  cy.wait(2000)
-  registerPage.getregisterPageTitle().should('have.text', this.data2.registerPageTitle)
-  registerPage.getSelectSubUserTypeTab().contains(this.data2.subPersonalInfo1.subUserType).click({ force: true })
-  registerPage.getSelectSubUserTypeTab().contains(this.data2.subPersonalInfo1.subUserType).focused()
-  registerPage.getUserRole().contains(this.data2.subPersonalInfo1.subUserRole).click({ force: true })
+  registerPage.getregisterPageTitle().should('be.visible')
+  registerPage.getSelectSubUserTypeTab().click({ force: true })
+  registerPage.getSelectSubUserTypeTab().focused()
+  registerPage.getUserRole().click({ force: true })
   registerPage.getRegistrationMode().eq(0).click({ force: true })
 })
 
@@ -131,6 +122,9 @@ Then('SubscrigReg Confirmation message is displayed', function () {
 
   registerPage.getNextButtonBasic2().click({ force: true })
   registerPage.getSubmitButton().click({ force: true })
+  cy.waitUntil(()=>{
+    return cy.iframe().find('.text-center').should('be.visible')
+  })
   registerPage.getConfirmationText().should('have.text', this.data2.personalInfo.successConfirmationMessage)
   registerPage.getDoneButton().click()
 })
@@ -139,7 +133,6 @@ Then('SubscrigReg Confirmation message is displayed', function () {
 And('Navigate to My Activity and Apply Add User filters', function () {
   welcomePage.getMyActivity().click()
   myActivityPage.getFilter().click({ force: true })
-  cy.wait(2000)
   myActivityPage.getAddUser().click({ force: true })
   myActivityPage.getSubmittedStatus().click()
   myActivityPage.getApply().click()
@@ -148,7 +141,6 @@ And('Navigate to My Activity and Apply Add User filters', function () {
 And('Navigate to My Activity and Apply Modified User filters', function () {
   welcomePage.getMyActivity().click()
   myActivityPage.getFilter().click({ force: true })
-  cy.wait(2000)
   myActivityPage.getModificationOfUser().click({ force: true })
   myActivityPage.getSubmittedStatus().click()
   myActivityPage.getApply().click()
@@ -157,13 +149,11 @@ And('Navigate to My Activity and Apply Modified User filters', function () {
 //--------------------------------------------------------------------------------------------------------
 
 And('Assert Created Subscriber Mobile Number and Write Created on time', function () {
-  cy.wait(2000)
-  cy.readFile(subRegistration).then((user) => {
+   cy.readFile(subRegistration).then((user) => {
     let SubMobile = user.subscriberMobile
     var SUBMobile = " " + SubMobile
     manageUsersPage.getAssertMobile().eq(1).should('have.text', SUBMobile)
   })
-  cy.wait(2000)
   myActivityPage.getCreatedOnTime().eq(0).invoke('text').then((time) => {
     time = time.trim()
     cy.log(time)
@@ -174,13 +164,11 @@ And('Assert Created Subscriber Mobile Number and Write Created on time', functio
   })
 })
 And('Assert Suspension creation Subscriber Mobile Number and Write Created on time', function () {
-  cy.wait(2000)
   cy.readFile(subRegistration).then((user) => {
     let SubMobile = user.subscriberMobileSuspend
     var SUBMobile = " " + SubMobile
     manageUsersPage.getAssertMobile().eq(1).should('have.text', SUBMobile)
   })
-  cy.wait(2000)
   myActivityPage.getCreatedOnTime().eq(0).invoke('text').then((time) => {
     time = time.trim()
     cy.log(time)
@@ -191,13 +179,11 @@ And('Assert Suspension creation Subscriber Mobile Number and Write Created on ti
   })
 })
 And('Assert Suspension of Subscriber Mobile Number and Write Created on time', function () {
-  cy.wait(2000)
   cy.readFile(subRegistration).then((user) => {
     let SubMobile = user.subscriberMobileSuspend
     var SUBMobile = " " + SubMobile
     manageUsersPage.getAssertMobile().eq(1).should('have.text', SUBMobile)
   })
-  cy.wait(2000)
   myActivityPage.getCreatedOnTime().eq(1).invoke('text').then((time) => {
     time = time.trim()
     cy.log(time)
@@ -215,6 +201,9 @@ And('User click on submitted user data for suspension', function () {
 })
 
 Then('Added User status is approved', function () {
+  cy.waitUntil(()=>{
+    return cy.iframe().find('.mat-simple-snackbar.ng-star-inserted > span').should('be.visible')
+  })
   approvalPage.getApproveConfirmationMessage().contains(this.data2.confirmationMessage.addUser)
 })
 //----------------------------Prerequisite Subscriber Creation for Suspension and Resumption-------------------------------
@@ -226,14 +215,11 @@ And('Enter all the required subscriber details for suspension and Resumption', f
   const lgid = () => Cypress._.random(1e5)
   loginId = this.data2.personalInfo.firstName + lgid()
   CIF = "1" + lgid()
-  cy.wait(2000)
-  registerPage.getFirstName().type(getRandomName(), { force: true })
+   registerPage.getFirstName().type(getRandomName(), { force: true })
   registerPage.getLastName().type(getRandomName(), { force: true })
   cy.iframe().find('select[data-test-id="preferredLanguage"]').select(this.data2.personalInfo.preferredLang, { force: true })
   registerPage.getLoginID().type(loginId, { force: true })
-
   registerPage.getCIF().type(CIF, { force: true })
-
   recurse(
     () => registerPage.getMobileNumber().clear().type(Mobile, { force: true }),
     () => registerPage.getAdressLine1().click({ force: true }),
@@ -241,13 +227,10 @@ And('Enter all the required subscriber details for suspension and Resumption', f
       ('Value is not unique').should('be.visible'),
     registerPage.getAdressLine1().click({ force: true }),
   )
-  //cy.writeFile(subRegistration,{ subscriberMobile: mobile })
   cy.readFile(subRegistration).then((data) => {
     data.subscriberMobileSuspend = Mobile
     cy.writeFile(subRegistration, data)
   })
-
-
   cy.OTP(Cypress.env('apiBaseURL'), Cypress.env('apiURL'))
 
   //------------------------------------------------------------------------------------------------------------    
@@ -268,7 +251,6 @@ And('Enter all the required subscriber details for suspension and Resumption', f
   registerPage.getNextButtonBasic1().click({ force: true })
 
   //-----------------------Profile------------------------------------------------------------------------
-  cy.wait(2000)
   registerPage.getSecurityProfile().select("subscriberSecurityProfile", { force: true })
   registerPage.getAuthProfile().select("SubsDefault Profile", { force: true })
   registerPage.getReguProfile().select("FullKycprofile", { force: true })
@@ -276,7 +258,6 @@ And('Enter all the required subscriber details for suspension and Resumption', f
 })
 
 And('enter user mobile number and search the user', function () {
-
   cy.getSubscriberMobileNumber()
   manageUsersPage.getSearchUserButton().click({ force: true })
 })
@@ -294,18 +275,19 @@ And('System Admin is able to edit subscriber details', function () {
 
 Then('Confirm the edit details', function () {
    manageUsersPage.getConfirmButton().click({ force: true })
-  approvalPage.getSuccessMessage().should('have.text', this.data2.confirmationMessage.editUser1)
+   cy.waitUntil(()=>{
+    return cy.iframe().find('.text-center.text-success').should('be.visible')
+  })
+  approvalPage.getSuccessMessage().should('contain.text', this.data2.confirmationMessage.successMessage)
   manageUsersPage.getDoneButton().click({ force: true })
 })
 
 //------TC_73-------------------------Admin Suspends Subscriber-------------------------------------------
 
 And('enter user mobile number and search the SuspendResume user', function () {
-
   manageUsersPage.getUserSearchDetails().click({ force: true })
   cy.getSubscriberMobileNumberSuspension()
   manageUsersPage.getSearchUserButton().click({ force: true })
-
 })
 
 And('Suspend the user by giving the comment', function () {
@@ -324,20 +306,16 @@ Then('Verify the user suspend Confirmation message', function () {
 When('Navigate to Approvals', function () {
   welcomePage.getUserManagementOption().scrollIntoView()
   welcomePage.getApprovalTab().click()
-  cy.wait(2000)
   welcomePage.getApprovalButtonTab().click()
 
   //-------------------------Added waituntil----------------------------------------------------------
   cy.waitUntil(() => {
-    return cy.iframe().find('h4.text-secondary').contains('Approvals')
+    return cy.iframe().find('h4.text-secondary')
   })
-
-  cy.wait(2000)
 })
 
 And('Admin click on Suspended user data', function () {
   cy.getApproval(subRegistration)
-
 })
 And('Approve to suspended the Users', function () {
   approvalPage.getApproveButton().click({ force: true })
@@ -380,7 +358,6 @@ When('Navigate to User Management and Click on manage user', function () {
   welcomePage.getUserManagementOption().scrollIntoView()
   welcomePage.getUserManagementOption().click()
   welcomePage.getManageUsersLink().click()
-
 })
 
 Then('Verify the user resume Confirmation message', function () {

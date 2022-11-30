@@ -53,17 +53,19 @@ Before(() => {
 //---------------------------------------------System Admin Login----------------------------------------------------
 Given('Login into Mobiquity Portal as System admin Maker', function () {
   cy.launchURL(Cypress.env('Adminurl'))
-  cy.wait(2000)
   cy.SysAdminlogin()
-  cy.wait(2000)
-  cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
+  cy.fixture('userData/SystemAdminLogin.json').then((data)=>{
+    let Name = data.SysAdminMakerName
+    cy.checkWelcomeText(Name)
+  })
 })
 Given('Login into Mobiquity Portal as System admin Checker1', function () {
   cy.launchURL(Cypress.env('Adminurl'))
-  cy.wait(2000)
   cy.SysAdminlogin2()
-  cy.wait(2000)
-  cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
+  cy.fixture('userData/SystemAdminLogin.json').then((data)=>{
+    let Name = data.SysAdminChecker1Name
+    cy.checkWelcomeText(Name)
+  })
 })
 Then('Logout', function(){
   welcomePage.getUserMenu().click()
@@ -75,7 +77,6 @@ Then('Logout', function(){
 
 //-------------------------Confirmation Message displayed---------------------------------------------
 Then('Confirmation message is displayed', function () {
-
   registerPage.getConfirmationText().should('have.text', this.data2.personalInfo.successConfirmationMessage)
   registerPage.getDoneButton().click()
 })
@@ -84,7 +85,6 @@ Then('Confirmation message is displayed', function () {
 And('Navigate to My Activity and Apply Add User filters', function () {
   welcomePage.getMyActivity().click()
   myActivityPage.getFilter().click({ force: true })
-  cy.wait(2000)
   myActivityPage.getAddUser().click({ force: true })
   myActivityPage.getSubmittedStatus().click()
   myActivityPage.getApply().click()
@@ -97,7 +97,6 @@ And('User click on Suspended submitted user data for Suspension', function () {
 And('Approve the Users', function () {
   approvalPage.getApproveButton().click({ force: true })
   approvalPage.getApproveRequest().click({ force: true })
-  cy.wait(2000)
 })
 
 Then('User status is approved', function () {
@@ -108,29 +107,22 @@ When('Navigate to Manage User, and search Business Admin', function () {
   welcomePage.getUserManagementOption().scrollIntoView()
   welcomePage.getUserManagementOption().click()
   welcomePage.getManageUsersLink().click()
-
 })
 When('Navigate to UserManagement And Click on Manage Users', function () {
   welcomePage.getUserManagementOption().scrollIntoView()
   welcomePage.getUserManagementOption().click()
   welcomePage.getManageUsersLink().click()
-
 })
-
 
 And('System Admin is able to view details', function () {
   (manageUsersPage.getViewIcon().eq(0).click({ force: true }))
-  cy.wait(3000)
 })
 
-
 Then('User modified is approved', function () {
-
   approvalPage.getApproveConfirmationMessage()
 })
 
 When('Navigate to User Management and Click on register', function () {
-
   welcomePage.getUserManagementOption().scrollIntoView()
   welcomePage.getUserManagementOption().click()
   welcomePage.getRegisterOption().click()
@@ -140,9 +132,7 @@ When('Navigate to User Management and Click on register', function () {
 //-------------------------TC53----------Register  Businsess User.---------------------------------------
 
 And('Select User type as Business and Select user role', function () {
-
   pageLogin.getiFrame()
-  cy.wait(2000)
   registerPage.getregisterPageTitle().should('have.text', this.data2.registerPageTitle)
   registerPage.getSelectUserTypeTab().contains(this.data2.userType2).click({ force: true })
   registerPage.getSelectUserTypeTab().contains(this.data2.userType2).focused()
@@ -151,31 +141,29 @@ And('Select User type as Business and Select user role', function () {
 })
 //####Creating Business User For Suspension
 And('Enter all the required business user details1', function () {
-
   let mobileut;
   const m = parseInt(Date.now()/100000);
   mobileut = "77" + m
-  cy.wait(2000)
   const lgid = () => Cypress._.random(1e5)
   loginId = this.data2.personalInfo.name + lgid()
-  cy.wait(2000)
-
-  cy.iframe().find('select[data-test-id="title"]')
+   cy.iframe().find('select[data-test-id="title"]')
     .select(this.data2.personalInfo.Title, { force: true })
   //-----------------------Mobile Number OTP-------------------------------------------------------------------
   registerPage.getMobileNumber().type(mobileut, { force: true })
-  cy.writeFile('cypress/fixtures/userData/BusinessUserSuspensionData.json', { registeredMobile: mobileut })
+  cy.readFile('cypress/fixtures/userData/BusinessUserSuspensionData.json').then((data)=>{
+    data.registeredMobile=mobileut
+    cy.writeFile('cypress/fixtures/userData/BusinessUserSuspensionData.json', data)
+
+  })
   registerPage.getLastName().type(getRandomName(), { force: true })
   cy.OTP(Cypress.env('apiBaseURL'))
-  cy.wait(2000)
+  
   //----------------email id otp---------------------------------------------------//
   cy.getBusinessrandomUserEmailID1()
   registerPage.getFirstName().type(getRandomName(), { force: true })
   cy.OTP(Cypress.env('apiBaseURL'))
-  cy.wait(2000)
   cy.iframe().find('select[data-test-id="preferredLanguage"]')
     .select(this.data2.personalInfo.preferredLang, { force: true })
-
   registerPage.getSupportOnline().select(this.data2.personalInfo.online, { force: true })
   registerPage.getAdressLine1().type(this.data2.personalInfo.addressLine1, { force: true })
   registerPage.getCountry().select(this.data2.personalInfo.country, { force: true })
@@ -183,36 +171,24 @@ And('Enter all the required business user details1', function () {
   registerPage.getCity().select(this.data2.personalInfo.city, { force: true })
   registerPage.getLatitude().type(this.data2.personalInfo.Latitude, { force: true })
   registerPage.getlongitude().type(this.data2.personalInfo.Longitude, { force: true })
-
   registerPage.getNextButtonBasic().eq(0).click({ force: true })
-
   let kycut
   const k = parseInt(Date.now());
   kycut="A"+k
   //---------------------KYC-----------------------------------------------------------------------
   registerPage.getKYCButton().eq(0).click({ force: true })
-  cy.wait(2000)
-  registerPage.getKYCIDType().select(this.data2.KycInfo8.KycIDType, { force: true })
+   registerPage.getKYCIDType().select(this.data2.KycInfo8.KycIDType, { force: true })
   registerPage.getKYCIDValue().type(kycut, { force: true })
-  cy.wait(2000)
-  registerPage.getMakeThisPrimaryButton().eq(2).click({ force: true })
-  cy.wait(2000)
-  registerPage.getNextButtonBasic1().click({ force: true })
-    cy.wait(5000)
+   registerPage.getMakeThisPrimaryButton().eq(2).click({ force: true })
+   registerPage.getNextButtonBasic1().click({ force: true })
   registerPage.getSecurityProfile().select('WholesalerDefaultSecurityProfile', { force: true })
   registerPage.getAuthProfile().select('WholesalerDefault Profile', { force: true })
   registerPage.getReguProfile().select('FullKycprofile', { force: true })
   registerPage.getMarketingProfile().select('WHSDefaultMP', { force: true })
   registerPage.getNextButtonBasic2().click({ force: true })
-  
-   
    //-----------------------------Profile---------------------------------------------------------------
-
-
-  cy.wait(3000)
-  registerPage.getNextButtonBasic3().click({force:true})
+  // registerPage.getNextButtonBasic3().click({force:true})
  registerPage.getSubmitButton().click({ force: true })
-
  })
 
 
@@ -233,31 +209,20 @@ And('Search with the Mobile Number', function () {
 
 //---------------------------TC57----------Approve the Modification of the Businsess User.----------------------------------------------------------------------------
 When('Navigate to Approvals and filter by Modification of user status', function () {
- 
   welcomePage.getApprovalTab().click()
-   cy.wait(2000)
  welcomePage.getApprovalButtonTab().click()
- 
  //-----------------------------------added waituntil-------------------------------------
  cy.waitUntil(()=>{
-    return cy.iframe().find('h4.text-secondary').contains('Approvals')
+    return cy.iframe().find('h4.text-secondary')
   })
-  
- cy.wait(2000)
   //----------Filter the data
-  cy.wait(8000)
   pageLogin.getiFrame()
   approvalPage.getFilter().click({ force: true })
-  cy.wait(2000)
-
   approvalPage.getModificationUserCheckBox().click({ force: true })
-  cy.wait(8000)
   approvalPage.getApplyFilter().click({ force: true })
-  cy.wait(3000)
 })
 //-----------Approve
 And('Admin click on Modified user data', function () {
-  cy.wait(4000)
   cy.getApproval(BuisnessReg)
 })
 //----------------------------------------------------Arpitha----------------------------------------------
@@ -285,23 +250,19 @@ And('Enter registered email id value', function () {
     registerPage.getEmailID().type(eid,{force:true})
     })  
     registerPage.getCountry().select(this.data2.personalInfo.country, { force: true })
-
 })
 Then('Email Error message is displayed', function () {
   registerPage.getLoginError().find('small.text-danger').should('have.text', ' Value is not unique ');
-
-
 })
 //-----------------------------------------------Kalyani-------------------------------------------------------
 
 And('Assert Created Buissness User Mobile Number for Suspension and Write Created on time', function(){
-  cy.wait(2000)
   cy.readFile(BuisnessRegSuspension).then((user) => {
   let BUMobile = user.registeredMobile
   var BUDMobile = " "+BUMobile
   manageUsersPage.getAssertMobile().eq(1).should('have.text',BUDMobile)
 })
-cy.wait(2000)
+
 myActivityPage.getCreatedOnTime().eq(0).invoke('text').then((time)=>{
   time= time.trim()
   cy.log(time)
@@ -311,26 +272,18 @@ myActivityPage.getCreatedOnTime().eq(0).invoke('text').then((time)=>{
   })
 })
 })
-
 When('Navigate to Approvals and filter by Submitted status', function () {
   welcomePage.getUserManagementOption().scrollIntoView()
   welcomePage.getApprovalTab().click()
-   cy.wait(2000)
  welcomePage.getApprovalButtonTab().click()
- 
  //--------------------------------Added wait until-----------------------------
- 
  cy.waitUntil(()=>{
-    return cy.iframe().find('h4.text-secondary').contains('Approvals')
+    return cy.iframe().find('h4.text-secondary')
   })
-  
- cy.wait(2000)
   //------------------------------------Filter the data--------------------------------------------------
   pageLogin.getiFrame()
   approvalPage.getFilter().click({ force: true })
-  cy.wait(2000)
   approvalPage.getSubmittedCheckBox().click({ force: true })
   approvalPage.getApplyFilter().click({ force: true })
-
 })
 

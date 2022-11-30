@@ -1,0 +1,327 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Churn Initiation",
+    "line": 1,
+    "id": "churn-initiation",
+    "tags": [],
+    "uri": "Churn.feature",
+    "elements": [
+      {
+        "id": "churn-initiation;to-verify-that-the-system-admin-can-approve-the-initiated-churn-process-with-bulk-upload-and-approve",
+        "keyword": "Scenario",
+        "line": 10,
+        "name": "To verify that the System admin can approve the initiated churn process with Bulk Upload and Approve",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 8
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 11,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 14730000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 12,
+            "name": "Click on Churn Management and Churn Initiation",
+            "result": {
+              "status": "passed",
+              "duration": 470000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "Download a File template",
+            "result": {
+              "status": "passed",
+              "duration": 3325000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "Convert csv To JSON file",
+            "result": {
+              "status": "passed",
+              "duration": 877000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "update the json data for bulkupload",
+            "result": {
+              "status": "passed",
+              "duration": 38000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "convert json to csv",
+            "result": {
+              "status": "passed",
+              "duration": 38000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 17,
+            "name": "Upload csv file with valid details",
+            "result": {
+              "status": "passed",
+              "duration": 5256000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "Click on Churn Management and Churn Approval",
+            "result": {
+              "status": "passed",
+              "duration": 389000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 19,
+            "name": "Select the initiated churn request and click on Batch Reject",
+            "result": {
+              "status": "passed",
+              "duration": 6740000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "churn-initiation;to-verify-that-the-system-admin-can-approve-the-initiated-churn-process-as-batch-reject",
+        "keyword": "Scenario",
+        "line": 28,
+        "name": "To verify that the System admin can approve the initiated churn process as Batch Reject",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 26
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 29,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 13004000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 30,
+            "name": "Click on Churn Management and Churn Initiation",
+            "result": {
+              "status": "passed",
+              "duration": 394000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 31,
+            "name": "Download a File template",
+            "result": {
+              "status": "passed",
+              "duration": 3168000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 32,
+            "name": "Convert csv To JSON file",
+            "result": {
+              "status": "passed",
+              "duration": 53000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 33,
+            "name": "update the json data batch reject",
+            "result": {
+              "status": "passed",
+              "duration": 52000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 34,
+            "name": "convert json to csv",
+            "result": {
+              "status": "passed",
+              "duration": 53000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 35,
+            "name": "Upload csv file with valid details",
+            "result": {
+              "status": "passed",
+              "duration": 5234000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 36,
+            "name": "Click on Churn Management and Churn Approval",
+            "result": {
+              "status": "passed",
+              "duration": 387000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 37,
+            "name": "Select the initiated churn request and click on Batch Reject",
+            "result": {
+              "status": "passed",
+              "duration": 6655000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "churn-initiation;to-verify-that-the-system-admin-can-approve-the-initiated-churn-process-as-approve/reject-by-selection",
+        "keyword": "Scenario",
+        "line": 46,
+        "name": "To verify that the System admin can approve the initiated churn process as Approve/Reject by Selection",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 44
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 47,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 12973000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 48,
+            "name": "Click on Churn Management and Churn Initiation",
+            "result": {
+              "status": "passed",
+              "duration": 300000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 49,
+            "name": "Download a File template",
+            "result": {
+              "status": "passed",
+              "duration": 3218000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 50,
+            "name": "Convert csv To JSON file",
+            "result": {
+              "status": "passed",
+              "duration": 37000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 51,
+            "name": "update the json data for Approve and Reject",
+            "result": {
+              "status": "passed",
+              "duration": 35000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 52,
+            "name": "convert json to csv",
+            "result": {
+              "status": "passed",
+              "duration": 45000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 53,
+            "name": "Upload csv file with valid details",
+            "result": {
+              "status": "passed",
+              "duration": 5235000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 54,
+            "name": "Click on Churn Management and Churn Approval",
+            "result": {
+              "status": "passed",
+              "duration": 299000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 55,
+            "name": "Select the initiated churn request and click on Approve and Reject by Selection",
+            "result": {
+              "status": "passed",
+              "duration": 6928000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

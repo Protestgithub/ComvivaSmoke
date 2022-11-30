@@ -63,19 +63,20 @@ Before(() => {
 //---------------------------------------------System Admin Login----------------------------------------------------
 Given('Login into Mobiquity Portal as System admin Maker', function () {
   cy.launchURL(Cypress.env('Adminurl'))
-  cy.wait(2000)
   cy.SysAdminlogin()
-  cy.wait(2000)
-  cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
+  cy.fixture('userData/SystemAdminLogin.json').then((data) => {
+    let Name = data.SysAdminMakerName
+    cy.checkWelcomeText(Name)
+  })
 })
 Given('Login into Mobiquity Portal as System admin Checker1', function () {
   cy.launchURL(Cypress.env('Adminurl'))
-  cy.wait(2000)
   cy.SysAdminlogin2()
-  cy.wait(2000)
-  cy.checkWelcomeText(this.data2.networkAdminWelcomeText)
+  cy.fixture('userData/SystemAdminLogin.json').then((data) => {
+    let Name = data.SysAdminChecker1Name
+    cy.checkWelcomeText(Name)
+  })
 })
-
 Then('Logout', function(){
   welcomePage.getUserMenu().click()
   welcomePage.getLogoutButton().click()
@@ -233,7 +234,7 @@ cy.writeFile(subRegistration, data)
 
   //-----------------------Profile------------------------------------------------------------------------
   cy.wait(2000)
-  
+
     registerPage.getSecurityProfile().select("subscriberSecurityProfile", { force: true })
      registerPage.getAuthProfile().select("SubsDefault Profile", { force: true })
       registerPage.getReguProfile().select("FullKycprofile", { force: true })
@@ -241,10 +242,9 @@ cy.writeFile(subRegistration, data)
  
 })
 Then('SubscrigReg Confirmation message is displayed', function () {
-
   registerPage.getNextButtonBasic2().click({ force: true })
   registerPage.getSubmitButton().click({ force: true })
-  registerPage.getConfirmationText().should('have.text', this.data2.confirmationMessage.addUser)
+  registerPage.getConfirmationText().should('have.text',this.data2.confirmationMessage.editUser1)
 })
 
 

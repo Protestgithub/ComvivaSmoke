@@ -1,0 +1,112 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Grade Management",
+    "line": 1,
+    "id": "grade-management",
+    "tags": [],
+    "uri": "Grade.feature",
+    "elements": [
+      {
+        "id": "grade-management;to-verify-that-master-can-not-modify-the-grade-code-only-the-name-of-the-grade-can-be-modified",
+        "keyword": "Scenario",
+        "line": 11,
+        "name": "To verify that master can not modify the grade code only the name of the grade can be modified",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 9
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 12,
+            "name": "Login into Mobiquity Portal as Super admin Checker",
+            "result": {
+              "status": "passed",
+              "duration": 15516000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 13,
+            "name": "Click on User Profile Management >> Modify Grade",
+            "result": {
+              "status": "passed",
+              "duration": 326000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "Do required changes.",
+            "result": {
+              "status": "passed",
+              "duration": 6630000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "Click on Modify.",
+            "result": {
+              "status": "passed",
+              "duration": 364000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "Click on confirm button.",
+            "result": {
+              "status": "passed",
+              "duration": 129000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "grade-management;to-verify-that-master-can-delete-grade-successfully",
+        "keyword": "Scenario",
+        "line": 25,
+        "name": "To verify that master can delete grade successfully",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 23
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 26,
+            "name": "Login into Mobiquity Portal as Super admin Checker",
+            "result": {
+              "status": "passed",
+              "duration": 11371000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 27,
+            "name": "Click on User Profile Management >> Delete Grade",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 30000ms: Expected to find element: `#delconfirm_submit`, but never found it. Queried from element: <body#page-home>\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\GradeManagement\\Grade.feature:1285:24)"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

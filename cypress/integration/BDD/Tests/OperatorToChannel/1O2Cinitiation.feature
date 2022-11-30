@@ -17,7 +17,7 @@ And Select MFS provider and Enter Reference number and Amount
 Then click on Submit and Confirm button
 When Navigate to Operator to channel and click on O2C transfer initiate
 And Enter All the Mandatory Details
-Then Click on submit and Confirm00
+Then Click on submit and Confirm O2C
 
 
 
@@ -68,7 +68,7 @@ And Select MFS provider and Enter Reference number and Amount
 Then click on Submit and Confirm button
 When Navigate to Operator to channel and click on O2C transfer initiate
 And Enter All the Mandatory Details
-Then Click on submit and Confirm0
+Then Click on submit and Confirm O2C
 And logout the user
 Given Login into Mobiquity Portal as System admin Checker1
 When Navigate to Operator to channel and click on O2C transfer Approval1
@@ -93,10 +93,10 @@ And Select MFS provider and Enter Reference number and Amount
 Then click on Submit and Confirm button
 When Navigate to Operator to channel and click on O2C transfer initiate
 And Enter All the Mandatory Details
-Then Click on submit and Confirm1
+Then Click on submit and Confirm O2C
 And logout the user
 Given Login into Mobiquity Portal as System admin Checker1
-When Navigate to Operator to channel and click on O2C transfer Approval1
+When Navigate to Operator to channel and click on O2C transfer Approval1 for TransactionID1
 And Assert Initiated O2C for Transaction2
 When Navigate to Stock Management and Click on Stock initiation
 And Select MFS provider and Enter Reference number and Amount
@@ -118,10 +118,10 @@ And Select MFS provider and Enter Reference number and Amount
 Then click on Submit and Confirm button
 When Navigate to Operator to channel and click on O2C transfer initiate
 And Enter All the Mandatory Details
-Then Click on submit and Confirm2
+Then Click on submit and Confirm O2C
 And logout the user
 Given Login into Mobiquity Portal as System admin Checker1
-When Navigate to Operator to channel and click on O2C transfer Approval1
+When Navigate to Operator to channel and click on O2C transfer Approval1 for TransactionID2
 And Assert Initiated O2C for Transaction3
 When Navigate to Stock Management and Click on Stock initiation
 And Select MFS provider and Enter Reference number and Amount
@@ -142,10 +142,10 @@ Scenario:To verify that if Approval 1 current status should be 'Passed' then , i
 Given Login into Mobiquity Portal as System admin Maker
 When Navigate to Operator to channel and click on O2C transfer initiate
 And Enter All the Mandatory Details
-Then Click on submit and Confirm
+Then Click on submit and Confirm O2C
 And logout the user
 Given Login into Mobiquity Portal as System admin Checker1
-When Navigate to Operator to channel and click on O2C transfer Approval1
+When Navigate to Operator to channel and click on O2C transfer Approval1 for TransactionID3
 And logout the user
 Given Login into Mobiquity Portal as System admin Checker2
 When Navigate to Operator to channel and click on O2C transfer Approval2

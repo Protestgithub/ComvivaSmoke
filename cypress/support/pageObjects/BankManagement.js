@@ -5,10 +5,11 @@ class BankManagement{
     }
     getAddBank()
     {
-        return cy.get('a[title="Add Bank"]').eq(0)
+        // return cy.get('a[title="Add Bank"]', { timeout: 30000 }).eq(0)
+        return cy.get('[title="Bank Master"]')
     }
     getDownloadFileTemplate() {
-        return cy.iframe().find('a[href*="javaScript:openSheet()"]')
+        return cy.iframe().find('a[href*="javaScript:openSheet()"]',{ timeout: 30000 })
     }
     getProvider()
     {
@@ -20,7 +21,7 @@ class BankManagement{
     }
     getBankName()
     {
-        return cy.iframe().find('#fileUploadForm_bankName')
+        return cy.iframe().find('#fileUploadForm_bankName',{ timeout: 30000 })
     }
     getPoolAccountNo()
     {
@@ -80,7 +81,7 @@ class BankManagement{
     }
     getMFSproviderBankTypeMaster()
     {
-        return cy.get('#collapsible_listnode_3')
+        return cy.get(' [title="MFS Provider Bank Type Master"]')
     }
     getModifyORDelete()
     {

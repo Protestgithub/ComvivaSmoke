@@ -1,6 +1,9 @@
 Feature: Domain,Category and Grade Creation
 
 
+
+
+
 ##################################### Domain Creation ################################################
 
 
@@ -36,7 +39,6 @@ And Enter Category Code and Category Name.
 Then Select Domain and Parent Category.
 And Click on Submit & confirm button.
 
-
 # Author: Likith R
 # Last Updated:
 # Comments 
@@ -51,9 +53,7 @@ Then Select Category approval.
 Then Select the category that needs to be approved
 
 
-
 ##################################### Grade Creation ################################################
-
 
 # Author: Likith R
 # Last Updated:
@@ -66,3 +66,4 @@ Scenario:To verify that Master user can create grade, if all fields in contains 
 Given Login into Mobiquity Portal as Super admin Checker
 When Click on User Profile Management >> Add Grade
 And Select the domain & category for which grade needs to be added.
+

@@ -1,0 +1,739 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Resumption of Business User",
+    "line": 1,
+    "id": "resumption-of-business-user",
+    "tags": [],
+    "uri": "3Business.feature",
+    "elements": [
+      {
+        "id": "resumption-of-business-user;to-verify-that-system-admin/business-admin-can-resume-suspension-of-the-businsess-user.",
+        "keyword": "Scenario",
+        "line": 13,
+        "name": "To Verify that System Admin/Business Admin can resume suspension of the businsess user.",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 14,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 16189000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 15,
+            "name": "Navigate to User Management and Click on manage user",
+            "result": {
+              "status": "passed",
+              "duration": 484000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "Enter Mobile number and KYC number in search for suspension",
+            "result": {
+              "status": "passed",
+              "duration": 5424000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 17,
+            "name": "User Click on eye button",
+            "result": {
+              "status": "passed",
+              "duration": 597000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 18,
+            "name": "Verify View Details Page",
+            "result": {
+              "status": "passed",
+              "duration": 95000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 19,
+            "name": "Click on Suspend user icon",
+            "result": {
+              "status": "passed",
+              "duration": 293000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 20,
+            "name": "write comments to Suspend user",
+            "result": {
+              "status": "passed",
+              "duration": 762000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 21,
+            "name": "click on yes",
+            "result": {
+              "status": "passed",
+              "duration": 208000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 22,
+            "name": "Verify the user resume Confirmation message",
+            "result": {
+              "status": "passed",
+              "duration": 246000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 23,
+            "name": "Navigate to My Activity and Apply Modified User filters",
+            "result": {
+              "status": "passed",
+              "duration": 6083000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 24,
+            "name": "Assert Buissness User Mobile Number for Suspension and Write Created on time",
+            "result": {
+              "status": "passed",
+              "duration": 747000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "resumption-of-business-user;to-verify-that-systemadmin/business-admin-can-initiate-resumption-of-an-suspended-businsess-user.",
+        "keyword": "Scenario",
+        "line": 35,
+        "name": "To verify that SystemAdmin/Business Admin can initiate resumption of an suspended businsess user.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 33
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 36,
+            "name": "Login into Mobiquity Portal as System admin Checker1",
+            "result": {
+              "status": "passed",
+              "duration": 12679000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 37,
+            "name": "Navigate to Approvals and  click on suspended data",
+            "result": {
+              "status": "passed",
+              "duration": 5501000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 38,
+            "name": "User click on Suspended submitted user data",
+            "result": {
+              "status": "passed",
+              "duration": 577000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 39,
+            "name": "Approve the Users",
+            "result": {
+              "status": "passed",
+              "duration": 1158000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 40,
+            "name": "User status is Suspended",
+            "result": {
+              "status": "passed",
+              "duration": 1524000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "resumption-of-business-user;asserting-the-suspended-business-user-login",
+        "keyword": "Scenario",
+        "line": 42,
+        "name": "Asserting the Suspended business user login",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 43,
+            "name": "Login into Mobiquity Portal as Business admin User",
+            "result": {
+              "status": "passed",
+              "duration": 11882000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "resumption-of-business-user;to-verify-that-system-admin-is-able-to--resume-the-details-of-searched-user",
+        "keyword": "Scenario",
+        "line": 53,
+        "name": "To verify that System admin is able to  Resume the details of searched user",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 51
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 54,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 13464000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 55,
+            "name": "Navigate to User Management and Click on manage user",
+            "result": {
+              "status": "passed",
+              "duration": 470000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 56,
+            "name": "Enter Mobile number and KYC number in search for suspension",
+            "result": {
+              "status": "passed",
+              "duration": 1936000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 57,
+            "name": "User Click on eye button",
+            "result": {
+              "status": "passed",
+              "duration": 664000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 58,
+            "name": "Verify View Details Page",
+            "result": {
+              "status": "passed",
+              "duration": 100000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 59,
+            "name": "Click on Suspend user icon",
+            "result": {
+              "status": "passed",
+              "duration": 358000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 60,
+            "name": "write comments to Suspend user",
+            "result": {
+              "status": "passed",
+              "duration": 637000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 61,
+            "name": "click on yes",
+            "result": {
+              "status": "passed",
+              "duration": 285000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 62,
+            "name": "Verify the user resume Confirmation message",
+            "result": {
+              "status": "passed",
+              "duration": 299000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 63,
+            "name": "Navigate to My Activity and Apply Modified User filters",
+            "result": {
+              "status": "passed",
+              "duration": 2229000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 64,
+            "name": "Assert Buissness User Mobile Number for Suspension and Write Created on time",
+            "result": {
+              "status": "passed",
+              "duration": 784000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "resumption-of-business-user;system-admin/business-admin-can-approve-resumption-initiate-of-an-suspended-businsess-user.",
+        "keyword": "Scenario",
+        "line": 74,
+        "name": "System Admin/Business Admin can approve resumption initiate of an suspended businsess user.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 72
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 75,
+            "name": "Login into Mobiquity Portal as System admin Checker1",
+            "result": {
+              "status": "passed",
+              "duration": 12890000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 76,
+            "name": "Navigate to Approvals and filter by Submitted status",
+            "result": {
+              "status": "passed",
+              "duration": 1953000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 77,
+            "name": "User click on Suspended submitted user data",
+            "result": {
+              "status": "passed",
+              "duration": 563000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 78,
+            "name": "Approve the Users",
+            "result": {
+              "status": "passed",
+              "duration": 431000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 79,
+            "name": "User status is Resumed",
+            "result": {
+              "status": "passed",
+              "duration": 1572000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "resumption-of-business-user;asserting-the-resumed-business-user-login",
+        "keyword": "Scenario",
+        "line": 81,
+        "name": "Asserting the Resumed business user login",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 82,
+            "name": "Login into Mobiquity Portal as Business admin User1",
+            "result": {
+              "status": "passed",
+              "duration": 14922000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "resumption-of-business-user;suspension-of-the-businsess-user-for-o2c",
+        "keyword": "Scenario",
+        "line": 90,
+        "name": "Suspension of the businsess user for O2C",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 91,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 13026000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 92,
+            "name": "Navigate to User Management and Click on manage user",
+            "result": {
+              "status": "passed",
+              "duration": 357000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 93,
+            "name": "Enter Mobile number and KYC number in search for suspension",
+            "result": {
+              "status": "passed",
+              "duration": 1188000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 94,
+            "name": "User Click on eye button",
+            "result": {
+              "status": "passed",
+              "duration": 492000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 95,
+            "name": "Verify View Details Page",
+            "result": {
+              "status": "passed",
+              "duration": 97000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 96,
+            "name": "Click on Suspend user icon",
+            "result": {
+              "status": "passed",
+              "duration": 280000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 97,
+            "name": "write comments to Suspend user",
+            "result": {
+              "status": "passed",
+              "duration": 622000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 98,
+            "name": "click on yes",
+            "result": {
+              "status": "passed",
+              "duration": 206000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 99,
+            "name": "Verify the user resume Confirmation message",
+            "result": {
+              "status": "passed",
+              "duration": 246000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 100,
+            "name": "Navigate to My Activity and Apply Modified User filters",
+            "result": {
+              "status": "passed",
+              "duration": 2116000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 101,
+            "name": "Assert Buissness User Mobile Number for Suspension and Write Created on time",
+            "result": {
+              "status": "passed",
+              "duration": 747000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "resumption-of-business-user;approval-of-suspended-user",
+        "keyword": "Scenario",
+        "line": 103,
+        "name": "Approval of Suspended User",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 104,
+            "name": "Login into Mobiquity Portal as System admin Checker1",
+            "result": {
+              "status": "passed",
+              "duration": 12380000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 105,
+            "name": "Navigate to Approvals and  click on suspended data",
+            "result": {
+              "status": "passed",
+              "duration": 1485000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 106,
+            "name": "User click on Suspended submitted user data",
+            "result": {
+              "status": "passed",
+              "duration": 993000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 107,
+            "name": "Approve the Users",
+            "result": {
+              "status": "passed",
+              "duration": 479000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 108,
+            "name": "User status is Suspended",
+            "result": {
+              "status": "passed",
+              "duration": 1606000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "resumption-of-business-user;to-verify-that-after-successful-creation-of-the-businsess-user,-notification-should-be-sent-to-the-user",
+        "keyword": "Scenario",
+        "line": 118,
+        "name": "To verify that after successful creation of the businsess user, notification should be sent to the user",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 116
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 119,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 12733000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 120,
+            "name": "Navigate to User Management and Click on register",
+            "result": {
+              "status": "passed",
+              "duration": 376000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 121,
+            "name": "Select User type as Business and Select user role",
+            "result": {
+              "status": "passed",
+              "duration": 2296000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 122,
+            "name": "Enter all the required business user details",
+            "result": {
+              "status": "failed",
+              "error_message": "ReferenceError: loginId is not defined\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\PreRequisite\\5.Users\\3Business.feature:294:11)\n    at Context.resolveAndRunStepDefinition (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\PreRequisite\\5.Users\\3Business.feature:15394:29)\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\PreRequisite\\5.Users\\3Business.feature:14715:35)\nFrom previous event:\n    at Context.thenFn (http://172.25.48.177/__cypress/runner/cypress_runner.js:160452:63)\n    at Context.then (http://172.25.48.177/__cypress/runner/cypress_runner.js:160904:21)\n    at Context.<anonymous> (http://172.25.48.177/__cypress/runner/cypress_runner.js:178437:19)\n    at http://172.25.48.177/__cypress/runner/cypress_runner.js:177222:15\nFrom previous event:\n    at CommandQueue.runCommand (http://172.25.48.177/__cypress/runner/cypress_runner.js:177201:17)\n    at next (http://172.25.48.177/__cypress/runner/cypress_runner.js:177355:19)\n    at http://172.25.48.177/__cypress/runner/cypress_runner.js:177384:16"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 123,
+            "name": "Confirmation message is displayed",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 124,
+            "name": "Navigate to My Activity and Apply Add User filters",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 125,
+            "name": "Assert Created Buissness User Mobile Number and Write Created on time",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "resumption-of-business-user;to-verify-notification-sent-on-approval",
+        "keyword": "Scenario",
+        "line": 127,
+        "name": "To verify notification sent on approval",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 128,
+            "name": "Login into Mobiquity Portal as System admin Checker1",
+            "result": {
+              "status": "passed",
+              "duration": 13597000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 129,
+            "name": "Navigate to Approvals and filter by Submitted status",
+            "result": {
+              "status": "passed",
+              "duration": 3817000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 130,
+            "name": "User click on submitted user data",
+            "result": {
+              "status": "passed",
+              "duration": 2634000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 131,
+            "name": "Approve the Users and Check for SMS Notification sent to user",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 30000ms: Expected to find element: `button[id=\"approve-expanded-record\"]`, but never found it. Queried from element: <body>\n    at approvals.getApproveButton (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\PreRequisite\\5.Users\\3Business.feature:3393:26)\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\PreRequisite\\5.Users\\3Business.feature:727:16)"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

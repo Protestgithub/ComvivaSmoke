@@ -1,0 +1,77 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Transfer to Unregistered",
+    "line": 1,
+    "id": "transfer-to-unregistered",
+    "tags": [],
+    "uri": "TransferToUnregistered.feature",
+    "elements": [
+      {
+        "id": "transfer-to-unregistered;to-verify-that-system-admin-should-able-to-do-enquiry-of-transaction-for-un-registred-subscibers-subscribers-who-doesn't-exists-in-system",
+        "keyword": "Scenario",
+        "line": 6,
+        "name": "To verify that system admin should able to do enquiry of transaction for un registred subscibers Subscribers who doesn't exists in system",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 4
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 14890000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 8,
+            "name": "Click on Transfer to Unregistered Users",
+            "result": {
+              "status": "passed",
+              "duration": 354000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "Transfer to Unregistered Select the service type",
+            "result": {
+              "status": "passed",
+              "duration": 3885000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 10,
+            "name": "Transfer to Unregistered Enter subscriber Mobile number or transaction ID",
+            "result": {
+              "status": "passed",
+              "duration": 1094000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 11,
+            "name": "Transfer to Unregistered Click on submit",
+            "result": {
+              "status": "passed",
+              "duration": 490000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

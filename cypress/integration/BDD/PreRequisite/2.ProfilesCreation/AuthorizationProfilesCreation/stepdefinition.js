@@ -45,18 +45,18 @@ Before(() => {
 Given('Login into Mobiquity Portal as System admin Maker', function () {
   cy.launchURL(Cypress.env('Adminurl'))
   cy.SysAdminlogin()
-  cy.wait(2000) 
+  cy.fixture('userData/SystemAdminLogin.json').then((data)=>{
+    let Name = data.SysAdminMakerName
+    cy.checkWelcomeText(Name)
+  })
 })
-Given('Login into Mobiquity Portal as another System admin User after logout', function () {
+Given('Login into Mobiquity Portal as System admin Checker1', function () {
   cy.launchURL(Cypress.env('Adminurl'))
-  cy.wait(2000)
   cy.SysAdminlogin2()
-  cy.wait(2000)
-})
-Then('Logout', function () {
-  welcomePage.getUserMenu().click()
-  welcomePage.getLogoutButton().click()
-  welcomePage.getLogoutYesButton().click()
+  cy.fixture('userData/SystemAdminLogin.json').then((data)=>{
+    let Name = data.SysAdminChecker1Name
+    cy.checkWelcomeText(Name)
+  })
 })
 //--------------------------------------------------------------------------------------------------------
 
@@ -65,59 +65,42 @@ Then('Logout', function () {
 //----------TC_149-----To verify that system admin should be able to add authorization profile------------
 
 When('Select Authorization profile and add profile', function () {
-
   authorizationProfilePage.getAuthorizationProfileManagement().scrollIntoView()
   authorizationProfilePage.getAuthorizationProfileManagement().click({ force: true })
   authorizationProfilePage.getAddProfile().click({ force: true })
 })
 
 And('select Subscriber user type and select user role', function () {
-  cy.wait(2000)
   authorizationProfilePage.getAuthorizationUserType().click({ force: true })
-  cy.wait(2000)
   authorizationProfilePage.getAdministratorType().focused() 
-  cy.wait(2000)
-  authorizationProfilePage.getAuthorizationUserRole().contains('Subscriber').click({ force: true })
+  authorizationProfilePage.getAuthorizationUserRole().click({ force: true })
 
 })
 //-----------------------SubscriberM1S1----------------------
 
 Then('Fill all Details and Create Subscriber authorization profile', function () {
-  cy.wait(3000)
   authorizationProfilePage.getProfileName().clear({ force: true }).type(getRandomName(), { force: true }),
-    authorizationProfilePage.getUserServicePreferences().contains('ALL').click({ force: true })
-  recurse(
-    () => authorizationProfilePage.getProfileName().clear({ force: true }).type(getRandomName(), { force: true }),
-    () => authorizationProfilePage.getUserServicePreferences().contains('ALL').click({ force: true }),
-    (uniqueness) => (uniqueness) == authorizationProfilePage.getProfileNameExist().contains
-      ('Authorization profile name already exists,please try with different name').should('be.visible'),
-    authorizationProfilePage.getUserServicePreferences().contains('ALL').click({ force: true }),
-  )
+  cy.wait(3000)
+  authorizationProfilePage.getUserServicePreferences().click({ force: true })
   cy.readFile(AuthProfileName).then((data) => {
     data.SubscriberProfileName = profName
     cy.writeFile(AuthProfileName, data)
   })
- // cy.selectModule()
-  cy.wait(3000)
   authorizationProfilePage.getAdd().click({ force: true })
-  cy.wait(5000)
   authorizationProfilePage.getConfirm().click({ force: true })
   authorizationProfilePage.getProfileDoneButton().click({ force: true })
 })
 
 //----------------------Approvals------------------------
 Then('User approval for Authorization profile', function () {
-  cy.wait(3000)
   authorizationProfilePage.getApprovals().scrollIntoView()
   authorizationProfilePage.getApprovals().click({ force: true })
-    cy.wait(2000)
   authorizationProfilePage.getApprovalButtonTab().click()
   
   //-------------------Added wait until------------------------
   cy.waitUntil(()=>{
-    return cy.iframe().find('h4.text-secondary').contains('Approvals')
+    return cy.iframe().find('h4.text-secondary').should('be.visible')
   })
-  cy.wait(2000)
   authorizationProfilePage.getApproveButton().click({ force: true })
   authorizationProfilePage.getApproveButtonSubmit().click({ force: true })  
 })

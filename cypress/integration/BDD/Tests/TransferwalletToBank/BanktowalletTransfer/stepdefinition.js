@@ -42,7 +42,7 @@ Given('Login into Mobiquity Portal as Business admin User3', function () {
     cy.wait(2000)
     cy.login(loginId, this.data1.businessAdmin.businessadminPwd1)
   })
-  cy.checkWelcomeText(this.data1.BAAdminText)
+  // cy.checkWelcomeText(this.data1.BAAdminText)
 
 })
 

@@ -1,0 +1,476 @@
+[
+  {
+    "description": "    This feature includes Stock initiation,StockApproval1 and StockApproval2 by System Admin",
+    "keyword": "Feature",
+    "name": "Stock Management Initiation",
+    "line": 1,
+    "id": "stock-management-initiation",
+    "tags": [],
+    "uri": "1stockManagement.feature",
+    "elements": [
+      {
+        "id": "stock-management-initiation;to-verify-that-system-admin-can-set-the-stock-limit.",
+        "keyword": "Scenario",
+        "line": 14,
+        "name": "To verify that System admin can set the Stock Limit.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 12
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 15,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 13439000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 16,
+            "name": "Navigate to Stock Management and Click on Stock Limit",
+            "result": {
+              "status": "passed",
+              "duration": 575000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 17,
+            "name": "Enter the value for Approval Limit 1",
+            "result": {
+              "status": "passed",
+              "duration": 3463000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 18,
+            "name": "Click on Submit button for Stock Limit",
+            "result": {
+              "status": "passed",
+              "duration": 164000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "stock-management-initiation;to-verify-that-system-admin-can-initiate-the-stock-successfully",
+        "keyword": "Scenario",
+        "line": 27,
+        "name": "To verify that System admin can initiate the stock successfully",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 25
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 28,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 12956000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 29,
+            "name": "Navigate to Stock Management and Click on Stock initiation",
+            "result": {
+              "status": "passed",
+              "duration": 1712000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 30,
+            "name": "Select MFS provider and Enter Reference number and Amount",
+            "result": {
+              "status": "passed",
+              "duration": 1334000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 31,
+            "name": "click on Submit and Confirm button",
+            "result": {
+              "status": "passed",
+              "duration": 6558000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "stock-management-initiation;to-verify-that-system-admin-can-successfully-approve-the-stock-at-level>>1",
+        "keyword": "Scenario",
+        "line": 40,
+        "name": "To verify that System admin can successfully approve the stock at level>>1",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 38
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 41,
+            "name": "Login into Mobiquity Portal as System admin Checker1",
+            "result": {
+              "status": "passed",
+              "duration": 13021000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 42,
+            "name": "Navigate to Stock Management and Click on Stock Approval 1",
+            "result": {
+              "status": "passed",
+              "duration": 1951000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 43,
+            "name": "Click on Submit Button",
+            "result": {
+              "status": "passed",
+              "duration": 10463000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 44,
+            "name": "Click on Approve button",
+            "result": {
+              "status": "passed",
+              "duration": 6736000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "stock-management-initiation;to-verify-that-system-admin-can-successfully-approve-the-stock-at-level-2.",
+        "keyword": "Scenario",
+        "line": 54,
+        "name": "To verify that System admin can successfully approve the stock at level 2.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 52
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 55,
+            "name": "Login into Mobiquity Portal as System admin Checker2",
+            "result": {
+              "status": "passed",
+              "duration": 4870000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 56,
+            "name": "Navigate to Stock Management and Click on Stock Approval 2",
+            "result": {
+              "status": "passed",
+              "duration": 4042000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 57,
+            "name": "Click on Submit and Approve the Stock at level 2",
+            "result": {
+              "status": "passed",
+              "duration": 5432000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 58,
+            "name": "Navigate to Stock Management and Click on Stock initiation",
+            "result": {
+              "status": "passed",
+              "duration": 1608000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 59,
+            "name": "Select MFS provider and Enter Reference number and Amount",
+            "result": {
+              "status": "passed",
+              "duration": 1699000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 60,
+            "name": "Assert Credit Stock",
+            "result": {
+              "status": "passed",
+              "duration": 5637000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "stock-management-initiation;to-verify-that-system-admin-is-able-to-initiate-stock-transfer-to-ea-through-web.",
+        "keyword": "Scenario",
+        "line": 71,
+        "name": "To verify that System admin is able to Initiate Stock Transfer to EA through web.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 69
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 72,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 13589000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 73,
+            "name": "Navigate to Stock Management and Stock Transfer to EA",
+            "result": {
+              "status": "passed",
+              "duration": 1912000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 74,
+            "name": "User Select MFS Provider",
+            "result": {
+              "status": "passed",
+              "duration": 489000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 75,
+            "name": "User Should Enter Reference number",
+            "result": {
+              "status": "passed",
+              "duration": 381000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 76,
+            "name": "User Should Enter Amount",
+            "result": {
+              "status": "failed",
+              "error_message": "TypeError: Cannot read properties of undefined (reading 'KeyboardEvent')\n    at Keyboard.fireSimulatedEvent (http://172.25.48.177/__cypress/runner/cypress_runner.js:170110:28)\n    at Keyboard.simulatedKeydown (http://172.25.48.177/__cypress/runner/cypress_runner.js:170255:58)\n    at Keyboard.typeSimulatedKey (http://172.25.48.177/__cypress/runner/cypress_runner.js:170295:10)\n    at http://172.25.48.177/__cypress/runner/cypress_runner.js:169965:14\nFrom previous event:\n    at http://172.25.48.177/__cypress/runner/cypress_runner.js:169975:67\nFrom previous event:\n    at Keyboard.type (http://172.25.48.177/__cypress/runner/cypress_runner.js:169973:60)\n    at type (http://172.25.48.177/__cypress/runner/cypress_runner.js:159006:23)\n    at http://172.25.48.177/__cypress/runner/cypress_runner.js:159248:20\nFrom previous event:\n    at onReady (http://172.25.48.177/__cypress/runner/cypress_runner.js:159224:14)\n    at runAllChecks (http://172.25.48.177/__cypress/runner/cypress_runner.js:154746:14)\n    at retryActionability (http://172.25.48.177/__cypress/runner/cypress_runner.js:154755:16)\n    at http://172.25.48.177/__cypress/runner/cypress_runner.js:154762:12\nFrom previous event:\n    at Object.verify (http://172.25.48.177/__cypress/runner/cypress_runner.js:154667:61)\n    at handleFocused (http://172.25.48.177/__cypress/runner/cypress_runner.js:159195:77)\n    at Context.type (http://172.25.48.177/__cypress/runner/cypress_runner.js:159255:12)\n    at Context.<anonymous> (http://172.25.48.177/__cypress/runner/cypress_runner.js:178437:19)\n    at http://172.25.48.177/__cypress/runner/cypress_runner.js:177222:15\nFrom previous event:\n    at CommandQueue.runCommand (http://172.25.48.177/__cypress/runner/cypress_runner.js:177201:17)\n    at next (http://172.25.48.177/__cypress/runner/cypress_runner.js:177355:19)\n    at http://172.25.48.177/__cypress/runner/cypress_runner.js:177384:16"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 77,
+            "name": "User Click on Submit button",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 78,
+            "name": "User Click on Confirm button",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "stock-management-initiation;to-verify-that-system-admin-is-able-to-initiate-stock-transfer-to-ra-through-web.",
+        "keyword": "Scenario",
+        "line": 87,
+        "name": "To verify that System admin is able to Initiate Stock Transfer to RA through web.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 85
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 88,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 14450000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 89,
+            "name": "Navigate to Stock Management and Stock Transfer to RA",
+            "result": {
+              "status": "passed",
+              "duration": 1870000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 90,
+            "name": "Select MFS Provider",
+            "result": {
+              "status": "passed",
+              "duration": 887000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 91,
+            "name": "Enter Reference number",
+            "result": {
+              "status": "passed",
+              "duration": 453000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 92,
+            "name": "Enter Amount",
+            "result": {
+              "status": "passed",
+              "duration": 339000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 93,
+            "name": "Click on Submit button",
+            "result": {
+              "status": "passed",
+              "duration": 790000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 94,
+            "name": "Click on Confirm button",
+            "result": {
+              "status": "passed",
+              "duration": 1501000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "stock-management-initiation;to-verify-that-system-admin-can-enquire-the-stocks-through-stock-enquiry.",
+        "keyword": "Scenario",
+        "line": 103,
+        "name": "To verify that System admin can enquire the Stocks through stock enquiry.",
+        "tags": [
+          {
+            "name": "@test",
+            "line": 101
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 104,
+            "name": "Login into Mobiquity Portal as System admin Maker",
+            "result": {
+              "status": "passed",
+              "duration": 13549000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 105,
+            "name": "Navigate to Stock Management and Stock Enquiry",
+            "result": {
+              "status": "passed",
+              "duration": 1621000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 108,
+            "name": "Select any Transaction ID from the displayed list",
+            "result": {
+              "status": "passed",
+              "duration": 5637000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 109,
+            "name": "Click on Enquiry Submit button",
+            "result": {
+              "status": "failed",
+              "error_message": "CypressError: Timed out retrying after 5000ms: `cy.wait()` timed out waiting `5000ms` for the 1st request to the route: `stockEnquiryViewSubmit`. No request ever occurred.\n    at cypressErr (http://172.25.48.177/__cypress/runner/cypress_runner.js:181711:18)\n    at Object.errByPath (http://172.25.48.177/__cypress/runner/cypress_runner.js:181780:10)\n    at checkForXhr (http://172.25.48.177/__cypress/runner/cypress_runner.js:167411:92)\n    at http://172.25.48.177/__cypress/runner/cypress_runner.js:167434:28\nFrom previous event:\n    at whenStable (http://172.25.48.177/__cypress/runner/cypress_runner.js:173835:65)\n    at http://172.25.48.177/__cypress/runner/cypress_runner.js:173290:14\nFrom Your Spec Code:\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\StockManagement\\1stockManagement.feature:370:6)\n    at Context.resolveAndRunStepDefinition (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\StockManagement\\1stockManagement.feature:15415:29)\n    at Context.eval (http://172.25.48.177/__cypress/tests?p=cypress\\integration\\BDD\\Tests\\StockManagement\\1stockManagement.feature:14736:35)"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

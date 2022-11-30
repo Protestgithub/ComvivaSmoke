@@ -18,7 +18,6 @@ And System Admin is able to edit details of the user
 Then Confirm the edit details Of the User
 And Navigate to My Activity and Apply Modified User filters
 Then Assert Created Customer care Admin Mobile Number and Write Created on time
-Then Logout
 
 Scenario: To verify approval of initiated modification request
 Given Login into Mobiquity Portal as System admin Checker1
@@ -44,7 +43,6 @@ And System Admin is able to edit details
 Then Confirm the edit details
 And Navigate to My Activity and Apply Modified User filters
 And Assert Created Business Admin Mobile Number and Write Created on time
-Then Logout
 
 Scenario: To verify notification is sent on approval
 Given Login into Mobiquity Portal as System admin Maker

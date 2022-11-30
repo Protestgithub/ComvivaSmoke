@@ -65,7 +65,7 @@ Then Assert Suspension of Subscriber Mobile Number and Write Created on time
 
 
 Scenario:To verify that the System Admin is able to Approve the suspended user
-Given Login into Mobiquity Portal as another System admin Checker1 after logout
+Given Login into Mobiquity Portal as System admin Checker1
 When Navigate to Approvals
 And Admin click on Suspended user data
 And Approve to suspended the Users
@@ -99,7 +99,7 @@ Then Assert Suspension of Subscriber Mobile Number and Write Created on time
 @test
 
 Scenario:To verify that the System Admin is able to approve the resumed user.
-Given Login into Mobiquity Portal as another System admin Checker1 after logout
+Given Login into Mobiquity Portal as System admin Checker1
 When Navigate to Approvals
 And Admin click on Resumeded user data
 And Approve the Resumed User
